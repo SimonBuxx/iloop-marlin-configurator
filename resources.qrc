@@ -1,0 +1,25 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/save_FILL0_wght100_GRAD0_opsz20.svg</file>
+        <file>resources/file_open_FILL0_wght100_GRAD0_opsz20.svg</file>
+        <file>resources/note_add_FILL0_wght100_GRAD0_opsz20.svg</file>
+        <file>resources/export_notes_FILL0_wght100_GRAD0_opsz20.svg</file>
+        <file>resources/info_FILL0_wght100_GRAD0_opsz20.svg</file>
+        <file>resources/bolt_FILL0_wght100_GRAD0_opsz20.svg</file>
+        <file>resources/device_thermostat_FILL0_wght100_GRAD0_opsz20.svg</file>
+        <file>resources/sensors_FILL0_wght100_GRAD0_opsz20.svg</file>
+        <file>resources/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</file>
+        <file>resources/iloop_alpha.png</file>
+        <file>resources/iloop_icon_small.png</file>
+        <file>resources/SourceCodePro-Regular.ttf</file>
+        <file>resources/check_FILL0_wght400_GRAD0_opsz20.png</file>
+        <file>resources/radio_button_checked_FILL0_wght400_GRAD0_opsz20.svg</file>
+        <file>resources/radio_button_unchecked_FILL0_wght400_GRAD0_opsz20.svg</file>
+        <file>resources/check_FILL0_wght400_GRAD0_opsz20.svg</file>
+        <file>resources/arrow_drop_down_FILL0_wght400_GRAD0_opsz20.svg</file>
+        <file>resources/arrow_drop_up_FILL0_wght400_GRAD0_opsz20.svg</file>
+        <file>resources/arrow_drop_down_FILL0_wght400_GRAD0_opsz20_white.svg</file>
+        <file>resources/arrow_drop_up_FILL0_wght400_GRAD0_opsz20_white.svg</file>
+        <file>resources/configuration_template.txt</file>
+    </qresource>
+</RCC>
