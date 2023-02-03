@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1070</width>
-    <height>600</height>
+    <width>1000</width>
+    <height>670</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>1070</width>
-    <height>600</height>
+    <width>1000</width>
+    <height>670</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -25,6 +25,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QWidget {
+	font-family: &quot;Source Sans Pro&quot;;
 	background: rgb(33, 37, 43);
     selection-background-color: rgb(40, 46, 53);
 	color: white;
@@ -38,12 +39,39 @@ QMenu::item:selected {
     background-color: rgb(38, 43, 50);
 }
 
+QMenu::item:disabled {
+	color: rgb(100, 100, 100);
+}
+
 QPushButton {
 	color: white;
 }
 
 QPushButton::disabled {
 	color: rgb(180, 180, 180);
+}
+
+QTabWidget::pane {
+	border: none;
+}
+
+QTabBar::tab {
+	background: rgb(38, 43, 50);
+	border: 1px solid rgb(54, 60, 70);
+	border-bottom: none;
+	padding: 5px 10px;
+	border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+	margin: 0 1px;
+	min-width: 100px;
+}
+
+QTabBar::tab:!selected {
+    margin-top: 2px;
+}
+
+QTabBar::tab:selected {
+    background: rgb(54, 60, 70);
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -94,6 +122,9 @@ QPushButton::disabled {
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
         <widget class="QLabel" name="uProjectLabel">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
          <property name="text">
           <string>Project: -</string>
          </property>
@@ -120,12 +151,16 @@ QPushButton::disabled {
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">QTabWidget::pane {
-	border: none;
-}</string>
+          <string notr="true"/>
          </property>
          <property name="currentIndex">
           <number>0</number>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
          </property>
          <widget class="QWidget" name="tab">
           <attribute name="title">
@@ -443,7 +478,7 @@ QPushButton::disabled {
                <number>0</number>
               </property>
               <item row="0" column="0">
-               <widget class="TemperaturesPage" name="widget" native="true"/>
+               <widget class="TemperaturesPage" name="uTemperaturesPage" native="true"/>
               </item>
              </layout>
             </widget>
@@ -675,7 +710,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1070</width>
+     <width>1000</width>
      <height>21</height>
     </rect>
    </property>

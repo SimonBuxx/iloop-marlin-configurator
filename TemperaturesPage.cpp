@@ -19,6 +19,7 @@ TemperaturesPage::~TemperaturesPage()
 
 void TemperaturesPage::ResetValues()
 {
+    mHotendTempSensorsConfigurator.ResetValues();
 }
 
 void TemperaturesPage::LoadFromJson(QJsonDocument &pJson)

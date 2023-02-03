@@ -21,21 +21,79 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QWidget {
-	font-family: &quot;Source Code Pro&quot;;
+        font-family: &quot;Source Sans Pro&quot;;
+}
+
+QPushButton {
+	background: rgb(54, 60, 70);
+    border: 1px inset rgb(18, 21, 24);
+	border-radius: 3px;
+	padding: 6px;
+}
+
+QPushButton:disabled {
+   background: rgb(38, 43, 50);
+}
+
+QPushButton:hover {
+    border: 1px solid rgb(100, 105, 113);
+}
+
+QPushButton:focus {
+	border: 1px solid rgb(76, 157, 255);
+}
+
+QComboBox {
+	color: white;
+	background: rgb(54, 60, 70);
+    border: 1px inset rgb(18, 21, 24);
+	border-radius: 3px;
+	padding: 5px;
+}
+
+QComboBox:hover {
+    border: 1px solid rgb(100, 105, 113);
+}
+
+QComboBox:focus {
+	border: 1px solid rgb(76, 157, 255);
+}
+
+QComboBox::drop-down {
+	border: none;
+}
+
+QComboBox::down-arrow {
+	image: url(&quot;:/resources/arrow_drop_down_FILL0_wght400_GRAD0_opsz20_white.svg&quot;);
+ 	width: 6px;
+	margin-right: 4px;
+	margin-bottom: 2px;
 }
 
 QLineEdit {
 	color: white;
-    border: 1px solid rgb(100, 105, 113);
+	background: rgb(27, 30, 35);
+    border: 1px inset rgb(18, 21, 24);
 	border-radius: 3px;
+	padding: 5px;
 }
 
 QLineEdit:hover {
-	border: 1px solid rgb(129, 135, 145);
+    border: 1px solid rgb(100, 105, 113);
 }
 
 QLineEdit:focus {
-	border: 1px solid white;
+	border: 1px solid rgb(76, 157, 255);
+}
+
+QRadioButton {
+	padding: 5px;
+	border: 1px solid transparent;
+	border-radius: 3px;
+}
+
+QRadioButton::hover {
+	border: 1px solid rgb(54, 60, 70);
 }
 
 QRadioButton::indicator {
@@ -56,30 +114,33 @@ QLabel {
 }
 
 QAbstractSpinBox {
-	border: 1px solid rgb(100, 105, 113);
+	color: white;
+	background: rgb(27, 30, 35);
+    border: 1px inset rgb(18, 21, 24);
 	border-radius: 3px;
+	padding: 5px;
 }
 
 QAbstractSpinBox:hover {
-	border: 1px solid rgb(129, 135, 145);
+    border: 1px solid rgb(100, 105, 113);
 }
 
 QAbstractSpinBox:focus {
-	border: 1px solid white;
+	border: 1px solid rgb(76, 157, 255);
 }
 
 QAbstractSpinBox::up-button {
 	image: url(&quot;:/resources/arrow_drop_up_FILL0_wght400_GRAD0_opsz20_white.svg&quot;);
  	width: 6px;
-	margin-right: 4px;
-	margin-top: 2px;
+	margin-right: 6px;
+	margin-top: 4px;
 }
 
 QAbstractSpinBox::down-button {
 	image: url(&quot;:/resources/arrow_drop_down_FILL0_wght400_GRAD0_opsz20_white.svg&quot;);
  	width: 6px;
-	margin-right: 4px;
-	margin-bottom: 2px;
+	margin-right: 6px;
+	margin-bottom: 4px;
 }
 
 QAbstractSpinBox::up-button:disabled,
@@ -296,15 +357,15 @@ QAbstractSpinBox::down-button:off {
      </property>
      <property name="font">
       <font>
-       <family>Source Code Pro</family>
+       <family>Source Sans Pro</family>
       </font>
      </property>
      <property name="styleSheet">
       <string notr="true">QLabel {
-	font-family: &quot;Source Code Pro&quot;;
 	min-height: 24px;
-        color: rgb(100, 105, 113);
-}</string>
+	color: rgb(100, 105, 113);
+}
+</string>
      </property>
      <property name="text">
       <string>CUSTOM_MACHINE_NAME</string>
@@ -316,6 +377,12 @@ QAbstractSpinBox::down-button:off {
    </item>
    <item row="10" column="5">
     <widget class="QSpinBox" name="uXBedSizeBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="suffix">
       <string> mm</string>
      </property>
@@ -334,7 +401,7 @@ QAbstractSpinBox::down-button:off {
     <widget class="QLabel" name="label_2">
      <property name="font">
       <font>
-       <family>Source Code Pro</family>
+       <family>Source Sans Pro</family>
        <italic>true</italic>
       </font>
      </property>
@@ -540,6 +607,12 @@ QAbstractSpinBox::down-button:off {
    </item>
    <item row="10" column="7">
     <widget class="QSpinBox" name="uYBedSizeBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="styleSheet">
       <string notr="true"/>
      </property>
@@ -576,7 +649,7 @@ QAbstractSpinBox::down-button:off {
    <item row="1" column="4" colspan="2">
     <widget class="QRadioButton" name="uShowBootscreenTrue">
      <property name="text">
-      <string>Yes</string>
+      <string>Enable</string>
      </property>
      <property name="checked">
       <bool>true</bool>
@@ -658,10 +731,10 @@ QAbstractSpinBox::down-button:off {
     <widget class="QLabel" name="label_16">
      <property name="styleSheet">
       <string notr="true">QLabel {
-	font-family: &quot;Source Code Pro&quot;;
 	min-height: 24px;
-        color: rgb(100, 105, 113);
-}</string>
+	color: rgb(100, 105, 113);
+}
+</string>
      </property>
      <property name="text">
       <string>EXTRUDERS</string>
@@ -874,15 +947,15 @@ QAbstractSpinBox::down-button:off {
      </property>
      <property name="font">
       <font>
-       <family>Source Code Pro</family>
+       <family>Source Sans Pro</family>
       </font>
      </property>
      <property name="styleSheet">
       <string notr="true">QLabel {
-	font-family: &quot;Source Code Pro&quot;;
 	min-height: 24px;
-        color: rgb(100, 105, 113);
-}</string>
+	color: rgb(100, 105, 113);
+}
+</string>
      </property>
      <property name="text">
       <string>BAUDRATE</string>
@@ -1095,15 +1168,15 @@ QAbstractSpinBox::down-button:off {
      </property>
      <property name="font">
       <font>
-       <family>Source Code Pro</family>
+       <family>Source Sans Pro</family>
       </font>
      </property>
      <property name="styleSheet">
       <string notr="true">QLabel {
-	font-family: &quot;Source Code Pro&quot;;
 	min-height: 24px;
-        color: rgb(100, 105, 113);
-}</string>
+	color: rgb(100, 105, 113);
+}
+</string>
      </property>
      <property name="text">
       <string>STRING_CONFIG_H_AUTHOR</string>
@@ -1116,7 +1189,7 @@ QAbstractSpinBox::down-button:off {
    <item row="1" column="6" colspan="2">
     <widget class="QRadioButton" name="uShowBootscreenFalse">
      <property name="text">
-      <string>No</string>
+      <string>Disable</string>
      </property>
      <attribute name="buttonGroup">
       <string notr="true">buttonGroup</string>
@@ -1125,6 +1198,9 @@ QAbstractSpinBox::down-button:off {
    </item>
    <item row="3" column="4" colspan="4">
     <widget class="QComboBox" name="uBaudrateBox">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <property name="currentIndex">
       <number>6</number>
      </property>
@@ -1206,10 +1282,10 @@ QAbstractSpinBox::down-button:off {
     <widget class="QLabel" name="label_18">
      <property name="styleSheet">
       <string notr="true">QLabel {
-	font-family: &quot;Source Code Pro&quot;;
 	min-height: 24px;
-        color: rgb(100, 105, 113);
-}</string>
+	color: rgb(100, 105, 113);
+}
+</string>
      </property>
      <property name="text">
       <string>DEFAULT_NOMINAL_FILAMENT_DIA</string>
@@ -1422,15 +1498,15 @@ QAbstractSpinBox::down-button:off {
      </property>
      <property name="font">
       <font>
-       <family>Source Code Pro</family>
+       <family>Source Sans Pro</family>
       </font>
      </property>
      <property name="styleSheet">
       <string notr="true">QLabel {
-	font-family: &quot;Source Code Pro&quot;;
 	min-height: 24px;
-        color: rgb(100, 105, 113);
-}</string>
+	color: rgb(100, 105, 113);
+}
+</string>
      </property>
      <property name="text">
       <string>MOTHERBOARD</string>
@@ -1464,10 +1540,10 @@ QAbstractSpinBox::down-button:off {
      </property>
      <property name="styleSheet">
       <string notr="true">QLabel {
-	font-family: &quot;Source Code Pro&quot;;
 	min-height: 24px;
-        color: rgb(100, 105, 113);
-}</string>
+	color: rgb(100, 105, 113);
+}
+</string>
      </property>
      <property name="text">
       <string>Y_BED_SIZE:</string>
@@ -1690,15 +1766,15 @@ QAbstractSpinBox::down-button:off {
      </property>
      <property name="font">
       <font>
-       <family>Source Code Pro</family>
+       <family>Source Sans Pro</family>
       </font>
      </property>
      <property name="styleSheet">
       <string notr="true">QLabel {
-	font-family: &quot;Source Code Pro&quot;;
 	min-height: 24px;
-        color: rgb(100, 105, 113);
-}</string>
+	color: rgb(100, 105, 113);
+}
+</string>
      </property>
      <property name="text">
       <string>SHOW_BOOTSCREEN</string>
@@ -1712,7 +1788,7 @@ QAbstractSpinBox::down-button:off {
     <widget class="QLabel" name="label_7">
      <property name="font">
       <font>
-       <family>Source Code Pro</family>
+       <family>Source Sans Pro</family>
        <italic>true</italic>
       </font>
      </property>
@@ -1728,10 +1804,10 @@ QAbstractSpinBox::down-button:off {
     <widget class="QLabel" name="label_20">
      <property name="styleSheet">
       <string notr="true">QLabel {
-	font-family: &quot;Source Code Pro&quot;;
 	min-height: 24px;
-        color: rgb(100, 105, 113);
-}</string>
+	color: rgb(100, 105, 113);
+}
+</string>
      </property>
      <property name="text">
       <string>X_BED_SIZE / Y_BED_SIZE</string>
@@ -1944,15 +2020,15 @@ QAbstractSpinBox::down-button:off {
      </property>
      <property name="font">
       <font>
-       <family>Source Code Pro</family>
+       <family>Source Sans Pro</family>
       </font>
      </property>
      <property name="styleSheet">
       <string notr="true">QLabel {
-	font-family: &quot;Source Code Pro&quot;;
 	min-height: 24px;
-        color: rgb(100, 105, 113);
-}</string>
+	color: rgb(100, 105, 113);
+}
+</string>
      </property>
      <property name="text">
       <string>SERIAL_PORT</string>
@@ -1972,10 +2048,10 @@ QAbstractSpinBox::down-button:off {
      </property>
      <property name="styleSheet">
       <string notr="true">QLabel {
-	font-family: &quot;Source Code Pro&quot;;
 	min-height: 24px;
-        color: rgb(100, 105, 113);
-}</string>
+	color: rgb(100, 105, 113);
+}
+</string>
      </property>
      <property name="text">
       <string>X_BED_SIZE:</string>

@@ -1,12 +1,23 @@
 #include "BasicsPage.h"
 #include "./ui_BasicsPage.h"
 #include "HelperFunctions.h"
+#include <QStyledItemDelegate>
+#include <QAbstractItemView>
 
 BasicsPage::BasicsPage(QWidget *parent) :
     QWidget(parent),
     mUi(new Ui::BasicsPage)
 {
     mUi->setupUi(this);
+
+#warning temporary code, subclass QComboBox
+    for (const auto& comp : this->children())
+    {
+        if (nullptr != dynamic_cast<QComboBox*>(comp))
+        {
+            static_cast<QComboBox*>(comp)->view()->parentWidget()->setStyleSheet("background: rgb(54, 60, 70);");
+        }
+    }
 
     QObject::connect(mUi->uConfigureEndstopsButton, &QPushButton::clicked, &mEndstopsConfigurator, &Endstops_Configurator::show);
 

@@ -56,6 +56,7 @@ void MainWindow::ConnectGuiSignalsAndSlots()
 void MainWindow::OnNewProject()
 {
     mUi->uBasicsPage->ResetValues();
+    mUi->uTemperaturesPage->ResetValues();
 
     SetProjectName(std::nullopt);
     Log("New project initialized.");

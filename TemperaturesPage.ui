@@ -21,17 +21,75 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QWidget {
-	font-family: &quot;Source Code Pro&quot;;
+        font-family: &quot;Source Sans Pro&quot;;
+}
+
+QPushButton {
+	background: rgb(54, 60, 70);
+    border: 1px inset rgb(18, 21, 24);
+	border-radius: 3px;
+	padding: 6px;
+}
+
+QPushButton:hover {
+    border: 1px solid rgb(100, 105, 113);
+}
+
+QPushButton:focus {
+	border: 1px solid rgb(76, 157, 255);
+}
+
+QComboBox {
+	color: white;
+	background: rgb(54, 60, 70);
+    border: 1px inset rgb(18, 21, 24);
+	border-radius: 3px;
+	padding: 5px;
+}
+
+QComboBox:hover {
+    border: 1px solid rgb(100, 105, 113);
+}
+
+QComboBox:focus {
+	border: 1px solid rgb(76, 157, 255);
+}
+
+QComboBox::drop-down {
+	border: none;
+}
+
+QComboBox::down-arrow {
+	image: url(&quot;:/resources/arrow_drop_down_FILL0_wght400_GRAD0_opsz20_white.svg&quot;);
+ 	width: 6px;
+	margin-right: 4px;
+	margin-bottom: 2px;
 }
 
 QLineEdit {
 	color: white;
-        border: 1px solid rgb(100, 105, 113);
+	background: rgb(27, 30, 35);
+    border: 1px inset rgb(18, 21, 24);
 	border-radius: 3px;
+	padding: 5px;
+}
+
+QLineEdit:hover {
+    border: 1px solid rgb(100, 105, 113);
 }
 
 QLineEdit:focus {
-	border: 1px solid white;
+	border: 1px solid rgb(76, 157, 255);
+}
+
+QRadioButton {
+	padding: 5px;
+	border: 1px solid transparent;
+	border-radius: 3px;
+}
+
+QRadioButton::hover {
+	border: 1px solid rgb(54, 60, 70);
 }
 
 QRadioButton::indicator {
@@ -52,30 +110,33 @@ QLabel {
 }
 
 QAbstractSpinBox {
-	border: 1px solid rgb(100, 105, 113);
+	color: white;
+	background: rgb(27, 30, 35);
+    border: 1px inset rgb(18, 21, 24);
 	border-radius: 3px;
+	padding: 5px;
 }
 
 QAbstractSpinBox:hover {
-	border: 1px solid rgb(129, 135, 145);
+    border: 1px solid rgb(100, 105, 113);
 }
 
 QAbstractSpinBox:focus {
-	border: 1px solid white;
+	border: 1px solid rgb(76, 157, 255);
 }
 
 QAbstractSpinBox::up-button {
 	image: url(&quot;:/resources/arrow_drop_up_FILL0_wght400_GRAD0_opsz20_white.svg&quot;);
  	width: 6px;
-	margin-right: 4px;
-	margin-top: 2px;
+	margin-right: 6px;
+	margin-top: 4px;
 }
 
 QAbstractSpinBox::down-button {
 	image: url(&quot;:/resources/arrow_drop_down_FILL0_wght400_GRAD0_opsz20_white.svg&quot;);
  	width: 6px;
-	margin-right: 4px;
-	margin-bottom: 2px;
+	margin-right: 6px;
+	margin-bottom: 4px;
 }
 
 QAbstractSpinBox::up-button:disabled,
@@ -105,25 +166,6 @@ QAbstractSpinBox::down-button:off {
      </property>
     </widget>
    </item>
-   <item row="12" column="4" colspan="2">
-    <widget class="QRadioButton" name="radioButton">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="locale">
-      <locale language="English" country="UnitedStates"/>
-     </property>
-     <property name="text">
-      <string>Enable</string>
-     </property>
-     <attribute name="buttonGroup">
-      <string notr="true">buttonGroup_2</string>
-     </attribute>
-    </widget>
-   </item>
    <item row="12" column="7" colspan="3">
     <widget class="QRadioButton" name="radioButton_2">
      <property name="sizePolicy">
@@ -150,9 +192,8 @@ QAbstractSpinBox::down-button:off {
     <widget class="QLabel" name="label_21">
      <property name="styleSheet">
       <string notr="true">QLabel {
-	font-family: &quot;Source Code Pro&quot;;
 	min-height: 24px;
-        color: rgb(100, 105, 113);
+    color: rgb(100, 105, 113);
 }</string>
      </property>
      <property name="locale">
@@ -170,9 +211,8 @@ QAbstractSpinBox::down-button:off {
     <widget class="QLabel" name="label_16">
      <property name="styleSheet">
       <string notr="true">QLabel {
-	font-family: &quot;Source Code Pro&quot;;
 	min-height: 24px;
-        color: rgb(100, 105, 113);
+    color: rgb(100, 105, 113);
 }</string>
      </property>
      <property name="locale">
@@ -209,9 +249,8 @@ QAbstractSpinBox::down-button:off {
     <widget class="QLabel" name="label_24">
      <property name="styleSheet">
       <string notr="true">QLabel {
-	font-family: &quot;Source Code Pro&quot;;
 	min-height: 24px;
-        color: rgb(100, 105, 113);
+    color: rgb(100, 105, 113);
 }</string>
      </property>
      <property name="locale">
@@ -229,9 +268,8 @@ QAbstractSpinBox::down-button:off {
     <widget class="QLabel" name="label_11">
      <property name="styleSheet">
       <string notr="true">QLabel {
-	font-family: &quot;Source Code Pro&quot;;
 	min-height: 24px;
-        color: rgb(100, 105, 113);
+    color: rgb(100, 105, 113);
 }</string>
      </property>
      <property name="locale">
@@ -448,14 +486,13 @@ QAbstractSpinBox::down-button:off {
      </property>
      <property name="font">
       <font>
-       <family>Source Code Pro</family>
+       <family>Source Sans Pro</family>
       </font>
      </property>
      <property name="styleSheet">
       <string notr="true">QLabel {
-	font-family: &quot;Source Code Pro&quot;;
 	min-height: 24px;
-        color: rgb(100, 105, 113);
+    color: rgb(100, 105, 113);
 }</string>
      </property>
      <property name="locale">
@@ -492,9 +529,8 @@ QAbstractSpinBox::down-button:off {
     <widget class="QLabel" name="label_27">
      <property name="styleSheet">
       <string notr="true">QLabel {
-	font-family: &quot;Source Code Pro&quot;;
 	min-height: 24px;
-        color: rgb(100, 105, 113);
+    color: rgb(100, 105, 113);
 }</string>
      </property>
      <property name="locale">
@@ -541,9 +577,8 @@ QAbstractSpinBox::down-button:off {
     <widget class="QLabel" name="label_22">
      <property name="styleSheet">
       <string notr="true">QLabel {
-	font-family: &quot;Source Code Pro&quot;;
 	min-height: 24px;
-        color: rgb(100, 105, 113);
+    color: rgb(100, 105, 113);
 }</string>
      </property>
      <property name="locale">
@@ -577,9 +612,8 @@ QAbstractSpinBox::down-button:off {
     <widget class="QLabel" name="label_13">
      <property name="styleSheet">
       <string notr="true">QLabel {
-	font-family: &quot;Source Code Pro&quot;;
 	min-height: 24px;
-        color: rgb(100, 105, 113);
+    color: rgb(100, 105, 113);
 }</string>
      </property>
      <property name="locale">
@@ -809,14 +843,13 @@ QAbstractSpinBox::down-button:off {
      </property>
      <property name="font">
       <font>
-       <family>Source Code Pro</family>
+       <family>Source Sans Pro</family>
       </font>
      </property>
      <property name="styleSheet">
       <string notr="true">QLabel {
-	font-family: &quot;Source Code Pro&quot;;
 	min-height: 24px;
-        color: rgb(100, 105, 113);
+    color: rgb(100, 105, 113);
 }</string>
      </property>
      <property name="locale">
@@ -834,9 +867,8 @@ QAbstractSpinBox::down-button:off {
     <widget class="QLabel" name="label_19">
      <property name="styleSheet">
       <string notr="true">QLabel {
-	font-family: &quot;Source Code Pro&quot;;
 	min-height: 24px;
-        color: rgb(100, 105, 113);
+    color: rgb(100, 105, 113);
 }</string>
      </property>
      <property name="locale">
@@ -867,7 +899,7 @@ QAbstractSpinBox::down-button:off {
     <widget class="QLabel" name="label_7">
      <property name="font">
       <font>
-       <family>Source Code Pro</family>
+       <family>Source Sans Pro</family>
       </font>
      </property>
      <property name="locale">
@@ -898,9 +930,8 @@ QAbstractSpinBox::down-button:off {
     <widget class="QLabel" name="label_26">
      <property name="styleSheet">
       <string notr="true">QLabel {
-	font-family: &quot;Source Code Pro&quot;;
 	min-height: 24px;
-        color: rgb(100, 105, 113);
+    color: rgb(100, 105, 113);
 }</string>
      </property>
      <property name="locale">
@@ -918,9 +949,8 @@ QAbstractSpinBox::down-button:off {
     <widget class="QLabel" name="label_10">
      <property name="styleSheet">
       <string notr="true">QLabel {
-	font-family: &quot;Source Code Pro&quot;;
 	min-height: 24px;
-        color: rgb(100, 105, 113);
+    color: rgb(100, 105, 113);
 }</string>
      </property>
      <property name="locale">
@@ -938,7 +968,7 @@ QAbstractSpinBox::down-button:off {
     <widget class="QLabel" name="label_2">
      <property name="font">
       <font>
-       <family>Source Code Pro</family>
+       <family>Source Sans Pro</family>
       </font>
      </property>
      <property name="locale">
@@ -995,9 +1025,8 @@ QAbstractSpinBox::down-button:off {
     <widget class="QLabel" name="label_23">
      <property name="styleSheet">
       <string notr="true">QLabel {
-	font-family: &quot;Source Code Pro&quot;;
 	min-height: 24px;
-        color: rgb(100, 105, 113);
+    color: rgb(100, 105, 113);
 }</string>
      </property>
      <property name="locale">
@@ -1211,14 +1240,13 @@ QAbstractSpinBox::down-button:off {
      </property>
      <property name="font">
       <font>
-       <family>Source Code Pro</family>
+       <family>Source Sans Pro</family>
       </font>
      </property>
      <property name="styleSheet">
       <string notr="true">QLabel {
-	font-family: &quot;Source Code Pro&quot;;
 	min-height: 24px;
-        color: rgb(100, 105, 113);
+    color: rgb(100, 105, 113);
 }</string>
      </property>
      <property name="locale">
@@ -1313,9 +1341,8 @@ QAbstractSpinBox::down-button:off {
     <widget class="QLabel" name="label_20">
      <property name="styleSheet">
       <string notr="true">QLabel {
-	font-family: &quot;Source Code Pro&quot;;
 	min-height: 24px;
-        color: rgb(100, 105, 113);
+    color: rgb(100, 105, 113);
 }</string>
      </property>
      <property name="locale">
@@ -1333,9 +1360,8 @@ QAbstractSpinBox::down-button:off {
     <widget class="QLabel" name="label_14">
      <property name="styleSheet">
       <string notr="true">QLabel {
-	font-family: &quot;Source Code Pro&quot;;
 	min-height: 24px;
-        color: rgb(100, 105, 113);
+    color: rgb(100, 105, 113);
 }</string>
      </property>
      <property name="locale">
@@ -1431,6 +1457,25 @@ QAbstractSpinBox::down-button:off {
      <property name="stepType">
       <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
      </property>
+    </widget>
+   </item>
+   <item row="12" column="4" colspan="3">
+    <widget class="QRadioButton" name="radioButton">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="locale">
+      <locale language="English" country="UnitedStates"/>
+     </property>
+     <property name="text">
+      <string>Enable</string>
+     </property>
+     <attribute name="buttonGroup">
+      <string notr="true">buttonGroup_2</string>
+     </attribute>
     </widget>
    </item>
   </layout>
