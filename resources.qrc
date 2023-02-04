@@ -21,5 +21,6 @@
         <file>resources/arrow_drop_down_FILL0_wght400_GRAD0_opsz20_white.svg</file>
         <file>resources/arrow_drop_up_FILL0_wght400_GRAD0_opsz20_white.svg</file>
         <file>resources/configuration_template.txt</file>
+        <file>resources/SourceSansPro-Regular.ttf</file>
     </qresource>
 </RCC>
