@@ -17,9 +17,12 @@ target_sources(GUI_IMC_GUI
         MainWindow.h
         MainWindow.cpp
         MainWindow.ui
-        BasicsPage.h
-        BasicsPage.cpp
-        BasicsPage.ui
+        FirmwarePage.h
+        FirmwarePage.cpp
+        FirmwarePage.ui
+        HardwarePage.h
+        HardwarePage.cpp
+        HardwarePage.ui
         Endstops_Configurator.h
         Endstops_Configurator.cpp
         Endstops_Configurator.ui

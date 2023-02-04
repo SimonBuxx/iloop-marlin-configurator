@@ -51,12 +51,21 @@ void MainWindow::ConnectGuiSignalsAndSlots()
         QDesktopServices::openUrl(QUrl("https://github.com/SimonBuxx/iloop-marlin-configurator/"));
     });
 
+    QObject::connect(mUi->uFirmwareTabButton, &QPushButton::clicked, this, [&]()
+    {
+        mUi->stackedWidget->setCurrentIndex(0);
+    });
+
+    QObject::connect(mUi->uHardwareTabButton, &QPushButton::clicked, this, [&]()
+    {
+        mUi->stackedWidget->setCurrentIndex(1);
+    });
 }
 
 void MainWindow::OnNewProject()
 {
-    mUi->uBasicsPage->ResetValues();
-    mUi->uTemperaturesPage->ResetValues();
+    mUi->uFirmwarePage->ResetValues();
+    mUi->uHardwarePage->ResetValues();
 
     SetProjectName(std::nullopt);
     Log("New project initialized.");
@@ -68,7 +77,8 @@ Configuration MainWindow::FetchConfiguration()
 {
     Configuration config;
 
-    mUi->uBasicsPage->FetchConfiguration(config);
+    mUi->uFirmwarePage->FetchConfiguration(config);
+    mUi->uHardwarePage->FetchConfiguration(config);
 
     return config;
 }

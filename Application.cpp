@@ -5,6 +5,16 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 
+inline QString OptionalParameter(bool pCondition, const QString& pAttributeName)
+{
+    return QString("%0#define %1").arg(pCondition ? "" : "//", pAttributeName);
+}
+
+inline QString OptionalParameter(bool pCondition, const QString& pAttributeValue, const QString& pAttributeName, bool pUseParentheses = false)
+{
+    return QString(pUseParentheses ? "%0#define %1 \"%2\"" : "%0#define %1 %2").arg(pCondition ? "" : "//", pAttributeName, pAttributeValue);
+}
+
 Application::Application(QObject *parent)
     : QObject(parent)
 {
@@ -12,7 +22,7 @@ Application::Application(QObject *parent)
     QObject::connect(&mMainWindow, &MainWindow::SaveProjectSignal, this, &Application::OnSaveProject);
     QObject::connect(&mMainWindow, &MainWindow::NewProjectSignal, this, &Application::OnNewProject);
 
-    mMainWindow.Log("Reading Configuration.h template...");
+    mMainWindow.Log("Reading Configuration.h template for Marlin v2.1.2...");
     mTemplate = ReadConfigurationTemplateFromFile(QFileInfo(TEMPLATE_PATH));
 
     mMainWindow.show();
@@ -102,7 +112,7 @@ void Application::OnSaveProject(const Configuration& pConfig, bool pForceSaveAs)
     }
     else
     {
-        const QString name = QString("\\%0.json").arg(pConfig.CUSTOM_MACHINE_NAME.isEmpty() ? "unnamed" : pConfig.CUSTOM_MACHINE_NAME);
+        const QString name = QString("\\%0.json").arg(pConfig.hardware.CUSTOM_MACHINE_NAME.isEmpty() ? "unnamed" : pConfig.hardware.CUSTOM_MACHINE_NAME);
 
         QString fileName = QFileDialog::getSaveFileName(&mMainWindow, tr("Save Project As..."), QDir::homePath() + name, tr("JSON document (*.json)"));
 
@@ -148,12 +158,25 @@ std::optional<QStringList> Application::GenerateConfigurationContent(const Confi
 
     QStringList output = mTemplate.value();
 
-    output.replaceInStrings("#{SHOW_BOOTSCREEN}", QString("%0#define SHOW_BOOTSCREEN").arg(pConfig.SHOW_BOOTSCREEN ? "" : "//"));
-    output.replaceInStrings("#{MOTHERBOARD}", pConfig.MOTHERBOARD);
-    output.replaceInStrings("#{SERIAL_PORT}", QString::number(pConfig.SERIAL_PORT));
-    output.replaceInStrings("#{BAUDRATE}", QString::number(pConfig.BAUDRATE));
-    output.replaceInStrings("#{STRING_CONFIG_H_AUTHOR}", pConfig.STRING_CONFIG_H_AUTHOR);
-    output.replaceInStrings("#{CUSTOM_MACHINE_NAME}", pConfig.CUSTOM_MACHINE_NAME);
+    // Firmware
+    output.replaceInStrings("#{STRING_CONFIG_H_AUTHOR}", pConfig.firmware.STRING_CONFIG_H_AUTHOR);
+    output.replaceInStrings("#{CUSTOM_VERSION_FILE}", OptionalParameter(!pConfig.firmware.CUSTOM_VERSION_FILE.isEmpty(), pConfig.firmware.CUSTOM_VERSION_FILE, "CUSTOM_VERSION_FILE"));
+    output.replaceInStrings("#{SHOW_BOOTSCREEN}", OptionalParameter(pConfig.firmware.SHOW_BOOTSCREEN, "SHOW_BOOTSCREEN"));
+    output.replaceInStrings("#{SHOW_CUSTOM_BOOTSCREEN}", OptionalParameter(pConfig.firmware.SHOW_CUSTOM_BOOTSCREEN, "SHOW_CUSTOM_BOOTSCREEN"));
+    output.replaceInStrings("#{CUSTOM_STATUS_SCREEN_IMAGE}", OptionalParameter(pConfig.firmware.CUSTOM_STATUS_SCREEN_IMAGE, "CUSTOM_STATUS_SCREEN_IMAGE"));
+
+    // Hardware
+    output.replaceInStrings("#{MOTHERBOARD}", pConfig.hardware.MOTHERBOARD);
+    output.replaceInStrings("#{SERIAL_PORT}", pConfig.hardware.SERIAL_PORT);
+    output.replaceInStrings("#{BAUDRATE}", pConfig.hardware.BAUDRATE);
+    output.replaceInStrings("#{BAUD_RATE_GCODE}", OptionalParameter(pConfig.hardware.BAUD_RATE_GCODE, "BAUD_RATE_GCODE"));
+    output.replaceInStrings("#{SERIAL_PORT_2}", OptionalParameter(pConfig.hardware.SERIAL_PORT_2 != disabled_values::SERIAL_PORT_2, pConfig.hardware.SERIAL_PORT_2, "SERIAL_PORT_2"));
+    output.replaceInStrings("#{BAUDRATE_2}", OptionalParameter(pConfig.hardware.BAUDRATE_2 != disabled_values::BAUDRATE_2, pConfig.hardware.BAUDRATE_2, "BAUDRATE_2"));
+    output.replaceInStrings("#{SERIAL_PORT_3}", OptionalParameter(pConfig.hardware.SERIAL_PORT_3 != disabled_values::SERIAL_PORT_3, pConfig.hardware.SERIAL_PORT_3, "SERIAL_PORT_3"));
+    output.replaceInStrings("#{BAUDRATE_3}", OptionalParameter(pConfig.hardware.BAUDRATE_3 != disabled_values::BAUDRATE_3, pConfig.hardware.BAUDRATE_3, "BAUDRATE_3"));
+    output.replaceInStrings("#{BLUETOOTH}", OptionalParameter(pConfig.hardware.BLUETOOTH, "BLUETOOTH"));
+    output.replaceInStrings("#{CUSTOM_MACHINE_NAME}", OptionalParameter(!pConfig.hardware.CUSTOM_MACHINE_NAME.isEmpty(), pConfig.hardware.CUSTOM_MACHINE_NAME, "CUSTOM_MACHINE_NAME", true));
+    output.replaceInStrings("#{MACHINE_UUID}", OptionalParameter(!pConfig.hardware.MACHINE_UUID.isEmpty(), pConfig.hardware.MACHINE_UUID, "MACHINE_UUID", true));
 
     return output;
 }

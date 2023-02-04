@@ -1,21 +1,21 @@
-#ifndef BASICSPAGE_H
-#define BASICSPAGE_H
+#ifndef HARDWAREPAGE_H
+#define HARDWAREPAGE_H
 
 #include "../Configuration.h"
 #include "Endstops_Configurator.h"
 #include <QWidget>
 
 namespace Ui {
-class BasicsPage;
+class HardwarePage;
 }
 
-class BasicsPage : public QWidget
+class HardwarePage : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit BasicsPage(QWidget *parent = nullptr);
-    ~BasicsPage(void) override;
+    explicit HardwarePage(QWidget *parent = nullptr);
+    ~HardwarePage(void) override;
 
     void ResetValues(void);
 
@@ -24,9 +24,9 @@ public:
     void FetchConfiguration(Configuration& pConfig);
 
 protected:
-    Ui::BasicsPage *mUi;
+    Ui::HardwarePage *mUi;
 
     Endstops_Configurator mEndstopsConfigurator;
 };
 
-#endif // BASICSPAGE_H
+#endif // HARDWAREPAGE_H

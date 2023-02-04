@@ -32,7 +32,7 @@
    <string>Endstop Configuration </string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../resources/resources.qrc">
+   <iconset>
     <normaloff>://iloop_icon_small.png</normaloff>://iloop_icon_small.png</iconset>
   </property>
   <property name="styleSheet">
@@ -480,9 +480,7 @@ QTabBar::tab:selected {
    </item>
   </layout>
  </widget>
- <resources>
-  <include location="../resources/resources.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>buttonBox</sender>

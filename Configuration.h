@@ -5,14 +5,36 @@
 #include <cstdint>
 #include <string>
 
+namespace disabled_values
+{
+static constexpr auto SERIAL_PORT_2{"No port selected"};
+static constexpr auto BAUDRATE_2{"Use BAUDRATE"};
+static constexpr auto SERIAL_PORT_3{"No port selected"};
+static constexpr auto BAUDRATE_3{"Use BAUDRATE"};
+}
+
 namespace defaults
 {
-static constexpr auto SHOW_BOOTSCREEN{true};
-static constexpr auto SERIAL_PORT{0};
-static constexpr auto BAUDRATE{250000};
-static constexpr auto CUSTOM_MACHINE_NAME{""};
+// Firmware
 static constexpr auto STRING_CONFIG_H_AUTHOR{""};
+static constexpr auto CUSTOM_VERSION_FILE{""};
+static constexpr auto SHOW_BOOTSCREEN{true};
+static constexpr auto SHOW_CUSTOM_BOOTSCREEN{false};
+static constexpr auto CUSTOM_STATUS_SCREEN_IMAGE{false};
+
+// Hardware
 static constexpr auto MOTHERBOARD{"RAMPS 1.4 (Power outputs: Hotend, Fan, Bed) [BOARD_RAMPS_14_EFB]"};
+static constexpr auto SERIAL_PORT{"0"};
+static constexpr auto BAUDRATE{"250000"};
+static constexpr auto BAUD_RATE_GCODE{false};
+static constexpr auto SERIAL_PORT_2{disabled_values::SERIAL_PORT_2};
+static constexpr auto BAUDRATE_2{disabled_values::BAUDRATE_2};
+static constexpr auto SERIAL_PORT_3{disabled_values::SERIAL_PORT_3};
+static constexpr auto BAUDRATE_3{disabled_values::BAUDRATE_3};
+static constexpr auto BLUETOOTH{false};
+static constexpr auto CUSTOM_MACHINE_NAME{""};
+static constexpr auto MACHINE_UUID{""};
+
 static constexpr auto LCD_DISPLAY{"REPRAP_DISCOUNT_SMART_CONTROLLER"};
 static constexpr auto EXTRUDERS{1};
 static constexpr auto DEFAULT_NOMINAL_FILAMENT_DIA{1.75f}; // mm
@@ -51,14 +73,70 @@ static constexpr auto Z_MIN_PROBE_ENDSTOP_INVERTING{false};
 
 }
 
+struct FirmwareConfiguration
+{
+    QString STRING_CONFIG_H_AUTHOR{defaults::STRING_CONFIG_H_AUTHOR};
+    QString CUSTOM_VERSION_FILE{defaults::CUSTOM_VERSION_FILE};
+    bool SHOW_BOOTSCREEN{defaults::SHOW_BOOTSCREEN};
+    bool SHOW_CUSTOM_BOOTSCREEN{defaults::SHOW_CUSTOM_BOOTSCREEN};
+    bool CUSTOM_STATUS_SCREEN_IMAGE{defaults::CUSTOM_STATUS_SCREEN_IMAGE};
+
+public:
+    QJsonObject ToJson(void) const
+    {
+        QJsonObject json;
+
+        json["STRING_CONFIG_H_AUTHOR"] = STRING_CONFIG_H_AUTHOR;
+        json["CUSTOM_VERSION_FILE"] = CUSTOM_VERSION_FILE;
+        json["SHOW_BOOTSCREEN"] = SHOW_BOOTSCREEN;
+        json["SHOW_CUSTOM_BOOTSCREEN"] = SHOW_CUSTOM_BOOTSCREEN;
+        json["CUSTOM_STATUS_SCREEN_IMAGE"] = CUSTOM_STATUS_SCREEN_IMAGE;
+
+        return json;
+    }
+};
+
+struct HardwareConfiguration
+{
+    QString MOTHERBOARD{defaults::MOTHERBOARD};
+    QString SERIAL_PORT{defaults::SERIAL_PORT};
+    QString BAUDRATE{defaults::BAUDRATE};
+    bool BAUD_RATE_GCODE{defaults::BAUD_RATE_GCODE};
+    QString SERIAL_PORT_2{defaults::SERIAL_PORT_2};
+    QString BAUDRATE_2{defaults::BAUDRATE_2};
+    QString SERIAL_PORT_3{defaults::SERIAL_PORT_3};
+    QString BAUDRATE_3{defaults::BAUDRATE_3};
+    bool BLUETOOTH{defaults::BLUETOOTH};
+    QString CUSTOM_MACHINE_NAME{defaults::CUSTOM_MACHINE_NAME};
+    QString MACHINE_UUID{defaults::MACHINE_UUID};
+
+public:
+    QJsonObject ToJson(void) const
+    {
+        QJsonObject json;
+
+        json["MOTHERBOARD"] = MOTHERBOARD;
+        json["SERIAL_PORT"] = SERIAL_PORT;
+        json["BAUDRATE"] = BAUDRATE;
+        json["BAUD_RATE_GCODE"] = BAUD_RATE_GCODE;
+        json["SERIAL_PORT_2"] = SERIAL_PORT_2;
+        json["BAUDRATE_2"] = BAUDRATE_2;
+        json["SERIAL_PORT_3"] = SERIAL_PORT_3;
+        json["BAUDRATE_3"] = BAUDRATE_3;
+        json["BLUETOOTH"] = BLUETOOTH;
+        json["CUSTOM_MACHINE_NAME"] = CUSTOM_MACHINE_NAME;
+        json["MACHINE_UUID"] = MACHINE_UUID;
+
+        return json;
+    }
+};
+
 struct Configuration
 {
-    bool SHOW_BOOTSCREEN{defaults::SHOW_BOOTSCREEN};
-    int8_t SERIAL_PORT{defaults::SERIAL_PORT};
-    int32_t BAUDRATE{defaults::BAUDRATE};
-    QString CUSTOM_MACHINE_NAME{defaults::CUSTOM_MACHINE_NAME};
-    QString STRING_CONFIG_H_AUTHOR{defaults::STRING_CONFIG_H_AUTHOR};
-    QString MOTHERBOARD{defaults::MOTHERBOARD};
+    FirmwareConfiguration firmware;
+    HardwareConfiguration hardware;
+
+    /*
     QString LCD_DISPLAY{defaults::LCD_DISPLAY};
     int8_t EXTRUDERS{defaults::EXTRUDERS};
     qreal DEFAULT_NOMINAL_FILAMENT_DIA{defaults::DEFAULT_NOMINAL_FILAMENT_DIA};
@@ -93,54 +171,15 @@ struct Configuration
     bool J_MAX_ENDSTOP_INVERTING{defaults::J_MAX_ENDSTOP_INVERTING};
     bool K_MAX_ENDSTOP_INVERTING{defaults::K_MAX_ENDSTOP_INVERTING};
 
-    bool Z_MIN_PROBE_ENDSTOP_INVERTING{defaults::Z_MIN_PROBE_ENDSTOP_INVERTING};
+    bool Z_MIN_PROBE_ENDSTOP_INVERTING{defaults::Z_MIN_PROBE_ENDSTOP_INVERTING};*/
 
 public:
     QJsonObject ToJson(void) const
     {
         QJsonObject json;
 
-        json["SHOW_BOOTSCREEN"] = SHOW_BOOTSCREEN;
-        json["SERIAL_PORT"] = SERIAL_PORT;
-        json["BAUDRATE"] = BAUDRATE;
-        json["CUSTOM_MACHINE_NAME"] = CUSTOM_MACHINE_NAME;
-        json["STRING_CONFIG_H_AUTHOR"] = STRING_CONFIG_H_AUTHOR;
-        json["MOTHERBOARD"] = MOTHERBOARD;
-        json["LCD_DISPLAY"] = LCD_DISPLAY;
-        json["EXTRUDERS"] = EXTRUDERS;
-        json["DEFAULT_NOMINAL_FILAMENT_DIA"] = DEFAULT_NOMINAL_FILAMENT_DIA;
-        json["X_BED_SIZE"] = X_BED_SIZE;
-        json["Y_BED_SIZE"] = Y_BED_SIZE;
-
-        json["USE_XMIN_PLUG"] = USE_XMIN_PLUG;
-        json["USE_YMIN_PLUG"] = USE_YMIN_PLUG;
-        json["USE_ZMIN_PLUG"] = USE_ZMIN_PLUG;
-        json["USE_IMIN_PLUG"] = USE_IMIN_PLUG;
-        json["USE_JMIN_PLUG"] = USE_JMIN_PLUG;
-        json["USE_KMIN_PLUG"] = USE_KMIN_PLUG;
-
-        json["USE_XMAX_PLUG"] = USE_XMAX_PLUG;
-        json["USE_YMAX_PLUG"] = USE_YMAX_PLUG;
-        json["USE_ZMAX_PLUG"] = USE_ZMAX_PLUG;
-        json["USE_IMAX_PLUG"] = USE_IMAX_PLUG;
-        json["USE_JMAX_PLUG"] = USE_JMAX_PLUG;
-        json["USE_KMAX_PLUG"] = USE_KMAX_PLUG;
-
-        json["X_MIN_ENDSTOP_INVERTING"] = X_MIN_ENDSTOP_INVERTING;
-        json["Y_MIN_ENDSTOP_INVERTING"] = Y_MIN_ENDSTOP_INVERTING;
-        json["Z_MIN_ENDSTOP_INVERTING"] = Z_MIN_ENDSTOP_INVERTING;
-        json["I_MIN_ENDSTOP_INVERTING"] = I_MIN_ENDSTOP_INVERTING;
-        json["J_MIN_ENDSTOP_INVERTING"] = J_MIN_ENDSTOP_INVERTING;
-        json["K_MIN_ENDSTOP_INVERTING"] = K_MIN_ENDSTOP_INVERTING;
-
-        json["X_MAX_ENDSTOP_INVERTING"] = X_MAX_ENDSTOP_INVERTING;
-        json["Y_MAX_ENDSTOP_INVERTING"] = Y_MAX_ENDSTOP_INVERTING;
-        json["Z_MAX_ENDSTOP_INVERTING"] = Z_MAX_ENDSTOP_INVERTING;
-        json["I_MAX_ENDSTOP_INVERTING"] = I_MAX_ENDSTOP_INVERTING;
-        json["J_MAX_ENDSTOP_INVERTING"] = J_MAX_ENDSTOP_INVERTING;
-        json["K_MAX_ENDSTOP_INVERTING"] = K_MAX_ENDSTOP_INVERTING;
-
-        json["Z_MIN_PROBE_ENDSTOP_INVERTING"] = Z_MIN_PROBE_ENDSTOP_INVERTING;
+        json["firmware"] = firmware.ToJson();
+        json["hardware"] = hardware.ToJson();
 
         return json;
     }
