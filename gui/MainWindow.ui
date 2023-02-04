@@ -219,6 +219,9 @@ QPushButton::checked {
               <height>20</height>
              </size>
             </property>
+            <property name="shortcut">
+             <string>Ctrl+2</string>
+            </property>
             <property name="checkable">
              <bool>true</bool>
             </property>
@@ -558,6 +561,32 @@ QPushButton::checked {
               </item>
              </layout>
             </widget>
+            <widget class="QWidget" name="uExtruderTab">
+             <layout class="QGridLayout" name="gridLayout_5">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item row="0" column="0">
+               <widget class="QFrame" name="frame_6">
+                <property name="frameShape">
+                 <enum>QFrame::Box</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Sunken</enum>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
            </widget>
           </item>
           <item row="0" column="0">
@@ -575,6 +604,9 @@ QPushButton::checked {
               <height>20</height>
              </size>
             </property>
+            <property name="shortcut">
+             <string>Ctrl+1</string>
+            </property>
             <property name="checkable">
              <bool>true</bool>
             </property>
@@ -587,9 +619,22 @@ QPushButton::checked {
            </widget>
           </item>
           <item row="2" column="0">
-           <widget class="QPushButton" name="pushButton">
+           <widget class="QPushButton" name="uExtruderTabButton">
             <property name="text">
              <string>Extruder</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../resources/resources.qrc">
+              <normaloff>:/tools_phillips_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/tools_phillips_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="shortcut">
+             <string>Ctrl+3</string>
             </property>
             <property name="checkable">
              <bool>true</bool>
@@ -752,6 +797,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <string>Help</string>
     </property>
     <addaction name="uActionOpenGitHub"/>
+    <addaction name="uActionOpenErigEv"/>
     <addaction name="separator"/>
     <addaction name="uAboutAction"/>
    </widget>
@@ -886,6 +932,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </property>
    <property name="autoRepeat">
     <bool>false</bool>
+   </property>
+  </action>
+  <action name="uActionOpenErigEv">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Visit ERIG e.V. ...</string>
+   </property>
+   <property name="iconText">
+    <string>Visit ERIG e.V. ...</string>
+   </property>
+   <property name="toolTip">
+    <string>Visit ERIG e.V. ...</string>
    </property>
   </action>
  </widget>

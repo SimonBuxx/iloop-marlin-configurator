@@ -13,6 +13,8 @@ MainWindow::MainWindow(QWidget *pParent)
     mUi->setupUi(this);
 
     ConnectGuiSignalsAndSlots();
+
+    mUi->stackedWidget->setCurrentIndex(0);
 }
 
 MainWindow::~MainWindow()
@@ -46,14 +48,16 @@ void MainWindow::ConnectGuiSignalsAndSlots()
         emit SaveProjectSignal(config, true);
     });
 
-    QObject::connect(mUi->uOpenProjectAction, &QAction::triggered, this, [&]()
-    {
-        emit OpenProjectSignal();
-    });
+    QObject::connect(mUi->uOpenProjectAction, &QAction::triggered, this, &MainWindow::OpenProjectSignal);
 
     QObject::connect(mUi->uActionOpenGitHub, &QAction::triggered, this, [&]()
     {
         QDesktopServices::openUrl(QUrl("https://github.com/SimonBuxx/iloop-marlin-configurator/"));
+    });
+
+    QObject::connect(mUi->uActionOpenErigEv, &QAction::triggered, this, [&]()
+    {
+        QDesktopServices::openUrl(QUrl("https://er-ig.de/"));
     });
 
     QObject::connect(mUi->uFirmwareTabButton, &QPushButton::clicked, this, [&]()
@@ -64,6 +68,11 @@ void MainWindow::ConnectGuiSignalsAndSlots()
     QObject::connect(mUi->uHardwareTabButton, &QPushButton::clicked, this, [&]()
     {
         mUi->stackedWidget->setCurrentIndex(1);
+    });
+
+    QObject::connect(mUi->uExtruderTabButton, &QPushButton::clicked, this, [&]()
+    {
+        mUi->stackedWidget->setCurrentIndex(2);
     });
 }
 
