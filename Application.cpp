@@ -23,7 +23,7 @@ Application::Application(QObject *parent)
     QObject::connect(&mMainWindow, &MainWindow::NewProjectSignal, this, &Application::OnNewProject);
     QObject::connect(&mMainWindow, &MainWindow::OpenProjectSignal, this, &Application::OnOpenProject);
 
-    mMainWindow.Log("Reading Configuration.h template for Marlin v2.1.2...");
+    mMainWindow.Log("Reading Configuration.h template...");
     mTemplate = ReadConfigurationTemplateFromFile(QFileInfo(TEMPLATE_PATH));
 
     mMainWindow.show();
