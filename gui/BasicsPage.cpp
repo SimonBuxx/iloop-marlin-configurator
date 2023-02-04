@@ -1,6 +1,6 @@
 #include "BasicsPage.h"
 #include "./ui_BasicsPage.h"
-#include "HelperFunctions.h"
+#include "../HelperFunctions.h"
 #include <QStyledItemDelegate>
 #include <QAbstractItemView>
 

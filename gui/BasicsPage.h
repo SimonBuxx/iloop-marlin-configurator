@@ -1,7 +1,7 @@
 #ifndef BASICSPAGE_H
 #define BASICSPAGE_H
 
-#include "Configuration.h"
+#include "../Configuration.h"
 #include "Endstops_Configurator.h"
 #include <QWidget>
 

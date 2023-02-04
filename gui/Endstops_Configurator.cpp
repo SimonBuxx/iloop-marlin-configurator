@@ -1,6 +1,6 @@
 #include "Endstops_Configurator.h"
 #include "ui_Endstops_Configurator.h"
-#include "Configuration.h"
+#include "../Configuration.h"
 
 Endstops_Configurator::Endstops_Configurator(QWidget *parent) :
     QDialog(parent),

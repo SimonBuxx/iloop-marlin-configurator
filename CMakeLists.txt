@@ -2,48 +2,25 @@ cmake_minimum_required(VERSION 3.5)
 
 project(Marlin_Configurator VERSION 0.1 LANGUAGES CXX)
 
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set(APP_ICON_RESOURCE_WINDOWS "${CMAKE_CURRENT_SOURCE_DIR}/resources/icon.rc")
+
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
-
-set(PROJECT_SOURCES
-        main.cpp
-        MainWindow.cpp
-        MainWindow.h
-        MainWindow.ui
-        BasicsPage.h
-        BasicsPage.cpp
-        BasicsPage.ui
-        Endstops_Configurator.h
-        Endstops_Configurator.cpp
-        Endstops_Configurator.ui
-        AboutDialog.h
-        AboutDialog.cpp
-        AboutDialog.ui
-        Application.h
-        Application.cpp
-        TemperaturesPage.h
-        TemperaturesPage.cpp
-        TemperaturesPage.ui
-        HotendTempSensorsConfigurator.h
-        HotendTempSensorsConfigurator.cpp
-        HotendTempSensorsConfigurator.ui
-        Configuration.h
-        HelperFunctions.h
-        resources.qrc
-)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Marlin_Configurator
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        ${APP_ICON_RESOURCE_WINDOWS}
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Marlin_Configurator APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -59,18 +36,35 @@ else()
     else()
         add_executable(Marlin_Configurator
             ${PROJECT_SOURCES}
+            ${APP_ICON_RESOURCE_WINDOWS}
         )
     endif()
 endif()
 
-target_link_libraries(Marlin_Configurator PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(Marlin_Configurator
+    PRIVATE
+        Qt${QT_VERSION_MAJOR}::Widgets
+        GUI_IMC::GUI
+)
 
-set_target_properties(Marlin_Configurator PROPERTIES
-    MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
-    MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
-    MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
-    MACOSX_BUNDLE TRUE
-    WIN32_EXECUTABLE TRUE
+target_sources(Marlin_Configurator
+    PRIVATE
+        main.cpp
+        Application.h
+        Application.cpp
+        Configuration.h
+        HelperFunctions.h
+        resources/resources.qrc
+)
+
+set_target_properties(Marlin_Configurator
+    PROPERTIES
+        OUTPUT_NAME "iMC"
+)
+
+set_target_properties(Marlin_Configurator
+    PROPERTIES
+        WIN32_EXECUTABLE TRUE
 )
 
 install(TARGETS Marlin_Configurator
@@ -80,3 +74,5 @@ install(TARGETS Marlin_Configurator
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(Marlin_Configurator)
 endif()
+
+add_subdirectory(gui)

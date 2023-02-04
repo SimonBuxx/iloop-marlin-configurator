@@ -32,8 +32,8 @@
    <string>Hotend Temperature Sensors Configuration</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="resources.qrc">
-    <normaloff>:/resources/iloop_icon_small.png</normaloff>:/resources/iloop_icon_small.png</iconset>
+   <iconset resource="../resources/resources.qrc">
+    <normaloff>:/iloop_icon_small.png</normaloff>:/iloop_icon_small.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">QWidget {
@@ -69,7 +69,7 @@ QComboBox::drop-down {
 }
 
 QComboBox::down-arrow {
-	image: url(&quot;:/resources/arrow_drop_down_FILL0_wght400_GRAD0_opsz20_white.svg&quot;);
+        image: url(&quot;:/arrow_drop_down_FILL0_wght400_GRAD0_opsz20_white.svg&quot;);
  	width: 6px;
 	margin-right: 4px;
 	margin-bottom: 2px;
@@ -2558,7 +2558,7 @@ QComboBox::down-arrow {
   </layout>
  </widget>
  <resources>
-  <include location="resources.qrc"/>
+  <include location="../resources/resources.qrc"/>
  </resources>
  <connections>
   <connection>

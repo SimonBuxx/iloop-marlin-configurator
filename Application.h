@@ -5,9 +5,9 @@
 #include <QMessageBox>
 
 #include "Configuration.h"
-#include "MainWindow.h"
+#include "gui/MainWindow.h"
 
-static constexpr auto TEMPLATE_PATH{":/resources/configuration_template.txt"};
+static constexpr auto TEMPLATE_PATH{":/configuration_template.txt"};
 
 class Application : public QObject
 {

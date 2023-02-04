@@ -20,8 +20,8 @@
    <string>iMC - iLOOP Marlin Configurator v0.1.0</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="resources.qrc">
-    <normaloff>:/resources/iloop_icon_small.png</normaloff>:/resources/iloop_icon_small.png</iconset>
+   <iconset resource="../resources/resources.qrc">
+    <normaloff>:/iloop_icon_small.png</normaloff>:/iloop_icon_small.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">QWidget {
@@ -437,8 +437,8 @@ QTabBar::tab:selected {
          </widget>
          <widget class="QWidget" name="tab_2">
           <attribute name="icon">
-           <iconset resource="resources.qrc">
-            <normaloff>:/resources/device_thermostat_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/resources/device_thermostat_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+           <iconset resource="../resources/resources.qrc">
+            <normaloff>:/device_thermostat_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/device_thermostat_FILL0_wght100_GRAD0_opsz20.svg</iconset>
           </attribute>
           <attribute name="title">
            <string>Temperatures</string>
@@ -487,8 +487,8 @@ QTabBar::tab:selected {
          </widget>
          <widget class="QWidget" name="tab_3">
           <attribute name="icon">
-           <iconset resource="resources.qrc">
-            <normaloff>:/resources/bolt_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/resources/bolt_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+           <iconset resource="../resources/resources.qrc">
+            <normaloff>:/bolt_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/bolt_FILL0_wght100_GRAD0_opsz20.svg</iconset>
           </attribute>
           <attribute name="title">
            <string>Motors</string>
@@ -520,8 +520,8 @@ QTabBar::tab:selected {
          </widget>
          <widget class="QWidget" name="tab_4">
           <attribute name="icon">
-           <iconset resource="resources.qrc">
-            <normaloff>:/resources/sensors_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/resources/sensors_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+           <iconset resource="../resources/resources.qrc">
+            <normaloff>:/sensors_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/sensors_FILL0_wght100_GRAD0_opsz20.svg</iconset>
           </attribute>
           <attribute name="title">
            <string>Sensors</string>
@@ -687,7 +687,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="resources.qrc">:/resources/iloop_alpha.png</pixmap>
+             <pixmap resource="../resources/resources.qrc">:/iloop_alpha.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -740,8 +740,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
   </widget>
   <action name="uOpenProjectAction">
    <property name="icon">
-    <iconset resource="resources.qrc">
-     <normaloff>:/resources/file_open_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/resources/file_open_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/file_open_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/file_open_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
     <string>Open Project...</string>
@@ -761,8 +761,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
   </action>
   <action name="uSaveProjectAction">
    <property name="icon">
-    <iconset resource="resources.qrc">
-     <normaloff>:/resources/save_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/resources/save_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/save_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/save_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
     <string>Save Project</string>
@@ -804,8 +804,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
   </action>
   <action name="uAboutAction">
    <property name="icon">
-    <iconset resource="resources.qrc">
-     <normaloff>:/resources/info_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/resources/info_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/info_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/info_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
     <string>About iMC...</string>
@@ -819,8 +819,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
   </action>
   <action name="uExportAction">
    <property name="icon">
-    <iconset resource="resources.qrc">
-     <normaloff>:/resources/export_notes_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/resources/export_notes_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/export_notes_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/export_notes_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
     <string>Export As...</string>
@@ -840,8 +840,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
   </action>
   <action name="uNewProjectAction">
    <property name="icon">
-    <iconset resource="resources.qrc">
-     <normaloff>:/resources/note_add_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/resources/note_add_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/note_add_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/note_add_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
     <string>New Project</string>
@@ -855,8 +855,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
   </action>
   <action name="uActionOpenGitHub">
    <property name="icon">
-    <iconset resource="resources.qrc">
-     <normaloff>:/resources/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/resources/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
     <string>GitHub...</string>
@@ -884,7 +884,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="resources.qrc"/>
+  <include location="../resources/resources.qrc"/>
  </resources>
  <connections/>
 </ui>

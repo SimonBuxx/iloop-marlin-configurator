@@ -60,7 +60,7 @@ QComboBox::drop-down {
 }
 
 QComboBox::down-arrow {
-	image: url(&quot;:/resources/arrow_drop_down_FILL0_wght400_GRAD0_opsz20_white.svg&quot;);
+        image: url(&quot;:/arrow_drop_down_FILL0_wght400_GRAD0_opsz20_white.svg&quot;);
  	width: 6px;
 	margin-right: 4px;
 	margin-bottom: 2px;
@@ -98,11 +98,11 @@ QRadioButton::indicator {
 }
 
 QRadioButton::indicator:unchecked {
-	image: url(&quot;:/resources/radio_button_unchecked_FILL0_wght400_GRAD0_opsz20.svg&quot;);
+        image: url(&quot;:/radio_button_unchecked_FILL0_wght400_GRAD0_opsz20.svg&quot;);
 }
 
 QRadioButton::indicator:checked {
-	image: url(&quot;:/resources/radio_button_checked_FILL0_wght400_GRAD0_opsz20.svg&quot;);
+        image: url(&quot;:/radio_button_checked_FILL0_wght400_GRAD0_opsz20.svg&quot;);
 }
 
 QLabel {
@@ -126,14 +126,14 @@ QAbstractSpinBox:focus {
 }
 
 QAbstractSpinBox::up-button {
-	image: url(&quot;:/resources/arrow_drop_up_FILL0_wght400_GRAD0_opsz20_white.svg&quot;);
+        image: url(&quot;:/arrow_drop_up_FILL0_wght400_GRAD0_opsz20_white.svg&quot;);
  	width: 6px;
 	margin-right: 6px;
 	margin-top: 4px;
 }
 
 QAbstractSpinBox::down-button {
-	image: url(&quot;:/resources/arrow_drop_down_FILL0_wght400_GRAD0_opsz20_white.svg&quot;);
+        image: url(&quot;:/arrow_drop_down_FILL0_wght400_GRAD0_opsz20_white.svg&quot;);
  	width: 6px;
 	margin-right: 6px;
 	margin-bottom: 4px;
@@ -141,12 +141,12 @@ QAbstractSpinBox::down-button {
 
 QAbstractSpinBox::up-button:disabled,
 QAbstractSpinBox::up-button:off {
-		image: url(&quot;:/resources/arrow_drop_up_FILL0_wght400_GRAD0_opsz20.svg&quot;);
+                image: url(&quot;:/arrow_drop_up_FILL0_wght400_GRAD0_opsz20.svg&quot;);
 }
 
 QAbstractSpinBox::down-button:disabled,
 QAbstractSpinBox::down-button:off {
-		image: url(&quot;:/resources/arrow_drop_down_FILL0_wght400_GRAD0_opsz20.svg&quot;);
+                image: url(&quot;:/arrow_drop_down_FILL0_wght400_GRAD0_opsz20.svg&quot;);
 }</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
@@ -1410,8 +1410,8 @@ QAbstractSpinBox::down-button:off {
       <string>Configure</string>
      </property>
      <property name="icon">
-      <iconset resource="resources.qrc">
-       <normaloff>:/resources/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/resources/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+      <iconset resource="../resources/resources.qrc">
+       <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
      </property>
     </widget>
    </item>
@@ -1424,8 +1424,8 @@ QAbstractSpinBox::down-button:off {
       <string>Configure</string>
      </property>
      <property name="icon">
-      <iconset resource="resources.qrc">
-       <normaloff>:/resources/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/resources/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+      <iconset resource="../resources/resources.qrc">
+       <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
      </property>
     </widget>
    </item>
@@ -1438,8 +1438,8 @@ QAbstractSpinBox::down-button:off {
       <string>Configure</string>
      </property>
      <property name="icon">
-      <iconset resource="resources.qrc">
-       <normaloff>:/resources/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/resources/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+      <iconset resource="../resources/resources.qrc">
+       <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
      </property>
     </widget>
    </item>
@@ -1481,7 +1481,7 @@ QAbstractSpinBox::down-button:off {
   </layout>
  </widget>
  <resources>
-  <include location="resources.qrc"/>
+  <include location="../resources/resources.qrc"/>
  </resources>
  <connections/>
  <buttongroups>

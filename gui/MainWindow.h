@@ -30,7 +30,7 @@
 #include <QMainWindow>
 
 #include "AboutDialog.h"
-#include "Configuration.h"
+#include "../Configuration.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui

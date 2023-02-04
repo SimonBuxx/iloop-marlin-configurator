@@ -1,0 +1,26 @@
+<RCC>
+    <qresource prefix="/">
+        <file>save_FILL0_wght100_GRAD0_opsz20.svg</file>
+        <file>file_open_FILL0_wght100_GRAD0_opsz20.svg</file>
+        <file>note_add_FILL0_wght100_GRAD0_opsz20.svg</file>
+        <file>export_notes_FILL0_wght100_GRAD0_opsz20.svg</file>
+        <file>info_FILL0_wght100_GRAD0_opsz20.svg</file>
+        <file>bolt_FILL0_wght100_GRAD0_opsz20.svg</file>
+        <file>device_thermostat_FILL0_wght100_GRAD0_opsz20.svg</file>
+        <file>sensors_FILL0_wght100_GRAD0_opsz20.svg</file>
+        <file>open_in_new_FILL0_wght100_GRAD0_opsz20.svg</file>
+        <file>iloop_alpha.png</file>
+        <file>iloop_icon_small.png</file>
+        <file>SourceCodePro-Regular.ttf</file>
+        <file>check_FILL0_wght400_GRAD0_opsz20.png</file>
+        <file>radio_button_checked_FILL0_wght400_GRAD0_opsz20.svg</file>
+        <file>radio_button_unchecked_FILL0_wght400_GRAD0_opsz20.svg</file>
+        <file>check_FILL0_wght400_GRAD0_opsz20.svg</file>
+        <file>arrow_drop_down_FILL0_wght400_GRAD0_opsz20.svg</file>
+        <file>arrow_drop_up_FILL0_wght400_GRAD0_opsz20.svg</file>
+        <file>arrow_drop_down_FILL0_wght400_GRAD0_opsz20_white.svg</file>
+        <file>arrow_drop_up_FILL0_wght400_GRAD0_opsz20_white.svg</file>
+        <file>configuration_template.txt</file>
+        <file>SourceSansPro-Regular.ttf</file>
+    </qresource>
+</RCC>
