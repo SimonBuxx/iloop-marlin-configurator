@@ -1,5 +1,7 @@
 #include "FirmwarePage.h"
 #include "./ui_FirmwarePage.h"
+#include "HelperFunctions.h"
+
 #include <QStyledItemDelegate>
 #include <QAbstractItemView>
 
@@ -26,9 +28,16 @@ void FirmwarePage::ResetValues()
     mUi->uCustomStatusScreenImageCheckBox->setChecked(defaults::CUSTOM_STATUS_SCREEN_IMAGE);
 }
 
-void FirmwarePage::LoadFromJson(QJsonDocument &pJson)
+bool FirmwarePage::LoadFromJson(const QJsonObject &pJson)
 {
+    bool success = true;
+    success &= LoadStringToLineEdit(mUi->uAuthorNameEdit, pJson, "STRING_CONFIG_H_AUTHOR");
+    success &= LoadStringToLineEdit(mUi->uCustomVersionFileEdit, pJson, "CUSTOM_VERSION_FILE");
+    success &= LoadBool(mUi->uShowBootscreenCheckBox, pJson, "SHOW_BOOTSCREEN");
+    success &= LoadBool(mUi->uShowCustomBootscreenCheckBox, pJson, "SHOW_CUSTOM_BOOTSCREEN");
+    success &= LoadBool(mUi->uCustomStatusScreenImageCheckBox, pJson, "CUSTOM_STATUS_SCREEN_IMAGE");
 
+    return success;
 }
 
 void FirmwarePage::FetchConfiguration(Configuration& pConfig)

@@ -70,6 +70,8 @@ public:
     /// \param pName: The new project name to display or std::nullopt to display no name
     void SetProjectName(const std::optional<QString>& pName);
 
+    bool LoadProject(const QJsonObject& pJson);
+
 signals:
     /// \brief Emitted when a configuration should be exported as a C++ header file
     ///
@@ -85,6 +87,8 @@ signals:
 
     /// \brief Emitted when a new project is being initialized
     void NewProjectSignal(void);
+
+    void OpenProjectSignal(void);
 
 public slots:
     /// \brief Initializes a new project by resetting the configuration

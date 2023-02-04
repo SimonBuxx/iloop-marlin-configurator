@@ -46,6 +46,11 @@ void MainWindow::ConnectGuiSignalsAndSlots()
         emit SaveProjectSignal(config, true);
     });
 
+    QObject::connect(mUi->uOpenProjectAction, &QAction::triggered, this, [&]()
+    {
+        emit OpenProjectSignal();
+    });
+
     QObject::connect(mUi->uActionOpenGitHub, &QAction::triggered, this, [&]()
     {
         QDesktopServices::openUrl(QUrl("https://github.com/SimonBuxx/iloop-marlin-configurator/"));
@@ -88,6 +93,31 @@ void MainWindow::SetProjectName(const std::optional<QString>& pName)
     mUi->uProjectLabel->setText(QString("Project: %0").arg(pName.value_or("-")));
 
     setWindowTitle(QString("%0iMC - iLOOP Marlin Configurator v0.1.0").arg(pName.has_value() ? pName.value() + " - " : ""));
+}
+
+bool MainWindow::LoadProject(const QJsonObject& pJson)
+{
+    bool success = true;
+
+    if (pJson.contains("firmware") && pJson["firmware"].isObject())
+    {
+        success &= mUi->uFirmwarePage->LoadFromJson(pJson["firmware"].toObject());
+    }
+    else
+    {
+        success = false;
+    }
+
+    if (pJson.contains("hardware") && pJson["hardware"].isObject())
+    {
+        success &= mUi->uHardwarePage->LoadFromJson(pJson["hardware"].toObject());
+    }
+    else
+    {
+        success = false;
+    }
+
+    return success;
 }
 
 void MainWindow::Log(const QString& pText, const QString& pColorString)

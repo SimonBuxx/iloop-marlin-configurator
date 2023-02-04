@@ -21,6 +21,7 @@ Application::Application(QObject *parent)
     QObject::connect(&mMainWindow, &MainWindow::ExportConfigurationSignal, this, &Application::OnExportConfiguration);
     QObject::connect(&mMainWindow, &MainWindow::SaveProjectSignal, this, &Application::OnSaveProject);
     QObject::connect(&mMainWindow, &MainWindow::NewProjectSignal, this, &Application::OnNewProject);
+    QObject::connect(&mMainWindow, &MainWindow::OpenProjectSignal, this, &Application::OnOpenProject);
 
     mMainWindow.Log("Reading Configuration.h template for Marlin v2.1.2...");
     mTemplate = ReadConfigurationTemplateFromFile(QFileInfo(TEMPLATE_PATH));
@@ -147,6 +148,50 @@ void Application::OnSaveProject(const Configuration& pConfig, bool pForceSaveAs)
 void Application::OnNewProject()
 {
     mOpenFileInfo = std::nullopt;
+}
+
+void Application::OnOpenProject()
+{
+    QFileInfo fileInfo;
+
+    QString fileName = QFileDialog::getOpenFileName(&mMainWindow, tr("Open Project..."), QDir::homePath(), tr("JSON document (*.json)"));
+
+    if (fileName.isEmpty())
+    {
+        return;
+    }
+
+    fileInfo = QFileInfo(fileName);
+
+    QFile file(fileInfo.filePath());
+
+    if (!file.open(QIODevice::ReadOnly))
+    {
+        mMainWindow.Log(QString("Could not open file %0").arg(fileInfo.filePath()), "red");
+        return;
+    }
+
+    auto bytes = file.readAll();
+
+    file.close();
+
+    QJsonParseError jsonError;
+    QJsonDocument document = QJsonDocument::fromJson(bytes, &jsonError);
+    if (jsonError.error != QJsonParseError::NoError || !document.isObject())
+    {
+        mMainWindow.Log(QString("Could not open file %0").arg(fileInfo.filePath()), "red");
+        return;
+    }
+
+    if (!mMainWindow.LoadProject(document.object()))
+    {
+        mMainWindow.Log(QString("Content of file %0 incomplete, proceed with caution.").arg(fileInfo.filePath()), "red");
+    }
+
+    mMainWindow.Log(QString("Opened project %0").arg(fileInfo.filePath()), "green");
+
+    mOpenFileInfo = fileInfo;
+    mMainWindow.SetProjectName(fileInfo.baseName());
 }
 
 std::optional<QStringList> Application::GenerateConfigurationContent(const Configuration& pConfig)

@@ -2,7 +2,6 @@
 #define HARDWAREPAGE_H
 
 #include "../Configuration.h"
-#include "Endstops_Configurator.h"
 #include <QWidget>
 
 namespace Ui {
@@ -19,14 +18,12 @@ public:
 
     void ResetValues(void);
 
-    void LoadFromJson(QJsonDocument &pJson);
+    bool LoadFromJson(const QJsonObject &pJson);
 
     void FetchConfiguration(Configuration& pConfig);
 
 protected:
     Ui::HardwarePage *mUi;
-
-    Endstops_Configurator mEndstopsConfigurator;
 };
 
 #endif // HARDWAREPAGE_H

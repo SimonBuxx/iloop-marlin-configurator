@@ -52,9 +52,31 @@ void HardwarePage::ResetValues()
     mUi->uMachineUuidEdit->setText(defaults::MACHINE_UUID);
 }
 
-void HardwarePage::LoadFromJson(QJsonDocument &pJson)
+bool HardwarePage::LoadFromJson(const QJsonObject &pJson)
 {
+    bool success = true;
+    if (pJson.contains("MOTHERBOARD") && pJson["MOTHERBOARD"].isString())
+    {
+        const auto&& index = mUi->uMotherboardBox->findText(pJson["MOTHERBOARD"].toString(), Qt::MatchContains);
+        mUi->uMotherboardBox->setCurrentIndex(index);
+    }
+    else
+    {
+        success = false;
+    }
 
+    success &= LoadStringToComboBox(mUi->uSerialPortBox, pJson, "SERIAL_PORT");
+    success &= LoadStringToComboBox(mUi->uBaudrateBox, pJson, "BAUDRATE");
+    success &= LoadBool(mUi->uBaudRateGCodeCheckBox, pJson, "BAUD_RATE_GCODE");
+    success &= LoadStringToComboBox(mUi->uSerialPort2ComboBox, pJson, "SERIAL_PORT_2");
+    success &= LoadStringToComboBox(mUi->uBaudRate2ComboBox, pJson, "BAUDRATE_2");
+    success &= LoadStringToComboBox(mUi->uSerialPort3ComboBox, pJson, "SERIAL_PORT_3");
+    success &= LoadStringToComboBox(mUi->uBaudRate3ComboBox, pJson, "BAUDRATE_3");
+    success &= LoadBool(mUi->uBluetoothCheckBox, pJson, "BLUETOOTH");
+    success &= LoadStringToLineEdit(mUi->uPrinterNameEdit, pJson, "CUSTOM_MACHINE_NAME");
+    success &= LoadStringToLineEdit(mUi->uMachineUuidEdit, pJson, "MACHINE_UUID");
+
+    return success;
 }
 
 void HardwarePage::FetchConfiguration(Configuration& pConfig)

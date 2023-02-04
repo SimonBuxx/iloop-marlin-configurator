@@ -24,6 +24,8 @@ protected slots:
 
     void OnNewProject(void);
 
+    void OnOpenProject(void);
+
 protected:
     std::optional<QStringList> ReadConfigurationTemplateFromFile(const QFileInfo& pFileInfo);
 

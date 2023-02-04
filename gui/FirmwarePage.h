@@ -18,7 +18,7 @@ public:
 
     void ResetValues(void);
 
-    void LoadFromJson(QJsonDocument &pJson);
+    bool LoadFromJson(const QJsonObject &pJson);
 
     void FetchConfiguration(Configuration& pConfig);
 
