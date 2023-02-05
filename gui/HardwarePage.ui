@@ -31,6 +31,11 @@ QCheckBox {
         border-radius: 3px;
 }
 
+QCheckBox:disabled {
+	background: rgb(38, 43, 50);
+	color: rgb(180, 180, 180);
+}
+
 QCheckBox::hover {
         border: 1px solid rgb(100, 105, 113);
 }
@@ -40,6 +45,12 @@ QCheckBox:focus {
 }
 
 QCheckBox::indicator {
+    width: 15px;
+    height: 15px;
+    background: rgb(33, 37, 43);
+}
+
+QCheckBox::indicator:disabled {
     width: 15px;
     height: 15px;
     background: rgb(33, 37, 43);
@@ -70,7 +81,7 @@ QPushButton:focus {
 
 QComboBox {
 	color: white;
-	background: rgb(54, 60, 70);
+    background: rgb(54, 60, 70);
     border: 1px inset rgb(18, 21, 24);
 	border-radius: 3px;
 	padding: 5px;
@@ -102,10 +113,15 @@ QComboBox::down-arrow {
 
 QLineEdit {
 	color: white;
-	background: rgb(27, 30, 35);
+    background: rgb(54, 60, 70);
     border: 1px inset rgb(18, 21, 24);
 	border-radius: 3px;
 	padding: 5px;
+}
+
+QLineEdit:disabled {
+	background: rgb(38, 43, 50);
+	color: rgb(180, 180, 180);
 }
 
 QLineEdit:hover {
@@ -116,39 +132,21 @@ QLineEdit:focus {
 	border: 1px solid rgb(76, 157, 255);
 }
 
-QRadioButton {
-	padding: 5px;
-	border: 1px solid transparent;
-	border-radius: 3px;
-}
-
-QRadioButton::hover {
-	border: 1px solid rgb(54, 60, 70);
-}
-
-QRadioButton::indicator {
-    width: 13px;
-    height: 13px;
-}
-
-QRadioButton::indicator:unchecked {
-        image: url(&quot;:/radio_button_unchecked_FILL0_wght400_GRAD0_opsz20.svg&quot;);
-}
-
-QRadioButton::indicator:checked {
-        image: url(&quot;:/radio_button_checked_FILL0_wght400_GRAD0_opsz20.svg&quot;);
-}
-
 QLabel {
 	min-height: 30px;
 }
 
 QAbstractSpinBox {
 	color: white;
-	background: rgb(27, 30, 35);
+    background: rgb(54, 60, 70);
     border: 1px inset rgb(18, 21, 24);
 	border-radius: 3px;
 	padding: 5px;
+}
+
+QAbstractSpinBox:disabled {
+	background: rgb(38, 43, 50);
+	color: rgb(180, 180, 180);
 }
 
 QAbstractSpinBox:hover {
@@ -184,223 +182,146 @@ QAbstractSpinBox::down-button:off {
 }</string>
   </property>
   <layout class="QGridLayout" name="gridLayout" columnstretch="0,0,0,0,0,1">
-   <item row="7" column="0">
-    <widget class="QLabel" name="label_13">
+   <item row="2" column="4" colspan="2">
+    <widget class="QComboBox" name="uSerialPortBox">
+     <property name="currentIndex">
+      <number>1</number>
+     </property>
+     <item>
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>0</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>1</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>3</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>4</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>5</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>6</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>7</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="11" column="4" colspan="2">
+    <widget class="QLineEdit" name="uPrinterNameEdit"/>
+   </item>
+   <item row="8" column="4" colspan="2">
+    <widget class="QComboBox" name="uSerialPort3ComboBox">
      <property name="font">
       <font>
        <family>Source Sans Pro</family>
-       <italic>true</italic>
+       <bold>true</bold>
       </font>
      </property>
+     <item>
+      <property name="text">
+       <string>No port selected</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>0</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>1</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>3</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>4</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>5</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>6</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>7</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="text">
-      <string>Serial Port 2 Baud Rate:</string>
+      <string>Enable G-code M575 to set the baud rate:</string>
      </property>
     </widget>
    </item>
-   <item row="2" column="2">
-    <widget class="QLabel" name="label_11">
-     <property name="palette">
-      <palette>
-       <active>
-        <colorrole role="WindowText">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>100</red>
-           <green>105</green>
-           <blue>113</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Button">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>30</red>
-           <green>30</green>
-           <blue>30</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Text">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>100</red>
-           <green>105</green>
-           <blue>113</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="ButtonText">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>100</red>
-           <green>105</green>
-           <blue>113</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Base">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>30</red>
-           <green>30</green>
-           <blue>30</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Window">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>30</red>
-           <green>30</green>
-           <blue>30</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="PlaceholderText">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>100</red>
-           <green>105</green>
-           <blue>113</blue>
-          </color>
-         </brush>
-        </colorrole>
-       </active>
-       <inactive>
-        <colorrole role="WindowText">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>100</red>
-           <green>105</green>
-           <blue>113</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Button">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>30</red>
-           <green>30</green>
-           <blue>30</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Text">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>100</red>
-           <green>105</green>
-           <blue>113</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="ButtonText">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>100</red>
-           <green>105</green>
-           <blue>113</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Base">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>30</red>
-           <green>30</green>
-           <blue>30</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Window">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>30</red>
-           <green>30</green>
-           <blue>30</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="PlaceholderText">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>100</red>
-           <green>105</green>
-           <blue>113</blue>
-          </color>
-         </brush>
-        </colorrole>
-       </inactive>
-       <disabled>
-        <colorrole role="WindowText">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>100</red>
-           <green>105</green>
-           <blue>113</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Button">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>30</red>
-           <green>30</green>
-           <blue>30</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Text">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>100</red>
-           <green>105</green>
-           <blue>113</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="ButtonText">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>100</red>
-           <green>105</green>
-           <blue>113</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Base">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>30</red>
-           <green>30</green>
-           <blue>30</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Window">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>30</red>
-           <green>30</green>
-           <blue>30</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="PlaceholderText">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>100</red>
-           <green>105</green>
-           <blue>113</blue>
-          </color>
-         </brush>
-        </colorrole>
-       </disabled>
-      </palette>
+   <item row="6" column="2">
+    <widget class="QLabel" name="label_28">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
      </property>
      <property name="font">
       <font>
        <family>Source Sans Pro</family>
+       <bold>true</bold>
       </font>
      </property>
      <property name="styleSheet">
@@ -411,10 +332,7 @@ QAbstractSpinBox::down-button:off {
 </string>
      </property>
      <property name="text">
-      <string>SERIAL_PORT</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      <string>SERIAL_PORT_2⁺</string>
      </property>
     </widget>
    </item>
@@ -431,8 +349,353 @@ QAbstractSpinBox::down-button:off {
      </property>
     </spacer>
    </item>
+   <item row="0" column="1">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="label_4">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Motherboard:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="4" colspan="2">
+    <widget class="QCheckBox" name="uBluetoothCheckBox">
+     <property name="text">
+      <string>BLUETOOTH</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="0">
+    <widget class="QLabel" name="label_25">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Source Sans Pro</family>
+       <italic>true</italic>
+      </font>
+     </property>
+     <property name="text">
+      <string>Enable Bluetooth on AT90USB devices:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="4" colspan="2">
+    <widget class="QComboBox" name="uBaudRate3ComboBox">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <item>
+      <property name="text">
+       <string>Use BAUDRATE</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2400</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>9600</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>19200</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>38400</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>57600</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>115200</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>250000</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>500000</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>1000000</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="7" column="0">
+    <widget class="QLabel" name="label_13">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Source Sans Pro</family>
+       <italic>true</italic>
+      </font>
+     </property>
+     <property name="text">
+      <string>Serial Port 2 Baud Rate:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="2">
+    <widget class="QLabel" name="label_31">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+	min-height: 24px;
+	color: rgb(100, 105, 113);
+}
+</string>
+     </property>
+     <property name="text">
+      <string>BAUDRATE_3</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="2">
+    <widget class="QLabel" name="label_32">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+	min-height: 24px;
+	color: rgb(100, 105, 113);
+}
+</string>
+     </property>
+     <property name="text">
+      <string>BLUETOOTH</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="4" colspan="2">
+    <widget class="QComboBox" name="uBaudrateBox">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="currentIndex">
+      <number>6</number>
+     </property>
+     <item>
+      <property name="text">
+       <string>2400</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>9600</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>19200</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>38400</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>57600</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>115200</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>250000</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>500000</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>1000000</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="8" column="0">
+    <widget class="QLabel" name="label_15">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Source Sans Pro</family>
+       <italic>true</italic>
+      </font>
+     </property>
+     <property name="text">
+      <string>Serial Port 3:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="2">
+    <widget class="QLabel" name="label_3">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+	min-height: 24px;
+	color: rgb(100, 105, 113);
+}
+</string>
+     </property>
+     <property name="text">
+      <string>BAUD_RATE_GCODE</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="2">
+    <widget class="QLabel" name="label_29">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+	min-height: 24px;
+	color: rgb(100, 105, 113);
+}
+</string>
+     </property>
+     <property name="text">
+      <string>BAUDRATE_2</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="2">
+    <widget class="QLabel" name="label_30">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Source Sans Pro</family>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+	min-height: 24px;
+	color: rgb(100, 105, 113);
+}
+</string>
+     </property>
+     <property name="text">
+      <string>SERIAL_PORT_3⁺</string>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="0">
+    <widget class="QLabel" name="label_7">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Source Sans Pro</family>
+       <italic>true</italic>
+      </font>
+     </property>
+     <property name="text">
+      <string>Printer Name:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="4" colspan="2">
+    <widget class="QLineEdit" name="uMachineUuidEdit"/>
+   </item>
    <item row="0" column="2">
     <widget class="QLabel" name="label_12">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="palette">
       <palette>
        <active>
@@ -652,67 +915,71 @@ QAbstractSpinBox::down-button:off {
      </property>
     </widget>
    </item>
-   <item row="0" column="0">
-    <widget class="QLabel" name="label_4">
-     <property name="text">
-      <string>Motherboard:</string>
+   <item row="7" column="4" colspan="2">
+    <widget class="QComboBox" name="uBaudRate2ComboBox">
+     <property name="enabled">
+      <bool>false</bool>
      </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item row="10" column="4" colspan="2">
-    <widget class="QCheckBox" name="uBluetoothCheckBox">
-     <property name="text">
-      <string>BLUETOOTH</string>
-     </property>
-    </widget>
-   </item>
-   <item row="8" column="0">
-    <widget class="QLabel" name="label_15">
-     <property name="font">
-      <font>
-       <family>Source Sans Pro</family>
-       <italic>true</italic>
-      </font>
-     </property>
-     <property name="text">
-      <string>Serial Port 3:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="3">
-    <spacer name="horizontalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>40</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="6" column="0">
-    <widget class="QLabel" name="label_8">
-     <property name="font">
-      <font>
-       <family>Source Sans Pro</family>
-       <italic>true</italic>
-      </font>
-     </property>
-     <property name="text">
-      <string>Serial Port 2:</string>
-     </property>
+     <item>
+      <property name="text">
+       <string>Use BAUDRATE</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2400</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>9600</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>19200</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>38400</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>57600</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>115200</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>250000</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>500000</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>1000000</string>
+      </property>
+     </item>
     </widget>
    </item>
    <item row="11" column="2">
     <widget class="QLabel" name="label_9">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="palette">
       <palette>
        <active>
@@ -932,436 +1199,14 @@ QAbstractSpinBox::down-button:off {
      </property>
     </widget>
    </item>
-   <item row="3" column="0">
-    <widget class="QLabel" name="label_6">
-     <property name="text">
-      <string>Serial Port Baud Rate</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="1">
-    <spacer name="horizontalSpacer">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>40</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="12" column="0">
-    <widget class="QLabel" name="label_26">
-     <property name="font">
-      <font>
-       <family>Source Sans Pro</family>
-       <italic>true</italic>
-      </font>
-     </property>
-     <property name="text">
-      <string>Machine UUID:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="2">
-    <widget class="QLabel" name="label_3">
-     <property name="styleSheet">
-      <string notr="true">QLabel {
-	min-height: 24px;
-	color: rgb(100, 105, 113);
-}
-</string>
-     </property>
-     <property name="text">
-      <string>BAUD_RATE_GCODE</string>
-     </property>
-    </widget>
-   </item>
-   <item row="11" column="4" colspan="2">
-    <widget class="QLineEdit" name="uPrinterNameEdit"/>
-   </item>
-   <item row="3" column="4" colspan="2">
-    <widget class="QComboBox" name="uBaudrateBox">
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-     <property name="currentIndex">
-      <number>6</number>
-     </property>
-     <item>
-      <property name="text">
-       <string>2400</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>9600</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>19200</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>38400</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>57600</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>115200</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>250000</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>500000</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>1000000</string>
-      </property>
-     </item>
-    </widget>
-   </item>
-   <item row="12" column="4" colspan="2">
-    <widget class="QLineEdit" name="uMachineUuidEdit"/>
-   </item>
-   <item row="12" column="2">
-    <widget class="QLabel" name="label_27">
-     <property name="styleSheet">
-      <string notr="true">QLabel {
-	min-height: 24px;
-	color: rgb(100, 105, 113);
-}
-</string>
-     </property>
-     <property name="text">
-      <string>MACHINE_UUID</string>
-     </property>
-    </widget>
-   </item>
-   <item row="11" column="0">
-    <widget class="QLabel" name="label_7">
-     <property name="font">
-      <font>
-       <family>Source Sans Pro</family>
-       <italic>true</italic>
-      </font>
-     </property>
-     <property name="text">
-      <string>Printer Name:</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item row="8" column="4" colspan="2">
-    <widget class="QComboBox" name="uSerialPort3ComboBox">
-     <item>
-      <property name="text">
-       <string>No port selected</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>-1</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>0</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>1</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>2</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>3</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>4</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>5</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>6</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>7</string>
-      </property>
-     </item>
-    </widget>
-   </item>
-   <item row="6" column="4" colspan="2">
-    <widget class="QComboBox" name="uSerialPort2ComboBox">
-     <item>
-      <property name="text">
-       <string>No port selected</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>-2</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>-1</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>0</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>1</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>2</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>3</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>4</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>5</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>6</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>7</string>
-      </property>
-     </item>
-    </widget>
-   </item>
-   <item row="7" column="2">
-    <widget class="QLabel" name="label_29">
-     <property name="styleSheet">
-      <string notr="true">QLabel {
-	min-height: 24px;
-	color: rgb(100, 105, 113);
-}
-</string>
-     </property>
-     <property name="text">
-      <string>BAUDRATE_2</string>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="2">
-    <widget class="QLabel" name="label_28">
-     <property name="styleSheet">
-      <string notr="true">QLabel {
-	min-height: 24px;
-	color: rgb(100, 105, 113);
-}
-</string>
-     </property>
-     <property name="text">
-      <string>SERIAL_PORT_2</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="4" colspan="2">
-    <widget class="QComboBox" name="uSerialPortBox">
-     <property name="currentIndex">
-      <number>1</number>
-     </property>
-     <item>
-      <property name="text">
-       <string>-1</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>0</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>1</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>2</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>3</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>4</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>5</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>6</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>7</string>
-      </property>
-     </item>
-    </widget>
-   </item>
-   <item row="7" column="4" colspan="2">
-    <widget class="QComboBox" name="uBaudRate2ComboBox">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <item>
-      <property name="text">
-       <string>Use BAUDRATE</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>2400</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>9600</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>19200</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>38400</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>57600</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>115200</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>250000</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>500000</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>1000000</string>
-      </property>
-     </item>
-    </widget>
-   </item>
-   <item row="8" column="2">
-    <widget class="QLabel" name="label_30">
-     <property name="styleSheet">
-      <string notr="true">QLabel {
-	min-height: 24px;
-	color: rgb(100, 105, 113);
-}
-</string>
-     </property>
-     <property name="text">
-      <string>SERIAL_PORT_3</string>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="0">
-    <widget class="QLabel" name="label_2">
-     <property name="text">
-      <string>Enable G-code M575 to set the baud rate:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="9" column="0">
-    <widget class="QLabel" name="label_24">
-     <property name="font">
-      <font>
-       <family>Source Sans Pro</family>
-       <italic>true</italic>
-      </font>
-     </property>
-     <property name="text">
-      <string>Serial Port 3 Baud Rate:</string>
-     </property>
-    </widget>
-   </item>
    <item row="3" column="2">
     <widget class="QLabel" name="label_10">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="palette">
       <palette>
        <active>
@@ -1581,8 +1426,349 @@ QAbstractSpinBox::down-button:off {
      </property>
     </widget>
    </item>
-   <item row="10" column="0">
-    <widget class="QLabel" name="label_25">
+   <item row="12" column="2">
+    <widget class="QLabel" name="label_27">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+	min-height: 24px;
+	color: rgb(100, 105, 113);
+}
+</string>
+     </property>
+     <property name="text">
+      <string>MACHINE_UUID</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="label_6">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Serial Port Baud Rate</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="4" colspan="2">
+    <widget class="QComboBox" name="uSerialPort2ComboBox">
+     <property name="font">
+      <font>
+       <family>Source Sans Pro</family>
+       <bold>true</bold>
+      </font>
+     </property>
+     <item>
+      <property name="text">
+       <string>No port selected</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>-2</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>0</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>1</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>3</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>4</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>5</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>6</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>7</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="2" column="2">
+    <widget class="QLabel" name="label_11">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="palette">
+      <palette>
+       <active>
+        <colorrole role="WindowText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>100</red>
+           <green>105</green>
+           <blue>113</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>30</red>
+           <green>30</green>
+           <blue>30</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Text">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>100</red>
+           <green>105</green>
+           <blue>113</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="ButtonText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>100</red>
+           <green>105</green>
+           <blue>113</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>30</red>
+           <green>30</green>
+           <blue>30</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>30</red>
+           <green>30</green>
+           <blue>30</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="PlaceholderText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>100</red>
+           <green>105</green>
+           <blue>113</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </active>
+       <inactive>
+        <colorrole role="WindowText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>100</red>
+           <green>105</green>
+           <blue>113</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>30</red>
+           <green>30</green>
+           <blue>30</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Text">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>100</red>
+           <green>105</green>
+           <blue>113</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="ButtonText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>100</red>
+           <green>105</green>
+           <blue>113</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>30</red>
+           <green>30</green>
+           <blue>30</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>30</red>
+           <green>30</green>
+           <blue>30</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="PlaceholderText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>100</red>
+           <green>105</green>
+           <blue>113</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </inactive>
+       <disabled>
+        <colorrole role="WindowText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>100</red>
+           <green>105</green>
+           <blue>113</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>30</red>
+           <green>30</green>
+           <blue>30</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Text">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>100</red>
+           <green>105</green>
+           <blue>113</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="ButtonText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>100</red>
+           <green>105</green>
+           <blue>113</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>30</red>
+           <green>30</green>
+           <blue>30</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>30</red>
+           <green>30</green>
+           <blue>30</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="PlaceholderText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>100</red>
+           <green>105</green>
+           <blue>113</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </disabled>
+      </palette>
+     </property>
+     <property name="font">
+      <font>
+       <family>Source Sans Pro</family>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+	min-height: 24px;
+	color: rgb(100, 105, 113);
+}
+</string>
+     </property>
+     <property name="text">
+      <string>SERIAL_PORT</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="4" colspan="2">
+    <widget class="QCheckBox" name="uBaudRateGCodeCheckBox">
+     <property name="text">
+      <string>BAUD_RATE_GCODE</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="label_8">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="font">
       <font>
        <family>Source Sans Pro</family>
@@ -1590,102 +1776,26 @@ QAbstractSpinBox::down-button:off {
       </font>
      </property>
      <property name="text">
-      <string>Enable Bluetooth on AT90USB devices:</string>
+      <string>Serial Port 2:</string>
      </property>
     </widget>
    </item>
-   <item row="9" column="4" colspan="2">
-    <widget class="QComboBox" name="uBaudRate3ComboBox">
-     <property name="enabled">
-      <bool>false</bool>
+   <item row="9" column="0">
+    <widget class="QLabel" name="label_24">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
      </property>
-     <item>
-      <property name="text">
-       <string>Use BAUDRATE</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>2400</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>9600</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>19200</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>38400</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>57600</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>115200</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>250000</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>500000</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>1000000</string>
-      </property>
-     </item>
-    </widget>
-   </item>
-   <item row="9" column="2">
-    <widget class="QLabel" name="label_31">
-     <property name="styleSheet">
-      <string notr="true">QLabel {
-	min-height: 24px;
-	color: rgb(100, 105, 113);
-}
-</string>
+     <property name="font">
+      <font>
+       <family>Source Sans Pro</family>
+       <italic>true</italic>
+      </font>
      </property>
      <property name="text">
-      <string>BAUDRATE_3</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="0">
-    <widget class="QLabel" name="label_5">
-     <property name="text">
-      <string>Serial Port:</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item row="10" column="2">
-    <widget class="QLabel" name="label_32">
-     <property name="styleSheet">
-      <string notr="true">QLabel {
-	min-height: 24px;
-	color: rgb(100, 105, 113);
-}
-</string>
-     </property>
-     <property name="text">
-      <string>BLUETOOTH</string>
+      <string>Serial Port 3 Baud Rate:</string>
      </property>
     </widget>
    </item>
@@ -1773,12 +1883,56 @@ QAbstractSpinBox::down-button:off {
      </item>
     </widget>
    </item>
-   <item row="5" column="4" colspan="2">
-    <widget class="QCheckBox" name="uBaudRateGCodeCheckBox">
+   <item row="2" column="0">
+    <widget class="QLabel" name="label_5">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="text">
-      <string>BAUD_RATE_GCODE</string>
+      <string>Serial Port:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
      </property>
     </widget>
+   </item>
+   <item row="12" column="0">
+    <widget class="QLabel" name="label_26">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Source Sans Pro</family>
+       <italic>true</italic>
+      </font>
+     </property>
+     <property name="text">
+      <string>Machine UUID:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3">
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
    </item>
   </layout>
  </widget>

@@ -32,6 +32,9 @@ target_sources(GUI_IMC_GUI
         TemperaturesPage.h
         TemperaturesPage.cpp
         TemperaturesPage.ui
+        PowerSupplyPage.h
+        PowerSupplyPage.cpp
+        PowerSupplyPage.ui
         HotendTempSensorsConfigurator.h
         HotendTempSensorsConfigurator.cpp
         HotendTempSensorsConfigurator.ui

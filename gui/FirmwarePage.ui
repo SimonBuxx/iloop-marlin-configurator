@@ -31,6 +31,11 @@ QCheckBox {
         border-radius: 3px;
 }
 
+QCheckBox:disabled {
+	background: rgb(38, 43, 50);
+	color: rgb(180, 180, 180);
+}
+
 QCheckBox::hover {
         border: 1px solid rgb(100, 105, 113);
 }
@@ -40,6 +45,12 @@ QCheckBox:focus {
 }
 
 QCheckBox::indicator {
+    width: 15px;
+    height: 15px;
+    background: rgb(33, 37, 43);
+}
+
+QCheckBox::indicator:disabled {
     width: 15px;
     height: 15px;
     background: rgb(33, 37, 43);
@@ -70,7 +81,7 @@ QPushButton:focus {
 
 QComboBox {
 	color: white;
-	background: rgb(54, 60, 70);
+    background: rgb(54, 60, 70);
     border: 1px inset rgb(18, 21, 24);
 	border-radius: 3px;
 	padding: 5px;
@@ -102,10 +113,15 @@ QComboBox::down-arrow {
 
 QLineEdit {
 	color: white;
-	background: rgb(27, 30, 35);
+    background: rgb(54, 60, 70);
     border: 1px inset rgb(18, 21, 24);
 	border-radius: 3px;
 	padding: 5px;
+}
+
+QLineEdit:disabled {
+	background: rgb(38, 43, 50);
+	color: rgb(180, 180, 180);
 }
 
 QLineEdit:hover {
@@ -116,39 +132,21 @@ QLineEdit:focus {
 	border: 1px solid rgb(76, 157, 255);
 }
 
-QRadioButton {
-	padding: 5px;
-	border: 1px solid transparent;
-	border-radius: 3px;
-}
-
-QRadioButton::hover {
-	border: 1px solid rgb(54, 60, 70);
-}
-
-QRadioButton::indicator {
-    width: 13px;
-    height: 13px;
-}
-
-QRadioButton::indicator:unchecked {
-        image: url(&quot;:/radio_button_unchecked_FILL0_wght400_GRAD0_opsz20.svg&quot;);
-}
-
-QRadioButton::indicator:checked {
-        image: url(&quot;:/radio_button_checked_FILL0_wght400_GRAD0_opsz20.svg&quot;);
-}
-
 QLabel {
 	min-height: 30px;
 }
 
 QAbstractSpinBox {
 	color: white;
-	background: rgb(27, 30, 35);
+    background: rgb(54, 60, 70);
     border: 1px inset rgb(18, 21, 24);
 	border-radius: 3px;
 	padding: 5px;
+}
+
+QAbstractSpinBox:disabled {
+	background: rgb(38, 43, 50);
+	color: rgb(180, 180, 180);
 }
 
 QAbstractSpinBox:hover {
@@ -184,11 +182,203 @@ QAbstractSpinBox::down-button:off {
 }</string>
   </property>
   <layout class="QGridLayout" name="gridLayout" columnstretch="0,0,0,0,0,1">
+   <item row="6" column="2">
+    <widget class="QLabel" name="label_26">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+	min-height: 24px;
+	color: rgb(100, 105, 113);
+}
+</string>
+     </property>
+     <property name="text">
+      <string>CUSTOM_STATUS_SCREEN_IMAGE</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QLabel" name="label">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+	min-height: 24px;
+	color: rgb(100, 105, 113);
+}
+</string>
+     </property>
+     <property name="text">
+      <string>CONFIGURATION_H_VERSION</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="2">
+    <widget class="QLabel" name="label_24">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+	min-height: 24px;
+	color: rgb(100, 105, 113);
+}
+</string>
+     </property>
+     <property name="text">
+      <string>SHOW_CUSTOM_BOOTSCREEN</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Author:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="4" colspan="2">
+    <widget class="QCheckBox" name="uCustomStatusScreenImageCheckBox">
+     <property name="text">
+      <string>CUSTOM_STATUS_SCREEN_IMAGE</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="label_3">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Show Bootscreen?</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="4" colspan="2">
+    <widget class="QCheckBox" name="uShowCustomBootscreenCheckBox">
+     <property name="text">
+      <string>SHOW_CUSTOM_BOOTSCREEN</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="3">
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="label_6">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Source Sans Pro</family>
+       <italic>true</italic>
+      </font>
+     </property>
+     <property name="text">
+      <string>Custom Version File Path:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="label_4">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Marlin Version:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="label_15">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Use Custom Bootscreen?</string>
+     </property>
+    </widget>
+   </item>
    <item row="2" column="4" colspan="2">
     <widget class="QLineEdit" name="uAuthorNameEdit"/>
    </item>
+   <item row="3" column="4" colspan="2">
+    <widget class="QLineEdit" name="uCustomVersionFileEdit"/>
+   </item>
    <item row="4" column="2">
     <widget class="QLabel" name="label_13">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="palette">
       <palette>
        <active>
@@ -408,93 +598,14 @@ QAbstractSpinBox::down-button:off {
      </property>
     </widget>
    </item>
-   <item row="1" column="2">
-    <widget class="QLabel" name="label">
-     <property name="styleSheet">
-      <string notr="true">QLabel {
-	min-height: 24px;
-	color: rgb(100, 105, 113);
-}
-</string>
-     </property>
-     <property name="text">
-      <string>CONFIGURATION_H_VERSION</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="3">
-    <spacer name="horizontalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>40</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="4" column="4" colspan="2">
-    <widget class="QCheckBox" name="uShowBootscreenCheckBox">
-     <property name="text">
-      <string>SHOW_BOOTSCREEN</string>
-     </property>
-     <property name="checked">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="4" colspan="2">
-    <widget class="QCheckBox" name="uCustomStatusScreenImageCheckBox">
-     <property name="text">
-      <string>CUSTOM_STATUS_SCREEN_IMAGE</string>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="0">
-    <widget class="QLabel" name="label_25">
-     <property name="text">
-      <string>Use Custom Status Screen?</string>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="2">
-    <widget class="QLabel" name="label_26">
-     <property name="styleSheet">
-      <string notr="true">QLabel {
-	min-height: 24px;
-	color: rgb(100, 105, 113);
-}
-</string>
-     </property>
-     <property name="text">
-      <string>CUSTOM_STATUS_SCREEN_IMAGE</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="0">
-    <widget class="QLabel" name="label_4">
-     <property name="text">
-      <string>Marlin Version:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="0">
-    <widget class="QLabel" name="label_2">
-     <property name="text">
-      <string>Author:</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-     </property>
-    </widget>
-   </item>
    <item row="2" column="2">
     <widget class="QLabel" name="label_8">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="palette">
       <palette>
        <active>
@@ -714,101 +825,6 @@ QAbstractSpinBox::down-button:off {
      </property>
     </widget>
    </item>
-   <item row="5" column="2">
-    <widget class="QLabel" name="label_24">
-     <property name="styleSheet">
-      <string notr="true">QLabel {
-	min-height: 24px;
-	color: rgb(100, 105, 113);
-}
-</string>
-     </property>
-     <property name="text">
-      <string>SHOW_CUSTOM_BOOTSCREEN</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="1">
-    <spacer name="horizontalSpacer">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>40</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="1" column="4">
-    <widget class="QLabel" name="label_5">
-     <property name="styleSheet">
-      <string notr="true">QLabel {
-	min-height: 24px;
-	color: rgb(100, 105, 113);
-}
-</string>
-     </property>
-     <property name="text">
-      <string>02010200 (v2.1.2)</string>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="0">
-    <widget class="QLabel" name="label_15">
-     <property name="text">
-      <string>Use Custom Bootscreen?</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="0">
-    <widget class="QLabel" name="label_3">
-     <property name="text">
-      <string>Show Bootscreen?</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="4" colspan="2">
-    <widget class="QCheckBox" name="uShowCustomBootscreenCheckBox">
-     <property name="text">
-      <string>SHOW_CUSTOM_BOOTSCREEN</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="0">
-    <widget class="QLabel" name="label_6">
-     <property name="font">
-      <font>
-       <family>Source Sans Pro</family>
-       <italic>true</italic>
-      </font>
-     </property>
-     <property name="text">
-      <string>Custom Version File Path:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="2">
-    <widget class="QLabel" name="label_7">
-     <property name="styleSheet">
-      <string notr="true">QLabel {
-	min-height: 24px;
-	color: rgb(100, 105, 113);
-}
-</string>
-     </property>
-     <property name="text">
-      <string>CUSTOM_VERSION_FILE</string>
-     </property>
-    </widget>
-   </item>
    <item row="9" column="0" colspan="5">
     <spacer name="verticalSpacer">
      <property name="orientation">
@@ -822,8 +838,58 @@ QAbstractSpinBox::down-button:off {
      </property>
     </spacer>
    </item>
-   <item row="3" column="4" colspan="2">
-    <widget class="QLineEdit" name="uCustomVersionFileEdit"/>
+   <item row="3" column="2">
+    <widget class="QLabel" name="label_7">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+	min-height: 24px;
+	color: rgb(100, 105, 113);
+}
+</string>
+     </property>
+     <property name="text">
+      <string>CUSTOM_VERSION_FILE</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="4" colspan="2">
+    <widget class="QCheckBox" name="uShowBootscreenCheckBox">
+     <property name="text">
+      <string>SHOW_BOOTSCREEN</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="label_25">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Use Custom Status Screen?</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="4" colspan="2">
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>02010200 (v2.1.2)</string>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

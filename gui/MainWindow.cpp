@@ -74,6 +74,11 @@ void MainWindow::ConnectGuiSignalsAndSlots()
     {
         mUi->stackedWidget->setCurrentIndex(2);
     });
+
+    QObject::connect(mUi->uPowerSupplyButton, &QPushButton::clicked, this, [&]()
+    {
+        mUi->stackedWidget->setCurrentIndex(3);
+    });
 }
 
 void MainWindow::OnNewProject()
