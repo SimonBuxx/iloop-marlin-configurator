@@ -39,6 +39,16 @@ inline bool LoadStringToComboBox(T& pWidget, const QJsonObject &pJson, const QSt
     return false;
 }
 
+template <typename T>
+inline bool LoadIntToSpinBox(T& pWidget, const QJsonObject &pJson, const QString& pAttribute)
+{
+    if (pJson.contains(pAttribute) && pJson[pAttribute].isDouble())
+    {
+        pWidget->setValue(pJson[pAttribute].toInt());
+        return true;
+    }
+    return false;
+}
 
 template <typename T>
 inline bool LoadBool(T& pWidget, const QJsonObject &pJson, const QString& pAttribute)

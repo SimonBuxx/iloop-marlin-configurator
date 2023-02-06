@@ -184,6 +184,12 @@ QAbstractSpinBox::down-button:off {
   <layout class="QGridLayout" name="gridLayout" columnstretch="0,0,0,0,0,1">
    <item row="2" column="4" colspan="2">
     <widget class="QComboBox" name="uSerialPortBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="currentIndex">
       <number>1</number>
      </property>
@@ -235,10 +241,23 @@ QAbstractSpinBox::down-button:off {
     </widget>
    </item>
    <item row="11" column="4" colspan="2">
-    <widget class="QLineEdit" name="uPrinterNameEdit"/>
+    <widget class="QLineEdit" name="uPrinterNameEdit">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
    </item>
    <item row="8" column="4" colspan="2">
     <widget class="QComboBox" name="uSerialPort3ComboBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="font">
       <font>
        <family>Source Sans Pro</family>
@@ -383,6 +402,12 @@ QAbstractSpinBox::down-button:off {
    </item>
    <item row="10" column="4" colspan="2">
     <widget class="QCheckBox" name="uBluetoothCheckBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="text">
       <string>BLUETOOTH</string>
      </property>
@@ -411,6 +436,12 @@ QAbstractSpinBox::down-button:off {
     <widget class="QComboBox" name="uBaudRate3ComboBox">
      <property name="enabled">
       <bool>false</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
      </property>
      <item>
       <property name="text">
@@ -525,6 +556,12 @@ QAbstractSpinBox::down-button:off {
    </item>
    <item row="3" column="4" colspan="2">
     <widget class="QComboBox" name="uBaudrateBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="styleSheet">
       <string notr="true"/>
      </property>
@@ -686,7 +723,14 @@ QAbstractSpinBox::down-button:off {
     </widget>
    </item>
    <item row="12" column="4" colspan="2">
-    <widget class="QLineEdit" name="uMachineUuidEdit"/>
+    <widget class="QLineEdit" name="uMachineUuidEdit">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
    </item>
    <item row="0" column="2">
     <widget class="QLabel" name="label_12">
@@ -919,6 +963,12 @@ QAbstractSpinBox::down-button:off {
     <widget class="QComboBox" name="uBaudRate2ComboBox">
      <property name="enabled">
       <bool>false</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
      </property>
      <item>
       <property name="text">
@@ -1464,6 +1514,12 @@ QAbstractSpinBox::down-button:off {
    </item>
    <item row="6" column="4" colspan="2">
     <widget class="QComboBox" name="uSerialPort2ComboBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="font">
       <font>
        <family>Source Sans Pro</family>
@@ -1756,6 +1812,12 @@ QAbstractSpinBox::down-button:off {
    </item>
    <item row="5" column="4" colspan="2">
     <widget class="QCheckBox" name="uBaudRateGCodeCheckBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="text">
       <string>BAUD_RATE_GCODE</string>
      </property>
@@ -1801,6 +1863,12 @@ QAbstractSpinBox::down-button:off {
    </item>
    <item row="0" column="4" colspan="2">
     <widget class="QComboBox" name="uMotherboardBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <item>
       <property name="text">
        <string>MEGA/RAMPS up to 1.2 [BOARD_RAMPS_OLD]</string>
@@ -1879,6 +1947,1682 @@ QAbstractSpinBox::down-button:off {
      <item>
       <property name="text">
        <string>RAMPS Plus 3DYMY (Power outputs: Spindle, Controller Fan) [BOARD_RAMPS_PLUS_SF]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>3Drag Controller [BOARD_3DRAG]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Velleman K8200 Controller (derived from 3Drag Controller) [BOARD_K8200]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Velleman K8400 Controller (derived from 3Drag Controller) [BOARD_K8400]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Velleman K8600 Controller (Vertex Nano) [BOARD_K8600]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Velleman K8800 Controller (Vertex Delta) [BOARD_K8800]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2PrintBeta BAM&amp;DICE with STK drivers [BOARD_BAM_DICE]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2PrintBeta BAM&amp;DICE Due with STK drivers [BOARD_BAM_DICE_DUE]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS BASE v1.0 [BOARD_MKS_BASE]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS BASE v1.4 with Allegro A4982 stepper drivers [BOARD_MKS_BASE_14]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS BASE v1.5 with Allegro A4982 stepper drivers [BOARD_MKS_BASE_15]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS BASE v1.6 with Allegro A4982 stepper drivers [BOARD_MKS_BASE_16]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS BASE 1.0 with Heroic HR4982 stepper drivers [BOARD_MKS_BASE_HEROIC]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS GEN v1.3 or 1.4 [BOARD_MKS_GEN_13]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS GEN L [BOARD_MKS_GEN_L]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BigTreeTech or BIQU KFB2.0 [BOARD_KFB_2]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>zrib V2.0 (Chinese RAMPS replica) [BOARD_ZRIB_V20]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>zrib V5.2 (Chinese RAMPS replica) [BOARD_ZRIB_V52]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Felix 2.0+ Electronics Board (RAMPS like) [BOARD_FELIX2]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Invent-A-Part RigidBoard [BOARD_RIGIDBOARD]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Invent-A-Part RigidBoard V2 [BOARD_RIGIDBOARD_V2]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Sainsmart 2-in-1 board [BOARD_SAINSMART_2IN1]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Ultimaker [BOARD_ULTIMAKER]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Ultimaker (Older electronics. Pre 1.5.4. This is rare) [BOARD_ULTIMAKER_OLD]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Azteeg X3 [BOARD_AZTEEG_X3]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Azteeg X3 Pro [BOARD_AZTEEG_X3_PRO]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Ultimainboard 2.x (Uses TEMP_SENSOR 20) [BOARD_ULTIMAIN_2]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Rumba [BOARD_RUMBA]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Raise3D N series Rumba derivative [BOARD_RUMBA_RAISE3D]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Rapide Lite 200 (v1, low-cost RUMBA clone with drv) [BOARD_RL200]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Formbot T-Rex 2 Plus [BOARD_FORMBOT_TREX2PLUS]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Formbot T-Rex 3 [BOARD_FORMBOT_TREX3]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Formbot Raptor [BOARD_FORMBOT_RAPTOR]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Formbot Raptor 2 [BOARD_FORMBOT_RAPTOR2]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>bq ZUM Mega 3D [BOARD_BQ_ZUM_MEGA_3D]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MakeBoard Mini v2.1.2 by MicroMake [BOARD_MAKEBOARD_MINI]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>TriGorilla Anycubic version 1.3-based on RAMPS EFB [BOARD_TRIGORILLA_13]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>... Ver 1.4 [BOARD_TRIGORILLA_14]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>... Rev 1.1 (new servo pin order) [BOARD_TRIGORILLA_14_11]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Creality: Ender-4, CR-8 [BOARD_RAMPS_ENDER_4]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Creality: CR10S, CR20, CR-X [BOARD_RAMPS_CREALITY]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Dagoma F5 [BOARD_DAGOMA_F5]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>FYSETC F6 1.3 [BOARD_FYSETC_F6_13]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>FYSETC F6 1.4 [BOARD_FYSETC_F6_14]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Wanhao Duplicator i3 Plus [BOARD_DUPLICATOR_I3_PLUS]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>VORON Design [BOARD_VORON]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Tronxy TRONXY-V3-1.0 [BOARD_TRONXY_V3_1_0]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Z-Bolt X Series [BOARD_Z_BOLT_X_SERIES]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>TT OSCAR [BOARD_TT_OSCAR]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Overlord/Overlord Pro [BOARD_OVERLORD]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>ADIMLab Gantry v1 [BOARD_HJC2560C_REV1]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>ADIMLab Gantry v2 [BOARD_HJC2560C_REV2]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BIQU Tango V1 [BOARD_TANGO]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS GEN L V2 [BOARD_MKS_GEN_L_V2]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS GEN L V2.1 [BOARD_MKS_GEN_L_V21]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Copymaster 3D [BOARD_COPYMASTER_3D]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Ortur 4 [BOARD_ORTUR_4]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Tenlog D3 Hero IDEX printer [BOARD_TENLOG_D3_HERO]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Tenlog D3, D5, D6 IDEX Printer [BOARD_TENLOG_MB1_V23]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Ramps S 1.2 by Sakul.cz (Power outputs: Hotend0, Hotend1, Fan, Bed) [BOARD_RAMPS_S_12_EEFB]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Ramps S 1.2 by Sakul.cz (Power outputs: Hotend0, Hotend1, Hotend2, Bed) [BOARD_RAMPS_S_12_EEEB]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Ramps S 1.2 by Sakul.cz (Power outputs: Hotend, Fan0, Fan1, Bed) [BOARD_RAMPS_S_12_EFFB]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Longer LK1 PRO / Alfawise U20 Pro (PRO version) [BOARD_LONGER3D_LK1_PRO]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Longer LKx PRO / Alfawise Uxx Pro (PRO version) [BOARD_LONGER3D_LKx_PRO]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Zonestar zrib V5.3 (Chinese RAMPS replica) [BOARD_ZRIB_V53]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Pxmalion Core I3 [BOARD_PXMALION_CORE_I3]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Rambo [BOARD_RAMBO]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Mini-Rambo [BOARD_MINIRAMBO]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Mini-Rambo 1.0a [BOARD_MINIRAMBO_10A]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Einsy Rambo [BOARD_EINSY_RAMBO]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Einsy Retro [BOARD_EINSY_RETRO]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>abee Scoovo X9H [BOARD_SCOOVO_X9H]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>ThinkerV2 [BOARD_RAMBO_THINKERV2]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Cartesio CN Controls V11 [BOARD_CNCONTROLS_11]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Cartesio CN Controls V12 [BOARD_CNCONTROLS_12]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Cartesio CN Controls V15 [BOARD_CNCONTROLS_15]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Cheaptronic v1.0 [BOARD_CHEAPTRONIC]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Cheaptronic v2.0 [BOARD_CHEAPTRONIC_V2]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Makerbot Mightyboard Revision E [BOARD_MIGHTYBOARD_REVE]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Megatronics [BOARD_MEGATRONICS]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Megatronics v2.0 [BOARD_MEGATRONICS_2]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Megatronics v3.0 [BOARD_MEGATRONICS_3]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Megatronics v3.1 [BOARD_MEGATRONICS_31]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Megatronics v3.2 [BOARD_MEGATRONICS_32]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Elefu Ra Board (v3) [BOARD_ELEFU_3]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Leapfrog [BOARD_LEAPFROG]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Mega controller [BOARD_MEGACONTROLLER]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Geeetech GT2560 Rev A [BOARD_GT2560_REV_A]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Geeetech GT2560 Rev A+ (with auto level probe) [BOARD_GT2560_REV_A_PLUS]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Geeetech GT2560 Rev B [BOARD_GT2560_REV_B]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Geeetech GT2560 Rev B for A10(M/T/D) [BOARD_GT2560_V3]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Geeetech GT2560 Rev B for A10(M/T/D) [BOARD_GT2560_V4]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Geeetech GT2560 Rev B for Mecreator2 [BOARD_GT2560_V3_MC2]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Geeetech GT2560 Rev B for A20(M/T/D) [BOARD_GT2560_V3_A20]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Einstart retrofit [BOARD_EINSTART_S]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Wanhao 0ne+ i3 Mini [BOARD_WANHAO_ONEPLUS]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Leapfrog Xeed 2015 [BOARD_LEAPFROG_XEED2015]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>PICA Shield (original version) [BOARD_PICA_REVB]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>PICA Shield (rev C or later) [BOARD_PICA]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Intamsys 4.0 (Funmat HT) [BOARD_INTAMSYS40]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Malyan M180 Mainboard Version 2 (no display function, direct G-code only) [BOARD_MALYAN_M180]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Geeetech GT2560 Rev B for A20(M/T/D) [BOARD_GT2560_V4_A20]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Mega controller &amp; Protoneer CNC Shield V3.00 [BOARD_PROTONEER_CNC_SHIELD_V3]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>WEEDO 62A board (TINA2, Monoprice Cadet, etc.) [BOARD_WEEDO_62A]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Minitronics v1.0/1.1 [BOARD_MINITRONICS]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Silvergate v1.0 [BOARD_SILVER_GATE]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Sanguinololu &lt; 1.2 [BOARD_SANGUINOLOLU_11]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Sanguinololu 1.2 and above [BOARD_SANGUINOLOLU_12]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Melzi [BOARD_MELZI]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Melzi V2 [BOARD_MELZI_V2]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Melzi with ATmega1284 (MaKr3d version) [BOARD_MELZI_MAKR3D]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Melzi Creality3D (for CR-10 etc) [BOARD_MELZI_CREALITY]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Melzi Malyan M150 [BOARD_MELZI_MALYAN]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Tronxy X5S [BOARD_MELZI_TRONXY]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>STB V1.1 [BOARD_STB_11]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Azteeg X1 [BOARD_AZTEEG_X1]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Anet 1.0 (Melzi clone) [BOARD_ANET_10]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>ZoneStar ZMIB V2 [BOARD_ZMIB_V2]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Gen3 Monolithic Electronics [BOARD_GEN3_MONOLITHIC]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Gen3+ [BOARD_GEN3_PLUS]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Gen6 [BOARD_GEN6]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Gen6 deluxe [BOARD_GEN6_DELUXE]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Gen7 custom (Alfons3 Version) https://github.com/Alfons3/Generation_7_Electronics [BOARD_GEN7_CUSTOM]
+            </string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Gen7 v1.1, v1.2 [BOARD_GEN7_12]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Gen7 v1.3 [BOARD_GEN7_12]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Gen7 v1.4 [BOARD_GEN7_14]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Alpha OMCA [BOARD_OMCA_A]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Final OMCA [BOARD_OMCA]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Sethi 3D_1 [BOARD_SETHI]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Teensylu [BOARD_TEENSYLU]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Printrboard (AT90USB1286) [BOARD_PRINTRBOARD]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Printrboard Revision F (AT90USB1286) [BOARD_PRINTRBOARD_REVF]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Brainwave (AT90USB646) [BOARD_BRAINWAVE]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Brainwave Pro (AT90USB1286) [BOARD_BRAINWAVE_PRO]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>SAV Mk-I (AT90USB1286) [BOARD_SAV_MKI]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Teensy++2.0 (AT90USB1286) [BOARD_TEENSY2]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>5DPrint D8 Driver Board [BOARD_5DPRINT]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Re-ARM with RAMPS 1.4 (Power outputs: Hotend, Fan, Bed) [BOARD_RAMPS_14_RE_ARM_EFB]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Re-ARM with RAMPS 1.4 (Power outputs: Hotend0, Hotend1, Bed) [BOARD_RAMPS_14_RE_ARM_EEB]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Re-ARM with RAMPS 1.4 (Power outputs: Hotend, Fan0, Fan1) [BOARD_RAMPS_14_RE_ARM_EFF]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Re-ARM with RAMPS 1.4 (Power outputs: Hotend0, Hotend1, Fan) [BOARD_RAMPS_14_RE_ARM_EEF]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Re-ARM with RAMPS 1.4 (Power outputs: Spindle, Controller Fan) [BOARD_RAMPS_14_RE_ARM_SF]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS-Sbase [BOARD_MKS_SBASE]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>AZSMZ Mini [BOARD_AZSMZ_MINI]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BIQU BQ111-A4 [BOARD_BIQU_BQ111_A4]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Selena Compact [BOARD_SELENA_COMPACT]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BIQU B300_V1.0 [BOARD_BIQU_B300_V1_0]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS-SGen-L [BOARD_MKS_SGEN_L]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>GMARSH X6, revision 1 prototype [BOARD_GMARSH_X6_REV1]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BigTreeTech SKR v1.1 [BOARD_BTT_SKR_V1_1]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BigTreeTech SKR v1.3 [BOARD_BTT_SKR_V1_3]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BigTreeTech SKR v1.4 [BOARD_BTT_SKR_V1_4]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>eMotion-Tech eMotronic [BOARD_EMOTRONIC]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS-SGen [BOARD_MKS_SGEN]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Azteeg X5 GT [BOARD_AZTEEG_X5_GT]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Azteeg X5 Mini [BOARD_AZTEEG_X5_MINI]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Azteeg X5 Mini Wifi [BOARD_AZTEEG_X5_MINI_WIFI]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Cohesion3D ReMix [BOARD_COHESION3D_REMIX]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Cohesion3D Mini [BOARD_COHESION3D_MINI]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Smoothieboard [BOARD_SMOOTHIEBOARD]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>TH3D EZBoard v1.0 [BOARD_TH3D_EZBOARD]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BigTreeTech SKR v1.4 TURBO [BOARD_BTT_SKR_V1_4_TURBO]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS SGEN_L V2 [BOARD_MKS_SGEN_L_V2]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BigTreeTech SKR E3 Turbo [BOARD_BTT_SKR_E3_TURBO]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>FLYmaker FLY CDY [BOARD_FLY_CDY]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>DUE3DOM for Arduino DUE [BOARD_DUE3DOM]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>DUE3DOM MINI for Arduino DUE [BOARD_DUE3DOM_MINI]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>RADDS [BOARD_RADDS]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>RAMPS-FD v1 [BOARD_RAMPS_FD_V1]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>RAMPS-FD v2 [BOARD_RAMPS_FD_V2]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>RAMPS-SMART (Power outputs: Hotend, Fan, Bed) [BOARD_RAMPS_SMART_EFB]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>RAMPS-SMART (Power outputs: Hotend0, Hotend1, Bed) [BOARD_RAMPS_SMART_EEB]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>RAMPS-SMART (Power outputs: Hotend, Fan0, Fan1) [BOARD_RAMPS_SMART_EFF]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>RAMPS-SMART (Power outputs: Hotend0, Hotend1, Fan) [BOARD_RAMPS_SMART_EEF]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>RAMPS-SMART (Power outputs: Spindle, Controller Fan) [BOARD_RAMPS_SMART_SF]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>RAMPS Duo (Power outputs: Hotend, Fan, Bed) [BOARD_RAMPS_DUO_EFB]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>RAMPS Duo (Power outputs: Hotend0, Hotend1, Bed) [BOARD_RAMPS_DUO_EEB]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>RAMPS Duo (Power outputs: Hotend, Fan0, Fan1) [BOARD_RAMPS_DUO_EFF]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>RAMPS Duo (Power outputs: Hotend0, Hotend1, Fan) [BOARD_RAMPS_DUO_EEF]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>RAMPS Duo (Power outputs: Spindle, Controller Fan) [BOARD_RAMPS_DUO_SF]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>RAMPS4DUE (Power outputs: Hotend, Fan, Bed) [BOARD_RAMPS4DUE_EFB]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>RAMPS4DUE (Power outputs: Hotend0, Hotend1, Bed) [BOARD_RAMPS4DUE_EEB]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>RAMPS4DUE (Power outputs: Hotend, Fan0, Fan1) [BOARD_RAMPS4DUE_EFF]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>RAMPS4DUE (Power outputs: Hotend0, Hotend1, Fan) [BOARD_RAMPS4DUE_EEF]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>RAMPS4DUE (Power outputs: Spindle, Controller Fan) [BOARD_RAMPS4DUE_SF]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>RuRAMPS4Duo v1.1 [BOARD_RURAMPS4D_11]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>RuRAMPS4Duo v1.3 [BOARD_RURAMPS4D_13]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>ReprapWorld Ultratronics Pro V1.0 [BOARD_ULTRATRONICS_PRO]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>UltiMachine Archim1 (with DRV8825 drivers) [BOARD_ARCHIM1]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>UltiMachine Archim2 (with TMC2130 drivers) [BOARD_ARCHIM2]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Alligator Board R2 [BOARD_ALLIGATOR]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Cartesio CN Controls V15 on DUE [BOARD_CNCONTROLS_15D]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>K.3D Kratos32 (Arduino Due Shield) [BOARD_KRATOS32]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Printrboard G2 [BOARD_PRINTRBOARD_G2]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Arduino DUE Shield Kit (ADSK) [BOARD_ADSK]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>STM32F070CB controller [BOARD_MALYAN_M200_V2]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>STM32F070-based delta [BOARD_MALYAN_M300]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>STM32F103RE Libmaple-based STM32F1 controller [BOARD_STM32F103RE]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>STM32C8 Libmaple-based STM32F1 controller [BOARD_MALYAN_M200]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>STM32F103RE Libmaple-based STM32F1 controller [BOARD_STM3R_MINI]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>STM32F103VE controller [BOARD_GTM32_PRO_VB]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>STM32F103VE controller [BOARD_GTM32_MINI]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>STM32F103VE controller [BOARD_GTM32_MINI_A30]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>STM32F103VE controller [BOARD_GTM32_REV_B]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>STM32F103C8 / STM32F103CBLibmaple-based STM32F1 controller [BOARD_MORPHEUS]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Chitu3D (STM32F103RE) [BOARD_CHITU3D]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS Robin (STM32F103ZE) [BOARD_MKS_ROBIN]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS Robin Mini (STM32F103VE) [BOARD_MKS_ROBIN_MINI]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS Robin Nano (STM32F103VE) [BOARD_MKS_ROBIN_NANO]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS Robin Nano V2 (STM32F103VE) [BOARD_MKS_ROBIN_NANO_V2]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS Robin Lite/Lite2 (STM32F103RC) [BOARD_MKS_ROBIN_LITE]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS Robin Lite3 (STM32F103RC) [BOARD_MKS_ROBIN_LITE3]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS Robin Pro (STM32F103ZE) [BOARD_MKS_ROBIN_PRO]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS Robin E3 (STM32F103RC) [BOARD_MKS_ROBIN_E3]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS Robin E3 V1.1 (STM32F103RC) [BOARD_MKS_ROBIN_E3_V1_1]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS Robin E3D (STM32F103RC) [BOARD_MKS_ROBIN_E3D]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS Robin E3D V1.1 (STM32F103RC) [BOARD_MKS_ROBIN_E3D_V1_1]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS Robin E3p (STM32F103VE) [BOARD_MKS_ROBIN_E3P]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BigTreeTech EBB42 V1.1 (STM32G0B1CB) [BOARD_BTT_EBB42_V1_1]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BigTreeTech SKR Mini v1.1 (STM32F103RC) [BOARD_BTT_SKR_MINI_V1_1]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BigTreeTech SKR Mini E3 (STM32F103RC) [BOARD_BTT_SKR_MINI_E3_V1_0]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BigTreeTech SKR Mini E3 V1.2 (STM32F103RC) [BOARD_BTT_SKR_MINI_E3_V1_2]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BigTreeTech SKR Mini E3 V2.0 (STM32F103RC / STM32F103RE) [BOARD_BTT_SKR_MINI_E3_V2_0]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BigTreeTech SKR Mini E3 V3.0 (STM32G0B1RE) [BOARD_BTT_SKR_MINI_E3_V3_0]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BigTreeTech SKR Mini E3 V3.0.1 (STM32F401RC) [BOARD_BTT_SKR_MINI_E3_V3_0_1]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BigTreeTech SKR Mini MZ V1.0 (STM32F103RC) [BOARD_BTT_SKR_MINI_MZ_V1_0]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BigTreeTech SKR E3 DIP V1.0 (STM32F103RC / STM32F103RE) [BOARD_BTT_SKR_E3_DIP]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BigTreeTech SKR CR6 v1.0 (STM32F103RE) [BOARD_BTT_SKR_CR6]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>JGAurora A5S A1 (STM32F103ZE) [BOARD_JGAURORA_A5S_A1]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>FYSETC AIO_II (STM32F103RC) [BOARD_FYSETC_AIO_II]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>FYSETC Cheetah (STM32F103RC) [BOARD_FYSETC_CHEETAH]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>FYSETC Cheetah V1.2 (STM32F103RC) [BOARD_FYSETC_CHEETAH_V12]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Longer3D LK1/2 - Alfawise U20/U20+/U30 (STM32F103VE) [BOARD_LONGER3D_LK]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>ccrobot-online.com MEEB_3DP (STM32F103RC) [BOARD_CCROBOT_MEEB_3DP]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Chitu3D TronXY X5SA V5 Board (STM32F103ZE) [BOARD_CHITU3D_V5]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Chitu3D TronXY X5SA V6 Board (STM32F103ZE) [BOARD_CHITU3D_V6]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Chitu3D TronXY X5SA V9 Board (STM32F103ZE) [BOARD_CHITU3D_V9]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Creality v4.x (STM32F103RC / STM32F103RE) [BOARD_CREALITY_V4]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Creality v4.2.2 (STM32F103RC / STM32F103RE) [BOARD_CREALITY_V422]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Creality v4.2.3 (STM32F103RC / STM32F103RE) [BOARD_CREALITY_V423]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Creality v4.2.5 (STM32F103RC / STM32F103RE) [BOARD_CREALITY_V425]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Creality v4.2.7 (STM32F103RC / STM32F103RE) [BOARD_CREALITY_V427]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Creality v4.2.10 (STM32F103RC / STM32F103RE) as found in the CR-30 [BOARD_CREALITY_V4210]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Creality v4.3.1 (STM32F103RC / STM32F103RE) [BOARD_CREALITY_V431]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Creality v4.3.1a (STM32F103RC / STM32F103RE) [BOARD_CREALITY_V431_A]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Creality v4.3.1b (STM32F103RC / STM32F103RE) [BOARD_CREALITY_V431_B]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Creality v4.3.1c (STM32F103RC / STM32F103RE) [BOARD_CREALITY_V431_C]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Creality v4.3.1d (STM32F103RC / STM32F103RE) [BOARD_CREALITY_V431_D]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Creality v4.5.2 (STM32F103RC / STM32F103RE) [BOARD_CREALITY_V452]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Creality v4.5.3 (STM32F103RC / STM32F103RE) [BOARD_CREALITY_V453]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Creality v5.2.1 (STM32F103VE) as found in the SV04 [BOARD_CREALITY_V521]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Creality v2.4.S1 (STM32F103RC / STM32F103RE) v101 as found in the Ender-7 [BOARD_CREALITY_V24S1]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Creality v2.4.S1_301 (STM32F103RC / STM32F103RE) v301 as found in the Ender-3 S1 [BOARD_CREALITY_V24S1_301]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Creality v2.5.S1 (STM32F103RE) as found in the CR-10 Smart Pro [BOARD_CREALITY_V25S1]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Trigorilla Pro (STM32F103ZE) [BOARD_TRIGORILLA_PRO]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>FLYmaker FLY MINI (STM32F103RC) [BOARD_FLY_MINI]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>FLSUN HiSpeedV1 (STM32F103VE) [BOARD_FLSUN_HISPEED]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>STM32F103RE Libmaple-based controller [BOARD_BEAST]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>STM32F103ZE Mingda MD-16 [BOARD_MINGDA_MPX_ARM_MINI]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>STM32F103VE controller [BOARD_GTM32_PRO_VD]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Zonestar ZM3E2(STM32F103RC) [BOARD_ZONESTAR_ZM3E2]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Zonestar ZM3E4 V1 (STM32F103VC) [BOARD_ZONESTAR_ZM3E4]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Zonestar ZM3E4 V2 (STM32F103VC) [BOARD_ZONESTAR_ZM3E4V2]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Eryone Ery32 mini (STM32F103VE) [BOARD_ERYONE_ERY32_MINI]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Panda Pi V2.9 - Standalone (STM32F103RC) [BOARD_PANDA_PI_V29]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Teensy3.1 and Teensy3.2 [BOARD_TEENSY31_32]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Teensy3.5 and Teensy3.6 [BOARD_TEENSY35_36]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Arm'ed STM32F4-based controller [BOARD_ARMED]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>RUMBA32 STM32F446VE based controller from Aus3D [BOARD_RUMBA32_V1_0]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>RUMBA32 STM32F446VE based controller from Aus3D [BOARD_RUMBA32_V1_1]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>RUMBA32 STM32F446VE based controller from Makerbase [BOARD_RUMBA32_MKS]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>RUMBA32 STM32F446VE based controller from BIGTREETECH [BOARD_RUMBA32_BTT]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BLACK_STM32F407VE [BOARD_BLACK_STM32F407VE]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BLACK_STM32F407ZE [BOARD_BLACK_STM32F407ZE]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BigTreeTech SKR Pro v1.1 (STM32F407ZG) [BOARD_BTT_SKR_PRO_V1_1]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BigTreeTech SKR Pro v1.2 (STM32F407ZG) [BOARD_BTT_SKR_PRO_V1_2]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BigTreeTech BTT002 v1.0 (STM32F407VG) [BOARD_BTT_BTT002_V1_0]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BigTreeTech E3 RRF (STM32F407VG) [BOARD_BTT_E3_RRF]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BigTreeTech SKR v2.0 Rev A (STM32F407VG) [BOARD_BTT_SKR_V2_0_REV_A]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BigTreeTech SKR v2.0 Rev B (STM32F407VG/STM32F429VG) [BOARD_BTT_SKR_V2_0_REV_B]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BigTreeTech GTR v1.0 (STM32F407IGT) [BOARD_BTT_GTR_V1_0]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BigTreeTech Octopus v1.0 (STM32F446ZE) [BOARD_BTT_OCTOPUS_V1_0]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BigTreeTech Octopus v1.1 (STM32F446ZE) [BOARD_BTT_OCTOPUS_V1_1]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BigTreeTech Octopus Pro v1.0 (STM32F446ZE / STM32F429ZG) [BOARD_BTT_OCTOPUS_PRO_V1_0]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Lerdge K (STM32F407ZG) [BOARD_LERDGE_K]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Lerdge S (STM32F407VE) [BOARD_LERDGE_S]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Lerdge X (STM32F407VE) [BOARD_LERDGE_X]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>VAkE 403D (STM32F446VE) [BOARD_VAKE403D]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>FYSETC S6 (STM32F446VE) [BOARD_FYSETC_S6]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>FYSETC S6 v2.0 (STM32F446VE) [BOARD_FYSETC_S6_V2_0]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>FYSETC Spider (STM32F446VE) [BOARD_FYSETC_SPIDER]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>FLYmaker FLYF407ZG (STM32F407ZG) [BOARD_FLYF407ZG]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS_ROBIN2 (STM32F407ZE) [BOARD_MKS_ROBIN2]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS Robin Pro V2 (STM32F407VE) [BOARD_MKS_ROBIN_PRO_V2]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS Robin Nano V3 (STM32F407VG) [BOARD_MKS_ROBIN_NANO_V3]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS Robin Nano V3.1 (STM32F407VE) [BOARD_MKS_ROBIN_NANO_V3_1]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS Monster8 V1 (STM32F407VE) [BOARD_MKS_MONSTER8_V1]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS Monster8 V2 (STM32F407VE) [BOARD_MKS_MONSTER8_V2]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>ANET ET4 V1.x (STM32F407VG) [BOARD_ANET_ET4]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>ANET ET4P V1.x (STM32F407VG) [BOARD_ANET_ET4P]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>FYSETC Cheetah V2.0 (STM32F401RC) [BOARD_FYSETC_CHEETAH_V20]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>TH3D EZBoard v2.0 (STM32F405RG) [BOARD_TH3D_EZBOARD_V2]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Opulo Lumen PnP Controller REV3 (STM32F407VE / STM32F407VG) [BOARD_OPULO_LUMEN_REV3]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS Robin Nano V1.3 and MKS Robin Nano-S V1.3 (STM32F407VE) [BOARD_MKS_ROBIN_NANO_V1_3_F4]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS Eagle (STM32F407VE) [BOARD_MKS_EAGLE]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Artillery Ruby (STM32F401RC) [BOARD_ARTILLERY_RUBY]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>FYSETC Spider V2.2 (STM32F446VE) [BOARD_FYSETC_SPIDER_V2_2]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Creality v2.4.S1_301F4 (STM32F401RC) as found in the Ender-3 S1 F4 [BOARD_CREALITY_V24S1_301F4]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Opulo Lumen PnP Controller REV4 (STM32F407VE / STM32F407VG) [BOARD_OPULO_LUMEN_REV4]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>FYSETC Spider King407 (STM32F407ZG) [BOARD_FYSETC_SPIDER_KING407]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS SKIPR v1.0 all-in-one board (STM32F407VE) [BOARD_MKS_SKIPR_V1]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>TRONXY V10 (STM32F446ZE) [BOARD_TRONXY_V10]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>RemRam v1 [BOARD_REMRAM_V1]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Teensy 4.1 [BOARD_TEENSY41]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>T41U5XBB Teensy 4.1 breakout board [BOARD_T41U5XBB]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>ST NUCLEO-F767ZI Dev Board [BOARD_NUCLEO_F767ZI]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BigTreeTech SKR SE BX V2.0 (STM32H743II) [BOARD_BTT_SKR_SE_BX_V2]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BigTreeTech SKR SE BX V3.0 (STM32H743II) [BOARD_BTT_SKR_SE_BX_V3]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BigTreeTech SKR V3.0 (STM32H743VG) [BOARD_BTT_SKR_V3_0]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BigTreeTech SKR V3.0 EZ (STM32H743VG) [BOARD_BTT_SKR_V3_0_EZ]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Generic ESP32 [BOARD_ESPRESSIF_ESP32]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MRR ESPA based on ESP32 (native pins only) [BOARD_MRR_ESPA]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MRR ESPE based on ESP32 (with I2S stepper stream) [BOARD_MRR_ESPE]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>E4d@BOX [BOARD_E4D_BOX]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Rutilea ESP32 custom board [BOARD_RESP32_CUSTOM]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>FYSETC E4 [BOARD_FYSETC_E4]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Panda_ZHU [BOARD_PANDA_ZHU]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Panda_M4 [BOARD_PANDA_M4]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MKS TinyBee based on ESP32 (with I2S stepper stream) [BOARD_MKS_TINYBEE]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>enwi ESPNP based on ESP32 (with I2S stepper stream) [BOARD_ENWI_ESPNP]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>RAMPS 1.4.4 [BOARD_AGCM4_RAMPS_144]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Bricolemon [BOARD_BRICOLEMON_V1_0]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Bricolemon Lite [BOARD_BRICOLEMON_LITE_V1_0]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Minitronics v2.0 [BOARD_MINITRONICS20]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Custom pins definition for development and/or rare boards [BOARD_CUSTOM]</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>[BOARD_LINUX_RAMPS]</string>
       </property>
      </item>
     </widget>

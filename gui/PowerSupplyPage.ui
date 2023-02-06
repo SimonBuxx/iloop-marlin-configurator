@@ -552,6 +552,12 @@ QAbstractSpinBox::down-button:off {
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+     <property name="font">
+      <font>
+       <family>Source Sans Pro</family>
+       <italic>true</italic>
+      </font>
+     </property>
      <property name="text">
       <string>Power on PSU if cooler is above this temperature:</string>
      </property>
@@ -878,6 +884,12 @@ QAbstractSpinBox::down-button:off {
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+     <property name="font">
+      <font>
+       <family>Source Sans Pro</family>
+       <italic>true</italic>
+      </font>
+     </property>
      <property name="text">
       <string>Turn off power after idle duration:</string>
      </property>
@@ -1182,6 +1194,12 @@ QAbstractSpinBox::down-button:off {
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+     <property name="font">
+      <font>
+       <family>Source Sans Pro</family>
+       <italic>true</italic>
+      </font>
+     </property>
      <property name="text">
       <string>Delay for power off after M81:</string>
      </property>
@@ -1236,6 +1254,12 @@ QAbstractSpinBox::down-button:off {
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Source Sans Pro</family>
+       <italic>true</italic>
+      </font>
      </property>
      <property name="text">
       <string>Power on PSU if chamber is above this temperature:</string>
@@ -1298,6 +1322,12 @@ QAbstractSpinBox::down-button:off {
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Source Sans Pro</family>
+       <italic>true</italic>
+      </font>
      </property>
      <property name="text">
       <string>Power on PSU if extruder is above this temperature:</string>

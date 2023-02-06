@@ -5,6 +5,8 @@
 #include <cstdint>
 #include <string>
 
+// Contains special values that indicates that the line in the
+// generated config should be commented out (bool flags are always commented out when false)
 namespace disabled_values
 {
 static constexpr auto SERIAL_PORT_2{"No port selected"};
@@ -35,6 +37,33 @@ static constexpr auto BLUETOOTH{false};
 static constexpr auto CUSTOM_MACHINE_NAME{""};
 static constexpr auto MACHINE_UUID{""};
 
+// Power Supply
+static constexpr auto PSU_CONTROL{false};
+static constexpr auto PSU_NAME{""};
+static constexpr auto MKS_PWC{false};
+static constexpr auto PS_OFF_CONFIRM{false};
+static constexpr auto PS_OFF_SOUND{false};
+static constexpr auto PSU_ACTIVE_STATE{"LOW (for ATX)"};
+static constexpr auto PSU_DEFAULT_OFF{false};
+static constexpr auto PSU_POWERUP_DELAY{250};
+static constexpr auto LED_POWEROFF_TIMEOUT{10000};
+static constexpr auto POWER_OFF_TIMER{false};
+static constexpr auto POWER_OFF_WAIT_FOR_COOLDOWN{false};
+static constexpr auto PSU_POWERUP_GCODE{""};
+static constexpr auto PSU_POWEROFF_GCODE{""};
+static constexpr auto AUTO_POWER_CONTROL{false};
+static constexpr auto AUTO_POWER_FANS{true};
+static constexpr auto AUTO_POWER_E_FANS{true};
+static constexpr auto AUTO_POWER_CONTROLLERFAN{true};
+static constexpr auto AUTO_POWER_CHAMBER_FAN{true};
+static constexpr auto AUTO_POWER_COOLER_FAN{true};
+static constexpr auto POWER_TIMEOUT{30};
+static constexpr auto POWER_OFF_DELAY{60};
+static constexpr auto AUTO_POWER_E_TEMP{50};
+static constexpr auto AUTO_POWER_CHAMBER_TEMP{30};
+static constexpr auto AUTO_POWER_COOLER_TEMP{26};
+
+// Legacy
 static constexpr auto LCD_DISPLAY{"REPRAP_DISCOUNT_SMART_CONTROLLER"};
 static constexpr auto EXTRUDERS{1};
 static constexpr auto DEFAULT_NOMINAL_FILAMENT_DIA{1.75f}; // mm
@@ -70,7 +99,6 @@ static constexpr auto J_MAX_ENDSTOP_INVERTING{false};
 static constexpr auto K_MAX_ENDSTOP_INVERTING{false};
 
 static constexpr auto Z_MIN_PROBE_ENDSTOP_INVERTING{false};
-
 }
 
 struct FirmwareConfiguration
@@ -131,47 +159,72 @@ public:
     }
 };
 
+struct PowerSupplyConfiguration
+{
+    bool PSU_CONTROL{defaults::PSU_CONTROL};
+    QString PSU_NAME{defaults::PSU_NAME};
+    bool MKS_PWC{defaults::MKS_PWC};
+    bool PS_OFF_CONFIRM{defaults::PS_OFF_CONFIRM};
+    bool PS_OFF_SOUND{defaults::PS_OFF_SOUND};
+    QString PSU_ACTIVE_STATE{defaults::PSU_ACTIVE_STATE};
+    bool PSU_DEFAULT_OFF{defaults::PSU_DEFAULT_OFF};
+    int32_t PSU_POWERUP_DELAY{defaults::PSU_POWERUP_DELAY};
+    int32_t LED_POWEROFF_TIMEOUT{defaults::LED_POWEROFF_TIMEOUT};
+    bool POWER_OFF_TIMER{defaults::POWER_OFF_TIMER};
+    bool POWER_OFF_WAIT_FOR_COOLDOWN{defaults::POWER_OFF_WAIT_FOR_COOLDOWN};
+    QString PSU_POWERUP_GCODE{defaults::PSU_POWERUP_GCODE};
+    QString PSU_POWEROFF_GCODE{defaults::PSU_POWEROFF_GCODE};
+    bool AUTO_POWER_CONTROL{defaults::AUTO_POWER_CONTROL};
+    bool AUTO_POWER_FANS{defaults::AUTO_POWER_FANS};
+    bool AUTO_POWER_E_FANS{defaults::AUTO_POWER_E_FANS};
+    bool AUTO_POWER_CONTROLLERFAN{defaults::AUTO_POWER_CONTROLLERFAN};
+    bool AUTO_POWER_CHAMBER_FAN{defaults::AUTO_POWER_CHAMBER_FAN};
+    bool AUTO_POWER_COOLER_FAN{defaults::AUTO_POWER_COOLER_FAN};
+    int32_t POWER_TIMEOUT{defaults::POWER_TIMEOUT};
+    int32_t POWER_OFF_DELAY{defaults::POWER_OFF_DELAY};
+    int32_t AUTO_POWER_E_TEMP{defaults::AUTO_POWER_E_TEMP};
+    int32_t AUTO_POWER_CHAMBER_TEMP{defaults::AUTO_POWER_CHAMBER_TEMP};
+    int32_t AUTO_POWER_COOLER_TEMP{defaults::AUTO_POWER_COOLER_TEMP};
+
+public:
+    QJsonObject ToJson(void) const
+    {
+        QJsonObject json;
+
+        json["PSU_CONTROL"] = PSU_CONTROL;
+        json["PSU_NAME"] = PSU_NAME;
+        json["MKS_PWC"] = MKS_PWC;
+        json["PS_OFF_CONFIRM"] = PS_OFF_CONFIRM;
+        json["PS_OFF_SOUND"] = PS_OFF_SOUND;
+        json["PSU_ACTIVE_STATE"] = PSU_ACTIVE_STATE;
+        json["PSU_DEFAULT_OFF"] = PSU_DEFAULT_OFF;
+        json["PSU_POWERUP_DELAY"] = PSU_POWERUP_DELAY;
+        json["LED_POWEROFF_TIMEOUT"] = LED_POWEROFF_TIMEOUT;
+        json["POWER_OFF_TIMER"] = POWER_OFF_TIMER;
+        json["POWER_OFF_WAIT_FOR_COOLDOWN"] = POWER_OFF_WAIT_FOR_COOLDOWN;
+        json["PSU_POWERUP_GCODE"] = PSU_POWERUP_GCODE;
+        json["PSU_POWEROFF_GCODE"] = PSU_POWEROFF_GCODE;
+        json["AUTO_POWER_CONTROL"] = AUTO_POWER_CONTROL;
+        json["AUTO_POWER_FANS"] = AUTO_POWER_FANS;
+        json["AUTO_POWER_E_FANS"] = AUTO_POWER_E_FANS;
+        json["AUTO_POWER_CONTROLLERFAN"] = AUTO_POWER_CONTROLLERFAN;
+        json["AUTO_POWER_CHAMBER_FAN"] = AUTO_POWER_CHAMBER_FAN;
+        json["AUTO_POWER_COOLER_FAN"] = AUTO_POWER_COOLER_FAN;
+        json["POWER_TIMEOUT"] = POWER_TIMEOUT;
+        json["POWER_OFF_DELAY"] = POWER_OFF_DELAY;
+        json["AUTO_POWER_E_TEMP"] = AUTO_POWER_E_TEMP;
+        json["AUTO_POWER_CHAMBER_TEMP"] = AUTO_POWER_CHAMBER_TEMP;
+        json["AUTO_POWER_COOLER_TEMP"] = AUTO_POWER_COOLER_TEMP;
+
+        return json;
+    }
+};
+
 struct Configuration
 {
     FirmwareConfiguration firmware;
     HardwareConfiguration hardware;
-
-    /*
-    QString LCD_DISPLAY{defaults::LCD_DISPLAY};
-    int8_t EXTRUDERS{defaults::EXTRUDERS};
-    qreal DEFAULT_NOMINAL_FILAMENT_DIA{defaults::DEFAULT_NOMINAL_FILAMENT_DIA};
-    int32_t X_BED_SIZE{defaults::X_BED_SIZE};
-    int32_t Y_BED_SIZE{defaults::Y_BED_SIZE};
-
-    bool USE_XMIN_PLUG{defaults::USE_XMIN_PLUG};
-    bool USE_YMIN_PLUG{defaults::USE_YMIN_PLUG};
-    bool USE_ZMIN_PLUG{defaults::USE_ZMIN_PLUG};
-    bool USE_IMIN_PLUG{defaults::USE_IMIN_PLUG};
-    bool USE_JMIN_PLUG{defaults::USE_JMIN_PLUG};
-    bool USE_KMIN_PLUG{defaults::USE_KMIN_PLUG};
-
-    bool USE_XMAX_PLUG{defaults::USE_XMAX_PLUG};
-    bool USE_YMAX_PLUG{defaults::USE_YMAX_PLUG};
-    bool USE_ZMAX_PLUG{defaults::USE_ZMAX_PLUG};
-    bool USE_IMAX_PLUG{defaults::USE_IMAX_PLUG};
-    bool USE_JMAX_PLUG{defaults::USE_JMAX_PLUG};
-    bool USE_KMAX_PLUG{defaults::USE_KMAX_PLUG};
-
-    bool X_MIN_ENDSTOP_INVERTING{defaults::X_MIN_ENDSTOP_INVERTING};
-    bool Y_MIN_ENDSTOP_INVERTING{defaults::Y_MIN_ENDSTOP_INVERTING};
-    bool Z_MIN_ENDSTOP_INVERTING{defaults::Z_MIN_ENDSTOP_INVERTING};
-    bool I_MIN_ENDSTOP_INVERTING{defaults::I_MIN_ENDSTOP_INVERTING};
-    bool J_MIN_ENDSTOP_INVERTING{defaults::J_MIN_ENDSTOP_INVERTING};
-    bool K_MIN_ENDSTOP_INVERTING{defaults::K_MIN_ENDSTOP_INVERTING};
-
-    bool X_MAX_ENDSTOP_INVERTING{defaults::X_MAX_ENDSTOP_INVERTING};
-    bool Y_MAX_ENDSTOP_INVERTING{defaults::Y_MAX_ENDSTOP_INVERTING};
-    bool Z_MAX_ENDSTOP_INVERTING{defaults::Z_MAX_ENDSTOP_INVERTING};
-    bool I_MAX_ENDSTOP_INVERTING{defaults::I_MAX_ENDSTOP_INVERTING};
-    bool J_MAX_ENDSTOP_INVERTING{defaults::J_MAX_ENDSTOP_INVERTING};
-    bool K_MAX_ENDSTOP_INVERTING{defaults::K_MAX_ENDSTOP_INVERTING};
-
-    bool Z_MIN_PROBE_ENDSTOP_INVERTING{defaults::Z_MIN_PROBE_ENDSTOP_INVERTING};*/
+    PowerSupplyConfiguration powerSupply;
 
 public:
     QJsonObject ToJson(void) const
@@ -180,6 +233,7 @@ public:
 
         json["firmware"] = firmware.ToJson();
         json["hardware"] = hardware.ToJson();
+        json["powerSupply"] = powerSupply.ToJson();
 
         return json;
     }

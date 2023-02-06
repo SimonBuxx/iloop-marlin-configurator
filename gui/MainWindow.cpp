@@ -85,6 +85,7 @@ void MainWindow::OnNewProject()
 {
     mUi->uFirmwarePage->ResetValues();
     mUi->uHardwarePage->ResetValues();
+    mUi->uPowerSupplyPage->ResetValues();
 
     SetProjectName(std::nullopt);
     Log("New project initialized.");
@@ -98,6 +99,7 @@ Configuration MainWindow::FetchConfiguration()
 
     mUi->uFirmwarePage->FetchConfiguration(config);
     mUi->uHardwarePage->FetchConfiguration(config);
+    mUi->uPowerSupplyPage->FetchConfiguration(config);
 
     return config;
 }
@@ -125,6 +127,15 @@ bool MainWindow::LoadProject(const QJsonObject& pJson)
     if (pJson.contains("hardware") && pJson["hardware"].isObject())
     {
         success &= mUi->uHardwarePage->LoadFromJson(pJson["hardware"].toObject());
+    }
+    else
+    {
+        success = false;
+    }
+
+    if (pJson.contains("powerSupply") && pJson["powerSupply"].isObject())
+    {
+        success &= mUi->uPowerSupplyPage->LoadFromJson(pJson["powerSupply"].toObject());
     }
     else
     {
