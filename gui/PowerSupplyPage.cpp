@@ -1,25 +1,50 @@
+/*!
+ * \file PowerSupplyPage.cpp
+ * \brief The PowerSupplyPage class represents the power supply page
+ * \author Simon Buchholz
+ * \copyright Copyright (c) 2023, Simon Buchholz
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+
 #include "PowerSupplyPage.h"
 #include "./ui_PowerSupplyPage.h"
 #include "HelperFunctions.h"
 
-#include <QStyledItemDelegate>
-#include <QAbstractItemView>
-
-PowerSupplyPage::PowerSupplyPage(QWidget *parent) :
-    QWidget(parent),
+PowerSupplyPage::PowerSupplyPage(QWidget *pParent) :
+    QWidget(pParent),
     mUi(new Ui::PowerSupplyPage)
 {
     mUi->setupUi(this);
 
-#warning temporary code, subclass QComboBox
-    for (const auto& comp : this->children())
-    {
-        if (nullptr != dynamic_cast<QComboBox*>(comp))
-        {
-            static_cast<QComboBox*>(comp)->view()->parentWidget()->setStyleSheet("background: rgb(54, 60, 70);");
-        }
-    }
+    ConnectGuiSignalsAndSlots();
+    ResetValues();
+}
 
+PowerSupplyPage::~PowerSupplyPage()
+{
+    delete mUi;
+}
+
+void PowerSupplyPage::ConnectGuiSignalsAndSlots()
+{
     QObject::connect(mUi->uPsuControlCheckBox, &QCheckBox::stateChanged, this, [&](auto pState)
     {
         mUi->uMksPwcCheckBox->setEnabled(pState > 0);
@@ -65,18 +90,10 @@ PowerSupplyPage::PowerSupplyPage(QWidget *parent) :
 
     QObject::connect(mUi->uPowerOffWaitForCooldownCheckBox, &QCheckBox::stateChanged, this, [&](auto pState)
     {
-                         mUi->uAutoPowerETempEdit->setEnabled(pState > 0 || mUi->uAutoPowerControlCheckBox->isChecked());
+        mUi->uAutoPowerETempEdit->setEnabled(pState > 0 || mUi->uAutoPowerControlCheckBox->isChecked());
         mUi->uAutoPowerChamberTempEdit->setEnabled(pState > 0 || mUi->uAutoPowerControlCheckBox->isChecked());
         mUi->uAutoPowerCoolerTempEdit->setEnabled(pState > 0 || mUi->uAutoPowerControlCheckBox->isChecked());
     });
-
-    ResetValues();
-
-}
-
-PowerSupplyPage::~PowerSupplyPage()
-{
-    delete mUi;
 }
 
 void PowerSupplyPage::ResetValues()
@@ -111,58 +128,58 @@ bool PowerSupplyPage::LoadFromJson(const QJsonObject &pJson)
 {
     bool success = true;
 
-    success &= LoadBool(mUi->uPsuControlCheckBox, pJson, "PSU_CONTROL");
-    success &= LoadStringToLineEdit(mUi->uPsuNameEdit, pJson, "PSU_NAME");
-    success &= LoadBool(mUi->uMksPwcCheckBox, pJson, "MKS_PWC");
-    success &= LoadBool(mUi->uPsOffConfirmCheckBox, pJson, "PS_OFF_CONFIRM");
-    success &= LoadBool(mUi->uPsOffSoundCheckBox, pJson, "PS_OFF_SOUND");
-    success &= LoadStringToComboBox(mUi->uPsuActiveStateComboBox, pJson, "PSU_ACTIVE_STATE");
-    success &= LoadBool(mUi->uPsuDefaultOffCheckBox, pJson, "PSU_DEFAULT_OFF");
-    success &= LoadIntToSpinBox(mUi->uPsuPowerUpDelayEdit, pJson, "PSU_POWERUP_DELAY");
-    success &= LoadIntToSpinBox(mUi->uLedPowerOffTimeoutEdit, pJson, "LED_POWEROFF_TIMEOUT");
-    success &= LoadBool(mUi->uPowerOffTimerCheckBox, pJson, "POWER_OFF_TIMER");
-    success &= LoadBool(mUi->uPowerOffWaitForCooldownCheckBox, pJson, "POWER_OFF_WAIT_FOR_COOLDOWN");
-    success &= LoadStringToLineEdit(mUi->uPsuPowerUpCodeEdit, pJson, "PSU_POWERUP_GCODE");
-    success &= LoadStringToLineEdit(mUi->uPsuPowerOffCodeEdit, pJson, "PSU_POWEROFF_GCODE");
-    success &= LoadBool(mUi->uAutoPowerControlCheckBox, pJson, "AUTO_POWER_CONTROL");
-    success &= LoadBool(mUi->uAutoPowerFansCheckBox, pJson, "AUTO_POWER_FANS");
-    success &= LoadBool(mUi->uAutoPowerEFansCheckBox, pJson, "AUTO_POWER_E_FANS");
-    success &= LoadBool(mUi->uAutoPowerControllerFanCheckBox, pJson, "AUTO_POWER_CONTROLLERFAN");
-    success &= LoadBool(mUi->uAutoPowerChamberFanCheckBox, pJson, "AUTO_POWER_CHAMBER_FAN");
-    success &= LoadBool(mUi->uAutoPowerCoolerFanCheckBox, pJson, "AUTO_POWER_COOLER_FAN");
-    success &= LoadIntToSpinBox(mUi->uPowerTimeoutEdit, pJson, "POWER_TIMEOUT");
-    success &= LoadIntToSpinBox(mUi->uPowerOffDelayEdit, pJson, "POWER_OFF_DELAY");
-    success &= LoadIntToSpinBox(mUi->uAutoPowerETempEdit, pJson, "AUTO_POWER_E_TEMP");
-    success &= LoadIntToSpinBox(mUi->uAutoPowerChamberTempEdit, pJson, "AUTO_POWER_CHAMBER_TEMP");
-    success &= LoadIntToSpinBox(mUi->uAutoPowerCoolerTempEdit, pJson, "AUTO_POWER_COOLER_TEMP");
+    success &= LoadConfig(mUi->uPsuControlCheckBox, pJson, "PSU_CONTROL");
+    success &= LoadConfig(mUi->uPsuNameEdit, pJson, "PSU_NAME");
+    success &= LoadConfig(mUi->uMksPwcCheckBox, pJson, "MKS_PWC");
+    success &= LoadConfig(mUi->uPsOffConfirmCheckBox, pJson, "PS_OFF_CONFIRM");
+    success &= LoadConfig(mUi->uPsOffSoundCheckBox, pJson, "PS_OFF_SOUND");
+    success &= LoadConfig(mUi->uPsuActiveStateComboBox, pJson, "PSU_ACTIVE_STATE");
+    success &= LoadConfig(mUi->uPsuDefaultOffCheckBox, pJson, "PSU_DEFAULT_OFF");
+    success &= LoadConfig(mUi->uPsuPowerUpDelayEdit, pJson, "PSU_POWERUP_DELAY");
+    success &= LoadConfig(mUi->uLedPowerOffTimeoutEdit, pJson, "LED_POWEROFF_TIMEOUT");
+    success &= LoadConfig(mUi->uPowerOffTimerCheckBox, pJson, "POWER_OFF_TIMER");
+    success &= LoadConfig(mUi->uPowerOffWaitForCooldownCheckBox, pJson, "POWER_OFF_WAIT_FOR_COOLDOWN");
+    success &= LoadConfig(mUi->uPsuPowerUpCodeEdit, pJson, "PSU_POWERUP_GCODE");
+    success &= LoadConfig(mUi->uPsuPowerOffCodeEdit, pJson, "PSU_POWEROFF_GCODE");
+    success &= LoadConfig(mUi->uAutoPowerControlCheckBox, pJson, "AUTO_POWER_CONTROL");
+    success &= LoadConfig(mUi->uAutoPowerFansCheckBox, pJson, "AUTO_POWER_FANS");
+    success &= LoadConfig(mUi->uAutoPowerEFansCheckBox, pJson, "AUTO_POWER_E_FANS");
+    success &= LoadConfig(mUi->uAutoPowerControllerFanCheckBox, pJson, "AUTO_POWER_CONTROLLERFAN");
+    success &= LoadConfig(mUi->uAutoPowerChamberFanCheckBox, pJson, "AUTO_POWER_CHAMBER_FAN");
+    success &= LoadConfig(mUi->uAutoPowerCoolerFanCheckBox, pJson, "AUTO_POWER_COOLER_FAN");
+    success &= LoadConfig(mUi->uPowerTimeoutEdit, pJson, "POWER_TIMEOUT");
+    success &= LoadConfig(mUi->uPowerOffDelayEdit, pJson, "POWER_OFF_DELAY");
+    success &= LoadConfig(mUi->uAutoPowerETempEdit, pJson, "AUTO_POWER_E_TEMP");
+    success &= LoadConfig(mUi->uAutoPowerChamberTempEdit, pJson, "AUTO_POWER_CHAMBER_TEMP");
+    success &= LoadConfig(mUi->uAutoPowerCoolerTempEdit, pJson, "AUTO_POWER_COOLER_TEMP");
 
     return success;
 }
 
 void PowerSupplyPage::FetchConfiguration(Configuration& pConfig)
 {
-    pConfig.powerSupply.PSU_CONTROL = mUi->uPsuControlCheckBox->isChecked();
-    pConfig.powerSupply.PSU_NAME = mUi->uPsuNameEdit->text();
-    pConfig.powerSupply.MKS_PWC = mUi->uMksPwcCheckBox->isChecked();
-    pConfig.powerSupply.PS_OFF_CONFIRM = mUi->uPsOffConfirmCheckBox->isChecked();
-    pConfig.powerSupply.PS_OFF_SOUND = mUi->uPsOffSoundCheckBox->isChecked();
-    pConfig.powerSupply.PSU_ACTIVE_STATE = mUi->uPsuActiveStateComboBox->currentText();
-    pConfig.powerSupply.PSU_DEFAULT_OFF = mUi->uPsuDefaultOffCheckBox->isChecked();
-    pConfig.powerSupply.PSU_POWERUP_DELAY = mUi->uPsuPowerUpDelayEdit->value();
-    pConfig.powerSupply.LED_POWEROFF_TIMEOUT = mUi->uLedPowerOffTimeoutEdit->value();
-    pConfig.powerSupply.POWER_OFF_TIMER = mUi->uPowerOffTimerCheckBox->isChecked();
-    pConfig.powerSupply.POWER_OFF_WAIT_FOR_COOLDOWN = mUi->uPowerOffWaitForCooldownCheckBox->isChecked();
-    pConfig.powerSupply.PSU_POWERUP_GCODE = mUi->uPsuPowerUpCodeEdit->text();
-    pConfig.powerSupply.PSU_POWEROFF_GCODE = mUi->uPsuPowerOffCodeEdit->text();
-    pConfig.powerSupply.AUTO_POWER_CONTROL = mUi->uAutoPowerControlCheckBox->isChecked();
-    pConfig.powerSupply.AUTO_POWER_FANS = mUi->uAutoPowerFansCheckBox->isChecked();
-    pConfig.powerSupply.AUTO_POWER_E_FANS = mUi->uAutoPowerEFansCheckBox->isChecked();
-    pConfig.powerSupply.AUTO_POWER_CONTROLLERFAN = mUi->uAutoPowerControllerFanCheckBox->isChecked();
-    pConfig.powerSupply.AUTO_POWER_CHAMBER_FAN = mUi->uAutoPowerChamberFanCheckBox->isChecked();
-    pConfig.powerSupply.AUTO_POWER_COOLER_FAN = mUi->uAutoPowerCoolerFanCheckBox->isChecked();
-    pConfig.powerSupply.POWER_TIMEOUT = mUi->uPowerTimeoutEdit->value();
-    pConfig.powerSupply.POWER_OFF_DELAY = mUi->uPowerOffDelayEdit->value();
-    pConfig.powerSupply.AUTO_POWER_E_TEMP = mUi->uAutoPowerETempEdit->value();
-    pConfig.powerSupply.AUTO_POWER_CHAMBER_TEMP = mUi->uAutoPowerChamberTempEdit->value();
-    pConfig.powerSupply.AUTO_POWER_COOLER_TEMP = mUi->uAutoPowerCoolerTempEdit->value();
+    SetConfig(pConfig.powerSupply.PSU_CONTROL, mUi->uPsuControlCheckBox);
+    SetConfig(pConfig.powerSupply.PSU_NAME, mUi->uPsuNameEdit);
+    SetConfig(pConfig.powerSupply.MKS_PWC, mUi->uMksPwcCheckBox);
+    SetConfig(pConfig.powerSupply.PS_OFF_CONFIRM, mUi->uPsOffConfirmCheckBox);
+    SetConfig(pConfig.powerSupply.PS_OFF_SOUND, mUi->uPsOffSoundCheckBox);
+    SetConfig(pConfig.powerSupply.PSU_ACTIVE_STATE, mUi->uPsuActiveStateComboBox);
+    SetConfig(pConfig.powerSupply.PSU_DEFAULT_OFF, mUi->uPsuDefaultOffCheckBox);
+    SetConfig(pConfig.powerSupply.PSU_POWERUP_DELAY, mUi->uPsuPowerUpDelayEdit);
+    SetConfig(pConfig.powerSupply.LED_POWEROFF_TIMEOUT, mUi->uLedPowerOffTimeoutEdit);
+    SetConfig(pConfig.powerSupply.POWER_OFF_TIMER, mUi->uPowerOffTimerCheckBox);
+    SetConfig(pConfig.powerSupply.POWER_OFF_WAIT_FOR_COOLDOWN, mUi->uPowerOffWaitForCooldownCheckBox);
+    SetConfig(pConfig.powerSupply.PSU_POWERUP_GCODE, mUi->uPsuPowerUpCodeEdit);
+    SetConfig(pConfig.powerSupply.PSU_POWEROFF_GCODE, mUi->uPsuPowerOffCodeEdit);
+    SetConfig(pConfig.powerSupply.AUTO_POWER_CONTROL, mUi->uAutoPowerControlCheckBox);
+    SetConfig(pConfig.powerSupply.AUTO_POWER_FANS, mUi->uAutoPowerFansCheckBox);
+    SetConfig(pConfig.powerSupply.AUTO_POWER_E_FANS, mUi->uAutoPowerEFansCheckBox);
+    SetConfig(pConfig.powerSupply.AUTO_POWER_CONTROLLERFAN, mUi->uAutoPowerControllerFanCheckBox);
+    SetConfig(pConfig.powerSupply.AUTO_POWER_CHAMBER_FAN, mUi->uAutoPowerChamberFanCheckBox);
+    SetConfig(pConfig.powerSupply.AUTO_POWER_COOLER_FAN, mUi->uAutoPowerCoolerFanCheckBox);
+    SetConfig(pConfig.powerSupply.POWER_TIMEOUT, mUi->uPowerTimeoutEdit);
+    SetConfig(pConfig.powerSupply.POWER_OFF_DELAY, mUi->uPowerOffDelayEdit);
+    SetConfig(pConfig.powerSupply.AUTO_POWER_E_TEMP, mUi->uAutoPowerETempEdit);
+    SetConfig(pConfig.powerSupply.AUTO_POWER_CHAMBER_TEMP, mUi->uAutoPowerChamberTempEdit);
+    SetConfig(pConfig.powerSupply.AUTO_POWER_COOLER_TEMP, mUi->uAutoPowerCoolerTempEdit);
 }

@@ -1,6 +1,6 @@
 /*!
- * \file AboutDialog.cpp
- * \brief The AboutDialog class represents the about dialog
+ * \file Dropdown.cpp
+ * \brief The Dropdown class represents a dropdown menu
  * \author Simon Buchholz
  * \copyright Copyright (c) 2023, Simon Buchholz
  *
@@ -23,17 +23,15 @@
  * SOFTWARE.
  */
 
-#include "AboutDialog.h"
-#include "ui_AboutDialog.h"
+#include "Dropdown.h"
 
-AboutDialog::AboutDialog(QWidget *pParent) :
-    QDialog(pParent),
-    mUi(new Ui::AboutDialog)
+#include <QAbstractItemView>
+
+Dropdown::Dropdown(QWidget *pParent) :
+    QComboBox(pParent)
 {
-    mUi->setupUi(this);
+    view()->parentWidget()->setStyleSheet("background: rgb(54, 60, 70);");
 }
 
-AboutDialog::~AboutDialog()
-{
-    delete mUi;
-}
+Dropdown::~Dropdown()
+{}

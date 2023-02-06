@@ -1,6 +1,6 @@
 /*!
- * \file AboutDialog.cpp
- * \brief The AboutDialog class represents the about dialog
+ * \file Dropdown.h
+ * \brief The Dropdown class represents a dropdown menu
  * \author Simon Buchholz
  * \copyright Copyright (c) 2023, Simon Buchholz
  *
@@ -23,17 +23,25 @@
  * SOFTWARE.
  */
 
-#include "AboutDialog.h"
-#include "ui_AboutDialog.h"
+#ifndef DROPDOWN_H
+#define DROPDOWN_H
 
-AboutDialog::AboutDialog(QWidget *pParent) :
-    QDialog(pParent),
-    mUi(new Ui::AboutDialog)
-{
-    mUi->setupUi(this);
-}
+#include <QComboBox>
 
-AboutDialog::~AboutDialog()
+///
+/// \brief The Dropdown class represents a dropdown menu
+///
+class Dropdown : public QComboBox
 {
-    delete mUi;
-}
+    Q_OBJECT
+public:
+    /// \brief Constructor for the dropdown menu
+    ///
+    /// \param pParent: Reference to the parent widget
+    Dropdown(QWidget *pParent = nullptr);
+
+    /// \brief Destructor for the dropdown menu
+    ~Dropdown(void) override;
+};
+
+#endif // DROPDOWN_H

@@ -183,7 +183,7 @@ QAbstractSpinBox::down-button:off {
   </property>
   <layout class="QGridLayout" name="gridLayout" columnstretch="0,0,0,0,0,1">
    <item row="2" column="4" colspan="2">
-    <widget class="QComboBox" name="uSerialPortBox">
+    <widget class="Dropdown" name="uSerialPortBox">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -251,7 +251,7 @@ QAbstractSpinBox::down-button:off {
     </widget>
    </item>
    <item row="8" column="4" colspan="2">
-    <widget class="QComboBox" name="uSerialPort3ComboBox">
+    <widget class="Dropdown" name="uSerialPort3ComboBox">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -433,7 +433,7 @@ QAbstractSpinBox::down-button:off {
     </widget>
    </item>
    <item row="9" column="4" colspan="2">
-    <widget class="QComboBox" name="uBaudRate3ComboBox">
+    <widget class="Dropdown" name="uBaudRate3ComboBox">
      <property name="enabled">
       <bool>false</bool>
      </property>
@@ -555,7 +555,7 @@ QAbstractSpinBox::down-button:off {
     </widget>
    </item>
    <item row="3" column="4" colspan="2">
-    <widget class="QComboBox" name="uBaudrateBox">
+    <widget class="Dropdown" name="uBaudrateBox">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -960,7 +960,7 @@ QAbstractSpinBox::down-button:off {
     </widget>
    </item>
    <item row="7" column="4" colspan="2">
-    <widget class="QComboBox" name="uBaudRate2ComboBox">
+    <widget class="Dropdown" name="uBaudRate2ComboBox">
      <property name="enabled">
       <bool>false</bool>
      </property>
@@ -1513,7 +1513,7 @@ QAbstractSpinBox::down-button:off {
     </widget>
    </item>
    <item row="6" column="4" colspan="2">
-    <widget class="QComboBox" name="uSerialPort2ComboBox">
+    <widget class="Dropdown" name="uSerialPort2ComboBox">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -1862,7 +1862,7 @@ QAbstractSpinBox::down-button:off {
     </widget>
    </item>
    <item row="0" column="4" colspan="2">
-    <widget class="QComboBox" name="uMotherboardBox">
+    <widget class="Dropdown" name="uMotherboardBox">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -3680,6 +3680,13 @@ QAbstractSpinBox::down-button:off {
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Dropdown</class>
+   <extends>QComboBox</extends>
+   <header>Dropdown.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

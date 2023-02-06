@@ -1,3 +1,28 @@
+/*!
+ * \file Configuration.h
+ * \brief The configuration file contains global constants
+ * \author Simon Buchholz
+ * \copyright Copyright (c) 2023, Simon Buchholz
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
 #ifndef CONFIGURATION_H
 #define CONFIGURATION_H
 
@@ -5,8 +30,9 @@
 #include <cstdint>
 #include <string>
 
-// Contains special values that indicates that the line in the
-// generated config should be commented out (bool flags are always commented out when false)
+/* Contains special values that indicates that the line in the
+ * generated config should be commented out (bool flags are always commented out when false)
+ */
 namespace disabled_values
 {
 static constexpr auto SERIAL_PORT_2{"No port selected"};
@@ -15,6 +41,7 @@ static constexpr auto SERIAL_PORT_3{"No port selected"};
 static constexpr auto BAUDRATE_3{"Use BAUDRATE"};
 }
 
+// Contains default values of all configuration parameters
 namespace defaults
 {
 // Firmware
@@ -101,6 +128,9 @@ static constexpr auto K_MAX_ENDSTOP_INVERTING{false};
 static constexpr auto Z_MIN_PROBE_ENDSTOP_INVERTING{false};
 }
 
+///
+/// \brief The FirmwareConfiguration struct contains firmware configurations
+///
 struct FirmwareConfiguration
 {
     QString STRING_CONFIG_H_AUTHOR{defaults::STRING_CONFIG_H_AUTHOR};
@@ -110,6 +140,9 @@ struct FirmwareConfiguration
     bool CUSTOM_STATUS_SCREEN_IMAGE{defaults::CUSTOM_STATUS_SCREEN_IMAGE};
 
 public:
+    /// \brief Converts the configuration into a JSON object
+    ///
+    /// \return a JSON object containing the configuration data
     QJsonObject ToJson(void) const
     {
         QJsonObject json;
@@ -124,6 +157,9 @@ public:
     }
 };
 
+///
+/// \brief The HardwareConfiguration struct contains hardware configurations
+///
 struct HardwareConfiguration
 {
     QString MOTHERBOARD{defaults::MOTHERBOARD};
@@ -139,6 +175,9 @@ struct HardwareConfiguration
     QString MACHINE_UUID{defaults::MACHINE_UUID};
 
 public:
+    /// \brief Converts the configuration into a JSON object
+    ///
+    /// \return a JSON object containing the configuration data
     QJsonObject ToJson(void) const
     {
         QJsonObject json;
@@ -159,6 +198,9 @@ public:
     }
 };
 
+///
+/// \brief The PowerSupplyConfiguration struct contains power supply configurations
+///
 struct PowerSupplyConfiguration
 {
     bool PSU_CONTROL{defaults::PSU_CONTROL};
@@ -187,6 +229,9 @@ struct PowerSupplyConfiguration
     int32_t AUTO_POWER_COOLER_TEMP{defaults::AUTO_POWER_COOLER_TEMP};
 
 public:
+    /// \brief Converts the configuration into a JSON object
+    ///
+    /// \return a JSON object containing the configuration data
     QJsonObject ToJson(void) const
     {
         QJsonObject json;
@@ -220,6 +265,9 @@ public:
     }
 };
 
+///
+/// \brief The Configuration struct contains a complete Marlin configuration
+///
 struct Configuration
 {
     FirmwareConfiguration firmware;
@@ -227,6 +275,9 @@ struct Configuration
     PowerSupplyConfiguration powerSupply;
 
 public:
+    /// \brief Converts the configuration into a JSON object
+    ///
+    /// \return a JSON object containing the configuration data
     QJsonObject ToJson(void) const
     {
         QJsonObject json;

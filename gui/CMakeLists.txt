@@ -23,19 +23,12 @@ target_sources(GUI_IMC_GUI
         HardwarePage.h
         HardwarePage.cpp
         HardwarePage.ui
-        Endstops_Configurator.h
-        Endstops_Configurator.cpp
-        Endstops_Configurator.ui
         AboutDialog.h
         AboutDialog.cpp
         AboutDialog.ui
-        TemperaturesPage.h
-        TemperaturesPage.cpp
-        TemperaturesPage.ui
         PowerSupplyPage.h
         PowerSupplyPage.cpp
         PowerSupplyPage.ui
-        HotendTempSensorsConfigurator.h
-        HotendTempSensorsConfigurator.cpp
-        HotendTempSensorsConfigurator.ui
 )
+
+add_subdirectory(widgets)
