@@ -85,24 +85,29 @@ void MainWindow::ConnectGuiSignalsAndSlots()
         QDesktopServices::openUrl(QUrl("https://er-ig.de/"));
     });
 
-    QObject::connect(mUi->uFirmwareTabButton, &QPushButton::clicked, this, [&]()
+    QObject::connect(mUi->uWelcomeTabButton, &QPushButton::clicked, this, [&]()
     {
         mUi->stackedWidget->setCurrentIndex(0);
     });
 
-    QObject::connect(mUi->uHardwareTabButton, &QPushButton::clicked, this, [&]()
+    QObject::connect(mUi->uFirmwareTabButton, &QPushButton::clicked, this, [&]()
     {
         mUi->stackedWidget->setCurrentIndex(1);
     });
 
-    QObject::connect(mUi->uExtruderTabButton, &QPushButton::clicked, this, [&]()
+    QObject::connect(mUi->uHardwareTabButton, &QPushButton::clicked, this, [&]()
     {
         mUi->stackedWidget->setCurrentIndex(2);
     });
 
-    QObject::connect(mUi->uPowerSupplyButton, &QPushButton::clicked, this, [&]()
+    QObject::connect(mUi->uExtruderTabButton, &QPushButton::clicked, this, [&]()
     {
         mUi->stackedWidget->setCurrentIndex(3);
+    });
+
+    QObject::connect(mUi->uPowerSupplyButton, &QPushButton::clicked, this, [&]()
+    {
+        mUi->stackedWidget->setCurrentIndex(4);
     });
 }
 
@@ -122,11 +127,18 @@ Configuration MainWindow::FetchConfiguration()
 {
     Configuration config;
 
-    mUi->uFirmwarePage->FetchConfiguration(config);
-    mUi->uHardwarePage->FetchConfiguration(config);
-    mUi->uPowerSupplyPage->FetchConfiguration(config);
+    config.firmware = mUi->uFirmwarePage->FetchConfiguration();
+    config.hardware = mUi->uHardwarePage->FetchConfiguration();
+    config.powerSupply = mUi->uPowerSupplyPage->FetchConfiguration();
 
     return config;
+}
+
+void MainWindow::ReplaceTags(QStringList& pOutput)
+{
+    mUi->uFirmwarePage->ReplaceTags(pOutput);
+    mUi->uHardwarePage->ReplaceTags(pOutput);
+    mUi->uPowerSupplyPage->ReplaceTags(pOutput);
 }
 
 void MainWindow::SetProjectName(const std::optional<QString>& pName)

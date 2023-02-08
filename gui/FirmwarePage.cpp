@@ -62,11 +62,24 @@ bool FirmwarePage::LoadFromJson(const QJsonObject &pJson)
     return success;
 }
 
-void FirmwarePage::FetchConfiguration(Configuration& pConfig)
+FirmwareConfiguration FirmwarePage::FetchConfiguration()
 {
-    SetConfig(pConfig.firmware.STRING_CONFIG_H_AUTHOR, mUi->uAuthorNameEdit);
-    SetConfig(pConfig.firmware.CUSTOM_VERSION_FILE, mUi->uCustomVersionFileEdit);
-    SetConfig(pConfig.firmware.SHOW_BOOTSCREEN, mUi->uShowBootscreenCheckBox);
-    SetConfig(pConfig.firmware.SHOW_CUSTOM_BOOTSCREEN, mUi->uShowCustomBootscreenCheckBox);
-    SetConfig(pConfig.firmware.CUSTOM_STATUS_SCREEN_IMAGE, mUi->uCustomStatusScreenImageCheckBox);
+    FirmwareConfiguration config;
+
+    SetConfig(config.STRING_CONFIG_H_AUTHOR, mUi->uAuthorNameEdit);
+    SetConfig(config.CUSTOM_VERSION_FILE, mUi->uCustomVersionFileEdit);
+    SetConfig(config.SHOW_BOOTSCREEN, mUi->uShowBootscreenCheckBox);
+    SetConfig(config.SHOW_CUSTOM_BOOTSCREEN, mUi->uShowCustomBootscreenCheckBox);
+    SetConfig(config.CUSTOM_STATUS_SCREEN_IMAGE, mUi->uCustomStatusScreenImageCheckBox);
+
+    return config;
+}
+
+void FirmwarePage::ReplaceTags(QStringList& pOutput)
+{
+    ReplaceTag(pOutput, "#{STRING_CONFIG_H_AUTHOR}", mUi->uAuthorNameEdit, false, "STRING_CONFIG_H_AUTHOR", true);
+    ReplaceTag(pOutput, "#{CUSTOM_VERSION_FILE}", mUi->uCustomVersionFileEdit, mUi->uCustomVersionFileEdit->text().isEmpty(), "CUSTOM_VERSION_FILE");
+    ReplaceTag(pOutput, "#{SHOW_BOOTSCREEN}", mUi->uShowBootscreenCheckBox, "SHOW_BOOTSCREEN");
+    ReplaceTag(pOutput, "#{SHOW_CUSTOM_BOOTSCREEN}", mUi->uShowCustomBootscreenCheckBox, "SHOW_CUSTOM_BOOTSCREEN");
+    ReplaceTag(pOutput, "#{CUSTOM_STATUS_SCREEN_IMAGE}", mUi->uCustomStatusScreenImageCheckBox, "CUSTOM_STATUS_SCREEN_IMAGE");
 }

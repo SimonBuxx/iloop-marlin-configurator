@@ -61,8 +61,10 @@ public:
 
     /// \brief Writes the page parameters into the given Configuration object
     ///
-    /// \param pConfig: Reference to the configuration object to write into
-    void FetchConfiguration(Configuration& pConfig);
+    /// \return Configuration object
+    PowerSupplyConfiguration FetchConfiguration(void);
+
+    void ReplaceTags(QStringList& pOutput);
 
 protected:
     /// \brief Connects this widget's signals and slots

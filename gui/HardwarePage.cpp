@@ -89,17 +89,36 @@ bool HardwarePage::LoadFromJson(const QJsonObject &pJson)
     return success;
 }
 
-void HardwarePage::FetchConfiguration(Configuration& pConfig)
+HardwareConfiguration HardwarePage::FetchConfiguration()
 {
-    SetConfig(pConfig.hardware.MOTHERBOARD, mUi->uMotherboardBox, true);
-    SetConfig(pConfig.hardware.SERIAL_PORT, mUi->uSerialPortBox);
-    SetConfig(pConfig.hardware.BAUDRATE, mUi->uBaudrateBox);
-    SetConfig(pConfig.hardware.BAUD_RATE_GCODE, mUi->uBaudRateGCodeCheckBox);
-    SetConfig(pConfig.hardware.SERIAL_PORT_2, mUi->uSerialPort2ComboBox);
-    SetConfig(pConfig.hardware.BAUDRATE_2, mUi->uBaudRate2ComboBox);
-    SetConfig(pConfig.hardware.SERIAL_PORT_3, mUi->uSerialPort3ComboBox);
-    SetConfig(pConfig.hardware.BAUDRATE_3, mUi->uBaudRate3ComboBox);
-    SetConfig(pConfig.hardware.BLUETOOTH, mUi->uBluetoothCheckBox);
-    SetConfig(pConfig.hardware.CUSTOM_MACHINE_NAME, mUi->uPrinterNameEdit);
-    SetConfig(pConfig.hardware.MACHINE_UUID, mUi->uMachineUuidEdit);
+    HardwareConfiguration config;
+
+    SetConfig(config.MOTHERBOARD, mUi->uMotherboardBox, true);
+    SetConfig(config.SERIAL_PORT, mUi->uSerialPortBox);
+    SetConfig(config.BAUDRATE, mUi->uBaudrateBox);
+    SetConfig(config.BAUD_RATE_GCODE, mUi->uBaudRateGCodeCheckBox);
+    SetConfig(config.SERIAL_PORT_2, mUi->uSerialPort2ComboBox);
+    SetConfig(config.BAUDRATE_2, mUi->uBaudRate2ComboBox);
+    SetConfig(config.SERIAL_PORT_3, mUi->uSerialPort3ComboBox);
+    SetConfig(config.BAUDRATE_3, mUi->uBaudRate3ComboBox);
+    SetConfig(config.BLUETOOTH, mUi->uBluetoothCheckBox);
+    SetConfig(config.CUSTOM_MACHINE_NAME, mUi->uPrinterNameEdit);
+    SetConfig(config.MACHINE_UUID, mUi->uMachineUuidEdit);
+
+    return config;
+}
+
+void HardwarePage::ReplaceTags(QStringList& pOutput)
+{
+    ReplaceTag(pOutput, "#{MOTHERBOARD}", mUi->uMotherboardBox, false, "MOTHERBOARD", true);
+    ReplaceTag(pOutput, "#{SERIAL_PORT}", mUi->uSerialPortBox, false, "SERIAL_PORT");
+    ReplaceTag(pOutput, "#{BAUDRATE}", mUi->uBaudrateBox, false, "BAUDRATE");
+    ReplaceTag(pOutput, "#{BAUD_RATE_GCODE}", mUi->uBaudRateGCodeCheckBox, "BAUD_RATE_GCODE");
+    ReplaceTag(pOutput, "#{SERIAL_PORT_2}", mUi->uSerialPort2ComboBox, mUi->uSerialPort2ComboBox->currentText() == disabled_values::SERIAL_PORT_2, "SERIAL_PORT_2");
+    ReplaceTag(pOutput, "#{BAUDRATE_2}", mUi->uBaudRate2ComboBox, mUi->uBaudRate2ComboBox->currentText() == disabled_values::BAUDRATE_2, "BAUDRATE_2");
+    ReplaceTag(pOutput, "#{SERIAL_PORT_3}", mUi->uSerialPort3ComboBox, mUi->uSerialPort3ComboBox->currentText() == disabled_values::SERIAL_PORT_3, "SERIAL_PORT_3");
+    ReplaceTag(pOutput, "#{BAUDRATE_3}", mUi->uBaudRate3ComboBox, mUi->uBaudRate3ComboBox->currentText() == disabled_values::BAUDRATE_3, "BAUDRATE_3");
+    ReplaceTag(pOutput, "#{BLUETOOTH}", mUi->uBluetoothCheckBox, "BLUETOOTH");
+    ReplaceTag(pOutput, "#{CUSTOM_MACHINE_NAME}", mUi->uPrinterNameEdit, mUi->uPrinterNameEdit->text().isEmpty(), "CUSTOM_MACHINE_NAME", true);
+    ReplaceTag(pOutput, "#{MACHINE_UUID}", mUi->uMachineUuidEdit, mUi->uMachineUuidEdit->text().isEmpty(), "MACHINE_UUID", true);
 }

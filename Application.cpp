@@ -221,64 +221,13 @@ void Application::OnOpenProject()
 
 std::optional<QStringList> Application::GenerateConfigurationContent(const Configuration& pConfig)
 {
-    if (!mTemplate.has_value())
+    if (mTemplate.has_value())
     {
-        return std::nullopt;
+        QStringList output = mTemplate.value();
+
+        mMainWindow.ReplaceTags(output);
+        return output;
     }
 
-    QStringList output = mTemplate.value();
-
-    // Firmware
-    output.replaceInStrings("#{STRING_CONFIG_H_AUTHOR}", pConfig.firmware.STRING_CONFIG_H_AUTHOR);
-    output.replaceInStrings("#{CUSTOM_VERSION_FILE}", OptionalParameter(!pConfig.firmware.CUSTOM_VERSION_FILE.isEmpty(), pConfig.firmware.CUSTOM_VERSION_FILE, "CUSTOM_VERSION_FILE"));
-    output.replaceInStrings("#{SHOW_BOOTSCREEN}", OptionalParameter(pConfig.firmware.SHOW_BOOTSCREEN, "SHOW_BOOTSCREEN"));
-    output.replaceInStrings("#{SHOW_CUSTOM_BOOTSCREEN}", OptionalParameter(pConfig.firmware.SHOW_CUSTOM_BOOTSCREEN, "SHOW_CUSTOM_BOOTSCREEN"));
-    output.replaceInStrings("#{CUSTOM_STATUS_SCREEN_IMAGE}", OptionalParameter(pConfig.firmware.CUSTOM_STATUS_SCREEN_IMAGE, "CUSTOM_STATUS_SCREEN_IMAGE"));
-
-    // Hardware
-    output.replaceInStrings("#{MOTHERBOARD}", pConfig.hardware.MOTHERBOARD);
-    output.replaceInStrings("#{SERIAL_PORT}", pConfig.hardware.SERIAL_PORT);
-    output.replaceInStrings("#{BAUDRATE}", pConfig.hardware.BAUDRATE);
-    output.replaceInStrings("#{BAUD_RATE_GCODE}", OptionalParameter(pConfig.hardware.BAUD_RATE_GCODE, "BAUD_RATE_GCODE"));
-    output.replaceInStrings("#{SERIAL_PORT_2}", OptionalParameter(pConfig.hardware.SERIAL_PORT_2 != disabled_values::SERIAL_PORT_2, pConfig.hardware.SERIAL_PORT_2, "SERIAL_PORT_2"));
-    output.replaceInStrings("#{BAUDRATE_2}", OptionalParameter(pConfig.hardware.BAUDRATE_2 != disabled_values::BAUDRATE_2, pConfig.hardware.BAUDRATE_2, "BAUDRATE_2"));
-    output.replaceInStrings("#{SERIAL_PORT_3}", OptionalParameter(pConfig.hardware.SERIAL_PORT_3 != disabled_values::SERIAL_PORT_3, pConfig.hardware.SERIAL_PORT_3, "SERIAL_PORT_3"));
-    output.replaceInStrings("#{BAUDRATE_3}", OptionalParameter(pConfig.hardware.BAUDRATE_3 != disabled_values::BAUDRATE_3, pConfig.hardware.BAUDRATE_3, "BAUDRATE_3"));
-    output.replaceInStrings("#{BLUETOOTH}", OptionalParameter(pConfig.hardware.BLUETOOTH, "BLUETOOTH"));
-    output.replaceInStrings("#{CUSTOM_MACHINE_NAME}", OptionalParameter(!pConfig.hardware.CUSTOM_MACHINE_NAME.isEmpty(), pConfig.hardware.CUSTOM_MACHINE_NAME, "CUSTOM_MACHINE_NAME", true));
-    output.replaceInStrings("#{MACHINE_UUID}", OptionalParameter(!pConfig.hardware.MACHINE_UUID.isEmpty(), pConfig.hardware.MACHINE_UUID, "MACHINE_UUID", true));
-
-    // Power Supply
-    output.replaceInStrings("#{PSU_CONTROL}", OptionalParameter(pConfig.powerSupply.PSU_CONTROL, "PSU_CONTROL"));
-    output.replaceInStrings("#{PSU_NAME}", OptionalParameter(!pConfig.powerSupply.PSU_NAME.isEmpty(), pConfig.powerSupply.PSU_NAME, "PSU_NAME", true));
-    output.replaceInStrings("#{MKS_PWC}", OptionalParameter(pConfig.powerSupply.MKS_PWC, "MKS_PWC"));
-    output.replaceInStrings("#{PS_OFF_CONFIRM}", OptionalParameter(pConfig.powerSupply.PS_OFF_CONFIRM, "PS_OFF_CONFIRM"));
-    output.replaceInStrings("#{PS_OFF_SOUND}", OptionalParameter(pConfig.powerSupply.PS_OFF_SOUND, "PS_OFF_SOUND"));
-    output.replaceInStrings("#{PSU_ACTIVE_STATE}", pConfig.powerSupply.PSU_ACTIVE_STATE.startsWith("LOW") ? "LOW" : "HIGH");
-    output.replaceInStrings("#{PSU_DEFAULT_OFF}", OptionalParameter(pConfig.powerSupply.PSU_DEFAULT_OFF, "PSU_DEFAULT_OFF"));
-    output.replaceInStrings("#{PSU_POWERUP_DELAY}", OptionalParameter(pConfig.powerSupply.PSU_POWERUP_DELAY > 0, QString::number(pConfig.powerSupply.PSU_POWERUP_DELAY), "PSU_POWERUP_DELAY"));
-    output.replaceInStrings("#{LED_POWEROFF_TIMEOUT}", OptionalParameter(pConfig.powerSupply.LED_POWEROFF_TIMEOUT > 0, QString::number(pConfig.powerSupply.LED_POWEROFF_TIMEOUT), "LED_POWEROFF_TIMEOUT"));
-    output.replaceInStrings("#{POWER_OFF_TIMER}", OptionalParameter(pConfig.powerSupply.POWER_OFF_TIMER, "POWER_OFF_TIMER"));
-    output.replaceInStrings("#{POWER_OFF_WAIT_FOR_COOLDOWN}", OptionalParameter(pConfig.powerSupply.POWER_OFF_WAIT_FOR_COOLDOWN, "POWER_OFF_WAIT_FOR_COOLDOWN"));
-    output.replaceInStrings("#{PSU_POWERUP_GCODE}", OptionalParameter(!pConfig.powerSupply.PSU_POWERUP_GCODE.isEmpty(), pConfig.powerSupply.PSU_POWERUP_GCODE, "PSU_POWERUP_GCODE", true));
-    output.replaceInStrings("#{PSU_POWEROFF_GCODE}", OptionalParameter(!pConfig.powerSupply.PSU_POWEROFF_GCODE.isEmpty(), pConfig.powerSupply.PSU_POWEROFF_GCODE, "PSU_POWEROFF_GCODE", true));
-    output.replaceInStrings("#{AUTO_POWER_CONTROL}", OptionalParameter(pConfig.powerSupply.AUTO_POWER_CONTROL, "AUTO_POWER_CONTROL"));
-    output.replaceInStrings("#{AUTO_POWER_FANS}", OptionalParameter(pConfig.powerSupply.AUTO_POWER_FANS, "AUTO_POWER_FANS"));
-    output.replaceInStrings("#{AUTO_POWER_E_FANS}", OptionalParameter(pConfig.powerSupply.AUTO_POWER_E_FANS, "AUTO_POWER_E_FANS"));
-    output.replaceInStrings("#{AUTO_POWER_CONTROLLERFAN}", OptionalParameter(pConfig.powerSupply.AUTO_POWER_CONTROLLERFAN, "AUTO_POWER_CONTROLLERFAN"));
-    output.replaceInStrings("#{AUTO_POWER_CHAMBER_FAN}", OptionalParameter(pConfig.powerSupply.AUTO_POWER_CHAMBER_FAN, "AUTO_POWER_CHAMBER_FAN"));
-    output.replaceInStrings("#{AUTO_POWER_COOLER_FAN}", OptionalParameter(pConfig.powerSupply.AUTO_POWER_COOLER_FAN, "AUTO_POWER_COOLER_FAN"));
-
-    const bool powerSupplyConditionsMet1 = pConfig.powerSupply.AUTO_POWER_CONTROL;
-#warning Is POWER_TIMEOUT optional or always needed when AUTO_POWER_CONTROL is active?
-    output.replaceInStrings("#{POWER_TIMEOUT}", OptionalParameter(pConfig.powerSupply.POWER_TIMEOUT > 0 && powerSupplyConditionsMet1, QString::number(pConfig.powerSupply.POWER_TIMEOUT), "POWER_TIMEOUT"));
-#warning Make parameters below optional (besides setting to zero)
-    output.replaceInStrings("#{POWER_OFF_DELAY}", OptionalParameter(pConfig.powerSupply.POWER_OFF_DELAY > 0 && powerSupplyConditionsMet1, QString::number(pConfig.powerSupply.POWER_OFF_DELAY), "POWER_OFF_DELAY"));
-
-    const bool powerSupplyConditionsMet2 = pConfig.powerSupply.AUTO_POWER_CONTROL || pConfig.powerSupply.POWER_OFF_WAIT_FOR_COOLDOWN;
-    output.replaceInStrings("#{AUTO_POWER_E_TEMP}", OptionalParameter(pConfig.powerSupply.AUTO_POWER_E_TEMP > 0 && powerSupplyConditionsMet2, QString::number(pConfig.powerSupply.AUTO_POWER_E_TEMP), "AUTO_POWER_E_TEMP"));
-    output.replaceInStrings("#{AUTO_POWER_CHAMBER_TEMP}", OptionalParameter(pConfig.powerSupply.AUTO_POWER_CHAMBER_TEMP > 0 && powerSupplyConditionsMet2, QString::number(pConfig.powerSupply.AUTO_POWER_CHAMBER_TEMP), "AUTO_POWER_CHAMBER_TEMP"));
-    output.replaceInStrings("#{AUTO_POWER_COOLER_TEMP}", OptionalParameter(pConfig.powerSupply.AUTO_POWER_COOLER_TEMP > 0 && powerSupplyConditionsMet2, QString::number(pConfig.powerSupply.AUTO_POWER_COOLER_TEMP), "AUTO_POWER_COOLER_TEMP"));
-
-    return output;
+    return std::nullopt;
 }

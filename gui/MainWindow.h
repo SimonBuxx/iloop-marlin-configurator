@@ -73,6 +73,8 @@ public:
 
     bool LoadProject(const QJsonObject& pJson);
 
+    void ReplaceTags(QStringList& pOutput);
+
 signals:
     /// \brief Emitted when a configuration should be exported as a C++ header file
     ///

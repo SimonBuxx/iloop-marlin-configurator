@@ -1,6 +1,6 @@
 /*!
- * \file HardwarePage.h
- * \brief The HardwarePage class represents the hardware page
+ * \file WelcomePage.h
+/// \brief The WelcomePage class represents the welcome page
  * \author Simon Buchholz
  * \copyright Copyright (c) 2023, Simon Buchholz
  *
@@ -23,21 +23,20 @@
  * SOFTWARE.
  */
 
-#ifndef HARDWAREPAGE_H
-#define HARDWAREPAGE_H
+#ifndef WELCOMEPAGE_H
+#define WELCOMEPAGE_H
 
-#include "Configuration.h"
 #include <QWidget>
 
 // Forward declarations
 namespace Ui {
-class HardwarePage;
+class WelcomePage;
 }
 
 ///
-/// \brief The HardwarePage class represents the hardware page
+/// \brief The WelcomePage class represents the welcome page
 ///
-class HardwarePage : public QWidget
+class WelcomePage : public QWidget
 {
     Q_OBJECT
 
@@ -45,33 +44,14 @@ public:
     /// \brief Constructor for the page widget
     ///
     /// \param pParent: Reference to the parent widget
-    explicit HardwarePage(QWidget *pParent = nullptr);
+    explicit WelcomePage(QWidget *pParent = nullptr);
 
     /// \brief Destructor for the page widget
-    ~HardwarePage(void) override;
+    ~WelcomePage(void) override;
 
-    /// \brief Resets all parameters on the page to their defaults
-    void ResetValues(void);
-
-    /// \brief Loads the page parameters from the given JSON object
-    ///
-    /// \param pJson: Reference to the JSON object
-    /// \return \b true, if all expected parameters where found in the JSON
-    bool LoadFromJson(const QJsonObject &pJson);
-
-    /// \brief Writes the page parameters into the given Configuration object
-    ///
-    /// \return Configuration object
-    HardwareConfiguration FetchConfiguration(void);
-
-    void ReplaceTags(QStringList& pOutput);
 
 protected:
-    /// \brief Connects this widget's signals and slots
-    void ConnectGuiSignalsAndSlots(void);
-
-protected:
-    Ui::HardwarePage *mUi;
+    Ui::WelcomePage *mUi;
 };
 
-#endif // HARDWAREPAGE_H
+#endif // WELCOMEPAGE_H

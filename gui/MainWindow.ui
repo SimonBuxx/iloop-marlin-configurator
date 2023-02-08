@@ -31,11 +31,24 @@
 	color: white;
 }
 
+QMenuBar {
+	padding: 3px;
+}
+
+QMenuBar::item {
+	padding: 5px 10px;
+	border-radius: 3px;
+}
+
 QMenu::item {
     background-color: transparent;
 }
 
 QMenu::item:selected {
+    background-color: rgb(38, 43, 50);
+}
+
+QMenuBar::item:selected {
     background-color: rgb(38, 43, 50);
 }
 
@@ -186,6 +199,9 @@ QScrollBar::sub-line:vertical
        <enum>QFrame::Plain</enum>
       </property>
       <layout class="QGridLayout" name="gridLayout_4">
+       <property name="topMargin">
+        <number>0</number>
+       </property>
        <item row="0" column="0" colspan="2">
         <widget class="QFrame" name="frame_10">
          <property name="sizePolicy">
@@ -199,20 +215,20 @@ QScrollBar::sub-line:vertical
 	background: rgb(38, 43, 50);
 	padding: 5px 10px;
 	border: 1px solid rgb(54, 60, 70);
-	border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
-	border-right: none;
+    border-radius: 3px;
 	text-align: left;
-}
-
-QPushButton::!checked {
-	margin-left: 2px;
+	margin-right: 1px;
 }
 
 QPushButton::checked {
-	background: rgb(54, 60, 70);
+      border: 1px solid rgb(100, 105, 113);
+	  background: rgb(54, 60, 70);
 }
-</string>
+
+QPushButton:hover {
+      border: 1px solid rgb(100, 105, 113);
+	  background: rgb(54, 60, 70);
+}</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::NoFrame</enum>
@@ -233,17 +249,64 @@ QPushButton::checked {
           <property name="bottomMargin">
            <number>0</number>
           </property>
-          <property name="horizontalSpacing">
-           <number>0</number>
-          </property>
-          <property name="verticalSpacing">
-           <number>1</number>
-          </property>
           <item row="0" column="1" rowspan="3">
            <widget class="QStackedWidget" name="stackedWidget">
             <property name="currentIndex">
-             <number>2</number>
+             <number>0</number>
             </property>
+            <widget class="QWidget" name="uWelcomeTab">
+             <layout class="QGridLayout" name="gridLayout_3">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item row="0" column="0">
+               <widget class="QScrollArea" name="scrollArea_6">
+                <property name="frameShape">
+                 <enum>QFrame::Box</enum>
+                </property>
+                <property name="widgetResizable">
+                 <bool>true</bool>
+                </property>
+                <widget class="QWidget" name="scrollAreaWidgetContents_6">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>1032</width>
+                   <height>564</height>
+                  </rect>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_9">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="WelcomePage" name="uWelcomePage" native="true"/>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
             <widget class="QWidget" name="uFirmwareTab">
              <layout class="QGridLayout" name="gridLayout_13">
               <property name="leftMargin">
@@ -271,8 +334,8 @@ QPushButton::checked {
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1058</width>
-                   <height>566</height>
+                   <width>96</width>
+                   <height>26</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_7">
@@ -557,8 +620,8 @@ QPushButton::checked {
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1058</width>
-                   <height>566</height>
+                   <width>96</width>
+                   <height>26</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_2">
@@ -610,8 +673,8 @@ QPushButton::checked {
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1058</width>
-                   <height>566</height>
+                   <width>96</width>
+                   <height>26</height>
                   </rect>
                  </property>
                 </widget>
@@ -646,8 +709,8 @@ QPushButton::checked {
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1058</width>
-                   <height>566</height>
+                   <width>84</width>
+                   <height>1050</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_8">
@@ -664,7 +727,14 @@ QPushButton::checked {
                    <number>0</number>
                   </property>
                   <item row="0" column="0">
-                   <widget class="PowerSupplyPage" name="uPowerSupplyPage" native="true"/>
+                   <widget class="PowerSupplyPage" name="uPowerSupplyPage" native="true">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>1050</height>
+                     </size>
+                    </property>
+                   </widget>
                   </item>
                  </layout>
                 </widget>
@@ -678,7 +748,7 @@ QPushButton::checked {
            <widget class="QScrollArea" name="scrollArea_2">
             <property name="minimumSize">
              <size>
-              <width>200</width>
+              <width>220</width>
               <height>0</height>
              </size>
             </property>
@@ -689,13 +759,13 @@ QPushButton::checked {
              </size>
             </property>
             <property name="layoutDirection">
-             <enum>Qt::RightToLeft</enum>
+             <enum>Qt::LeftToRight</enum>
             </property>
             <property name="frameShape">
-             <enum>QFrame::NoFrame</enum>
+             <enum>QFrame::Box</enum>
             </property>
             <property name="frameShadow">
-             <enum>QFrame::Plain</enum>
+             <enum>QFrame::Sunken</enum>
             </property>
             <property name="widgetResizable">
              <bool>true</bool>
@@ -708,8 +778,8 @@ QPushButton::checked {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>188</width>
-               <height>726</height>
+               <width>204</width>
+               <height>798</height>
               </rect>
              </property>
              <property name="layoutDirection">
@@ -723,19 +793,65 @@ QPushButton::checked {
                <number>1</number>
               </property>
               <property name="leftMargin">
-               <number>2</number>
+               <number>9</number>
               </property>
               <property name="topMargin">
-               <number>0</number>
+               <number>9</number>
               </property>
               <property name="rightMargin">
-               <number>0</number>
+               <number>9</number>
               </property>
               <property name="bottomMargin">
-               <number>0</number>
+               <number>9</number>
               </property>
               <item>
+               <widget class="QPushButton" name="uWelcomeTabButton">
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
+                <property name="text">
+                 <string>Welcome</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="../resources/resources.qrc">
+                  <normaloff>:/tips_and_updates_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/tips_and_updates_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>20</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="checkable">
+                 <bool>true</bool>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+                <attribute name="buttonGroup">
+                 <string notr="true">buttonGroup</string>
+                </attribute>
+               </widget>
+              </item>
+              <item>
+               <widget class="QWidget" name="widget" native="true">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>10</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-bottom: 1px solid rgb(100, 105, 113);
+margin: 0 3px;</string>
+                </property>
+               </widget>
+              </item>
+              <item>
                <widget class="QPushButton" name="uFirmwareTabButton">
+                <property name="styleSheet">
+                 <string notr="true">margin-top: 10px;</string>
+                </property>
                 <property name="text">
                  <string>Firmware Info</string>
                 </property>
@@ -753,7 +869,7 @@ QPushButton::checked {
                  <bool>true</bool>
                 </property>
                 <property name="checked">
-                 <bool>true</bool>
+                 <bool>false</bool>
                 </property>
                 <attribute name="buttonGroup">
                  <string notr="true">buttonGroup</string>
@@ -1203,6 +1319,30 @@ QPushButton::checked {
                </spacer>
               </item>
              </layout>
+             <zorder>widget</zorder>
+             <zorder>uFirmwareTabButton</zorder>
+             <zorder>uHardwareTabButton</zorder>
+             <zorder>uExtruderTabButton</zorder>
+             <zorder>uPowerSupplyButton</zorder>
+             <zorder>pushButton_2</zorder>
+             <zorder>pushButton_3</zorder>
+             <zorder>pushButton_4</zorder>
+             <zorder>pushButton_5</zorder>
+             <zorder>pushButton_6</zorder>
+             <zorder>pushButton_7</zorder>
+             <zorder>pushButton_8</zorder>
+             <zorder>pushButton_10</zorder>
+             <zorder>pushButton_11</zorder>
+             <zorder>pushButton_12</zorder>
+             <zorder>pushButton_9</zorder>
+             <zorder>pushButton_13</zorder>
+             <zorder>pushButton_14</zorder>
+             <zorder>pushButton_15</zorder>
+             <zorder>pushButton_16</zorder>
+             <zorder>pushButton_17</zorder>
+             <zorder>pushButton_18</zorder>
+             <zorder>pushButton_19</zorder>
+             <zorder>uWelcomeTabButton</zorder>
             </widget>
            </widget>
           </item>
@@ -1310,7 +1450,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <x>0</x>
      <y>0</y>
      <width>1280</width>
-     <height>21</height>
+     <height>32</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuDatei">
@@ -1335,7 +1475,43 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <addaction name="separator"/>
     <addaction name="uAboutAction"/>
    </widget>
+   <widget class="QMenu" name="menuDocumentation">
+    <property name="title">
+     <string>Documentation</string>
+    </property>
+    <widget class="QMenu" name="menuConfiguring_Marlin">
+     <property name="title">
+      <string>Section Documentation</string>
+     </property>
+     <addaction name="actionFirmware_Info_Documentation"/>
+     <addaction name="actionHarwdare_Info"/>
+     <addaction name="actionExtruder_Info"/>
+     <addaction name="actionPower_Supply"/>
+     <addaction name="actionThermal_Settings"/>
+     <addaction name="actionKinematics"/>
+     <addaction name="actionEndstops"/>
+     <addaction name="actionMovement"/>
+     <addaction name="actionZ_Probe_Options"/>
+     <addaction name="actionStepper_Drivers"/>
+     <addaction name="actionHoming_and_Bounds"/>
+     <addaction name="actionFilament_Runout_Sensor"/>
+     <addaction name="actionBed_Leveling"/>
+     <addaction name="actionHoming_Options"/>
+     <addaction name="actionAdditional_Features"/>
+     <addaction name="actionUser_Interface_Language"/>
+     <addaction name="actionSD_Card"/>
+     <addaction name="actionLCD_Menu_Items"/>
+     <addaction name="actionEncoder"/>
+     <addaction name="actionSpeaker"/>
+     <addaction name="actionLCD_Controller"/>
+     <addaction name="actionExtra_Features"/>
+    </widget>
+    <addaction name="actionMarlin_Homepage"/>
+    <addaction name="actionAuto_Build_Marlin_VS_Code_Plugin"/>
+    <addaction name="menuConfiguring_Marlin"/>
+   </widget>
    <addaction name="menuDatei"/>
+   <addaction name="menuDocumentation"/>
    <addaction name="menuHilfe"/>
   </widget>
   <action name="uOpenProjectAction">
@@ -1459,7 +1635,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
-    <string>GitHub...</string>
+    <string>iMC on GitHub...</string>
    </property>
    <property name="toolTip">
     <string>GitHub...</string>
@@ -1483,6 +1659,231 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <string>Visit ERIG e.V. ...</string>
    </property>
   </action>
+  <action name="actionmarlinfw_org">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Visit Marlin...</string>
+   </property>
+  </action>
+  <action name="actionMarlin_Homepage">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Marlin Homepage...</string>
+   </property>
+  </action>
+  <action name="actionFirmware_Info_Documentation">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Firmware Info...</string>
+   </property>
+  </action>
+  <action name="actionHarwdare_Info">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Hardware Info...</string>
+   </property>
+  </action>
+  <action name="actionExtruder_Info">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Extruder Info...</string>
+   </property>
+  </action>
+  <action name="actionPower_Supply">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Power Supply...</string>
+   </property>
+  </action>
+  <action name="actionThermal_Settings">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Thermal Settings...</string>
+   </property>
+  </action>
+  <action name="actionKinematics">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Kinematics...</string>
+   </property>
+  </action>
+  <action name="actionEndstops">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Endstops...</string>
+   </property>
+  </action>
+  <action name="actionMovement">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Movement...</string>
+   </property>
+  </action>
+  <action name="actionZ_Probe_Options">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Z Probe Options...</string>
+   </property>
+  </action>
+  <action name="actionStepper_Drivers">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Stepper Drivers...</string>
+   </property>
+  </action>
+  <action name="actionHoming_and_Bounds">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Homing and Bounds...</string>
+   </property>
+  </action>
+  <action name="actionFilament_Runout_Sensor">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Filament Runout Sensor...</string>
+   </property>
+  </action>
+  <action name="actionBed_Leveling">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Bed Leveling...</string>
+   </property>
+  </action>
+  <action name="actionHoming_Options">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Homing Options...</string>
+   </property>
+  </action>
+  <action name="actionAdditional_Features">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Additional Features...</string>
+   </property>
+  </action>
+  <action name="actionUser_Interface_Language">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+   </property>
+   <property name="text">
+    <string>User Interface Language...</string>
+   </property>
+  </action>
+  <action name="actionSD_Card">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+   </property>
+   <property name="text">
+    <string>SD Card...</string>
+   </property>
+  </action>
+  <action name="actionLCD_Menu_Items">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+   </property>
+   <property name="text">
+    <string>LCD Menu Items...</string>
+   </property>
+  </action>
+  <action name="actionEncoder">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Encoder...</string>
+   </property>
+  </action>
+  <action name="actionSpeaker">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Speaker...</string>
+   </property>
+  </action>
+  <action name="actionLCD_Controller">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+   </property>
+   <property name="text">
+    <string>LCD Controller...</string>
+   </property>
+  </action>
+  <action name="actionExtra_Features">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Extra Features...</string>
+   </property>
+  </action>
+  <action name="actionAuto_Build_Marlin_VS_Code_Plugin">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Auto Build Marlin...</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>
@@ -1501,6 +1902,12 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <class>PowerSupplyPage</class>
    <extends>QWidget</extends>
    <header>PowerSupplyPage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>WelcomePage</class>
+   <extends>QWidget</extends>
+   <header>WelcomePage.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

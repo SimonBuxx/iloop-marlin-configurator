@@ -29,6 +29,9 @@ target_sources(GUI_IMC_GUI
         PowerSupplyPage.h
         PowerSupplyPage.cpp
         PowerSupplyPage.ui
+        WelcomePage.h
+        WelcomePage.cpp
+        WelcomePage.ui
 )
 
 add_subdirectory(widgets)

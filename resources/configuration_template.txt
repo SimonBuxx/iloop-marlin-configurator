@@ -60,7 +60,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "#{STRING_CONFIG_H_AUTHOR}" // Who made the changes.
+#{STRING_CONFIG_H_AUTHOR} // Who made the changes.
 #{CUSTOM_VERSION_FILE} // Path from the root directory (no quotes)
 
 /**
@@ -87,7 +87,7 @@
 
 // Choose the name from boards.h that matches your setup
 #ifndef MOTHERBOARD
-  #define MOTHERBOARD #{MOTHERBOARD}
+  #{MOTHERBOARD}
 #endif
 
 /**
@@ -98,7 +98,7 @@
  *
  * :[-1, 0, 1, 2, 3, 4, 5, 6, 7]
  */
-#define SERIAL_PORT #{SERIAL_PORT}
+#{SERIAL_PORT}
 
 /**
  * Serial Port Baud Rate
@@ -111,7 +111,7 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
-#define BAUDRATE #{BAUDRATE}
+#{BAUDRATE}
 
 #{BAUD_RATE_GCODE}     // Enable G-code M575 to set the baud rate
 
@@ -408,7 +408,7 @@
   #{MKS_PWC}                // Using the MKS PWC add-on
   #{PS_OFF_CONFIRM}          // Confirm dialog when power off
   #{PS_OFF_SOUND}            // Beep 1s when power off
-  #define PSU_ACTIVE_STATE #{PSU_ACTIVE_STATE}      // Set 'LOW' for ATX, 'HIGH' for X-Box
+  #{PSU_ACTIVE_STATE}      // Set 'LOW' for ATX, 'HIGH' for X-Box
 
   #{PSU_DEFAULT_OFF}               // Keep power off until enabled directly with M80
   #{PSU_POWERUP_DELAY}    // (ms) Delay for the PSU to warm up to full power

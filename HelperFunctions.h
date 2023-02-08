@@ -174,4 +174,31 @@ inline void SetConfig(int32_t& pConfigItem, const T& pWidget)
     pConfigItem = pWidget->value();
 }
 
+inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const Dropdown* pWidget, bool pCommentOut, const QString& pParam, bool pUseItemInBrackets = false)
+{
+    if (pUseItemInBrackets)
+    {
+        pOutput.replaceInStrings(pTagName, QString("%0#define %1 %2").arg(pCommentOut ? "//" : "", pParam, pCommentOut ? "" : ExtractFlagNameInSquareBrackets(pWidget->currentText())));
+    }
+    else
+    {
+        pOutput.replaceInStrings(pTagName, QString("%0#define %1 %2").arg(pCommentOut ? "//" : "", pParam, pCommentOut ? "" : pWidget->currentText()));
+    }
+}
+
+inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const QCheckBox* pWidget, const QString& pParam)
+{
+    pOutput.replaceInStrings(pTagName, QString("%0#define %1").arg(pWidget->isChecked() ? "" : "//", pParam));
+}
+
+inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const QLineEdit* pWidget, bool pCommentOut, const QString& pParam, bool pUseParentheses = false)
+{
+    pOutput.replaceInStrings(pTagName, QString(pUseParentheses ? "%0#define %1 \"%2\"" : "%0#define %1 %2").arg(pCommentOut ? "//" : "", pCommentOut ? "" : pParam, pWidget->text()));
+}
+
+inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const QSpinBox* pWidget, bool pCommentOut, const QString& pParam)
+{
+    pOutput.replaceInStrings(pTagName, QString("%0#define %1 %2").arg(pCommentOut ? "//" : "", pCommentOut ? "" : pParam, QString::number(pWidget->value())));
+}
+
 #endif // HELPERFUNCTIONS_H
