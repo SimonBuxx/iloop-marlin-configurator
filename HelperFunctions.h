@@ -193,7 +193,7 @@ inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const QChe
 
 inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const QLineEdit* pWidget, bool pCommentOut, const QString& pParam, bool pUseParentheses = false)
 {
-    pOutput.replaceInStrings(pTagName, QString(pUseParentheses ? "%0#define %1 \"%2\"" : "%0#define %1 %2").arg(pCommentOut ? "//" : "", pCommentOut ? "" : pParam, pWidget->text()));
+    pOutput.replaceInStrings(pTagName, QString(pUseParentheses ? "%0#define %1 \"%2\"" : "%0#define %1 %2").arg(pCommentOut ? "//" : "", pParam, pCommentOut ? "" : pWidget->text()));
 }
 
 inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const QSpinBox* pWidget, bool pCommentOut, const QString& pParam)

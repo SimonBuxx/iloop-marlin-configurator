@@ -214,9 +214,9 @@ void PowerSupplyPage::ReplaceTags(QStringList& pOutput)
     ReplaceTag(pOutput, "#{POWER_TIMEOUT}", mUi->uPowerTimeoutEdit, mUi->uPowerTimeoutEdit->value() == 0, "POWER_TIMEOUT");
 #warning Make parameters below optional (besides setting to zero)
     ReplaceTag(pOutput, "#{POWER_OFF_DELAY}", mUi->uPowerOffDelayEdit, mUi->uPowerOffDelayEdit->value() == 0, "POWER_OFF_DELAY");
-    ReplaceTag(pOutput, "#{AUTO_POWER_E_TEMP}", mUi->uAutoPowerETempEdit, mUi->uAutoPowerETempEdit->value() == 0, "POWER_OFF_DELAY");
-    ReplaceTag(pOutput, "#{AUTO_POWER_CHAMBER_TEMP}", mUi->uAutoPowerChamberTempEdit, mUi->uAutoPowerChamberTempEdit->value() == 0, "POWER_OFF_DELAY");
-    ReplaceTag(pOutput, "#{AUTO_POWER_COOLER_TEMP}", mUi->uAutoPowerCoolerTempEdit, mUi->uAutoPowerCoolerTempEdit->value() == 0, "POWER_OFF_DELAY");
+    ReplaceTag(pOutput, "#{AUTO_POWER_E_TEMP}", mUi->uAutoPowerETempEdit, mUi->uAutoPowerETempEdit->value() == 0, "AUTO_POWER_E_TEMP");
+    ReplaceTag(pOutput, "#{AUTO_POWER_CHAMBER_TEMP}", mUi->uAutoPowerChamberTempEdit, mUi->uAutoPowerChamberTempEdit->value() == 0, "AUTO_POWER_CHAMBER_TEMP");
+    ReplaceTag(pOutput, "#{AUTO_POWER_COOLER_TEMP}", mUi->uAutoPowerCoolerTempEdit, mUi->uAutoPowerCoolerTempEdit->value() == 0, "AUTO_POWER_COOLER_TEMP");
 
 
 }
