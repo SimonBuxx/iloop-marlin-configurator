@@ -64,6 +64,9 @@ static constexpr auto BLUETOOTH{false};
 static constexpr auto CUSTOM_MACHINE_NAME{""};
 static constexpr auto MACHINE_UUID{""};
 
+// Extruders
+static constexpr auto EXTRUDERS{1};
+
 // Power Supply
 static constexpr auto PSU_CONTROL{false};
 static constexpr auto PSU_NAME{""};
@@ -92,7 +95,6 @@ static constexpr auto AUTO_POWER_COOLER_TEMP{26};
 
 // Legacy
 static constexpr auto LCD_DISPLAY{"REPRAP_DISCOUNT_SMART_CONTROLLER"};
-static constexpr auto EXTRUDERS{1};
 static constexpr auto DEFAULT_NOMINAL_FILAMENT_DIA{1.75f}; // mm
 static constexpr auto X_BED_SIZE{200}; // mm
 static constexpr auto Y_BED_SIZE{200}; // mm
@@ -199,6 +201,26 @@ public:
 };
 
 ///
+/// \brief The ExtruderConfiguration struct contains extruder configurations
+///
+struct ExtruderConfiguration
+{
+    int32_t EXTRUDERS{defaults::EXTRUDERS};
+public:
+    /// \brief Converts the configuration into a JSON object
+    ///
+    /// \return a JSON object containing the configuration data
+    QJsonObject ToJson(void) const
+    {
+        QJsonObject json;
+
+        json["EXTRUDERS"] = EXTRUDERS;
+
+        return json;
+    }
+};
+
+///
 /// \brief The PowerSupplyConfiguration struct contains power supply configurations
 ///
 struct PowerSupplyConfiguration
@@ -272,6 +294,7 @@ struct Configuration
 {
     FirmwareConfiguration firmware;
     HardwareConfiguration hardware;
+    ExtruderConfiguration extruder;
     PowerSupplyConfiguration powerSupply;
 
 public:
@@ -284,6 +307,7 @@ public:
 
         json["firmware"] = firmware.ToJson();
         json["hardware"] = hardware.ToJson();
+        json["extruder"] = extruder.ToJson();
         json["powerSupply"] = powerSupply.ToJson();
 
         return json;

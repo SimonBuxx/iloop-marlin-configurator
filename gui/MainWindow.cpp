@@ -144,6 +144,7 @@ void MainWindow::OnNewProject()
 {
     mUi->uFirmwarePage->ResetValues();
     mUi->uHardwarePage->ResetValues();
+    mUi->uExtruderPage->ResetValues();
     mUi->uPowerSupplyPage->ResetValues();
 
     SetProjectName(std::nullopt);
@@ -158,6 +159,7 @@ Configuration MainWindow::FetchConfiguration()
 
     config.firmware = mUi->uFirmwarePage->FetchConfiguration();
     config.hardware = mUi->uHardwarePage->FetchConfiguration();
+    config.extruder = mUi->uExtruderPage->FetchConfiguration();
     config.powerSupply = mUi->uPowerSupplyPage->FetchConfiguration();
 
     return config;
@@ -167,6 +169,7 @@ void MainWindow::ReplaceTags(QStringList& pOutput)
 {
     mUi->uFirmwarePage->ReplaceTags(pOutput);
     mUi->uHardwarePage->ReplaceTags(pOutput);
+    mUi->uExtruderPage->ReplaceTags(pOutput);
     mUi->uPowerSupplyPage->ReplaceTags(pOutput);
 }
 
@@ -193,6 +196,15 @@ bool MainWindow::LoadProject(const QJsonObject& pJson)
     if (pJson.contains("hardware") && pJson["hardware"].isObject())
     {
         success &= mUi->uHardwarePage->LoadFromJson(pJson["hardware"].toObject());
+    }
+    else
+    {
+        success = false;
+    }
+
+    if (pJson.contains("extruder") && pJson["extruder"].isObject())
+    {
+        success &= mUi->uExtruderPage->LoadFromJson(pJson["extruder"].toObject());
     }
     else
     {

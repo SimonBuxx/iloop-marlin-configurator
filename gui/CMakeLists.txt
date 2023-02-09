@@ -32,6 +32,9 @@ target_sources(GUI_IMC_GUI
         WelcomePage.h
         WelcomePage.cpp
         WelcomePage.ui
+        ExtruderPage.h
+        ExtruderPage.cpp
+        ExtruderPage.ui
 )
 
 add_subdirectory(widgets)

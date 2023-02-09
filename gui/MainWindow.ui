@@ -252,7 +252,7 @@ QPushButton:hover {
           <item row="0" column="1" rowspan="3">
            <widget class="QStackedWidget" name="stackedWidget">
             <property name="currentIndex">
-             <number>0</number>
+             <number>3</number>
             </property>
             <widget class="QWidget" name="uWelcomeTab">
              <layout class="QGridLayout" name="gridLayout_3">
@@ -673,10 +673,27 @@ QPushButton:hover {
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>96</width>
-                   <height>26</height>
+                   <width>1037</width>
+                   <height>569</height>
                   </rect>
                  </property>
+                 <layout class="QGridLayout" name="gridLayout_10">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="ExtruderPage" name="uExtruderPage" native="true"/>
+                  </item>
+                 </layout>
                 </widget>
                </widget>
               </item>
@@ -1891,6 +1908,12 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <class>WelcomePage</class>
    <extends>QWidget</extends>
    <header>WelcomePage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ExtruderPage</class>
+   <extends>QWidget</extends>
+   <header>ExtruderPage.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
