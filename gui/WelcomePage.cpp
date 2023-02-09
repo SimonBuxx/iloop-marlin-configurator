@@ -31,6 +31,9 @@ WelcomePage::WelcomePage(QWidget *pParent) :
     mUi(new Ui::WelcomePage)
 {
     mUi->setupUi(this);
+
+    QObject::connect(mUi->uNewProjectButton, &QPushButton::clicked, this, &WelcomePage::NewProjectSignal);
+    QObject::connect(mUi->uOpenProjectButton, &QPushButton::clicked, this, &WelcomePage::OpenProjectSignal);
 }
 
 WelcomePage::~WelcomePage()

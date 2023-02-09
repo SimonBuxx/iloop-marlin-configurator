@@ -75,6 +75,8 @@ public:
 
     void ReplaceTags(QStringList& pOutput);
 
+    void JumpToFirstConfigTab(void);
+
 signals:
     /// \brief Emitted when a configuration should be exported as a C++ header file
     ///

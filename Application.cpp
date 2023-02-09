@@ -173,6 +173,7 @@ void Application::OnSaveProject(const Configuration& pConfig, bool pForceSaveAs)
 void Application::OnNewProject()
 {
     mOpenFileInfo = std::nullopt;
+    mMainWindow.JumpToFirstConfigTab();
 }
 
 void Application::OnOpenProject()
@@ -217,6 +218,7 @@ void Application::OnOpenProject()
 
     mOpenFileInfo = fileInfo;
     mMainWindow.SetProjectName(fileInfo.baseName());
+    mMainWindow.JumpToFirstConfigTab();
 }
 
 std::optional<QStringList> Application::GenerateConfigurationContent(const Configuration& pConfig)

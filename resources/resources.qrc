@@ -42,5 +42,7 @@
         <file>height_FILL0_wght100_GRAD0_opsz20.svg</file>
         <file>erig_transparent.png</file>
         <file>tips_and_updates_FILL0_wght100_GRAD0_opsz20.svg</file>
+        <file>SourceSansPro-Light.ttf</file>
+        <file>SourceSansPro-LightItalic.ttf</file>
     </qresource>
 </RCC>

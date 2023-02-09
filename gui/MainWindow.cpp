@@ -53,6 +53,9 @@ void MainWindow::ConnectGuiSignalsAndSlots()
     QObject::connect(mUi->uAboutAction, &QAction::triggered, &mAboutDialog, &AboutDialog::show);
     QObject::connect(mUi->uNewProjectAction, &QAction::triggered, this, &MainWindow::OnNewProject);
 
+    QObject::connect(mUi->uWelcomePage, &WelcomePage::NewProjectSignal, this, &MainWindow::OnNewProject);
+    QObject::connect(mUi->uWelcomePage, &WelcomePage::OpenProjectSignal, this, &MainWindow::OpenProjectSignal);
+
     QObject::connect(mUi->uExportAction, &QAction::triggered, this, [&]()
     {
         QString fileName = QFileDialog::getSaveFileName(this, tr("Export as..."), QDir::homePath() + "/Configuration.h", tr("C++ header (*.h)"));
@@ -109,6 +112,11 @@ void MainWindow::ConnectGuiSignalsAndSlots()
     {
         mUi->stackedWidget->setCurrentIndex(4);
     });
+}
+
+void MainWindow::JumpToFirstConfigTab()
+{
+    mUi->uFirmwareTabButton->click();
 }
 
 void MainWindow::OnNewProject()

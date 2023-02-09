@@ -49,6 +49,10 @@ public:
     /// \brief Destructor for the page widget
     ~WelcomePage(void) override;
 
+signals:
+    void NewProjectSignal(void);
+
+    void OpenProjectSignal(void);
 
 protected:
     Ui::WelcomePage *mUi;

@@ -1005,10 +1005,19 @@ QAbstractSpinBox::down-button:off {
    </item>
    <item row="0" column="0" colspan="7">
     <widget class="QLabel" name="label_5">
+     <property name="font">
+      <font>
+       <family>Source Sans Pro Light</family>
+       <pointsize>-1</pointsize>
+       <italic>true</italic>
+      </font>
+     </property>
      <property name="styleSheet">
       <string notr="true">QLabel {
 	color: rgb(100, 105, 113);
 	font-size: 35px;
+	font-family: &quot;Source Sans Pro Light&quot;;
+	font-style: italic;
 }
 </string>
      </property>
