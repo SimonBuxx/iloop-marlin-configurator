@@ -199,7 +199,7 @@ inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const QLin
 
 inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const QSpinBox* pWidget, bool pCommentOut, const QString& pParam)
 {
-    pOutput.replaceInStrings(pTagName, QString("%0#define %1 %2").arg(pCommentOut ? "//" : "", pCommentOut ? "" : pParam, QString::number(pWidget->value())));
+    pOutput.replaceInStrings(pTagName, QString("%0#define %1 %2").arg(pCommentOut ? "//" : "", pParam, pCommentOut ? "" : QString::number(pWidget->value())));
 }
 
 inline void OpenMarlinDocumentation(const QString& pChapterName)

@@ -59,6 +59,12 @@ void MainWindow::ConnectGuiSignalsAndSlots()
     QObject::connect(mUi->uExportAction, &QAction::triggered, this, [&]()
     {
         QString fileName = QFileDialog::getSaveFileName(this, tr("Export as..."), QDir::homePath() + "/Configuration.h", tr("C++ header (*.h)"));
+
+        if (fileName.isEmpty())
+        {
+            return;
+        }
+
         const auto config = FetchConfiguration();
 
         emit ExportConfigurationSignal(QFileInfo(fileName), config);

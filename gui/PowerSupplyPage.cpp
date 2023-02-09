@@ -57,12 +57,16 @@ void PowerSupplyPage::ConnectGuiSignalsAndSlots()
         mUi->uPsOffSoundCheckBox->setEnabled(pState > 0);
         mUi->uPsuActiveStateComboBox->setEnabled(pState > 0);
         mUi->uPsuDefaultOffCheckBox->setEnabled(pState > 0);
-        mUi->uPsuPowerUpDelayEdit->setEnabled(pState > 0);
-        mUi->uLedPowerOffTimeoutEdit->setEnabled(pState > 0);
+        mUi->uPsuPowerUpDelayEdit->setEnabled(pState > 0 && mUi->uEnablePsuPowerupDelayCheckBox->isChecked());
+        mUi->uEnablePsuPowerupDelayCheckBox->setEnabled(pState > 0);
+        mUi->uLedPowerOffTimeoutEdit->setEnabled(pState > 0 && mUi->uEnableLedPoweroffTimeoutCheckBox->isChecked());
+        mUi->uEnableLedPoweroffTimeoutCheckBox->setEnabled(pState > 0);
         mUi->uPowerOffTimerCheckBox->setEnabled(pState > 0);
         mUi->uPowerOffWaitForCooldownCheckBox->setEnabled(pState > 0);
-        mUi->uPsuPowerUpCodeEdit->setEnabled(pState > 0);
-        mUi->uPsuPowerOffCodeEdit->setEnabled(pState > 0);
+        mUi->uPsuPowerUpCodeEdit->setEnabled(pState > 0 && mUi->uEnablePsuPowerupCodeCheckBox->isChecked());
+        mUi->uEnablePsuPowerupCodeCheckBox->setEnabled(pState > 0);
+        mUi->uPsuPowerOffCodeEdit->setEnabled(pState > 0 && mUi->uEnablePsuPoweroffCodeCheckBox->isChecked());
+        mUi->uEnablePsuPoweroffCodeCheckBox->setEnabled(pState > 0);
         mUi->uAutoPowerControlCheckBox->setEnabled(pState > 0);
 
         mUi->uAutoPowerFansCheckBox->setEnabled(pState > 0 && mUi->uAutoPowerControlCheckBox->isChecked());
@@ -70,12 +74,17 @@ void PowerSupplyPage::ConnectGuiSignalsAndSlots()
         mUi->uAutoPowerControllerFanCheckBox->setEnabled(pState > 0 && mUi->uAutoPowerControlCheckBox->isChecked());
         mUi->uAutoPowerChamberFanCheckBox->setEnabled(pState > 0 && mUi->uAutoPowerControlCheckBox->isChecked());
         mUi->uAutoPowerCoolerFanCheckBox->setEnabled(pState > 0 && mUi->uAutoPowerControlCheckBox->isChecked());
-        mUi->uPowerTimeoutEdit->setEnabled(pState > 0 && mUi->uAutoPowerControlCheckBox->isChecked());
-        mUi->uPowerOffDelayEdit->setEnabled(pState > 0 && mUi->uAutoPowerControlCheckBox->isChecked());
+        mUi->uPowerTimeoutEdit->setEnabled(pState > 0 && mUi->uAutoPowerControlCheckBox->isChecked() && mUi->uEnablePowerTimeoutCheckBox->isChecked());
+        mUi->uEnablePowerTimeoutCheckBox->setEnabled(pState > 0 && mUi->uAutoPowerControlCheckBox->isChecked());
+        mUi->uPowerOffDelayEdit->setEnabled(pState > 0 && mUi->uAutoPowerControlCheckBox->isChecked() && mUi->uEnablePowerOffDelayCheckBox->isChecked());
+        mUi->uEnablePowerOffDelayCheckBox->setEnabled(pState > 0 && mUi->uAutoPowerControlCheckBox->isChecked());
 
-        mUi->uAutoPowerETempEdit->setEnabled(pState > 0 && (mUi->uAutoPowerControlCheckBox->isChecked() || mUi->uPowerOffWaitForCooldownCheckBox->isChecked()));
-        mUi->uAutoPowerChamberTempEdit->setEnabled(pState > 0 && (mUi->uAutoPowerControlCheckBox->isChecked() || mUi->uPowerOffWaitForCooldownCheckBox->isChecked()));
-        mUi->uAutoPowerCoolerTempEdit->setEnabled(pState > 0 && (mUi->uAutoPowerControlCheckBox->isChecked() || mUi->uPowerOffWaitForCooldownCheckBox->isChecked()));
+        mUi->uAutoPowerETempEdit->setEnabled(pState > 0 && (mUi->uAutoPowerControlCheckBox->isChecked() || mUi->uPowerOffWaitForCooldownCheckBox->isChecked()) && mUi->uEnableAutoPowerETempCheckBox->isChecked());
+        mUi->uEnableAutoPowerETempCheckBox->setEnabled(pState > 0 && (mUi->uAutoPowerControlCheckBox->isChecked() || mUi->uPowerOffWaitForCooldownCheckBox->isChecked()));
+        mUi->uAutoPowerChamberTempEdit->setEnabled(pState > 0 && (mUi->uAutoPowerControlCheckBox->isChecked() || mUi->uPowerOffWaitForCooldownCheckBox->isChecked()) && mUi->uEnableAutoPowerChamberTempCheckBox->isChecked());
+        mUi->uEnableAutoPowerChamberTempCheckBox->setEnabled(pState > 0 && (mUi->uAutoPowerControlCheckBox->isChecked() || mUi->uPowerOffWaitForCooldownCheckBox->isChecked()));
+        mUi->uAutoPowerCoolerTempEdit->setEnabled(pState > 0 && (mUi->uAutoPowerControlCheckBox->isChecked() || mUi->uPowerOffWaitForCooldownCheckBox->isChecked()) && mUi->uEnableAutoPowerCoolerTempCheckBox->isChecked());
+        mUi->uEnableAutoPowerCoolerTempCheckBox->setEnabled(pState > 0 && (mUi->uAutoPowerControlCheckBox->isChecked() || mUi->uPowerOffWaitForCooldownCheckBox->isChecked()));
     });
 
     QObject::connect(mUi->uAutoPowerControlCheckBox, &QCheckBox::stateChanged, this, [&](auto pState)
@@ -85,19 +94,72 @@ void PowerSupplyPage::ConnectGuiSignalsAndSlots()
         mUi->uAutoPowerControllerFanCheckBox->setEnabled(pState > 0);
         mUi->uAutoPowerChamberFanCheckBox->setEnabled(pState > 0);
         mUi->uAutoPowerCoolerFanCheckBox->setEnabled(pState > 0);
-        mUi->uPowerTimeoutEdit->setEnabled(pState > 0);
-        mUi->uPowerOffDelayEdit->setEnabled(pState > 0);
+        mUi->uPowerTimeoutEdit->setEnabled(pState > 0 && mUi->uEnablePowerTimeoutCheckBox->isChecked());
+        mUi->uEnablePowerTimeoutCheckBox->setEnabled(pState > 0);
+        mUi->uPowerOffDelayEdit->setEnabled(pState > 0 && mUi->uEnablePowerOffDelayCheckBox->isChecked());
+        mUi->uEnablePowerOffDelayCheckBox->setEnabled(pState > 0);
 
-        mUi->uAutoPowerETempEdit->setEnabled(pState > 0 || mUi->uPowerOffWaitForCooldownCheckBox->isChecked());
-        mUi->uAutoPowerChamberTempEdit->setEnabled(pState > 0 || mUi->uPowerOffWaitForCooldownCheckBox->isChecked());
-        mUi->uAutoPowerCoolerTempEdit->setEnabled(pState > 0 || mUi->uPowerOffWaitForCooldownCheckBox->isChecked());
+        mUi->uAutoPowerETempEdit->setEnabled((pState > 0 || mUi->uPowerOffWaitForCooldownCheckBox->isChecked()) && mUi->uEnableAutoPowerETempCheckBox->isChecked());
+        mUi->uEnableAutoPowerETempCheckBox->setEnabled(pState > 0 || mUi->uPowerOffWaitForCooldownCheckBox->isChecked());
+        mUi->uAutoPowerChamberTempEdit->setEnabled((pState > 0 || mUi->uPowerOffWaitForCooldownCheckBox->isChecked()) && mUi->uEnableAutoPowerChamberTempCheckBox->isChecked());
+        mUi->uEnableAutoPowerChamberTempCheckBox->setEnabled(pState > 0 || mUi->uPowerOffWaitForCooldownCheckBox->isChecked());
+        mUi->uAutoPowerCoolerTempEdit->setEnabled((pState > 0 || mUi->uPowerOffWaitForCooldownCheckBox->isChecked()) && mUi->uEnableAutoPowerCoolerTempCheckBox->isChecked());
+        mUi->uEnableAutoPowerCoolerTempCheckBox->setEnabled(pState > 0 || mUi->uPowerOffWaitForCooldownCheckBox->isChecked());
     });
 
     QObject::connect(mUi->uPowerOffWaitForCooldownCheckBox, &QCheckBox::stateChanged, this, [&](auto pState)
     {
-        mUi->uAutoPowerETempEdit->setEnabled(pState > 0 || mUi->uAutoPowerControlCheckBox->isChecked());
-        mUi->uAutoPowerChamberTempEdit->setEnabled(pState > 0 || mUi->uAutoPowerControlCheckBox->isChecked());
-        mUi->uAutoPowerCoolerTempEdit->setEnabled(pState > 0 || mUi->uAutoPowerControlCheckBox->isChecked());
+        mUi->uAutoPowerETempEdit->setEnabled((pState > 0 || mUi->uAutoPowerControlCheckBox->isChecked()) && mUi->uEnableAutoPowerETempCheckBox->isChecked());
+        mUi->uEnableAutoPowerETempCheckBox->setEnabled(pState > 0 || mUi->uAutoPowerControlCheckBox->isChecked());
+        mUi->uAutoPowerChamberTempEdit->setEnabled((pState > 0 || mUi->uAutoPowerControlCheckBox->isChecked()) && mUi->uEnableAutoPowerChamberTempCheckBox->isChecked());
+        mUi->uEnableAutoPowerChamberTempCheckBox->setEnabled(pState > 0 || mUi->uAutoPowerControlCheckBox->isChecked());
+        mUi->uAutoPowerCoolerTempEdit->setEnabled((pState > 0 || mUi->uAutoPowerControlCheckBox->isChecked()) && mUi->uEnableAutoPowerCoolerTempCheckBox->isChecked());
+        mUi->uEnableAutoPowerCoolerTempCheckBox->setEnabled(pState > 0 || mUi->uAutoPowerControlCheckBox->isChecked());
+    });
+
+    QObject::connect(mUi->uEnablePsuPowerupDelayCheckBox, &QCheckBox::stateChanged, this, [&](auto pState)
+    {
+        mUi->uPsuPowerUpDelayEdit->setEnabled(pState > 0);
+    });
+
+    QObject::connect(mUi->uEnableLedPoweroffTimeoutCheckBox, &QCheckBox::stateChanged, this, [&](auto pState)
+    {
+        mUi->uLedPowerOffTimeoutEdit->setEnabled(pState > 0);
+    });
+
+    QObject::connect(mUi->uEnablePsuPowerupCodeCheckBox, &QCheckBox::stateChanged, this, [&](auto pState)
+    {
+        mUi->uPsuPowerUpCodeEdit->setEnabled(pState > 0);
+    });
+
+    QObject::connect(mUi->uEnablePsuPoweroffCodeCheckBox, &QCheckBox::stateChanged, this, [&](auto pState)
+    {
+        mUi->uPsuPowerOffCodeEdit->setEnabled(pState > 0);
+    });
+
+    QObject::connect(mUi->uEnablePowerTimeoutCheckBox, &QCheckBox::stateChanged, this, [&](auto pState)
+    {
+        mUi->uPowerTimeoutEdit->setEnabled(pState > 0);
+    });
+
+    QObject::connect(mUi->uEnablePowerOffDelayCheckBox, &QCheckBox::stateChanged, this, [&](auto pState)
+    {
+        mUi->uPowerOffDelayEdit->setEnabled(pState > 0);
+    });
+
+    QObject::connect(mUi->uEnableAutoPowerETempCheckBox, &QCheckBox::stateChanged, this, [&](auto pState)
+    {
+        mUi->uAutoPowerETempEdit->setEnabled(pState > 0);
+    });
+
+    QObject::connect(mUi->uEnableAutoPowerChamberTempCheckBox, &QCheckBox::stateChanged, this, [&](auto pState)
+    {
+        mUi->uAutoPowerChamberTempEdit->setEnabled(pState > 0);
+    });
+
+    QObject::connect(mUi->uEnableAutoPowerCoolerTempCheckBox, &QCheckBox::stateChanged, this, [&](auto pState)
+    {
+        mUi->uAutoPowerCoolerTempEdit->setEnabled(pState > 0);
     });
 }
 
@@ -202,13 +264,12 @@ void PowerSupplyPage::ReplaceTags(QStringList& pOutput)
     ReplaceTag(pOutput, "#{PS_OFF_SOUND}", mUi->uPsOffSoundCheckBox, "PS_OFF_SOUND");
     ReplaceTag(pOutput, "#{PSU_ACTIVE_STATE}", mUi->uPsuActiveStateComboBox, false, "PSU_ACTIVE_STATE", true);
     ReplaceTag(pOutput, "#{PSU_DEFAULT_OFF}", mUi->uPsuDefaultOffCheckBox, "PSU_DEFAULT_OFF");
-#warning Make parameters below optional (besides setting to zero)
-    ReplaceTag(pOutput, "#{PSU_POWERUP_DELAY}", mUi->uPsuPowerUpDelayEdit, mUi->uPsuPowerUpDelayEdit->value() == 0, "PSU_POWERUP_DELAY");
-    ReplaceTag(pOutput, "#{LED_POWEROFF_TIMEOUT}", mUi->uLedPowerOffTimeoutEdit, mUi->uLedPowerOffTimeoutEdit->value() == 0, "LED_POWEROFF_TIMEOUT");
+    ReplaceTag(pOutput, "#{PSU_POWERUP_DELAY}", mUi->uPsuPowerUpDelayEdit, !mUi->uEnablePsuPowerupDelayCheckBox->isChecked(), "PSU_POWERUP_DELAY");
+    ReplaceTag(pOutput, "#{LED_POWEROFF_TIMEOUT}", mUi->uLedPowerOffTimeoutEdit, !mUi->uEnableLedPoweroffTimeoutCheckBox->isChecked(), "LED_POWEROFF_TIMEOUT");
     ReplaceTag(pOutput, "#{POWER_OFF_TIMER}", mUi->uPowerOffTimerCheckBox, "POWER_OFF_TIMER");
     ReplaceTag(pOutput, "#{POWER_OFF_WAIT_FOR_COOLDOWN}", mUi->uPowerOffWaitForCooldownCheckBox, "POWER_OFF_WAIT_FOR_COOLDOWN");
-    ReplaceTag(pOutput, "#{PSU_POWERUP_GCODE}", mUi->uPsuPowerUpCodeEdit, mUi->uPsuPowerUpCodeEdit->text().isEmpty(), "PSU_POWERUP_GCODE", true);
-    ReplaceTag(pOutput, "#{PSU_POWEROFF_GCODE}", mUi->uPsuPowerOffCodeEdit, mUi->uPsuPowerOffCodeEdit->text().isEmpty(), "PSU_POWEROFF_GCODE", true);
+    ReplaceTag(pOutput, "#{PSU_POWERUP_GCODE}", mUi->uPsuPowerUpCodeEdit, !mUi->uEnablePsuPowerupCodeCheckBox->isChecked(), "PSU_POWERUP_GCODE", true);
+    ReplaceTag(pOutput, "#{PSU_POWEROFF_GCODE}", mUi->uPsuPowerOffCodeEdit, !mUi->uEnablePsuPoweroffCodeCheckBox->isChecked(), "PSU_POWEROFF_GCODE", true);
     ReplaceTag(pOutput, "#{AUTO_POWER_CONTROL}", mUi->uAutoPowerControlCheckBox, "AUTO_POWER_CONTROL");
     ReplaceTag(pOutput, "#{AUTO_POWER_FANS}", mUi->uAutoPowerFansCheckBox, "AUTO_POWER_FANS");
     ReplaceTag(pOutput, "#{AUTO_POWER_E_FANS}", mUi->uAutoPowerEFansCheckBox, "AUTO_POWER_E_FANS");
@@ -216,12 +277,11 @@ void PowerSupplyPage::ReplaceTags(QStringList& pOutput)
     ReplaceTag(pOutput, "#{AUTO_POWER_CHAMBER_FAN}", mUi->uAutoPowerChamberFanCheckBox, "AUTO_POWER_CHAMBER_FAN");
     ReplaceTag(pOutput, "#{AUTO_POWER_COOLER_FAN}", mUi->uAutoPowerCoolerFanCheckBox, "AUTO_POWER_COOLER_FAN");
 #warning Is POWER_TIMEOUT optional or always needed when AUTO_POWER_CONTROL is active?
-    ReplaceTag(pOutput, "#{POWER_TIMEOUT}", mUi->uPowerTimeoutEdit, mUi->uPowerTimeoutEdit->value() == 0, "POWER_TIMEOUT");
-#warning Make parameters below optional (besides setting to zero)
-    ReplaceTag(pOutput, "#{POWER_OFF_DELAY}", mUi->uPowerOffDelayEdit, mUi->uPowerOffDelayEdit->value() == 0, "POWER_OFF_DELAY");
-    ReplaceTag(pOutput, "#{AUTO_POWER_E_TEMP}", mUi->uAutoPowerETempEdit, mUi->uAutoPowerETempEdit->value() == 0, "AUTO_POWER_E_TEMP");
-    ReplaceTag(pOutput, "#{AUTO_POWER_CHAMBER_TEMP}", mUi->uAutoPowerChamberTempEdit, mUi->uAutoPowerChamberTempEdit->value() == 0, "AUTO_POWER_CHAMBER_TEMP");
-    ReplaceTag(pOutput, "#{AUTO_POWER_COOLER_TEMP}", mUi->uAutoPowerCoolerTempEdit, mUi->uAutoPowerCoolerTempEdit->value() == 0, "AUTO_POWER_COOLER_TEMP");
+    ReplaceTag(pOutput, "#{POWER_TIMEOUT}", mUi->uPowerTimeoutEdit, !mUi->uEnablePowerTimeoutCheckBox->isChecked(), "POWER_TIMEOUT");
+    ReplaceTag(pOutput, "#{POWER_OFF_DELAY}", mUi->uPowerOffDelayEdit, !mUi->uEnablePowerOffDelayCheckBox->isChecked(), "POWER_OFF_DELAY");
+    ReplaceTag(pOutput, "#{AUTO_POWER_E_TEMP}", mUi->uAutoPowerETempEdit, !mUi->uEnableAutoPowerETempCheckBox->isChecked(), "AUTO_POWER_E_TEMP");
+    ReplaceTag(pOutput, "#{AUTO_POWER_CHAMBER_TEMP}", mUi->uAutoPowerChamberTempEdit, !mUi->uEnableAutoPowerChamberTempCheckBox->isChecked(), "AUTO_POWER_CHAMBER_TEMP");
+    ReplaceTag(pOutput, "#{AUTO_POWER_COOLER_TEMP}", mUi->uAutoPowerCoolerTempEdit, !mUi->uEnableAutoPowerCoolerTempCheckBox->isChecked(), "AUTO_POWER_COOLER_TEMP");
 
 
 }

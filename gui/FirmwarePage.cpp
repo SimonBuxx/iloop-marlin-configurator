@@ -27,8 +27,6 @@
 #include "./ui_FirmwarePage.h"
 #include "HelperFunctions.h"
 
-#include <QDesktopServices>
-
 FirmwarePage::FirmwarePage(QWidget *pParent) :
     QWidget(pParent),
     mUi(new Ui::FirmwarePage)
