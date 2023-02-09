@@ -45,6 +45,11 @@ PowerSupplyPage::~PowerSupplyPage()
 
 void PowerSupplyPage::ConnectGuiSignalsAndSlots()
 {
+    QObject::connect(mUi->uDocumentationButton, &QPushButton::clicked, this, [&]()
+    {
+        OpenMarlinDocumentation("power-supply");
+    });
+
     QObject::connect(mUi->uPsuControlCheckBox, &QCheckBox::stateChanged, this, [&](auto pState)
     {
         mUi->uMksPwcCheckBox->setEnabled(pState > 0);

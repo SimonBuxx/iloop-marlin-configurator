@@ -44,6 +44,11 @@ HardwarePage::~HardwarePage()
 
 void HardwarePage::ConnectGuiSignalsAndSlots()
 {
+    QObject::connect(mUi->uDocumentationButton, &QPushButton::clicked, this, [&]()
+    {
+        OpenMarlinDocumentation("hardware-info");
+    });
+
     QObject::connect(mUi->uSerialPort2ComboBox, &QComboBox::currentIndexChanged, this, [&](auto pIndex)
     {
         mUi->uBaudRate2ComboBox->setEnabled(pIndex > 0);

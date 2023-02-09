@@ -29,20 +29,17 @@
 #include <QFileDialog>
 #include <QJsonDocument>
 #include <QJsonObject>
-
-inline QString OptionalParameter(bool pCondition, const QString& pAttributeName)
-{
-    return QString("%0#define %1").arg(pCondition ? "" : "//", pAttributeName);
-}
-
-inline QString OptionalParameter(bool pCondition, const QString& pAttributeValue, const QString& pAttributeName, bool pUseParentheses = false)
-{
-    return QString(pUseParentheses ? "%0#define %1 \"%2\"" : "%0#define %1 %2").arg(pCondition ? "" : "//", pAttributeName, pAttributeValue);
-}
+#include <QFontDatabase>
 
 Application::Application(QObject *parent)
     : QObject(parent)
 {
+    QFontDatabase::addApplicationFont(":/SourceCodePro-Italic.ttf");
+    QFontDatabase::addApplicationFont(":/SourceCodePro-Regular.ttf");
+    QFontDatabase::addApplicationFont(":/SourceSansPro-Light.ttf");
+    QFontDatabase::addApplicationFont(":/SourceSansPro-LightItalic.ttf");
+    QFontDatabase::addApplicationFont(":/SourceSansPro-Regular.ttf");
+
     QObject::connect(&mMainWindow, &MainWindow::ExportConfigurationSignal, this, &Application::OnExportConfiguration);
     QObject::connect(&mMainWindow, &MainWindow::SaveProjectSignal, this, &Application::OnSaveProject);
     QObject::connect(&mMainWindow, &MainWindow::NewProjectSignal, this, &Application::OnNewProject);

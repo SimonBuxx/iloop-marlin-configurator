@@ -1706,7 +1706,7 @@ QAbstractSpinBox::down-button:off {
     </widget>
    </item>
    <item row="22" column="5" colspan="2" alignment="Qt::AlignRight">
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="uDocumentationButton">
      <property name="text">
       <string>Documentation</string>
      </property>

@@ -32,6 +32,7 @@
 #include <QLineEdit>
 #include <QSpinBox>
 #include <QCheckBox>
+#include <QDesktopServices>
 
 /// \brief Extracts the flag name inside the square brackets in pString
 ///
@@ -199,6 +200,11 @@ inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const QLin
 inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const QSpinBox* pWidget, bool pCommentOut, const QString& pParam)
 {
     pOutput.replaceInStrings(pTagName, QString("%0#define %1 %2").arg(pCommentOut ? "//" : "", pCommentOut ? "" : pParam, QString::number(pWidget->value())));
+}
+
+inline void OpenMarlinDocumentation(const QString& pChapterName)
+{
+    QDesktopServices::openUrl(QUrl(QString("https://marlinfw.org/docs/configuration/configuration.html#%0").arg(pChapterName)));
 }
 
 #endif // HELPERFUNCTIONS_H

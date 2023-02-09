@@ -27,11 +27,18 @@
 #include "./ui_FirmwarePage.h"
 #include "HelperFunctions.h"
 
+#include <QDesktopServices>
+
 FirmwarePage::FirmwarePage(QWidget *pParent) :
     QWidget(pParent),
     mUi(new Ui::FirmwarePage)
 {
     mUi->setupUi(this);
+
+    QObject::connect(mUi->uDocumentationButton, &QPushButton::clicked, this, [&]()
+    {
+        OpenMarlinDocumentation("firmware-info");
+    });
 
     ResetValues();
 }

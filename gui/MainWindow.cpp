@@ -78,6 +78,21 @@ void MainWindow::ConnectGuiSignalsAndSlots()
 
     QObject::connect(mUi->uOpenProjectAction, &QAction::triggered, this, &MainWindow::OpenProjectSignal);
 
+    QObject::connect(mUi->uActionOpenMarlinHomepage, &QAction::triggered, this, [&]()
+    {
+        QDesktopServices::openUrl(QUrl("https://marlinfw.org/"));
+    });
+
+    QObject::connect(mUi->uActionOpenAutoBuildMarlin, &QAction::triggered, this, [&]()
+    {
+        QDesktopServices::openUrl(QUrl("https://marlinfw.org/docs/basics/auto_build_marlin.html"));
+    });
+
+    QObject::connect(mUi->uActionOpenMarlinConfiguration, &QAction::triggered, this, [&]()
+    {
+        QDesktopServices::openUrl(QUrl("https://marlinfw.org/docs/configuration/configuration.html"));
+    });
+
     QObject::connect(mUi->uActionOpenGitHub, &QAction::triggered, this, [&]()
     {
         QDesktopServices::openUrl(QUrl("https://github.com/SimonBuxx/iloop-marlin-configurator/"));

@@ -281,8 +281,8 @@ QPushButton:hover {
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1032</width>
-                   <height>564</height>
+                   <width>1037</width>
+                   <height>569</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_9">
@@ -1450,7 +1450,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <x>0</x>
      <y>0</y>
      <width>1280</width>
-     <height>32</height>
+     <height>30</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuDatei">
@@ -1479,36 +1479,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <property name="title">
      <string>Documentation</string>
     </property>
-    <widget class="QMenu" name="menuConfiguring_Marlin">
-     <property name="title">
-      <string>Section Documentation</string>
-     </property>
-     <addaction name="actionFirmware_Info_Documentation"/>
-     <addaction name="actionHarwdare_Info"/>
-     <addaction name="actionExtruder_Info"/>
-     <addaction name="actionPower_Supply"/>
-     <addaction name="actionThermal_Settings"/>
-     <addaction name="actionKinematics"/>
-     <addaction name="actionEndstops"/>
-     <addaction name="actionMovement"/>
-     <addaction name="actionZ_Probe_Options"/>
-     <addaction name="actionStepper_Drivers"/>
-     <addaction name="actionHoming_and_Bounds"/>
-     <addaction name="actionFilament_Runout_Sensor"/>
-     <addaction name="actionBed_Leveling"/>
-     <addaction name="actionHoming_Options"/>
-     <addaction name="actionAdditional_Features"/>
-     <addaction name="actionUser_Interface_Language"/>
-     <addaction name="actionSD_Card"/>
-     <addaction name="actionLCD_Menu_Items"/>
-     <addaction name="actionEncoder"/>
-     <addaction name="actionSpeaker"/>
-     <addaction name="actionLCD_Controller"/>
-     <addaction name="actionExtra_Features"/>
-    </widget>
-    <addaction name="actionMarlin_Homepage"/>
-    <addaction name="actionAuto_Build_Marlin_VS_Code_Plugin"/>
-    <addaction name="menuConfiguring_Marlin"/>
+    <addaction name="uActionOpenMarlinHomepage"/>
+    <addaction name="separator"/>
+    <addaction name="uActionOpenMarlinConfiguration"/>
+    <addaction name="uActionOpenAutoBuildMarlin"/>
    </widget>
    <addaction name="menuDatei"/>
    <addaction name="menuDocumentation"/>
@@ -1668,7 +1642,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <string>Visit Marlin...</string>
    </property>
   </action>
-  <action name="actionMarlin_Homepage">
+  <action name="uActionOpenMarlinHomepage">
    <property name="icon">
     <iconset resource="../resources/resources.qrc">
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
@@ -1875,13 +1849,22 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <string>Extra Features...</string>
    </property>
   </action>
-  <action name="actionAuto_Build_Marlin_VS_Code_Plugin">
+  <action name="uActionOpenAutoBuildMarlin">
    <property name="icon">
     <iconset resource="../resources/resources.qrc">
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
     <string>Auto Build Marlin...</string>
+   </property>
+  </action>
+  <action name="uActionOpenMarlinConfiguration">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Marlin Configuration...</string>
    </property>
   </action>
  </widget>
