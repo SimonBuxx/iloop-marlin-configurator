@@ -189,6 +189,16 @@ void PowerSupplyPage::ResetValues()
     mUi->uAutoPowerETempEdit->setValue(defaults::AUTO_POWER_E_TEMP);
     mUi->uAutoPowerChamberTempEdit->setValue(defaults::AUTO_POWER_CHAMBER_TEMP);
     mUi->uAutoPowerCoolerTempEdit->setValue(defaults::AUTO_POWER_COOLER_TEMP);
+
+    mUi->uEnablePsuPowerupDelayCheckBox->setChecked(defaults::ENABLE_PSU_POWERUP_DELAY);
+    mUi->uEnableLedPoweroffTimeoutCheckBox->setChecked(defaults::ENABLE_LED_POWEROFF_TIMEOUT);
+    mUi->uEnablePsuPowerupCodeCheckBox->setChecked(defaults::ENABLE_PSU_POWERUP_GCODE);
+    mUi->uEnablePsuPoweroffCodeCheckBox->setChecked(defaults::ENABLE_PSU_POWEROFF_GCODE);
+    mUi->uEnablePowerTimeoutCheckBox->setChecked(defaults::ENABLE_POWER_TIMEOUT);
+    mUi->uEnablePowerOffDelayCheckBox->setChecked(defaults::ENABLE_POWER_OFF_DELAY);
+    mUi->uEnableAutoPowerETempCheckBox->setChecked(defaults::ENABLE_AUTO_POWER_E_TEMP);
+    mUi->uEnableAutoPowerChamberTempCheckBox->setChecked(defaults::ENABLE_AUTO_POWER_CHAMBER_TEMP);
+    mUi->uEnableAutoPowerCoolerTempCheckBox->setChecked(defaults::ENABLE_AUTO_POWER_COOLER_TEMP);
 }
 
 bool PowerSupplyPage::LoadFromJson(const QJsonObject &pJson)
@@ -219,6 +229,16 @@ bool PowerSupplyPage::LoadFromJson(const QJsonObject &pJson)
     success &= LoadConfig(mUi->uAutoPowerETempEdit, pJson, "AUTO_POWER_E_TEMP");
     success &= LoadConfig(mUi->uAutoPowerChamberTempEdit, pJson, "AUTO_POWER_CHAMBER_TEMP");
     success &= LoadConfig(mUi->uAutoPowerCoolerTempEdit, pJson, "AUTO_POWER_COOLER_TEMP");
+
+    success &= LoadConfig(mUi->uEnablePsuPowerupDelayCheckBox, pJson, "ENABLE_PSU_POWERUP_DELAY");
+    success &= LoadConfig(mUi->uEnableLedPoweroffTimeoutCheckBox, pJson, "ENABLE_LED_POWEROFF_TIMEOUT");
+    success &= LoadConfig(mUi->uEnablePsuPowerupCodeCheckBox, pJson, "ENABLE_PSU_POWERUP_GCODE");
+    success &= LoadConfig(mUi->uEnablePsuPoweroffCodeCheckBox, pJson, "ENABLE_PSU_POWEROFF_GCODE");
+    success &= LoadConfig(mUi->uEnablePowerTimeoutCheckBox, pJson, "ENABLE_POWER_TIMEOUT");
+    success &= LoadConfig(mUi->uEnablePowerOffDelayCheckBox, pJson, "ENABLE_POWER_OFF_DELAY");
+    success &= LoadConfig(mUi->uEnableAutoPowerETempCheckBox, pJson, "ENABLE_AUTO_POWER_E_TEMP");
+    success &= LoadConfig(mUi->uEnableAutoPowerChamberTempCheckBox, pJson, "ENABLE_AUTO_POWER_CHAMBER_TEMP");
+    success &= LoadConfig(mUi->uEnableAutoPowerCoolerTempCheckBox, pJson, "ENABLE_AUTO_POWER_COOLER_TEMP");
 
     return success;
 }
@@ -251,6 +271,16 @@ PowerSupplyConfiguration PowerSupplyPage::FetchConfiguration()
     SetConfig(config.AUTO_POWER_E_TEMP, mUi->uAutoPowerETempEdit);
     SetConfig(config.AUTO_POWER_CHAMBER_TEMP, mUi->uAutoPowerChamberTempEdit);
     SetConfig(config.AUTO_POWER_COOLER_TEMP, mUi->uAutoPowerCoolerTempEdit);
+
+    SetConfig(config.ENABLE_PSU_POWERUP_DELAY, mUi->uEnablePsuPowerupDelayCheckBox);
+    SetConfig(config.ENABLE_LED_POWEROFF_TIMEOUT, mUi->uEnableLedPoweroffTimeoutCheckBox);
+    SetConfig(config.ENABLE_PSU_POWERUP_GCODE, mUi->uEnablePsuPowerupCodeCheckBox);
+    SetConfig(config.ENABLE_PSU_POWEROFF_GCODE, mUi->uEnablePsuPoweroffCodeCheckBox);
+    SetConfig(config.ENABLE_POWER_TIMEOUT, mUi->uEnablePowerTimeoutCheckBox);
+    SetConfig(config.ENABLE_POWER_OFF_DELAY, mUi->uEnablePowerOffDelayCheckBox);
+    SetConfig(config.ENABLE_AUTO_POWER_E_TEMP, mUi->uEnableAutoPowerETempCheckBox);
+    SetConfig(config.ENABLE_AUTO_POWER_CHAMBER_TEMP, mUi->uEnableAutoPowerChamberTempCheckBox);
+    SetConfig(config.ENABLE_AUTO_POWER_COOLER_TEMP, mUi->uEnableAutoPowerCoolerTempCheckBox);
 
     return config;
 }

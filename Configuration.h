@@ -44,14 +44,14 @@ static constexpr auto BAUDRATE_3{"Use BAUDRATE"};
 // Contains default values of all configuration parameters
 namespace defaults
 {
-// Firmware
+// Firmware Info
 static constexpr auto STRING_CONFIG_H_AUTHOR{""};
 static constexpr auto CUSTOM_VERSION_FILE{""};
 static constexpr auto SHOW_BOOTSCREEN{true};
 static constexpr auto SHOW_CUSTOM_BOOTSCREEN{false};
 static constexpr auto CUSTOM_STATUS_SCREEN_IMAGE{false};
 
-// Hardware
+// Hardware Info
 static constexpr auto MOTHERBOARD{"RAMPS 1.4 (Power outputs: Hotend, Fan, Bed) [BOARD_RAMPS_14_EFB]"};
 static constexpr auto SERIAL_PORT{"0"};
 static constexpr auto BAUDRATE{"250000"};
@@ -64,7 +64,7 @@ static constexpr auto BLUETOOTH{false};
 static constexpr auto CUSTOM_MACHINE_NAME{""};
 static constexpr auto MACHINE_UUID{""};
 
-// Extruders
+// Extruder Info
 static constexpr auto EXTRUDERS{1};
 
 // Power Supply
@@ -92,6 +92,16 @@ static constexpr auto POWER_OFF_DELAY{60};
 static constexpr auto AUTO_POWER_E_TEMP{50};
 static constexpr auto AUTO_POWER_CHAMBER_TEMP{30};
 static constexpr auto AUTO_POWER_COOLER_TEMP{26};
+
+static constexpr auto ENABLE_PSU_POWERUP_DELAY{false};
+static constexpr auto ENABLE_LED_POWEROFF_TIMEOUT{false};
+static constexpr auto ENABLE_PSU_POWERUP_GCODE{false};
+static constexpr auto ENABLE_PSU_POWEROFF_GCODE{false};
+static constexpr auto ENABLE_POWER_TIMEOUT{false};
+static constexpr auto ENABLE_POWER_OFF_DELAY{false};
+static constexpr auto ENABLE_AUTO_POWER_E_TEMP{false};
+static constexpr auto ENABLE_AUTO_POWER_CHAMBER_TEMP{false};
+static constexpr auto ENABLE_AUTO_POWER_COOLER_TEMP{false};
 
 // Legacy
 static constexpr auto LCD_DISPLAY{"REPRAP_DISCOUNT_SMART_CONTROLLER"};
@@ -250,6 +260,16 @@ struct PowerSupplyConfiguration
     int32_t AUTO_POWER_CHAMBER_TEMP{defaults::AUTO_POWER_CHAMBER_TEMP};
     int32_t AUTO_POWER_COOLER_TEMP{defaults::AUTO_POWER_COOLER_TEMP};
 
+    bool ENABLE_PSU_POWERUP_DELAY{defaults::ENABLE_PSU_POWERUP_DELAY};
+    bool ENABLE_LED_POWEROFF_TIMEOUT{defaults::ENABLE_LED_POWEROFF_TIMEOUT};
+    bool ENABLE_PSU_POWERUP_GCODE{defaults::ENABLE_PSU_POWERUP_GCODE};
+    bool ENABLE_PSU_POWEROFF_GCODE{defaults::ENABLE_PSU_POWEROFF_GCODE};
+    bool ENABLE_POWER_TIMEOUT{defaults::ENABLE_POWER_TIMEOUT};
+    bool ENABLE_POWER_OFF_DELAY{defaults::ENABLE_POWER_OFF_DELAY};
+    bool ENABLE_AUTO_POWER_E_TEMP{defaults::ENABLE_AUTO_POWER_E_TEMP};
+    bool ENABLE_AUTO_POWER_CHAMBER_TEMP{defaults::ENABLE_AUTO_POWER_CHAMBER_TEMP};
+    bool ENABLE_AUTO_POWER_COOLER_TEMP{defaults::ENABLE_AUTO_POWER_COOLER_TEMP};
+
 public:
     /// \brief Converts the configuration into a JSON object
     ///
@@ -282,6 +302,16 @@ public:
         json["AUTO_POWER_E_TEMP"] = AUTO_POWER_E_TEMP;
         json["AUTO_POWER_CHAMBER_TEMP"] = AUTO_POWER_CHAMBER_TEMP;
         json["AUTO_POWER_COOLER_TEMP"] = AUTO_POWER_COOLER_TEMP;
+
+        json["ENABLE_PSU_POWERUP_DELAY"] = ENABLE_PSU_POWERUP_DELAY;
+        json["ENABLE_LED_POWEROFF_TIMEOUT"] = ENABLE_LED_POWEROFF_TIMEOUT;
+        json["ENABLE_PSU_POWERUP_GCODE"] = ENABLE_PSU_POWERUP_GCODE;
+        json["ENABLE_PSU_POWEROFF_GCODE"] = ENABLE_PSU_POWEROFF_GCODE;
+        json["ENABLE_POWER_TIMEOUT"] = ENABLE_POWER_TIMEOUT;
+        json["ENABLE_POWER_OFF_DELAY"] = ENABLE_POWER_OFF_DELAY;
+        json["ENABLE_AUTO_POWER_E_TEMP"] = ENABLE_AUTO_POWER_E_TEMP;
+        json["ENABLE_AUTO_POWER_CHAMBER_TEMP"] = ENABLE_AUTO_POWER_CHAMBER_TEMP;
+        json["ENABLE_AUTO_POWER_COOLER_TEMP"] = ENABLE_AUTO_POWER_COOLER_TEMP;
 
         return json;
     }
