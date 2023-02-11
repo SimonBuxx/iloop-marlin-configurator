@@ -29,6 +29,7 @@
 #include <QString>
 #include <QJsonObject>
 #include "Dropdown.h"
+#include <QGroupBox>
 #include <QLineEdit>
 #include <QSpinBox>
 #include <QCheckBox>
@@ -130,6 +131,22 @@ inline bool LoadConfig(QCheckBox* pWidget, const QJsonObject &pJson, const QStri
     return false;
 }
 
+/// \brief Sets the given group box to the check value given in the JSON object
+///
+/// \param pWidget: Pointer to the widget
+/// \param pJson: Reference to the JSON object containing the attribute
+/// \param pAttribute: The name of the JSON attribute
+/// \return \b true, if the JSON contains the parameter of type bool
+inline bool LoadConfig(QGroupBox* pWidget, const QJsonObject &pJson, const QString& pAttribute)
+{
+    if (pJson.contains(pAttribute) && pJson[pAttribute].isBool())
+    {
+        pWidget->setChecked(pJson[pAttribute].toBool());
+        return true;
+    }
+    return false;
+}
+
 /// \brief Sets the given string to the line edit's text
 ///
 /// \param pConfigItem: Reference to the string to set
@@ -165,6 +182,16 @@ inline void SetConfig(bool& pConfigItem, const QCheckBox* pWidget)
     pConfigItem = pWidget->isChecked();
 }
 
+/// \brief Sets the given bool to the group box check state
+///
+/// \param pConfigItem: Reference to the bool to set
+/// \param pWidget: Pointer to the widget
+inline void SetConfig(bool& pConfigItem, const QGroupBox* pWidget)
+{
+    Q_ASSERT(pWidget->isCheckable());
+    pConfigItem = pWidget->isChecked();
+}
+
 /// \brief Sets the given integer to the widget's (e.g. QSpinBox) value
 ///
 /// \param pConfigItem: Reference to the integer to set
@@ -189,6 +216,12 @@ inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const Drop
 
 inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const QCheckBox* pWidget, const QString& pParam)
 {
+    pOutput.replaceInStrings(pTagName, QString("%0#define %1").arg(pWidget->isChecked() ? "" : "//", pParam));
+}
+
+inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const QGroupBox* pWidget, const QString& pParam)
+{
+    Q_ASSERT(pWidget->isCheckable());
     pOutput.replaceInStrings(pTagName, QString("%0#define %1").arg(pWidget->isChecked() ? "" : "//", pParam));
 }
 

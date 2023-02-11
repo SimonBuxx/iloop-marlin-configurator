@@ -77,6 +77,8 @@ public:
 
     void JumpToFirstConfigTab(void);
 
+    void ResetValues(void);
+
 signals:
     /// \brief Emitted when a configuration should be exported as a C++ header file
     ///
@@ -102,8 +104,12 @@ public slots:
 protected:
     void ConnectGuiSignalsAndSlots(void);
 
+    void UpdateActiveTabButtonColor(void);
+
 protected:
     Ui::MainWindow *mUi;
     AboutDialog mAboutDialog;
+
+    int8_t mLastCheckedButton = -1;
 };
 #endif // MAINWINDOW_H

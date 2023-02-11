@@ -12,7 +12,7 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>1100</width>
+    <width>1280</width>
     <height>800</height>
    </size>
   </property>
@@ -26,30 +26,32 @@
   <property name="styleSheet">
    <string notr="true">QWidget {
 	font-family: &quot;Source Sans Pro&quot;;
-	background: rgb(33, 37, 43);
-    selection-background-color: rgb(40, 46, 53);
-	color: white;
+	background: rgb(34, 35, 40);
+    selection-background-color: rgb(63, 65, 77);
 }
 
 QMenuBar {
 	padding: 3px;
+	color: white;
 }
 
 QMenuBar::item {
-	padding: 5px 10px;
+	padding: 2px 10px;
+	margin: 2px 0;
 	border-radius: 3px;
 }
 
 QMenu::item {
     background-color: transparent;
+	color: white;
 }
 
 QMenu::item:selected {
-    background-color: rgb(38, 43, 50);
+    background-color: rgb(63, 65, 77);
 }
 
 QMenuBar::item:selected {
-    background-color: rgb(38, 43, 50);
+    background-color: rgb(63, 65, 77);
 }
 
 QMenu::item:disabled {
@@ -64,45 +66,22 @@ QPushButton::disabled {
 	color: rgb(180, 180, 180);
 }
 
-QTabWidget::pane {
-	border: none;
-}
-
-QTabBar::tab {
-	background: rgb(38, 43, 50);
-	border: 1px solid rgb(54, 60, 70);
-	border-bottom: none;
-	padding: 5px 10px;
-	border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-	margin: 0 1px;
-
-}
-
-QTabBar::tab:!selected {
-    margin-top: 2px;
-}
-
-QTabBar::tab:selected {
-    background: rgb(54, 60, 70);
-}
-
 QScrollBar:vertical
 {
     width: 12px;
 	border: none;
-	background: rgb(33, 37, 43);
+	background: rgb(34, 35, 40);
 }
 
 QScrollBar::handle:vertical
 {
-    background: rgb(38, 43, 50);
+    background: rgb(63, 65, 77);
     min-width: 12px;
 }
 
 QScrollBar::handle:vertical:hover
 {
-    background: rgb(40, 46, 53);
+    background: rgb(75, 77, 91);
 }
 
 QScrollBar::add-line:vertical
@@ -151,7 +130,11 @@ QScrollBar::sub-line:vertical
       </property>
       <property name="styleSheet">
        <string notr="true">QFrame {
-	background: rgb(38, 43, 50);
+	background: rgb(63, 65, 77);
+}
+
+QLabel {
+	color: white;
 }</string>
       </property>
       <property name="frameShape">
@@ -212,22 +195,22 @@ QScrollBar::sub-line:vertical
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton {
-	background: rgb(38, 43, 50);
-	padding: 5px 10px;
-	border: 1px solid rgb(54, 60, 70);
-    border-radius: 3px;
+	background: rgb(63, 65, 77);
+	color: white;
+	padding: 6px;
+    border: 1px solid black;
+    border-radius: 5px;
 	text-align: left;
-	margin-right: 1px;
 }
 
 QPushButton::checked {
-      border: 1px solid rgb(100, 105, 113);
-	  background: rgb(54, 60, 70);
+      border: 1px solid rgb(249, 154, 0);
+	  background: rgb(249, 154, 0);
+	  color: black;
 }
 
-QPushButton:hover {
-      border: 1px solid rgb(100, 105, 113);
-	  background: rgb(54, 60, 70);
+QPushButton::!checked:hover {
+	  background: rgb(75, 77, 91);
 }</string>
          </property>
          <property name="frameShape">
@@ -251,8 +234,14 @@ QPushButton:hover {
           </property>
           <item row="0" column="1" rowspan="3">
            <widget class="QStackedWidget" name="stackedWidget">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="currentIndex">
-             <number>3</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="uWelcomeTab">
              <layout class="QGridLayout" name="gridLayout_3">
@@ -281,8 +270,8 @@ QPushButton:hover {
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1037</width>
-                   <height>569</height>
+                   <width>96</width>
+                   <height>26</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_9">
@@ -334,8 +323,8 @@ QPushButton:hover {
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>96</width>
-                   <height>26</height>
+                   <width>1037</width>
+                   <height>571</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_7">
@@ -354,7 +343,7 @@ QPushButton:hover {
                   <item row="0" column="0">
                    <widget class="FirmwarePage" name="uFirmwarePage" native="true">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -374,9 +363,9 @@ QPushButton:hover {
                        <colorrole role="Button">
                         <brush brushstyle="SolidPattern">
                          <color alpha="255">
-                          <red>33</red>
-                          <green>37</green>
-                          <blue>43</blue>
+                          <red>34</red>
+                          <green>35</green>
+                          <blue>40</blue>
                          </color>
                         </brush>
                        </colorrole>
@@ -401,27 +390,27 @@ QPushButton:hover {
                        <colorrole role="Base">
                         <brush brushstyle="SolidPattern">
                          <color alpha="255">
-                          <red>33</red>
-                          <green>37</green>
-                          <blue>43</blue>
+                          <red>34</red>
+                          <green>35</green>
+                          <blue>40</blue>
                          </color>
                         </brush>
                        </colorrole>
                        <colorrole role="Window">
                         <brush brushstyle="SolidPattern">
                          <color alpha="255">
-                          <red>33</red>
-                          <green>37</green>
-                          <blue>43</blue>
+                          <red>34</red>
+                          <green>35</green>
+                          <blue>40</blue>
                          </color>
                         </brush>
                        </colorrole>
                        <colorrole role="Highlight">
                         <brush brushstyle="SolidPattern">
                          <color alpha="255">
-                          <red>40</red>
-                          <green>46</green>
-                          <blue>53</blue>
+                          <red>63</red>
+                          <green>65</green>
+                          <blue>77</blue>
                          </color>
                         </brush>
                        </colorrole>
@@ -448,9 +437,9 @@ QPushButton:hover {
                        <colorrole role="Button">
                         <brush brushstyle="SolidPattern">
                          <color alpha="255">
-                          <red>33</red>
-                          <green>37</green>
-                          <blue>43</blue>
+                          <red>34</red>
+                          <green>35</green>
+                          <blue>40</blue>
                          </color>
                         </brush>
                        </colorrole>
@@ -475,27 +464,27 @@ QPushButton:hover {
                        <colorrole role="Base">
                         <brush brushstyle="SolidPattern">
                          <color alpha="255">
-                          <red>33</red>
-                          <green>37</green>
-                          <blue>43</blue>
+                          <red>34</red>
+                          <green>35</green>
+                          <blue>40</blue>
                          </color>
                         </brush>
                        </colorrole>
                        <colorrole role="Window">
                         <brush brushstyle="SolidPattern">
                          <color alpha="255">
-                          <red>33</red>
-                          <green>37</green>
-                          <blue>43</blue>
+                          <red>34</red>
+                          <green>35</green>
+                          <blue>40</blue>
                          </color>
                         </brush>
                        </colorrole>
                        <colorrole role="Highlight">
                         <brush brushstyle="SolidPattern">
                          <color alpha="255">
-                          <red>40</red>
-                          <green>46</green>
-                          <blue>53</blue>
+                          <red>63</red>
+                          <green>65</green>
+                          <blue>77</blue>
                          </color>
                         </brush>
                        </colorrole>
@@ -522,9 +511,9 @@ QPushButton:hover {
                        <colorrole role="Button">
                         <brush brushstyle="SolidPattern">
                          <color alpha="255">
-                          <red>33</red>
-                          <green>37</green>
-                          <blue>43</blue>
+                          <red>34</red>
+                          <green>35</green>
+                          <blue>40</blue>
                          </color>
                         </brush>
                        </colorrole>
@@ -549,27 +538,27 @@ QPushButton:hover {
                        <colorrole role="Base">
                         <brush brushstyle="SolidPattern">
                          <color alpha="255">
-                          <red>33</red>
-                          <green>37</green>
-                          <blue>43</blue>
+                          <red>34</red>
+                          <green>35</green>
+                          <blue>40</blue>
                          </color>
                         </brush>
                        </colorrole>
                        <colorrole role="Window">
                         <brush brushstyle="SolidPattern">
                          <color alpha="255">
-                          <red>33</red>
-                          <green>37</green>
-                          <blue>43</blue>
+                          <red>34</red>
+                          <green>35</green>
+                          <blue>40</blue>
                          </color>
                         </brush>
                        </colorrole>
                        <colorrole role="Highlight">
                         <brush brushstyle="SolidPattern">
                          <color alpha="255">
-                          <red>40</red>
-                          <green>46</green>
-                          <blue>53</blue>
+                          <red>63</red>
+                          <green>65</green>
+                          <blue>77</blue>
                          </color>
                         </brush>
                        </colorrole>
@@ -673,8 +662,8 @@ QPushButton:hover {
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1037</width>
-                   <height>569</height>
+                   <width>96</width>
+                   <height>26</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_10">
@@ -726,8 +715,8 @@ QPushButton:hover {
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>84</width>
-                   <height>1050</height>
+                   <width>1037</width>
+                   <height>571</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_8">
@@ -745,11 +734,11 @@ QPushButton:hover {
                   </property>
                   <item row="0" column="0">
                    <widget class="PowerSupplyPage" name="uPowerSupplyPage" native="true">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>1050</height>
-                     </size>
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
                     </property>
                    </widget>
                   </item>
@@ -796,7 +785,7 @@ QPushButton:hover {
                <x>0</x>
                <y>0</y>
                <width>204</width>
-               <height>798</height>
+               <height>868</height>
               </rect>
              </property>
              <property name="layoutDirection">
@@ -807,7 +796,7 @@ QPushButton:hover {
              </property>
              <layout class="QVBoxLayout" name="verticalLayout">
               <property name="spacing">
-               <number>1</number>
+               <number>2</number>
               </property>
               <property name="leftMargin">
                <number>9</number>
@@ -1467,7 +1456,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <x>0</x>
      <y>0</y>
      <width>1280</width>
-     <height>30</height>
+     <height>28</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuDatei">

@@ -14,56 +14,31 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QWidget {
+   <string notr="true">#WelcomePage {
+	background: rgb(34, 35, 40);
+}
+
+QWidget {
         font-family: &quot;Source Sans Pro&quot;;
 }
 
 QPushButton {
-	background: rgb(54, 60, 70);
-    border: 1px inset rgb(18, 21, 24);
-	border-radius: 3px;
+	background: rgb(63, 65, 77);
+	color: white;
+    border: 1px solid black;
+	border-radius: 5px;
 	padding: 6px;
 	text-align: left;
 	min-width: 150px;
 }
 
 QPushButton:disabled {
-	background: rgb(38, 43, 50);
+	background: rgb(34, 35, 40);
 	color: rgb(180, 180, 180);
 }
 
 QPushButton:hover {
-      border: 1px solid rgb(100, 105, 113);
-}
-
-QPushButton:pressed {
-    border: 1px solid rgb(100, 105, 113);
-	background: rgb(38, 43, 50);
-}
-
-QPushButton:focus {
-	border: 1px solid rgb(76, 157, 255);
-}
-
-QLineEdit {
-	color: white;
-    background: rgb(54, 60, 70);
-    border: 1px inset rgb(18, 21, 24);
-	border-radius: 3px;
-	padding: 5px;
-}
-
-QLineEdit:disabled {
-	background: rgb(38, 43, 50);
-	color: rgb(180, 180, 180);
-}
-
-QLineEdit:hover {
-    border: 1px solid rgb(100, 105, 113);
-}
-
-QLineEdit:focus {
-	border: 1px solid rgb(76, 157, 255);
+	  background: rgb(75, 77, 91);
 }</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
@@ -133,7 +108,7 @@ QLineEdit:focus {
      <property name="minimumSize">
       <size>
        <width>600</width>
-       <height>169</height>
+       <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
@@ -201,7 +176,7 @@ QLineEdit:focus {
     <widget class="QLabel" name="label_5">
      <property name="styleSheet">
       <string notr="true">QLabel {
-	color: rgb(100, 105, 113);
+	color: rgb(100, 103, 122);
 	font-size: 35px;
 	font-family: &quot;Source Sans Pro Light&quot;;
 	font-style: italic;

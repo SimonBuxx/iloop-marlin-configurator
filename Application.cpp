@@ -56,7 +56,7 @@ Application::Application(QObject *parent)
         return;
     }
 
-    mMainWindow.Log("Initialization successful.", "green");
+    mMainWindow.Log("Initialization successful.", "rgb(249, 154, 0)");
 }
 
 Application::~Application()
@@ -122,7 +122,7 @@ void Application::OnExportConfiguration(const QFileInfo& pFileInfo, const Config
 
     file.close();
 
-    mMainWindow.Log(QString("Generation of output file %0 successful.").arg(pFileInfo.filePath()), "green");
+    mMainWindow.Log(QString("Generation of output file %0 successful.").arg(pFileInfo.filePath()));
 }
 
 void Application::OnSaveProject(const Configuration& pConfig, bool pForceSaveAs)
@@ -161,7 +161,7 @@ void Application::OnSaveProject(const Configuration& pConfig, bool pForceSaveAs)
 
     file.close();
 
-    mMainWindow.Log(QString("Saved project as %0").arg(fileInfo.filePath()), "green");
+    mMainWindow.Log(QString("Saved project as %0").arg(fileInfo.filePath()));
 
     mOpenFileInfo = fileInfo;
     mMainWindow.SetProjectName(fileInfo.baseName());
@@ -211,7 +211,7 @@ void Application::OnOpenProject()
         mMainWindow.Log(QString("Content of file %0 incomplete, proceed with caution.").arg(fileInfo.filePath()), "red");
     }
 
-    mMainWindow.Log(QString("Opened project %0").arg(fileInfo.filePath()), "green");
+    mMainWindow.Log(QString("Opened project %0").arg(fileInfo.filePath()));
 
     mOpenFileInfo = fileInfo;
     mMainWindow.SetProjectName(fileInfo.baseName());

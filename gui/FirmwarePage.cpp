@@ -50,9 +50,12 @@ void FirmwarePage::ResetValues()
 {
     mUi->uAuthorNameEdit->setText(defaults::STRING_CONFIG_H_AUTHOR);
     mUi->uCustomVersionFileEdit->setText(defaults::CUSTOM_VERSION_FILE);
-    mUi->uShowBootscreenCheckBox->setChecked(defaults::SHOW_BOOTSCREEN);
-    mUi->uShowCustomBootscreenCheckBox->setChecked(defaults::SHOW_CUSTOM_BOOTSCREEN);
-    mUi->uCustomStatusScreenImageCheckBox->setChecked(defaults::CUSTOM_STATUS_SCREEN_IMAGE);
+    mUi->uShowBootscreenBox->setChecked(defaults::SHOW_BOOTSCREEN);
+    mUi->uShowCustomBootscreenBox->setChecked(defaults::SHOW_CUSTOM_BOOTSCREEN);
+    mUi->uCustomStatusScreenImageBox->setChecked(defaults::CUSTOM_STATUS_SCREEN_IMAGE);
+
+    mUi->uStringConfigHAuthorBox->setChecked(defaults::ENABLE_STRING_CONFIG_H_AUTHOR);
+    mUi->uCustomVersionFileBox->setChecked(defaults::ENABLE_CUSTOM_VERSION_FILE);
 }
 
 bool FirmwarePage::LoadFromJson(const QJsonObject &pJson)
@@ -60,9 +63,12 @@ bool FirmwarePage::LoadFromJson(const QJsonObject &pJson)
     bool success = true;
     success &= LoadConfig(mUi->uAuthorNameEdit, pJson, "STRING_CONFIG_H_AUTHOR");
     success &= LoadConfig(mUi->uCustomVersionFileEdit, pJson, "CUSTOM_VERSION_FILE");
-    success &= LoadConfig(mUi->uShowBootscreenCheckBox, pJson, "SHOW_BOOTSCREEN");
-    success &= LoadConfig(mUi->uShowCustomBootscreenCheckBox, pJson, "SHOW_CUSTOM_BOOTSCREEN");
-    success &= LoadConfig(mUi->uCustomStatusScreenImageCheckBox, pJson, "CUSTOM_STATUS_SCREEN_IMAGE");
+    success &= LoadConfig(mUi->uShowBootscreenBox, pJson, "SHOW_BOOTSCREEN");
+    success &= LoadConfig(mUi->uShowCustomBootscreenBox, pJson, "SHOW_CUSTOM_BOOTSCREEN");
+    success &= LoadConfig(mUi->uCustomStatusScreenImageBox, pJson, "CUSTOM_STATUS_SCREEN_IMAGE");
+
+    success &= LoadConfig(mUi->uStringConfigHAuthorBox, pJson, "ENABLE_STRING_CONFIG_H_AUTHOR");
+    success &= LoadConfig(mUi->uCustomVersionFileBox, pJson, "ENABLE_CUSTOM_VERSION_FILE");
 
     return success;
 }
@@ -73,18 +79,21 @@ FirmwareConfiguration FirmwarePage::FetchConfiguration()
 
     SetConfig(config.STRING_CONFIG_H_AUTHOR, mUi->uAuthorNameEdit);
     SetConfig(config.CUSTOM_VERSION_FILE, mUi->uCustomVersionFileEdit);
-    SetConfig(config.SHOW_BOOTSCREEN, mUi->uShowBootscreenCheckBox);
-    SetConfig(config.SHOW_CUSTOM_BOOTSCREEN, mUi->uShowCustomBootscreenCheckBox);
-    SetConfig(config.CUSTOM_STATUS_SCREEN_IMAGE, mUi->uCustomStatusScreenImageCheckBox);
+    SetConfig(config.SHOW_BOOTSCREEN, mUi->uShowBootscreenBox);
+    SetConfig(config.SHOW_CUSTOM_BOOTSCREEN, mUi->uShowCustomBootscreenBox);
+    SetConfig(config.CUSTOM_STATUS_SCREEN_IMAGE, mUi->uCustomStatusScreenImageBox);
+
+    SetConfig(config.ENABLE_STRING_CONFIG_H_AUTHOR, mUi->uStringConfigHAuthorBox);
+    SetConfig(config.ENABLE_CUSTOM_VERSION_FILE, mUi->uCustomVersionFileBox);
 
     return config;
 }
 
 void FirmwarePage::ReplaceTags(QStringList& pOutput)
 {
-    ReplaceTag(pOutput, "#{STRING_CONFIG_H_AUTHOR}", mUi->uAuthorNameEdit, false, "STRING_CONFIG_H_AUTHOR", true);
-    ReplaceTag(pOutput, "#{CUSTOM_VERSION_FILE}", mUi->uCustomVersionFileEdit, mUi->uCustomVersionFileEdit->text().isEmpty(), "CUSTOM_VERSION_FILE");
-    ReplaceTag(pOutput, "#{SHOW_BOOTSCREEN}", mUi->uShowBootscreenCheckBox, "SHOW_BOOTSCREEN");
-    ReplaceTag(pOutput, "#{SHOW_CUSTOM_BOOTSCREEN}", mUi->uShowCustomBootscreenCheckBox, "SHOW_CUSTOM_BOOTSCREEN");
-    ReplaceTag(pOutput, "#{CUSTOM_STATUS_SCREEN_IMAGE}", mUi->uCustomStatusScreenImageCheckBox, "CUSTOM_STATUS_SCREEN_IMAGE");
+    ReplaceTag(pOutput, "#{STRING_CONFIG_H_AUTHOR}", mUi->uAuthorNameEdit, !mUi->uStringConfigHAuthorBox->isChecked(), "STRING_CONFIG_H_AUTHOR", true);
+    ReplaceTag(pOutput, "#{CUSTOM_VERSION_FILE}", mUi->uCustomVersionFileEdit, !mUi->uCustomVersionFileBox->isChecked(), "CUSTOM_VERSION_FILE");
+    ReplaceTag(pOutput, "#{SHOW_BOOTSCREEN}", mUi->uShowBootscreenBox, "SHOW_BOOTSCREEN");
+    ReplaceTag(pOutput, "#{SHOW_CUSTOM_BOOTSCREEN}", mUi->uShowCustomBootscreenBox, "SHOW_CUSTOM_BOOTSCREEN");
+    ReplaceTag(pOutput, "#{CUSTOM_STATUS_SCREEN_IMAGE}", mUi->uCustomStatusScreenImageBox, "CUSTOM_STATUS_SCREEN_IMAGE");
 }

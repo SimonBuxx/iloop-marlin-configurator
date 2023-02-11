@@ -30,7 +30,7 @@
 Dropdown::Dropdown(QWidget *pParent) :
     QComboBox(pParent)
 {
-    view()->parentWidget()->setStyleSheet("background: rgb(54, 60, 70);");
+    view()->parentWidget()->setStyleSheet("background: rgb(63, 65, 77);");
 }
 
 Dropdown::~Dropdown()

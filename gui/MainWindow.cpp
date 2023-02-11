@@ -37,9 +37,16 @@ MainWindow::MainWindow(QWidget *pParent)
 {
     mUi->setupUi(this);
 
+    uint8_t nextId = 0;
+    for (auto& button : mUi->buttonGroup->buttons())
+    {
+        mUi->buttonGroup->setId(button, nextId++);
+    }
+
     ConnectGuiSignalsAndSlots();
 
     mUi->stackedWidget->setCurrentIndex(0);
+    UpdateActiveTabButtonColor();
 }
 
 MainWindow::~MainWindow()
@@ -49,6 +56,11 @@ MainWindow::~MainWindow()
 
 void MainWindow::ConnectGuiSignalsAndSlots()
 {
+    QObject::connect(mUi->stackedWidget, &QStackedWidget::currentChanged, this, [&]()
+    {
+        UpdateActiveTabButtonColor();
+    });
+
     QObject::connect(mUi->uCloseAction, &QAction::triggered, this, &QMainWindow::close);
     QObject::connect(mUi->uAboutAction, &QAction::triggered, &mAboutDialog, &AboutDialog::show);
     QObject::connect(mUi->uNewProjectAction, &QAction::triggered, this, &MainWindow::OnNewProject);
@@ -135,20 +147,50 @@ void MainWindow::ConnectGuiSignalsAndSlots()
     });
 }
 
+void MainWindow::UpdateActiveTabButtonColor()
+{
+    if (mLastCheckedButton >= 0)
+    {
+        Q_ASSERT(nullptr != mUi->buttonGroup->button(mLastCheckedButton));
+
+        auto icon = mUi->buttonGroup->button(mLastCheckedButton)->icon();
+        auto img = QImage(icon.pixmap(20, 20).toImage());
+        img.invertPixels();
+        mUi->buttonGroup->button(mLastCheckedButton)->setIcon(QIcon(QPixmap::fromImage(img)));
+    }
+
+    if (mUi->buttonGroup->checkedId() >= 0)
+    {
+        Q_ASSERT(nullptr != mUi->buttonGroup->checkedButton());
+
+        auto icon = mUi->buttonGroup->checkedButton()->icon();
+        auto img = QImage(icon.pixmap(20, 20).toImage());
+        img.invertPixels();
+        mUi->buttonGroup->checkedButton()->setIcon(QIcon(QPixmap::fromImage(img)));
+    }
+
+    mLastCheckedButton = mUi->buttonGroup->checkedId();
+}
+
 void MainWindow::JumpToFirstConfigTab()
 {
     mUi->uFirmwareTabButton->click();
 }
 
-void MainWindow::OnNewProject()
+void MainWindow::ResetValues()
 {
     mUi->uFirmwarePage->ResetValues();
     mUi->uHardwarePage->ResetValues();
     mUi->uExtruderPage->ResetValues();
     mUi->uPowerSupplyPage->ResetValues();
+}
+
+void MainWindow::OnNewProject()
+{
+    ResetValues();
 
     SetProjectName(std::nullopt);
-    Log("New project initialized.");
+    Log("New project initialized.", "rgb(249, 154, 0)");
 
     emit NewProjectSignal();
 }
@@ -182,6 +224,8 @@ void MainWindow::SetProjectName(const std::optional<QString>& pName)
 
 bool MainWindow::LoadProject(const QJsonObject& pJson)
 {
+    ResetValues();
+
     bool success = true;
 
     if (pJson.contains("firmware") && pJson["firmware"].isObject())

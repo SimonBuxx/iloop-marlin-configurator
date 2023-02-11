@@ -32,8 +32,26 @@
   <property name="styleSheet">
    <string notr="true">QWidget {
 	font-family: &quot;Source Sans Pro&quot;;
-	background: rgb(33, 37, 43);
+	background: rgb(34, 35, 40);
 	color: white;
+}
+
+QPushButton {
+	background: rgb(63, 65, 77);
+	color: white;
+    border: 1px solid black;
+	border-radius: 5px;
+	padding: 6px;
+	min-width: 100px;
+}
+
+QPushButton:disabled {
+	background: rgb(34, 35, 40);
+	color: rgb(180, 180, 180);
+}
+
+QPushButton:hover {
+	  background: rgb(75, 77, 91);
 }</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
@@ -71,7 +89,7 @@
      </property>
      <property name="styleSheet">
       <string notr="true">QFrame {
-	background: rgb(38, 43, 50);
+	background: rgb(63, 65, 77);
 }</string>
      </property>
      <property name="frameShape">
@@ -212,18 +230,18 @@
 {
     width: 12px;
 	border: none;
-	background: rgb(33, 37, 43);
+	background: rgb(34, 35, 40);
 }
 
 QScrollBar::handle:vertical
 {
-    background: rgb(38, 43, 50);
+    background: rgb(63, 65, 77);
     min-width: 12px;
 }
 
 QScrollBar::handle:vertical:hover
 {
-    background: rgb(40, 46, 53);
+    background: rgb(75, 77, 91);
 }
 
 QScrollBar::add-line:vertical
@@ -234,8 +252,7 @@ QScrollBar::add-line:vertical
 QScrollBar::sub-line:vertical
 {
     height: 0px;
-}
-</string>
+}</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::Box</enum>
