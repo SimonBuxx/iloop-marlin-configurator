@@ -28,6 +28,7 @@
 
 #include <QFileInfo>
 #include <QMainWindow>
+#include <QLabel>
 
 #include "AboutDialog.h"
 #include "Configuration.h"
@@ -109,6 +110,9 @@ protected:
 protected:
     Ui::MainWindow *mUi;
     AboutDialog mAboutDialog;
+
+    QLabel mStatusLabel;
+    QLabel mMarlinVersionLabel;
 
     int8_t mLastCheckedButton = -1;
 };

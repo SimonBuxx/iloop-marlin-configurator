@@ -43,16 +43,19 @@ QPushButton:hover {
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <property name="leftMargin">
-    <number>9</number>
+    <number>17</number>
    </property>
    <property name="topMargin">
     <number>9</number>
    </property>
    <property name="rightMargin">
-    <number>9</number>
+    <number>17</number>
    </property>
    <property name="bottomMargin">
     <number>9</number>
+   </property>
+   <property name="spacing">
+    <number>10</number>
    </property>
    <item row="5" column="0">
     <spacer name="horizontalSpacer">
@@ -121,7 +124,7 @@ QPushButton:hover {
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="../resources/resources.qrc">:/erig_transparent.png</pixmap>
+      <pixmap resource="../resources/resources.qrc">:/erig_grey.png</pixmap>
      </property>
     </widget>
    </item>
@@ -151,6 +154,7 @@ QPushButton:hover {
 	color: white;
 	font-size: 25px;
 	font-family: &quot;Source Sans Pro Light&quot;;
+	font-style: italic;
 }
 </string>
      </property>
@@ -171,22 +175,6 @@ QPushButton:hover {
       </size>
      </property>
     </spacer>
-   </item>
-   <item row="0" column="0" colspan="4">
-    <widget class="QLabel" name="label_5">
-     <property name="styleSheet">
-      <string notr="true">QLabel {
-	color: rgb(100, 103, 122);
-	font-size: 35px;
-	font-family: &quot;Source Sans Pro Light&quot;;
-	font-style: italic;
-}
-</string>
-     </property>
-     <property name="text">
-      <string>WELCOME TO iMC v0.1.0</string>
-     </property>
-    </widget>
    </item>
    <item row="7" column="1">
     <spacer name="verticalSpacer_4">
@@ -249,6 +237,22 @@ QPushButton:hover {
       </size>
      </property>
     </spacer>
+   </item>
+   <item row="0" column="0" colspan="4">
+    <widget class="QLabel" name="label_5">
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+	color: rgb(100, 103, 122);
+	font-size: 35px;
+	font-family: &quot;Source Sans Pro Light&quot;;
+	font-style: italic;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>WELCOME TO iMC v0.1.0</string>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

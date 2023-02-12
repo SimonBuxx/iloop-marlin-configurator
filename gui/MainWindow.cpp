@@ -29,13 +29,20 @@
 #include <QFileDialog>
 #include <QDateTime>
 #include <QDesktopServices>
+#include <QTimer>
 
 MainWindow::MainWindow(QWidget *pParent)
     : QMainWindow(pParent)
     , mUi(new Ui::MainWindow)
     , mAboutDialog(this)
+    , mStatusLabel("Project: -")
+    , mMarlinVersionLabel("Marlin Version: v2.1.2")
 {
     mUi->setupUi(this);
+
+    mUi->statusBar->setSizeGripEnabled(false);
+    mUi->statusBar->addWidget(&mStatusLabel);
+    mUi->statusBar->addPermanentWidget(&mMarlinVersionLabel);
 
     uint8_t nextId = 0;
     for (auto& button : mUi->buttonGroup->buttons())
@@ -60,6 +67,12 @@ void MainWindow::ConnectGuiSignalsAndSlots()
     {
         UpdateActiveTabButtonColor();
     });
+
+    QObject::connect(mUi->uNavigationDock, &QDockWidget::visibilityChanged, mUi->uNavigationDockAction, &QAction::setChecked);
+    QObject::connect(mUi->uNavigationDockAction, &QAction::triggered, mUi->uNavigationDock, &QDockWidget::setVisible);
+
+    QObject::connect(mUi->uConsoleDock, &QDockWidget::visibilityChanged, mUi->uConsoleDockAction, &QAction::setChecked);
+    QObject::connect(mUi->uConsoleDockAction, &QAction::triggered, mUi->uConsoleDock, &QDockWidget::setVisible);
 
     QObject::connect(mUi->uCloseAction, &QAction::triggered, this, &QMainWindow::close);
     QObject::connect(mUi->uAboutAction, &QAction::triggered, &mAboutDialog, &AboutDialog::show);
@@ -217,8 +230,8 @@ void MainWindow::ReplaceTags(QStringList& pOutput)
 
 void MainWindow::SetProjectName(const std::optional<QString>& pName)
 {
-    mUi->uProjectLabel->setText(QString("Project: %0").arg(pName.value_or("-")));
 
+    mStatusLabel.setText(QString("Project: %0").arg(pName.value_or("-")));
     setWindowTitle(QString("%0iMC - iLOOP Marlin Configurator v0.1.0").arg(pName.has_value() ? pName.value() + " - " : ""));
 }
 

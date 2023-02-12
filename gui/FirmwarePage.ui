@@ -26,6 +26,7 @@
 
 QWidget {
         font-family: &quot;Source Sans Pro&quot;;
+		background: none;
 }
 
 QLabel:!disabled {
@@ -36,7 +37,7 @@ QGroupBox {
 	border: 1px solid black;
 	border-radius: 5px;
 	background: rgb(34, 35, 40);
-	padding-top: 30px;
+	padding-top: 25px;
 }
 
 QGroupBox::title {
@@ -53,7 +54,16 @@ QGroupBox::title:disabled {
 	color: rgb(180, 180, 180);
 }
 
-QGroupBox:focus {
+QGroupBox:checked:!disabled {
+	background: rgb(50, 52, 59);
+}
+
+QGroupBox:focus:!checked {
+	border: 1px solid rgb(249, 154, 0);
+	background: rgb(26, 26, 30);
+}
+
+QGroupBox:focus:checked {
 	border: 1px solid rgb(249, 154, 0);
 }
 
@@ -266,6 +276,11 @@ QAbstractSpinBox::down-button:off {
      <property name="focusPolicy">
       <enum>Qt::StrongFocus</enum>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+     </property>
      <property name="title">
       <string>CONFIGURATION_H_VERSION</string>
      </property>
@@ -276,22 +291,9 @@ QAbstractSpinBox::down-button:off {
       <bool>false</bool>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
-      <property name="horizontalSpacing">
+      <property name="spacing">
        <number>10</number>
       </property>
-      <property name="verticalSpacing">
-       <number>5</number>
-      </property>
-      <item row="1" column="1">
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string>This is the version of Marlin for that the Configuration.h file is generated.</string>
-        </property>
-        <property name="wordWrap">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
       <item row="1" column="0">
        <widget class="QLabel" name="label_2">
         <property name="sizePolicy">
@@ -308,7 +310,17 @@ QAbstractSpinBox::down-button:off {
         </property>
        </widget>
       </item>
-      <item row="0" column="0" colspan="2">
+      <item row="1" column="1">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>This is the version of Marlin for that the Configuration.h file is generated.</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" colspan="2">
        <widget class="QLineEdit" name="lineEdit">
         <property name="enabled">
          <bool>false</bool>
@@ -370,10 +382,20 @@ QAbstractSpinBox::down-button:off {
          <bool>true</bool>
         </property>
         <layout class="QGridLayout" name="gridLayout_3">
-         <property name="horizontalSpacing">
+         <property name="spacing">
           <number>10</number>
          </property>
-         <item row="2" column="0">
+         <item row="0" column="1" colspan="2">
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>This is the author info of this build. (optional)</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
           <widget class="QLabel" name="label_3">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -389,17 +411,7 @@ QAbstractSpinBox::down-button:off {
            </property>
           </widget>
          </item>
-         <item row="2" column="1">
-          <widget class="QLabel" name="label_4">
-           <property name="text">
-            <string>This is the author info of this build. (optional)</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0" colspan="2">
+         <item row="1" column="0" colspan="3">
           <widget class="QLineEdit" name="uAuthorNameEdit">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -421,7 +433,7 @@ QAbstractSpinBox::down-button:off {
          <bool>true</bool>
         </property>
         <layout class="QGridLayout" name="gridLayout_4">
-         <property name="horizontalSpacing">
+         <property name="spacing">
           <number>10</number>
          </property>
          <item row="1" column="1">
@@ -450,7 +462,7 @@ QAbstractSpinBox::down-button:off {
            </property>
           </widget>
          </item>
-         <item row="0" column="0" colspan="2">
+         <item row="2" column="0" colspan="2">
           <widget class="QLineEdit" name="uCustomVersionFileEdit">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -594,6 +606,9 @@ QAbstractSpinBox::down-button:off {
          <bool>true</bool>
         </property>
         <layout class="QGridLayout" name="gridLayout_9">
+         <property name="spacing">
+          <number>10</number>
+         </property>
          <item row="0" column="0">
           <widget class="QLabel" name="label_10">
            <property name="sizePolicy">
@@ -632,6 +647,9 @@ QAbstractSpinBox::down-button:off {
          <bool>true</bool>
         </property>
         <layout class="QGridLayout" name="gridLayout_8">
+         <property name="spacing">
+          <number>10</number>
+         </property>
          <item row="0" column="0">
           <widget class="QLabel" name="label_8">
            <property name="sizePolicy">
@@ -673,6 +691,9 @@ QAbstractSpinBox::down-button:off {
          <bool>true</bool>
         </property>
         <layout class="QGridLayout" name="gridLayout_10">
+         <property name="spacing">
+          <number>10</number>
+         </property>
          <item row="0" column="0">
           <widget class="QLabel" name="label_12">
            <property name="sizePolicy">

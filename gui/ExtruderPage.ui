@@ -26,6 +26,7 @@
 
 QWidget {
         font-family: &quot;Source Sans Pro&quot;;
+		background: none;
 }
 
 QLabel:!disabled {
@@ -36,7 +37,7 @@ QGroupBox {
 	border: 1px solid black;
 	border-radius: 5px;
 	background: rgb(34, 35, 40);
-	padding-top: 30px;
+	padding-top: 25px;
 }
 
 QGroupBox::title {
@@ -53,7 +54,16 @@ QGroupBox::title:disabled {
 	color: rgb(180, 180, 180);
 }
 
-QGroupBox:focus {
+QGroupBox:checked:!disabled {
+	background: rgb(50, 52, 59);
+}
+
+QGroupBox:focus:!checked {
+	border: 1px solid rgb(249, 154, 0);
+	background: rgb(26, 26, 30);
+}
+
+QGroupBox:focus:checked {
 	border: 1px solid rgb(249, 154, 0);
 }
 
@@ -364,29 +374,18 @@ QAbstractSpinBox::down-button:off {
      <property name="focusPolicy">
       <enum>Qt::StrongFocus</enum>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+     </property>
      <property name="title">
       <string>EXTRUDERS</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
-      <property name="horizontalSpacing">
+      <property name="spacing">
        <number>10</number>
       </property>
-      <item row="1" column="1">
-       <widget class="QLabel" name="label">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>30</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>This is the number of extruders installed in the printer.</string>
-        </property>
-        <property name="wordWrap">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
       <item row="1" column="0">
        <widget class="QLabel" name="label_2">
         <property name="sizePolicy">
@@ -409,7 +408,23 @@ QAbstractSpinBox::down-button:off {
         </property>
        </widget>
       </item>
-      <item row="0" column="0" colspan="2">
+      <item row="1" column="1">
+       <widget class="QLabel" name="label">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>This is the number of extruders installed in the printer.</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" colspan="2">
        <widget class="QSpinBox" name="uExtrudersBox">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">

@@ -27,7 +27,24 @@
    <string notr="true">QWidget {
 	font-family: &quot;Source Sans Pro&quot;;
 	background: rgb(34, 35, 40);
-    selection-background-color: rgb(63, 65, 77);
+    selection-background-color: rgb(34, 35, 40);
+}
+
+QStatusBar {
+	background: rgb(63, 65, 77);
+}
+
+QStatusBar QLabel {
+	background: rgb(63, 65, 77);
+	color: white;
+	padding: 6px;
+}
+
+QToolTip {
+	background: rgb(63, 65, 77);
+	color: white;
+	border: 1px solid black;
+	padding: 2px;
 }
 
 QMenuBar {
@@ -114,65 +131,6 @@ QScrollBar::sub-line:vertical
     <property name="spacing">
      <number>0</number>
     </property>
-    <item row="2" column="0">
-     <widget class="QFrame" name="frame">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>35</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>30</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QFrame {
-	background: rgb(63, 65, 77);
-}
-
-QLabel {
-	color: white;
-}</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Plain</enum>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <widget class="QLabel" name="uProjectLabel">
-         <property name="styleSheet">
-          <string notr="true"/>
-         </property>
-         <property name="text">
-          <string>Project: -</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_2">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Marlin Version: v2.1.2</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
     <item row="1" column="0">
      <widget class="QFrame" name="frame_2">
       <property name="frameShape">
@@ -185,6 +143,12 @@ QLabel {
        <property name="topMargin">
         <number>0</number>
        </property>
+       <property name="rightMargin">
+        <number>9</number>
+       </property>
+       <property name="bottomMargin">
+        <number>9</number>
+       </property>
        <item row="0" column="0" colspan="2">
         <widget class="QFrame" name="frame_10">
          <property name="sizePolicy">
@@ -194,24 +158,7 @@ QLabel {
           </sizepolicy>
          </property>
          <property name="styleSheet">
-          <string notr="true">QPushButton {
-	background: rgb(63, 65, 77);
-	color: white;
-	padding: 6px;
-    border: 1px solid black;
-    border-radius: 5px;
-	text-align: left;
-}
-
-QPushButton::checked {
-      border: 1px solid rgb(249, 154, 0);
-	  background: rgb(249, 154, 0);
-	  color: black;
-}
-
-QPushButton::!checked:hover {
-	  background: rgb(75, 77, 91);
-}</string>
+          <string notr="true"/>
          </property>
          <property name="frameShape">
           <enum>QFrame::NoFrame</enum>
@@ -232,7 +179,7 @@ QPushButton::!checked:hover {
           <property name="bottomMargin">
            <number>0</number>
           </property>
-          <item row="0" column="1" rowspan="3">
+          <item row="0" column="0" rowspan="2">
            <widget class="QStackedWidget" name="stackedWidget">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
@@ -241,7 +188,7 @@ QPushButton::!checked:hover {
              </sizepolicy>
             </property>
             <property name="currentIndex">
-             <number>1</number>
+             <number>3</number>
             </property>
             <widget class="QWidget" name="uWelcomeTab">
              <layout class="QGridLayout" name="gridLayout_3">
@@ -323,8 +270,8 @@ QPushButton::!checked:hover {
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1037</width>
-                   <height>571</height>
+                   <width>96</width>
+                   <height>26</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_7">
@@ -408,9 +355,9 @@ QPushButton::!checked:hover {
                        <colorrole role="Highlight">
                         <brush brushstyle="SolidPattern">
                          <color alpha="255">
-                          <red>63</red>
-                          <green>65</green>
-                          <blue>77</blue>
+                          <red>34</red>
+                          <green>35</green>
+                          <blue>40</blue>
                          </color>
                         </brush>
                        </colorrole>
@@ -482,9 +429,9 @@ QPushButton::!checked:hover {
                        <colorrole role="Highlight">
                         <brush brushstyle="SolidPattern">
                          <color alpha="255">
-                          <red>63</red>
-                          <green>65</green>
-                          <blue>77</blue>
+                          <red>34</red>
+                          <green>35</green>
+                          <blue>40</blue>
                          </color>
                         </brush>
                        </colorrole>
@@ -556,9 +503,9 @@ QPushButton::!checked:hover {
                        <colorrole role="Highlight">
                         <brush brushstyle="SolidPattern">
                          <color alpha="255">
-                          <red>63</red>
-                          <green>65</green>
-                          <blue>77</blue>
+                          <red>34</red>
+                          <green>35</green>
+                          <blue>40</blue>
                          </color>
                         </brush>
                        </colorrole>
@@ -662,8 +609,8 @@ QPushButton::!checked:hover {
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>96</width>
-                   <height>26</height>
+                   <width>1037</width>
+                   <height>581</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_10">
@@ -715,8 +662,8 @@ QPushButton::!checked:hover {
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1037</width>
-                   <height>571</height>
+                   <width>96</width>
+                   <height>26</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_8">
@@ -750,698 +697,6 @@ QPushButton::!checked:hover {
             </widget>
            </widget>
           </item>
-          <item row="0" column="0" rowspan="3">
-           <widget class="QScrollArea" name="scrollArea_2">
-            <property name="minimumSize">
-             <size>
-              <width>220</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>200</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="layoutDirection">
-             <enum>Qt::LeftToRight</enum>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::Box</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Sunken</enum>
-            </property>
-            <property name="widgetResizable">
-             <bool>true</bool>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-            </property>
-            <widget class="QWidget" name="scrollAreaWidgetContents_2">
-             <property name="geometry">
-              <rect>
-               <x>0</x>
-               <y>0</y>
-               <width>204</width>
-               <height>868</height>
-              </rect>
-             </property>
-             <property name="layoutDirection">
-              <enum>Qt::LeftToRight</enum>
-             </property>
-             <property name="styleSheet">
-              <string notr="true"/>
-             </property>
-             <layout class="QVBoxLayout" name="verticalLayout">
-              <property name="spacing">
-               <number>2</number>
-              </property>
-              <property name="leftMargin">
-               <number>9</number>
-              </property>
-              <property name="topMargin">
-               <number>9</number>
-              </property>
-              <property name="rightMargin">
-               <number>9</number>
-              </property>
-              <property name="bottomMargin">
-               <number>9</number>
-              </property>
-              <item>
-               <widget class="QPushButton" name="uWelcomeTabButton">
-                <property name="styleSheet">
-                 <string notr="true"/>
-                </property>
-                <property name="text">
-                 <string>Welcome</string>
-                </property>
-                <property name="icon">
-                 <iconset resource="../resources/resources.qrc">
-                  <normaloff>:/tips_and_updates_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/tips_and_updates_FILL0_wght100_GRAD0_opsz20.svg</iconset>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>20</width>
-                  <height>20</height>
-                 </size>
-                </property>
-                <property name="checkable">
-                 <bool>true</bool>
-                </property>
-                <property name="checked">
-                 <bool>true</bool>
-                </property>
-                <attribute name="buttonGroup">
-                 <string notr="true">buttonGroup</string>
-                </attribute>
-               </widget>
-              </item>
-              <item>
-               <widget class="QWidget" name="widget" native="true">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>10</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border-bottom: 1px solid rgb(100, 105, 113);
-margin: 0 3px;</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="uFirmwareTabButton">
-                <property name="styleSheet">
-                 <string notr="true">margin-top: 10px;</string>
-                </property>
-                <property name="text">
-                 <string>Firmware Info</string>
-                </property>
-                <property name="icon">
-                 <iconset resource="../resources/resources.qrc">
-                  <normaloff>:/wysiwyg_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/wysiwyg_FILL0_wght100_GRAD0_opsz20.svg</iconset>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>20</width>
-                  <height>20</height>
-                 </size>
-                </property>
-                <property name="checkable">
-                 <bool>true</bool>
-                </property>
-                <property name="checked">
-                 <bool>false</bool>
-                </property>
-                <attribute name="buttonGroup">
-                 <string notr="true">buttonGroup</string>
-                </attribute>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="uHardwareTabButton">
-                <property name="text">
-                 <string>Hardware Info</string>
-                </property>
-                <property name="icon">
-                 <iconset resource="../resources/resources.qrc">
-                  <normaloff>:/developer_board_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/developer_board_FILL0_wght100_GRAD0_opsz20.svg</iconset>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>20</width>
-                  <height>20</height>
-                 </size>
-                </property>
-                <property name="checkable">
-                 <bool>true</bool>
-                </property>
-                <attribute name="buttonGroup">
-                 <string notr="true">buttonGroup</string>
-                </attribute>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="uExtruderTabButton">
-                <property name="text">
-                 <string>Extruder Info</string>
-                </property>
-                <property name="icon">
-                 <iconset resource="../resources/resources.qrc">
-                  <normaloff>:/tools_phillips_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/tools_phillips_FILL0_wght100_GRAD0_opsz20.svg</iconset>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>20</width>
-                  <height>20</height>
-                 </size>
-                </property>
-                <property name="checkable">
-                 <bool>true</bool>
-                </property>
-                <attribute name="buttonGroup">
-                 <string notr="true">buttonGroup</string>
-                </attribute>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="uPowerSupplyButton">
-                <property name="text">
-                 <string>Power Supply</string>
-                </property>
-                <property name="icon">
-                 <iconset resource="../resources/resources.qrc">
-                  <normaloff>:/electrical_services_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/electrical_services_FILL0_wght100_GRAD0_opsz20.svg</iconset>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>20</width>
-                  <height>20</height>
-                 </size>
-                </property>
-                <property name="checkable">
-                 <bool>true</bool>
-                </property>
-                <attribute name="buttonGroup">
-                 <string notr="true">buttonGroup</string>
-                </attribute>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="pushButton_2">
-                <property name="text">
-                 <string>Thermal Settings</string>
-                </property>
-                <property name="icon">
-                 <iconset resource="../resources/resources.qrc">
-                  <normaloff>:/thermostat_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/thermostat_FILL0_wght100_GRAD0_opsz20.svg</iconset>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>20</width>
-                  <height>20</height>
-                 </size>
-                </property>
-                <property name="checkable">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="pushButton_3">
-                <property name="text">
-                 <string>Kinematics</string>
-                </property>
-                <property name="icon">
-                 <iconset resource="../resources/resources.qrc">
-                  <normaloff>:/precision_manufacturing_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/precision_manufacturing_FILL0_wght100_GRAD0_opsz20.svg</iconset>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>20</width>
-                  <height>20</height>
-                 </size>
-                </property>
-                <property name="checkable">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="pushButton_4">
-                <property name="text">
-                 <string>Endstops</string>
-                </property>
-                <property name="icon">
-                 <iconset resource="../resources/resources.qrc">
-                  <normaloff>:/multiple_stop_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/multiple_stop_FILL0_wght100_GRAD0_opsz20.svg</iconset>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>20</width>
-                  <height>20</height>
-                 </size>
-                </property>
-                <property name="checkable">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="pushButton_5">
-                <property name="text">
-                 <string>Movement</string>
-                </property>
-                <property name="icon">
-                 <iconset resource="../resources/resources.qrc">
-                  <normaloff>:/open_with_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_with_FILL0_wght100_GRAD0_opsz20.svg</iconset>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>20</width>
-                  <height>20</height>
-                 </size>
-                </property>
-                <property name="checkable">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="pushButton_6">
-                <property name="text">
-                 <string>Z Probe Options</string>
-                </property>
-                <property name="icon">
-                 <iconset resource="../resources/resources.qrc">
-                  <normaloff>:/height_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/height_FILL0_wght100_GRAD0_opsz20.svg</iconset>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>20</width>
-                  <height>20</height>
-                 </size>
-                </property>
-                <property name="checkable">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="pushButton_7">
-                <property name="text">
-                 <string>Stepper Drivers</string>
-                </property>
-                <property name="icon">
-                 <iconset resource="../resources/resources.qrc">
-                  <normaloff>:/memory_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/memory_FILL0_wght100_GRAD0_opsz20.svg</iconset>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>20</width>
-                  <height>20</height>
-                 </size>
-                </property>
-                <property name="checkable">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="pushButton_8">
-                <property name="text">
-                 <string>Homing and Bounds</string>
-                </property>
-                <property name="icon">
-                 <iconset resource="../resources/resources.qrc">
-                  <normaloff>:/home_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/home_FILL0_wght100_GRAD0_opsz20.svg</iconset>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>20</width>
-                  <height>20</height>
-                 </size>
-                </property>
-                <property name="checkable">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="pushButton_10">
-                <property name="text">
-                 <string>Filament Runout Sensor</string>
-                </property>
-                <property name="icon">
-                 <iconset resource="../resources/resources.qrc">
-                  <normaloff>:/sensors_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/sensors_FILL0_wght100_GRAD0_opsz20.svg</iconset>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>20</width>
-                  <height>20</height>
-                 </size>
-                </property>
-                <property name="checkable">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="pushButton_11">
-                <property name="text">
-                 <string>Bed Leveling</string>
-                </property>
-                <property name="icon">
-                 <iconset resource="../resources/resources.qrc">
-                  <normaloff>:/tools_level_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/tools_level_FILL0_wght100_GRAD0_opsz20.svg</iconset>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>20</width>
-                  <height>20</height>
-                 </size>
-                </property>
-                <property name="checkable">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="pushButton_12">
-                <property name="text">
-                 <string>Homing Options</string>
-                </property>
-                <property name="icon">
-                 <iconset resource="../resources/resources.qrc">
-                  <normaloff>:/home_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/home_FILL0_wght100_GRAD0_opsz20.svg</iconset>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>20</width>
-                  <height>20</height>
-                 </size>
-                </property>
-                <property name="checkable">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="pushButton_9">
-                <property name="text">
-                 <string>Additional Features</string>
-                </property>
-                <property name="icon">
-                 <iconset resource="../resources/resources.qrc">
-                  <normaloff>:/discover_tune_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/discover_tune_FILL0_wght100_GRAD0_opsz20.svg</iconset>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>20</width>
-                  <height>20</height>
-                 </size>
-                </property>
-                <property name="checkable">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="pushButton_13">
-                <property name="text">
-                 <string>User Interface Language</string>
-                </property>
-                <property name="icon">
-                 <iconset resource="../resources/resources.qrc">
-                  <normaloff>:/translate_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/translate_FILL0_wght100_GRAD0_opsz20.svg</iconset>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>20</width>
-                  <height>20</height>
-                 </size>
-                </property>
-                <property name="checkable">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="pushButton_14">
-                <property name="text">
-                 <string>SD Card</string>
-                </property>
-                <property name="icon">
-                 <iconset resource="../resources/resources.qrc">
-                  <normaloff>:/sd_card_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/sd_card_FILL0_wght100_GRAD0_opsz20.svg</iconset>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>20</width>
-                  <height>20</height>
-                 </size>
-                </property>
-                <property name="checkable">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="pushButton_15">
-                <property name="text">
-                 <string>LCD Menu Items</string>
-                </property>
-                <property name="icon">
-                 <iconset resource="../resources/resources.qrc">
-                  <normaloff>:/screencast_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/screencast_FILL0_wght100_GRAD0_opsz20.svg</iconset>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>20</width>
-                  <height>20</height>
-                 </size>
-                </property>
-                <property name="checkable">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="pushButton_16">
-                <property name="text">
-                 <string>Encoder</string>
-                </property>
-                <property name="icon">
-                 <iconset resource="../resources/resources.qrc">
-                  <normaloff>:/settings_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/settings_FILL0_wght100_GRAD0_opsz20.svg</iconset>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>20</width>
-                  <height>20</height>
-                 </size>
-                </property>
-                <property name="checkable">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="pushButton_17">
-                <property name="text">
-                 <string>Speaker</string>
-                </property>
-                <property name="icon">
-                 <iconset resource="../resources/resources.qrc">
-                  <normaloff>:/speaker_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/speaker_FILL0_wght100_GRAD0_opsz20.svg</iconset>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>20</width>
-                  <height>20</height>
-                 </size>
-                </property>
-                <property name="checkable">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="pushButton_18">
-                <property name="text">
-                 <string>LCD Controller</string>
-                </property>
-                <property name="icon">
-                 <iconset resource="../resources/resources.qrc">
-                  <normaloff>:/screencast_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/screencast_FILL0_wght100_GRAD0_opsz20.svg</iconset>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>20</width>
-                  <height>20</height>
-                 </size>
-                </property>
-                <property name="checkable">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="pushButton_19">
-                <property name="text">
-                 <string>Extra Features</string>
-                </property>
-                <property name="icon">
-                 <iconset resource="../resources/resources.qrc">
-                  <normaloff>:/discover_tune_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/discover_tune_FILL0_wght100_GRAD0_opsz20.svg</iconset>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>20</width>
-                  <height>20</height>
-                 </size>
-                </property>
-                <property name="checkable">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <spacer name="verticalSpacer">
-                <property name="orientation">
-                 <enum>Qt::Vertical</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>20</width>
-                  <height>40</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-             </layout>
-             <zorder>widget</zorder>
-             <zorder>uFirmwareTabButton</zorder>
-             <zorder>uHardwareTabButton</zorder>
-             <zorder>uExtruderTabButton</zorder>
-             <zorder>uPowerSupplyButton</zorder>
-             <zorder>pushButton_2</zorder>
-             <zorder>pushButton_3</zorder>
-             <zorder>pushButton_4</zorder>
-             <zorder>pushButton_5</zorder>
-             <zorder>pushButton_6</zorder>
-             <zorder>pushButton_7</zorder>
-             <zorder>pushButton_8</zorder>
-             <zorder>pushButton_10</zorder>
-             <zorder>pushButton_11</zorder>
-             <zorder>pushButton_12</zorder>
-             <zorder>pushButton_9</zorder>
-             <zorder>pushButton_13</zorder>
-             <zorder>pushButton_14</zorder>
-             <zorder>pushButton_15</zorder>
-             <zorder>pushButton_16</zorder>
-             <zorder>pushButton_17</zorder>
-             <zorder>pushButton_18</zorder>
-             <zorder>pushButton_19</zorder>
-             <zorder>uWelcomeTabButton</zorder>
-            </widget>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="1" column="0" colspan="2">
-        <widget class="QFrame" name="frame_3">
-         <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_2">
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <item>
-           <widget class="QTextBrowser" name="uLogConsole">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QTextBrowser {
-	font-family: &quot;Source Code Pro&quot;;
-}
-</string>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::Box</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Sunken</enum>
-            </property>
-            <property name="html">
-             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Source Code Pro'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Segoe UI';&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="label">
-            <property name="minimumSize">
-             <size>
-              <width>80</width>
-              <height>150</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>80</width>
-              <height>150</height>
-             </size>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::Box</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Sunken</enum>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/iloop_alpha.png</pixmap>
-            </property>
-            <property name="scaledContents">
-             <bool>true</bool>
-            </property>
-            <property name="margin">
-             <number>5</number>
-            </property>
-           </widget>
-          </item>
          </layout>
         </widget>
        </item>
@@ -1456,7 +711,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <x>0</x>
      <y>0</y>
      <width>1280</width>
-     <height>28</height>
+     <height>30</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuDatei">
@@ -1490,10 +745,855 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <addaction name="uActionOpenMarlinConfiguration"/>
     <addaction name="uActionOpenAutoBuildMarlin"/>
    </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="uNavigationDockAction"/>
+    <addaction name="uConsoleDockAction"/>
+   </widget>
    <addaction name="menuDatei"/>
+   <addaction name="menuView"/>
    <addaction name="menuDocumentation"/>
    <addaction name="menuHilfe"/>
   </widget>
+  <widget class="QDockWidget" name="uNavigationDock">
+   <property name="minimumSize">
+    <size>
+     <width>220</width>
+     <height>100</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>220</width>
+     <height>524287</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QDockWidget {
+	color: black;
+	titlebar-close-icon: url(&quot;:/close_FILL0_wght100_GRAD0_opsz20.svg&quot;);
+}
+
+QDockWidget::close-button {
+    border: none;
+    background: transparent;
+	image: url(&quot;:/close_FILL0_wght100_GRAD0_opsz20.svg&quot;);
+}
+
+QDockWidget::close-button:hover {
+    image: url(&quot;:/close_FILL0_wght100_GRAD0_opsz20.svg&quot;);
+	border: 1px solid black;
+	border-radius: 2px;
+}
+
+QDockWidget::title {
+	background: rgb(249, 154, 0);
+	padding: 5px;
+}
+
+QPushButton {
+	background: rgb(63, 65, 77);
+	color: white;
+	padding: 6px;
+    border: 1px solid black;
+    border-radius: 5px;
+	text-align: left;
+}
+
+QPushButton::checked {
+      border: 1px solid rgb(249, 154, 0);
+	  background: rgb(249, 154, 0);
+	  color: black;
+}
+
+QPushButton::!checked:hover {
+	  background: rgb(75, 77, 91);
+}</string>
+   </property>
+   <property name="features">
+    <set>QDockWidget::DockWidgetClosable|QDockWidget::DockWidgetMovable</set>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
+   </property>
+   <property name="windowTitle">
+    <string>Navigation</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QGridLayout" name="gridLayout_11">
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>9</number>
+     </property>
+     <item row="0" column="0">
+      <widget class="QScrollArea" name="scrollArea_2">
+       <property name="minimumSize">
+        <size>
+         <width>220</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>220</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Sunken</enum>
+       </property>
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+       </property>
+       <widget class="QWidget" name="scrollAreaWidgetContents_2">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>204</width>
+          <height>868</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <property name="spacing">
+          <number>2</number>
+         </property>
+         <property name="leftMargin">
+          <number>9</number>
+         </property>
+         <property name="topMargin">
+          <number>9</number>
+         </property>
+         <property name="rightMargin">
+          <number>9</number>
+         </property>
+         <property name="bottomMargin">
+          <number>9</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="uWelcomeTabButton">
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Welcome</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/resources.qrc">
+             <normaloff>:/tips_and_updates_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/tips_and_updates_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">buttonGroup</string>
+           </attribute>
+          </widget>
+         </item>
+         <item>
+          <widget class="QWidget" name="widget" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>10</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border-bottom: 1px solid rgb(100, 105, 113);
+margin: 0 3px;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="uFirmwareTabButton">
+           <property name="styleSheet">
+            <string notr="true">margin-top: 10px;</string>
+           </property>
+           <property name="text">
+            <string>Firmware Info</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/resources.qrc">
+             <normaloff>:/wysiwyg_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/wysiwyg_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="checked">
+            <bool>false</bool>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">buttonGroup</string>
+           </attribute>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="uHardwareTabButton">
+           <property name="text">
+            <string>Hardware Info</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/resources.qrc">
+             <normaloff>:/developer_board_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/developer_board_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">buttonGroup</string>
+           </attribute>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="uExtruderTabButton">
+           <property name="text">
+            <string>Extruder Info</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/resources.qrc">
+             <normaloff>:/tools_phillips_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/tools_phillips_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">buttonGroup</string>
+           </attribute>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="uPowerSupplyButton">
+           <property name="text">
+            <string>Power Supply</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/resources.qrc">
+             <normaloff>:/electrical_services_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/electrical_services_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">buttonGroup</string>
+           </attribute>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_2">
+           <property name="text">
+            <string>Thermal Settings</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/resources.qrc">
+             <normaloff>:/thermostat_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/thermostat_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_3">
+           <property name="text">
+            <string>Kinematics</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/resources.qrc">
+             <normaloff>:/precision_manufacturing_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/precision_manufacturing_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_4">
+           <property name="text">
+            <string>Endstops</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/resources.qrc">
+             <normaloff>:/multiple_stop_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/multiple_stop_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_5">
+           <property name="text">
+            <string>Movement</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/resources.qrc">
+             <normaloff>:/open_with_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_with_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_6">
+           <property name="text">
+            <string>Z Probe Options</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/resources.qrc">
+             <normaloff>:/height_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/height_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_7">
+           <property name="text">
+            <string>Stepper Drivers</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/resources.qrc">
+             <normaloff>:/memory_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/memory_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_8">
+           <property name="text">
+            <string>Homing and Bounds</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/resources.qrc">
+             <normaloff>:/home_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/home_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_10">
+           <property name="text">
+            <string>Filament Runout Sensor</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/resources.qrc">
+             <normaloff>:/sensors_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/sensors_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_11">
+           <property name="text">
+            <string>Bed Leveling</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/resources.qrc">
+             <normaloff>:/tools_level_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/tools_level_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_12">
+           <property name="text">
+            <string>Homing Options</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/resources.qrc">
+             <normaloff>:/home_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/home_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_9">
+           <property name="text">
+            <string>Additional Features</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/resources.qrc">
+             <normaloff>:/discover_tune_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/discover_tune_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_13">
+           <property name="text">
+            <string>User Interface Language</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/resources.qrc">
+             <normaloff>:/translate_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/translate_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_14">
+           <property name="text">
+            <string>SD Card</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/resources.qrc">
+             <normaloff>:/sd_card_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/sd_card_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_15">
+           <property name="text">
+            <string>LCD Menu Items</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/resources.qrc">
+             <normaloff>:/screencast_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/screencast_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_16">
+           <property name="text">
+            <string>Encoder</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/resources.qrc">
+             <normaloff>:/settings_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/settings_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_17">
+           <property name="text">
+            <string>Speaker</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/resources.qrc">
+             <normaloff>:/speaker_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/speaker_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_18">
+           <property name="text">
+            <string>LCD Controller</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/resources.qrc">
+             <normaloff>:/screencast_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/screencast_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_19">
+           <property name="text">
+            <string>Extra Features</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/resources.qrc">
+             <normaloff>:/discover_tune_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/discover_tune_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+        <zorder>widget</zorder>
+        <zorder>uFirmwareTabButton</zorder>
+        <zorder>uHardwareTabButton</zorder>
+        <zorder>uExtruderTabButton</zorder>
+        <zorder>uPowerSupplyButton</zorder>
+        <zorder>pushButton_2</zorder>
+        <zorder>pushButton_3</zorder>
+        <zorder>pushButton_4</zorder>
+        <zorder>pushButton_5</zorder>
+        <zorder>pushButton_6</zorder>
+        <zorder>pushButton_7</zorder>
+        <zorder>pushButton_8</zorder>
+        <zorder>pushButton_10</zorder>
+        <zorder>pushButton_11</zorder>
+        <zorder>pushButton_12</zorder>
+        <zorder>pushButton_9</zorder>
+        <zorder>pushButton_13</zorder>
+        <zorder>pushButton_14</zorder>
+        <zorder>pushButton_15</zorder>
+        <zorder>pushButton_16</zorder>
+        <zorder>pushButton_17</zorder>
+        <zorder>pushButton_18</zorder>
+        <zorder>pushButton_19</zorder>
+        <zorder>uWelcomeTabButton</zorder>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="uConsoleDock">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QDockWidget {
+	color: black;
+	titlebar-close-icon: url(&quot;:/close_FILL0_wght100_GRAD0_opsz20.svg&quot;);
+}
+
+QDockWidget::close-button {
+    border: none;
+    background: transparent;
+	image: url(&quot;:/close_FILL0_wght100_GRAD0_opsz20.svg&quot;);
+}
+
+QDockWidget::close-button:hover {
+    image: url(&quot;:/close_FILL0_wght100_GRAD0_opsz20.svg&quot;);
+	border: 1px solid black;
+	border-radius: 2px;
+}
+
+QDockWidget::title {
+	background: rgb(249, 154, 0);
+	padding: 5px;
+}</string>
+   </property>
+   <property name="features">
+    <set>QDockWidget::DockWidgetClosable|QDockWidget::DockWidgetMovable</set>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::BottomDockWidgetArea|Qt::TopDockWidgetArea</set>
+   </property>
+   <property name="windowTitle">
+    <string>Console</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_4">
+    <layout class="QGridLayout" name="gridLayout_15">
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item row="0" column="0">
+      <widget class="QFrame" name="frame_3">
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <property name="leftMargin">
+         <number>9</number>
+        </property>
+        <property name="topMargin">
+         <number>9</number>
+        </property>
+        <property name="rightMargin">
+         <number>9</number>
+        </property>
+        <property name="bottomMargin">
+         <number>9</number>
+        </property>
+        <item>
+         <widget class="QTextBrowser" name="uLogConsole">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QTextBrowser {
+	font-family: &quot;Source Code Pro&quot;;
+    selection-background-color: rgb(63, 65, 77);
+}
+</string>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Sunken</enum>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Source Code Pro'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Segoe UI';&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignBottom">
+         <widget class="QLabel" name="label">
+          <property name="maximumSize">
+           <size>
+            <width>60</width>
+            <height>110</height>
+           </size>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Sunken</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="../resources/resources.qrc">:/iloop_alpha.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+          <property name="margin">
+           <number>5</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
   <action name="uOpenProjectAction">
    <property name="icon">
     <iconset resource="../resources/resources.qrc">
@@ -1871,6 +1971,45 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </property>
    <property name="text">
     <string>Marlin Configuration...</string>
+   </property>
+  </action>
+  <action name="uNavigationDockAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show Navigation</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+N</string>
+   </property>
+   <property name="autoRepeat">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="uConsoleDockAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show Console</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+C</string>
+   </property>
+   <property name="autoRepeat">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="uResetViewportAction">
+   <property name="text">
+    <string>Reset Viewport</string>
    </property>
   </action>
  </widget>

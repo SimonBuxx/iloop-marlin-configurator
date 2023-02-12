@@ -26,6 +26,7 @@
 
 QWidget {
         font-family: &quot;Source Sans Pro&quot;;
+		background: none;
 }
 
 QLabel:!disabled {
@@ -36,7 +37,7 @@ QGroupBox {
 	border: 1px solid black;
 	border-radius: 5px;
 	background: rgb(34, 35, 40);
-	padding-top: 30px;
+	padding-top: 25px;
 }
 
 QGroupBox::title {
@@ -53,7 +54,16 @@ QGroupBox::title:disabled {
 	color: rgb(180, 180, 180);
 }
 
-QGroupBox:focus {
+QGroupBox:checked:!disabled {
+	background: rgb(50, 52, 59);
+}
+
+QGroupBox:focus:!checked {
+	border: 1px solid rgb(249, 154, 0);
+	background: rgb(26, 26, 30);
+}
+
+QGroupBox:focus:checked {
 	border: 1px solid rgb(249, 154, 0);
 }
 
@@ -235,7 +245,7 @@ QAbstractSpinBox::down-button:off {
                 image: url(&quot;:/arrow_drop_down_FILL0_wght400_GRAD0_opsz20.svg&quot;);
 }</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout" columnstretch="0,0,0">
+  <layout class="QGridLayout" name="gridLayout" columnstretch="0,0">
    <property name="leftMargin">
     <number>17</number>
    </property>
@@ -251,7 +261,7 @@ QAbstractSpinBox::down-button:off {
    <property name="spacing">
     <number>10</number>
    </property>
-   <item row="7" column="0" colspan="3">
+   <item row="6" column="0" colspan="2">
     <widget class="QWidget" name="widget_3" native="true">
      <layout class="QGridLayout" name="gridLayout_14" columnstretch="1,1,1">
       <property name="topMargin">
@@ -275,12 +285,19 @@ QAbstractSpinBox::down-button:off {
          <bool>true</bool>
         </property>
         <layout class="QGridLayout" name="gridLayout_12">
-         <property name="horizontalSpacing">
+         <property name="spacing">
           <number>10</number>
          </property>
-         <property name="verticalSpacing">
-          <number>5</number>
-         </property>
+         <item row="1" column="1">
+          <widget class="QLabel" name="label_22">
+           <property name="text">
+            <string>This is the name displayed in the LCD &quot;Ready&quot; message and Info menu. (optional)</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
          <item row="1" column="0">
           <widget class="QLabel" name="label_21">
            <property name="sizePolicy">
@@ -297,17 +314,7 @@ QAbstractSpinBox::down-button:off {
            </property>
           </widget>
          </item>
-         <item row="1" column="1">
-          <widget class="QLabel" name="label_22">
-           <property name="text">
-            <string>This is the name displayed in the LCD &quot;Ready&quot; message and Info menu. (optional)</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0" colspan="2">
+         <item row="2" column="0" colspan="2">
           <widget class="QLineEdit" name="uPrinterNameEdit">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -329,6 +336,19 @@ QAbstractSpinBox::down-button:off {
          <bool>true</bool>
         </property>
         <layout class="QGridLayout" name="gridLayout_13">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="1" column="1">
+          <widget class="QLabel" name="label_23">
+           <property name="text">
+            <string>This is the printer's unique ID, used by some programs to differentiate between machines. (optional)</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
          <item row="1" column="0">
           <widget class="QLabel" name="label_9">
            <property name="sizePolicy">
@@ -345,17 +365,7 @@ QAbstractSpinBox::down-button:off {
            </property>
           </widget>
          </item>
-         <item row="1" column="1">
-          <widget class="QLabel" name="label_23">
-           <property name="text">
-            <string>This is the printer's unique ID, used by some programs to differentiate between machines. (optional)</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0" colspan="2">
+         <item row="2" column="0" colspan="2">
           <widget class="QLineEdit" name="uMachineUuidEdit">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -377,11 +387,8 @@ QAbstractSpinBox::down-button:off {
          <bool>true</bool>
         </property>
         <layout class="QGridLayout" name="gridLayout_11">
-         <property name="horizontalSpacing">
+         <property name="spacing">
           <number>10</number>
-         </property>
-         <property name="verticalSpacing">
-          <number>5</number>
          </property>
          <item row="0" column="0">
           <widget class="QLabel" name="label_19">
@@ -415,462 +422,23 @@ QAbstractSpinBox::down-button:off {
      </layout>
     </widget>
    </item>
-   <item row="6" column="0" colspan="3">
-    <widget class="QGroupBox" name="uSerialPort2Box">
-     <property name="title">
-      <string>SERIAL_PORT_2</string>
+   <item row="1" column="0" colspan="2">
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
      </property>
-     <property name="checkable">
-      <bool>true</bool>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
      </property>
-     <layout class="QGridLayout" name="gridLayout_7" rowstretch="0" columnstretch="1,1">
-      <property name="horizontalSpacing">
-       <number>10</number>
-      </property>
-      <property name="verticalSpacing">
-       <number>5</number>
-      </property>
-      <item row="0" column="1">
-       <widget class="QGroupBox" name="uSerialPort3Box">
-        <property name="title">
-         <string>SERIAL_PORT_3</string>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_9">
-         <property name="horizontalSpacing">
-          <number>10</number>
-         </property>
-         <property name="verticalSpacing">
-          <number>5</number>
-         </property>
-         <item row="2" column="0">
-          <widget class="QLabel" name="label_17">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="1">
-          <widget class="QLabel" name="label_18">
-           <property name="text">
-            <string>This is the third serial port for communication with the host. (optional)</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0" colspan="2">
-          <widget class="QGroupBox" name="uBaudRate3Box">
-           <property name="title">
-            <string>BAUDRATE_3</string>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <layout class="QGridLayout" name="gridLayout_10">
-            <item row="1" column="0">
-             <widget class="QLabel" name="label_15">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="pixmap">
-               <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="0" colspan="2">
-             <widget class="Dropdown" name="uBaudRate3ComboBox">
-              <property name="enabled">
-               <bool>true</bool>
-              </property>
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="currentIndex">
-               <number>6</number>
-              </property>
-              <item>
-               <property name="text">
-                <string>2400</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>9600</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>19200</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>38400</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>57600</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>115200</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>250000</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>500000</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>1000000</string>
-               </property>
-              </item>
-             </widget>
-            </item>
-            <item row="1" column="1">
-             <widget class="QLabel" name="label_16">
-              <property name="text">
-               <string>This is the communication speed for the third serial port. Leave disabled to use BAUDRATE instead. (optional)</string>
-              </property>
-              <property name="wordWrap">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item row="0" column="0" colspan="2">
-          <widget class="Dropdown" name="uSerialPort3ComboBox">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="font">
-            <font>
-             <family>Source Sans Pro</family>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">margin-bottom: 5px;</string>
-           </property>
-           <property name="currentIndex">
-            <number>2</number>
-           </property>
-           <item>
-            <property name="text">
-             <string>-1</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>0</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>1</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>2</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>3</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>4</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>5</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>6</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>7</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QWidget" name="widget_4" native="true">
-        <layout class="QGridLayout" name="gridLayout_15">
-         <property name="leftMargin">
-          <number>0</number>
-         </property>
-         <property name="topMargin">
-          <number>0</number>
-         </property>
-         <property name="rightMargin">
-          <number>0</number>
-         </property>
-         <property name="bottomMargin">
-          <number>0</number>
-         </property>
-         <property name="horizontalSpacing">
-          <number>10</number>
-         </property>
-         <property name="verticalSpacing">
-          <number>5</number>
-         </property>
-         <item row="2" column="0">
-          <widget class="QLabel" name="label_13">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="1">
-          <widget class="QLabel" name="label_14">
-           <property name="text">
-            <string>This is the secondary serial port for communication with the host. (optional)</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0" colspan="2">
-          <widget class="QGroupBox" name="uBaudRate2Box">
-           <property name="title">
-            <string>BAUDRATE_2</string>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <layout class="QGridLayout" name="gridLayout_8">
-            <property name="horizontalSpacing">
-             <number>10</number>
-            </property>
-            <property name="verticalSpacing">
-             <number>5</number>
-            </property>
-            <item row="1" column="0">
-             <widget class="QLabel" name="label_3">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="pixmap">
-               <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="1">
-             <widget class="QLabel" name="label_12">
-              <property name="text">
-               <string>This is the communication speed for the secondary serial port. Leave disabled to use BAUDRATE instead. (optional)</string>
-              </property>
-              <property name="wordWrap">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="0" colspan="2">
-             <widget class="Dropdown" name="uBaudRate2ComboBox">
-              <property name="enabled">
-               <bool>true</bool>
-              </property>
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="currentIndex">
-               <number>6</number>
-              </property>
-              <item>
-               <property name="text">
-                <string>2400</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>9600</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>19200</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>38400</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>57600</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>115200</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>250000</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>500000</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>1000000</string>
-               </property>
-              </item>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item row="0" column="0" colspan="2">
-          <widget class="Dropdown" name="uSerialPort2ComboBox">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="font">
-            <font>
-             <family>Source Sans Pro</family>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">margin-bottom: 5px;</string>
-           </property>
-           <property name="currentIndex">
-            <number>1</number>
-           </property>
-           <item>
-            <property name="text">
-             <string>-2</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>-1</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>0</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>1</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>2</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>3</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>4</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>5</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>6</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>7</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
-     </layout>
-    </widget>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>10</height>
+      </size>
+     </property>
+    </spacer>
    </item>
-   <item row="3" column="0" colspan="3">
+   <item row="3" column="0" colspan="2">
     <widget class="QWidget" name="widget_2" native="true">
      <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,1,1">
       <property name="spacing">
@@ -893,15 +461,17 @@ QAbstractSpinBox::down-button:off {
         <property name="focusPolicy">
          <enum>Qt::StrongFocus</enum>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+        </property>
         <property name="title">
          <string>SERIAL_PORT</string>
         </property>
         <layout class="QGridLayout" name="gridLayout_4">
-         <property name="horizontalSpacing">
+         <property name="spacing">
           <number>10</number>
-         </property>
-         <property name="verticalSpacing">
-          <number>5</number>
          </property>
          <item row="1" column="0">
           <widget class="QLabel" name="label_5">
@@ -929,7 +499,7 @@ QAbstractSpinBox::down-button:off {
            </property>
           </widget>
          </item>
-         <item row="0" column="0" colspan="2">
+         <item row="2" column="0" colspan="2">
           <widget class="Dropdown" name="uSerialPortComboBox">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -995,16 +565,28 @@ QAbstractSpinBox::down-button:off {
         <property name="focusPolicy">
          <enum>Qt::StrongFocus</enum>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+        </property>
         <property name="title">
          <string>BAUDRATE</string>
         </property>
         <layout class="QGridLayout" name="gridLayout_5">
-         <property name="horizontalSpacing">
+         <property name="spacing">
           <number>10</number>
          </property>
-         <property name="verticalSpacing">
-          <number>5</number>
-         </property>
+         <item row="1" column="1">
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string>This is the default communication speed for all serial ports.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
          <item row="1" column="0">
           <widget class="QLabel" name="label_7">
            <property name="sizePolicy">
@@ -1021,17 +603,7 @@ QAbstractSpinBox::down-button:off {
            </property>
           </widget>
          </item>
-         <item row="1" column="1">
-          <widget class="QLabel" name="label_8">
-           <property name="text">
-            <string>This is the default communication speed for all serial ports.</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0" colspan="2">
+         <item row="2" column="0" colspan="2">
           <widget class="Dropdown" name="uBaudrateComboBox">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -1107,11 +679,8 @@ QAbstractSpinBox::down-button:off {
          <bool>true</bool>
         </property>
         <layout class="QGridLayout" name="gridLayout_6">
-         <property name="horizontalSpacing">
+         <property name="spacing">
           <number>10</number>
-         </property>
-         <property name="verticalSpacing">
-          <number>5</number>
          </property>
          <item row="0" column="0">
           <widget class="QLabel" name="label_10">
@@ -1145,27 +714,120 @@ QAbstractSpinBox::down-button:off {
      </layout>
     </widget>
    </item>
-   <item row="14" column="0" colspan="3">
+   <item row="13" column="0" colspan="2">
     <spacer name="verticalSpacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
     </spacer>
    </item>
-   <item row="2" column="0" colspan="3">
-    <widget class="QGroupBox" name="uMotherboardBox">
-     <property name="focusPolicy">
-      <enum>Qt::StrongFocus</enum>
-     </property>
-     <property name="title">
-      <string>MOTHERBOARD</string>
-     </property>
-     <layout class="QGridLayout" name="gridLayout_3">
+   <item row="0" column="0" colspan="2">
+    <widget class="QWidget" name="widget" native="true">
+     <layout class="QGridLayout" name="gridLayout_2">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
       <property name="horizontalSpacing">
        <number>10</number>
       </property>
       <property name="verticalSpacing">
        <number>5</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+	color: rgb(100, 103, 122);
+	font-size: 35px;
+	font-family: &quot;Source Sans Pro Light&quot;;
+	font-style: italic;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>HARDWARE INFO</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QPushButton" name="uDocumentationButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>Open Hardware Info documentation</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	background: none;
+	border: none;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../resources/resources.qrc">
+          <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="2">
+    <widget class="QGroupBox" name="uMotherboardBox">
+     <property name="focusPolicy">
+      <enum>Qt::StrongFocus</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+     </property>
+     <property name="title">
+      <string>MOTHERBOARD</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_3">
+      <property name="spacing">
+       <number>10</number>
       </property>
       <item row="1" column="0">
        <widget class="QLabel" name="label_2">
@@ -1190,7 +852,7 @@ QAbstractSpinBox::down-button:off {
         </property>
        </widget>
       </item>
-      <item row="0" column="0" colspan="2">
+      <item row="2" column="0" colspan="2">
        <widget class="Dropdown" name="uMotherboardComboBox">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
@@ -2959,25 +2621,9 @@ QAbstractSpinBox::down-button:off {
      </layout>
     </widget>
    </item>
-   <item row="1" column="0" colspan="3">
-    <spacer name="verticalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>10</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="0" column="0" colspan="3">
-    <widget class="QWidget" name="widget" native="true">
-     <layout class="QGridLayout" name="gridLayout_2">
+   <item row="4" column="0" colspan="2">
+    <widget class="QWidget" name="widget_5" native="true">
+     <layout class="QGridLayout" name="gridLayout_16" columnstretch="1,1">
       <property name="leftMargin">
        <number>0</number>
       </property>
@@ -2997,62 +2643,447 @@ QAbstractSpinBox::down-button:off {
        <number>5</number>
       </property>
       <item row="0" column="0">
-       <widget class="QLabel" name="label">
-        <property name="styleSheet">
-         <string notr="true">QLabel {
-	color: rgb(100, 103, 122);
-	font-size: 35px;
-	font-family: &quot;Source Sans Pro Light&quot;;
-	font-style: italic;
-}
-</string>
+       <widget class="QGroupBox" name="uSerialPort2Box">
+        <property name="title">
+         <string>SERIAL_PORT_2</string>
         </property>
-        <property name="text">
-         <string>HARDWARE INFO</string>
+        <property name="checkable">
+         <bool>true</bool>
         </property>
+        <layout class="QGridLayout" name="gridLayout_7">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="1" column="2">
+          <widget class="QWidget" name="widget_4" native="true">
+           <layout class="QGridLayout" name="gridLayout_15">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <property name="horizontalSpacing">
+             <number>10</number>
+            </property>
+            <property name="verticalSpacing">
+             <number>5</number>
+            </property>
+           </layout>
+          </widget>
+         </item>
+         <item row="1" column="0" rowspan="2" colspan="3">
+          <widget class="Dropdown" name="uSerialPort2ComboBox">
+           <property name="font">
+            <font>
+             <family>Source Sans Pro</family>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="currentIndex">
+            <number>1</number>
+           </property>
+           <item>
+            <property name="text">
+             <string>-2</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>-1</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>0</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>1</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>2</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>3</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>4</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>5</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>6</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>7</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="3" column="0" colspan="3">
+          <widget class="QGroupBox" name="uBaudRate2Box">
+           <property name="title">
+            <string>BAUDRATE_2</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_8">
+            <property name="spacing">
+             <number>10</number>
+            </property>
+            <item row="1" column="1">
+             <widget class="QLabel" name="label_12">
+              <property name="text">
+               <string>This is the communication speed for the secondary serial port. Leave disabled to use BAUDRATE instead. (optional)</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_3">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0" colspan="2">
+             <widget class="Dropdown" name="uBaudRate2ComboBox">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="currentIndex">
+               <number>6</number>
+              </property>
+              <item>
+               <property name="text">
+                <string>2400</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>9600</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>19200</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>38400</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>57600</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>115200</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>250000</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>500000</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1000000</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="0" column="1" colspan="2">
+          <widget class="QLabel" name="label_14">
+           <property name="text">
+            <string>This is the secondary serial port for communication with the host. (optional)</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_13">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QPushButton" name="uDocumentationButton">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
+       <widget class="QGroupBox" name="uSerialPort3Box">
+        <property name="title">
+         <string>SERIAL_PORT_3</string>
         </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-	background: none;
-	border: none;
-}</string>
+        <property name="checkable">
+         <bool>true</bool>
         </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset resource="../resources/resources.qrc">
-          <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>20</width>
-          <height>20</height>
-         </size>
-        </property>
+        <layout class="QGridLayout" name="gridLayout_9">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="2" column="0" colspan="2">
+          <widget class="QGroupBox" name="uBaudRate3Box">
+           <property name="title">
+            <string>BAUDRATE_3</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_10">
+            <property name="spacing">
+             <number>10</number>
+            </property>
+            <item row="1" column="1">
+             <widget class="QLabel" name="label_16">
+              <property name="text">
+               <string>This is the communication speed for the third serial port. Leave disabled to use BAUDRATE instead. (optional)</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_15">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0" colspan="2">
+             <widget class="Dropdown" name="uBaudRate3ComboBox">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="currentIndex">
+               <number>6</number>
+              </property>
+              <item>
+               <property name="text">
+                <string>2400</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>9600</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>19200</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>38400</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>57600</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>115200</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>250000</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>500000</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1000000</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="Dropdown" name="uSerialPort3ComboBox">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <family>Source Sans Pro</family>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="currentIndex">
+            <number>2</number>
+           </property>
+           <item>
+            <property name="text">
+             <string>-1</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>0</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>1</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>2</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>3</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>4</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>5</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>6</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>7</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_18">
+           <property name="text">
+            <string>This is the third serial port for communication with the host. (optional)</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_17">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </widget>
-      </item>
-      <item row="0" column="2">
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
       </item>
      </layout>
     </widget>

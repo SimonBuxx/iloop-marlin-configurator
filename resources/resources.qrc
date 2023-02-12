@@ -45,5 +45,7 @@
         <file>SourceSansPro-Light.ttf</file>
         <file>SourceSansPro-LightItalic.ttf</file>
         <file>SourceSansPro-Italic.ttf</file>
+        <file>erig_grey.png</file>
+        <file>close_FILL0_wght100_GRAD0_opsz20.svg</file>
     </qresource>
 </RCC>

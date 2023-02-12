@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>977</width>
-    <height>1321</height>
+    <width>1088</width>
+    <height>1336</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,6 +20,7 @@
 
 QWidget {
         font-family: &quot;Source Sans Pro&quot;;
+		background: none;
 }
 
 QLabel:!disabled {
@@ -30,7 +31,7 @@ QGroupBox {
 	border: 1px solid black;
 	border-radius: 5px;
 	background: rgb(34, 35, 40);
-	padding-top: 30px;
+	padding-top: 25px;
 }
 
 QGroupBox::title {
@@ -47,7 +48,16 @@ QGroupBox::title:disabled {
 	color: rgb(180, 180, 180);
 }
 
-QGroupBox:focus {
+QGroupBox:checked:!disabled {
+	background: rgb(50, 52, 59);
+}
+
+QGroupBox:focus:!checked {
+	border: 1px solid rgb(249, 154, 0);
+	background: rgb(26, 26, 30);
+}
+
+QGroupBox:focus:checked {
 	border: 1px solid rgb(249, 154, 0);
 }
 
@@ -269,11 +279,11 @@ QAbstractSpinBox::down-button:off {
      <property name="checked">
       <bool>true</bool>
      </property>
-     <layout class="QGridLayout" name="gridLayout_2">
+     <layout class="QGridLayout" name="gridLayout_2" rowstretch="0,0,0,0,0,0,0">
       <property name="spacing">
        <number>10</number>
       </property>
-      <item row="11" column="1" colspan="2">
+      <item row="5" column="0" colspan="2">
        <widget class="QGroupBox" name="uAutoPowerControlBox">
         <property name="enabled">
          <bool>true</bool>
@@ -291,98 +301,9 @@ QAbstractSpinBox::down-button:off {
          <property name="spacing">
           <number>10</number>
          </property>
-         <item row="0" column="0" colspan="2">
-          <widget class="QWidget" name="widget_5" native="true">
-           <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="1,1,1,1,1">
-            <property name="spacing">
-             <number>10</number>
-            </property>
-            <property name="leftMargin">
-             <number>0</number>
-            </property>
-            <property name="topMargin">
-             <number>0</number>
-            </property>
-            <property name="rightMargin">
-             <number>0</number>
-            </property>
-            <property name="bottomMargin">
-             <number>0</number>
-            </property>
-            <item>
-             <widget class="QCheckBox" name="uAutoPowerFansCheckBox">
-              <property name="enabled">
-               <bool>true</bool>
-              </property>
-              <property name="text">
-               <string>AUTO_POWER_FANS</string>
-              </property>
-              <property name="checked">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QCheckBox" name="uAutoPowerEFansCheckBox">
-              <property name="enabled">
-               <bool>true</bool>
-              </property>
-              <property name="text">
-               <string>AUTO_POWER_E_FANS</string>
-              </property>
-              <property name="checked">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QCheckBox" name="uAutoPowerControllerFanCheckBox">
-              <property name="enabled">
-               <bool>true</bool>
-              </property>
-              <property name="text">
-               <string>AUTO_POWER_CONTROLLERFAN</string>
-              </property>
-              <property name="checked">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QCheckBox" name="uAutoPowerChamberFanCheckBox">
-              <property name="enabled">
-               <bool>true</bool>
-              </property>
-              <property name="text">
-               <string>AUTO_POWER_CHAMBER_FAN</string>
-              </property>
-              <property name="checked">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QCheckBox" name="uAutoPowerCoolerFanCheckBox">
-              <property name="enabled">
-               <bool>true</bool>
-              </property>
-              <property name="text">
-               <string>AUTO_POWER_COOLER_FAN</string>
-              </property>
-              <property name="checked">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item row="5" column="0" colspan="2">
+         <item row="1" column="0" colspan="2">
           <widget class="QWidget" name="widget_3" native="true">
-           <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,1">
-            <property name="spacing">
-             <number>10</number>
-            </property>
+           <layout class="QGridLayout" name="gridLayout_22" columnstretch="1,1,1,1">
             <property name="leftMargin">
              <number>0</number>
             </property>
@@ -395,23 +316,29 @@ QAbstractSpinBox::down-button:off {
             <property name="bottomMargin">
              <number>0</number>
             </property>
-            <item>
-             <widget class="QGroupBox" name="uPowerTimeoutBox">
+            <property name="horizontalSpacing">
+             <number>10</number>
+            </property>
+            <property name="verticalSpacing">
+             <number>5</number>
+            </property>
+            <item row="0" column="1">
+             <widget class="QGroupBox" name="uAutoPowerEFansBox">
               <property name="title">
-               <string>POWER_TIMEOUT</string>
+               <string>AUTO_POWER_E_FANS</string>
               </property>
               <property name="checkable">
                <bool>true</bool>
               </property>
-              <layout class="QGridLayout" name="gridLayout_8">
-               <property name="horizontalSpacing">
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_18">
+               <property name="spacing">
                 <number>10</number>
                </property>
-               <property name="verticalSpacing">
-                <number>5</number>
-               </property>
-               <item row="1" column="0">
-                <widget class="QLabel" name="label_29">
+               <item row="0" column="0" rowspan="2">
+                <widget class="QLabel" name="label_44">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -426,36 +353,173 @@ QAbstractSpinBox::down-button:off {
                  </property>
                 </widget>
                </item>
-               <item row="1" column="1">
-                <widget class="QLabel" name="label_30">
+               <item row="0" column="1">
+                <widget class="QLabel" name="label_43">
                  <property name="text">
-                  <string>Turn off the PSU if the machine is idle for this duration. (optional)</string>
+                  <string>Turn on the PSU if the extruder fans need power.</string>
                  </property>
                  <property name="wordWrap">
                   <bool>true</bool>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="0" colspan="2">
-                <widget class="QSpinBox" name="uPowerTimeoutEdit">
-                 <property name="enabled">
+              </layout>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <widget class="QGroupBox" name="uAutoPowerControllerFanBox">
+              <property name="title">
+               <string>AUTO_POWER_CONTROLLERFAN</string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_17">
+               <property name="spacing">
+                <number>10</number>
+               </property>
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_45">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="pixmap">
+                  <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLabel" name="label_46">
+                 <property name="text">
+                  <string>Turn on the PSU if the controller fan needs power.</string>
+                 </property>
+                 <property name="wordWrap">
                   <bool>true</bool>
-                 </property>
-                 <property name="suffix">
-                  <string> s</string>
-                 </property>
-                 <property name="maximum">
-                  <number>300</number>
-                 </property>
-                 <property name="value">
-                  <number>30</number>
                  </property>
                 </widget>
                </item>
               </layout>
              </widget>
             </item>
-            <item>
+            <item row="0" column="0">
+             <widget class="QGroupBox" name="uAutoPowerFansBox">
+              <property name="title">
+               <string>AUTO_POWER_FANS</string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_19">
+               <property name="spacing">
+                <number>10</number>
+               </property>
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_37">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="pixmap">
+                  <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLabel" name="label_38">
+                 <property name="text">
+                  <string>Turn on the PSU if any fan needs power.</string>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="0" column="3">
+             <widget class="QGroupBox" name="uAutoPowerChamberFanBox">
+              <property name="title">
+               <string>AUTO_POWER_CHAMBER_FAN</string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_20">
+               <property name="spacing">
+                <number>10</number>
+               </property>
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_39">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="pixmap">
+                  <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLabel" name="label_40">
+                 <property name="text">
+                  <string>Turn on the PSU if the chamber fan needs power.</string>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="2" column="0" colspan="2">
+          <widget class="QWidget" name="widget_5" native="true">
+           <layout class="QGridLayout" name="gridLayout_16" columnstretch="1,1,1">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <property name="spacing">
+             <number>10</number>
+            </property>
+            <item row="0" column="2">
              <widget class="QGroupBox" name="uPowerOffDelayBox">
               <property name="title">
                <string>POWER_OFF_DELAY</string>
@@ -467,11 +531,8 @@ QAbstractSpinBox::down-button:off {
                <bool>true</bool>
               </property>
               <layout class="QGridLayout" name="gridLayout_9">
-               <property name="horizontalSpacing">
+               <property name="spacing">
                 <number>10</number>
-               </property>
-               <property name="verticalSpacing">
-                <number>5</number>
                </property>
                <item row="1" column="0">
                 <widget class="QLabel" name="label_31">
@@ -499,7 +560,7 @@ QAbstractSpinBox::down-button:off {
                  </property>
                 </widget>
                </item>
-               <item row="0" column="0" colspan="2">
+               <item row="2" column="0" colspan="2">
                 <widget class="QSpinBox" name="uPowerOffDelayEdit">
                  <property name="enabled">
                   <bool>true</bool>
@@ -518,10 +579,121 @@ QAbstractSpinBox::down-button:off {
               </layout>
              </widget>
             </item>
+            <item row="0" column="1">
+             <widget class="QGroupBox" name="uPowerTimeoutBox">
+              <property name="title">
+               <string>POWER_TIMEOUT</string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_8">
+               <property name="spacing">
+                <number>10</number>
+               </property>
+               <item row="1" column="0">
+                <widget class="QLabel" name="label_29">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="pixmap">
+                  <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLabel" name="label_30">
+                 <property name="text">
+                  <string>Turn off the PSU if the machine is idle for this duration. (optional)</string>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0" colspan="2">
+                <widget class="QSpinBox" name="uPowerTimeoutEdit">
+                 <property name="enabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="suffix">
+                  <string> s</string>
+                 </property>
+                 <property name="maximum">
+                  <number>300</number>
+                 </property>
+                 <property name="value">
+                  <number>30</number>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QGroupBox" name="uAutoPowerCoolerFanBox">
+              <property name="title">
+               <string>AUTO_POWER_COOLER_FAN</string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_21">
+               <property name="spacing">
+                <number>10</number>
+               </property>
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_41">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="pixmap">
+                  <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLabel" name="label_42">
+                 <property name="text">
+                  <string>Turn on the PSU if the cooler fan needs power.</string>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
            </layout>
           </widget>
          </item>
-         <item row="6" column="0">
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_36">
+           <property name="text">
+            <string>This parameter enables automatic control of the PS_ON pin. Enables temperature limits below if not already enabled by POWER_OFF_WAIT_FOR_COOLDOWN.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
           <widget class="QLabel" name="label_35">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -537,169 +709,640 @@ QAbstractSpinBox::down-button:off {
            </property>
           </widget>
          </item>
-         <item row="6" column="1">
-          <widget class="QLabel" name="label_36">
-           <property name="text">
-            <string>This parameter enables automatic control of the PS_ON pin. Enables temperature limits below if not already enabled by POWER_OFF_WAIT_FOR_COOLDOWN.</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
         </layout>
        </widget>
       </item>
-      <item row="3" column="2">
-       <widget class="QGroupBox" name="uPsuDefaultOffBox">
-        <property name="title">
-         <string>PSU_DEFAULT_OFF</string>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <property name="checked">
-         <bool>false</bool>
-        </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <item row="4" column="0" colspan="2">
+       <widget class="QWidget" name="widget" native="true">
+        <layout class="QGridLayout" name="gridLayout_23">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
          <property name="spacing">
           <number>10</number>
          </property>
-         <item>
-          <widget class="QLabel" name="label_7">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
+         <item row="2" column="0">
+          <widget class="QGroupBox" name="uPowerOffTimerBox">
+           <property name="title">
+            <string>POWER_OFF_TIMER</string>
            </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_8">
-           <property name="text">
-            <string>Keep the power supply turned off until it is enabled directly with M80.</string>
-           </property>
-           <property name="wordWrap">
+           <property name="checkable">
             <bool>true</bool>
            </property>
+           <property name="checked">
+            <bool>false</bool>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_14">
+            <property name="spacing">
+             <number>10</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="label_21">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_22">
+              <property name="text">
+               <string>Enable this to allow M81 D&lt;seconds&gt; to power off the printer after a delay.</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
-        </layout>
-       </widget>
-      </item>
-      <item row="3" column="1">
-       <widget class="QGroupBox" name="uPsuActiveStateBox">
-        <property name="focusPolicy">
-         <enum>Qt::StrongFocus</enum>
-        </property>
-        <property name="title">
-         <string>PSU_ACTIVE_STATE</string>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_14">
-         <property name="horizontalSpacing">
-          <number>10</number>
-         </property>
-         <property name="verticalSpacing">
-          <number>5</number>
-         </property>
          <item row="1" column="0">
-          <widget class="QLabel" name="label_33">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
+          <widget class="QGroupBox" name="uPsuPowerUpDelayBox">
+           <property name="title">
+            <string>PSU_POWERUP_DELAY</string>
            </property>
-           <property name="text">
-            <string/>
+           <property name="flat">
+            <bool>false</bool>
            </property>
-           <property name="pixmap">
-            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           <property name="checkable">
+            <bool>true</bool>
            </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_3" columnstretch="0,0">
+            <property name="spacing">
+             <number>10</number>
+            </property>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_4">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLabel" name="label_3">
+              <property name="text">
+               <string>This is the delay for the PSU to warm up to full power. (optional)</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0" colspan="2">
+             <widget class="QSpinBox" name="uPsuPowerUpDelayEdit">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="suffix">
+               <string> ms</string>
+              </property>
+              <property name="maximum">
+               <number>100000</number>
+              </property>
+              <property name="stepType">
+               <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+              </property>
+              <property name="value">
+               <number>250</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QGroupBox" name="uPsuPowerUpCodeBox">
+           <property name="title">
+            <string>PSU_POWERUP_CODE</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_5" columnstretch="0,0">
+            <property name="spacing">
+             <number>10</number>
+            </property>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_9">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLabel" name="label_10">
+              <property name="text">
+               <string>This parameter contains G-code to run after power-on. (optional)</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0" colspan="2">
+             <widget class="QLineEdit" name="uPsuPowerUpCodeEdit">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
          <item row="1" column="1">
-          <widget class="QLabel" name="label_34">
-           <property name="text">
-            <string>Set this to &quot;LOW&quot; for an ATX power supply, &quot;HIGH&quot; for an X-Box power supply.</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0" colspan="2">
-          <widget class="Dropdown" name="uPsuActiveStateComboBox">
+          <widget class="QGroupBox" name="uLedPowerOffTimeoutBox">
            <property name="enabled">
             <bool>true</bool>
            </property>
-           <item>
-            <property name="text">
-             <string>LOW</string>
+           <property name="title">
+            <string>LED_POWEROFF_TIMEOUT</string>
+           </property>
+           <property name="flat">
+            <bool>false</bool>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_4" columnstretch="0,0">
+            <property name="spacing">
+             <number>10</number>
             </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>HIGH</string>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_6">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLabel" name="label_5">
+              <property name="text">
+               <string>This is the delay before the LEDs are turned off after power-off. (optional)</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0" colspan="2">
+             <widget class="QSpinBox" name="uLedPowerOffTimeoutEdit">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="suffix">
+               <string> ms</string>
+              </property>
+              <property name="maximum">
+               <number>100000</number>
+              </property>
+              <property name="stepType">
+               <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+              </property>
+              <property name="value">
+               <number>10000</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QGroupBox" name="uPsuPowerOffCodeBox">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="title">
+            <string>PSU_POWEROFF_CODE</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_6" columnstretch="0,0">
+            <property name="spacing">
+             <number>10</number>
             </property>
-           </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_11">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLabel" name="label_12">
+              <property name="text">
+               <string>This parameter contains G-code to run before power-off. (optional)</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0" colspan="2">
+             <widget class="QLineEdit" name="uPsuPowerOffCodeEdit">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QGroupBox" name="uPowerOffWaitForCooldownBox">
+           <property name="title">
+            <string>POWER_OFF_WAIT_FOR_COOLDOWN</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="checked">
+            <bool>false</bool>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_13">
+            <property name="spacing">
+             <number>10</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="label_19">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_20">
+              <property name="text">
+               <string>Enable this to only allow M81 S to power off the printer after cooldown. Enables temperature limits below if not already enabled by AUTO_POWER_CONTROL.</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QGroupBox" name="uPsuDefaultOffBox">
+           <property name="title">
+            <string>PSU_DEFAULT_OFF</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="checked">
+            <bool>false</bool>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <property name="spacing">
+             <number>10</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="label_7">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_8">
+              <property name="text">
+               <string>Keep the power supply turned off until it is enabled directly with M80.</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QGroupBox" name="uPsuActiveStateBox">
+           <property name="focusPolicy">
+            <enum>Qt::StrongFocus</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+           </property>
+           <property name="title">
+            <string>PSU_ACTIVE_STATE</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_14">
+            <property name="spacing">
+             <number>10</number>
+            </property>
+            <item row="1" column="1">
+             <widget class="QLabel" name="label_34">
+              <property name="text">
+               <string>Set this to &quot;LOW&quot; for an ATX power supply, &quot;HIGH&quot; for an X-Box power supply.</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_33">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0" colspan="2">
+             <widget class="Dropdown" name="uPsuActiveStateComboBox">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <item>
+               <property name="text">
+                <string>LOW</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>HIGH</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
         </layout>
        </widget>
       </item>
-      <item row="7" column="2">
-       <widget class="QGroupBox" name="uPowerOffWaitForCooldownBox">
-        <property name="title">
-         <string>POWER_OFF_WAIT_FOR_COOLDOWN</string>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <property name="checked">
-         <bool>false</bool>
-        </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_13">
+      <item row="1" column="0" colspan="2">
+       <widget class="QWidget" name="widget_6" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout_8">
          <property name="spacing">
           <number>10</number>
          </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
          <item>
-          <widget class="QLabel" name="label_19">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_20">
-           <property name="text">
-            <string>Enable this to only allow M81 S to power off the printer after cooldown. Enables temperature limits below if not already enabled by AUTO_POWER_CONTROL.</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
+          <widget class="QWidget" name="widget_7" native="true">
+           <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="1,1,1">
+            <property name="spacing">
+             <number>10</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QGroupBox" name="uMksPwcBox">
+              <property name="title">
+               <string>MKS_PWC</string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_10">
+               <item>
+                <widget class="QLabel" name="label_13">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="pixmap">
+                  <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_14">
+                 <property name="text">
+                  <string>Enable this to use the MKS PWC add-on.</string>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="uPsOffConfirmBox">
+              <property name="title">
+               <string>PS_OFF_CONFIRM</string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_11">
+               <item>
+                <widget class="QLabel" name="label_15">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="pixmap">
+                  <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_16">
+                 <property name="text">
+                  <string>Display a confirm dialog before powering off.</string>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="uPsOffSoundBox">
+              <property name="title">
+               <string>PS_OFF_SOUND</string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_12">
+               <item>
+                <widget class="QLabel" name="label_17">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="pixmap">
+                  <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_18">
+                 <property name="text">
+                  <string>Beep for one second when powering off.</string>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
         </layout>
        </widget>
       </item>
-      <item row="12" column="1" colspan="2">
+      <item row="6" column="0" colspan="2">
        <widget class="QWidget" name="widget_4" native="true">
         <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="1,1,1">
          <property name="spacing">
@@ -732,11 +1375,8 @@ QAbstractSpinBox::down-button:off {
             <bool>true</bool>
            </property>
            <layout class="QGridLayout" name="gridLayout_10">
-            <property name="horizontalSpacing">
+            <property name="spacing">
              <number>10</number>
-            </property>
-            <property name="verticalSpacing">
-             <number>5</number>
             </property>
             <item row="1" column="1">
              <widget class="QLabel" name="label_23">
@@ -764,7 +1404,7 @@ QAbstractSpinBox::down-button:off {
               </property>
              </widget>
             </item>
-            <item row="0" column="0" colspan="2">
+            <item row="2" column="0" colspan="2">
              <widget class="QSpinBox" name="uAutoPowerETempEdit">
               <property name="enabled">
                <bool>true</bool>
@@ -795,12 +1435,19 @@ QAbstractSpinBox::down-button:off {
             <bool>true</bool>
            </property>
            <layout class="QGridLayout" name="gridLayout_11">
-            <property name="horizontalSpacing">
+            <property name="spacing">
              <number>10</number>
             </property>
-            <property name="verticalSpacing">
-             <number>5</number>
-            </property>
+            <item row="1" column="1">
+             <widget class="QLabel" name="label_26">
+              <property name="text">
+               <string>Turn on the PSU if the chamber is over this temperature. (optional)</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
             <item row="1" column="0">
              <widget class="QLabel" name="label_25">
               <property name="sizePolicy">
@@ -817,17 +1464,7 @@ QAbstractSpinBox::down-button:off {
               </property>
              </widget>
             </item>
-            <item row="1" column="1">
-             <widget class="QLabel" name="label_26">
-              <property name="text">
-               <string>Turn on the PSU if the chamber is over this temperature. (optional)</string>
-              </property>
-              <property name="wordWrap">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="0" colspan="2">
+            <item row="2" column="0" colspan="2">
              <widget class="QSpinBox" name="uAutoPowerChamberTempEdit">
               <property name="enabled">
                <bool>true</bool>
@@ -858,12 +1495,19 @@ QAbstractSpinBox::down-button:off {
             <bool>true</bool>
            </property>
            <layout class="QGridLayout" name="gridLayout_12">
-            <property name="horizontalSpacing">
+            <property name="spacing">
              <number>10</number>
             </property>
-            <property name="verticalSpacing">
-             <number>5</number>
-            </property>
+            <item row="1" column="1">
+             <widget class="QLabel" name="label_27">
+              <property name="text">
+               <string>Turn on the PSU if the cooler is over this temperature. (optional)</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
             <item row="1" column="0">
              <widget class="QLabel" name="label_28">
               <property name="sizePolicy">
@@ -880,17 +1524,7 @@ QAbstractSpinBox::down-button:off {
               </property>
              </widget>
             </item>
-            <item row="1" column="1">
-             <widget class="QLabel" name="label_27">
-              <property name="text">
-               <string>Turn on the PSU if the cooler is over this temperature. (optional)</string>
-              </property>
-              <property name="wordWrap">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="0" colspan="2">
+            <item row="2" column="0" colspan="2">
              <widget class="QSpinBox" name="uAutoPowerCoolerTempEdit">
               <property name="enabled">
                <bool>true</bool>
@@ -912,516 +1546,27 @@ QAbstractSpinBox::down-button:off {
         </layout>
        </widget>
       </item>
-      <item row="1" column="1" colspan="2">
-       <widget class="QWidget" name="widget_7" native="true">
-        <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="1,1,1">
-         <property name="spacing">
-          <number>10</number>
-         </property>
-         <property name="leftMargin">
-          <number>0</number>
-         </property>
-         <property name="topMargin">
-          <number>0</number>
-         </property>
-         <property name="rightMargin">
-          <number>0</number>
-         </property>
-         <property name="bottomMargin">
-          <number>0</number>
-         </property>
-         <item>
-          <widget class="QGroupBox" name="uMksPwcBox">
-           <property name="title">
-            <string>MKS_PWC</string>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="checked">
-            <bool>false</bool>
-           </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_10">
-            <item>
-             <widget class="QLabel" name="label_13">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="pixmap">
-               <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="label_14">
-              <property name="text">
-               <string>Enable this to use the MKS PWC add-on.</string>
-              </property>
-              <property name="wordWrap">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item>
-          <widget class="QGroupBox" name="uPsOffConfirmBox">
-           <property name="title">
-            <string>PS_OFF_CONFIRM</string>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="checked">
-            <bool>false</bool>
-           </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_11">
-            <item>
-             <widget class="QLabel" name="label_15">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="pixmap">
-               <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="label_16">
-              <property name="text">
-               <string>Display a confirm dialog before powering off.</string>
-              </property>
-              <property name="wordWrap">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item>
-          <widget class="QGroupBox" name="uPsOffSoundBox">
-           <property name="title">
-            <string>PS_OFF_SOUND</string>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="checked">
-            <bool>false</bool>
-           </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_12">
-            <item>
-             <widget class="QLabel" name="label_17">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="pixmap">
-               <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="label_18">
-              <property name="text">
-               <string>Beep for one second when powering off.</string>
-              </property>
-              <property name="wordWrap">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
-      <item row="0" column="1" colspan="2">
-       <widget class="QWidget" name="widget_6" native="true">
-        <layout class="QHBoxLayout" name="horizontalLayout_8">
-         <property name="spacing">
-          <number>10</number>
-         </property>
-         <property name="leftMargin">
-          <number>0</number>
-         </property>
-         <property name="topMargin">
-          <number>0</number>
-         </property>
-         <property name="rightMargin">
-          <number>0</number>
-         </property>
-         <property name="bottomMargin">
-          <number>0</number>
-         </property>
-        </layout>
-       </widget>
-      </item>
-      <item row="5" column="1" colspan="2">
-       <widget class="QWidget" name="widget" native="true">
-        <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,1">
-         <property name="spacing">
-          <number>10</number>
-         </property>
-         <property name="leftMargin">
-          <number>0</number>
-         </property>
-         <property name="topMargin">
-          <number>0</number>
-         </property>
-         <property name="rightMargin">
-          <number>0</number>
-         </property>
-         <property name="bottomMargin">
-          <number>0</number>
-         </property>
-         <item>
-          <widget class="QGroupBox" name="uPsuPowerUpDelayBox">
-           <property name="title">
-            <string>PSU_POWERUP_DELAY</string>
-           </property>
-           <property name="flat">
-            <bool>false</bool>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="checked">
-            <bool>true</bool>
-           </property>
-           <layout class="QGridLayout" name="gridLayout_3" columnstretch="0,0">
-            <property name="horizontalSpacing">
-             <number>10</number>
-            </property>
-            <property name="verticalSpacing">
-             <number>5</number>
-            </property>
-            <item row="1" column="1">
-             <widget class="QLabel" name="label_3">
-              <property name="text">
-               <string>This is the delay for the PSU to warm up to full power. (optional)</string>
-              </property>
-              <property name="wordWrap">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="0">
-             <widget class="QLabel" name="label_4">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="pixmap">
-               <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="0" colspan="2">
-             <widget class="QSpinBox" name="uPsuPowerUpDelayEdit">
-              <property name="enabled">
-               <bool>true</bool>
-              </property>
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="suffix">
-               <string> ms</string>
-              </property>
-              <property name="maximum">
-               <number>100000</number>
-              </property>
-              <property name="stepType">
-               <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
-              </property>
-              <property name="value">
-               <number>250</number>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item>
-          <widget class="QGroupBox" name="uLedPowerOffTimeoutBox">
-           <property name="enabled">
-            <bool>true</bool>
-           </property>
-           <property name="title">
-            <string>LED_POWEROFF_TIMEOUT</string>
-           </property>
-           <property name="flat">
-            <bool>false</bool>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="checked">
-            <bool>true</bool>
-           </property>
-           <layout class="QGridLayout" name="gridLayout_4" columnstretch="0,0">
-            <property name="horizontalSpacing">
-             <number>10</number>
-            </property>
-            <property name="verticalSpacing">
-             <number>5</number>
-            </property>
-            <item row="1" column="1">
-             <widget class="QLabel" name="label_5">
-              <property name="text">
-               <string>This is the delay before the LEDs are turned off after power-off. (optional)</string>
-              </property>
-              <property name="wordWrap">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="0">
-             <widget class="QLabel" name="label_6">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="pixmap">
-               <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="0" colspan="2">
-             <widget class="QSpinBox" name="uLedPowerOffTimeoutEdit">
-              <property name="enabled">
-               <bool>true</bool>
-              </property>
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="suffix">
-               <string> ms</string>
-              </property>
-              <property name="maximum">
-               <number>100000</number>
-              </property>
-              <property name="stepType">
-               <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
-              </property>
-              <property name="value">
-               <number>10000</number>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
-      <item row="10" column="1" colspan="2">
-       <widget class="QWidget" name="widget_2" native="true">
-        <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,1">
-         <property name="spacing">
-          <number>10</number>
-         </property>
-         <property name="leftMargin">
-          <number>0</number>
-         </property>
-         <property name="topMargin">
-          <number>0</number>
-         </property>
-         <property name="rightMargin">
-          <number>0</number>
-         </property>
-         <property name="bottomMargin">
-          <number>0</number>
-         </property>
-         <item>
-          <widget class="QGroupBox" name="uPsuPowerUpCodeBox">
-           <property name="title">
-            <string>PSU_POWERUP_CODE</string>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="checked">
-            <bool>true</bool>
-           </property>
-           <layout class="QGridLayout" name="gridLayout_5" columnstretch="0,0">
-            <property name="horizontalSpacing">
-             <number>10</number>
-            </property>
-            <property name="verticalSpacing">
-             <number>5</number>
-            </property>
-            <item row="1" column="0">
-             <widget class="QLabel" name="label_9">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="pixmap">
-               <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="1">
-             <widget class="QLabel" name="label_10">
-              <property name="text">
-               <string>This parameter contains G-code to run after power-on. (optional)</string>
-              </property>
-              <property name="wordWrap">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="0" colspan="2">
-             <widget class="QLineEdit" name="uPsuPowerUpCodeEdit">
-              <property name="enabled">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item>
-          <widget class="QGroupBox" name="uPsuPowerOffCodeBox">
-           <property name="enabled">
-            <bool>true</bool>
-           </property>
-           <property name="title">
-            <string>PSU_POWEROFF_CODE</string>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="checked">
-            <bool>true</bool>
-           </property>
-           <layout class="QGridLayout" name="gridLayout_6" columnstretch="0,0">
-            <property name="horizontalSpacing">
-             <number>10</number>
-            </property>
-            <property name="verticalSpacing">
-             <number>5</number>
-            </property>
-            <item row="1" column="0">
-             <widget class="QLabel" name="label_11">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="pixmap">
-               <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="1">
-             <widget class="QLabel" name="label_12">
-              <property name="text">
-               <string>This parameter contains G-code to run before power-off. (optional)</string>
-              </property>
-              <property name="wordWrap">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="0" colspan="2">
-             <widget class="QLineEdit" name="uPsuPowerOffCodeEdit">
-              <property name="enabled">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
-      <item row="7" column="1">
-       <widget class="QGroupBox" name="uPowerOffTimerBox">
-        <property name="title">
-         <string>POWER_OFF_TIMER</string>
+      <item row="0" column="1">
+       <widget class="QLabel" name="label_48">
+        <property name="text">
+         <string>This option allows the controller board to switch the power supply 12V on and off with M80 and M81. Enable this parameter if this the power supply is connected to the PS_ON pin.</string>
         </property>
-        <property name="checkable">
+        <property name="wordWrap">
          <bool>true</bool>
         </property>
-        <property name="checked">
-         <bool>false</bool>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_47">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
         </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_14">
-         <property name="spacing">
-          <number>10</number>
-         </property>
-         <item>
-          <widget class="QLabel" name="label_21">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_22">
-           <property name="text">
-            <string>Enable this to allow M81 D&lt;seconds&gt; to power off the printer after a delay.</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
+        <property name="pixmap">
+         <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+        </property>
        </widget>
       </item>
      </layout>
@@ -1458,11 +1603,8 @@ QAbstractSpinBox::down-button:off {
       <bool>true</bool>
      </property>
      <layout class="QGridLayout" name="gridLayout_13">
-      <property name="horizontalSpacing">
+      <property name="spacing">
        <number>10</number>
-      </property>
-      <property name="verticalSpacing">
-       <number>5</number>
       </property>
       <item row="1" column="1">
        <widget class="QLabel" name="label">
@@ -1502,7 +1644,7 @@ QAbstractSpinBox::down-button:off {
         </property>
        </widget>
       </item>
-      <item row="0" column="0" colspan="2">
+      <item row="2" column="0" colspan="2">
        <widget class="QLineEdit" name="uPsuNameEdit">
         <property name="palette">
          <palette>

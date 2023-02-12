@@ -153,8 +153,12 @@ QPushButton:hover {
           <widget class="QLabel" name="label">
            <property name="styleSheet">
             <string notr="true">QLabel {
-	font-size: 15pt;
-}</string>
+	color: white;
+	font-size: 28px;
+	font-family: &quot;Source Sans Pro Light&quot;;
+	font-style: italic;
+}
+</string>
            </property>
            <property name="text">
             <string>iLOOP Marlin Configurator v0.1.0</string>
@@ -166,7 +170,15 @@ QPushButton:hover {
            <property name="styleSheet">
             <string notr="true">QLabel {
 	font-size: 12pt;
-}</string>
+}
+
+QLabel {
+	color: rgb(100, 103, 122);
+	font-size: 20px;
+	font-family: &quot;Source Sans Pro Light&quot;;
+	font-style: italic;
+}
+</string>
            </property>
            <property name="text">
             <string>for use with Marlin v2.1.2</string>
@@ -224,7 +236,7 @@ QPushButton:hover {
        </widget>
       </item>
       <item row="2" column="0" colspan="2">
-       <widget class="QTextBrowser" name="textBrowser">
+       <widget class="QTextEdit" name="textEdit">
         <property name="styleSheet">
          <string notr="true">QScrollBar:vertical
 {
