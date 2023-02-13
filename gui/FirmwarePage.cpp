@@ -28,22 +28,27 @@
 #include "HelperFunctions.h"
 
 FirmwarePage::FirmwarePage(QWidget *pParent) :
-    QWidget(pParent),
+    AbstractPage(pParent),
     mUi(new Ui::FirmwarePage)
 {
     mUi->setupUi(this);
 
-    QObject::connect(mUi->uDocumentationButton, &QPushButton::clicked, this, [&]()
-    {
-        OpenMarlinDocumentation("firmware-info");
-    });
-
-    ResetValues();
+    mTemplate = ReadTemplateFromFile(QFileInfo(FIRMWARE_TEMPLATE_PATH));
 }
 
 FirmwarePage::~FirmwarePage()
 {
     delete mUi;
+}
+
+void FirmwarePage::ConnectGuiSignalsAndSlots()
+{
+    QObject::connect(mUi->uDocumentationButton, &QPushButton::clicked, this, [&]()
+    {
+        OpenMarlinDocumentation("firmware-info");
+    });
+
+    AbstractPage::ConnectGuiSignalsAndSlots();
 }
 
 void FirmwarePage::ResetValues()

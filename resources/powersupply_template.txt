@@ -1,0 +1,43 @@
+// @section psu control
+
+/**
+ * Power Supply Control
+ *
+ * Enable and connect the power supply to the PS_ON_PIN.
+ * Specify whether the power supply is active HIGH or active LOW.
+ */
+#{PSU_CONTROL}
+#{PSU_NAME}
+
+#if ENABLED(PSU_CONTROL)
+  #{MKS_PWC}                // Using the MKS PWC add-on
+  #{PS_OFF_CONFIRM}          // Confirm dialog when power off
+  #{PS_OFF_SOUND}            // Beep 1s when power off
+  #{PSU_ACTIVE_STATE}      // Set 'LOW' for ATX, 'HIGH' for X-Box
+
+  #{PSU_DEFAULT_OFF}               // Keep power off until enabled directly with M80
+  #{PSU_POWERUP_DELAY}    // (ms) Delay for the PSU to warm up to full power
+  #{LED_POWEROFF_TIMEOUT}    // (ms) Turn off LEDs after power-off, with this amount of delay
+
+  #{POWER_OFF_TIMER}               // Enable M81 D<seconds> to power off after a delay
+  #{POWER_OFF_WAIT_FOR_COOLDOWN}   // Enable M81 S to power off only after cooldown
+
+  #{PSU_POWERUP_GCODE}  // G-code to run after power-on (e.g., case light on)
+  #{PSU_POWEROFF_GCODE}  // G-code to run before power-off (e.g., case light off)
+
+  #{AUTO_POWER_CONTROL}      // Enable automatic control of the PS_ON pin
+  #if ENABLED(AUTO_POWER_CONTROL)
+    #{AUTO_POWER_FANS}         // Turn on PSU if fans need power
+    #{AUTO_POWER_E_FANS}
+    #{AUTO_POWER_CONTROLLERFAN}
+    #{AUTO_POWER_CHAMBER_FAN}
+    #{AUTO_POWER_COOLER_FAN}
+    #{POWER_TIMEOUT} // (s) Turn off power if the machine is idle for this duration
+    #{POWER_OFF_DELAY} // (s) Delay of poweroff after M81 command. Useful to let fans run for extra time.
+  #endif
+  #if EITHER(AUTO_POWER_CONTROL, POWER_OFF_WAIT_FOR_COOLDOWN)
+    #{AUTO_POWER_E_TEMP} // (°C) PSU on if any extruder is over this temperature
+    #{AUTO_POWER_CHAMBER_TEMP} // (°C) PSU on if the chamber is over this temperature
+    #{AUTO_POWER_COOLER_TEMP} // (°C) PSU on if the cooler is over this temperature
+  #endif
+#endif

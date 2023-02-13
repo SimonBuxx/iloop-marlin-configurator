@@ -29,13 +29,12 @@
 #include "HelperFunctions.h"
 
 PowerSupplyPage::PowerSupplyPage(QWidget *pParent) :
-    QWidget(pParent),
+    AbstractPage(pParent),
     mUi(new Ui::PowerSupplyPage)
 {
     mUi->setupUi(this);
 
-    ConnectGuiSignalsAndSlots();
-    ResetValues();
+    mTemplate = ReadTemplateFromFile(QFileInfo(POWERSUPPLY_TEMPLATE_PATH));
 }
 
 PowerSupplyPage::~PowerSupplyPage()
@@ -63,6 +62,8 @@ void PowerSupplyPage::ConnectGuiSignalsAndSlots()
          mUi->uAutoPowerChamberTempBox->setEnabled((pState || mUi->uAutoPowerControlBox->isChecked()));
          mUi->uAutoPowerCoolerTempBox->setEnabled((pState || mUi->uAutoPowerControlBox->isChecked()));
     });
+
+    AbstractPage::ConnectGuiSignalsAndSlots();
 }
 
 void PowerSupplyPage::ResetValues()
@@ -217,6 +218,5 @@ void PowerSupplyPage::ReplaceTags(QStringList& pOutput)
     ReplaceTag(pOutput, "#{AUTO_POWER_E_TEMP}", mUi->uAutoPowerETempEdit, !mUi->uAutoPowerETempBox->isChecked(), "AUTO_POWER_E_TEMP");
     ReplaceTag(pOutput, "#{AUTO_POWER_CHAMBER_TEMP}", mUi->uAutoPowerChamberTempEdit, !mUi->uAutoPowerChamberTempBox->isChecked(), "AUTO_POWER_CHAMBER_TEMP");
     ReplaceTag(pOutput, "#{AUTO_POWER_COOLER_TEMP}", mUi->uAutoPowerCoolerTempEdit, !mUi->uAutoPowerCoolerTempBox->isChecked(), "AUTO_POWER_COOLER_TEMP");
-
-
 }
+

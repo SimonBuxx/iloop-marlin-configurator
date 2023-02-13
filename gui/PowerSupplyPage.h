@@ -27,7 +27,7 @@
 #define POWERSUPPLYPAGE_H
 
 #include "Configuration.h"
-#include <QWidget>
+#include "AbstractPage.h"
 
 // Forward declarations
 namespace Ui {
@@ -37,7 +37,7 @@ class PowerSupplyPage;
 ///
 /// \brief The PowerSupplyPage class represents the power supply page
 ///
-class PowerSupplyPage : public QWidget
+class PowerSupplyPage : public AbstractPage
 {
     Q_OBJECT
 
@@ -51,24 +51,24 @@ public:
     ~PowerSupplyPage(void) override;
 
     /// \brief Resets all parameters on the page to their defaults
-    void ResetValues(void);
+    void ResetValues(void) override;
 
     /// \brief Loads the page parameters from the given JSON object
     ///
     /// \param pJson: Reference to the JSON object
     /// \return \b true, if all expected parameters where found in the JSON
-    bool LoadFromJson(const QJsonObject &pJson);
+    bool LoadFromJson(const QJsonObject &pJson) override;
 
     /// \brief Writes the page parameters into the given Configuration object
     ///
     /// \return Configuration object
     PowerSupplyConfiguration FetchConfiguration(void);
 
-    void ReplaceTags(QStringList& pOutput);
+    void ReplaceTags(QStringList& pOutput) override;
 
 protected:
     /// \brief Connects this widget's signals and slots
-    void ConnectGuiSignalsAndSlots(void);
+    void ConnectGuiSignalsAndSlots(void) override;
 
 protected:
     Ui::PowerSupplyPage *mUi;

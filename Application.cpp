@@ -24,6 +24,7 @@
  */
 
 #include "Application.h"
+#include "HelperFunctions.h"
 
 #include <QApplication>
 #include <QFileDialog>
@@ -46,7 +47,7 @@ Application::Application(QObject *parent)
     QObject::connect(&mMainWindow, &MainWindow::OpenProjectSignal, this, &Application::OnOpenProject);
 
     mMainWindow.Log("Reading Configuration.h template...");
-    mTemplate = ReadConfigurationTemplateFromFile(QFileInfo(TEMPLATE_PATH));
+    mTemplate = ReadTemplateFromFile(QFileInfo(TEMPLATE_PATH));
 
     mMainWindow.show();
 
@@ -61,35 +62,6 @@ Application::Application(QObject *parent)
 
 Application::~Application()
 {}
-
-std::optional<QStringList> Application::ReadConfigurationTemplateFromFile(const QFileInfo& pFileInfo)
-{
-    QStringList stringList;
-    QFile file(pFileInfo.filePath());
-
-    if (!file.open(QFile::ReadOnly | QFile::Text))
-    {
-        return std::nullopt;
-    }
-
-    QTextStream textStream(&file);
-    while (true)
-    {
-        QString line = textStream.readLine();
-        if (line.isNull())
-        {
-            break;
-        }
-        else
-        {
-            stringList.append(line);
-        }
-    }
-
-    file.close();
-
-    return stringList;
-}
 
 void Application::OnExportConfiguration(const QFileInfo& pFileInfo, const Configuration& pConfig)
 {

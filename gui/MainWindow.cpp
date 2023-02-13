@@ -31,6 +31,7 @@
 #include <QDesktopServices>
 #include <QTimer>
 #include <QTabBar>
+#include <QScrollBar>
 
 MainWindow::MainWindow(QWidget *pParent)
     : QMainWindow(pParent)
@@ -56,6 +57,11 @@ MainWindow::MainWindow(QWidget *pParent)
     mUi->menuView->actions().at(1)->setShortcut(QKeySequence("Alt+O"));
     mUi->menuView->actions().at(2)->setShortcut(QKeySequence("Alt+P"));
 
+    for (auto&& page : findChildren<AbstractPage*>())
+    {
+        page->Init();
+    }
+
     // Set console tab as current
     auto&& tabBar = this->findChild<QTabBar*>();
     if (nullptr != tabBar)
@@ -78,6 +84,8 @@ MainWindow::MainWindow(QWidget *pParent)
 
     mUi->stackedWidget->setCurrentIndex(0);
     UpdateActiveTabButtonColor();
+
+    OnUpdatePreview(QStringList("Preview not available."));
 }
 
 MainWindow::~MainWindow()
@@ -90,6 +98,17 @@ void MainWindow::ConnectGuiSignalsAndSlots()
     QObject::connect(mUi->stackedWidget, &QStackedWidget::currentChanged, this, [&]()
     {
         UpdateActiveTabButtonColor();
+
+        // Update code preview on tab change
+        auto&& page = mUi->stackedWidget->currentWidget()->findChild<AbstractPage*>();
+        if (nullptr != page)
+        {
+            page->OnUpdatePreview();
+        }
+        else
+        {
+            OnUpdatePreview(QStringList("Preview not available."));
+        }
     });
 
     QObject::connect(mUi->uCloseAction, &QAction::triggered, this, &QMainWindow::close);
@@ -98,6 +117,12 @@ void MainWindow::ConnectGuiSignalsAndSlots()
 
     QObject::connect(mUi->uWelcomePage, &WelcomePage::NewProjectSignal, this, &MainWindow::OnNewProject);
     QObject::connect(mUi->uWelcomePage, &WelcomePage::OpenProjectSignal, this, &MainWindow::OpenProjectSignal);
+
+    // Connects for code preview
+    for (auto&& page : findChildren<AbstractPage*>())
+    {
+        QObject::connect(page, &AbstractPage::UpdatePreviewSignal, this, &MainWindow::OnUpdatePreview);
+    }
 
     QObject::connect(mUi->uExportAction, &QAction::triggered, this, [&]()
     {
@@ -203,6 +228,11 @@ void MainWindow::UpdateActiveTabButtonColor()
     mLastCheckedButton = mUi->buttonGroup->checkedId();
 }
 
+void MainWindow::OnUpdatePreview(const QStringList& pPreviewCode)
+{
+    mUi->uPreviewEdit->setPlainText(pPreviewCode.join('\n'));
+}
+
 void MainWindow::JumpToFirstConfigTab()
 {
     mUi->uFirmwareTabButton->click();
@@ -210,6 +240,7 @@ void MainWindow::JumpToFirstConfigTab()
 
 void MainWindow::ResetValues()
 {
+#warning refactor (list of references to all pages?)
     mUi->uFirmwarePage->ResetValues();
     mUi->uHardwarePage->ResetValues();
     mUi->uExtruderPage->ResetValues();
@@ -229,7 +260,7 @@ void MainWindow::OnNewProject()
 Configuration MainWindow::FetchConfiguration()
 {
     Configuration config;
-
+#warning refactor (list of references to all pages?)
     config.firmware = mUi->uFirmwarePage->FetchConfiguration();
     config.hardware = mUi->uHardwarePage->FetchConfiguration();
     config.extruder = mUi->uExtruderPage->FetchConfiguration();
@@ -240,6 +271,7 @@ Configuration MainWindow::FetchConfiguration()
 
 void MainWindow::ReplaceTags(QStringList& pOutput)
 {
+#warning refactor (list of references to all pages?)
     mUi->uFirmwarePage->ReplaceTags(pOutput);
     mUi->uHardwarePage->ReplaceTags(pOutput);
     mUi->uExtruderPage->ReplaceTags(pOutput);

@@ -1,0 +1,25 @@
+// @section info
+
+// Author info of this build printed to the host during boot and M115
+#{STRING_CONFIG_H_AUTHOR} // Who made the changes.
+#{CUSTOM_VERSION_FILE} // Path from the root directory (no quotes)
+
+/**
+ * *** VENDORS PLEASE READ ***
+ *
+ * Marlin allows you to add a custom boot image for Graphical LCDs.
+ * With this option Marlin will first show your custom screen followed
+ * by the standard Marlin logo with version number and web URL.
+ *
+ * We encourage you to take advantage of this new feature and we also
+ * respectfully request that you retain the unmodified Marlin boot screen.
+ */
+
+// Show the Marlin bootscreen on startup. ** ENABLE FOR PRODUCTION **
+#{SHOW_BOOTSCREEN}
+
+// Show the bitmap in Marlin/_Bootscreen.h on startup.
+#{SHOW_CUSTOM_BOOTSCREEN}
+
+// Show the bitmap in Marlin/_Statusscreen.h on the status screen.
+#{CUSTOM_STATUS_SCREEN_IMAGE}

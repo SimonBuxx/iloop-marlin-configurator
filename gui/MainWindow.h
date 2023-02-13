@@ -107,6 +107,11 @@ protected:
 
     void UpdateActiveTabButtonColor(void);
 
+    /// \brief Sets the content of the code preview widget to the given code string
+    ///
+    /// \param pPreviewCode: Reference to the code to display
+    void OnUpdatePreview(const QStringList& pPreviewCode);
+
 protected:
     Ui::MainWindow *mUi;
     AboutDialog mAboutDialog;

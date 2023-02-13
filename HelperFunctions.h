@@ -34,6 +34,8 @@
 #include <QSpinBox>
 #include <QCheckBox>
 #include <QDesktopServices>
+#include <QFile>
+#include <QFileInfo>
 
 /// \brief Extracts the flag name inside the square brackets in pString
 ///
@@ -51,6 +53,39 @@ inline QString ExtractFlagNameInSquareBrackets(const QString& pString)
     }
 
     return pString.mid(start + 1, end - start - 1);
+}
+
+/// \brief Reads a configuration template into memory
+///
+/// \param pFileInfo: Location of the template file
+/// \return The template as a QStringList, if successful
+inline std::optional<QStringList> ReadTemplateFromFile(const QFileInfo& pFileInfo)
+{
+    QStringList stringList;
+    QFile file(pFileInfo.filePath());
+
+    if (!file.open(QFile::ReadOnly | QFile::Text))
+    {
+        return std::nullopt;
+    }
+
+    QTextStream textStream(&file);
+    while (true)
+    {
+        QString line = textStream.readLine();
+        if (line.isNull())
+        {
+            break;
+        }
+        else
+        {
+            stringList.append(line);
+        }
+    }
+
+    file.close();
+
+    return stringList;
 }
 
 /// \brief Sets the given line edit to the text given in the JSON object

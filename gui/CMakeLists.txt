@@ -17,6 +17,8 @@ target_sources(GUI_IMC_GUI
         MainWindow.h
         MainWindow.cpp
         MainWindow.ui
+        AbstractPage.h
+        AbstractPage.cpp
         FirmwarePage.h
         FirmwarePage.cpp
         FirmwarePage.ui

@@ -28,13 +28,12 @@
 #include "HelperFunctions.h"
 
 HardwarePage::HardwarePage(QWidget *pParent) :
-    QWidget(pParent),
+    AbstractPage(pParent),
     mUi(new Ui::HardwarePage)
 {
     mUi->setupUi(this);
 
-    ConnectGuiSignalsAndSlots();
-    ResetValues();
+    mTemplate = ReadTemplateFromFile(QFileInfo(HARDWARE_TEMPLATE_PATH));
 }
 
 HardwarePage::~HardwarePage()
@@ -47,7 +46,9 @@ void HardwarePage::ConnectGuiSignalsAndSlots()
     QObject::connect(mUi->uDocumentationButton, &QPushButton::clicked, this, [&]()
     {
         OpenMarlinDocumentation("hardware-info");
-    });
+    }); 
+
+    AbstractPage::ConnectGuiSignalsAndSlots();
 }
 
 void HardwarePage::ResetValues()
@@ -131,9 +132,9 @@ void HardwarePage::ReplaceTags(QStringList& pOutput)
     ReplaceTag(pOutput, "#{BAUDRATE}", mUi->uBaudrateComboBox, false, "BAUDRATE");
     ReplaceTag(pOutput, "#{BAUD_RATE_GCODE}", mUi->uBaudRateGCodeBox, "BAUD_RATE_GCODE");
     ReplaceTag(pOutput, "#{SERIAL_PORT_2}", mUi->uSerialPort2ComboBox, !mUi->uSerialPort2Box->isChecked(), "SERIAL_PORT_2");
-    ReplaceTag(pOutput, "#{BAUDRATE_2}", mUi->uBaudRate2ComboBox, !mUi->uBaudRate2Box->isChecked(), "BAUDRATE_2");
+    ReplaceTag(pOutput, "#{BAUDRATE_2}", mUi->uBaudRate2ComboBox, !mUi->uBaudRate2Box->isChecked() || !mUi->uBaudRate2Box->isEnabled(), "BAUDRATE_2");
     ReplaceTag(pOutput, "#{SERIAL_PORT_3}", mUi->uSerialPort3ComboBox, !mUi->uSerialPort3Box->isChecked(), "SERIAL_PORT_3");
-    ReplaceTag(pOutput, "#{BAUDRATE_3}", mUi->uBaudRate3ComboBox, !mUi->uBaudRate3Box->isChecked(), "BAUDRATE_3");
+    ReplaceTag(pOutput, "#{BAUDRATE_3}", mUi->uBaudRate3ComboBox, !mUi->uBaudRate3Box->isChecked() || !mUi->uBaudRate3Box->isEnabled(), "BAUDRATE_3");
     ReplaceTag(pOutput, "#{BLUETOOTH}", mUi->uBluetoothBox, "BLUETOOTH");
     ReplaceTag(pOutput, "#{CUSTOM_MACHINE_NAME}", mUi->uPrinterNameEdit, !mUi->uCustomMachineNameBox->isChecked(), "CUSTOM_MACHINE_NAME", true);
     ReplaceTag(pOutput, "#{MACHINE_UUID}", mUi->uMachineUuidEdit, !mUi->uMachineUuidBox->isChecked(), "MACHINE_UUID", true);

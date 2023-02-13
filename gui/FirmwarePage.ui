@@ -40,6 +40,10 @@ QGroupBox {
 	padding-top: 25px;
 }
 
+QGroupBox:disabled {
+	border: 1px solid rgb(26, 26, 30);
+}
+
 QGroupBox::title {
 	background: rgb(249, 154, 0);
 	color: rgb(34, 35, 40);
@@ -52,6 +56,7 @@ QGroupBox::title {
 QGroupBox::title:disabled {
 	background: rgb(34, 35, 40);
 	color: rgb(180, 180, 180);
+	border: 1px solid rgb(26, 26, 30);
 }
 
 QGroupBox:checked:!disabled {
@@ -154,6 +159,7 @@ QComboBox {
 QComboBox::disabled {
 	background: rgb(34, 35, 40);
 	color: rgb(180, 180, 180);
+	border: 1px solid rgb(26, 26, 30);
 }
 
 QComboBox:hover {
@@ -186,6 +192,7 @@ QLineEdit {
 QLineEdit:disabled {
 	background: rgb(34, 35, 40);
 	color: rgb(180, 180, 180);
+	border: 1px solid rgb(26, 26, 30);
 }
 
 QLineEdit:hover {
@@ -211,6 +218,7 @@ QAbstractSpinBox {
 QAbstractSpinBox:disabled {
 	background: rgb(34, 35, 40);
 	color: rgb(180, 180, 180);
+	border: 1px solid rgb(26, 26, 30);
 }
 
 QAbstractSpinBox:hover {

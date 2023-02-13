@@ -32,8 +32,6 @@
 #include "Configuration.h"
 #include "MainWindow.h"
 
-static constexpr auto TEMPLATE_PATH{":/configuration_template.txt"};
-
 ///
 /// \brief The Application class represents the application
 ///
@@ -69,12 +67,6 @@ protected slots:
     void OnOpenProject(void);
 
 protected:
-    /// \brief Reads the Configuration.h template into memory
-    ///
-    /// \param pFileInfo: Location of the template file
-    /// \return The template as a QStringList, if successful
-    std::optional<QStringList> ReadConfigurationTemplateFromFile(const QFileInfo& pFileInfo);
-
     /// \brief Generates the Configuration.h file from the template using the given config
     ///
     /// \param pConfig: Reference to the configuration to write into the Configuration.h

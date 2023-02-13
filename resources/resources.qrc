@@ -47,5 +47,9 @@
         <file>SourceSansPro-Italic.ttf</file>
         <file>erig_grey.png</file>
         <file>close_FILL0_wght100_GRAD0_opsz20.svg</file>
+        <file>firmware_template.txt</file>
+        <file>extruder_template.txt</file>
+        <file>hardware_template.txt</file>
+        <file>powersupply_template.txt</file>
     </qresource>
 </RCC>

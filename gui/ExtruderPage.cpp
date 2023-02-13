@@ -28,13 +28,12 @@
 #include "HelperFunctions.h"
 
 ExtruderPage::ExtruderPage(QWidget *pParent) :
-    QWidget(pParent),
+    AbstractPage(pParent),
     mUi(new Ui::ExtruderPage)
 {
     mUi->setupUi(this);
 
-    ConnectGuiSignalsAndSlots();
-    ResetValues();
+    mTemplate = ReadTemplateFromFile(QFileInfo(EXTRUDER_TEMPLATE_PATH));
 }
 
 ExtruderPage::~ExtruderPage()
@@ -48,6 +47,8 @@ void ExtruderPage::ConnectGuiSignalsAndSlots()
     {
         OpenMarlinDocumentation("extruder-info");
     });
+
+    AbstractPage::ConnectGuiSignalsAndSlots();
 }
 
 void ExtruderPage::ResetValues()

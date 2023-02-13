@@ -27,7 +27,7 @@
 #define EXTRUDERPAGE_H
 
 #include "Configuration.h"
-#include <QWidget>
+#include "AbstractPage.h"
 
 // Forward declarations
 namespace Ui {
@@ -37,7 +37,7 @@ class ExtruderPage;
 ///
 /// \brief The ExtruderPage class represents the extruder page
 ///
-class ExtruderPage : public QWidget
+class ExtruderPage : public AbstractPage
 {
     Q_OBJECT
 
@@ -51,24 +51,24 @@ public:
     ~ExtruderPage(void) override;
 
     /// \brief Resets all parameters on the page to their defaults
-    void ResetValues(void);
+    void ResetValues(void) override;
 
     /// \brief Loads the page parameters from the given JSON object
     ///
     /// \param pJson: Reference to the JSON object
     /// \return \b true, if all expected parameters where found in the JSON
-    bool LoadFromJson(const QJsonObject &pJson);
+    bool LoadFromJson(const QJsonObject &pJson) override;
 
     /// \brief Writes the page parameters into the given Configuration object
     ///
     /// \return Configuration object
     ExtruderConfiguration FetchConfiguration(void);
 
-    void ReplaceTags(QStringList& pOutput);
+    void ReplaceTags(QStringList& pOutput) override;
 
 protected:
     /// \brief Connects this widget's signals and slots
-    void ConnectGuiSignalsAndSlots(void);
+    void ConnectGuiSignalsAndSlots(void) override;
 
 protected:
     Ui::ExtruderPage *mUi;

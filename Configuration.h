@@ -30,6 +30,12 @@
 #include <cstdint>
 #include <string>
 
+static constexpr auto TEMPLATE_PATH{":/configuration_template.txt"};
+static constexpr auto FIRMWARE_TEMPLATE_PATH{":/firmware_template.txt"};
+static constexpr auto HARDWARE_TEMPLATE_PATH{":/hardware_template.txt"};
+static constexpr auto EXTRUDER_TEMPLATE_PATH{":/extruder_template.txt"};
+static constexpr auto POWERSUPPLY_TEMPLATE_PATH{":/powersupply_template.txt"};
+
 // Contains default values of all configuration parameters
 namespace defaults
 {
@@ -140,10 +146,15 @@ static constexpr auto K_MAX_ENDSTOP_INVERTING{false};
 static constexpr auto Z_MIN_PROBE_ENDSTOP_INVERTING{false};
 }
 
+struct PageConfiguration
+{
+    virtual QJsonObject ToJson(void) const = 0;
+};
+
 ///
 /// \brief The FirmwareConfiguration struct contains firmware configurations
 ///
-struct FirmwareConfiguration
+struct FirmwareConfiguration : public PageConfiguration
 {
     QString STRING_CONFIG_H_AUTHOR{defaults::STRING_CONFIG_H_AUTHOR};
     QString CUSTOM_VERSION_FILE{defaults::CUSTOM_VERSION_FILE};
@@ -158,7 +169,7 @@ public:
     /// \brief Converts the configuration into a JSON object
     ///
     /// \return a JSON object containing the configuration data
-    QJsonObject ToJson(void) const
+    QJsonObject ToJson(void) const override
     {
         QJsonObject json;
 
@@ -178,7 +189,7 @@ public:
 ///
 /// \brief The HardwareConfiguration struct contains hardware configurations
 ///
-struct HardwareConfiguration
+struct HardwareConfiguration : public PageConfiguration
 {
     QString MOTHERBOARD{defaults::MOTHERBOARD};
     QString SERIAL_PORT{defaults::SERIAL_PORT};
@@ -203,7 +214,7 @@ public:
     /// \brief Converts the configuration into a JSON object
     ///
     /// \return a JSON object containing the configuration data
-    QJsonObject ToJson(void) const
+    QJsonObject ToJson(void) const override
     {
         QJsonObject json;
 
@@ -233,14 +244,14 @@ public:
 ///
 /// \brief The ExtruderConfiguration struct contains extruder configurations
 ///
-struct ExtruderConfiguration
+struct ExtruderConfiguration : public PageConfiguration
 {
     int32_t EXTRUDERS{defaults::EXTRUDERS};
 public:
     /// \brief Converts the configuration into a JSON object
     ///
     /// \return a JSON object containing the configuration data
-    QJsonObject ToJson(void) const
+    QJsonObject ToJson(void) const override
     {
         QJsonObject json;
 
@@ -253,7 +264,7 @@ public:
 ///
 /// \brief The PowerSupplyConfiguration struct contains power supply configurations
 ///
-struct PowerSupplyConfiguration
+struct PowerSupplyConfiguration : public PageConfiguration
 {
     bool PSU_CONTROL{defaults::PSU_CONTROL};
     QString PSU_NAME{defaults::PSU_NAME};
@@ -295,7 +306,7 @@ public:
     /// \brief Converts the configuration into a JSON object
     ///
     /// \return a JSON object containing the configuration data
-    QJsonObject ToJson(void) const
+    QJsonObject ToJson(void) const override
     {
         QJsonObject json;
 
