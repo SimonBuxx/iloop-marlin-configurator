@@ -30,6 +30,7 @@
 #include <QDateTime>
 #include <QDesktopServices>
 #include <QTimer>
+#include <QTabBar>
 
 MainWindow::MainWindow(QWidget *pParent)
     : QMainWindow(pParent)
@@ -40,6 +41,29 @@ MainWindow::MainWindow(QWidget *pParent)
 {
     mUi->setupUi(this);
 
+    // Initialize dock widgets
+    tabifyDockWidget(mUi->uConsoleDock, mUi->uCodePreviewDock);
+    resizeDocks(QList{static_cast<QDockWidget*>(mUi->uConsoleDock),
+                      static_cast<QDockWidget*>(mUi->uCodePreviewDock)},
+                QList{150, 150}, Qt::Vertical);
+
+    // Add dock widget view actions to menu
+    mUi->menuView->addAction(mUi->uNavigationDock->toggleViewAction());
+    mUi->menuView->addAction(mUi->uConsoleDock->toggleViewAction());
+    mUi->menuView->addAction(mUi->uCodePreviewDock->toggleViewAction());
+
+    mUi->menuView->actions().at(0)->setShortcut(QKeySequence("Alt+N"));
+    mUi->menuView->actions().at(1)->setShortcut(QKeySequence("Alt+O"));
+    mUi->menuView->actions().at(2)->setShortcut(QKeySequence("Alt+P"));
+
+    // Set console tab as current
+    auto&& tabBar = this->findChild<QTabBar*>();
+    if (nullptr != tabBar)
+    {
+        tabBar->setCurrentIndex(0);
+    }
+
+    // Initialize status bar
     mUi->statusBar->setSizeGripEnabled(false);
     mUi->statusBar->addWidget(&mStatusLabel);
     mUi->statusBar->addPermanentWidget(&mMarlinVersionLabel);
@@ -67,12 +91,6 @@ void MainWindow::ConnectGuiSignalsAndSlots()
     {
         UpdateActiveTabButtonColor();
     });
-
-    QObject::connect(mUi->uNavigationDock, &QDockWidget::visibilityChanged, mUi->uNavigationDockAction, &QAction::setChecked);
-    QObject::connect(mUi->uNavigationDockAction, &QAction::triggered, mUi->uNavigationDock, &QDockWidget::setVisible);
-
-    QObject::connect(mUi->uConsoleDock, &QDockWidget::visibilityChanged, mUi->uConsoleDockAction, &QAction::setChecked);
-    QObject::connect(mUi->uConsoleDockAction, &QAction::triggered, mUi->uConsoleDock, &QDockWidget::setVisible);
 
     QObject::connect(mUi->uCloseAction, &QAction::triggered, this, &QMainWindow::close);
     QObject::connect(mUi->uAboutAction, &QAction::triggered, &mAboutDialog, &AboutDialog::show);

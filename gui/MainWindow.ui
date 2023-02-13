@@ -30,6 +30,44 @@
     selection-background-color: rgb(34, 35, 40);
 }
 
+QDockWidget {
+	color: black;
+	titlebar-close-icon: url(&quot;:/close_FILL0_wght100_GRAD0_opsz20.svg&quot;);
+}
+
+QDockWidget::close-button {
+    border: none;
+    background: transparent;
+	image: url(&quot;:/close_FILL0_wght100_GRAD0_opsz20.svg&quot;);
+}
+
+QDockWidget::close-button:hover {
+    image: url(&quot;:/close_FILL0_wght100_GRAD0_opsz20.svg&quot;);
+	border: 1px solid black;
+	border-radius: 2px;
+}
+
+QDockWidget::title {
+	background: rgb(249, 154, 0);
+	padding: 5px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+QTabBar::tab {
+	color: black;
+	padding: 2px 5px;
+	margin: 0 1px;
+	background: rgb(249, 154, 0);
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	margin-bottom: 2px;
+}
+
+QTabBar::tab:!selected {
+	margin-bottom: 3px;
+}
+
 QStatusBar {
 	background: rgb(63, 65, 77);
 }
@@ -157,6 +195,12 @@ QScrollBar::sub-line:vertical
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="minimumSize">
+          <size>
+           <width>1000</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="styleSheet">
           <string notr="true"/>
          </property>
@@ -186,6 +230,12 @@ QScrollBar::sub-line:vertical
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>1000</width>
+              <height>0</height>
+             </size>
             </property>
             <property name="currentIndex">
              <number>3</number>
@@ -610,7 +660,7 @@ QScrollBar::sub-line:vertical
                    <x>0</x>
                    <y>0</y>
                    <width>1037</width>
-                   <height>581</height>
+                   <height>497</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_10">
@@ -749,15 +799,19 @@ QScrollBar::sub-line:vertical
     <property name="title">
      <string>View</string>
     </property>
-    <addaction name="uNavigationDockAction"/>
-    <addaction name="uConsoleDockAction"/>
    </widget>
    <addaction name="menuDatei"/>
    <addaction name="menuView"/>
    <addaction name="menuDocumentation"/>
    <addaction name="menuHilfe"/>
   </widget>
-  <widget class="QDockWidget" name="uNavigationDock">
+  <widget class="DockWidget" name="uNavigationDock">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
    <property name="minimumSize">
     <size>
      <width>220</width>
@@ -770,46 +824,12 @@ QScrollBar::sub-line:vertical
      <height>524287</height>
     </size>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::StrongFocus</enum>
+   </property>
    <property name="styleSheet">
-    <string notr="true">QDockWidget {
-	color: black;
-	titlebar-close-icon: url(&quot;:/close_FILL0_wght100_GRAD0_opsz20.svg&quot;);
-}
-
-QDockWidget::close-button {
-    border: none;
-    background: transparent;
-	image: url(&quot;:/close_FILL0_wght100_GRAD0_opsz20.svg&quot;);
-}
-
-QDockWidget::close-button:hover {
-    image: url(&quot;:/close_FILL0_wght100_GRAD0_opsz20.svg&quot;);
-	border: 1px solid black;
-	border-radius: 2px;
-}
-
-QDockWidget::title {
-	background: rgb(249, 154, 0);
-	padding: 5px;
-}
-
-QPushButton {
-	background: rgb(63, 65, 77);
-	color: white;
-	padding: 6px;
-    border: 1px solid black;
-    border-radius: 5px;
-	text-align: left;
-}
-
-QPushButton::checked {
-      border: 1px solid rgb(249, 154, 0);
-	  background: rgb(249, 154, 0);
-	  color: black;
-}
-
-QPushButton::!checked:hover {
-	  background: rgb(75, 77, 91);
+    <string notr="true">QScrollArea {
+	border: 1px solid transparent;
 }</string>
    </property>
    <property name="features">
@@ -825,6 +845,28 @@ QPushButton::!checked:hover {
     <number>1</number>
    </attribute>
    <widget class="QWidget" name="dockWidgetContents">
+    <property name="focusPolicy">
+     <enum>Qt::StrongFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background: rgb(63, 65, 77);
+	color: white;
+	padding: 4px;
+    border: 1px solid black;
+    border-radius: 5px;
+	text-align: left;
+}
+
+QPushButton::checked {
+	  background: rgb(249, 154, 0);
+	  color: black;
+}
+
+QPushButton::!checked:hover {
+	  background: rgb(75, 77, 91);
+}</string>
+    </property>
     <layout class="QGridLayout" name="gridLayout_11">
      <property name="leftMargin">
       <number>0</number>
@@ -855,6 +897,9 @@ QPushButton::!checked:hover {
        <property name="layoutDirection">
         <enum>Qt::LeftToRight</enum>
        </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
        <property name="frameShape">
         <enum>QFrame::Box</enum>
        </property>
@@ -872,15 +917,9 @@ QPushButton::!checked:hover {
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>204</width>
-          <height>868</height>
+          <width>206</width>
+          <height>723</height>
          </rect>
-        </property>
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
         </property>
         <property name="layoutDirection">
          <enum>Qt::LeftToRight</enum>
@@ -890,19 +929,19 @@ QPushButton::!checked:hover {
         </property>
         <layout class="QVBoxLayout" name="verticalLayout">
          <property name="spacing">
-          <number>2</number>
+          <number>1</number>
          </property>
          <property name="leftMargin">
-          <number>9</number>
+          <number>5</number>
          </property>
          <property name="topMargin">
-          <number>9</number>
+          <number>5</number>
          </property>
          <property name="rightMargin">
-          <number>9</number>
+          <number>5</number>
          </property>
          <property name="bottomMargin">
-          <number>9</number>
+          <number>5</number>
          </property>
          <item>
           <widget class="QPushButton" name="uWelcomeTabButton">
@@ -934,23 +973,9 @@ QPushButton::!checked:hover {
           </widget>
          </item>
          <item>
-          <widget class="QWidget" name="widget" native="true">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>10</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">border-bottom: 1px solid rgb(100, 105, 113);
-margin: 0 3px;</string>
-           </property>
-          </widget>
-         </item>
-         <item>
           <widget class="QPushButton" name="uFirmwareTabButton">
            <property name="styleSheet">
-            <string notr="true">margin-top: 10px;</string>
+            <string notr="true"/>
            </property>
            <property name="text">
             <string>Firmware Info</string>
@@ -1419,79 +1444,52 @@ margin: 0 3px;</string>
           </spacer>
          </item>
         </layout>
-        <zorder>widget</zorder>
-        <zorder>uFirmwareTabButton</zorder>
-        <zorder>uHardwareTabButton</zorder>
-        <zorder>uExtruderTabButton</zorder>
-        <zorder>uPowerSupplyButton</zorder>
-        <zorder>pushButton_2</zorder>
-        <zorder>pushButton_3</zorder>
-        <zorder>pushButton_4</zorder>
-        <zorder>pushButton_5</zorder>
-        <zorder>pushButton_6</zorder>
-        <zorder>pushButton_7</zorder>
-        <zorder>pushButton_8</zorder>
-        <zorder>pushButton_10</zorder>
-        <zorder>pushButton_11</zorder>
-        <zorder>pushButton_12</zorder>
-        <zorder>pushButton_9</zorder>
-        <zorder>pushButton_13</zorder>
-        <zorder>pushButton_14</zorder>
-        <zorder>pushButton_15</zorder>
-        <zorder>pushButton_16</zorder>
-        <zorder>pushButton_17</zorder>
-        <zorder>pushButton_18</zorder>
-        <zorder>pushButton_19</zorder>
-        <zorder>uWelcomeTabButton</zorder>
        </widget>
       </widget>
      </item>
     </layout>
    </widget>
   </widget>
-  <widget class="QDockWidget" name="uConsoleDock">
+  <widget class="DockWidget" name="uConsoleDock">
    <property name="sizePolicy">
     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
+   <property name="minimumSize">
+    <size>
+     <width>110</width>
+     <height>82</height>
+    </size>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::StrongFocus</enum>
+   </property>
    <property name="styleSheet">
-    <string notr="true">QDockWidget {
-	color: black;
-	titlebar-close-icon: url(&quot;:/close_FILL0_wght100_GRAD0_opsz20.svg&quot;);
-}
-
-QDockWidget::close-button {
-    border: none;
-    background: transparent;
-	image: url(&quot;:/close_FILL0_wght100_GRAD0_opsz20.svg&quot;);
-}
-
-QDockWidget::close-button:hover {
-    image: url(&quot;:/close_FILL0_wght100_GRAD0_opsz20.svg&quot;);
-	border: 1px solid black;
-	border-radius: 2px;
-}
-
-QDockWidget::title {
-	background: rgb(249, 154, 0);
-	padding: 5px;
+    <string notr="true">QScrollArea {
+	border: 1px solid transparent;
 }</string>
    </property>
    <property name="features">
     <set>QDockWidget::DockWidgetClosable|QDockWidget::DockWidgetMovable</set>
    </property>
    <property name="allowedAreas">
-    <set>Qt::BottomDockWidgetArea|Qt::TopDockWidgetArea</set>
+    <set>Qt::AllDockWidgetAreas</set>
    </property>
    <property name="windowTitle">
-    <string>Console</string>
+    <string>General Outputs</string>
    </property>
    <attribute name="dockWidgetArea">
     <number>8</number>
    </attribute>
    <widget class="QWidget" name="dockWidgetContents_4">
+    <property name="focusPolicy">
+     <enum>Qt::StrongFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
     <layout class="QGridLayout" name="gridLayout_15">
      <property name="leftMargin">
       <number>0</number>
@@ -1506,49 +1504,43 @@ QDockWidget::title {
       <number>0</number>
      </property>
      <item row="0" column="0">
-      <widget class="QFrame" name="frame_3">
-       <property name="frameShape">
-        <enum>QFrame::NoFrame</enum>
+      <widget class="QScrollArea" name="scrollArea_7">
+       <property name="widgetResizable">
+        <bool>true</bool>
        </property>
-       <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
-       </property>
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
-        <property name="leftMargin">
-         <number>9</number>
+       <widget class="QWidget" name="scrollAreaWidgetContents_7">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>640</width>
+          <height>210</height>
+         </rect>
         </property>
-        <property name="topMargin">
-         <number>9</number>
-        </property>
-        <property name="rightMargin">
-         <number>9</number>
-        </property>
-        <property name="bottomMargin">
-         <number>9</number>
-        </property>
-        <item>
-         <widget class="QTextBrowser" name="uLogConsole">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QTextBrowser {
+        <layout class="QGridLayout" name="gridLayout_17">
+         <item row="0" column="0">
+          <widget class="QTextBrowser" name="uLogConsole">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QTextBrowser {
 	font-family: &quot;Source Code Pro&quot;;
     selection-background-color: rgb(63, 65, 77);
 }
 </string>
-          </property>
-          <property name="frameShape">
-           <enum>QFrame::Box</enum>
-          </property>
-          <property name="frameShadow">
-           <enum>QFrame::Sunken</enum>
-          </property>
-          <property name="html">
-           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::Box</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Sunken</enum>
+           </property>
+           <property name="html">
+            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
@@ -1556,44 +1548,161 @@ li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Source Code Pro'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Segoe UI';&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-         </widget>
-        </item>
-        <item alignment="Qt::AlignBottom">
-         <widget class="QLabel" name="label">
-          <property name="maximumSize">
-           <size>
-            <width>60</width>
-            <height>110</height>
-           </size>
-          </property>
-          <property name="frameShape">
-           <enum>QFrame::Box</enum>
-          </property>
-          <property name="frameShadow">
-           <enum>QFrame::Sunken</enum>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="pixmap">
-           <pixmap resource="../resources/resources.qrc">:/iloop_alpha.png</pixmap>
-          </property>
-          <property name="scaledContents">
-           <bool>true</bool>
-          </property>
-          <property name="margin">
-           <number>5</number>
-          </property>
-         </widget>
-        </item>
-       </layout>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
       </widget>
      </item>
     </layout>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <widget class="DockWidget" name="uCodePreviewDock">
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>116</height>
+    </size>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::StrongFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QScrollArea {
+	border: 1px solid transparent;
+}</string>
+   </property>
+   <property name="features">
+    <set>QDockWidget::DockWidgetClosable|QDockWidget::DockWidgetMovable</set>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::AllDockWidgetAreas</set>
+   </property>
+   <property name="windowTitle">
+    <string>Code Preview</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_5">
+    <property name="focusPolicy">
+     <enum>Qt::StrongFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_16">
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item row="0" column="1">
+      <widget class="QScrollArea" name="scrollArea_8">
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="scrollAreaWidgetContents_8">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>635</width>
+          <height>210</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_18">
+         <item row="0" column="0">
+          <widget class="QPlainTextEdit" name="plainTextEdit">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPlainTextEdit {
+	font-family: &quot;Source Code Pro&quot;;
+	color: white;
+    selection-background-color: rgb(63, 65, 77);
+}</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::Box</enum>
+           </property>
+           <property name="undoRedoEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+           <property name="plainText">
+            <string>/**
+ * Power Supply Control
+ *
+ * Enable and connect the power supply to the PS_ON_PIN.
+ * Specify whether the power supply is active HIGH or active LOW.
+ */
+//#define PSU_CONTROL
+//#define PSU_NAME &quot;Power Supply&quot;
+
+#if ENABLED(PSU_CONTROL)
+  //#define MKS_PWC                 // Using the MKS PWC add-on
+  //#define PS_OFF_CONFIRM          // Confirm dialog when power off
+  //#define PS_OFF_SOUND            // Beep 1s when power off
+  #define PSU_ACTIVE_STATE LOW      // Set 'LOW' for ATX, 'HIGH' for X-Box
+
+  //#define PSU_DEFAULT_OFF               // Keep power off until enabled directly with M80
+  //#define PSU_POWERUP_DELAY      250    // (ms) Delay for the PSU to warm up to full power
+  //#define LED_POWEROFF_TIMEOUT 10000    // (ms) Turn off LEDs after power-off, with this amount of delay
+
+  //#define POWER_OFF_TIMER               // Enable M81 D&lt;seconds&gt; to power off after a delay
+  //#define POWER_OFF_WAIT_FOR_COOLDOWN   // Enable M81 S to power off only after cooldown
+
+  //#define PSU_POWERUP_GCODE  &quot;M355 S1&quot;  // G-code to run after power-on (e.g., case light on)
+  //#define PSU_POWEROFF_GCODE &quot;M355 S0&quot;  // G-code to run before power-off (e.g., case light off)
+
+  //#define AUTO_POWER_CONTROL      // Enable automatic control of the PS_ON pin
+  #if ENABLED(AUTO_POWER_CONTROL)
+    #define AUTO_POWER_FANS         // Turn on PSU if fans need power
+    #define AUTO_POWER_E_FANS
+    #define AUTO_POWER_CONTROLLERFAN
+    #define AUTO_POWER_CHAMBER_FAN
+    #define AUTO_POWER_COOLER_FAN
+    #define POWER_TIMEOUT              30 // (s) Turn off power if the machine is idle for this duration
+    //#define POWER_OFF_DELAY          60 // (s) Delay of poweroff after M81 command. Useful to let fans run for extra time.
+  #endif
+  #if EITHER(AUTO_POWER_CONTROL, POWER_OFF_WAIT_FOR_COOLDOWN)
+    //#define AUTO_POWER_E_TEMP        50 // (°C) PSU on if any extruder is over this temperature
+    //#define AUTO_POWER_CHAMBER_TEMP  30 // (°C) PSU on if the chamber is over this temperature
+    //#define AUTO_POWER_COOLER_TEMP   26 // (°C) PSU on if the cooler is over this temperature
+  #endif
+#endif</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
   <action name="uOpenProjectAction">
    <property name="icon">
     <iconset resource="../resources/resources.qrc">
@@ -2012,6 +2121,23 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <string>Reset Viewport</string>
    </property>
   </action>
+  <action name="uCodePreviewDockAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show Code Preview</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+O</string>
+   </property>
+   <property name="autoRepeat">
+    <bool>false</bool>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>
@@ -2042,6 +2168,12 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <class>ExtruderPage</class>
    <extends>QWidget</extends>
    <header>ExtruderPage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>DockWidget</class>
+   <extends>QDockWidget</extends>
+   <header>DockWidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
