@@ -255,104 +255,7 @@ QAbstractSpinBox::down-button:off {
    <property name="spacing">
     <number>10</number>
    </property>
-   <item row="3" column="5">
-    <spacer name="verticalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>10</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="4" column="0" colspan="7">
-    <widget class="QGroupBox" name="uConfigurationHBox">
-     <property name="focusPolicy">
-      <enum>Qt::StrongFocus</enum>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-     </property>
-     <property name="title">
-      <string>CONFIGURATION_H_VERSION</string>
-     </property>
-     <property name="checkable">
-      <bool>false</bool>
-     </property>
-     <property name="checked">
-      <bool>false</bool>
-     </property>
-     <layout class="QGridLayout" name="gridLayout_2">
-      <property name="spacing">
-       <number>10</number>
-      </property>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_2">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string>This is the version of Marlin for that the Configuration.h file is generated.</string>
-        </property>
-        <property name="wordWrap">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0" colspan="2">
-       <widget class="QLineEdit" name="lineEdit">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string>02010200 (v2.1.2)</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="13" column="0" colspan="7">
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>0</width>
-       <height>0</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="5" column="0" colspan="7">
+   <item row="4" column="0" colspan="3">
     <widget class="QWidget" name="widget_2" native="true">
      <layout class="QGridLayout" name="gridLayout_6" columnstretch="1,1">
       <property name="leftMargin">
@@ -478,7 +381,23 @@ QAbstractSpinBox::down-button:off {
      </layout>
     </widget>
    </item>
-   <item row="2" column="0" colspan="7">
+   <item row="3" column="1">
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>10</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="2" column="0" colspan="3">
     <widget class="QWidget" name="widget" native="true">
      <layout class="QGridLayout" name="gridLayout_5">
       <property name="leftMargin">
@@ -576,7 +495,7 @@ QAbstractSpinBox::down-button:off {
      </layout>
     </widget>
    </item>
-   <item row="8" column="0" colspan="7">
+   <item row="7" column="0" colspan="3">
     <widget class="QWidget" name="widget_3" native="true">
      <layout class="QGridLayout" name="gridLayout_7">
       <property name="leftMargin">
@@ -725,6 +644,19 @@ QAbstractSpinBox::down-button:off {
       </item>
      </layout>
     </widget>
+   </item>
+   <item row="12" column="0" colspan="3">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+    </spacer>
    </item>
   </layout>
  </widget>

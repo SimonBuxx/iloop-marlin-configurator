@@ -852,7 +852,7 @@ QScrollBar::sub-line:vertical
      <string notr="true">QPushButton {
 	background: rgb(63, 65, 77);
 	color: white;
-	padding: 4px;
+	padding: 2px;
     border: 1px solid black;
     border-radius: 5px;
 	text-align: left;
@@ -918,7 +918,7 @@ QPushButton::!checked:hover {
           <x>0</x>
           <y>0</y>
           <width>206</width>
-          <height>723</height>
+          <height>631</height>
          </rect>
         </property>
         <property name="layoutDirection">
@@ -945,11 +945,17 @@ QPushButton::!checked:hover {
          </property>
          <item>
           <widget class="QPushButton" name="uWelcomeTabButton">
+           <property name="font">
+            <font>
+             <family>Source Sans Pro</family>
+             <italic>true</italic>
+            </font>
+           </property>
            <property name="styleSheet">
             <string notr="true"/>
            </property>
            <property name="text">
-            <string>Welcome</string>
+            <string>Getting Started</string>
            </property>
            <property name="icon">
             <iconset resource="../resources/resources.qrc">
@@ -975,7 +981,9 @@ QPushButton::!checked:hover {
          <item>
           <widget class="QPushButton" name="uFirmwareTabButton">
            <property name="styleSheet">
-            <string notr="true"/>
+            <string notr="true">QPushButton:!checked:!hover {
+	background: rgb(50, 52, 61);
+}</string>
            </property>
            <property name="text">
             <string>Firmware Info</string>
@@ -1026,6 +1034,11 @@ QPushButton::!checked:hover {
          </item>
          <item>
           <widget class="QPushButton" name="uExtruderTabButton">
+           <property name="styleSheet">
+            <string notr="true">QPushButton:!checked:!hover {
+	background: rgb(50, 52, 61);
+}</string>
+           </property>
            <property name="text">
             <string>Extruder Info</string>
            </property>
@@ -1072,6 +1085,11 @@ QPushButton::!checked:hover {
          </item>
          <item>
           <widget class="QPushButton" name="pushButton_2">
+           <property name="styleSheet">
+            <string notr="true">QPushButton:!checked:!hover {
+	background: rgb(50, 52, 61);
+}</string>
+           </property>
            <property name="text">
             <string>Thermal Settings</string>
            </property>
@@ -1112,6 +1130,11 @@ QPushButton::!checked:hover {
          </item>
          <item>
           <widget class="QPushButton" name="pushButton_4">
+           <property name="styleSheet">
+            <string notr="true">QPushButton:!checked:!hover {
+	background: rgb(50, 52, 61);
+}</string>
+           </property>
            <property name="text">
             <string>Endstops</string>
            </property>
@@ -1152,6 +1175,11 @@ QPushButton::!checked:hover {
          </item>
          <item>
           <widget class="QPushButton" name="pushButton_6">
+           <property name="styleSheet">
+            <string notr="true">QPushButton:!checked:!hover {
+	background: rgb(50, 52, 61);
+}</string>
+           </property>
            <property name="text">
             <string>Z Probe Options</string>
            </property>
@@ -1192,6 +1220,11 @@ QPushButton::!checked:hover {
          </item>
          <item>
           <widget class="QPushButton" name="pushButton_8">
+           <property name="styleSheet">
+            <string notr="true">QPushButton:!checked:!hover {
+	background: rgb(50, 52, 61);
+}</string>
+           </property>
            <property name="text">
             <string>Homing and Bounds</string>
            </property>
@@ -1232,6 +1265,11 @@ QPushButton::!checked:hover {
          </item>
          <item>
           <widget class="QPushButton" name="pushButton_11">
+           <property name="styleSheet">
+            <string notr="true">QPushButton:!checked:!hover {
+	background: rgb(50, 52, 61);
+}</string>
+           </property>
            <property name="text">
             <string>Bed Leveling</string>
            </property>
@@ -1272,6 +1310,11 @@ QPushButton::!checked:hover {
          </item>
          <item>
           <widget class="QPushButton" name="pushButton_9">
+           <property name="styleSheet">
+            <string notr="true">QPushButton:!checked:!hover {
+	background: rgb(50, 52, 61);
+}</string>
+           </property>
            <property name="text">
             <string>Additional Features</string>
            </property>
@@ -1312,6 +1355,11 @@ QPushButton::!checked:hover {
          </item>
          <item>
           <widget class="QPushButton" name="pushButton_14">
+           <property name="styleSheet">
+            <string notr="true">QPushButton:!checked:!hover {
+	background: rgb(50, 52, 61);
+}</string>
+           </property>
            <property name="text">
             <string>SD Card</string>
            </property>
@@ -1352,6 +1400,11 @@ QPushButton::!checked:hover {
          </item>
          <item>
           <widget class="QPushButton" name="pushButton_16">
+           <property name="styleSheet">
+            <string notr="true">QPushButton:!checked:!hover {
+	background: rgb(50, 52, 61);
+}</string>
+           </property>
            <property name="text">
             <string>Encoder</string>
            </property>
@@ -1392,6 +1445,11 @@ QPushButton::!checked:hover {
          </item>
          <item>
           <widget class="QPushButton" name="pushButton_18">
+           <property name="styleSheet">
+            <string notr="true">QPushButton:!checked:!hover {
+	background: rgb(50, 52, 61);
+}</string>
+           </property>
            <property name="text">
             <string>LCD Controller</string>
            </property>
@@ -1513,7 +1571,7 @@ QPushButton::!checked:hover {
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>640</width>
+          <width>638</width>
           <height>210</height>
          </rect>
         </property>
@@ -1622,7 +1680,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>635</width>
+          <width>637</width>
           <height>210</height>
          </rect>
         </property>

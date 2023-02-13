@@ -78,6 +78,11 @@ QPushButton:hover {
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton:!hover {
+	background: rgb(50, 52, 61);
+}</string>
+     </property>
      <property name="text">
       <string>Open Project...</string>
      </property>
