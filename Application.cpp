@@ -34,7 +34,7 @@
 
 Application::Application(QObject *parent)
     : QObject(parent)
-{
+{   
     QFontDatabase::addApplicationFont(":/SourceCodePro-Italic.ttf");
     QFontDatabase::addApplicationFont(":/SourceCodePro-Regular.ttf");
     QFontDatabase::addApplicationFont(":/SourceSansPro-Light.ttf");
@@ -63,12 +63,12 @@ Application::Application(QObject *parent)
 Application::~Application()
 {}
 
-void Application::OnExportConfiguration(const QFileInfo& pFileInfo, const Configuration& pConfig)
+void Application::OnExportConfiguration(const QFileInfo& pFileInfo)
 {
     mMainWindow.Log(QString("Export of output file %0 started...").arg(pFileInfo.filePath()));
-    QCoreApplication::processEvents();
+    QCoreApplication::processEvents(); // to ensure that the message is printed before the GUI freezes
 
-    const auto&& stringList = GenerateConfigurationContent(pConfig);
+    const auto&& stringList = GenerateCode();
 
     if (!stringList.has_value())
     {
@@ -97,9 +97,11 @@ void Application::OnExportConfiguration(const QFileInfo& pFileInfo, const Config
     mMainWindow.Log(QString("Generation of output file %0 successful.").arg(pFileInfo.filePath()));
 }
 
-void Application::OnSaveProject(const Configuration& pConfig, bool pForceSaveAs)
+void Application::OnSaveProject(bool pForceSaveAs)
 {
     QFileInfo fileInfo;
+
+    const auto& config = mMainWindow.FetchConfiguration();
 
     if (mOpenFileInfo.has_value() && !pForceSaveAs)
     {
@@ -107,7 +109,7 @@ void Application::OnSaveProject(const Configuration& pConfig, bool pForceSaveAs)
     }
     else
     {
-        const QString name = QString("\\%0.json").arg(pConfig.hardware.CUSTOM_MACHINE_NAME.isEmpty() ? "unnamed" : pConfig.hardware.CUSTOM_MACHINE_NAME);
+        const QString name = QString("\\%0.json").arg(config.hardware.CUSTOM_MACHINE_NAME.isEmpty() ? "unnamed" : config.hardware.CUSTOM_MACHINE_NAME);
 
         QString fileName = QFileDialog::getSaveFileName(&mMainWindow, tr("Save Project As..."), QDir::homePath() + name, tr("JSON document (*.json)"));
 
@@ -119,7 +121,7 @@ void Application::OnSaveProject(const Configuration& pConfig, bool pForceSaveAs)
         fileInfo = QFileInfo(fileName);
     }
 
-    const auto json = pConfig.ToJson();
+    const auto& json = config.ToJson();
 
     QFile file(fileInfo.filePath());
 
@@ -142,7 +144,6 @@ void Application::OnSaveProject(const Configuration& pConfig, bool pForceSaveAs)
 void Application::OnNewProject()
 {
     mOpenFileInfo = std::nullopt;
-    mMainWindow.JumpToFirstConfigTab();
 }
 
 void Application::OnOpenProject()
@@ -190,7 +191,7 @@ void Application::OnOpenProject()
     mMainWindow.JumpToFirstConfigTab();
 }
 
-std::optional<QStringList> Application::GenerateConfigurationContent(const Configuration& pConfig)
+std::optional<QStringList> Application::GenerateCode()
 {
     if (mTemplate.has_value())
     {

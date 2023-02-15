@@ -178,14 +178,20 @@ QScrollBar::sub-line:vertical
        <enum>QFrame::Plain</enum>
       </property>
       <layout class="QGridLayout" name="gridLayout_4">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
        <property name="topMargin">
         <number>0</number>
        </property>
        <property name="rightMargin">
-        <number>9</number>
+        <number>0</number>
        </property>
        <property name="bottomMargin">
-        <number>9</number>
+        <number>0</number>
+       </property>
+       <property name="spacing">
+        <number>0</number>
        </property>
        <item row="0" column="0" colspan="2">
         <widget class="QFrame" name="frame_10">
@@ -223,6 +229,9 @@ QScrollBar::sub-line:vertical
           <property name="bottomMargin">
            <number>0</number>
           </property>
+          <property name="spacing">
+           <number>0</number>
+          </property>
           <item row="0" column="0" rowspan="2">
            <widget class="QStackedWidget" name="stackedWidget">
             <property name="sizePolicy">
@@ -257,7 +266,10 @@ QScrollBar::sub-line:vertical
               <item row="0" column="0">
                <widget class="QScrollArea" name="scrollArea_6">
                 <property name="frameShape">
-                 <enum>QFrame::Box</enum>
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Plain</enum>
                 </property>
                 <property name="widgetResizable">
                  <bool>true</bool>
@@ -267,8 +279,8 @@ QScrollBar::sub-line:vertical
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>96</width>
-                   <height>26</height>
+                   <width>1059</width>
+                   <height>521</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_9">
@@ -310,7 +322,10 @@ QScrollBar::sub-line:vertical
               <item row="0" column="0">
                <widget class="QScrollArea" name="scrollArea_3">
                 <property name="frameShape">
-                 <enum>QFrame::Box</enum>
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Plain</enum>
                 </property>
                 <property name="widgetResizable">
                  <bool>true</bool>
@@ -320,8 +335,8 @@ QScrollBar::sub-line:vertical
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>96</width>
-                   <height>26</height>
+                   <width>1041</width>
+                   <height>512</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_7">
@@ -596,7 +611,10 @@ QScrollBar::sub-line:vertical
               <item row="0" column="0">
                <widget class="QScrollArea" name="scrollArea_4">
                 <property name="frameShape">
-                 <enum>QFrame::Box</enum>
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Plain</enum>
                 </property>
                 <property name="widgetResizable">
                  <bool>true</bool>
@@ -606,8 +624,8 @@ QScrollBar::sub-line:vertical
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>96</width>
-                   <height>26</height>
+                   <width>1041</width>
+                   <height>512</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_2">
@@ -649,7 +667,10 @@ QScrollBar::sub-line:vertical
               <item row="0" column="0">
                <widget class="QScrollArea" name="scrollArea_5">
                 <property name="frameShape">
-                 <enum>QFrame::Box</enum>
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Plain</enum>
                 </property>
                 <property name="widgetResizable">
                  <bool>true</bool>
@@ -659,8 +680,8 @@ QScrollBar::sub-line:vertical
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1037</width>
-                   <height>497</height>
+                   <width>1059</width>
+                   <height>521</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_10">
@@ -702,7 +723,10 @@ QScrollBar::sub-line:vertical
               <item row="0" column="0">
                <widget class="QScrollArea" name="scrollArea">
                 <property name="frameShape">
-                 <enum>QFrame::Box</enum>
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Plain</enum>
                 </property>
                 <property name="widgetResizable">
                  <bool>true</bool>
@@ -712,8 +736,8 @@ QScrollBar::sub-line:vertical
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>96</width>
-                   <height>26</height>
+                   <width>1041</width>
+                   <height>512</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_8">
@@ -829,7 +853,7 @@ QScrollBar::sub-line:vertical
    </property>
    <property name="styleSheet">
     <string notr="true">QScrollArea {
-	border: 1px solid transparent;
+	border: 1px solid black;
 }</string>
    </property>
    <property name="features">
@@ -878,7 +902,7 @@ QPushButton::!checked:hover {
       <number>0</number>
      </property>
      <property name="bottomMargin">
-      <number>9</number>
+      <number>0</number>
      </property>
      <item row="0" column="0">
       <widget class="QScrollArea" name="scrollArea_2">
@@ -916,7 +940,7 @@ QPushButton::!checked:hover {
         <property name="geometry">
          <rect>
           <x>0</x>
-          <y>0</y>
+          <y>-137</y>
           <width>206</width>
           <height>631</height>
          </rect>
@@ -1526,7 +1550,7 @@ QPushButton::!checked:hover {
    </property>
    <property name="styleSheet">
     <string notr="true">QScrollArea {
-	border: 1px solid transparent;
+	border: 1px solid black;
 }</string>
    </property>
    <property name="features">
@@ -1563,6 +1587,12 @@ QPushButton::!checked:hover {
      </property>
      <item row="0" column="0">
       <widget class="QScrollArea" name="scrollArea_7">
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
        <property name="widgetResizable">
         <bool>true</bool>
        </property>
@@ -1572,10 +1602,22 @@ QPushButton::!checked:hover {
           <x>0</x>
           <y>0</y>
           <width>638</width>
-          <height>210</height>
+          <height>199</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_17">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
          <item row="0" column="0">
           <widget class="QTextBrowser" name="uLogConsole">
            <property name="sizePolicy">
@@ -1592,10 +1634,10 @@ QPushButton::!checked:hover {
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Box</enum>
+            <enum>QFrame::NoFrame</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Sunken</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="html">
             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -1629,7 +1671,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </property>
    <property name="styleSheet">
     <string notr="true">QScrollArea {
-	border: 1px solid transparent;
+	border: 1px solid black;
 }</string>
    </property>
    <property name="features">
@@ -1681,10 +1723,22 @@ li.checked::marker { content: &quot;\2612&quot;; }
           <x>0</x>
           <y>0</y>
           <width>637</width>
-          <height>210</height>
+          <height>199</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_18">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
          <item row="0" column="0">
           <widget class="QPlainTextEdit" name="uPreviewEdit">
            <property name="sizePolicy">
@@ -1701,7 +1755,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
 }</string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Box</enum>
+            <enum>QFrame::NoFrame</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="undoRedoEnabled">
             <bool>false</bool>

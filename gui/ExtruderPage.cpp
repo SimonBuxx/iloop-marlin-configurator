@@ -28,12 +28,10 @@
 #include "HelperFunctions.h"
 
 ExtruderPage::ExtruderPage(QWidget *pParent) :
-    AbstractPage(pParent),
+    AbstractPage(EXTRUDER_TEMPLATE_PATH, pParent),
     mUi(new Ui::ExtruderPage)
 {
     mUi->setupUi(this);
-
-    mTemplate = ReadTemplateFromFile(QFileInfo(EXTRUDER_TEMPLATE_PATH));
 }
 
 ExtruderPage::~ExtruderPage()
@@ -65,13 +63,9 @@ bool ExtruderPage::LoadFromJson(const QJsonObject &pJson)
     return success;
 }
 
-ExtruderConfiguration ExtruderPage::FetchConfiguration()
+void ExtruderPage::FetchConfiguration(Configuration& pConfig)
 {
-    ExtruderConfiguration config;
-
-    SetConfig(config.EXTRUDERS, mUi->uExtrudersBox);
-
-    return config;
+    SetConfig(pConfig.extruder.EXTRUDERS, mUi->uExtrudersBox);
 }
 
 void ExtruderPage::ReplaceTags(QStringList& pOutput)

@@ -44,7 +44,14 @@ public:
     ~DockWidget(void) override;
 
 protected:
+    /// \brief Sets the widget's border color to orange on focus
+    ///
+    /// \param pEvent: Pointer to the focus event
     void focusInEvent(QFocusEvent *pEvent) override;
+
+    /// \brief Sets the widget's border color to black on focus leave
+    ///
+    /// \param pEvent: Pointer to the focus event
     void focusOutEvent(QFocusEvent *pEvent) override;
 };
 

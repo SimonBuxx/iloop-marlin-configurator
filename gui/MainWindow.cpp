@@ -40,7 +40,7 @@ MainWindow::MainWindow(QWidget *pParent)
     , mStatusLabel("Project: -")
     , mMarlinVersionLabel("Marlin Version: v2.1.2")
 {
-    mUi->setupUi(this);
+    mUi->setupUi(this);    
 
     // Initialize dock widgets
     tabifyDockWidget(mUi->uConsoleDock, mUi->uCodePreviewDock);
@@ -59,6 +59,7 @@ MainWindow::MainWindow(QWidget *pParent)
 
     for (auto&& page : findChildren<AbstractPage*>())
     {
+        mConfigPages.push_back(page);
         page->Init();
     }
 
@@ -133,21 +134,17 @@ void MainWindow::ConnectGuiSignalsAndSlots()
             return;
         }
 
-        const auto config = FetchConfiguration();
-
-        emit ExportConfigurationSignal(QFileInfo(fileName), config);
+        emit ExportConfigurationSignal(QFileInfo(fileName));
     });
 
     QObject::connect(mUi->uSaveProjectAction, &QAction::triggered, this, [&]()
     {
-        const auto&& config = FetchConfiguration();
-        emit SaveProjectSignal(config);
+        emit SaveProjectSignal();
     });
 
     QObject::connect(mUi->uSaveProjectAsAction, &QAction::triggered, this, [&]()
     {
-        const auto&& config = FetchConfiguration();
-        emit SaveProjectSignal(config, true);
+        emit SaveProjectSignal(true);
     });
 
     QObject::connect(mUi->uOpenProjectAction, &QAction::triggered, this, &MainWindow::OpenProjectSignal);
@@ -233,24 +230,24 @@ void MainWindow::OnUpdatePreview(const QStringList& pPreviewCode)
     mUi->uPreviewEdit->setPlainText(pPreviewCode.join('\n'));
 }
 
+void MainWindow::ResetValues()
+{
+    for (auto&& page : mConfigPages)
+    {
+        page->ResetValues();
+    }
+}
+
 void MainWindow::JumpToFirstConfigTab()
 {
     mUi->uFirmwareTabButton->click();
-}
-
-void MainWindow::ResetValues()
-{
-#warning refactor (list of references to all pages?)
-    mUi->uFirmwarePage->ResetValues();
-    mUi->uHardwarePage->ResetValues();
-    mUi->uExtruderPage->ResetValues();
-    mUi->uPowerSupplyPage->ResetValues();
 }
 
 void MainWindow::OnNewProject()
 {
     ResetValues();
 
+    JumpToFirstConfigTab();
     SetProjectName(std::nullopt);
     Log("New project initialized.", "rgb(249, 154, 0)");
 
@@ -260,22 +257,21 @@ void MainWindow::OnNewProject()
 Configuration MainWindow::FetchConfiguration()
 {
     Configuration config;
-#warning refactor (list of references to all pages?)
-    config.firmware = mUi->uFirmwarePage->FetchConfiguration();
-    config.hardware = mUi->uHardwarePage->FetchConfiguration();
-    config.extruder = mUi->uExtruderPage->FetchConfiguration();
-    config.powerSupply = mUi->uPowerSupplyPage->FetchConfiguration();
+
+    for (auto&& page : mConfigPages)
+    {
+        page->FetchConfiguration(config);
+    }
 
     return config;
 }
 
 void MainWindow::ReplaceTags(QStringList& pOutput)
 {
-#warning refactor (list of references to all pages?)
-    mUi->uFirmwarePage->ReplaceTags(pOutput);
-    mUi->uHardwarePage->ReplaceTags(pOutput);
-    mUi->uExtruderPage->ReplaceTags(pOutput);
-    mUi->uPowerSupplyPage->ReplaceTags(pOutput);
+    for (auto&& page : mConfigPages)
+    {
+        page->ReplaceTags(pOutput);
+    }
 }
 
 void MainWindow::SetProjectName(const std::optional<QString>& pName)

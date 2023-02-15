@@ -71,6 +71,7 @@ static constexpr auto ENABLE_MACHINE_UUID{false};
 
 // Extruder Info
 static constexpr auto EXTRUDERS{1};
+static constexpr auto DEFAULT_NOMINAL_FILAMENT_DIA{1.75}; // mm
 
 // Power Supply
 static constexpr auto PSU_CONTROL{false};
@@ -111,7 +112,6 @@ static constexpr auto ENABLE_AUTO_POWER_COOLER_TEMP{false};
 
 // Legacy
 static constexpr auto LCD_DISPLAY{"REPRAP_DISCOUNT_SMART_CONTROLLER"};
-static constexpr auto DEFAULT_NOMINAL_FILAMENT_DIA{1.75f}; // mm
 static constexpr auto X_BED_SIZE{200}; // mm
 static constexpr auto Y_BED_SIZE{200}; // mm
 

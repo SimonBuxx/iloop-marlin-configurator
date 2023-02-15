@@ -28,12 +28,10 @@
 #include "HelperFunctions.h"
 
 FirmwarePage::FirmwarePage(QWidget *pParent) :
-    AbstractPage(pParent),
+    AbstractPage(FIRMWARE_TEMPLATE_PATH, pParent),
     mUi(new Ui::FirmwarePage)
 {
     mUi->setupUi(this);
-
-    mTemplate = ReadTemplateFromFile(QFileInfo(FIRMWARE_TEMPLATE_PATH));
 }
 
 FirmwarePage::~FirmwarePage()
@@ -78,20 +76,16 @@ bool FirmwarePage::LoadFromJson(const QJsonObject &pJson)
     return success;
 }
 
-FirmwareConfiguration FirmwarePage::FetchConfiguration()
+void FirmwarePage::FetchConfiguration(Configuration& pConfig)
 {
-    FirmwareConfiguration config;
+    SetConfig(pConfig.firmware.STRING_CONFIG_H_AUTHOR, mUi->uAuthorNameEdit);
+    SetConfig(pConfig.firmware.CUSTOM_VERSION_FILE, mUi->uCustomVersionFileEdit);
+    SetConfig(pConfig.firmware.SHOW_BOOTSCREEN, mUi->uShowBootscreenBox);
+    SetConfig(pConfig.firmware.SHOW_CUSTOM_BOOTSCREEN, mUi->uShowCustomBootscreenBox);
+    SetConfig(pConfig.firmware.CUSTOM_STATUS_SCREEN_IMAGE, mUi->uCustomStatusScreenImageBox);
 
-    SetConfig(config.STRING_CONFIG_H_AUTHOR, mUi->uAuthorNameEdit);
-    SetConfig(config.CUSTOM_VERSION_FILE, mUi->uCustomVersionFileEdit);
-    SetConfig(config.SHOW_BOOTSCREEN, mUi->uShowBootscreenBox);
-    SetConfig(config.SHOW_CUSTOM_BOOTSCREEN, mUi->uShowCustomBootscreenBox);
-    SetConfig(config.CUSTOM_STATUS_SCREEN_IMAGE, mUi->uCustomStatusScreenImageBox);
-
-    SetConfig(config.ENABLE_STRING_CONFIG_H_AUTHOR, mUi->uStringConfigHAuthorBox);
-    SetConfig(config.ENABLE_CUSTOM_VERSION_FILE, mUi->uCustomVersionFileBox);
-
-    return config;
+    SetConfig(pConfig.firmware.ENABLE_STRING_CONFIG_H_AUTHOR, mUi->uStringConfigHAuthorBox);
+    SetConfig(pConfig.firmware.ENABLE_CUSTOM_VERSION_FILE, mUi->uCustomVersionFileBox);
 }
 
 void FirmwarePage::ReplaceTags(QStringList& pOutput)

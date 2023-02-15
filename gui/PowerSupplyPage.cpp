@@ -29,12 +29,10 @@
 #include "HelperFunctions.h"
 
 PowerSupplyPage::PowerSupplyPage(QWidget *pParent) :
-    AbstractPage(pParent),
+    AbstractPage(POWERSUPPLY_TEMPLATE_PATH, pParent),
     mUi(new Ui::PowerSupplyPage)
 {
     mUi->setupUi(this);
-
-    mTemplate = ReadTemplateFromFile(QFileInfo(POWERSUPPLY_TEMPLATE_PATH));
 }
 
 PowerSupplyPage::~PowerSupplyPage()
@@ -148,47 +146,43 @@ bool PowerSupplyPage::LoadFromJson(const QJsonObject &pJson)
     return success;
 }
 
-PowerSupplyConfiguration PowerSupplyPage::FetchConfiguration()
+void PowerSupplyPage::FetchConfiguration(Configuration& pConfig)
 {
-    PowerSupplyConfiguration config;
+    SetConfig(pConfig.powerSupply.PSU_CONTROL, mUi->uPsuControlBox);
+    SetConfig(pConfig.powerSupply.PSU_NAME, mUi->uPsuNameEdit);
+    SetConfig(pConfig.powerSupply.MKS_PWC, mUi->uMksPwcBox);
+    SetConfig(pConfig.powerSupply.PS_OFF_CONFIRM, mUi->uPsOffConfirmBox);
+    SetConfig(pConfig.powerSupply.PS_OFF_SOUND, mUi->uPsOffSoundBox);
+    SetConfig(pConfig.powerSupply.PSU_ACTIVE_STATE, mUi->uPsuActiveStateComboBox);
+    SetConfig(pConfig.powerSupply.PSU_DEFAULT_OFF, mUi->uPsuDefaultOffBox);
+    SetConfig(pConfig.powerSupply.PSU_POWERUP_DELAY, mUi->uPsuPowerUpDelayEdit);
+    SetConfig(pConfig.powerSupply.LED_POWEROFF_TIMEOUT, mUi->uLedPowerOffTimeoutEdit);
+    SetConfig(pConfig.powerSupply.POWER_OFF_TIMER, mUi->uPowerOffTimerBox);
+    SetConfig(pConfig.powerSupply.POWER_OFF_WAIT_FOR_COOLDOWN, mUi->uPowerOffWaitForCooldownBox);
+    SetConfig(pConfig.powerSupply.PSU_POWERUP_GCODE, mUi->uPsuPowerUpCodeEdit);
+    SetConfig(pConfig.powerSupply.PSU_POWEROFF_GCODE, mUi->uPsuPowerOffCodeEdit);
+    SetConfig(pConfig.powerSupply.AUTO_POWER_CONTROL, mUi->uAutoPowerControlBox);
+    SetConfig(pConfig.powerSupply.AUTO_POWER_FANS, mUi->uAutoPowerFansBox);
+    SetConfig(pConfig.powerSupply.AUTO_POWER_E_FANS, mUi->uAutoPowerEFansBox);
+    SetConfig(pConfig.powerSupply.AUTO_POWER_CONTROLLERFAN, mUi->uAutoPowerControllerFanBox);
+    SetConfig(pConfig.powerSupply.AUTO_POWER_CHAMBER_FAN, mUi->uAutoPowerChamberFanBox);
+    SetConfig(pConfig.powerSupply.AUTO_POWER_COOLER_FAN, mUi->uAutoPowerCoolerFanBox);
+    SetConfig(pConfig.powerSupply.POWER_TIMEOUT, mUi->uPowerTimeoutEdit);
+    SetConfig(pConfig.powerSupply.POWER_OFF_DELAY, mUi->uPowerOffDelayEdit);
+    SetConfig(pConfig.powerSupply.AUTO_POWER_E_TEMP, mUi->uAutoPowerETempEdit);
+    SetConfig(pConfig.powerSupply.AUTO_POWER_CHAMBER_TEMP, mUi->uAutoPowerChamberTempEdit);
+    SetConfig(pConfig.powerSupply.AUTO_POWER_COOLER_TEMP, mUi->uAutoPowerCoolerTempEdit);
 
-    SetConfig(config.PSU_CONTROL, mUi->uPsuControlBox);
-    SetConfig(config.PSU_NAME, mUi->uPsuNameEdit);
-    SetConfig(config.MKS_PWC, mUi->uMksPwcBox);
-    SetConfig(config.PS_OFF_CONFIRM, mUi->uPsOffConfirmBox);
-    SetConfig(config.PS_OFF_SOUND, mUi->uPsOffSoundBox);
-    SetConfig(config.PSU_ACTIVE_STATE, mUi->uPsuActiveStateComboBox);
-    SetConfig(config.PSU_DEFAULT_OFF, mUi->uPsuDefaultOffBox);
-    SetConfig(config.PSU_POWERUP_DELAY, mUi->uPsuPowerUpDelayEdit);
-    SetConfig(config.LED_POWEROFF_TIMEOUT, mUi->uLedPowerOffTimeoutEdit);
-    SetConfig(config.POWER_OFF_TIMER, mUi->uPowerOffTimerBox);
-    SetConfig(config.POWER_OFF_WAIT_FOR_COOLDOWN, mUi->uPowerOffWaitForCooldownBox);
-    SetConfig(config.PSU_POWERUP_GCODE, mUi->uPsuPowerUpCodeEdit);
-    SetConfig(config.PSU_POWEROFF_GCODE, mUi->uPsuPowerOffCodeEdit);
-    SetConfig(config.AUTO_POWER_CONTROL, mUi->uAutoPowerControlBox);
-    SetConfig(config.AUTO_POWER_FANS, mUi->uAutoPowerFansBox);
-    SetConfig(config.AUTO_POWER_E_FANS, mUi->uAutoPowerEFansBox);
-    SetConfig(config.AUTO_POWER_CONTROLLERFAN, mUi->uAutoPowerControllerFanBox);
-    SetConfig(config.AUTO_POWER_CHAMBER_FAN, mUi->uAutoPowerChamberFanBox);
-    SetConfig(config.AUTO_POWER_COOLER_FAN, mUi->uAutoPowerCoolerFanBox);
-    SetConfig(config.POWER_TIMEOUT, mUi->uPowerTimeoutEdit);
-    SetConfig(config.POWER_OFF_DELAY, mUi->uPowerOffDelayEdit);
-    SetConfig(config.AUTO_POWER_E_TEMP, mUi->uAutoPowerETempEdit);
-    SetConfig(config.AUTO_POWER_CHAMBER_TEMP, mUi->uAutoPowerChamberTempEdit);
-    SetConfig(config.AUTO_POWER_COOLER_TEMP, mUi->uAutoPowerCoolerTempEdit);
-
-    SetConfig(config.ENABLE_PSU_NAME, mUi->uPsuNameBox);
-    SetConfig(config.ENABLE_PSU_POWERUP_DELAY, mUi->uPsuPowerUpDelayBox);
-    SetConfig(config.ENABLE_LED_POWEROFF_TIMEOUT, mUi->uLedPowerOffTimeoutBox);
-    SetConfig(config.ENABLE_PSU_POWERUP_GCODE, mUi->uPsuPowerUpCodeBox);
-    SetConfig(config.ENABLE_PSU_POWEROFF_GCODE, mUi->uPsuPowerOffCodeBox);
-    SetConfig(config.ENABLE_POWER_TIMEOUT, mUi->uPowerTimeoutBox);
-    SetConfig(config.ENABLE_POWER_OFF_DELAY, mUi->uPowerOffDelayBox);
-    SetConfig(config.ENABLE_AUTO_POWER_E_TEMP, mUi->uAutoPowerETempBox);
-    SetConfig(config.ENABLE_AUTO_POWER_CHAMBER_TEMP, mUi->uAutoPowerChamberTempBox);
-    SetConfig(config.ENABLE_AUTO_POWER_COOLER_TEMP, mUi->uAutoPowerCoolerTempBox);
-
-    return config;
+    SetConfig(pConfig.powerSupply.ENABLE_PSU_NAME, mUi->uPsuNameBox);
+    SetConfig(pConfig.powerSupply.ENABLE_PSU_POWERUP_DELAY, mUi->uPsuPowerUpDelayBox);
+    SetConfig(pConfig.powerSupply.ENABLE_LED_POWEROFF_TIMEOUT, mUi->uLedPowerOffTimeoutBox);
+    SetConfig(pConfig.powerSupply.ENABLE_PSU_POWERUP_GCODE, mUi->uPsuPowerUpCodeBox);
+    SetConfig(pConfig.powerSupply.ENABLE_PSU_POWEROFF_GCODE, mUi->uPsuPowerOffCodeBox);
+    SetConfig(pConfig.powerSupply.ENABLE_POWER_TIMEOUT, mUi->uPowerTimeoutBox);
+    SetConfig(pConfig.powerSupply.ENABLE_POWER_OFF_DELAY, mUi->uPowerOffDelayBox);
+    SetConfig(pConfig.powerSupply.ENABLE_AUTO_POWER_E_TEMP, mUi->uAutoPowerETempBox);
+    SetConfig(pConfig.powerSupply.ENABLE_AUTO_POWER_CHAMBER_TEMP, mUi->uAutoPowerChamberTempBox);
+    SetConfig(pConfig.powerSupply.ENABLE_AUTO_POWER_COOLER_TEMP, mUi->uAutoPowerCoolerTempBox);
 }
 
 void PowerSupplyPage::ReplaceTags(QStringList& pOutput)

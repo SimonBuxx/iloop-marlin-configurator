@@ -39,7 +39,6 @@ class WelcomePage;
 class WelcomePage : public QWidget
 {
     Q_OBJECT
-
 public:
     /// \brief Constructor for the page widget
     ///

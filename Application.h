@@ -26,11 +26,9 @@
 #ifndef APPLICATION_H
 #define APPLICATION_H
 
-#include <QFileInfo>
-#include <QMessageBox>
-
-#include "Configuration.h"
 #include "MainWindow.h"
+
+#include <QFileInfo>
 
 ///
 /// \brief The Application class represents the application
@@ -48,17 +46,15 @@ public:
     ~Application(void) override;
 
 protected slots:
-    /// \brief Exports the given configuration into the given file
+    /// \brief Exports the current configuration into the given file
     ///
     /// \param pFileInfo: The file to export the configuration into
-    /// \param pConfig: The configuration to export
-    void OnExportConfiguration(const QFileInfo& pFileInfo, const Configuration& pConfig);
+    void OnExportConfiguration(const QFileInfo& pFileInfo);
 
     /// \brief Saves the project either in the open location or asks for the file path
     ///
-    /// \param pConfig: The configuration to save
     /// \param pForceSaveAs: If \b true, the software will always ask for the file path
-    void OnSaveProject(const Configuration& pConfig, bool pForceSaveAs = false);
+    void OnSaveProject(bool pForceSaveAs = false);
 
     /// \brief Initializes a new project
     void OnNewProject(void);
@@ -67,11 +63,10 @@ protected slots:
     void OnOpenProject(void);
 
 protected:
-    /// \brief Generates the Configuration.h file from the template using the given config
+    /// \brief Generates the Configuration.h file from the template
     ///
-    /// \param pConfig: Reference to the configuration to write into the Configuration.h
     /// \return The Configuration.h content as a QStringList, if successful
-    std::optional<QStringList> GenerateConfigurationContent(const Configuration& pConfig);
+    std::optional<QStringList> GenerateCode(void);
 
 protected:
     MainWindow mMainWindow;

@@ -28,12 +28,10 @@
 #include "HelperFunctions.h"
 
 HardwarePage::HardwarePage(QWidget *pParent) :
-    AbstractPage(pParent),
+    AbstractPage(HARDWARE_TEMPLATE_PATH, pParent),
     mUi(new Ui::HardwarePage)
 {
     mUi->setupUi(this);
-
-    mTemplate = ReadTemplateFromFile(QFileInfo(HARDWARE_TEMPLATE_PATH));
 }
 
 HardwarePage::~HardwarePage()
@@ -99,30 +97,26 @@ bool HardwarePage::LoadFromJson(const QJsonObject &pJson)
     return success;
 }
 
-HardwareConfiguration HardwarePage::FetchConfiguration()
+void HardwarePage::FetchConfiguration(Configuration& pConfig)
 {
-    HardwareConfiguration config;
+    SetConfig(pConfig.hardware.MOTHERBOARD, mUi->uMotherboardComboBox, true);
+    SetConfig(pConfig.hardware.SERIAL_PORT, mUi->uSerialPortComboBox);
+    SetConfig(pConfig.hardware.BAUDRATE, mUi->uBaudrateComboBox);
+    SetConfig(pConfig.hardware.BAUD_RATE_GCODE, mUi->uBaudRateGCodeBox);
+    SetConfig(pConfig.hardware.SERIAL_PORT_2, mUi->uSerialPort2ComboBox);
+    SetConfig(pConfig.hardware.BAUDRATE_2, mUi->uBaudRate2ComboBox);
+    SetConfig(pConfig.hardware.SERIAL_PORT_3, mUi->uSerialPort3ComboBox);
+    SetConfig(pConfig.hardware.BAUDRATE_3, mUi->uBaudRate3ComboBox);
+    SetConfig(pConfig.hardware.BLUETOOTH, mUi->uBluetoothBox);
+    SetConfig(pConfig.hardware.CUSTOM_MACHINE_NAME, mUi->uPrinterNameEdit);
+    SetConfig(pConfig.hardware.MACHINE_UUID, mUi->uMachineUuidEdit);
 
-    SetConfig(config.MOTHERBOARD, mUi->uMotherboardComboBox, true);
-    SetConfig(config.SERIAL_PORT, mUi->uSerialPortComboBox);
-    SetConfig(config.BAUDRATE, mUi->uBaudrateComboBox);
-    SetConfig(config.BAUD_RATE_GCODE, mUi->uBaudRateGCodeBox);
-    SetConfig(config.SERIAL_PORT_2, mUi->uSerialPort2ComboBox);
-    SetConfig(config.BAUDRATE_2, mUi->uBaudRate2ComboBox);
-    SetConfig(config.SERIAL_PORT_3, mUi->uSerialPort3ComboBox);
-    SetConfig(config.BAUDRATE_3, mUi->uBaudRate3ComboBox);
-    SetConfig(config.BLUETOOTH, mUi->uBluetoothBox);
-    SetConfig(config.CUSTOM_MACHINE_NAME, mUi->uPrinterNameEdit);
-    SetConfig(config.MACHINE_UUID, mUi->uMachineUuidEdit);
-
-    SetConfig(config.ENABLE_SERIAL_PORT_2, mUi->uSerialPort2Box);
-    SetConfig(config.ENABLE_BAUDRATE_2, mUi->uBaudRate2Box);
-    SetConfig(config.ENABLE_SERIAL_PORT_3, mUi->uSerialPort3Box);
-    SetConfig(config.ENABLE_BAUDRATE_3, mUi->uBaudRate3Box);
-    SetConfig(config.ENABLE_CUSTOM_MACHINE_NAME, mUi->uCustomMachineNameBox);
-    SetConfig(config.ENABLE_MACHINE_UUID, mUi->uMachineUuidBox);
-
-    return config;
+    SetConfig(pConfig.hardware.ENABLE_SERIAL_PORT_2, mUi->uSerialPort2Box);
+    SetConfig(pConfig.hardware.ENABLE_BAUDRATE_2, mUi->uBaudRate2Box);
+    SetConfig(pConfig.hardware.ENABLE_SERIAL_PORT_3, mUi->uSerialPort3Box);
+    SetConfig(pConfig.hardware.ENABLE_BAUDRATE_3, mUi->uBaudRate3Box);
+    SetConfig(pConfig.hardware.ENABLE_CUSTOM_MACHINE_NAME, mUi->uCustomMachineNameBox);
+    SetConfig(pConfig.hardware.ENABLE_MACHINE_UUID, mUi->uMachineUuidBox);
 }
 
 void HardwarePage::ReplaceTags(QStringList& pOutput)

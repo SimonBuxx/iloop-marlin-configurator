@@ -40,7 +40,6 @@ class ExtruderPage;
 class ExtruderPage : public AbstractPage
 {
     Q_OBJECT
-
 public:
     /// \brief Constructor for the page widget
     ///
@@ -61,9 +60,13 @@ public:
 
     /// \brief Writes the page parameters into the given Configuration object
     ///
+    /// \param pConfig: Reference to the config to write into
     /// \return Configuration object
-    ExtruderConfiguration FetchConfiguration(void);
+    void FetchConfiguration(Configuration& pConfig) override;
 
+    /// \brief Replaces the tags in the given text with the associated GUI states
+    ///
+    /// \param pOutput: Reference to the text to replace tags in
     void ReplaceTags(QStringList& pOutput) override;
 
 protected:

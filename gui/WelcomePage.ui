@@ -43,10 +43,10 @@ QPushButton:hover {
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <property name="leftMargin">
-    <number>17</number>
+    <number>12</number>
    </property>
    <property name="topMargin">
-    <number>9</number>
+    <number>0</number>
    </property>
    <property name="rightMargin">
     <number>17</number>

@@ -31,6 +31,7 @@
 #include <QLabel>
 
 #include "AboutDialog.h"
+#include "AbstractPage.h"
 #include "Configuration.h"
 
 // Forward declarations
@@ -76,22 +77,20 @@ public:
 
     void ReplaceTags(QStringList& pOutput);
 
-    void JumpToFirstConfigTab(void);
-
     void ResetValues(void);
 
+    void JumpToFirstConfigTab(void);
+
 signals:
-    /// \brief Emitted when a configuration should be exported as a C++ header file
+    /// \brief Emitted when the current configuration should be exported as a C++ header file
     ///
     /// \param pFileInfo: File info of the target file
-    /// \param pConfig: The configuration to export as a Configuration object
-    void ExportConfigurationSignal(const QFileInfo& pFileInfo, const Configuration& pConfig);
+    void ExportConfigurationSignal(const QFileInfo& pFileInfo);
 
     /// \brief Emitted when the current project should be saved
     ///
-    /// \param pConfig: The configuration to save into the project
     /// \param pForceSaveAs: If \b true, the save dialog is always displayed
-    void SaveProjectSignal(const Configuration& pConfig, bool pForceSaveAs = false);
+    void SaveProjectSignal(bool pForceSaveAs = false);
 
     /// \brief Emitted when a new project is being initialized
     void NewProjectSignal(void);
@@ -115,6 +114,8 @@ protected:
 protected:
     Ui::MainWindow *mUi;
     AboutDialog mAboutDialog;
+
+    std::vector<AbstractPage*> mConfigPages;
 
     QLabel mStatusLabel;
     QLabel mMarlinVersionLabel;
