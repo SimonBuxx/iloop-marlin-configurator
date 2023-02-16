@@ -25,6 +25,7 @@
 
 #include "WelcomePage.h"
 #include "./ui_WelcomePage.h"
+#include "Configuration.h"
 
 WelcomePage::WelcomePage(QWidget *pParent) :
     QWidget(pParent),
@@ -34,6 +35,8 @@ WelcomePage::WelcomePage(QWidget *pParent) :
 
     QObject::connect(mUi->uNewProjectButton, &QPushButton::clicked, this, &WelcomePage::NewProjectSignal);
     QObject::connect(mUi->uOpenProjectButton, &QPushButton::clicked, this, &WelcomePage::OpenProjectSignal);
+
+    mUi->uTitleLabel->setText(QString("WELCOME TO iMC v%0").arg(SW_VERSION));
 }
 
 WelcomePage::~WelcomePage()

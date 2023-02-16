@@ -17,11 +17,11 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>iMC - iLOOP Marlin Configurator v0.1.0</string>
+   <string>iMC - iLOOP Marlin Configurator vX.X.X</string>
   </property>
   <property name="windowIcon">
    <iconset resource="../resources/resources.qrc">
-    <normaloff>:/iloop_icon_small.png</normaloff>:/iloop_icon_small.png</iconset>
+    <normaloff>:/imc_icon48.ico</normaloff>:/imc_icon48.ico</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">QWidget {
@@ -279,8 +279,8 @@ QScrollBar::sub-line:vertical
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1059</width>
-                   <height>521</height>
+                   <width>100</width>
+                   <height>30</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_9">
@@ -335,8 +335,8 @@ QScrollBar::sub-line:vertical
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1041</width>
-                   <height>512</height>
+                   <width>100</width>
+                   <height>30</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_7">
@@ -624,8 +624,8 @@ QScrollBar::sub-line:vertical
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1041</width>
-                   <height>512</height>
+                   <width>100</width>
+                   <height>30</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_2">
@@ -681,7 +681,7 @@ QScrollBar::sub-line:vertical
                    <x>0</x>
                    <y>0</y>
                    <width>1059</width>
-                   <height>521</height>
+                   <height>528</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_10">
@@ -736,8 +736,8 @@ QScrollBar::sub-line:vertical
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1041</width>
-                   <height>512</height>
+                   <width>100</width>
+                   <height>30</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_8">
@@ -940,7 +940,7 @@ QPushButton::!checked:hover {
         <property name="geometry">
          <rect>
           <x>0</x>
-          <y>-137</y>
+          <y>0</y>
           <width>206</width>
           <height>631</height>
          </rect>
@@ -1602,7 +1602,7 @@ QPushButton::!checked:hover {
           <x>0</x>
           <y>0</y>
           <width>638</width>
-          <height>199</height>
+          <height>192</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_17">
@@ -1630,6 +1630,7 @@ QPushButton::!checked:hover {
             <string notr="true">QTextBrowser {
 	font-family: &quot;Source Code Pro&quot;;
     selection-background-color: rgb(63, 65, 77);
+	padding: 5px;
 }
 </string>
            </property>
@@ -1723,7 +1724,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
           <x>0</x>
           <y>0</y>
           <width>637</width>
-          <height>199</height>
+          <height>192</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_18">
@@ -1752,6 +1753,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
 	font-family: &quot;Source Code Pro&quot;;
 	color: white;
     selection-background-color: rgb(63, 65, 77);
+	padding: 5px;
 }</string>
            </property>
            <property name="frameShape">

@@ -25,12 +25,16 @@
 
 #include "AboutDialog.h"
 #include "ui_AboutDialog.h"
+#include "Configuration.h"
 
 AboutDialog::AboutDialog(QWidget *pParent) :
     QDialog(pParent),
     mUi(new Ui::AboutDialog)
 {
     mUi->setupUi(this);
+
+    mUi->uTitleLabel->setText(QString("iLOOP Marlin Configurator v%0").arg(SW_VERSION));
+    mUi->uMarlinLabel->setText(QString("for Marlin v%0").arg(MARLIN_VERSION));
 }
 
 AboutDialog::~AboutDialog()

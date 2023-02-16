@@ -38,9 +38,11 @@ MainWindow::MainWindow(QWidget *pParent)
     , mUi(new Ui::MainWindow)
     , mAboutDialog(this)
     , mStatusLabel("Project: -")
-    , mMarlinVersionLabel("Marlin Version: v2.1.2")
+    , mMarlinVersionLabel(QString("Marlin Version: v%0").arg(MARLIN_VERSION))
 {
-    mUi->setupUi(this);    
+    mUi->setupUi(this);
+
+    setWindowTitle(QString("iMC - iLOOP Marlin Configurator v%0").arg(SW_VERSION));
 
     // Initialize dock widgets
     tabifyDockWidget(mUi->uConsoleDock, mUi->uCodePreviewDock);
@@ -278,7 +280,7 @@ void MainWindow::SetProjectName(const std::optional<QString>& pName)
 {
 
     mStatusLabel.setText(QString("Project: %0").arg(pName.value_or("-")));
-    setWindowTitle(QString("%0iMC - iLOOP Marlin Configurator v0.1.0").arg(pName.has_value() ? pName.value() + " - " : ""));
+    setWindowTitle(QString("%0iMC - iLOOP Marlin Configurator v%1").arg(pName.has_value() ? pName.value() + " - " : "", SW_VERSION));
 }
 
 bool MainWindow::LoadProject(const QJsonObject& pJson)

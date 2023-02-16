@@ -27,11 +27,16 @@
 #include "./ui_HardwarePage.h"
 #include "HelperFunctions.h"
 
+#include <QToolButton>
+
 HardwarePage::HardwarePage(QWidget *pParent) :
     AbstractPage(HARDWARE_TEMPLATE_PATH, pParent),
     mUi(new Ui::HardwarePage)
 {
     mUi->setupUi(this);
+
+    // Set the clear button icon of the board search bar
+    mUi->uMotherBoardSearchBox->findChild<QToolButton*>()->setIcon(QIcon(":/close_FILL0_wght100_GRAD0_opsz20_white.svg"));
 }
 
 HardwarePage::~HardwarePage()
@@ -44,7 +49,21 @@ void HardwarePage::ConnectGuiSignalsAndSlots()
     QObject::connect(mUi->uDocumentationButton, &QPushButton::clicked, this, [&]()
     {
         OpenMarlinDocumentation("hardware-info");
-    }); 
+    });
+
+    QObject::connect(mUi->uMotherBoardSearchBox, &QLineEdit::textChanged, this, [&](const QString& pText)
+    {
+        const auto& index = mUi->uMotherboardComboBox->findText(pText, Qt::MatchFlag::MatchContains);
+        if (index >= 0 && !pText.isEmpty())
+        {
+            mUi->uMotherboardComboBox->setCurrentIndex(index);
+        }
+    });
+
+    QObject::connect(mUi->uGenerateUuidButton, &QPushButton::clicked, this, [&]()
+    {
+        mUi->uMachineUuidEdit->setText(QUuid::createUuid().toString(QUuid::WithoutBraces));
+    });
 
     AbstractPage::ConnectGuiSignalsAndSlots();
 }
@@ -69,6 +88,8 @@ void HardwarePage::ResetValues()
     mUi->uBaudRate3Box->setChecked(defaults::ENABLE_BAUDRATE_3);
     mUi->uCustomMachineNameBox->setChecked(defaults::ENABLE_CUSTOM_MACHINE_NAME);
     mUi->uMachineUuidBox->setChecked(defaults::ENABLE_MACHINE_UUID);
+
+    mUi->uMotherBoardSearchBox->clear();
 }
 
 bool HardwarePage::LoadFromJson(const QJsonObject &pJson)

@@ -23,6 +23,10 @@ QWidget {
 		background: none;
 }
 
+QMenu {
+    background-color: rgb(34, 35, 40);
+}
+
 QLabel:!disabled {
 	color: white;
 }
@@ -136,6 +140,7 @@ QPushButton {
 QPushButton:disabled {
 	background: rgb(34, 35, 40);
 	color: rgb(180, 180, 180);
+	border: 1px solid rgb(26, 26, 30);
 }
 
 QPushButton:hover {
@@ -543,7 +548,7 @@ QAbstractSpinBox::down-button:off {
                <bool>true</bool>
               </property>
               <property name="checked">
-               <bool>false</bool>
+               <bool>true</bool>
               </property>
               <layout class="QHBoxLayout" name="horizontalLayout_10">
                <item>
@@ -584,7 +589,7 @@ QAbstractSpinBox::down-button:off {
                <bool>true</bool>
               </property>
               <property name="checked">
-               <bool>false</bool>
+               <bool>true</bool>
               </property>
               <layout class="QHBoxLayout" name="horizontalLayout_11">
                <item>
@@ -625,7 +630,7 @@ QAbstractSpinBox::down-button:off {
                <bool>true</bool>
               </property>
               <property name="checked">
-               <bool>false</bool>
+               <bool>true</bool>
               </property>
               <layout class="QHBoxLayout" name="horizontalLayout_12">
                <item>
@@ -690,7 +695,7 @@ QAbstractSpinBox::down-button:off {
             <bool>true</bool>
            </property>
            <property name="checked">
-            <bool>false</bool>
+            <bool>true</bool>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_14">
             <property name="spacing">
@@ -983,7 +988,7 @@ QAbstractSpinBox::down-button:off {
             <bool>true</bool>
            </property>
            <property name="checked">
-            <bool>false</bool>
+            <bool>true</bool>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_13">
             <property name="spacing">
@@ -1027,7 +1032,7 @@ QAbstractSpinBox::down-button:off {
             <bool>true</bool>
            </property>
            <property name="checked">
-            <bool>false</bool>
+            <bool>true</bool>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_5">
             <property name="spacing">

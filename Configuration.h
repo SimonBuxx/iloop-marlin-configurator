@@ -30,6 +30,9 @@
 #include <cstdint>
 #include <string>
 
+static constexpr auto SW_VERSION{"0.1.0"};
+static constexpr auto MARLIN_VERSION{"2.1.2"};
+
 static constexpr auto TEMPLATE_PATH{":/configuration_template.txt"};
 static constexpr auto FIRMWARE_TEMPLATE_PATH{":/firmware_template.txt"};
 static constexpr auto HARDWARE_TEMPLATE_PATH{":/hardware_template.txt"};

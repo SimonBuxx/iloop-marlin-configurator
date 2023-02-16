@@ -6,11 +6,8 @@
         <file>export_notes_FILL0_wght100_GRAD0_opsz20.svg</file>
         <file>info_FILL0_wght100_GRAD0_opsz20.svg</file>
         <file>bolt_FILL0_wght100_GRAD0_opsz20.svg</file>
-        <file>device_thermostat_FILL0_wght100_GRAD0_opsz20.svg</file>
         <file>sensors_FILL0_wght100_GRAD0_opsz20.svg</file>
         <file>open_in_new_FILL0_wght100_GRAD0_opsz20.svg</file>
-        <file>iloop_alpha.png</file>
-        <file>iloop_icon_small.png</file>
         <file>SourceCodePro-Regular.ttf</file>
         <file>check_FILL0_wght400_GRAD0_opsz20.png</file>
         <file>radio_button_checked_FILL0_wght400_GRAD0_opsz20.svg</file>
@@ -40,7 +37,6 @@
         <file>precision_manufacturing_FILL0_wght100_GRAD0_opsz20.svg</file>
         <file>settings_FILL0_wght100_GRAD0_opsz20.svg</file>
         <file>height_FILL0_wght100_GRAD0_opsz20.svg</file>
-        <file>erig_transparent.png</file>
         <file>tips_and_updates_FILL0_wght100_GRAD0_opsz20.svg</file>
         <file>SourceSansPro-Light.ttf</file>
         <file>SourceSansPro-LightItalic.ttf</file>
@@ -51,5 +47,9 @@
         <file>extruder_template.txt</file>
         <file>hardware_template.txt</file>
         <file>powersupply_template.txt</file>
+        <file>close_FILL0_wght100_GRAD0_opsz20_white.svg</file>
+        <file>search_FILL0_wght100_GRAD0_opsz20.svg</file>
+        <file>imc_icon48.ico</file>
+        <file>imc_logo.png</file>
     </qresource>
 </RCC>
