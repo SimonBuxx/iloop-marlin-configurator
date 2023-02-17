@@ -147,6 +147,34 @@ QScrollBar::add-line:vertical
 QScrollBar::sub-line:vertical
 {
     height: 0px;
+}
+
+QScrollBar:horizontal
+{
+    height: 12px;
+	border: none;
+	background: rgb(34, 35, 40);
+}
+
+QScrollBar::handle:horizontal
+{
+    background: rgb(63, 65, 77);
+    min-height: 12px;
+}
+
+QScrollBar::handle:horizontal:hover
+{
+    background: rgb(75, 77, 91);
+}
+
+QScrollBar::add-line:horizontal
+{
+    width: 0px;
+}
+
+QScrollBar::sub-line:horizontal
+{
+    width: 0px;
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -203,7 +231,7 @@ QScrollBar::sub-line:vertical
          </property>
          <property name="minimumSize">
           <size>
-           <width>1000</width>
+           <width>100</width>
            <height>0</height>
           </size>
          </property>
@@ -242,7 +270,7 @@ QScrollBar::sub-line:vertical
             </property>
             <property name="minimumSize">
              <size>
-              <width>1000</width>
+              <width>100</width>
               <height>0</height>
              </size>
             </property>
