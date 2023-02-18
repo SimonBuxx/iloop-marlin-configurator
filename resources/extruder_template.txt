@@ -5,16 +5,16 @@
 #{EXTRUDERS}
 
 // Generally expected filament diameter (1.75, 2.85, 3.0, ...). Used for Volumetric, Filament Width Sensor, etc.
-#define DEFAULT_NOMINAL_FILAMENT_DIA 1.75
+#{DEFAULT_NOMINAL_FILAMENT_DIA}
 
 // For Cyclops or any "multi-extruder" that shares a single nozzle.
-//#define SINGLENOZZLE
+#{SINGLENOZZLE}
 
 // Save and restore temperature and fan speed on tool-change.
 // Set standby for the unselected tool with M104/106/109 T...
 #if ENABLED(SINGLENOZZLE)
-  //#define SINGLENOZZLE_STANDBY_TEMP
-  //#define SINGLENOZZLE_STANDBY_FAN
+  #{SINGLENOZZLE_STANDBY_TEMP}
+  #{SINGLENOZZLE_STANDBY_FAN}
 #endif
 
 // @section multi-material
@@ -33,25 +33,25 @@
  * See additional options in Configuration_adv.h.
  * :["PRUSA_MMU1", "PRUSA_MMU2", "PRUSA_MMU2S", "EXTENDABLE_EMU_MMU2", "EXTENDABLE_EMU_MMU2S"]
  */
-//#define MMU_MODEL PRUSA_MMU2
+#{MMU_MODEL}
 
 // A dual extruder that uses a single stepper motor
-//#define SWITCHING_EXTRUDER
+#{SWITCHING_EXTRUDER}
 #if ENABLED(SWITCHING_EXTRUDER)
-  #define SWITCHING_EXTRUDER_SERVO_NR 0
-  #define SWITCHING_EXTRUDER_SERVO_ANGLES { 0, 90 } // Angles for E0, E1[, E2, E3]
+  #{SWITCHING_EXTRUDER_SERVO_NR}
+  #{SWITCHING_EXTRUDER_SERVO_ANGLES} // Angles for E0, E1[, E2, E3]
   #if EXTRUDERS > 3
-    #define SWITCHING_EXTRUDER_E23_SERVO_NR 1
+    #{SWITCHING_EXTRUDER_E23_SERVO_NR}
   #endif
 #endif
 
 // A dual-nozzle that uses a servomotor to raise/lower one (or both) of the nozzles
-//#define SWITCHING_NOZZLE
+#{SWITCHING_NOZZLE}
 #if ENABLED(SWITCHING_NOZZLE)
-  #define SWITCHING_NOZZLE_SERVO_NR 0
-  //#define SWITCHING_NOZZLE_E1_SERVO_NR 1          // If two servos are used, the index of the second
-  #define SWITCHING_NOZZLE_SERVO_ANGLES { 0, 90 }   // Angles for E0, E1 (single servo) or lowered/raised (dual servo)
-  #define SWITCHING_NOZZLE_SERVO_DWELL 2500         // Dwell time to wait for servo to make physical move
+  #{SWITCHING_NOZZLE_SERVO_NR}
+  #{SWITCHING_NOZZLE_E1_SERVO_NR}       // If two servos are used, the index of the second
+  #{SWITCHING_NOZZLE_SERVO_ANGLES}   // Angles for E0, E1 (single servo) or lowered/raised (dual servo)
+  #{SWITCHING_NOZZLE_SERVO_DWELL}         // Dwell time to wait for servo to make physical move
 #endif
 
 /**

@@ -32,6 +32,7 @@
 #include <QGroupBox>
 #include <QLineEdit>
 #include <QSpinBox>
+#include <QDoubleSpinBox>
 #include <QCheckBox>
 #include <QDesktopServices>
 #include <QFile>
@@ -150,6 +151,22 @@ inline bool LoadConfig(T& pWidget, const QJsonObject &pJson, const QString& pAtt
     return false;
 }
 
+/// \brief Sets the given QDoubleSpinBox to the value given in the JSON object
+///
+/// \param pWidget: Reference to the QDoubleSpinBox widget
+/// \param pJson: Reference to the JSON object containing the attribute
+/// \param pAttribute: The name of the JSON attribute
+/// \return \b true, if the JSON contains the parameter of type double
+inline bool LoadConfig(QDoubleSpinBox* pWidget, const QJsonObject &pJson, const QString& pAttribute)
+{
+    if (pJson.contains(pAttribute) && pJson[pAttribute].isDouble())
+    {
+        pWidget->setValue(pJson[pAttribute].toDouble());
+        return true;
+    }
+    return false;
+}
+
 /// \brief Sets the given checkbox to the value given in the JSON object
 ///
 /// \param pWidget: Pointer to the widget
@@ -237,6 +254,16 @@ inline void SetConfig(int32_t& pConfigItem, const T& pWidget)
     pConfigItem = pWidget->value();
 }
 
+/// \brief Sets the given double to the widget's (e.g. QDoubleSpinBox) value
+///
+/// \param pConfigItem: Reference to the double to set
+/// \param pWidget: Reference to the widget
+template <typename T>
+inline void SetConfig(double& pConfigItem, const T& pWidget)
+{
+    pConfigItem = pWidget->value();
+}
+
 inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const Dropdown* pWidget, bool pCommentOut, const QString& pParam, bool pUseItemInBrackets = false)
 {
     if (pUseItemInBrackets)
@@ -251,13 +278,13 @@ inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const Drop
 
 inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const QCheckBox* pWidget, const QString& pParam)
 {
-    pOutput.replaceInStrings(pTagName, QString("%0#define %1").arg(pWidget->isChecked() ? "" : "//", pParam));
+    pOutput.replaceInStrings(pTagName, QString("%0#define %1").arg(pWidget->isChecked() && pWidget->isEnabled() ? "" : "//", pParam));
 }
 
 inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const QGroupBox* pWidget, const QString& pParam)
 {
     Q_ASSERT(pWidget->isCheckable());
-    pOutput.replaceInStrings(pTagName, QString("%0#define %1").arg(pWidget->isChecked() ? "" : "//", pParam));
+    pOutput.replaceInStrings(pTagName, QString("%0#define %1").arg(pWidget->isChecked() && pWidget->isEnabled() ? "" : "//", pParam));
 }
 
 inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const QLineEdit* pWidget, bool pCommentOut, const QString& pParam, bool pUseParentheses = false)
@@ -266,6 +293,26 @@ inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const QLin
 }
 
 inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const QSpinBox* pWidget, bool pCommentOut, const QString& pParam)
+{
+    pOutput.replaceInStrings(pTagName, QString("%0#define %1 %2").arg(pCommentOut ? "//" : "", pParam, pCommentOut ? "" : QString::number(pWidget->value())));
+}
+
+inline void ReplaceArrayTag(QStringList& pOutput, const QString& pTagName, bool pCommentOut, const QString& pParam, std::vector<int32_t> pVector)
+{
+    QString array = "{ ";
+    for (int i = 0; i < pVector.size(); i++)
+    {
+        array.append(QString::number(pVector.at(i)));
+        if (i < pVector.size() - 1)
+        {
+            array.append(", ");
+        }
+    }
+    array.append(" }");
+    pOutput.replaceInStrings(pTagName, QString("%0#define %1 %2").arg(pCommentOut ? "//" : "", pParam, pCommentOut ? "" : array));
+}
+
+inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const QDoubleSpinBox* pWidget, bool pCommentOut, const QString& pParam)
 {
     pOutput.replaceInStrings(pTagName, QString("%0#define %1 %2").arg(pCommentOut ? "//" : "", pParam, pCommentOut ? "" : QString::number(pWidget->value())));
 }

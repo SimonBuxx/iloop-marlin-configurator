@@ -1769,7 +1769,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
           <number>0</number>
          </property>
          <item row="0" column="0">
-          <widget class="QPlainTextEdit" name="uPreviewEdit">
+          <widget class="QTextEdit" name="uPreviewEdit">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -1777,7 +1777,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
             </sizepolicy>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPlainTextEdit {
+            <string notr="true">QTextEdit {
 	font-family: &quot;Source Code Pro&quot;;
 	color: white;
     selection-background-color: rgb(63, 65, 77);
@@ -1790,14 +1790,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <property name="frameShadow">
             <enum>QFrame::Plain</enum>
            </property>
-           <property name="undoRedoEnabled">
-            <bool>false</bool>
-           </property>
            <property name="readOnly">
             <bool>true</bool>
-           </property>
-           <property name="plainText">
-            <string/>
            </property>
           </widget>
          </item>

@@ -106,6 +106,7 @@ void MainWindow::ConnectGuiSignalsAndSlots()
         auto&& page = mUi->stackedWidget->currentWidget()->findChild<AbstractPage*>();
         if (nullptr != page)
         {
+            mUi->uPreviewEdit->verticalScrollBar()->setSliderPosition(0);
             page->OnUpdatePreview();
         }
         else
@@ -229,7 +230,9 @@ void MainWindow::UpdateActiveTabButtonColor()
 
 void MainWindow::OnUpdatePreview(const QStringList& pPreviewCode)
 {
+    const auto& val = mUi->uPreviewEdit->verticalScrollBar()->value();
     mUi->uPreviewEdit->setPlainText(pPreviewCode.join('\n'));
+    mUi->uPreviewEdit->verticalScrollBar()->setValue(val);
 }
 
 void MainWindow::ResetValues()

@@ -65,6 +65,11 @@ void AbstractPage::ConnectGuiSignalsAndSlots()
     {
         QObject::connect(spinBox, &QSpinBox::valueChanged, this, &AbstractPage::OnUpdatePreview);
     }
+
+    for (auto&& spinBox : findChildren<QDoubleSpinBox*>())
+    {
+        QObject::connect(spinBox, &QDoubleSpinBox::valueChanged, this, &AbstractPage::OnUpdatePreview);
+    }
 }
 
 void AbstractPage::OnUpdatePreview()
