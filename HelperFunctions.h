@@ -268,11 +268,11 @@ inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const Drop
 {
     if (pUseItemInBrackets)
     {
-        pOutput.replaceInStrings(pTagName, QString("%0#define %1 %2").arg(pCommentOut ? "//" : "", pParam, pCommentOut ? "" : ExtractFlagNameInSquareBrackets(pWidget->currentText())));
+        pOutput.replaceInStrings(pTagName, QString("%0#define %1 %2").arg((!pWidget->isEnabled() || pCommentOut) ? "//" : "", pParam, (!pWidget->isEnabled() || pCommentOut) ? "" : ExtractFlagNameInSquareBrackets(pWidget->currentText())));
     }
     else
     {
-        pOutput.replaceInStrings(pTagName, QString("%0#define %1 %2").arg(pCommentOut ? "//" : "", pParam, pCommentOut ? "" : pWidget->currentText()));
+        pOutput.replaceInStrings(pTagName, QString("%0#define %1 %2").arg((!pWidget->isEnabled() || pCommentOut) ? "//" : "", pParam, (!pWidget->isEnabled() || pCommentOut) ? "" : pWidget->currentText()));
     }
 }
 
@@ -289,12 +289,12 @@ inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const QGro
 
 inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const QLineEdit* pWidget, bool pCommentOut, const QString& pParam, bool pUseParentheses = false)
 {
-    pOutput.replaceInStrings(pTagName, QString(pUseParentheses ? "%0#define %1 \"%2\"" : "%0#define %1 %2").arg(pCommentOut ? "//" : "", pParam, pCommentOut ? "" : pWidget->text()));
+    pOutput.replaceInStrings(pTagName, QString(pUseParentheses ? "%0#define %1 \"%2\"" : "%0#define %1 %2").arg((!pWidget->isEnabled() || pCommentOut) ? "//" : "", pParam, (!pWidget->isEnabled() || pCommentOut) ? "" : pWidget->text()));
 }
 
 inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const QSpinBox* pWidget, bool pCommentOut, const QString& pParam)
 {
-    pOutput.replaceInStrings(pTagName, QString("%0#define %1 %2").arg(pCommentOut ? "//" : "", pParam, pCommentOut ? "" : QString::number(pWidget->value())));
+    pOutput.replaceInStrings(pTagName, QString("%0#define %1 %2").arg((!pWidget->isEnabled() || pCommentOut) ? "//" : "", pParam, (!pWidget->isEnabled() || pCommentOut) ? "" : QString::number(pWidget->value())));
 }
 
 inline void ReplaceArrayTag(QStringList& pOutput, const QString& pTagName, bool pCommentOut, const QString& pParam, std::vector<int32_t> pVector)
@@ -314,7 +314,7 @@ inline void ReplaceArrayTag(QStringList& pOutput, const QString& pTagName, bool 
 
 inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const QDoubleSpinBox* pWidget, bool pCommentOut, const QString& pParam)
 {
-    pOutput.replaceInStrings(pTagName, QString("%0#define %1 %2").arg(pCommentOut ? "//" : "", pParam, pCommentOut ? "" : QString::number(pWidget->value())));
+    pOutput.replaceInStrings(pTagName, QString("%0#define %1 %2").arg((!pWidget->isEnabled() || pCommentOut) ? "//" : "", pParam, (!pWidget->isEnabled() || pCommentOut) ? "" : QString::number(pWidget->value())));
 }
 
 inline void OpenMarlinDocumentation(const QString& pChapterName)

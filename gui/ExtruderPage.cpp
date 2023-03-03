@@ -248,4 +248,25 @@ void ExtruderPage::ReplaceTags(QStringList& pOutput)
         ReplaceArrayTag(pOutput, "#{SWITCHING_NOZZLE_SERVO_ANGLES}", !mUi->uSwitchingNozzleBox->isChecked(), "SWITCHING_NOZZLE_SERVO_ANGLES", std::vector<int32_t>{e0, e1});
     }
     ReplaceTag(pOutput, "#{SWITCHING_NOZZLE_SERVO_DWELL}", mUi->uSwitchingNozzleServoDwellSpinBox, !mUi->uSwitchingNozzleBox->isChecked(), "SWITCHING_NOZZLE_SERVO_DWELL");
+
+    ReplaceTag(pOutput, "#{PARKING_EXTRUDER}", mUi->uParkingExtruderBox, "PARKING_EXTRUDER");
+    ReplaceTag(pOutput, "#{MAGNETIC_PARKING_EXTRUDER}", mUi->uMagneticParkingExtruderBox, "MAGNETIC_PARKING_EXTRUDER");
+    {
+        const auto& x0 = mUi->uParkingExtruderParkingX0SpinBox->value();
+        const auto& x1 = mUi->uParkingExtruderParkingX1SpinBox->value();
+        ReplaceArrayTag(pOutput, "#{PARKING_EXTRUDER_PARKING_X}", !mUi->uParkingExtruderBox->isChecked() && !mUi->uMagneticParkingExtruderBox->isChecked(), "PARKING_EXTRUDER_PARKING_X", std::vector<int32_t>{x0, x1});
+    }
+    ReplaceTag(pOutput, "#{PARKING_EXTRUDER_GRAB_DISTANCE}", mUi->uParkingExtruderGrabDistanceSpinBox, !mUi->uParkingExtruderBox->isChecked() && !mUi->uMagneticParkingExtruderBox->isChecked(), "PARKING_EXTRUDER_GRAB_DISTANCE");
+    ReplaceTag(pOutput, "#{PARKING_EXTRUDER_SOLENOIDS_INVERT}", mUi->uParkingExtruderSolenoidsInvertBox, "PARKING_EXTRUDER_SOLENOIDS_INVERT");
+    ReplaceTag(pOutput, "#{PARKING_EXTRUDER_SOLENOIDS_PINS_ACTIVE}", mUi->uParkingExtruderSolenoidsPinsActiveDropdown, false, "PARKING_EXTRUDER_SOLENOIDS_PINS_ACTIVE");
+    ReplaceTag(pOutput, "#{PARKING_EXTRUDER_SOLENOIDS_DELAY}", mUi->uParkingExtruderSolenoidsDelaySpinBox, false, "PARKING_EXTRUDER_SOLENOIDS_DELAY");
+    ReplaceTag(pOutput, "#{MANUAL_SOLENOID_CONTROL}", mUi->uManualSolenoidControlBox, "MANUAL_SOLENOID_CONTROL");
+    ReplaceTag(pOutput, "#{MPE_FAST_SPEED}", mUi->uMpeFastSpeedSpinBox, false, "MPE_FAST_SPEED");
+    ReplaceTag(pOutput, "#{MPE_SLOW_SPEED}", mUi->uMpeSlowSpeedSpinBox, false, "MPE_SLOW_SPEED");
+    ReplaceTag(pOutput, "#{MPE_TRAVEL_DISTANCE}", mUi->uMpeTravelDistanceSpinBox, false, "MPE_TRAVEL_DISTANCE");
+    ReplaceTag(pOutput, "#{MPE_COMPENSATION}", mUi->uMpeCompensationDropdown, false, "MPE_COMPENSATION");
+
+    ReplaceTag(pOutput, "#{SWITCHING_TOOLHEAD}", mUi->uSwitchingToolheadBox, "SWITCHING_TOOLHEAD");
+    ReplaceTag(pOutput, "#{MAGNETIC_SWITCHING_TOOLHEAD}", mUi->uMagneticSwitchingToolheadBox, "MAGNETIC_SWITCHING_TOOLHEAD");
+    ReplaceTag(pOutput, "#{ELECTROMAGNETIC_SWITCHING_TOOLHEAD}", mUi->uElectromagneticSwitchingToolheadBox, "ELECTROMAGNETIC_SWITCHING_TOOLHEAD");
 }

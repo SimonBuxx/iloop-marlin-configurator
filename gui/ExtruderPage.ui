@@ -529,7 +529,7 @@ QTabBar::tab:!selected {
 }</string>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tab_5">
       <attribute name="title">
@@ -923,6 +923,12 @@ QTabBar::tab:!selected {
                       <property name="suffix">
                        <string> mm/min</string>
                       </property>
+                      <property name="maximum">
+                       <number>100000</number>
+                      </property>
+                      <property name="stepType">
+                       <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+                      </property>
                      </widget>
                     </item>
                    </layout>
@@ -972,6 +978,12 @@ QTabBar::tab:!selected {
                      <widget class="QSpinBox" name="uMpeFastSpeedSpinBox">
                       <property name="suffix">
                        <string> mm/min</string>
+                      </property>
+                      <property name="maximum">
+                       <number>100000</number>
+                      </property>
+                      <property name="stepType">
+                       <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
                       </property>
                      </widget>
                     </item>
@@ -1025,6 +1037,12 @@ QTabBar::tab:!selected {
                       </property>
                       <property name="prefix">
                        <string/>
+                      </property>
+                      <property name="maximum">
+                       <number>1000</number>
+                      </property>
+                      <property name="stepType">
+                       <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
                       </property>
                      </widget>
                     </item>
