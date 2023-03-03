@@ -537,7 +537,7 @@ QAbstractSpinBox::down-button:off {
              </widget>
             </item>
             <item row="2" column="0" colspan="2">
-             <widget class="QSpinBox" name="uAutoPowerETempEdit">
+             <widget class="QSpinBox" name="uAutoPowerETempSpinBox">
               <property name="enabled">
                <bool>true</bool>
               </property>
@@ -597,7 +597,7 @@ QAbstractSpinBox::down-button:off {
              </widget>
             </item>
             <item row="2" column="0" colspan="2">
-             <widget class="QSpinBox" name="uAutoPowerChamberTempEdit">
+             <widget class="QSpinBox" name="uAutoPowerChamberTempSpinBox">
               <property name="enabled">
                <bool>true</bool>
               </property>
@@ -657,7 +657,7 @@ QAbstractSpinBox::down-button:off {
              </widget>
             </item>
             <item row="2" column="0" colspan="2">
-             <widget class="QSpinBox" name="uAutoPowerCoolerTempEdit">
+             <widget class="QSpinBox" name="uAutoPowerCoolerTempSpinBox">
               <property name="enabled">
                <bool>true</bool>
               </property>
@@ -751,7 +751,7 @@ QAbstractSpinBox::down-button:off {
           </widget>
          </item>
          <item row="1" column="0">
-          <widget class="QGroupBox" name="uPsuPowerUpDelayBox">
+          <widget class="QGroupBox" name="uPsuPowerupDelayBox">
            <property name="title">
             <string>PSU_POWERUP_DELAY</string>
            </property>
@@ -795,7 +795,7 @@ QAbstractSpinBox::down-button:off {
              </widget>
             </item>
             <item row="2" column="0" colspan="2">
-             <widget class="QSpinBox" name="uPsuPowerUpDelayEdit">
+             <widget class="QSpinBox" name="uPsuPowerupDelaySpinBox">
               <property name="enabled">
                <bool>true</bool>
               </property>
@@ -823,7 +823,7 @@ QAbstractSpinBox::down-button:off {
           </widget>
          </item>
          <item row="3" column="0">
-          <widget class="QGroupBox" name="uPsuPowerUpCodeBox">
+          <widget class="QGroupBox" name="uPsuPowerupGcodeBox">
            <property name="title">
             <string>PSU_POWERUP_CODE</string>
            </property>
@@ -864,7 +864,7 @@ QAbstractSpinBox::down-button:off {
              </widget>
             </item>
             <item row="2" column="0" colspan="2">
-             <widget class="QLineEdit" name="uPsuPowerUpCodeEdit">
+             <widget class="QLineEdit" name="uPsuPowerupGcodeEdit">
               <property name="enabled">
                <bool>true</bool>
               </property>
@@ -874,7 +874,7 @@ QAbstractSpinBox::down-button:off {
           </widget>
          </item>
          <item row="1" column="1">
-          <widget class="QGroupBox" name="uLedPowerOffTimeoutBox">
+          <widget class="QGroupBox" name="uLedPoweroffTimeoutBox">
            <property name="enabled">
             <bool>true</bool>
            </property>
@@ -921,7 +921,7 @@ QAbstractSpinBox::down-button:off {
              </widget>
             </item>
             <item row="2" column="0" colspan="2">
-             <widget class="QSpinBox" name="uLedPowerOffTimeoutEdit">
+             <widget class="QSpinBox" name="uLedPoweroffTimeoutSpinBox">
               <property name="enabled">
                <bool>true</bool>
               </property>
@@ -949,7 +949,7 @@ QAbstractSpinBox::down-button:off {
           </widget>
          </item>
          <item row="3" column="1">
-          <widget class="QGroupBox" name="uPsuPowerOffCodeBox">
+          <widget class="QGroupBox" name="uPsuPoweroffGcodeBox">
            <property name="enabled">
             <bool>true</bool>
            </property>
@@ -993,7 +993,7 @@ QAbstractSpinBox::down-button:off {
              </widget>
             </item>
             <item row="2" column="0" colspan="2">
-             <widget class="QLineEdit" name="uPsuPowerOffCodeEdit">
+             <widget class="QLineEdit" name="uPsuPoweroffGcodeEdit">
               <property name="enabled">
                <bool>true</bool>
               </property>
@@ -1134,7 +1134,7 @@ QAbstractSpinBox::down-button:off {
              </widget>
             </item>
             <item row="2" column="0" colspan="2">
-             <widget class="Dropdown" name="uPsuActiveStateComboBox">
+             <widget class="Dropdown" name="uPsuActiveStateDropdown">
               <property name="enabled">
                <bool>true</bool>
               </property>
@@ -1256,7 +1256,7 @@ QAbstractSpinBox::down-button:off {
              </widget>
             </item>
             <item row="0" column="2">
-             <widget class="QGroupBox" name="uAutoPowerControllerFanBox">
+             <widget class="QGroupBox" name="uAutoPowerControllerfanBox">
               <property name="title">
                <string>AUTO_POWER_CONTROLLERFAN</string>
               </property>
@@ -1450,7 +1450,7 @@ QAbstractSpinBox::down-button:off {
                 </widget>
                </item>
                <item row="2" column="0" colspan="2">
-                <widget class="QSpinBox" name="uPowerOffDelayEdit">
+                <widget class="QSpinBox" name="uPowerOffDelaySpinBox">
                  <property name="enabled">
                   <bool>true</bool>
                  </property>
@@ -1507,7 +1507,7 @@ QAbstractSpinBox::down-button:off {
                 </widget>
                </item>
                <item row="2" column="0" colspan="2">
-                <widget class="QSpinBox" name="uPowerTimeoutEdit">
+                <widget class="QSpinBox" name="uPowerTimeoutSpinBox">
                  <property name="enabled">
                   <bool>true</bool>
                  </property>

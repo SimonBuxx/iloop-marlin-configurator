@@ -331,7 +331,7 @@ QAbstractSpinBox::down-button:off {
           </widget>
          </item>
          <item row="1" column="0" colspan="3">
-          <widget class="QLineEdit" name="uAuthorNameEdit">
+          <widget class="QLineEdit" name="uStringConfigHAuthorEdit">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
              <horstretch>0</horstretch>

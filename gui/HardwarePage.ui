@@ -352,7 +352,7 @@ QAbstractSpinBox::down-button:off {
           </widget>
          </item>
          <item row="2" column="0" colspan="2">
-          <widget class="Dropdown" name="uSerialPortComboBox">
+          <widget class="Dropdown" name="uSerialPortDropdown">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
              <horstretch>0</horstretch>
@@ -456,7 +456,7 @@ QAbstractSpinBox::down-button:off {
           </widget>
          </item>
          <item row="2" column="0" colspan="2">
-          <widget class="Dropdown" name="uBaudrateComboBox">
+          <widget class="Dropdown" name="uBaudrateDropdown">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
              <horstretch>0</horstretch>
@@ -520,7 +520,7 @@ QAbstractSpinBox::down-button:off {
        </widget>
       </item>
       <item>
-       <widget class="QGroupBox" name="uBaudRateGCodeBox">
+       <widget class="QGroupBox" name="uBaudRateGcodeBox">
         <property name="title">
          <string>BAUD_RATE_GCODE</string>
         </property>
@@ -682,7 +682,7 @@ QAbstractSpinBox::down-button:off {
        <number>10</number>
       </property>
       <item row="2" column="0" colspan="2">
-       <widget class="Dropdown" name="uMotherboardComboBox">
+       <widget class="Dropdown" name="uMotherboardDropdown">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -2587,7 +2587,7 @@ QAbstractSpinBox::down-button:off {
           </widget>
          </item>
          <item row="1" column="0" rowspan="2" colspan="3">
-          <widget class="Dropdown" name="uSerialPort2ComboBox">
+          <widget class="Dropdown" name="uSerialPort2Dropdown">
            <property name="font">
             <font>
              <family>Source Sans Pro</family>
@@ -2653,7 +2653,7 @@ QAbstractSpinBox::down-button:off {
           </widget>
          </item>
          <item row="3" column="0" colspan="3">
-          <widget class="QGroupBox" name="uBaudRate2Box">
+          <widget class="QGroupBox" name="uBaudrate2Box">
            <property name="title">
             <string>BAUDRATE_2</string>
            </property>
@@ -2694,7 +2694,7 @@ QAbstractSpinBox::down-button:off {
              </widget>
             </item>
             <item row="2" column="0" colspan="2">
-             <widget class="Dropdown" name="uBaudRate2ComboBox">
+             <widget class="Dropdown" name="uBaudrate2Dropdown">
               <property name="enabled">
                <bool>true</bool>
               </property>
@@ -2799,7 +2799,7 @@ QAbstractSpinBox::down-button:off {
           <number>10</number>
          </property>
          <item row="2" column="0" colspan="2">
-          <widget class="QGroupBox" name="uBaudRate3Box">
+          <widget class="QGroupBox" name="uBaudrate3Box">
            <property name="title">
             <string>BAUDRATE_3</string>
            </property>
@@ -2837,7 +2837,7 @@ QAbstractSpinBox::down-button:off {
              </widget>
             </item>
             <item row="2" column="0" colspan="2">
-             <widget class="Dropdown" name="uBaudRate3ComboBox">
+             <widget class="Dropdown" name="uBaudrate3Dropdown">
               <property name="enabled">
                <bool>true</bool>
               </property>
@@ -2901,7 +2901,7 @@ QAbstractSpinBox::down-button:off {
           </widget>
          </item>
          <item row="1" column="0" colspan="2">
-          <widget class="Dropdown" name="uSerialPort3ComboBox">
+          <widget class="Dropdown" name="uSerialPort3Dropdown">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
              <horstretch>0</horstretch>
@@ -3097,7 +3097,7 @@ QAbstractSpinBox::down-button:off {
           </widget>
          </item>
          <item row="2" column="0" colspan="2">
-          <widget class="QLineEdit" name="uPrinterNameEdit">
+          <widget class="QLineEdit" name="uCustomMachineNameEdit">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
              <horstretch>0</horstretch>

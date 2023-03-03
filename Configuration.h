@@ -48,7 +48,6 @@ static constexpr auto CUSTOM_VERSION_FILE{""};
 static constexpr auto SHOW_BOOTSCREEN{true};
 static constexpr auto SHOW_CUSTOM_BOOTSCREEN{false};
 static constexpr auto CUSTOM_STATUS_SCREEN_IMAGE{false};
-
 static constexpr auto ENABLE_STRING_CONFIG_H_AUTHOR{false};
 static constexpr auto ENABLE_CUSTOM_VERSION_FILE{false};
 
@@ -64,7 +63,6 @@ static constexpr auto BAUDRATE_3{"250000"};
 static constexpr auto BLUETOOTH{false};
 static constexpr auto CUSTOM_MACHINE_NAME{""};
 static constexpr auto MACHINE_UUID{""};
-
 static constexpr auto ENABLE_SERIAL_PORT_2{false};
 static constexpr auto ENABLE_BAUDRATE_2{false};
 static constexpr auto ENABLE_SERIAL_PORT_3{false};
@@ -138,7 +136,6 @@ static constexpr auto POWER_OFF_DELAY{60};
 static constexpr auto AUTO_POWER_E_TEMP{50};
 static constexpr auto AUTO_POWER_CHAMBER_TEMP{30};
 static constexpr auto AUTO_POWER_COOLER_TEMP{26};
-
 static constexpr auto ENABLE_PSU_NAME{false};
 static constexpr auto ENABLE_PSU_POWERUP_DELAY{false};
 static constexpr auto ENABLE_LED_POWEROFF_TIMEOUT{false};
@@ -149,41 +146,6 @@ static constexpr auto ENABLE_POWER_OFF_DELAY{false};
 static constexpr auto ENABLE_AUTO_POWER_E_TEMP{false};
 static constexpr auto ENABLE_AUTO_POWER_CHAMBER_TEMP{false};
 static constexpr auto ENABLE_AUTO_POWER_COOLER_TEMP{false};
-
-// Legacy
-static constexpr auto LCD_DISPLAY{"REPRAP_DISCOUNT_SMART_CONTROLLER"};
-static constexpr auto X_BED_SIZE{200}; // mm
-static constexpr auto Y_BED_SIZE{200}; // mm
-
-static constexpr auto USE_XMIN_PLUG{true};
-static constexpr auto USE_YMIN_PLUG{true};
-static constexpr auto USE_ZMIN_PLUG{true};
-static constexpr auto USE_IMIN_PLUG{false};
-static constexpr auto USE_JMIN_PLUG{false};
-static constexpr auto USE_KMIN_PLUG{false};
-
-static constexpr auto USE_XMAX_PLUG{false};
-static constexpr auto USE_YMAX_PLUG{false};
-static constexpr auto USE_ZMAX_PLUG{false};
-static constexpr auto USE_IMAX_PLUG{false};
-static constexpr auto USE_JMAX_PLUG{false};
-static constexpr auto USE_KMAX_PLUG{false};
-
-static constexpr auto X_MIN_ENDSTOP_INVERTING{false};
-static constexpr auto Y_MIN_ENDSTOP_INVERTING{false};
-static constexpr auto Z_MIN_ENDSTOP_INVERTING{false};
-static constexpr auto I_MIN_ENDSTOP_INVERTING{false};
-static constexpr auto J_MIN_ENDSTOP_INVERTING{false};
-static constexpr auto K_MIN_ENDSTOP_INVERTING{false};
-
-static constexpr auto X_MAX_ENDSTOP_INVERTING{false};
-static constexpr auto Y_MAX_ENDSTOP_INVERTING{false};
-static constexpr auto Z_MAX_ENDSTOP_INVERTING{false};
-static constexpr auto I_MAX_ENDSTOP_INVERTING{false};
-static constexpr auto J_MAX_ENDSTOP_INVERTING{false};
-static constexpr auto K_MAX_ENDSTOP_INVERTING{false};
-
-static constexpr auto Z_MIN_PROBE_ENDSTOP_INVERTING{false};
 }
 
 struct PageConfiguration
@@ -201,7 +163,6 @@ struct FirmwareConfiguration : public PageConfiguration
     bool SHOW_BOOTSCREEN{defaults::SHOW_BOOTSCREEN};
     bool SHOW_CUSTOM_BOOTSCREEN{defaults::SHOW_CUSTOM_BOOTSCREEN};
     bool CUSTOM_STATUS_SCREEN_IMAGE{defaults::CUSTOM_STATUS_SCREEN_IMAGE};
-
     bool ENABLE_STRING_CONFIG_H_AUTHOR{defaults::ENABLE_STRING_CONFIG_H_AUTHOR};
     bool ENABLE_CUSTOM_VERSION_FILE{defaults::ENABLE_CUSTOM_VERSION_FILE};
 
@@ -218,7 +179,6 @@ public:
         json["SHOW_BOOTSCREEN"] = SHOW_BOOTSCREEN;
         json["SHOW_CUSTOM_BOOTSCREEN"] = SHOW_CUSTOM_BOOTSCREEN;
         json["CUSTOM_STATUS_SCREEN_IMAGE"] = CUSTOM_STATUS_SCREEN_IMAGE;
-
         json["ENABLE_STRING_CONFIG_H_AUTHOR"] = ENABLE_STRING_CONFIG_H_AUTHOR;
         json["ENABLE_CUSTOM_VERSION_FILE"] = ENABLE_CUSTOM_VERSION_FILE;
 
@@ -242,7 +202,6 @@ struct HardwareConfiguration : public PageConfiguration
     bool BLUETOOTH{defaults::BLUETOOTH};
     QString CUSTOM_MACHINE_NAME{defaults::CUSTOM_MACHINE_NAME};
     QString MACHINE_UUID{defaults::MACHINE_UUID};
-
     bool ENABLE_SERIAL_PORT_2{defaults::ENABLE_SERIAL_PORT_2};
     bool ENABLE_BAUDRATE_2{defaults::ENABLE_BAUDRATE_2};
     bool ENABLE_SERIAL_PORT_3{defaults::ENABLE_SERIAL_PORT_3};
@@ -269,7 +228,6 @@ public:
         json["BLUETOOTH"] = BLUETOOTH;
         json["CUSTOM_MACHINE_NAME"] = CUSTOM_MACHINE_NAME;
         json["MACHINE_UUID"] = MACHINE_UUID;
-
         json["ENABLE_SERIAL_PORT_2"] = ENABLE_SERIAL_PORT_2;
         json["ENABLE_BAUDRATE_2"] = ENABLE_BAUDRATE_2;
         json["ENABLE_SERIAL_PORT_3"] = ENABLE_SERIAL_PORT_3;
@@ -407,7 +365,6 @@ struct PowerSupplyConfiguration : public PageConfiguration
     int32_t AUTO_POWER_E_TEMP{defaults::AUTO_POWER_E_TEMP};
     int32_t AUTO_POWER_CHAMBER_TEMP{defaults::AUTO_POWER_CHAMBER_TEMP};
     int32_t AUTO_POWER_COOLER_TEMP{defaults::AUTO_POWER_COOLER_TEMP};
-
     bool ENABLE_PSU_NAME{defaults::ENABLE_PSU_NAME};
     bool ENABLE_PSU_POWERUP_DELAY{defaults::ENABLE_PSU_POWERUP_DELAY};
     bool ENABLE_LED_POWEROFF_TIMEOUT{defaults::ENABLE_LED_POWEROFF_TIMEOUT};
@@ -451,7 +408,6 @@ public:
         json["AUTO_POWER_E_TEMP"] = AUTO_POWER_E_TEMP;
         json["AUTO_POWER_CHAMBER_TEMP"] = AUTO_POWER_CHAMBER_TEMP;
         json["AUTO_POWER_COOLER_TEMP"] = AUTO_POWER_COOLER_TEMP;
-
         json["ENABLE_PSU_NAME"] = ENABLE_PSU_NAME;
         json["ENABLE_PSU_POWERUP_DELAY"] = ENABLE_PSU_POWERUP_DELAY;
         json["ENABLE_LED_POWEROFF_TIMEOUT"] = ENABLE_LED_POWEROFF_TIMEOUT;
