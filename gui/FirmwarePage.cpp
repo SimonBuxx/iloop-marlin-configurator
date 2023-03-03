@@ -51,6 +51,8 @@ void FirmwarePage::ConnectGuiSignalsAndSlots()
 
 void FirmwarePage::ResetValues()
 {
+    mIsLoading = true;
+
     mUi->uAuthorNameEdit->setText(defaults::STRING_CONFIG_H_AUTHOR);
     mUi->uCustomVersionFileEdit->setText(defaults::CUSTOM_VERSION_FILE);
     mUi->uShowBootscreenBox->setChecked(defaults::SHOW_BOOTSCREEN);
@@ -59,11 +61,15 @@ void FirmwarePage::ResetValues()
 
     mUi->uStringConfigHAuthorBox->setChecked(defaults::ENABLE_STRING_CONFIG_H_AUTHOR);
     mUi->uCustomVersionFileBox->setChecked(defaults::ENABLE_CUSTOM_VERSION_FILE);
+
+    mIsLoading = false;
 }
 
 bool FirmwarePage::LoadFromJson(const QJsonObject &pJson)
 {
     bool success = true;
+    mIsLoading = true;
+
     success &= LoadConfig(mUi->uAuthorNameEdit, pJson, "STRING_CONFIG_H_AUTHOR");
     success &= LoadConfig(mUi->uCustomVersionFileEdit, pJson, "CUSTOM_VERSION_FILE");
     success &= LoadConfig(mUi->uShowBootscreenBox, pJson, "SHOW_BOOTSCREEN");
@@ -73,6 +79,7 @@ bool FirmwarePage::LoadFromJson(const QJsonObject &pJson)
     success &= LoadConfig(mUi->uStringConfigHAuthorBox, pJson, "ENABLE_STRING_CONFIG_H_AUTHOR");
     success &= LoadConfig(mUi->uCustomVersionFileBox, pJson, "ENABLE_CUSTOM_VERSION_FILE");
 
+    mIsLoading = false;
     return success;
 }
 

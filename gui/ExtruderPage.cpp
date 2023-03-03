@@ -69,6 +69,8 @@ void ExtruderPage::ConnectGuiSignalsAndSlots()
 
 void ExtruderPage::ResetValues()
 {
+    mIsLoading = true;
+
     mUi->uExtrudersSpinBox->setValue(defaults::EXTRUDERS);
     mUi->uDefaultNominalFilamentDiaSpinBox->setValue(defaults::DEFAULT_NOMINAL_FILAMENT_DIA);
     mUi->uSinglenozzleBox->setChecked(defaults::SINGLENOZZLE);
@@ -109,12 +111,16 @@ void ExtruderPage::ResetValues()
     mUi->uSwitchingNozzleE1ServoNrBox->setChecked(defaults::ENABLE_SWITCHING_NOZZLE_E1_SERVO_NR);
     mUi->uParkingExtruderSolenoidsDelayBox->setChecked(defaults::ENABLE_PARKING_EXTRUDER_SOLENOIDS_DELAY);
 
-    mUi->tabWidget->setCurrentIndex(0);
+    mUi->uSwitchingTabWidget->setCurrentIndex(0);
+    mUi->uParkingTabWidget->setCurrentIndex(0);
+
+    mIsLoading = false;
 }
 
 bool ExtruderPage::LoadFromJson(const QJsonObject &pJson)
 {
     bool success = true;
+    mIsLoading = true;
 
     success &= LoadConfig(mUi->uExtrudersSpinBox, pJson, "EXTRUDERS");
     success &= LoadConfig(mUi->uDefaultNominalFilamentDiaSpinBox, pJson, "DEFAULT_NOMINAL_FILAMENT_DIA");
@@ -156,6 +162,7 @@ bool ExtruderPage::LoadFromJson(const QJsonObject &pJson)
     success &= LoadConfig(mUi->uSwitchingNozzleE1ServoNrBox, pJson, "ENABLE_SWITCHING_NOZZLE_E1_SERVO_NR");
     success &= LoadConfig(mUi->uParkingExtruderSolenoidsDelayBox, pJson, "ENABLE_PARKING_EXTRUDER_SOLENOIDS_DELAY");
 
+    mIsLoading = false;
     return success;
 }
 

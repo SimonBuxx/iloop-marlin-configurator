@@ -502,7 +502,7 @@ QAbstractSpinBox::down-button:off {
     </widget>
    </item>
    <item row="9" column="0" colspan="2">
-    <widget class="QTabWidget" name="tabWidget_2">
+    <widget class="QTabWidget" name="uParkingTabWidget">
      <property name="styleSheet">
       <string notr="true">QTabWidget::pane {
 	border: 1px solid black;
@@ -1309,7 +1309,7 @@ QTabBar::tab:!selected {
     </widget>
    </item>
    <item row="7" column="0" colspan="2">
-    <widget class="QTabWidget" name="tabWidget">
+    <widget class="QTabWidget" name="uSwitchingTabWidget">
      <property name="styleSheet">
       <string notr="true">QTabWidget::pane {
 	border: 1px solid black;

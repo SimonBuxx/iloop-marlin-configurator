@@ -70,6 +70,8 @@ void HardwarePage::ConnectGuiSignalsAndSlots()
 
 void HardwarePage::ResetValues()
 {
+    mIsLoading = true;
+
     mUi->uMotherboardComboBox->setCurrentText(defaults::MOTHERBOARD);
     mUi->uSerialPortComboBox->setCurrentText(defaults::SERIAL_PORT);
     mUi->uBaudrateComboBox->setCurrentText(defaults::BAUDRATE);
@@ -90,11 +92,14 @@ void HardwarePage::ResetValues()
     mUi->uMachineUuidBox->setChecked(defaults::ENABLE_MACHINE_UUID);
 
     mUi->uMotherBoardSearchBox->clear();
+
+    mIsLoading = false;
 }
 
 bool HardwarePage::LoadFromJson(const QJsonObject &pJson)
 {
     bool success = true;
+    mIsLoading = true;
 
     success &= LoadConfig(mUi->uMotherboardComboBox, pJson, "MOTHERBOARD", true);
     success &= LoadConfig(mUi->uSerialPortComboBox, pJson, "SERIAL_PORT");
@@ -115,6 +120,7 @@ bool HardwarePage::LoadFromJson(const QJsonObject &pJson)
     success &= LoadConfig(mUi->uCustomMachineNameBox, pJson, "ENABLE_CUSTOM_MACHINE_NAME");
     success &= LoadConfig(mUi->uMachineUuidBox, pJson, "ENABLE_MACHINE_UUID");
 
+    mIsLoading = false;
     return success;
 }
 

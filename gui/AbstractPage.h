@@ -82,6 +82,8 @@ signals:
 
 protected:
     std::optional<QStringList> mTemplate;
+
+    bool mIsLoading{false};
 };
 
 #endif // ABSTRACTPAGE_H

@@ -66,6 +66,8 @@ void PowerSupplyPage::ConnectGuiSignalsAndSlots()
 
 void PowerSupplyPage::ResetValues()
 {
+    mIsLoading = true;
+
     mUi->uPsuControlBox->setChecked(defaults::PSU_CONTROL);
     mUi->uPsuNameEdit->setText(defaults::PSU_NAME);
     mUi->uMksPwcBox->setChecked(defaults::MKS_PWC);
@@ -101,11 +103,14 @@ void PowerSupplyPage::ResetValues()
     mUi->uAutoPowerETempBox->setChecked(defaults::ENABLE_AUTO_POWER_E_TEMP);
     mUi->uAutoPowerChamberTempBox->setChecked(defaults::ENABLE_AUTO_POWER_CHAMBER_TEMP);
     mUi->uAutoPowerCoolerTempBox->setChecked(defaults::ENABLE_AUTO_POWER_COOLER_TEMP);
+
+    mIsLoading = false;
 }
 
 bool PowerSupplyPage::LoadFromJson(const QJsonObject &pJson)
 {
     bool success = true;
+    mIsLoading = true;
 
     success &= LoadConfig(mUi->uPsuControlBox, pJson, "PSU_CONTROL");
     success &= LoadConfig(mUi->uPsuNameEdit, pJson, "PSU_NAME");
@@ -143,6 +148,7 @@ bool PowerSupplyPage::LoadFromJson(const QJsonObject &pJson)
     success &= LoadConfig(mUi->uAutoPowerChamberTempBox, pJson, "ENABLE_AUTO_POWER_CHAMBER_TEMP");
     success &= LoadConfig(mUi->uAutoPowerCoolerTempBox, pJson, "ENABLE_AUTO_POWER_COOLER_TEMP");
 
+    mIsLoading = false;
     return success;
 }
 

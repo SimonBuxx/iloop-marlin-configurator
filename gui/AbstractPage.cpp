@@ -74,6 +74,11 @@ void AbstractPage::ConnectGuiSignalsAndSlots()
 
 void AbstractPage::OnUpdatePreview()
 {
+    if (mIsLoading)
+    {
+        return;
+    }
+
     if (mTemplate.has_value())
     {
         QStringList output = mTemplate.value();
