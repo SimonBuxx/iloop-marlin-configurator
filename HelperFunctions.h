@@ -118,7 +118,7 @@ inline bool LoadConfig(Dropdown* pWidget, const QJsonObject &pJson, const QStrin
     {
         if (pMatchItemInBrackets)
         {
-            const auto&& index = pWidget->findText(QString("[%0]").arg(pJson["MOTHERBOARD"].toString()), Qt::MatchContains);
+            const auto&& index = pWidget->findText(QString("[%0]").arg(pJson[pAttribute].toString()), Qt::MatchContains);
             if (index >= 0)
             {
                 pWidget->setCurrentIndex(index);
