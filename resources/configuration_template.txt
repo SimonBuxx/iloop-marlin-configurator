@@ -230,16 +230,16 @@
 #{EXTRUDERS}
 
 // Generally expected filament diameter (1.75, 2.85, 3.0, ...). Used for Volumetric, Filament Width Sensor, etc.
-#define DEFAULT_NOMINAL_FILAMENT_DIA 1.75
+#{DEFAULT_NOMINAL_FILAMENT_DIA}
 
 // For Cyclops or any "multi-extruder" that shares a single nozzle.
-//#define SINGLENOZZLE
+#{SINGLENOZZLE}
 
 // Save and restore temperature and fan speed on tool-change.
 // Set standby for the unselected tool with M104/106/109 T...
 #if ENABLED(SINGLENOZZLE)
-  //#define SINGLENOZZLE_STANDBY_TEMP
-  //#define SINGLENOZZLE_STANDBY_FAN
+  #{SINGLENOZZLE_STANDBY_TEMP}
+  #{SINGLENOZZLE_STANDBY_FAN}
 #endif
 
 // @section multi-material
@@ -258,32 +258,32 @@
  * See additional options in Configuration_adv.h.
  * :["PRUSA_MMU1", "PRUSA_MMU2", "PRUSA_MMU2S", "EXTENDABLE_EMU_MMU2", "EXTENDABLE_EMU_MMU2S"]
  */
-//#define MMU_MODEL PRUSA_MMU2
+#{MMU_MODEL}
 
 // A dual extruder that uses a single stepper motor
-//#define SWITCHING_EXTRUDER
+#{SWITCHING_EXTRUDER}
 #if ENABLED(SWITCHING_EXTRUDER)
-  #define SWITCHING_EXTRUDER_SERVO_NR 0
-  #define SWITCHING_EXTRUDER_SERVO_ANGLES { 0, 90 } // Angles for E0, E1[, E2, E3]
+  #{SWITCHING_EXTRUDER_SERVO_NR}
+  #{SWITCHING_EXTRUDER_SERVO_ANGLES} // Angles for E0, E1[, E2, E3]
   #if EXTRUDERS > 3
-    #define SWITCHING_EXTRUDER_E23_SERVO_NR 1
+    #{SWITCHING_EXTRUDER_E23_SERVO_NR}
   #endif
 #endif
 
 // A dual-nozzle that uses a servomotor to raise/lower one (or both) of the nozzles
-//#define SWITCHING_NOZZLE
+#{SWITCHING_NOZZLE}
 #if ENABLED(SWITCHING_NOZZLE)
-  #define SWITCHING_NOZZLE_SERVO_NR 0
-  //#define SWITCHING_NOZZLE_E1_SERVO_NR 1          // If two servos are used, the index of the second
-  #define SWITCHING_NOZZLE_SERVO_ANGLES { 0, 90 }   // Angles for E0, E1 (single servo) or lowered/raised (dual servo)
-  #define SWITCHING_NOZZLE_SERVO_DWELL 2500         // Dwell time to wait for servo to make physical move
+  #{SWITCHING_NOZZLE_SERVO_NR}
+  #{SWITCHING_NOZZLE_E1_SERVO_NR}       // If two servos are used, the index of the second
+  #{SWITCHING_NOZZLE_SERVO_ANGLES}   // Angles for E0, E1 (single servo) or lowered/raised (dual servo)
+  #{SWITCHING_NOZZLE_SERVO_DWELL}         // Dwell time to wait for servo to make physical move
 #endif
 
 /**
  * Two separate X-carriages with extruders that connect to a moving part
  * via a solenoid docking mechanism. Requires SOL1_PIN and SOL2_PIN.
  */
-//#define PARKING_EXTRUDER
+#{PARKING_EXTRUDER}
 
 /**
  * Two separate X-carriages with extruders that connect to a moving part
@@ -293,26 +293,26 @@
  * movements : https://youtu.be/0xCEiG9VS3k
  *             https://youtu.be/Bqbcs0CU2FE
  */
-//#define MAGNETIC_PARKING_EXTRUDER
+#{MAGNETIC_PARKING_EXTRUDER}
 
 #if EITHER(PARKING_EXTRUDER, MAGNETIC_PARKING_EXTRUDER)
 
-  #define PARKING_EXTRUDER_PARKING_X { -78, 184 }     // X positions for parking the extruders
-  #define PARKING_EXTRUDER_GRAB_DISTANCE 1            // (mm) Distance to move beyond the parking point to grab the extruder
+  #{PARKING_EXTRUDER_PARKING_X}     // X positions for parking the extruders
+  #{PARKING_EXTRUDER_GRAB_DISTANCE}            // (mm) Distance to move beyond the parking point to grab the extruder
 
   #if ENABLED(PARKING_EXTRUDER)
 
-    #define PARKING_EXTRUDER_SOLENOIDS_INVERT           // If enabled, the solenoid is NOT magnetized with applied voltage
-    #define PARKING_EXTRUDER_SOLENOIDS_PINS_ACTIVE LOW  // LOW or HIGH pin signal energizes the coil
-    #define PARKING_EXTRUDER_SOLENOIDS_DELAY 250        // (ms) Delay for magnetic field. No delay if 0 or not defined.
-    //#define MANUAL_SOLENOID_CONTROL                   // Manual control of docking solenoids with M380 S / M381
+    #{PARKING_EXTRUDER_SOLENOIDS_INVERT}           // If enabled, the solenoid is NOT magnetized with applied voltage
+    #{PARKING_EXTRUDER_SOLENOIDS_PINS_ACTIVE}  // LOW or HIGH pin signal energizes the coil
+    #{PARKING_EXTRUDER_SOLENOIDS_DELAY}        // (ms) Delay for magnetic field. No delay if 0 or not defined.
+    #{MANUAL_SOLENOID_CONTROL}                   // Manual control of docking solenoids with M380 S / M381
 
   #elif ENABLED(MAGNETIC_PARKING_EXTRUDER)
 
-    #define MPE_FAST_SPEED      9000      // (mm/min) Speed for travel before last distance point
-    #define MPE_SLOW_SPEED      4500      // (mm/min) Speed for last distance travel to park and couple
-    #define MPE_TRAVEL_DISTANCE   10      // (mm) Last distance point
-    #define MPE_COMPENSATION       0      // Offset Compensation -1 , 0 , 1 (multiplier) only for coupling
+    #{MPE_FAST_SPEED}      // (mm/min) Speed for travel before last distance point
+    #{MPE_SLOW_SPEED}      // (mm/min) Speed for last distance travel to park and couple
+    #{MPE_TRAVEL_DISTANCE}      // (mm) Last distance point
+    #{MPE_COMPENSATION}      // Offset Compensation -1 , 0 , 1 (multiplier) only for coupling
 
   #endif
 
@@ -324,7 +324,7 @@
  * Support for swappable and dockable toolheads, such as
  * the E3D Tool Changer. Toolheads are locked with a servo.
  */
-//#define SWITCHING_TOOLHEAD
+#{SWITCHING_TOOLHEAD}
 
 /**
  * Magnetic Switching Toolhead
@@ -332,7 +332,7 @@
  * Support swappable and dockable toolheads with a magnetic
  * docking mechanism using movement and no servo.
  */
-//#define MAGNETIC_SWITCHING_TOOLHEAD
+#{MAGNETIC_SWITCHING_TOOLHEAD}
 
 /**
  * Electromagnetic Switching Toolhead
@@ -341,28 +341,28 @@
  * Toolheads are parked at one edge and held with an electromagnet.
  * Supports more than 2 Toolheads. See https://youtu.be/JolbsAKTKf4
  */
-//#define ELECTROMAGNETIC_SWITCHING_TOOLHEAD
+#{ELECTROMAGNETIC_SWITCHING_TOOLHEAD}
 
 #if ANY(SWITCHING_TOOLHEAD, MAGNETIC_SWITCHING_TOOLHEAD, ELECTROMAGNETIC_SWITCHING_TOOLHEAD)
-  #define SWITCHING_TOOLHEAD_Y_POS          235         // (mm) Y position of the toolhead dock
-  #define SWITCHING_TOOLHEAD_Y_SECURITY      10         // (mm) Security distance Y axis
-  #define SWITCHING_TOOLHEAD_Y_CLEAR         60         // (mm) Minimum distance from dock for unobstructed X axis
-  #define SWITCHING_TOOLHEAD_X_POS          { 215, 0 }  // (mm) X positions for parking the extruders
+  #{SWITCHING_TOOLHEAD_Y_POS}         // (mm) Y position of the toolhead dock
+  #{SWITCHING_TOOLHEAD_Y_SECURITY}         // (mm) Security distance Y axis
+  #{SWITCHING_TOOLHEAD_Y_CLEAR}         // (mm) Minimum distance from dock for unobstructed X axis
+  #{SWITCHING_TOOLHEAD_X_POS}  // (mm) X positions for parking the extruders
   #if ENABLED(SWITCHING_TOOLHEAD)
-    #define SWITCHING_TOOLHEAD_SERVO_NR       2         // Index of the servo connector
-    #define SWITCHING_TOOLHEAD_SERVO_ANGLES { 0, 180 }  // (degrees) Angles for Lock, Unlock
+    #{SWITCHING_TOOLHEAD_SERVO_NR}         // Index of the servo connector
+    #{SWITCHING_TOOLHEAD_SERVO_ANGLES}  // (degrees) Angles for Lock, Unlock
   #elif ENABLED(MAGNETIC_SWITCHING_TOOLHEAD)
-    #define SWITCHING_TOOLHEAD_Y_RELEASE      5         // (mm) Security distance Y axis
-    #define SWITCHING_TOOLHEAD_X_SECURITY   { 90, 150 } // (mm) Security distance X axis (T0,T1)
-    //#define PRIME_BEFORE_REMOVE                       // Prime the nozzle before release from the dock
+    #{SWITCHING_TOOLHEAD_Y_RELEASE}         // (mm) Security distance Y axis
+    #{SWITCHING_TOOLHEAD_X_SECURITY} // (mm) Security distance X axis (T0,T1)
+    #{PRIME_BEFORE_REMOVE}                       // Prime the nozzle before release from the dock
     #if ENABLED(PRIME_BEFORE_REMOVE)
-      #define SWITCHING_TOOLHEAD_PRIME_MM           20  // (mm)   Extruder prime length
-      #define SWITCHING_TOOLHEAD_RETRACT_MM         10  // (mm)   Retract after priming length
-      #define SWITCHING_TOOLHEAD_PRIME_FEEDRATE    300  // (mm/min) Extruder prime feedrate
-      #define SWITCHING_TOOLHEAD_RETRACT_FEEDRATE 2400  // (mm/min) Extruder retract feedrate
+      #{SWITCHING_TOOLHEAD_PRIME_MM}  // (mm)   Extruder prime length
+      #{SWITCHING_TOOLHEAD_RETRACT_MM}  // (mm)   Retract after priming length
+      #{SWITCHING_TOOLHEAD_PRIME_FEEDRATE}  // (mm/min) Extruder prime feedrate
+      #{SWITCHING_TOOLHEAD_RETRACT_FEEDRATE}  // (mm/min) Extruder retract feedrate
     #endif
   #elif ENABLED(ELECTROMAGNETIC_SWITCHING_TOOLHEAD)
-    #define SWITCHING_TOOLHEAD_Z_HOP          2         // (mm) Z raise for switching
+    #{SWITCHING_TOOLHEAD_Z_HOP}         // (mm) Z raise for switching
   #endif
 #endif
 

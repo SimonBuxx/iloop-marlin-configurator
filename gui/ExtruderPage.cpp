@@ -64,6 +64,30 @@ void ExtruderPage::ConnectGuiSignalsAndSlots()
         mUi->uParkingExtruderGrabDistanceBox->setEnabled((pState || mUi->uParkingExtruderBox->isChecked()));
     });
 
+    QObject::connect(mUi->uSwitchingToolheadBox, &QGroupBox::toggled, this, [&](auto pState)
+    {
+        mUi->uSwitchingToolheadYPosBox->setEnabled((pState || mUi->uMagneticSwitchingToolheadBox->isChecked() || mUi->uElectromagneticSwitchingToolheadBox->isChecked()));
+        mUi->uSwitchingToolheadYSecurityBox->setEnabled((pState || mUi->uMagneticSwitchingToolheadBox->isChecked() || mUi->uElectromagneticSwitchingToolheadBox->isChecked()));
+        mUi->uSwitchingToolheadYClearBox->setEnabled((pState || mUi->uMagneticSwitchingToolheadBox->isChecked() || mUi->uElectromagneticSwitchingToolheadBox->isChecked()));
+        mUi->uSwitchingToolheadXPosBox->setEnabled((pState || mUi->uMagneticSwitchingToolheadBox->isChecked() || mUi->uElectromagneticSwitchingToolheadBox->isChecked()));
+    });
+
+    QObject::connect(mUi->uMagneticSwitchingToolheadBox, &QGroupBox::toggled, this, [&](auto pState)
+    {
+        mUi->uSwitchingToolheadYPosBox->setEnabled((pState || mUi->uSwitchingToolheadBox->isChecked() || mUi->uElectromagneticSwitchingToolheadBox->isChecked()));
+        mUi->uSwitchingToolheadYSecurityBox->setEnabled((pState || mUi->uSwitchingToolheadBox->isChecked() || mUi->uElectromagneticSwitchingToolheadBox->isChecked()));
+        mUi->uSwitchingToolheadYClearBox->setEnabled((pState || mUi->uSwitchingToolheadBox->isChecked() || mUi->uElectromagneticSwitchingToolheadBox->isChecked()));
+        mUi->uSwitchingToolheadXPosBox->setEnabled((pState || mUi->uSwitchingToolheadBox->isChecked() || mUi->uElectromagneticSwitchingToolheadBox->isChecked()));
+    });
+
+    QObject::connect(mUi->uElectromagneticSwitchingToolheadBox, &QGroupBox::toggled, this, [&](auto pState)
+    {
+        mUi->uSwitchingToolheadYPosBox->setEnabled((pState || mUi->uMagneticSwitchingToolheadBox->isChecked() || mUi->uSwitchingToolheadBox->isChecked()));
+        mUi->uSwitchingToolheadYSecurityBox->setEnabled((pState || mUi->uMagneticSwitchingToolheadBox->isChecked() || mUi->uSwitchingToolheadBox->isChecked()));
+        mUi->uSwitchingToolheadYClearBox->setEnabled((pState || mUi->uMagneticSwitchingToolheadBox->isChecked() || mUi->uSwitchingToolheadBox->isChecked()));
+        mUi->uSwitchingToolheadXPosBox->setEnabled((pState || mUi->uMagneticSwitchingToolheadBox->isChecked() || mUi->uSwitchingToolheadBox->isChecked()));
+    });
+
     AbstractPage::ConnectGuiSignalsAndSlots();
 }
 
@@ -110,9 +134,27 @@ void ExtruderPage::ResetValues()
     mUi->uSwitchingExtruderServoAnglesE23Box->setChecked(defaults::ENABLE_SWITCHING_EXTRUDER_SERVO_ANGLES_E23);
     mUi->uSwitchingNozzleE1ServoNrBox->setChecked(defaults::ENABLE_SWITCHING_NOZZLE_E1_SERVO_NR);
     mUi->uParkingExtruderSolenoidsDelayBox->setChecked(defaults::ENABLE_PARKING_EXTRUDER_SOLENOIDS_DELAY);
+    mUi->uSwitchingToolheadYPosSpinBox->setValue(defaults::SWITCHING_TOOLHEAD_Y_POS);
+    mUi->uSwitchingToolheadYSecuritySpinBox->setValue(defaults::SWITCHING_TOOLHEAD_Y_SECURITY);
+    mUi->uSwitchingToolheadYClearSpinBox->setValue(defaults::SWITCHING_TOOLHEAD_Y_CLEAR);
+    mUi->uSwitchingToolheadXPos0SpinBox->setValue(defaults::SWITCHING_TOOLHEAD_X_POS0);
+    mUi->uSwitchingToolheadXPos1SpinBox->setValue(defaults::SWITCHING_TOOLHEAD_X_POS1);
+    mUi->uSwitchingToolheadServoNrSpinBox->setValue(defaults::SWITCHING_TOOLHEAD_SERVO_NR);
+    mUi->uSwitchingToolheadServoAngles0SpinBox->setValue(defaults::SWITCHING_TOOLHEAD_SERVO_ANGLES0);
+    mUi->uSwitchingToolheadServoAngles1SpinBox->setValue(defaults::SWITCHING_TOOLHEAD_SERVO_ANGLES1);
+    mUi->uSwitchingToolheadYReleaseSpinBox->setValue(defaults::SWITCHING_TOOLHEAD_Y_RELEASE);
+    mUi->uSwitchingToolheadXSecurityT0SpinBox->setValue(defaults::SWITCHING_TOOLHEAD_X_SECURITY_T0);
+    mUi->uSwitchingToolheadXSecurityT1SpinBox->setValue(defaults::SWITCHING_TOOLHEAD_X_SECURITY_T1);
+    mUi->uPrimeBeforeRemoveBox->setChecked(defaults::PRIME_BEFORE_REMOVE);
+    mUi->uSwitchingToolheadPrimeMmSpinBox->setValue(defaults::SWITCHING_TOOLHEAD_PRIME_MM);
+    mUi->uSwitchingToolheadRetractMmSpinBox->setValue(defaults::SWITCHING_TOOLHEAD_RETRACT_MM);
+    mUi->uSwitchingToolheadPrimeFeedrateSpinBox->setValue(defaults::SWITCHING_TOOLHEAD_PRIME_FEEDRATE);
+    mUi->uSwitchingToolheadRetractFeedrateSpinBox->setValue(defaults::SWITCHING_TOOLHEAD_RETRACT_FEEDRATE);
+    mUi->uSwitchingToolheadZHopSpinBox->setValue(defaults::SWITCHING_TOOLHEAD_Z_HOP);
 
     mUi->uSwitchingTabWidget->setCurrentIndex(0);
     mUi->uParkingTabWidget->setCurrentIndex(0);
+    mUi->uSwitchingToolheadsTabWidget->setCurrentIndex(0);
 
     mIsLoading = false;
 }
@@ -161,6 +203,23 @@ bool ExtruderPage::LoadFromJson(const QJsonObject &pJson)
     success &= LoadConfig(mUi->uSwitchingExtruderServoAnglesE23Box, pJson, "ENABLE_SWITCHING_EXTRUDER_SERVO_ANGLES_E23");
     success &= LoadConfig(mUi->uSwitchingNozzleE1ServoNrBox, pJson, "ENABLE_SWITCHING_NOZZLE_E1_SERVO_NR");
     success &= LoadConfig(mUi->uParkingExtruderSolenoidsDelayBox, pJson, "ENABLE_PARKING_EXTRUDER_SOLENOIDS_DELAY");
+    success &= LoadConfig(mUi->uSwitchingToolheadYPosSpinBox, pJson, "SWITCHING_TOOLHEAD_Y_POS");
+    success &= LoadConfig(mUi->uSwitchingToolheadYSecuritySpinBox, pJson, "SWITCHING_TOOLHEAD_Y_SECURITY");
+    success &= LoadConfig(mUi->uSwitchingToolheadYClearSpinBox, pJson, "SWITCHING_TOOLHEAD_Y_CLEAR");
+    success &= LoadConfig(mUi->uSwitchingToolheadXPos0SpinBox, pJson, "SWITCHING_TOOLHEAD_X_POS0");
+    success &= LoadConfig(mUi->uSwitchingToolheadXPos1SpinBox, pJson, "SWITCHING_TOOLHEAD_X_POS1");
+    success &= LoadConfig(mUi->uSwitchingToolheadServoNrSpinBox, pJson, "SWITCHING_TOOLHEAD_SERVO_NR");
+    success &= LoadConfig(mUi->uSwitchingToolheadServoAngles0SpinBox, pJson, "SWITCHING_TOOLHEAD_SERVO_ANGLES0");
+    success &= LoadConfig(mUi->uSwitchingToolheadServoAngles1SpinBox, pJson, "SWITCHING_TOOLHEAD_SERVO_ANGLES1");
+    success &= LoadConfig(mUi->uSwitchingToolheadYReleaseSpinBox, pJson, "SWITCHING_TOOLHEAD_Y_RELEASE");
+    success &= LoadConfig(mUi->uSwitchingToolheadXSecurityT0SpinBox, pJson, "SWITCHING_TOOLHEAD_X_SECURITY_T0");
+    success &= LoadConfig(mUi->uSwitchingToolheadXSecurityT1SpinBox, pJson, "SWITCHING_TOOLHEAD_X_SECURITY_T1");
+    success &= LoadConfig(mUi->uPrimeBeforeRemoveBox, pJson, "PRIME_BEFORE_REMOVE");
+    success &= LoadConfig(mUi->uSwitchingToolheadPrimeMmSpinBox, pJson, "SWITCHING_TOOLHEAD_PRIME_MM");
+    success &= LoadConfig(mUi->uSwitchingToolheadRetractMmSpinBox, pJson, "SWITCHING_TOOLHEAD_RETRACT_MM");
+    success &= LoadConfig(mUi->uSwitchingToolheadPrimeFeedrateSpinBox, pJson, "SWITCHING_TOOLHEAD_PRIME_FEEDRATE");
+    success &= LoadConfig(mUi->uSwitchingToolheadRetractFeedrateSpinBox, pJson, "SWITCHING_TOOLHEAD_RETRACT_FEEDRATE");
+    success &= LoadConfig(mUi->uSwitchingToolheadZHopSpinBox, pJson, "SWITCHING_TOOLHEAD_Z_HOP");
 
     mIsLoading = false;
     return success;
@@ -207,6 +266,23 @@ void ExtruderPage::FetchConfiguration(Configuration& pConfig)
     SetConfig(pConfig.extruder.ENABLE_SWITCHING_EXTRUDER_SERVO_ANGLES_E23, mUi->uSwitchingExtruderServoAnglesE23Box);
     SetConfig(pConfig.extruder.ENABLE_SWITCHING_NOZZLE_E1_SERVO_NR, mUi->uSwitchingNozzleE1ServoNrBox);
     SetConfig(pConfig.extruder.ENABLE_PARKING_EXTRUDER_SOLENOIDS_DELAY, mUi->uParkingExtruderSolenoidsDelayBox);
+    SetConfig(pConfig.extruder.SWITCHING_TOOLHEAD_Y_POS, mUi->uSwitchingToolheadYPosSpinBox);
+    SetConfig(pConfig.extruder.SWITCHING_TOOLHEAD_Y_SECURITY, mUi->uSwitchingToolheadYSecuritySpinBox);
+    SetConfig(pConfig.extruder.SWITCHING_TOOLHEAD_Y_CLEAR, mUi->uSwitchingToolheadYClearSpinBox);
+    SetConfig(pConfig.extruder.SWITCHING_TOOLHEAD_X_POS0, mUi->uSwitchingToolheadXPos0SpinBox);
+    SetConfig(pConfig.extruder.SWITCHING_TOOLHEAD_X_POS1, mUi->uSwitchingToolheadXPos1SpinBox);
+    SetConfig(pConfig.extruder.SWITCHING_TOOLHEAD_SERVO_NR, mUi->uSwitchingToolheadServoNrSpinBox);
+    SetConfig(pConfig.extruder.SWITCHING_TOOLHEAD_SERVO_ANGLES0, mUi->uSwitchingToolheadServoAngles0SpinBox);
+    SetConfig(pConfig.extruder.SWITCHING_TOOLHEAD_SERVO_ANGLES1, mUi->uSwitchingToolheadServoAngles1SpinBox);
+    SetConfig(pConfig.extruder.SWITCHING_TOOLHEAD_Y_RELEASE, mUi->uSwitchingToolheadYReleaseSpinBox);
+    SetConfig(pConfig.extruder.SWITCHING_TOOLHEAD_X_SECURITY_T0, mUi->uSwitchingToolheadXSecurityT0SpinBox);
+    SetConfig(pConfig.extruder.SWITCHING_TOOLHEAD_X_SECURITY_T1, mUi->uSwitchingToolheadXSecurityT1SpinBox);
+    SetConfig(pConfig.extruder.PRIME_BEFORE_REMOVE, mUi->uPrimeBeforeRemoveBox);
+    SetConfig(pConfig.extruder.SWITCHING_TOOLHEAD_PRIME_MM, mUi->uSwitchingToolheadPrimeMmSpinBox);
+    SetConfig(pConfig.extruder.SWITCHING_TOOLHEAD_RETRACT_MM, mUi->uSwitchingToolheadRetractMmSpinBox);
+    SetConfig(pConfig.extruder.SWITCHING_TOOLHEAD_PRIME_FEEDRATE, mUi->uSwitchingToolheadPrimeFeedrateSpinBox);
+    SetConfig(pConfig.extruder.SWITCHING_TOOLHEAD_RETRACT_FEEDRATE, mUi->uSwitchingToolheadRetractFeedrateSpinBox);
+    SetConfig(pConfig.extruder.SWITCHING_TOOLHEAD_Z_HOP, mUi->uSwitchingToolheadZHopSpinBox);
 }
 
 void ExtruderPage::ReplaceTags(QStringList& pOutput)
@@ -227,11 +303,11 @@ void ExtruderPage::ReplaceTags(QStringList& pOutput)
         const auto& e3 = mUi->uSwitchingExtruderServoAnglesE3SpinBox->value();
         if (mUi->uSwitchingExtruderServoAnglesE23Box->isChecked())
         {
-            ReplaceArrayTag(pOutput, "#{SWITCHING_EXTRUDER_SERVO_ANGLES}", !mUi->uSwitchingExtruderBox->isChecked(), "SWITCHING_EXTRUDER_SERVO_ANGLES_E0", std::vector<int32_t>{e0, e1, e2, e3});
+            ReplaceArrayTag(pOutput, "#{SWITCHING_EXTRUDER_SERVO_ANGLES}", !mUi->uSwitchingExtruderBox->isChecked(), "SWITCHING_EXTRUDER_SERVO_ANGLES_E0", std::vector<int32_t>{e0, e1, e2, e3}, mUi->uSwitchingExtruderServoAnglesE23Box->isEnabled());
         }
         else
         {
-            ReplaceArrayTag(pOutput, "#{SWITCHING_EXTRUDER_SERVO_ANGLES}", !mUi->uSwitchingExtruderBox->isChecked(), "SWITCHING_EXTRUDER_SERVO_ANGLES_E0", std::vector<int32_t>{e0, e1});
+            ReplaceArrayTag(pOutput, "#{SWITCHING_EXTRUDER_SERVO_ANGLES}", !mUi->uSwitchingExtruderBox->isChecked(), "SWITCHING_EXTRUDER_SERVO_ANGLES_E0", std::vector<int32_t>{e0, e1}, mUi->uSwitchingExtruderServoAnglesE23Box->isEnabled());
         }
     }
 
@@ -245,7 +321,7 @@ void ExtruderPage::ReplaceTags(QStringList& pOutput)
     {
         const auto& e0 = mUi->uSwitchingNozzleServoAnglesE0SpinBox->value();
         const auto& e1 = mUi->uSwitchingNozzleServoAnglesE1SpinBox->value();
-        ReplaceArrayTag(pOutput, "#{SWITCHING_NOZZLE_SERVO_ANGLES}", !mUi->uSwitchingNozzleBox->isChecked(), "SWITCHING_NOZZLE_SERVO_ANGLES", std::vector<int32_t>{e0, e1});
+        ReplaceArrayTag(pOutput, "#{SWITCHING_NOZZLE_SERVO_ANGLES}", !mUi->uSwitchingNozzleBox->isChecked(), "SWITCHING_NOZZLE_SERVO_ANGLES", std::vector<int32_t>{e0, e1}, mUi->uSwitchingNozzleBox->isEnabled());
     }
     ReplaceTag(pOutput, "#{SWITCHING_NOZZLE_SERVO_DWELL}", mUi->uSwitchingNozzleServoDwellSpinBox, !mUi->uSwitchingNozzleBox->isChecked(), "SWITCHING_NOZZLE_SERVO_DWELL");
 
@@ -254,7 +330,7 @@ void ExtruderPage::ReplaceTags(QStringList& pOutput)
     {
         const auto& x0 = mUi->uParkingExtruderParkingX0SpinBox->value();
         const auto& x1 = mUi->uParkingExtruderParkingX1SpinBox->value();
-        ReplaceArrayTag(pOutput, "#{PARKING_EXTRUDER_PARKING_X}", !mUi->uParkingExtruderBox->isChecked() && !mUi->uMagneticParkingExtruderBox->isChecked(), "PARKING_EXTRUDER_PARKING_X", std::vector<int32_t>{x0, x1});
+        ReplaceArrayTag(pOutput, "#{PARKING_EXTRUDER_PARKING_X}", !mUi->uParkingExtruderBox->isChecked() && !mUi->uMagneticParkingExtruderBox->isChecked(), "PARKING_EXTRUDER_PARKING_X", std::vector<int32_t>{x0, x1}, mUi->uParkingExtruderParkingXBox->isEnabled());
     }
     ReplaceTag(pOutput, "#{PARKING_EXTRUDER_GRAB_DISTANCE}", mUi->uParkingExtruderGrabDistanceSpinBox, !mUi->uParkingExtruderBox->isChecked() && !mUi->uMagneticParkingExtruderBox->isChecked(), "PARKING_EXTRUDER_GRAB_DISTANCE");
     ReplaceTag(pOutput, "#{PARKING_EXTRUDER_SOLENOIDS_INVERT}", mUi->uParkingExtruderSolenoidsInvertBox, "PARKING_EXTRUDER_SOLENOIDS_INVERT");
@@ -265,8 +341,38 @@ void ExtruderPage::ReplaceTags(QStringList& pOutput)
     ReplaceTag(pOutput, "#{MPE_SLOW_SPEED}", mUi->uMpeSlowSpeedSpinBox, false, "MPE_SLOW_SPEED");
     ReplaceTag(pOutput, "#{MPE_TRAVEL_DISTANCE}", mUi->uMpeTravelDistanceSpinBox, false, "MPE_TRAVEL_DISTANCE");
     ReplaceTag(pOutput, "#{MPE_COMPENSATION}", mUi->uMpeCompensationDropdown, false, "MPE_COMPENSATION");
-
     ReplaceTag(pOutput, "#{SWITCHING_TOOLHEAD}", mUi->uSwitchingToolheadBox, "SWITCHING_TOOLHEAD");
     ReplaceTag(pOutput, "#{MAGNETIC_SWITCHING_TOOLHEAD}", mUi->uMagneticSwitchingToolheadBox, "MAGNETIC_SWITCHING_TOOLHEAD");
     ReplaceTag(pOutput, "#{ELECTROMAGNETIC_SWITCHING_TOOLHEAD}", mUi->uElectromagneticSwitchingToolheadBox, "ELECTROMAGNETIC_SWITCHING_TOOLHEAD");
+
+    ReplaceTag(pOutput, "#{SWITCHING_TOOLHEAD_Y_POS}", mUi->uSwitchingToolheadYPosSpinBox, !mUi->uSwitchingToolheadBox->isChecked() && !mUi->uMagneticSwitchingToolheadBox->isChecked() &&
+                                                                                           !mUi->uElectromagneticSwitchingToolheadBox->isChecked(), "SWITCHING_TOOLHEAD_Y_POS");
+    ReplaceTag(pOutput, "#{SWITCHING_TOOLHEAD_Y_CLEAR}", mUi->uSwitchingToolheadYClearSpinBox, !mUi->uSwitchingToolheadBox->isChecked() && !mUi->uMagneticSwitchingToolheadBox->isChecked() &&
+                                                                                               !mUi->uElectromagneticSwitchingToolheadBox->isChecked(), "SWITCHING_TOOLHEAD_Y_CLEAR");
+    ReplaceTag(pOutput, "#{SWITCHING_TOOLHEAD_Y_SECURITY}", mUi->uSwitchingToolheadYSecuritySpinBox, !mUi->uSwitchingToolheadBox->isChecked() && !mUi->uMagneticSwitchingToolheadBox->isChecked() &&
+                                                                                                   !mUi->uElectromagneticSwitchingToolheadBox->isChecked(), "SWITCHING_TOOLHEAD_Y_SECURITY");
+    {
+        const auto& x0 = mUi->uSwitchingToolheadXPos0SpinBox->value();
+        const auto& x1 = mUi->uSwitchingToolheadXPos1SpinBox->value();
+        ReplaceArrayTag(pOutput, "#{SWITCHING_TOOLHEAD_X_POS}", !mUi->uSwitchingToolheadBox->isChecked() && !mUi->uMagneticSwitchingToolheadBox->isChecked() &&
+                                                                    !mUi->uElectromagneticSwitchingToolheadBox->isChecked(), "SWITCHING_TOOLHEAD_X_POS", std::vector<int32_t>{x0, x1}, mUi->uSwitchingToolheadXPosBox->isEnabled());
+    }
+    ReplaceTag(pOutput, "#{SWITCHING_TOOLHEAD_SERVO_NR}", mUi->uSwitchingToolheadServoNrSpinBox, false, "SWITCHING_TOOLHEAD_SERVO_NR");
+    {
+        const auto& x0 = mUi->uSwitchingToolheadServoAngles0SpinBox->value();
+        const auto& x1 = mUi->uSwitchingToolheadServoAngles1SpinBox->value();
+        ReplaceArrayTag(pOutput, "#{SWITCHING_TOOLHEAD_SERVO_ANGLES}", false, "SWITCHING_TOOLHEAD_SERVO_ANGLES", std::vector<int32_t>{x0, x1}, mUi->uSwitchingToolheadServoAnglesBox->isEnabled());
+    }
+    ReplaceTag(pOutput, "#{SWITCHING_TOOLHEAD_Y_RELEASE}", mUi->uSwitchingToolheadYReleaseSpinBox, false, "SWITCHING_TOOLHEAD_Y_RELEASE");
+    {
+        const auto& t0 = mUi->uSwitchingToolheadXSecurityT0SpinBox->value();
+        const auto& t1 = mUi->uSwitchingToolheadXSecurityT1SpinBox->value();
+        ReplaceArrayTag(pOutput, "#{SWITCHING_TOOLHEAD_X_SECURITY}", false, "SWITCHING_TOOLHEAD_X_SECURITY", std::vector<int32_t>{t0, t1}, mUi->uSwitchingToolheadXSecurityBox->isEnabled());
+    }
+    ReplaceTag(pOutput, "#{PRIME_BEFORE_REMOVE}", mUi->uPrimeBeforeRemoveBox, "PRIME_BEFORE_REMOVE");
+    ReplaceTag(pOutput, "#{SWITCHING_TOOLHEAD_PRIME_MM}", mUi->uSwitchingToolheadPrimeMmSpinBox, false, "SWITCHING_TOOLHEAD_PRIME_MM");
+    ReplaceTag(pOutput, "#{SWITCHING_TOOLHEAD_RETRACT_MM}", mUi->uSwitchingToolheadRetractMmSpinBox, false, "SWITCHING_TOOLHEAD_RETRACT_MM");
+    ReplaceTag(pOutput, "#{SWITCHING_TOOLHEAD_PRIME_FEEDRATE}", mUi->uSwitchingToolheadPrimeFeedrateSpinBox, false, "SWITCHING_TOOLHEAD_PRIME_FEEDRATE");
+    ReplaceTag(pOutput, "#{SWITCHING_TOOLHEAD_RETRACT_FEEDRATE}", mUi->uSwitchingToolheadRetractFeedrateSpinBox, false, "SWITCHING_TOOLHEAD_RETRACT_FEEDRATE");
+    ReplaceTag(pOutput, "#{SWITCHING_TOOLHEAD_Z_HOP}", mUi->uSwitchingToolheadZHopSpinBox, false, "SWITCHING_TOOLHEAD_Z_HOP");
 }

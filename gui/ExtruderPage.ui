@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1290</width>
-    <height>1937</height>
+    <height>2500</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -271,106 +271,40 @@ QAbstractSpinBox::down-button:off {
    <property name="spacing">
     <number>10</number>
    </property>
-   <item row="0" column="0">
-    <widget class="QWidget" name="widget" native="true">
-     <layout class="QGridLayout" name="gridLayout_3">
-      <property name="leftMargin">
-       <number>0</number>
-      </property>
-      <property name="topMargin">
-       <number>0</number>
-      </property>
-      <property name="rightMargin">
-       <number>0</number>
-      </property>
-      <property name="bottomMargin">
-       <number>0</number>
-      </property>
-      <property name="horizontalSpacing">
-       <number>10</number>
-      </property>
-      <property name="verticalSpacing">
-       <number>5</number>
-      </property>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_5">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font>
-          <family>Source Sans Pro Light</family>
-          <pointsize>-1</pointsize>
-          <italic>true</italic>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLabel {
-	color: rgb(100, 103, 122);
-	font-size: 35px;
-	font-family: &quot;Source Sans Pro Light&quot;;
-	font-style: italic;
-}
-</string>
-        </property>
-        <property name="text">
-         <string>EXTRUDER INFO</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="2">
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="0" column="1">
-       <widget class="QPushButton" name="uDocumentationButton">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="toolTip">
-         <string>Open Extruder Info documentation</string>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-	background: none;
-	border: none;
-}</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset resource="../resources/resources.qrc">
-          <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>20</width>
-          <height>20</height>
-         </size>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
+   <item row="15" column="0" colspan="2">
+    <spacer name="verticalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Expanding</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+    </spacer>
    </item>
-   <item row="10" column="1">
-    <widget class="QGroupBox" name="uParkingExtruderGrabDistanceBox">
+   <item row="2" column="0" colspan="2">
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>10</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="10" column="0">
+    <widget class="QGroupBox" name="uParkingExtruderParkingXBox">
      <property name="focusPolicy">
       <enum>Qt::StrongFocus</enum>
      </property>
@@ -380,17 +314,80 @@ QAbstractSpinBox::down-button:off {
 }</string>
      </property>
      <property name="title">
-      <string>PARKING_EXTRUDER_GRAB_DISTANCE</string>
+      <string>PARKING_EXTRUDER_PARKING_X</string>
      </property>
      <property name="checkable">
       <bool>false</bool>
      </property>
-     <layout class="QGridLayout" name="gridLayout_47">
+     <layout class="QGridLayout" name="gridLayout_48">
       <property name="spacing">
        <number>10</number>
       </property>
+      <item row="0" column="1">
+       <widget class="QLabel" name="label_53">
+        <property name="text">
+         <string>These are the X positions for parking the extruders.</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" colspan="2">
+       <widget class="QWidget" name="widget_10" native="true">
+        <layout class="QGridLayout" name="gridLayout_49" columnstretch="1,1">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QSpinBox" name="uParkingExtruderParkingX0SpinBox">
+           <property name="suffix">
+            <string> mm</string>
+           </property>
+           <property name="minimum">
+            <number>-1000</number>
+           </property>
+           <property name="maximum">
+            <number>1000</number>
+           </property>
+           <property name="stepType">
+            <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QSpinBox" name="uParkingExtruderParkingX1SpinBox">
+           <property name="suffix">
+            <string> mm</string>
+           </property>
+           <property name="minimum">
+            <number>-1000</number>
+           </property>
+           <property name="maximum">
+            <number>1000</number>
+           </property>
+           <property name="stepType">
+            <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
       <item row="0" column="0">
-       <widget class="QLabel" name="label_54">
+       <widget class="QLabel" name="label_52">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -405,26 +402,1194 @@ QAbstractSpinBox::down-button:off {
         </property>
        </widget>
       </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="14" column="0">
+    <widget class="QLabel" name="label_65">
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+	color: rgb(100, 103, 122);
+	font-size: 25px;
+	font-family: &quot;Source Sans Pro Light&quot;;
+	font-style: italic;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>MIXING EXTRUDER</string>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="0" colspan="2">
+    <widget class="QTabWidget" name="uSwitchingToolheadsTabWidget">
+     <property name="styleSheet">
+      <string notr="true">QTabWidget::pane {
+	border: 1px solid black;
+}
+
+QScrollBar::vertical {
+	background: rgb(34, 35, 40);
+}
+
+QTabBar::tab {
+	color: black;
+	padding: 2px 5px;
+	margin: 0 1px;
+	background: rgb(249, 154, 0);
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	margin-top: 2px;
+}
+
+QTabBar::tab:!selected {
+	margin-top: 3px;
+}</string>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Switching Toolhead</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_39">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QScrollArea" name="scrollArea_5">
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
+         </property>
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents_5">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>1259</width>
+            <height>609</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">#scrollAreaWidgetContents_5 {
+	background: rgb(34, 35, 40);
+}</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_57">
+           <item row="0" column="0">
+            <widget class="QGroupBox" name="uSwitchingToolheadBox">
+             <property name="title">
+              <string>SWITCHING_TOOLHEAD</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_53">
+              <property name="spacing">
+               <number>10</number>
+              </property>
+              <item row="1" column="0" colspan="3">
+               <widget class="QWidget" name="widget_11" native="true">
+                <layout class="QGridLayout" name="gridLayout_63" columnstretch="1,1">
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="spacing">
+                  <number>10</number>
+                 </property>
+                 <item row="0" column="0">
+                  <widget class="QGroupBox" name="groupBox_3">
+                   <property name="focusPolicy">
+                    <enum>Qt::StrongFocus</enum>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+                   </property>
+                   <property name="title">
+                    <string>SWITCHING_TOOLHEAD_SERVO_NR</string>
+                   </property>
+                   <layout class="QGridLayout" name="gridLayout_65">
+                    <property name="spacing">
+                     <number>10</number>
+                    </property>
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="label_74">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="pixmap">
+                       <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1">
+                     <widget class="QLabel" name="label_75">
+                      <property name="text">
+                       <string>This is the index of the servo connector.</string>
+                      </property>
+                      <property name="wordWrap">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="0" colspan="2">
+                     <widget class="QSpinBox" name="uSwitchingToolheadServoNrSpinBox">
+                      <property name="maximum">
+                       <number>10</number>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QGroupBox" name="uSwitchingToolheadServoAnglesBox">
+                   <property name="focusPolicy">
+                    <enum>Qt::StrongFocus</enum>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+                   </property>
+                   <property name="title">
+                    <string>SWITCHING_TOOLHEAD_SERVO_ANGLES</string>
+                   </property>
+                   <layout class="QGridLayout" name="gridLayout_64" columnstretch="0,1,1">
+                    <property name="spacing">
+                     <number>10</number>
+                    </property>
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="label_76">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="pixmap">
+                       <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1" colspan="2">
+                     <widget class="QLabel" name="label_77">
+                      <property name="text">
+                       <string>These are the angles for lock and unlock.</string>
+                      </property>
+                      <property name="wordWrap">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="0" colspan="3">
+                     <widget class="QWidget" name="widget_12" native="true">
+                      <layout class="QGridLayout" name="gridLayout_66">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="spacing">
+                        <number>10</number>
+                       </property>
+                       <item row="0" column="0">
+                        <widget class="QSpinBox" name="uSwitchingToolheadServoAngles0SpinBox">
+                         <property name="suffix">
+                          <string> °</string>
+                         </property>
+                         <property name="maximum">
+                          <number>360</number>
+                         </property>
+                         <property name="stepType">
+                          <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="1">
+                        <widget class="QSpinBox" name="uSwitchingToolheadServoAngles1SpinBox">
+                         <property name="suffix">
+                          <string> °</string>
+                         </property>
+                         <property name="maximum">
+                          <number>360</number>
+                         </property>
+                         <property name="stepType">
+                          <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+                         </property>
+                         <property name="value">
+                          <number>180</number>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="0" column="1" colspan="2">
+               <widget class="QLabel" name="label_57">
+                <property name="text">
+                 <string>Enable this for swappable and dockable toolheads such as the E3D Tool Changer. Toolheads are locked with a servo.</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_56">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0" colspan="3">
+               <spacer name="verticalSpacer_4">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_4">
+      <attribute name="title">
+       <string>Magnetic Switching Toolhead</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_42">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QScrollArea" name="scrollArea_6">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>607</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
+         </property>
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents_6">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>1259</width>
+            <height>609</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">#scrollAreaWidgetContents_6 {
+	background: rgb(34, 35, 40);
+}</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_58">
+           <item row="0" column="0">
+            <widget class="QGroupBox" name="uMagneticSwitchingToolheadBox">
+             <property name="title">
+              <string>MAGNETIC_SWITCHING_TOOLHEAD</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_52">
+              <property name="spacing">
+               <number>10</number>
+              </property>
+              <item row="0" column="1">
+               <widget class="QLabel" name="label_59">
+                <property name="text">
+                 <string>Enable this for swappable and dockable toolheads with a magnetic docking mechanism using movement and no servo.</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_58">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0" colspan="2">
+               <widget class="QWidget" name="widget_14" native="true">
+                <layout class="QGridLayout" name="gridLayout_68" columnstretch="1,1">
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="spacing">
+                  <number>10</number>
+                 </property>
+                 <item row="0" column="1">
+                  <widget class="QGroupBox" name="uSwitchingToolheadXSecurityBox">
+                   <property name="focusPolicy">
+                    <enum>Qt::StrongFocus</enum>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+                   </property>
+                   <property name="title">
+                    <string>SWITCHING_TOOLHEAD_X_SECURITY</string>
+                   </property>
+                   <layout class="QGridLayout" name="gridLayout_74">
+                    <property name="spacing">
+                     <number>10</number>
+                    </property>
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="label_87">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="pixmap">
+                       <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1">
+                     <widget class="QLabel" name="label_89">
+                      <property name="text">
+                       <string>This is the security distance for the X axis (T0 and T1).</string>
+                      </property>
+                      <property name="wordWrap">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="0" colspan="2">
+                     <widget class="QWidget" name="widget_16" native="true">
+                      <layout class="QGridLayout" name="gridLayout_77">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="spacing">
+                        <number>10</number>
+                       </property>
+                       <item row="0" column="0">
+                        <widget class="QGroupBox" name="groupBox_23">
+                         <property name="focusPolicy">
+                          <enum>Qt::StrongFocus</enum>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+                         </property>
+                         <property name="title">
+                          <string>T0</string>
+                         </property>
+                         <layout class="QGridLayout" name="gridLayout_78">
+                          <property name="spacing">
+                           <number>10</number>
+                          </property>
+                          <item row="0" column="0">
+                           <widget class="QSpinBox" name="uSwitchingToolheadXSecurityT0SpinBox">
+                            <property name="suffix">
+                             <string> mm</string>
+                            </property>
+                            <property name="maximum">
+                             <number>1000</number>
+                            </property>
+                            <property name="stepType">
+                             <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+                            </property>
+                            <property name="value">
+                             <number>90</number>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
+                       </item>
+                       <item row="0" column="1">
+                        <widget class="QGroupBox" name="groupBox_24">
+                         <property name="focusPolicy">
+                          <enum>Qt::StrongFocus</enum>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+                         </property>
+                         <property name="title">
+                          <string>T1</string>
+                         </property>
+                         <layout class="QGridLayout" name="gridLayout_79">
+                          <property name="spacing">
+                           <number>10</number>
+                          </property>
+                          <item row="0" column="0">
+                           <widget class="QSpinBox" name="uSwitchingToolheadXSecurityT1SpinBox">
+                            <property name="suffix">
+                             <string> mm</string>
+                            </property>
+                            <property name="maximum">
+                             <number>1000</number>
+                            </property>
+                            <property name="stepType">
+                             <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+                            </property>
+                            <property name="value">
+                             <number>150</number>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="QGroupBox" name="groupBox_9">
+                   <property name="focusPolicy">
+                    <enum>Qt::StrongFocus</enum>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+                   </property>
+                   <property name="title">
+                    <string>SWITCHING_TOOLHEAD_Y_RELEASE</string>
+                   </property>
+                   <layout class="QGridLayout" name="gridLayout_75">
+                    <property name="spacing">
+                     <number>10</number>
+                    </property>
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="label_86">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="pixmap">
+                       <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1">
+                     <widget class="QLabel" name="label_88">
+                      <property name="text">
+                       <string>This is the security distance for the Y axis.</string>
+                      </property>
+                      <property name="wordWrap">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="0" colspan="2">
+                     <widget class="QSpinBox" name="uSwitchingToolheadYReleaseSpinBox">
+                      <property name="suffix">
+                       <string> mm</string>
+                      </property>
+                      <property name="maximum">
+                       <number>1000</number>
+                      </property>
+                      <property name="stepType">
+                       <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+                      </property>
+                      <property name="value">
+                       <number>5</number>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="1" column="0" colspan="2">
+                  <widget class="QGroupBox" name="uPrimeBeforeRemoveBox">
+                   <property name="title">
+                    <string>PRIME_BEFORE_REMOVE</string>
+                   </property>
+                   <property name="checkable">
+                    <bool>true</bool>
+                   </property>
+                   <layout class="QGridLayout" name="gridLayout_69">
+                    <property name="spacing">
+                     <number>10</number>
+                    </property>
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="label_90">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="pixmap">
+                       <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1">
+                     <widget class="QLabel" name="label_91">
+                      <property name="text">
+                       <string>Enable this to prime the nozzle before release from the dock.</string>
+                      </property>
+                      <property name="wordWrap">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="0" colspan="2">
+                     <widget class="QWidget" name="widget_15" native="true">
+                      <layout class="QGridLayout" name="gridLayout_76">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="spacing">
+                        <number>10</number>
+                       </property>
+                       <item row="0" column="0">
+                        <widget class="QGroupBox" name="groupBox_13">
+                         <property name="focusPolicy">
+                          <enum>Qt::StrongFocus</enum>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+                         </property>
+                         <property name="title">
+                          <string>SWITCHING_TOOLHEAD_PRIME_MM</string>
+                         </property>
+                         <layout class="QGridLayout" name="gridLayout_70">
+                          <property name="spacing">
+                           <number>10</number>
+                          </property>
+                          <item row="0" column="0">
+                           <widget class="QLabel" name="label_82">
+                            <property name="sizePolicy">
+                             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                              <horstretch>0</horstretch>
+                              <verstretch>0</verstretch>
+                             </sizepolicy>
+                            </property>
+                            <property name="text">
+                             <string/>
+                            </property>
+                            <property name="pixmap">
+                             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="0" column="1">
+                           <widget class="QLabel" name="label_83">
+                            <property name="text">
+                             <string>This is the extruder prime length.</string>
+                            </property>
+                            <property name="wordWrap">
+                             <bool>true</bool>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="1" column="0" colspan="2">
+                           <widget class="QSpinBox" name="uSwitchingToolheadPrimeMmSpinBox">
+                            <property name="suffix">
+                             <string> mm</string>
+                            </property>
+                            <property name="maximum">
+                             <number>100</number>
+                            </property>
+                            <property name="stepType">
+                             <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+                            </property>
+                            <property name="value">
+                             <number>20</number>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
+                       </item>
+                       <item row="0" column="1">
+                        <widget class="QGroupBox" name="groupBox_20">
+                         <property name="focusPolicy">
+                          <enum>Qt::StrongFocus</enum>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+                         </property>
+                         <property name="title">
+                          <string>SWITCHING_TOOLHEAD_RETRACT_MM</string>
+                         </property>
+                         <layout class="QGridLayout" name="gridLayout_71">
+                          <property name="spacing">
+                           <number>10</number>
+                          </property>
+                          <item row="0" column="0">
+                           <widget class="QLabel" name="label_84">
+                            <property name="sizePolicy">
+                             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                              <horstretch>0</horstretch>
+                              <verstretch>0</verstretch>
+                             </sizepolicy>
+                            </property>
+                            <property name="text">
+                             <string/>
+                            </property>
+                            <property name="pixmap">
+                             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="0" column="1">
+                           <widget class="QLabel" name="label_85">
+                            <property name="text">
+                             <string>This is the retract after priming length.</string>
+                            </property>
+                            <property name="wordWrap">
+                             <bool>true</bool>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="1" column="0" colspan="2">
+                           <widget class="QSpinBox" name="uSwitchingToolheadRetractMmSpinBox">
+                            <property name="suffix">
+                             <string> mm</string>
+                            </property>
+                            <property name="maximum">
+                             <number>100</number>
+                            </property>
+                            <property name="stepType">
+                             <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+                            </property>
+                            <property name="value">
+                             <number>10</number>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
+                       </item>
+                       <item row="1" column="0">
+                        <widget class="QGroupBox" name="groupBox_21">
+                         <property name="focusPolicy">
+                          <enum>Qt::StrongFocus</enum>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+                         </property>
+                         <property name="title">
+                          <string>SWITCHING_TOOLHEAD_PRIME_FEEDRATE</string>
+                         </property>
+                         <layout class="QGridLayout" name="gridLayout_73">
+                          <property name="spacing">
+                           <number>10</number>
+                          </property>
+                          <item row="0" column="0">
+                           <widget class="QLabel" name="label_78">
+                            <property name="sizePolicy">
+                             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                              <horstretch>0</horstretch>
+                              <verstretch>0</verstretch>
+                             </sizepolicy>
+                            </property>
+                            <property name="text">
+                             <string/>
+                            </property>
+                            <property name="pixmap">
+                             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="0" column="1">
+                           <widget class="QLabel" name="label_79">
+                            <property name="text">
+                             <string>This is the extruder prime feedrate.</string>
+                            </property>
+                            <property name="wordWrap">
+                             <bool>true</bool>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="1" column="0" colspan="2">
+                           <widget class="QSpinBox" name="uSwitchingToolheadPrimeFeedrateSpinBox">
+                            <property name="suffix">
+                             <string> mm/min</string>
+                            </property>
+                            <property name="maximum">
+                             <number>10000</number>
+                            </property>
+                            <property name="stepType">
+                             <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+                            </property>
+                            <property name="value">
+                             <number>300</number>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
+                       </item>
+                       <item row="1" column="1">
+                        <widget class="QGroupBox" name="groupBox_22">
+                         <property name="focusPolicy">
+                          <enum>Qt::StrongFocus</enum>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+                         </property>
+                         <property name="title">
+                          <string>SWITCHING_TOOLHEAD_RETRACT_FEEDRATE</string>
+                         </property>
+                         <layout class="QGridLayout" name="gridLayout_72">
+                          <property name="spacing">
+                           <number>10</number>
+                          </property>
+                          <item row="0" column="0">
+                           <widget class="QLabel" name="label_80">
+                            <property name="sizePolicy">
+                             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                              <horstretch>0</horstretch>
+                              <verstretch>0</verstretch>
+                             </sizepolicy>
+                            </property>
+                            <property name="text">
+                             <string/>
+                            </property>
+                            <property name="pixmap">
+                             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="0" column="1">
+                           <widget class="QLabel" name="label_81">
+                            <property name="text">
+                             <string>This is the extruder retract feedrate.</string>
+                            </property>
+                            <property name="wordWrap">
+                             <bool>true</bool>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="1" column="0" colspan="2">
+                           <widget class="QSpinBox" name="uSwitchingToolheadRetractFeedrateSpinBox">
+                            <property name="suffix">
+                             <string> mm/min</string>
+                            </property>
+                            <property name="maximum">
+                             <number>10000</number>
+                            </property>
+                            <property name="stepType">
+                             <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+                            </property>
+                            <property name="value">
+                             <number>2400</number>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_7">
+      <attribute name="title">
+       <string>Electromagnetic Switching Toolhead</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_56">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QScrollArea" name="scrollArea_7">
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
+         </property>
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents_7">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>1259</width>
+            <height>609</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">#scrollAreaWidgetContents_7 {
+	background: rgb(34, 35, 40);
+}</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_59">
+           <item row="0" column="0">
+            <widget class="QGroupBox" name="uElectromagneticSwitchingToolheadBox">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="title">
+              <string>ELECTROMAGNETIC_SWITCHING_TOOLHEAD</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_51" columnstretch="0,0,0">
+              <property name="spacing">
+               <number>10</number>
+              </property>
+              <item row="1" column="0" colspan="3">
+               <widget class="QGroupBox" name="groupBox_11">
+                <property name="focusPolicy">
+                 <enum>Qt::StrongFocus</enum>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+                </property>
+                <property name="title">
+                 <string>SWITCHING_TOOLHEAD_Z_HOP</string>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_80">
+                 <property name="spacing">
+                  <number>10</number>
+                 </property>
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_92">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="pixmap">
+                    <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QLabel" name="label_93">
+                   <property name="text">
+                    <string>This is the Z raise for switching.</string>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0" colspan="2">
+                  <widget class="QSpinBox" name="uSwitchingToolheadZHopSpinBox">
+                   <property name="suffix">
+                    <string> mm</string>
+                   </property>
+                   <property name="maximum">
+                    <number>100</number>
+                   </property>
+                   <property name="stepType">
+                    <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+                   </property>
+                   <property name="value">
+                    <number>2</number>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_60">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1" colspan="2">
+               <widget class="QLabel" name="label_61">
+                <property name="text">
+                 <string>Enable this for setups with CoreXY / HBot kinematics where toolheads are parked at one edge and held with an electromagnet. Supports more than 2 toolheads.</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0" colspan="3">
+               <spacer name="verticalSpacer_5">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="focusPolicy">
+      <enum>Qt::StrongFocus</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+     </property>
+     <property name="title">
+      <string>DEFAULT_NOMINAL_FILAMENT_DIA</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_5">
+      <property name="spacing">
+       <number>10</number>
+      </property>
       <item row="0" column="1">
-       <widget class="QLabel" name="label_55">
-        <property name="text">
-         <string>This is the distance to move beyond the parking point to grab the extruder.</string>
+       <widget class="QLabel" name="label_3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
         </property>
-        <property name="wordWrap">
-         <bool>true</bool>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
         </property>
        </widget>
       </item>
-      <item row="1" column="0" colspan="2">
-       <widget class="QSpinBox" name="uParkingExtruderGrabDistanceSpinBox">
+      <item row="1" column="1" colspan="2">
+       <widget class="QDoubleSpinBox" name="uDefaultNominalFilamentDiaSpinBox">
         <property name="suffix">
          <string> mm</string>
         </property>
         <property name="maximum">
-         <number>100</number>
+         <double>10.000000000000000</double>
         </property>
         <property name="stepType">
          <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+        </property>
+        <property name="value">
+         <double>1.750000000000000</double>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>This is the generally expected filament diameter. Typical values are 1.75 mm, 2.85 mm and 3.00 mm.</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -501,759 +1666,8 @@ QAbstractSpinBox::down-button:off {
      </layout>
     </widget>
    </item>
-   <item row="9" column="0" colspan="2">
-    <widget class="QTabWidget" name="uParkingTabWidget">
-     <property name="styleSheet">
-      <string notr="true">QTabWidget::pane {
-	border: 1px solid black;
-}
-
-QScrollBar::vertical {
-	background: rgb(34, 35, 40);
-}
-
-QTabBar::tab {
-	color: black;
-	padding: 2px 5px;
-	margin: 0 1px;
-	background: rgb(249, 154, 0);
-	border-bottom-left-radius: 0;
-	border-bottom-right-radius: 0;
-	border-top-left-radius: 3px;
-	border-top-right-radius: 3px;
-	margin-top: 2px;
-}
-
-QTabBar::tab:!selected {
-	margin-top: 3px;
-}</string>
-     </property>
-     <property name="currentIndex">
-      <number>1</number>
-     </property>
-     <widget class="QWidget" name="tab_5">
-      <attribute name="title">
-       <string>Parking Extruder</string>
-      </attribute>
-      <layout class="QGridLayout" name="gridLayout_54">
-       <item row="0" column="0">
-        <widget class="QScrollArea" name="scrollArea">
-         <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Plain</enum>
-         </property>
-         <property name="widgetResizable">
-          <bool>true</bool>
-         </property>
-         <widget class="QWidget" name="scrollAreaWidgetContents">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>1241</width>
-            <height>350</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">#scrollAreaWidgetContents {
-	background: rgb(34, 35, 40);
-}</string>
-          </property>
-          <layout class="QGridLayout" name="gridLayout_43">
-           <property name="spacing">
-            <number>10</number>
-           </property>
-           <item row="1" column="0">
-            <widget class="QGroupBox" name="uParkingExtruderBox">
-             <property name="title">
-              <string>PARKING_EXTRUDER</string>
-             </property>
-             <property name="checkable">
-              <bool>true</bool>
-             </property>
-             <layout class="QGridLayout" name="gridLayout_16">
-              <property name="spacing">
-               <number>10</number>
-              </property>
-              <item row="0" column="1">
-               <widget class="QLabel" name="label_43">
-                <property name="text">
-                 <string>Two separate X-carriages with extruders that connect to a moving part via a solenoid docking mechanism. Requires SOL1_PIN and SOL2_PIN.</string>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="0" colspan="2">
-               <widget class="QWidget" name="widget_9" native="true">
-                <layout class="QGridLayout" name="gridLayout_38">
-                 <property name="leftMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="topMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="rightMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="bottomMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="spacing">
-                  <number>10</number>
-                 </property>
-                 <item row="1" column="0">
-                  <widget class="QGroupBox" name="uParkingExtruderSolenoidsDelayBox">
-                   <property name="title">
-                    <string>PARKING_EXTRUDER_SOLENOIDS_DELAY</string>
-                   </property>
-                   <property name="checkable">
-                    <bool>true</bool>
-                   </property>
-                   <layout class="QGridLayout" name="gridLayout_34">
-                    <property name="spacing">
-                     <number>10</number>
-                    </property>
-                    <item row="0" column="0">
-                     <widget class="QLabel" name="label_46">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="pixmap">
-                       <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="1">
-                     <widget class="QLabel" name="label_47">
-                      <property name="text">
-                       <string>This is the delay for the magnetic field.</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="0" colspan="2">
-                     <widget class="QSpinBox" name="uParkingExtruderSolenoidsDelaySpinBox">
-                      <property name="suffix">
-                       <string> ms</string>
-                      </property>
-                      <property name="maximum">
-                       <number>10000</number>
-                      </property>
-                      <property name="stepType">
-                       <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
-                      </property>
-                      <property name="value">
-                       <number>250</number>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item row="0" column="0">
-                  <widget class="QGroupBox" name="uParkingExtruderSolenoidsInvertBox">
-                   <property name="title">
-                    <string>PARKING_EXTRUDER_SOLENOIDS_INVERT</string>
-                   </property>
-                   <property name="checkable">
-                    <bool>true</bool>
-                   </property>
-                   <layout class="QGridLayout" name="gridLayout_35">
-                    <property name="spacing">
-                     <number>10</number>
-                    </property>
-                    <item row="0" column="0">
-                     <widget class="QLabel" name="label_44">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="pixmap">
-                       <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="1">
-                     <widget class="QLabel" name="label_45">
-                      <property name="text">
-                       <string>If this is enabled, the solenoid is not magnetized with applied voltage.</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item row="0" column="1">
-                  <widget class="QGroupBox" name="uParkingExtruderSolenoidsPinsActiveBox">
-                   <property name="focusPolicy">
-                    <enum>Qt::StrongFocus</enum>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-                   </property>
-                   <property name="title">
-                    <string>PARKING_EXTRUDER_SOLENOIDS_PINS_ACTIVE</string>
-                   </property>
-                   <layout class="QGridLayout" name="gridLayout_33">
-                    <property name="spacing">
-                     <number>10</number>
-                    </property>
-                    <item row="0" column="0">
-                     <widget class="QLabel" name="label_50">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="pixmap">
-                       <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="1">
-                     <widget class="QLabel" name="label_51">
-                      <property name="text">
-                       <string>This parameter specifies whether a LOW or HIGH pin signal energizes the coil.</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="0" colspan="2">
-                     <widget class="Dropdown" name="uParkingExtruderSolenoidsPinsActiveDropdown">
-                      <item>
-                       <property name="text">
-                        <string>LOW</string>
-                       </property>
-                      </item>
-                      <item>
-                       <property name="text">
-                        <string>HIGH</string>
-                       </property>
-                      </item>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item row="1" column="1">
-                  <widget class="QGroupBox" name="uManualSolenoidControlBox">
-                   <property name="title">
-                    <string>MANUAL_SOLENOID_CONTROL</string>
-                   </property>
-                   <property name="checkable">
-                    <bool>true</bool>
-                   </property>
-                   <layout class="QGridLayout" name="gridLayout_36">
-                    <property name="spacing">
-                     <number>10</number>
-                    </property>
-                    <item row="0" column="0">
-                     <widget class="QLabel" name="label_48">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="pixmap">
-                       <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="1">
-                     <widget class="QLabel" name="label_49">
-                      <property name="text">
-                       <string>Enable this for manual control of docking solenoids with M380 S / M381.</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item row="0" column="0">
-               <widget class="QLabel" name="label_42">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="pixmap">
-                 <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="tab_6">
-      <attribute name="title">
-       <string>Magnetic Parking Extruder</string>
-      </attribute>
-      <layout class="QGridLayout" name="gridLayout_55">
-       <item row="0" column="0">
-        <widget class="QScrollArea" name="scrollArea_3">
-         <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Plain</enum>
-         </property>
-         <property name="widgetResizable">
-          <bool>true</bool>
-         </property>
-         <widget class="QWidget" name="scrollAreaWidgetContents_3">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>1241</width>
-            <height>350</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">#scrollAreaWidgetContents_3 {
-	background: rgb(34, 35, 40);
-}</string>
-          </property>
-          <layout class="QGridLayout" name="gridLayout_45">
-           <item row="0" column="0">
-            <widget class="QGroupBox" name="uMagneticParkingExtruderBox">
-             <property name="title">
-              <string>MAGNETIC_PARKING_EXTRUDER</string>
-             </property>
-             <property name="checkable">
-              <bool>true</bool>
-             </property>
-             <layout class="QGridLayout" name="gridLayout_28">
-              <property name="spacing">
-               <number>10</number>
-              </property>
-              <item row="1" column="0" colspan="2">
-               <widget class="QWidget" name="widget_8" native="true">
-                <layout class="QGridLayout" name="gridLayout_37">
-                 <property name="leftMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="topMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="rightMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="bottomMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="spacing">
-                  <number>10</number>
-                 </property>
-                 <item row="0" column="1">
-                  <widget class="QGroupBox" name="groupBox_17">
-                   <property name="focusPolicy">
-                    <enum>Qt::StrongFocus</enum>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-                   </property>
-                   <property name="title">
-                    <string>MPE_SLOW_SPEED</string>
-                   </property>
-                   <layout class="QGridLayout" name="gridLayout_30">
-                    <property name="spacing">
-                     <number>10</number>
-                    </property>
-                    <item row="0" column="0">
-                     <widget class="QLabel" name="label_38">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="pixmap">
-                       <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="1">
-                     <widget class="QLabel" name="label_39">
-                      <property name="text">
-                       <string>The speed for last distance travel to park and couple.</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="0" colspan="2">
-                     <widget class="QSpinBox" name="uMpeSlowSpeedSpinBox">
-                      <property name="suffix">
-                       <string> mm/min</string>
-                      </property>
-                      <property name="maximum">
-                       <number>100000</number>
-                      </property>
-                      <property name="stepType">
-                       <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item row="0" column="0">
-                  <widget class="QGroupBox" name="groupBox_16">
-                   <property name="focusPolicy">
-                    <enum>Qt::StrongFocus</enum>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-                   </property>
-                   <property name="title">
-                    <string>MPE_FAST_SPEED</string>
-                   </property>
-                   <layout class="QGridLayout" name="gridLayout_31">
-                    <property name="spacing">
-                     <number>10</number>
-                    </property>
-                    <item row="0" column="0">
-                     <widget class="QLabel" name="label_36">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="pixmap">
-                       <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="1">
-                     <widget class="QLabel" name="label_37">
-                      <property name="text">
-                       <string>The speed for travel before the last distance point.</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="0" colspan="2">
-                     <widget class="QSpinBox" name="uMpeFastSpeedSpinBox">
-                      <property name="suffix">
-                       <string> mm/min</string>
-                      </property>
-                      <property name="maximum">
-                       <number>100000</number>
-                      </property>
-                      <property name="stepType">
-                       <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item row="1" column="0">
-                  <widget class="QGroupBox" name="groupBox_18">
-                   <property name="focusPolicy">
-                    <enum>Qt::StrongFocus</enum>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-                   </property>
-                   <property name="title">
-                    <string>MPE_TRAVEL_DISTANCE</string>
-                   </property>
-                   <layout class="QGridLayout" name="gridLayout_32">
-                    <property name="spacing">
-                     <number>10</number>
-                    </property>
-                    <item row="0" column="0">
-                     <widget class="QLabel" name="label_32">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="pixmap">
-                       <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="1">
-                     <widget class="QLabel" name="label_33">
-                      <property name="text">
-                       <string>This parameter specifies the last distance point.</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="0" colspan="2">
-                     <widget class="QSpinBox" name="uMpeTravelDistanceSpinBox">
-                      <property name="suffix">
-                       <string> mm</string>
-                      </property>
-                      <property name="prefix">
-                       <string/>
-                      </property>
-                      <property name="maximum">
-                       <number>1000</number>
-                      </property>
-                      <property name="stepType">
-                       <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item row="1" column="1">
-                  <widget class="QGroupBox" name="groupBox_19">
-                   <property name="focusPolicy">
-                    <enum>Qt::StrongFocus</enum>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-                   </property>
-                   <property name="title">
-                    <string>MPE_COMPENSATION</string>
-                   </property>
-                   <layout class="QGridLayout" name="gridLayout_29">
-                    <property name="spacing">
-                     <number>10</number>
-                    </property>
-                    <item row="0" column="0">
-                     <widget class="QLabel" name="label_34">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="pixmap">
-                       <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="1">
-                     <widget class="QLabel" name="label_35">
-                      <property name="text">
-                       <string>The offset compensation, only for coupling.</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="0" colspan="2">
-                     <widget class="Dropdown" name="uMpeCompensationDropdown">
-                      <property name="currentIndex">
-                       <number>1</number>
-                      </property>
-                      <item>
-                       <property name="text">
-                        <string>-1</string>
-                       </property>
-                      </item>
-                      <item>
-                       <property name="text">
-                        <string>0</string>
-                       </property>
-                      </item>
-                      <item>
-                       <property name="text">
-                        <string>1</string>
-                       </property>
-                      </item>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <widget class="QLabel" name="label_41">
-                <property name="text">
-                 <string>Two separate X-carriages with extruders that connect to a moving part via a magnetic docking mechanism using movements and no solenoid.</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="0">
-               <widget class="QLabel" name="label_40">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="pixmap">
-                 <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item row="1" column="0">
-            <spacer name="verticalSpacer">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeType">
-              <enum>QSizePolicy::MinimumExpanding</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>0</width>
-               <height>0</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-          </layout>
-         </widget>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </widget>
-   </item>
-   <item row="8" column="0" colspan="2">
-    <widget class="QLabel" name="label_63">
-     <property name="styleSheet">
-      <string notr="true">QLabel {
-	color: rgb(100, 103, 122);
-	font-size: 25px;
-	font-family: &quot;Source Sans Pro Light&quot;;
-	font-style: italic;
-}
-</string>
-     </property>
-     <property name="text">
-      <string>PARKING EXTRUDERS</string>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="0" colspan="2">
-    <widget class="QLabel" name="label_64">
-     <property name="styleSheet">
-      <string notr="true">QLabel {
-	color: rgb(100, 103, 122);
-	font-size: 25px;
-	font-family: &quot;Source Sans Pro Light&quot;;
-	font-style: italic;
-}
-</string>
-     </property>
-     <property name="text">
-      <string>SWITCHING EXTRUDER / NOZZLE</string>
-     </property>
-    </widget>
-   </item>
-   <item row="11" column="0" colspan="2">
-    <widget class="QLabel" name="label_62">
-     <property name="styleSheet">
-      <string notr="true">QLabel {
-	color: rgb(100, 103, 122);
-	font-size: 25px;
-	font-family: &quot;Source Sans Pro Light&quot;;
-	font-style: italic;
-}
-</string>
-     </property>
-     <property name="text">
-      <string>SWITCHING TOOLHEADS</string>
-     </property>
-    </widget>
-   </item>
-   <item row="14" column="0" colspan="2">
-    <spacer name="verticalSpacer_3">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::MinimumExpanding</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>0</width>
-       <height>0</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="15" column="0">
-    <widget class="QWidget" name="widget_2" native="true">
-     <layout class="QGridLayout" name="gridLayout_4" columnstretch="1">
-      <property name="leftMargin">
-       <number>0</number>
-      </property>
-      <property name="topMargin">
-       <number>0</number>
-      </property>
-      <property name="rightMargin">
-       <number>0</number>
-      </property>
-      <property name="bottomMargin">
-       <number>0</number>
-      </property>
-      <property name="spacing">
-       <number>10</number>
-      </property>
-     </layout>
-    </widget>
-   </item>
-   <item row="3" column="0">
-    <widget class="QGroupBox" name="groupBox">
+   <item row="10" column="1">
+    <widget class="QGroupBox" name="uParkingExtruderGrabDistanceBox">
      <property name="focusPolicy">
       <enum>Qt::StrongFocus</enum>
      </property>
@@ -1263,25 +1677,22 @@ QTabBar::tab:!selected {
 }</string>
      </property>
      <property name="title">
-      <string>EXTRUDERS</string>
+      <string>PARKING_EXTRUDER_GRAB_DISTANCE</string>
      </property>
-     <layout class="QGridLayout" name="gridLayout_2">
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_47">
       <property name="spacing">
        <number>10</number>
       </property>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_2">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_54">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>30</height>
-         </size>
         </property>
         <property name="text">
          <string/>
@@ -1291,35 +1702,26 @@ QTabBar::tab:!selected {
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
-       <widget class="QLabel" name="label">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>30</height>
-         </size>
-        </property>
+      <item row="0" column="1">
+       <widget class="QLabel" name="label_55">
         <property name="text">
-         <string>This is the number of extruders installed in the printer.</string>
+         <string>This is the distance to move beyond the parking point to grab the extruder.</string>
         </property>
         <property name="wordWrap">
          <bool>true</bool>
         </property>
        </widget>
       </item>
-      <item row="2" column="0" colspan="2">
-       <widget class="QSpinBox" name="uExtrudersSpinBox">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimum">
-         <number>0</number>
+      <item row="1" column="0" colspan="2">
+       <widget class="QSpinBox" name="uParkingExtruderGrabDistanceSpinBox">
+        <property name="suffix">
+         <string> mm</string>
         </property>
         <property name="maximum">
-         <number>8</number>
+         <number>100</number>
+        </property>
+        <property name="stepType">
+         <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
         </property>
        </widget>
       </item>
@@ -1354,7 +1756,7 @@ QTabBar::tab:!selected {
 }</string>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab_2">
       <attribute name="title">
@@ -2128,8 +2530,736 @@ QTabBar::tab:!selected {
      </widget>
     </widget>
    </item>
-   <item row="10" column="0">
-    <widget class="QGroupBox" name="uParkingExtruderParkingXBox">
+   <item row="6" column="0" colspan="2">
+    <widget class="QLabel" name="label_64">
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+	color: rgb(100, 103, 122);
+	font-size: 25px;
+	font-family: &quot;Source Sans Pro Light&quot;;
+	font-style: italic;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>SWITCHING EXTRUDER / NOZZLE</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0" colspan="2">
+    <widget class="QLabel" name="label_63">
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+	color: rgb(100, 103, 122);
+	font-size: 25px;
+	font-family: &quot;Source Sans Pro Light&quot;;
+	font-style: italic;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>PARKING EXTRUDERS</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="0" colspan="2">
+    <widget class="QTabWidget" name="uParkingTabWidget">
+     <property name="styleSheet">
+      <string notr="true">QTabWidget::pane {
+	border: 1px solid black;
+}
+
+QScrollBar::vertical {
+	background: rgb(34, 35, 40);
+}
+
+QTabBar::tab {
+	color: black;
+	padding: 2px 5px;
+	margin: 0 1px;
+	background: rgb(249, 154, 0);
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	margin-top: 2px;
+}
+
+QTabBar::tab:!selected {
+	margin-top: 3px;
+}</string>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab_5">
+      <attribute name="title">
+       <string>Parking Extruder</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_54">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QScrollArea" name="scrollArea">
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
+         </property>
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>1259</width>
+            <height>350</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">#scrollAreaWidgetContents {
+	background: rgb(34, 35, 40);
+}</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_43">
+           <property name="spacing">
+            <number>10</number>
+           </property>
+           <item row="1" column="0">
+            <widget class="QGroupBox" name="uParkingExtruderBox">
+             <property name="title">
+              <string>PARKING_EXTRUDER</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_16">
+              <property name="spacing">
+               <number>10</number>
+              </property>
+              <item row="0" column="1">
+               <widget class="QLabel" name="label_43">
+                <property name="text">
+                 <string>Two separate X-carriages with extruders that connect to a moving part via a solenoid docking mechanism. Requires SOL1_PIN and SOL2_PIN.</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0" colspan="2">
+               <widget class="QWidget" name="widget_9" native="true">
+                <layout class="QGridLayout" name="gridLayout_38">
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="spacing">
+                  <number>10</number>
+                 </property>
+                 <item row="1" column="0">
+                  <widget class="QGroupBox" name="uParkingExtruderSolenoidsDelayBox">
+                   <property name="title">
+                    <string>PARKING_EXTRUDER_SOLENOIDS_DELAY</string>
+                   </property>
+                   <property name="checkable">
+                    <bool>true</bool>
+                   </property>
+                   <layout class="QGridLayout" name="gridLayout_34">
+                    <property name="spacing">
+                     <number>10</number>
+                    </property>
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="label_46">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="pixmap">
+                       <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1">
+                     <widget class="QLabel" name="label_47">
+                      <property name="text">
+                       <string>This is the delay for the magnetic field.</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="0" colspan="2">
+                     <widget class="QSpinBox" name="uParkingExtruderSolenoidsDelaySpinBox">
+                      <property name="suffix">
+                       <string> ms</string>
+                      </property>
+                      <property name="maximum">
+                       <number>10000</number>
+                      </property>
+                      <property name="stepType">
+                       <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+                      </property>
+                      <property name="value">
+                       <number>250</number>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="QGroupBox" name="uParkingExtruderSolenoidsInvertBox">
+                   <property name="title">
+                    <string>PARKING_EXTRUDER_SOLENOIDS_INVERT</string>
+                   </property>
+                   <property name="checkable">
+                    <bool>true</bool>
+                   </property>
+                   <layout class="QGridLayout" name="gridLayout_35">
+                    <property name="spacing">
+                     <number>10</number>
+                    </property>
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="label_44">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="pixmap">
+                       <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1">
+                     <widget class="QLabel" name="label_45">
+                      <property name="text">
+                       <string>If this is enabled, the solenoid is not magnetized with applied voltage.</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QGroupBox" name="uParkingExtruderSolenoidsPinsActiveBox">
+                   <property name="focusPolicy">
+                    <enum>Qt::StrongFocus</enum>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+                   </property>
+                   <property name="title">
+                    <string>PARKING_EXTRUDER_SOLENOIDS_PINS_ACTIVE</string>
+                   </property>
+                   <layout class="QGridLayout" name="gridLayout_33">
+                    <property name="spacing">
+                     <number>10</number>
+                    </property>
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="label_50">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="pixmap">
+                       <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1">
+                     <widget class="QLabel" name="label_51">
+                      <property name="text">
+                       <string>This parameter specifies whether a LOW or HIGH pin signal energizes the coil.</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="0" colspan="2">
+                     <widget class="Dropdown" name="uParkingExtruderSolenoidsPinsActiveDropdown">
+                      <item>
+                       <property name="text">
+                        <string>LOW</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>HIGH</string>
+                       </property>
+                      </item>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QGroupBox" name="uManualSolenoidControlBox">
+                   <property name="title">
+                    <string>MANUAL_SOLENOID_CONTROL</string>
+                   </property>
+                   <property name="checkable">
+                    <bool>true</bool>
+                   </property>
+                   <layout class="QGridLayout" name="gridLayout_36">
+                    <property name="spacing">
+                     <number>10</number>
+                    </property>
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="label_48">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="pixmap">
+                       <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1">
+                     <widget class="QLabel" name="label_49">
+                      <property name="text">
+                       <string>Enable this for manual control of docking solenoids with M380 S / M381.</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_42">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_6">
+      <attribute name="title">
+       <string>Magnetic Parking Extruder</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_55">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QScrollArea" name="scrollArea_3">
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
+         </property>
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents_3">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>1259</width>
+            <height>350</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">#scrollAreaWidgetContents_3 {
+	background: rgb(34, 35, 40);
+}</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_45">
+           <item row="0" column="0">
+            <widget class="QGroupBox" name="uMagneticParkingExtruderBox">
+             <property name="title">
+              <string>MAGNETIC_PARKING_EXTRUDER</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_28">
+              <property name="spacing">
+               <number>10</number>
+              </property>
+              <item row="1" column="0" colspan="2">
+               <widget class="QWidget" name="widget_8" native="true">
+                <layout class="QGridLayout" name="gridLayout_37">
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="spacing">
+                  <number>10</number>
+                 </property>
+                 <item row="0" column="1">
+                  <widget class="QGroupBox" name="groupBox_17">
+                   <property name="focusPolicy">
+                    <enum>Qt::StrongFocus</enum>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+                   </property>
+                   <property name="title">
+                    <string>MPE_SLOW_SPEED</string>
+                   </property>
+                   <layout class="QGridLayout" name="gridLayout_30">
+                    <property name="spacing">
+                     <number>10</number>
+                    </property>
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="label_38">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="pixmap">
+                       <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1">
+                     <widget class="QLabel" name="label_39">
+                      <property name="text">
+                       <string>The speed for last distance travel to park and couple.</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="0" colspan="2">
+                     <widget class="QSpinBox" name="uMpeSlowSpeedSpinBox">
+                      <property name="suffix">
+                       <string> mm/min</string>
+                      </property>
+                      <property name="maximum">
+                       <number>100000</number>
+                      </property>
+                      <property name="stepType">
+                       <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="QGroupBox" name="groupBox_16">
+                   <property name="focusPolicy">
+                    <enum>Qt::StrongFocus</enum>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+                   </property>
+                   <property name="title">
+                    <string>MPE_FAST_SPEED</string>
+                   </property>
+                   <layout class="QGridLayout" name="gridLayout_31">
+                    <property name="spacing">
+                     <number>10</number>
+                    </property>
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="label_36">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="pixmap">
+                       <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1">
+                     <widget class="QLabel" name="label_37">
+                      <property name="text">
+                       <string>The speed for travel before the last distance point.</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="0" colspan="2">
+                     <widget class="QSpinBox" name="uMpeFastSpeedSpinBox">
+                      <property name="suffix">
+                       <string> mm/min</string>
+                      </property>
+                      <property name="maximum">
+                       <number>100000</number>
+                      </property>
+                      <property name="stepType">
+                       <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QGroupBox" name="groupBox_18">
+                   <property name="focusPolicy">
+                    <enum>Qt::StrongFocus</enum>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+                   </property>
+                   <property name="title">
+                    <string>MPE_TRAVEL_DISTANCE</string>
+                   </property>
+                   <layout class="QGridLayout" name="gridLayout_32">
+                    <property name="spacing">
+                     <number>10</number>
+                    </property>
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="label_32">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="pixmap">
+                       <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1">
+                     <widget class="QLabel" name="label_33">
+                      <property name="text">
+                       <string>This parameter specifies the last distance point.</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="0" colspan="2">
+                     <widget class="QSpinBox" name="uMpeTravelDistanceSpinBox">
+                      <property name="suffix">
+                       <string> mm</string>
+                      </property>
+                      <property name="prefix">
+                       <string/>
+                      </property>
+                      <property name="maximum">
+                       <number>1000</number>
+                      </property>
+                      <property name="stepType">
+                       <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QGroupBox" name="groupBox_19">
+                   <property name="focusPolicy">
+                    <enum>Qt::StrongFocus</enum>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+                   </property>
+                   <property name="title">
+                    <string>MPE_COMPENSATION</string>
+                   </property>
+                   <layout class="QGridLayout" name="gridLayout_29">
+                    <property name="spacing">
+                     <number>10</number>
+                    </property>
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="label_34">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="pixmap">
+                       <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1">
+                     <widget class="QLabel" name="label_35">
+                      <property name="text">
+                       <string>The offset compensation, only for coupling.</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="0" colspan="2">
+                     <widget class="Dropdown" name="uMpeCompensationDropdown">
+                      <property name="currentIndex">
+                       <number>1</number>
+                      </property>
+                      <item>
+                       <property name="text">
+                        <string>-1</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>0</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>1</string>
+                       </property>
+                      </item>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLabel" name="label_41">
+                <property name="text">
+                 <string>Two separate X-carriages with extruders that connect to a moving part via a magnetic docking mechanism using movements and no solenoid.</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_40">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::MinimumExpanding</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QGroupBox" name="groupBox">
      <property name="focusPolicy">
       <enum>Qt::StrongFocus</enum>
      </property>
@@ -2139,156 +3269,177 @@ QTabBar::tab:!selected {
 }</string>
      </property>
      <property name="title">
-      <string>PARKING_EXTRUDER_PARKING_X</string>
+      <string>EXTRUDERS</string>
      </property>
-     <property name="checkable">
-      <bool>false</bool>
-     </property>
-     <layout class="QGridLayout" name="gridLayout_48">
+     <layout class="QGridLayout" name="gridLayout_2">
       <property name="spacing">
        <number>10</number>
       </property>
-      <item row="0" column="1">
-       <widget class="QLabel" name="label_53">
-        <property name="text">
-         <string>These are the X positions for parking the extruders.</string>
-        </property>
-        <property name="wordWrap">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0" colspan="2">
-       <widget class="QWidget" name="widget_10" native="true">
-        <layout class="QGridLayout" name="gridLayout_49">
-         <property name="leftMargin">
-          <number>0</number>
-         </property>
-         <property name="topMargin">
-          <number>0</number>
-         </property>
-         <property name="rightMargin">
-          <number>0</number>
-         </property>
-         <property name="bottomMargin">
-          <number>0</number>
-         </property>
-         <property name="horizontalSpacing">
-          <number>10</number>
-         </property>
-         <property name="verticalSpacing">
-          <number>9</number>
-         </property>
-         <item row="0" column="0">
-          <widget class="QSpinBox" name="uParkingExtruderParkingX0SpinBox">
-           <property name="suffix">
-            <string> mm</string>
-           </property>
-           <property name="minimum">
-            <number>-1000</number>
-           </property>
-           <property name="maximum">
-            <number>1000</number>
-           </property>
-           <property name="stepType">
-            <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QSpinBox" name="uParkingExtruderParkingX1SpinBox">
-           <property name="suffix">
-            <string> mm</string>
-           </property>
-           <property name="minimum">
-            <number>-1000</number>
-           </property>
-           <property name="maximum">
-            <number>1000</number>
-           </property>
-           <property name="stepType">
-            <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_52">
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_2">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
         </property>
         <property name="text">
          <string/>
         </property>
         <property name="pixmap">
          <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLabel" name="label">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>This is the number of extruders installed in the printer.</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" colspan="2">
+       <widget class="QSpinBox" name="uExtrudersSpinBox">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimum">
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>8</number>
         </property>
        </widget>
       </item>
      </layout>
     </widget>
    </item>
-   <item row="3" column="1">
-    <widget class="QGroupBox" name="groupBox_2">
-     <property name="focusPolicy">
-      <enum>Qt::StrongFocus</enum>
-     </property>
+   <item row="11" column="0" colspan="2">
+    <widget class="QLabel" name="label_62">
      <property name="styleSheet">
-      <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
+      <string notr="true">QLabel {
+	color: rgb(100, 103, 122);
+	font-size: 25px;
+	font-family: &quot;Source Sans Pro Light&quot;;
+	font-style: italic;
+}
+</string>
      </property>
-     <property name="title">
-      <string>DEFAULT_NOMINAL_FILAMENT_DIA</string>
+     <property name="text">
+      <string>SWITCHING TOOLHEADS</string>
      </property>
-     <layout class="QGridLayout" name="gridLayout_5">
-      <property name="spacing">
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QWidget" name="widget" native="true">
+     <layout class="QGridLayout" name="gridLayout_3">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <property name="horizontalSpacing">
        <number>10</number>
       </property>
+      <property name="verticalSpacing">
+       <number>5</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_5">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Source Sans Pro Light</family>
+          <pointsize>-1</pointsize>
+          <italic>true</italic>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+	color: rgb(100, 103, 122);
+	font-size: 35px;
+	font-family: &quot;Source Sans Pro Light&quot;;
+	font-style: italic;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>EXTRUDER INFO</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
       <item row="0" column="1">
-       <widget class="QLabel" name="label_3">
+       <widget class="QPushButton" name="uDocumentationButton">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="toolTip">
+         <string>Open Extruder Info documentation</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	background: none;
+	border: none;
+}</string>
+        </property>
         <property name="text">
          <string/>
         </property>
-        <property name="pixmap">
-         <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+        <property name="icon">
+         <iconset resource="../resources/resources.qrc">
+          <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
         </property>
-       </widget>
-      </item>
-      <item row="1" column="1" colspan="2">
-       <widget class="QDoubleSpinBox" name="uDefaultNominalFilamentDiaSpinBox">
-        <property name="suffix">
-         <string> mm</string>
-        </property>
-        <property name="maximum">
-         <double>10.000000000000000</double>
-        </property>
-        <property name="stepType">
-         <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
-        </property>
-        <property name="value">
-         <double>1.750000000000000</double>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="2">
-       <widget class="QLabel" name="label_4">
-        <property name="text">
-         <string>This is the generally expected filament diameter. Typical values are 1.75 mm, 2.85 mm and 3.00 mm.</string>
-        </property>
-        <property name="wordWrap">
-         <bool>true</bool>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
         </property>
        </widget>
       </item>
@@ -2448,9 +3599,9 @@ QTabBar::tab:!selected {
      </layout>
     </widget>
    </item>
-   <item row="12" column="0" colspan="2">
-    <widget class="QWidget" name="widget_11" native="true">
-     <layout class="QGridLayout" name="gridLayout_50" columnstretch="1,1,1">
+   <item row="13" column="0" colspan="2">
+    <widget class="QWidget" name="widget_2" native="true">
+     <layout class="QGridLayout" name="gridLayout_4">
       <property name="leftMargin">
        <number>0</number>
       </property>
@@ -2466,61 +3617,25 @@ QTabBar::tab:!selected {
       <property name="spacing">
        <number>10</number>
       </property>
-      <item row="0" column="1">
-       <widget class="QGroupBox" name="uMagneticSwitchingToolheadBox">
-        <property name="title">
-         <string>MAGNETIC_SWITCHING_TOOLHEAD</string>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_52">
-         <property name="spacing">
-          <number>10</number>
-         </property>
-         <item row="0" column="0">
-          <widget class="QLabel" name="label_58">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QLabel" name="label_59">
-           <property name="text">
-            <string>Enable this for swappable and dockable toolheads with a magnetic docking mechanism using movement and no servo.</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
       <item row="0" column="0">
-       <widget class="QGroupBox" name="uSwitchingToolheadBox">
+       <widget class="QGroupBox" name="uSwitchingToolheadYPosBox">
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+        </property>
         <property name="title">
-         <string>SWITCHING_TOOLHEAD</string>
+         <string>SWITCHING_TOOLHEAD_Y_POS</string>
         </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_53">
+        <layout class="QGridLayout" name="gridLayout_50">
          <property name="spacing">
           <number>10</number>
          </property>
          <item row="0" column="0">
-          <widget class="QLabel" name="label_56">
+          <widget class="QLabel" name="label_67">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
              <horstretch>0</horstretch>
@@ -2536,32 +3651,53 @@ QTabBar::tab:!selected {
           </widget>
          </item>
          <item row="0" column="1">
-          <widget class="QLabel" name="label_57">
+          <widget class="QLabel" name="label_71">
            <property name="text">
-            <string>Enable this for swappable and dockable toolheads such as the E3D Tool Changer. Toolheads are locked with a servo.</string>
+            <string>This is the Y position of the toolhead dock.</string>
            </property>
            <property name="wordWrap">
             <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QSpinBox" name="uSwitchingToolheadYPosSpinBox">
+           <property name="suffix">
+            <string> mm</string>
+           </property>
+           <property name="maximum">
+            <number>1000</number>
+           </property>
+           <property name="stepType">
+            <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+           </property>
+           <property name="value">
+            <number>235</number>
            </property>
           </widget>
          </item>
         </layout>
        </widget>
       </item>
-      <item row="0" column="2">
-       <widget class="QGroupBox" name="uElectromagneticSwitchingToolheadBox">
+      <item row="0" column="1">
+       <widget class="QGroupBox" name="uSwitchingToolheadYSecurityBox">
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+        </property>
         <property name="title">
-         <string>ELECTROMAGNETIC_SWITCHING_TOOLHEAD</string>
+         <string>SWITCHING_TOOLHEAD_Y_SECURITY</string>
         </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_51">
+        <layout class="QGridLayout" name="gridLayout_61">
          <property name="spacing">
           <number>10</number>
          </property>
          <item row="0" column="0">
-          <widget class="QLabel" name="label_60">
+          <widget class="QLabel" name="label_68">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
              <horstretch>0</horstretch>
@@ -2577,51 +3713,190 @@ QTabBar::tab:!selected {
           </widget>
          </item>
          <item row="0" column="1">
-          <widget class="QLabel" name="label_61">
+          <widget class="QLabel" name="label_72">
            <property name="text">
-            <string>Enable this for setups with CoreXY / HBot kinematics where toolheads are parked at one edge and held with an electromagnet. Supports more than 2 toolheads.</string>
+            <string>This is the security distance for the Y axis.</string>
            </property>
            <property name="wordWrap">
             <bool>true</bool>
            </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QSpinBox" name="uSwitchingToolheadYSecuritySpinBox">
+           <property name="suffix">
+            <string> mm</string>
+           </property>
+           <property name="maximum">
+            <number>1000</number>
+           </property>
+           <property name="stepType">
+            <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+           </property>
+           <property name="value">
+            <number>10</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QGroupBox" name="uSwitchingToolheadYClearBox">
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+        </property>
+        <property name="title">
+         <string>SWITCHING_TOOLHEAD_Y_CLEAR</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_60">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_66">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_70">
+           <property name="text">
+            <string>This is the minimum distance from the dock for unobstructed X axis.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QSpinBox" name="uSwitchingToolheadYClearSpinBox">
+           <property name="suffix">
+            <string> mm</string>
+           </property>
+           <property name="maximum">
+            <number>1000</number>
+           </property>
+           <property name="stepType">
+            <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+           </property>
+           <property name="value">
+            <number>60</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QGroupBox" name="uSwitchingToolheadXPosBox">
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+        </property>
+        <property name="title">
+         <string>SWITCHING_TOOLHEAD_X_POS</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_62">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_69">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" colspan="2">
+          <widget class="QLabel" name="label_73">
+           <property name="text">
+            <string>These are the X positions for parking the extruders.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="3">
+          <widget class="QWidget" name="widget_13" native="true">
+           <layout class="QGridLayout" name="gridLayout_67">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <property name="spacing">
+             <number>10</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="QSpinBox" name="uSwitchingToolheadXPos0SpinBox">
+              <property name="suffix">
+               <string> mm</string>
+              </property>
+              <property name="maximum">
+               <number>1000</number>
+              </property>
+              <property name="stepType">
+               <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+              </property>
+              <property name="value">
+               <number>215</number>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QSpinBox" name="uSwitchingToolheadXPos1SpinBox">
+              <property name="suffix">
+               <string> mm</string>
+              </property>
+              <property name="stepType">
+               <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
         </layout>
        </widget>
       </item>
      </layout>
-    </widget>
-   </item>
-   <item row="2" column="0" colspan="2">
-    <spacer name="verticalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>10</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="13" column="0">
-    <widget class="QLabel" name="label_65">
-     <property name="styleSheet">
-      <string notr="true">QLabel {
-	color: rgb(100, 103, 122);
-	font-size: 25px;
-	font-family: &quot;Source Sans Pro Light&quot;;
-	font-style: italic;
-}
-</string>
-     </property>
-     <property name="text">
-      <string>MIXING EXTRUDER</string>
-     </property>
     </widget>
    </item>
   </layout>

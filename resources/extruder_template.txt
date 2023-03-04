@@ -119,25 +119,25 @@
 #{ELECTROMAGNETIC_SWITCHING_TOOLHEAD}
 
 #if ANY(SWITCHING_TOOLHEAD, MAGNETIC_SWITCHING_TOOLHEAD, ELECTROMAGNETIC_SWITCHING_TOOLHEAD)
-  #define SWITCHING_TOOLHEAD_Y_POS          235         // (mm) Y position of the toolhead dock
-  #define SWITCHING_TOOLHEAD_Y_SECURITY      10         // (mm) Security distance Y axis
-  #define SWITCHING_TOOLHEAD_Y_CLEAR         60         // (mm) Minimum distance from dock for unobstructed X axis
-  #define SWITCHING_TOOLHEAD_X_POS          { 215, 0 }  // (mm) X positions for parking the extruders
+  #{SWITCHING_TOOLHEAD_Y_POS}         // (mm) Y position of the toolhead dock
+  #{SWITCHING_TOOLHEAD_Y_SECURITY}         // (mm) Security distance Y axis
+  #{SWITCHING_TOOLHEAD_Y_CLEAR}         // (mm) Minimum distance from dock for unobstructed X axis
+  #{SWITCHING_TOOLHEAD_X_POS}  // (mm) X positions for parking the extruders
   #if ENABLED(SWITCHING_TOOLHEAD)
-    #define SWITCHING_TOOLHEAD_SERVO_NR       2         // Index of the servo connector
-    #define SWITCHING_TOOLHEAD_SERVO_ANGLES { 0, 180 }  // (degrees) Angles for Lock, Unlock
+    #{SWITCHING_TOOLHEAD_SERVO_NR}         // Index of the servo connector
+    #{SWITCHING_TOOLHEAD_SERVO_ANGLES}  // (degrees) Angles for Lock, Unlock
   #elif ENABLED(MAGNETIC_SWITCHING_TOOLHEAD)
-    #define SWITCHING_TOOLHEAD_Y_RELEASE      5         // (mm) Security distance Y axis
-    #define SWITCHING_TOOLHEAD_X_SECURITY   { 90, 150 } // (mm) Security distance X axis (T0,T1)
-    //#define PRIME_BEFORE_REMOVE                       // Prime the nozzle before release from the dock
+    #{SWITCHING_TOOLHEAD_Y_RELEASE}         // (mm) Security distance Y axis
+    #{SWITCHING_TOOLHEAD_X_SECURITY} // (mm) Security distance X axis (T0,T1)
+    #{PRIME_BEFORE_REMOVE}                       // Prime the nozzle before release from the dock
     #if ENABLED(PRIME_BEFORE_REMOVE)
-      #define SWITCHING_TOOLHEAD_PRIME_MM           20  // (mm)   Extruder prime length
-      #define SWITCHING_TOOLHEAD_RETRACT_MM         10  // (mm)   Retract after priming length
-      #define SWITCHING_TOOLHEAD_PRIME_FEEDRATE    300  // (mm/min) Extruder prime feedrate
-      #define SWITCHING_TOOLHEAD_RETRACT_FEEDRATE 2400  // (mm/min) Extruder retract feedrate
+      #{SWITCHING_TOOLHEAD_PRIME_MM}  // (mm)   Extruder prime length
+      #{SWITCHING_TOOLHEAD_RETRACT_MM}  // (mm)   Retract after priming length
+      #{SWITCHING_TOOLHEAD_PRIME_FEEDRATE}  // (mm/min) Extruder prime feedrate
+      #{SWITCHING_TOOLHEAD_RETRACT_FEEDRATE}  // (mm/min) Extruder retract feedrate
     #endif
   #elif ENABLED(ELECTROMAGNETIC_SWITCHING_TOOLHEAD)
-    #define SWITCHING_TOOLHEAD_Z_HOP          2         // (mm) Z raise for switching
+    #{SWITCHING_TOOLHEAD_Z_HOP}         // (mm) Z raise for switching
   #endif
 #endif
 

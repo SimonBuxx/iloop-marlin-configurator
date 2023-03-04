@@ -297,7 +297,7 @@ inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const QSpi
     pOutput.replaceInStrings(pTagName, QString("%0#define %1 %2").arg((!pWidget->isEnabled() || pCommentOut) ? "//" : "", pParam, (!pWidget->isEnabled() || pCommentOut) ? "" : QString::number(pWidget->value())));
 }
 
-inline void ReplaceArrayTag(QStringList& pOutput, const QString& pTagName, bool pCommentOut, const QString& pParam, std::vector<int32_t> pVector)
+inline void ReplaceArrayTag(QStringList& pOutput, const QString& pTagName, bool pCommentOut, const QString& pParam, std::vector<int32_t> pVector, bool pEnabled = true)
 {
     QString array = "{ ";
     for (int i = 0; i < pVector.size(); i++)
@@ -309,7 +309,7 @@ inline void ReplaceArrayTag(QStringList& pOutput, const QString& pTagName, bool 
         }
     }
     array.append(" }");
-    pOutput.replaceInStrings(pTagName, QString("%0#define %1 %2").arg(pCommentOut ? "//" : "", pParam, pCommentOut ? "" : array));
+    pOutput.replaceInStrings(pTagName, QString("%0#define %1 %2").arg((!pEnabled || pCommentOut) ? "//" : "", pParam, (!pEnabled || pCommentOut) ? "" : array));
 }
 
 inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const QDoubleSpinBox* pWidget, bool pCommentOut, const QString& pParam)
