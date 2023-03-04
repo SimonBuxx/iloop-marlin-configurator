@@ -127,6 +127,19 @@ static constexpr auto SWITCHING_TOOLHEAD_RETRACT_MM{10};
 static constexpr auto SWITCHING_TOOLHEAD_PRIME_FEEDRATE{300};
 static constexpr auto SWITCHING_TOOLHEAD_RETRACT_FEEDRATE{2400};
 static constexpr auto SWITCHING_TOOLHEAD_Z_HOP{2};
+static constexpr auto MIXING_EXTRUDER{false};
+static constexpr auto MIXING_STEPPERS{2};
+static constexpr auto MIXING_VIRTUAL_TOOLS{16};
+static constexpr auto DIRECT_MIXING_IN_G1{false};
+static constexpr auto GRADIENT_MIX{false};
+static constexpr auto MIXING_PRESETS{false};
+static constexpr auto GRADIENT_VTOOL{false};
+static constexpr auto HOTEND_OFFSET_X{"{ 0.0, 20.00 }"};
+static constexpr auto HOTEND_OFFSET_Y{"{ 0.0, 5.00 }"};
+static constexpr auto HOTEND_OFFSET_Z{"{ 0.0, 0.00 }"};
+static constexpr auto ENABLE_HOTEND_OFFSET_X{false};
+static constexpr auto ENABLE_HOTEND_OFFSET_Y{false};
+static constexpr auto ENABLE_HOTEND_OFFSET_Z{false};
 
 // Power Supply
 static constexpr auto PSU_CONTROL{false};
@@ -317,6 +330,19 @@ struct ExtruderConfiguration : public PageConfiguration
     int32_t SWITCHING_TOOLHEAD_PRIME_FEEDRATE{defaults::SWITCHING_TOOLHEAD_PRIME_FEEDRATE};
     int32_t SWITCHING_TOOLHEAD_RETRACT_FEEDRATE{defaults::SWITCHING_TOOLHEAD_RETRACT_FEEDRATE};
     int32_t SWITCHING_TOOLHEAD_Z_HOP{defaults::SWITCHING_TOOLHEAD_Z_HOP};
+    bool MIXING_EXTRUDER{defaults::MIXING_EXTRUDER};
+    int32_t MIXING_STEPPERS{defaults::MIXING_STEPPERS};
+    int32_t MIXING_VIRTUAL_TOOLS{defaults::MIXING_VIRTUAL_TOOLS};
+    bool DIRECT_MIXING_IN_G1{defaults::DIRECT_MIXING_IN_G1};
+    bool GRADIENT_MIX{defaults::GRADIENT_MIX};
+    bool MIXING_PRESETS{defaults::MIXING_PRESETS};
+    bool GRADIENT_VTOOL{defaults::GRADIENT_VTOOL};
+    QString HOTEND_OFFSET_X{defaults::HOTEND_OFFSET_X};
+    QString HOTEND_OFFSET_Y{defaults::HOTEND_OFFSET_Y};
+    QString HOTEND_OFFSET_Z{defaults::HOTEND_OFFSET_Z};
+    bool ENABLE_HOTEND_OFFSET_X{defaults::ENABLE_HOTEND_OFFSET_X};
+    bool ENABLE_HOTEND_OFFSET_Y{defaults::ENABLE_HOTEND_OFFSET_Y};
+    bool ENABLE_HOTEND_OFFSET_Z{defaults::ENABLE_HOTEND_OFFSET_Z};
 
 public:
     /// \brief Converts the configuration into a JSON object
@@ -382,6 +408,19 @@ public:
         json["SWITCHING_TOOLHEAD_PRIME_FEEDRATE"] = SWITCHING_TOOLHEAD_PRIME_FEEDRATE;
         json["SWITCHING_TOOLHEAD_RETRACT_FEEDRATE"] = SWITCHING_TOOLHEAD_RETRACT_FEEDRATE;
         json["SWITCHING_TOOLHEAD_Z_HOP"] = SWITCHING_TOOLHEAD_Z_HOP;
+        json["MIXING_EXTRUDER"] = MIXING_EXTRUDER;
+        json["MIXING_STEPPERS"] = MIXING_STEPPERS;
+        json["MIXING_VIRTUAL_TOOLS"] = MIXING_VIRTUAL_TOOLS;
+        json["DIRECT_MIXING_IN_G1"] = DIRECT_MIXING_IN_G1;
+        json["GRADIENT_MIX"] = GRADIENT_MIX;
+        json["MIXING_PRESETS"] = MIXING_PRESETS;
+        json["GRADIENT_VTOOL"] = GRADIENT_VTOOL;
+        json["HOTEND_OFFSET_X"] = HOTEND_OFFSET_X;
+        json["HOTEND_OFFSET_Y"] = HOTEND_OFFSET_Y;
+        json["HOTEND_OFFSET_Z"] = HOTEND_OFFSET_Z;
+        json["ENABLE_HOTEND_OFFSET_X"] = ENABLE_HOTEND_OFFSET_X;
+        json["ENABLE_HOTEND_OFFSET_Y"] = ENABLE_HOTEND_OFFSET_Y;
+        json["ENABLE_HOTEND_OFFSET_Z"] = ENABLE_HOTEND_OFFSET_Z;
 
         return json;
     }

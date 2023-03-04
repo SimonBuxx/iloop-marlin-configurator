@@ -151,6 +151,19 @@ void ExtruderPage::ResetValues()
     mUi->uSwitchingToolheadPrimeFeedrateSpinBox->setValue(defaults::SWITCHING_TOOLHEAD_PRIME_FEEDRATE);
     mUi->uSwitchingToolheadRetractFeedrateSpinBox->setValue(defaults::SWITCHING_TOOLHEAD_RETRACT_FEEDRATE);
     mUi->uSwitchingToolheadZHopSpinBox->setValue(defaults::SWITCHING_TOOLHEAD_Z_HOP);
+    mUi->uMixingExtruderBox->setChecked(defaults::MIXING_EXTRUDER);
+    mUi->uMixingSteppersSpinBox->setValue(defaults::MIXING_STEPPERS);
+    mUi->uMixingVirtualToolsSpinBox->setValue(defaults::MIXING_VIRTUAL_TOOLS);
+    mUi->uDirectMixingInG1Box->setChecked(defaults::DIRECT_MIXING_IN_G1);
+    mUi->uGradientMixBox->setChecked(defaults::GRADIENT_MIX);
+    mUi->uMixingPresetsBox->setChecked(defaults::MIXING_PRESETS);
+    mUi->uGradientVtoolBox->setChecked(defaults::GRADIENT_VTOOL);
+    mUi->uHotendOffsetXEdit->setText(defaults::HOTEND_OFFSET_X);
+    mUi->uHotendOffsetYEdit->setText(defaults::HOTEND_OFFSET_Y);
+    mUi->uHotendOffsetZEdit->setText(defaults::HOTEND_OFFSET_Z);
+    mUi->uHotendOffsetXBox->setChecked(defaults::ENABLE_HOTEND_OFFSET_X);
+    mUi->uHotendOffsetYBox->setChecked(defaults::ENABLE_HOTEND_OFFSET_Y);
+    mUi->uHotendOffsetZBox->setChecked(defaults::ENABLE_HOTEND_OFFSET_Z);
 
     mUi->uSwitchingTabWidget->setCurrentIndex(0);
     mUi->uParkingTabWidget->setCurrentIndex(0);
@@ -220,6 +233,19 @@ bool ExtruderPage::LoadFromJson(const QJsonObject &pJson)
     success &= LoadConfig(mUi->uSwitchingToolheadPrimeFeedrateSpinBox, pJson, "SWITCHING_TOOLHEAD_PRIME_FEEDRATE");
     success &= LoadConfig(mUi->uSwitchingToolheadRetractFeedrateSpinBox, pJson, "SWITCHING_TOOLHEAD_RETRACT_FEEDRATE");
     success &= LoadConfig(mUi->uSwitchingToolheadZHopSpinBox, pJson, "SWITCHING_TOOLHEAD_Z_HOP");
+    success &= LoadConfig(mUi->uMixingExtruderBox, pJson, "MIXING_EXTRUDER");
+    success &= LoadConfig(mUi->uMixingSteppersSpinBox, pJson, "MIXING_STEPPERS");
+    success &= LoadConfig(mUi->uMixingVirtualToolsSpinBox, pJson, "MIXING_VIRTUAL_TOOLS");
+    success &= LoadConfig(mUi->uDirectMixingInG1Box, pJson, "DIRECT_MIXING_IN_G1");
+    success &= LoadConfig(mUi->uGradientMixBox, pJson, "GRADIENT_MIX");
+    success &= LoadConfig(mUi->uMixingPresetsBox, pJson, "MIXING_PRESETS");
+    success &= LoadConfig(mUi->uGradientVtoolBox, pJson, "GRADIENT_VTOOL");
+    success &= LoadConfig(mUi->uHotendOffsetXEdit, pJson, "HOTEND_OFFSET_X");
+    success &= LoadConfig(mUi->uHotendOffsetYEdit, pJson, "HOTEND_OFFSET_Y");
+    success &= LoadConfig(mUi->uHotendOffsetZEdit, pJson, "HOTEND_OFFSET_Z");
+    success &= LoadConfig(mUi->uHotendOffsetXBox, pJson, "ENABLE_HOTEND_OFFSET_X");
+    success &= LoadConfig(mUi->uHotendOffsetYBox, pJson, "ENABLE_HOTEND_OFFSET_Y");
+    success &= LoadConfig(mUi->uHotendOffsetZBox, pJson, "ENABLE_HOTEND_OFFSET_Z");
 
     mIsLoading = false;
     return success;
@@ -283,6 +309,19 @@ void ExtruderPage::FetchConfiguration(Configuration& pConfig)
     SetConfig(pConfig.extruder.SWITCHING_TOOLHEAD_PRIME_FEEDRATE, mUi->uSwitchingToolheadPrimeFeedrateSpinBox);
     SetConfig(pConfig.extruder.SWITCHING_TOOLHEAD_RETRACT_FEEDRATE, mUi->uSwitchingToolheadRetractFeedrateSpinBox);
     SetConfig(pConfig.extruder.SWITCHING_TOOLHEAD_Z_HOP, mUi->uSwitchingToolheadZHopSpinBox);
+    SetConfig(pConfig.extruder.MIXING_EXTRUDER, mUi->uMixingExtruderBox);
+    SetConfig(pConfig.extruder.MIXING_STEPPERS, mUi->uMixingSteppersSpinBox);
+    SetConfig(pConfig.extruder.MIXING_VIRTUAL_TOOLS, mUi->uMixingVirtualToolsSpinBox);
+    SetConfig(pConfig.extruder.DIRECT_MIXING_IN_G1, mUi->uDirectMixingInG1Box);
+    SetConfig(pConfig.extruder.GRADIENT_MIX, mUi->uGradientMixBox);
+    SetConfig(pConfig.extruder.MIXING_PRESETS, mUi->uMixingPresetsBox);
+    SetConfig(pConfig.extruder.GRADIENT_VTOOL, mUi->uGradientVtoolBox);
+    SetConfig(pConfig.extruder.HOTEND_OFFSET_X, mUi->uHotendOffsetXEdit);
+    SetConfig(pConfig.extruder.HOTEND_OFFSET_Y, mUi->uHotendOffsetYEdit);
+    SetConfig(pConfig.extruder.HOTEND_OFFSET_Z, mUi->uHotendOffsetZEdit);
+    SetConfig(pConfig.extruder.ENABLE_HOTEND_OFFSET_X, mUi->uHotendOffsetXBox);
+    SetConfig(pConfig.extruder.ENABLE_HOTEND_OFFSET_Y, mUi->uHotendOffsetYBox);
+    SetConfig(pConfig.extruder.ENABLE_HOTEND_OFFSET_Z, mUi->uHotendOffsetZBox);
 }
 
 void ExtruderPage::ReplaceTags(QStringList& pOutput)
@@ -295,7 +334,6 @@ void ExtruderPage::ReplaceTags(QStringList& pOutput)
     ReplaceTag(pOutput, "#{MMU_MODEL}", mUi->uMmuModelDropdown, !mUi->uMmuModelBox->isChecked(), "MMU_MODEL", true);
     ReplaceTag(pOutput, "#{SWITCHING_EXTRUDER}", mUi->uSwitchingExtruderBox, "SWITCHING_EXTRUDER");
     ReplaceTag(pOutput, "#{SWITCHING_EXTRUDER_SERVO_NR}", mUi->uSwitchingExtruderServoNrSpinBox, !mUi->uSwitchingExtruderBox->isChecked(), "SWITCHING_EXTRUDER_SEVRO_NR");
-
     {
         const auto& e0 = mUi->uSwitchingExtruderServoAnglesE0SpinBox->value();
         const auto& e1 = mUi->uSwitchingExtruderServoAnglesE1SpinBox->value();
@@ -310,7 +348,6 @@ void ExtruderPage::ReplaceTags(QStringList& pOutput)
             ReplaceArrayTag(pOutput, "#{SWITCHING_EXTRUDER_SERVO_ANGLES}", !mUi->uSwitchingExtruderBox->isChecked(), "SWITCHING_EXTRUDER_SERVO_ANGLES_E0", std::vector<int32_t>{e0, e1}, mUi->uSwitchingExtruderServoAnglesE23Box->isEnabled());
         }
     }
-
     ReplaceTag(pOutput, "#{SWITCHING_EXTRUDER_SERVO_ANGLES_E1}", mUi->uSwitchingExtruderServoAnglesE1SpinBox, !mUi->uSwitchingExtruderBox->isChecked(), "SWITCHING_EXTRUDER_SERVO_ANGLES_E1");
     ReplaceTag(pOutput, "#{SWITCHING_EXTRUDER_SERVO_ANGLES_E2}", mUi->uSwitchingExtruderServoAnglesE2SpinBox, !mUi->uSwitchingExtruderBox->isChecked(), "SWITCHING_EXTRUDER_SERVO_ANGLES_E2");
     ReplaceTag(pOutput, "#{SWITCHING_EXTRUDER_SERVO_ANGLES_E3}", mUi->uSwitchingExtruderServoAnglesE3SpinBox, !mUi->uSwitchingExtruderBox->isChecked(), "SWITCHING_EXTRUDER_SERVO_ANGLES_E3");
@@ -324,7 +361,6 @@ void ExtruderPage::ReplaceTags(QStringList& pOutput)
         ReplaceArrayTag(pOutput, "#{SWITCHING_NOZZLE_SERVO_ANGLES}", !mUi->uSwitchingNozzleBox->isChecked(), "SWITCHING_NOZZLE_SERVO_ANGLES", std::vector<int32_t>{e0, e1}, mUi->uSwitchingNozzleBox->isEnabled());
     }
     ReplaceTag(pOutput, "#{SWITCHING_NOZZLE_SERVO_DWELL}", mUi->uSwitchingNozzleServoDwellSpinBox, !mUi->uSwitchingNozzleBox->isChecked(), "SWITCHING_NOZZLE_SERVO_DWELL");
-
     ReplaceTag(pOutput, "#{PARKING_EXTRUDER}", mUi->uParkingExtruderBox, "PARKING_EXTRUDER");
     ReplaceTag(pOutput, "#{MAGNETIC_PARKING_EXTRUDER}", mUi->uMagneticParkingExtruderBox, "MAGNETIC_PARKING_EXTRUDER");
     {
@@ -344,7 +380,6 @@ void ExtruderPage::ReplaceTags(QStringList& pOutput)
     ReplaceTag(pOutput, "#{SWITCHING_TOOLHEAD}", mUi->uSwitchingToolheadBox, "SWITCHING_TOOLHEAD");
     ReplaceTag(pOutput, "#{MAGNETIC_SWITCHING_TOOLHEAD}", mUi->uMagneticSwitchingToolheadBox, "MAGNETIC_SWITCHING_TOOLHEAD");
     ReplaceTag(pOutput, "#{ELECTROMAGNETIC_SWITCHING_TOOLHEAD}", mUi->uElectromagneticSwitchingToolheadBox, "ELECTROMAGNETIC_SWITCHING_TOOLHEAD");
-
     ReplaceTag(pOutput, "#{SWITCHING_TOOLHEAD_Y_POS}", mUi->uSwitchingToolheadYPosSpinBox, !mUi->uSwitchingToolheadBox->isChecked() && !mUi->uMagneticSwitchingToolheadBox->isChecked() &&
                                                                                            !mUi->uElectromagneticSwitchingToolheadBox->isChecked(), "SWITCHING_TOOLHEAD_Y_POS");
     ReplaceTag(pOutput, "#{SWITCHING_TOOLHEAD_Y_CLEAR}", mUi->uSwitchingToolheadYClearSpinBox, !mUi->uSwitchingToolheadBox->isChecked() && !mUi->uMagneticSwitchingToolheadBox->isChecked() &&
@@ -375,4 +410,14 @@ void ExtruderPage::ReplaceTags(QStringList& pOutput)
     ReplaceTag(pOutput, "#{SWITCHING_TOOLHEAD_PRIME_FEEDRATE}", mUi->uSwitchingToolheadPrimeFeedrateSpinBox, false, "SWITCHING_TOOLHEAD_PRIME_FEEDRATE");
     ReplaceTag(pOutput, "#{SWITCHING_TOOLHEAD_RETRACT_FEEDRATE}", mUi->uSwitchingToolheadRetractFeedrateSpinBox, false, "SWITCHING_TOOLHEAD_RETRACT_FEEDRATE");
     ReplaceTag(pOutput, "#{SWITCHING_TOOLHEAD_Z_HOP}", mUi->uSwitchingToolheadZHopSpinBox, false, "SWITCHING_TOOLHEAD_Z_HOP");
+    ReplaceTag(pOutput, "#{MIXING_EXTRUDER}", mUi->uMixingExtruderBox, "MIXING_EXTRUDER");
+    ReplaceTag(pOutput, "#{MIXING_STEPPERS}", mUi->uMixingSteppersSpinBox, false, "MIXING_STEPPERS");
+    ReplaceTag(pOutput, "#{MIXING_VIRTUAL_TOOLS}", mUi->uMixingVirtualToolsSpinBox, false, "MIXING_VIRTUAL_TOOLS");
+    ReplaceTag(pOutput, "#{DIRECT_MIXING_IN_G1}", mUi->uDirectMixingInG1Box, "DIRECT_MIXING_IN_G1");
+    ReplaceTag(pOutput, "#{GRADIENT_MIX}", mUi->uGradientMixBox, "GRADIENT_MIX");
+    ReplaceTag(pOutput, "#{MIXING_PRESETS}", mUi->uMixingPresetsBox, "MIXING_PRESETS");
+    ReplaceTag(pOutput, "#{GRADIENT_VTOOL}", mUi->uGradientVtoolBox, "GRADIENT_VTOOL");
+    ReplaceTag(pOutput, "#{HOTEND_OFFSET_X}", mUi->uHotendOffsetXEdit, !mUi->uHotendOffsetXBox->isEnabled(), "HOTEND_OFFSET_X");
+    ReplaceTag(pOutput, "#{HOTEND_OFFSET_Y}", mUi->uHotendOffsetYEdit, !mUi->uHotendOffsetYBox->isEnabled(), "HOTEND_OFFSET_Y");
+    ReplaceTag(pOutput, "#{HOTEND_OFFSET_Z}", mUi->uHotendOffsetZEdit, !mUi->uHotendOffsetZBox->isEnabled(), "HOTEND_OFFSET_Z");
 }
