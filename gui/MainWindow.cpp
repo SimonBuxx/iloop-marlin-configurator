@@ -201,6 +201,11 @@ void MainWindow::ConnectGuiSignalsAndSlots()
     {
         mUi->stackedWidget->setCurrentIndex(4);
     });
+
+    QObject::connect(mUi->uThermalSettingsButton, &QPushButton::clicked, this, [&]()
+    {
+        mUi->stackedWidget->setCurrentIndex(5);
+    });
 }
 
 void MainWindow::UpdateActiveTabButtonColor()
@@ -322,6 +327,15 @@ bool MainWindow::LoadProject(const QJsonObject& pJson)
     if (pJson.contains("powerSupply") && pJson["powerSupply"].isObject())
     {
         success &= mUi->uPowerSupplyPage->LoadFromJson(pJson["powerSupply"].toObject());
+    }
+    else
+    {
+        success = false;
+    }
+
+    if (pJson.contains("thermalSettings") && pJson["thermalSettings"].isObject())
+    {
+        success &= mUi->uThermalSettingsPage->LoadFromJson(pJson["thermalSettings"].toObject());
     }
     else
     {

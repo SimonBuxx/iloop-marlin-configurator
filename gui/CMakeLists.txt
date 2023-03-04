@@ -37,6 +37,9 @@ target_sources(GUI_IMC_GUI
         ExtruderPage.h
         ExtruderPage.cpp
         ExtruderPage.ui
+        ThermalSettingsPage.h
+        ThermalSettingsPage.cpp
+        ThermalSettingsPage.ui
 )
 
 add_subdirectory(widgets)

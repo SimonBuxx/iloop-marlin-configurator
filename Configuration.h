@@ -38,6 +38,7 @@ static constexpr auto FIRMWARE_TEMPLATE_PATH{":/firmware_template.txt"};
 static constexpr auto HARDWARE_TEMPLATE_PATH{":/hardware_template.txt"};
 static constexpr auto EXTRUDER_TEMPLATE_PATH{":/extruder_template.txt"};
 static constexpr auto POWERSUPPLY_TEMPLATE_PATH{":/powersupply_template.txt"};
+static constexpr auto THERMALSETTINGS_TEMPLATE_PATH{":/thermalsettings_template.txt"};
 
 // Contains default values of all configuration parameters
 namespace defaults

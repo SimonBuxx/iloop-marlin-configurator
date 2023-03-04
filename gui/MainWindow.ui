@@ -275,7 +275,7 @@ QScrollBar::sub-line:horizontal
              </size>
             </property>
             <property name="currentIndex">
-             <number>3</number>
+             <number>5</number>
             </property>
             <widget class="QWidget" name="uWelcomeTab">
              <layout class="QGridLayout" name="gridLayout_3">
@@ -307,8 +307,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>100</width>
-                   <height>30</height>
+                   <width>1059</width>
+                   <height>528</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_9">
@@ -764,8 +764,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>100</width>
-                   <height>30</height>
+                   <width>1059</width>
+                   <height>528</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_8">
@@ -790,6 +790,62 @@ QScrollBar::sub-line:horizontal
                      </sizepolicy>
                     </property>
                    </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="uThermalSettingsTab">
+             <layout class="QGridLayout" name="gridLayout_19">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item row="0" column="0">
+               <widget class="QScrollArea" name="scrollArea_9">
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Plain</enum>
+                </property>
+                <property name="widgetResizable">
+                 <bool>true</bool>
+                </property>
+                <widget class="QWidget" name="scrollAreaWidgetContents_9">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>1059</width>
+                   <height>528</height>
+                  </rect>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_20">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="ThermalSettingsPage" name="uThermalSettingsPage" native="true"/>
                   </item>
                  </layout>
                 </widget>
@@ -1136,7 +1192,7 @@ QPushButton::!checked:hover {
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_2">
+          <widget class="QPushButton" name="uThermalSettingsButton">
            <property name="styleSheet">
             <string notr="true">QPushButton:!checked:!hover {
 	background: rgb(50, 52, 61);
@@ -1158,6 +1214,9 @@ QPushButton::!checked:hover {
            <property name="checkable">
             <bool>true</bool>
            </property>
+           <attribute name="buttonGroup">
+            <string notr="true">buttonGroup</string>
+           </attribute>
           </widget>
          </item>
          <item>
@@ -2273,6 +2332,12 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <class>DockWidget</class>
    <extends>QDockWidget</extends>
    <header>DockWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ThermalSettingsPage</class>
+   <extends>QWidget</extends>
+   <header>ThermalSettingsPage.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
