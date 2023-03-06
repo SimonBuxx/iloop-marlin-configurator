@@ -177,6 +177,39 @@ static constexpr auto ENABLE_POWER_OFF_DELAY{false};
 static constexpr auto ENABLE_AUTO_POWER_E_TEMP{false};
 static constexpr auto ENABLE_AUTO_POWER_CHAMBER_TEMP{false};
 static constexpr auto ENABLE_AUTO_POWER_COOLER_TEMP{false};
+
+// Thermal Settings
+static constexpr auto TEMP_SENSOR_0{"100kΩ EPCOS - Best choice for EPCOS thermistors [1]"};
+static constexpr auto TEMP_SENSOR_1{"not used [0]"};
+static constexpr auto TEMP_SENSOR_2{"not used [0]"};
+static constexpr auto TEMP_SENSOR_3{"not used [0]"};
+static constexpr auto TEMP_SENSOR_4{"not used [0]"};
+static constexpr auto TEMP_SENSOR_5{"not used [0]"};
+static constexpr auto TEMP_SENSOR_6{"not used [0]"};
+static constexpr auto TEMP_SENSOR_7{"not used [0]"};
+static constexpr auto TEMP_SENSOR_BED{"not used [0]"};
+static constexpr auto TEMP_SENSOR_PROBE{"not used [0]"};
+static constexpr auto TEMP_SENSOR_CHAMBER{"not used [0]"};
+static constexpr auto TEMP_SENSOR_COOLER{"not used [0]"};
+static constexpr auto TEMP_SENSOR_BOARD{"not used [0]"};
+static constexpr auto TEMP_SENSOR_REDUNDANT{"not used [0]"};
+static constexpr auto DUMMY_THERMISTOR_998_VALUE{25};
+static constexpr auto DUMMY_THERMISTOR_999_VALUE{100};
+static constexpr auto MAX31865_SENSOR_OHMS_0{100};
+static constexpr auto MAX31865_CALIBRATION_OHMS_0{430};
+static constexpr auto MAX31865_SENSOR_OHMS_1{100};
+static constexpr auto MAX31865_CALIBRATION_OHMS_1{430};
+static constexpr auto MAX31865_SENSOR_OHMS_2{100};
+static constexpr auto MAX31865_CALIBRATION_OHMS_2{430};
+static constexpr auto TEMP_RESIDENCY_TIME{10};
+static constexpr auto TEMP_WINDOW{1};
+static constexpr auto TEMP_HYSTERESIS{3};
+static constexpr auto TEMP_BED_RESIDENCY_TIME{10};
+static constexpr auto TEMP_BED_WINDOW{1};
+static constexpr auto TEMP_BED_HYSTERESIS{3};
+static constexpr auto TEMP_CHAMBER_RESIDENCY_TIME{10};
+static constexpr auto TEMP_CHAMBER_WINDOW{1};
+static constexpr auto TEMP_CHAMBER_HYSTERESIS{3};
 }
 
 struct PageConfiguration
@@ -515,6 +548,87 @@ public:
 };
 
 ///
+/// \brief The ThermalSettingsConfiguration struct contains thermal settings configurations
+///
+struct ThermalSettingsConfiguration : public PageConfiguration
+{
+    QString TEMP_SENSOR_0{defaults::TEMP_SENSOR_0};
+    QString TEMP_SENSOR_1{defaults::TEMP_SENSOR_1};
+    QString TEMP_SENSOR_2{defaults::TEMP_SENSOR_2};
+    QString TEMP_SENSOR_3{defaults::TEMP_SENSOR_3};
+    QString TEMP_SENSOR_4{defaults::TEMP_SENSOR_4};
+    QString TEMP_SENSOR_5{defaults::TEMP_SENSOR_5};
+    QString TEMP_SENSOR_6{defaults::TEMP_SENSOR_6};
+    QString TEMP_SENSOR_7{defaults::TEMP_SENSOR_7};
+    QString TEMP_SENSOR_BED{defaults::TEMP_SENSOR_BED};
+    QString TEMP_SENSOR_PROBE{defaults::TEMP_SENSOR_PROBE};
+    QString TEMP_SENSOR_CHAMBER{defaults::TEMP_SENSOR_CHAMBER};
+    QString TEMP_SENSOR_COOLER{defaults::TEMP_SENSOR_COOLER};
+    QString TEMP_SENSOR_BOARD{defaults::TEMP_SENSOR_BOARD};
+    QString TEMP_SENSOR_REDUNDANT{defaults::TEMP_SENSOR_REDUNDANT};
+    int32_t DUMMY_THERMISTOR_998_VALUE{defaults::DUMMY_THERMISTOR_998_VALUE};
+    int32_t DUMMY_THERMISTOR_999_VALUE{defaults::DUMMY_THERMISTOR_999_VALUE};
+    int32_t MAX31865_SENSOR_OHMS_0{defaults::MAX31865_SENSOR_OHMS_0};
+    int32_t MAX31865_CALIBRATION_OHMS_0{defaults::MAX31865_CALIBRATION_OHMS_0};
+    int32_t MAX31865_SENSOR_OHMS_1{defaults::MAX31865_SENSOR_OHMS_1};
+    int32_t MAX31865_CALIBRATION_OHMS_1{defaults::MAX31865_CALIBRATION_OHMS_1};
+    int32_t MAX31865_SENSOR_OHMS_2{defaults::MAX31865_SENSOR_OHMS_2};
+    int32_t MAX31865_CALIBRATION_OHMS_2{defaults::MAX31865_CALIBRATION_OHMS_2};
+    int32_t TEMP_RESIDENCY_TIME{defaults::TEMP_RESIDENCY_TIME};
+    int32_t TEMP_WINDOW{defaults::TEMP_WINDOW};
+    int32_t TEMP_HYSTERESIS{defaults::TEMP_HYSTERESIS};
+    int32_t TEMP_BED_RESIDENCY_TIME{defaults::TEMP_BED_RESIDENCY_TIME};
+    int32_t TEMP_BED_WINDOW{defaults::TEMP_BED_WINDOW};
+    int32_t TEMP_BED_HYSTERESIS{defaults::TEMP_BED_HYSTERESIS};
+    int32_t TEMP_CHAMBER_RESIDENCY_TIME{defaults::TEMP_CHAMBER_RESIDENCY_TIME};
+    int32_t TEMP_CHAMBER_WINDOW{defaults::TEMP_CHAMBER_WINDOW};
+    int32_t TEMP_CHAMBER_HYSTERESIS{defaults::TEMP_CHAMBER_HYSTERESIS};
+
+public:
+    /// \brief Converts the configuration into a JSON object
+    ///
+    /// \return a JSON object containing the configuration data
+    QJsonObject ToJson(void) const override
+    {
+        QJsonObject json;
+
+        json["TEMP_SENSOR_0"] = TEMP_SENSOR_0;
+        json["TEMP_SENSOR_1"] = TEMP_SENSOR_1;
+        json["TEMP_SENSOR_2"] = TEMP_SENSOR_2;
+        json["TEMP_SENSOR_3"] = TEMP_SENSOR_3;
+        json["TEMP_SENSOR_4"] = TEMP_SENSOR_4;
+        json["TEMP_SENSOR_5"] = TEMP_SENSOR_5;
+        json["TEMP_SENSOR_6"] = TEMP_SENSOR_6;
+        json["TEMP_SENSOR_7"] = TEMP_SENSOR_7;
+        json["TEMP_SENSOR_BED"] = TEMP_SENSOR_BED;
+        json["TEMP_SENSOR_PROBE"] = TEMP_SENSOR_PROBE;
+        json["TEMP_SENSOR_CHAMBER"] = TEMP_SENSOR_CHAMBER;
+        json["TEMP_SENSOR_COOLER"] = TEMP_SENSOR_COOLER;
+        json["TEMP_SENSOR_BOARD"] = TEMP_SENSOR_BOARD;
+        json["TEMP_SENSOR_REDUNDANT"] = TEMP_SENSOR_REDUNDANT;
+        json["DUMMY_THERMISTOR_998_VALUE"] = DUMMY_THERMISTOR_998_VALUE;
+        json["DUMMY_THERMISTOR_999_VALUE"] = DUMMY_THERMISTOR_999_VALUE;
+        json["MAX31865_SENSOR_OHMS_0"] = MAX31865_SENSOR_OHMS_0;
+        json["MAX31865_CALIBRATION_OHMS_0"] = MAX31865_CALIBRATION_OHMS_0;
+        json["MAX31865_SENSOR_OHMS_1"] = MAX31865_SENSOR_OHMS_1;
+        json["MAX31865_CALIBRATION_OHMS_1"] = MAX31865_CALIBRATION_OHMS_1;
+        json["MAX31865_SENSOR_OHMS_2"] = MAX31865_SENSOR_OHMS_2;
+        json["MAX31865_CALIBRATION_OHMS_2"] = MAX31865_CALIBRATION_OHMS_2;
+        json["TEMP_RESIDENCY_TIME"] = TEMP_RESIDENCY_TIME;
+        json["TEMP_WINDOW"] = TEMP_WINDOW;
+        json["TEMP_HYSTERESIS"] = TEMP_HYSTERESIS;
+        json["TEMP_BED_RESIDENCY_TIME"] = TEMP_BED_RESIDENCY_TIME;
+        json["TEMP_BED_WINDOW"] = TEMP_BED_WINDOW;
+        json["TEMP_BED_HYSTERESIS"] = TEMP_BED_HYSTERESIS;
+        json["TEMP_CHAMBER_RESIDENCY_TIME"] = TEMP_CHAMBER_RESIDENCY_TIME;
+        json["TEMP_CHAMBER_WINDOW"] = TEMP_CHAMBER_WINDOW;
+        json["TEMP_CHAMBER_HYSTERESIS"] = TEMP_CHAMBER_HYSTERESIS;
+
+        return json;
+    }
+};
+
+///
 /// \brief The Configuration struct contains a complete Marlin configuration
 ///
 struct Configuration
@@ -523,6 +637,7 @@ struct Configuration
     HardwareConfiguration hardware;
     ExtruderConfiguration extruder;
     PowerSupplyConfiguration powerSupply;
+    ThermalSettingsConfiguration thermalSettings;
 
 public:
     /// \brief Converts the configuration into a JSON object
@@ -536,6 +651,7 @@ public:
         json["hardware"] = hardware.ToJson();
         json["extruder"] = extruder.ToJson();
         json["powerSupply"] = powerSupply.ToJson();
+        json["thermalSettings"] = thermalSettings.ToJson();
 
         return json;
     }

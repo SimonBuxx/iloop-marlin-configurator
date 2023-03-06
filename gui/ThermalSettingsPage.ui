@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1000</width>
+    <width>1500</width>
     <height>2000</height>
    </rect>
   </property>
@@ -271,34 +271,144 @@ QAbstractSpinBox::down-button:off {
    <property name="spacing">
     <number>10</number>
    </property>
-   <item row="3" column="1">
-    <spacer name="verticalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>10</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="10" column="0" colspan="3">
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>0</width>
-       <height>0</height>
-      </size>
-     </property>
-    </spacer>
+   <item row="6" column="0" colspan="3">
+    <widget class="QWidget" name="widget_3" native="true">
+     <layout class="QGridLayout" name="gridLayout_18">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QGroupBox" name="groupBox_15">
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+        </property>
+        <property name="title">
+         <string>DUMMY_THERMISTOR_998_VALUE</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_20">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>This is the dummy thermistor constant temperature reading, for use with sensor type 998.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QSpinBox" name="uDummyThermistor998ValueSpinBox">
+           <property name="suffix">
+            <string> °C</string>
+           </property>
+           <property name="maximum">
+            <number>500</number>
+           </property>
+           <property name="stepType">
+            <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+           </property>
+           <property name="value">
+            <number>25</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QGroupBox" name="groupBox_16">
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+        </property>
+        <property name="title">
+         <string>DUMMY_THERMISTOR_999_VALUE</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_19">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_6">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string>This is the dummy thermistor constant temperature reading, for use with sensor type 999.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QSpinBox" name="uDummyThermistor999ValueSpinBox">
+           <property name="suffix">
+            <string> °C</string>
+           </property>
+           <property name="maximum">
+            <number>500</number>
+           </property>
+           <property name="stepType">
+            <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+           </property>
+           <property name="value">
+            <number>100</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </item>
    <item row="4" column="0" colspan="3">
     <widget class="QWidget" name="widget_2" native="true">
@@ -318,23 +428,7 @@ QAbstractSpinBox::down-button:off {
       <property name="spacing">
        <number>10</number>
       </property>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label">
-        <property name="styleSheet">
-         <string notr="true">QLabel {
-	color: rgb(100, 103, 122);
-	font-size: 25px;
-	font-family: &quot;Source Sans Pro Light&quot;;
-	font-style: italic;
-}
-</string>
-        </property>
-        <property name="text">
-         <string>TEMPERATURE SENSORS</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0" colspan="2">
+      <item row="0" column="0" colspan="2">
        <widget class="QTabWidget" name="uSensorTabWidget">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -436,7 +530,7 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>969</width>
+               <width>1469</width>
                <height>135</height>
               </rect>
              </property>
@@ -499,7 +593,7 @@ QTabBar QToolButton::left-arrow {
                   </widget>
                  </item>
                  <item row="1" column="0" colspan="2">
-                  <widget class="Dropdown" name="comboBox">
+                  <widget class="Dropdown" name="uTempSensor0Dropdown">
                    <property name="currentIndex">
                     <number>5</number>
                    </property>
@@ -832,8 +926,8 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>969</width>
-               <height>135</height>
+               <width>765</width>
+               <height>133</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -895,7 +989,7 @@ QTabBar QToolButton::left-arrow {
                   </widget>
                  </item>
                  <item row="1" column="0" colspan="2">
-                  <widget class="Dropdown" name="comboBox_14">
+                  <widget class="Dropdown" name="uTempSensor1Dropdown">
                    <property name="currentIndex">
                     <number>53</number>
                    </property>
@@ -1228,8 +1322,8 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>969</width>
-               <height>135</height>
+               <width>765</width>
+               <height>133</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -1291,7 +1385,7 @@ QTabBar QToolButton::left-arrow {
                   </widget>
                  </item>
                  <item row="1" column="0" colspan="2">
-                  <widget class="Dropdown" name="comboBox_2">
+                  <widget class="Dropdown" name="uTempSensor2Dropdown">
                    <property name="currentIndex">
                     <number>53</number>
                    </property>
@@ -1624,8 +1718,8 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>969</width>
-               <height>135</height>
+               <width>765</width>
+               <height>133</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -1687,7 +1781,7 @@ QTabBar QToolButton::left-arrow {
                   </widget>
                  </item>
                  <item row="1" column="0" colspan="2">
-                  <widget class="Dropdown" name="comboBox_13">
+                  <widget class="Dropdown" name="uTempSensor3Dropdown">
                    <property name="currentIndex">
                     <number>53</number>
                    </property>
@@ -2020,8 +2114,8 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>969</width>
-               <height>135</height>
+               <width>765</width>
+               <height>133</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -2083,7 +2177,7 @@ QTabBar QToolButton::left-arrow {
                   </widget>
                  </item>
                  <item row="1" column="0" colspan="2">
-                  <widget class="Dropdown" name="comboBox_3">
+                  <widget class="Dropdown" name="uTempSensor4Dropdown">
                    <property name="currentIndex">
                     <number>53</number>
                    </property>
@@ -2416,8 +2510,8 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>969</width>
-               <height>135</height>
+               <width>765</width>
+               <height>133</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -2479,7 +2573,7 @@ QTabBar QToolButton::left-arrow {
                   </widget>
                  </item>
                  <item row="1" column="0" colspan="2">
-                  <widget class="Dropdown" name="comboBox_12">
+                  <widget class="Dropdown" name="uTempSensor5Dropdown">
                    <property name="currentIndex">
                     <number>53</number>
                    </property>
@@ -2812,8 +2906,8 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>969</width>
-               <height>135</height>
+               <width>765</width>
+               <height>133</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -2875,7 +2969,7 @@ QTabBar QToolButton::left-arrow {
                   </widget>
                  </item>
                  <item row="1" column="0" colspan="2">
-                  <widget class="Dropdown" name="comboBox_4">
+                  <widget class="Dropdown" name="uTempSensor6Dropdown">
                    <property name="currentIndex">
                     <number>53</number>
                    </property>
@@ -3208,8 +3302,8 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>969</width>
-               <height>135</height>
+               <width>765</width>
+               <height>133</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -3271,7 +3365,7 @@ QTabBar QToolButton::left-arrow {
                   </widget>
                  </item>
                  <item row="1" column="0" colspan="2">
-                  <widget class="Dropdown" name="comboBox_11">
+                  <widget class="Dropdown" name="uTempSensor7Dropdown">
                    <property name="currentIndex">
                     <number>53</number>
                    </property>
@@ -3607,8 +3701,8 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>969</width>
-               <height>135</height>
+               <width>765</width>
+               <height>133</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -3667,7 +3761,7 @@ QTabBar QToolButton::left-arrow {
                   </widget>
                  </item>
                  <item row="1" column="0" colspan="2">
-                  <widget class="Dropdown" name="comboBox_5">
+                  <widget class="Dropdown" name="uTempSensorBedDropdown">
                    <property name="currentIndex">
                     <number>53</number>
                    </property>
@@ -4000,8 +4094,8 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>969</width>
-               <height>135</height>
+               <width>765</width>
+               <height>133</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -4063,7 +4157,7 @@ QTabBar QToolButton::left-arrow {
                   </widget>
                  </item>
                  <item row="1" column="0" colspan="2">
-                  <widget class="Dropdown" name="comboBox_10">
+                  <widget class="Dropdown" name="uTempSensorProbeDropdown">
                    <property name="currentIndex">
                     <number>53</number>
                    </property>
@@ -4396,8 +4490,8 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>969</width>
-               <height>135</height>
+               <width>765</width>
+               <height>133</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -4462,7 +4556,7 @@ QTabBar QToolButton::left-arrow {
                   </widget>
                  </item>
                  <item row="1" column="0" colspan="2">
-                  <widget class="Dropdown" name="comboBox_6">
+                  <widget class="Dropdown" name="uTempSensorChamberDropdown">
                    <property name="currentIndex">
                     <number>53</number>
                    </property>
@@ -4795,8 +4889,8 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>969</width>
-               <height>135</height>
+               <width>765</width>
+               <height>133</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -4861,7 +4955,7 @@ QTabBar QToolButton::left-arrow {
                   </widget>
                  </item>
                  <item row="1" column="0" colspan="2">
-                  <widget class="Dropdown" name="comboBox_9">
+                  <widget class="Dropdown" name="uTempSensorCoolerDropdown">
                    <property name="currentIndex">
                     <number>53</number>
                    </property>
@@ -5194,8 +5288,8 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>969</width>
-               <height>135</height>
+               <width>765</width>
+               <height>133</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -5257,7 +5351,7 @@ QTabBar QToolButton::left-arrow {
                   </widget>
                  </item>
                  <item row="1" column="0" colspan="2">
-                  <widget class="Dropdown" name="comboBox_7">
+                  <widget class="Dropdown" name="uTempSensorBoardDropdown">
                    <property name="currentIndex">
                     <number>53</number>
                    </property>
@@ -5590,8 +5684,8 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>969</width>
-               <height>135</height>
+               <width>765</width>
+               <height>133</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -5653,7 +5747,7 @@ QTabBar QToolButton::left-arrow {
                   </widget>
                  </item>
                  <item row="1" column="0" colspan="2">
-                  <widget class="Dropdown" name="comboBox_8">
+                  <widget class="Dropdown" name="uTempSensorRedundantDropdown">
                    <property name="currentIndex">
                     <number>53</number>
                    </property>
@@ -5974,6 +6068,1204 @@ QTabBar QToolButton::left-arrow {
      </property>
     </widget>
    </item>
+   <item row="11" column="0" colspan="3">
+    <widget class="QWidget" name="widget_5" native="true">
+     <layout class="QGridLayout" name="gridLayout_59">
+      <property name="leftMargin">
+       <number>9</number>
+      </property>
+      <property name="topMargin">
+       <number>9</number>
+      </property>
+      <property name="rightMargin">
+       <number>9</number>
+      </property>
+      <property name="bottomMargin">
+       <number>9</number>
+      </property>
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <item row="3" column="1">
+       <widget class="QGroupBox" name="uTempHysteresisBox">
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+        </property>
+        <property name="title">
+         <string>TEMP_HYSTERESIS</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_62">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_66">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_67">
+           <property name="text">
+            <string>This is the temperature proximity considered &quot;close enough&quot; to the target.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QSpinBox" name="uTempHysteresisSpinBox">
+           <property name="suffix">
+            <string> °C</string>
+           </property>
+           <property name="maximum">
+            <number>100</number>
+           </property>
+           <property name="stepType">
+            <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+           </property>
+           <property name="value">
+            <number>3</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QGroupBox" name="uTempBedResidencyTimeBox">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+        </property>
+        <property name="title">
+         <string>TEMP_BED_RESIDENCY_TIME</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_67">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_57">
+           <property name="text">
+            <string>This is the time to wait for the heatbed to &quot;settle&quot; in M190.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_56">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QSpinBox" name="uTempBedResidencyTimeSpinBox">
+           <property name="suffix">
+            <string> s</string>
+           </property>
+           <property name="maximum">
+            <number>600</number>
+           </property>
+           <property name="stepType">
+            <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+           </property>
+           <property name="value">
+            <number>10</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="2" column="5">
+       <widget class="QGroupBox" name="uTempChamberWindowBox">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+        </property>
+        <property name="title">
+         <string>TEMP_CHAMBER_WINDOW</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_65">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_60">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_61">
+           <property name="text">
+            <string>This is the temperature proximity for the &quot;temperature reached&quot; timer.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QSpinBox" name="uTempChamberWindowSpinBox">
+           <property name="suffix">
+            <string> °C</string>
+           </property>
+           <property name="maximum">
+            <number>100</number>
+           </property>
+           <property name="stepType">
+            <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+           </property>
+           <property name="value">
+            <number>1</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QGroupBox" name="uTempBedHysteresisBox">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+        </property>
+        <property name="title">
+         <string>TEMP_BED_HYSTERESIS</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_63">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_68">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_69">
+           <property name="text">
+            <string>This is the temperature proximity considered &quot;close enough&quot; to the target.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QSpinBox" name="uTempBedHysteresisSpinBox">
+           <property name="suffix">
+            <string> °C</string>
+           </property>
+           <property name="maximum">
+            <number>100</number>
+           </property>
+           <property name="stepType">
+            <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+           </property>
+           <property name="value">
+            <number>3</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QGroupBox" name="uTempWindowBox">
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+        </property>
+        <property name="title">
+         <string>TEMP_WINDOW</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_61">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_64">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_65">
+           <property name="text">
+            <string>This is the temperature proximity for the &quot;temperature reached&quot; timer.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QSpinBox" name="uTempWindowSpinBox">
+           <property name="suffix">
+            <string> °C</string>
+           </property>
+           <property name="maximum">
+            <number>100</number>
+           </property>
+           <property name="stepType">
+            <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+           </property>
+           <property name="value">
+            <number>1</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QGroupBox" name="uTempBedWindowBox">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+        </property>
+        <property name="title">
+         <string>TEMP_BED_WINDOW</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_66">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_62">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_63">
+           <property name="text">
+            <string>This is the temperature proximity for the &quot;temperature reached&quot; timer.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QSpinBox" name="uTempBedWindowSpinBox">
+           <property name="suffix">
+            <string> °C</string>
+           </property>
+           <property name="maximum">
+            <number>100</number>
+           </property>
+           <property name="stepType">
+            <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+           </property>
+           <property name="value">
+            <number>1</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="3" column="5">
+       <widget class="QGroupBox" name="uTempChamberHysteresisBox">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+        </property>
+        <property name="title">
+         <string>TEMP_CHAMBER_HYSTERESIS</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_64">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_70">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_71">
+           <property name="text">
+            <string>This is the temperature proximity considered &quot;close enough&quot; to the target.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QSpinBox" name="uTempChamberHysteresisSpinBox">
+           <property name="suffix">
+            <string> °C</string>
+           </property>
+           <property name="maximum">
+            <number>100</number>
+           </property>
+           <property name="stepType">
+            <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+           </property>
+           <property name="value">
+            <number>3</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QGroupBox" name="uTempResidencyTimeBox">
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+        </property>
+        <property name="title">
+         <string>TEMP_RESIDENCY_TIME</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_60">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_55">
+           <property name="text">
+            <string>This is the time to wait for the hotend to &quot;settle&quot; in M109.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QSpinBox" name="uTempResidencyTimeSpinBox">
+           <property name="suffix">
+            <string> s</string>
+           </property>
+           <property name="maximum">
+            <number>600</number>
+           </property>
+           <property name="stepType">
+            <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+           </property>
+           <property name="value">
+            <number>10</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="1" column="5">
+       <widget class="QGroupBox" name="uTempChamberResidencyTimeBox">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+        </property>
+        <property name="title">
+         <string>TEMP_CHAMBER_RESIDENCY_TIME</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_68">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_58">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_59">
+           <property name="text">
+            <string>This is the time to wait for the chamber to &quot;settle&quot; in M191.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QSpinBox" name="uTempChamberResidencyTimeSpinBox">
+           <property name="suffix">
+            <string> s</string>
+           </property>
+           <property name="maximum">
+            <number>600</number>
+           </property>
+           <property name="stepType">
+            <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+           </property>
+           <property name="value">
+            <number>10</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="14" column="0" colspan="3">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="7" column="0">
+    <widget class="QLabel" name="label_54">
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+	color: rgb(100, 103, 122);
+	font-size: 25px;
+	font-family: &quot;Source Sans Pro Light&quot;;
+	font-style: italic;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>SPI RTD/THERMOCOUPLE CONFIGURATION</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>10</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="8" column="0" colspan="3">
+    <widget class="QWidget" name="widget_4" native="true">
+     <layout class="QGridLayout" name="gridLayout_49" columnstretch="1,1,1">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <item row="0" column="1">
+       <widget class="QGroupBox" name="uTempSensorIsMaxTc1Box">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+        </property>
+        <property name="title">
+         <string>TEMP_SENSOR_IS_MAX_TC(1)</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_51">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_50">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_51">
+           <property name="text">
+            <string>These are the resistor values when using a MAX31865 sensor on TEMP_SENSOR_1.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QGroupBox" name="groupBox_22">
+           <property name="focusPolicy">
+            <enum>Qt::StrongFocus</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+           </property>
+           <property name="title">
+            <string>MAX31865_SENSOR_OHMS_1</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_55">
+            <property name="spacing">
+             <number>10</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_42">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="label_43">
+              <property name="text">
+               <string>This value is typically 100 or 1000 for PT100 or PT1000.</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" colspan="2">
+             <widget class="QSpinBox" name="uMax31865SensorOhms1SpinBox">
+              <property name="suffix">
+               <string> Ω</string>
+              </property>
+              <property name="maximum">
+               <number>10000</number>
+              </property>
+              <property name="stepType">
+               <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+              </property>
+              <property name="value">
+               <number>100</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="2" column="0" colspan="2">
+          <widget class="QGroupBox" name="groupBox_23">
+           <property name="focusPolicy">
+            <enum>Qt::StrongFocus</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+           </property>
+           <property name="title">
+            <string>MAX31865_CALIBRATION_OHMS_1</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_56">
+            <property name="spacing">
+             <number>10</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_40">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="label_41">
+              <property name="text">
+               <string>This value is typically 430 for Adafruit PT100 and 4300 for Adafruit PT1000.</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" colspan="2">
+             <widget class="QSpinBox" name="uMax31865CalibrationOhms1SpinBox">
+              <property name="suffix">
+               <string> Ω</string>
+              </property>
+              <property name="maximum">
+               <number>10000</number>
+              </property>
+              <property name="stepType">
+               <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+              </property>
+              <property name="value">
+               <number>430</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QGroupBox" name="uTempSensorIsMaxTc0Box">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+        </property>
+        <property name="title">
+         <string>TEMP_SENSOR_IS_MAX_TC(0)</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_50">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_48">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_49">
+           <property name="text">
+            <string>These are the resistor values when using a MAX31865 sensor on TEMP_SENSOR_0.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QGroupBox" name="groupBox_20">
+           <property name="focusPolicy">
+            <enum>Qt::StrongFocus</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+           </property>
+           <property name="title">
+            <string>MAX31865_SENSOR_OHMS_0</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_58">
+            <property name="spacing">
+             <number>10</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_36">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="label_37">
+              <property name="text">
+               <string>This value is typically 100 or 1000 for PT100 or PT1000.</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" colspan="2">
+             <widget class="QSpinBox" name="uMax31865SensorOhms0SpinBox">
+              <property name="suffix">
+               <string> Ω</string>
+              </property>
+              <property name="maximum">
+               <number>10000</number>
+              </property>
+              <property name="stepType">
+               <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+              </property>
+              <property name="value">
+               <number>100</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="2" column="0" colspan="2">
+          <widget class="QGroupBox" name="groupBox_21">
+           <property name="focusPolicy">
+            <enum>Qt::StrongFocus</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+           </property>
+           <property name="title">
+            <string>MAX31865_CALIBRATION_OHMS_0</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_57">
+            <property name="spacing">
+             <number>10</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_38">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="label_39">
+              <property name="text">
+               <string>This value is typically 430 for Adafruit PT100 and 4300 for Adafruit PT1000.</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" colspan="2">
+             <widget class="QSpinBox" name="uMax31865CalibrationOhms0SpinBox">
+              <property name="suffix">
+               <string> Ω</string>
+              </property>
+              <property name="maximum">
+               <number>10000</number>
+              </property>
+              <property name="stepType">
+               <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+              </property>
+              <property name="value">
+               <number>430</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QGroupBox" name="uTempSensorIsMaxTc2Box">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+        </property>
+        <property name="title">
+         <string>TEMP_SENSOR_IS_MAX_TC(2)</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_52">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_52">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_53">
+           <property name="text">
+            <string>These are the resistor values when using a MAX31865 sensor on TEMP_SENSOR_2.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QGroupBox" name="groupBox_25">
+           <property name="focusPolicy">
+            <enum>Qt::StrongFocus</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+           </property>
+           <property name="title">
+            <string>MAX31865_SENSOR_OHMS_2</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_53">
+            <property name="spacing">
+             <number>10</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_44">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="label_45">
+              <property name="text">
+               <string>This value is typically 100 or 1000 for PT100 or PT1000.</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" colspan="2">
+             <widget class="QSpinBox" name="uMax31865SensorOhms2SpinBox">
+              <property name="suffix">
+               <string> Ω</string>
+              </property>
+              <property name="maximum">
+               <number>10000</number>
+              </property>
+              <property name="stepType">
+               <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+              </property>
+              <property name="value">
+               <number>100</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="2" column="0" colspan="2">
+          <widget class="QGroupBox" name="groupBox_24">
+           <property name="focusPolicy">
+            <enum>Qt::StrongFocus</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+           </property>
+           <property name="title">
+            <string>MAX31865_CALIBRATION_OHMS_2</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_54">
+            <property name="spacing">
+             <number>10</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_46">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="label_47">
+              <property name="text">
+               <string>This value is typically 430 for Adafruit PT100 and 4300 for Adafruit PT1000.</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" colspan="2">
+             <widget class="QSpinBox" name="uMax31865CalibrationOhms2SpinBox">
+              <property name="suffix">
+               <string> Ω</string>
+              </property>
+              <property name="maximum">
+               <number>10000</number>
+              </property>
+              <property name="stepType">
+               <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+              </property>
+              <property name="value">
+               <number>430</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="9" column="0">
+    <widget class="QLabel" name="label_72">
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+	color: rgb(100, 103, 122);
+	font-size: 25px;
+	font-family: &quot;Source Sans Pro Light&quot;;
+	font-style: italic;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>SENSOR CONFIGURATION</string>
+     </property>
+    </widget>
+   </item>
    <item row="2" column="0" colspan="3">
     <widget class="QWidget" name="widget" native="true">
      <layout class="QGridLayout" name="gridLayout_5">
@@ -6068,145 +7360,6 @@ QTabBar QToolButton::left-arrow {
          </size>
         </property>
        </spacer>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="6" column="0" colspan="3">
-    <widget class="QWidget" name="widget_3" native="true">
-     <layout class="QGridLayout" name="gridLayout_18">
-      <property name="leftMargin">
-       <number>0</number>
-      </property>
-      <property name="topMargin">
-       <number>0</number>
-      </property>
-      <property name="rightMargin">
-       <number>0</number>
-      </property>
-      <property name="bottomMargin">
-       <number>0</number>
-      </property>
-      <property name="spacing">
-       <number>10</number>
-      </property>
-      <item row="0" column="0">
-       <widget class="QGroupBox" name="groupBox_15">
-        <property name="focusPolicy">
-         <enum>Qt::StrongFocus</enum>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-        </property>
-        <property name="title">
-         <string>DUMMY_THERMISTOR_998_VALUE</string>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_20">
-         <item row="0" column="0">
-          <widget class="QLabel" name="label_3">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QLabel" name="label_4">
-           <property name="text">
-            <string>This is the dummy thermistor constant temperature reading, for use with sensor type 998.</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0" colspan="2">
-          <widget class="QSpinBox" name="spinBox">
-           <property name="suffix">
-            <string> °C</string>
-           </property>
-           <property name="maximum">
-            <number>500</number>
-           </property>
-           <property name="stepType">
-            <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
-           </property>
-           <property name="value">
-            <number>25</number>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QGroupBox" name="groupBox_16">
-        <property name="focusPolicy">
-         <enum>Qt::StrongFocus</enum>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-        </property>
-        <property name="title">
-         <string>DUMMY_THERMISTOR_999_VALUE</string>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_19">
-         <item row="0" column="0">
-          <widget class="QLabel" name="label_6">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QLabel" name="label_7">
-           <property name="text">
-            <string>This is the dummy thermistor constant temperature reading, for use with sensor type 999.</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0" colspan="2">
-          <widget class="QSpinBox" name="spinBox_2">
-           <property name="suffix">
-            <string> °C</string>
-           </property>
-           <property name="maximum">
-            <number>500</number>
-           </property>
-           <property name="stepType">
-            <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
-           </property>
-           <property name="value">
-            <number>100</number>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
       </item>
      </layout>
     </widget>
