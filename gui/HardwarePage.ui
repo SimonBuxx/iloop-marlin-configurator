@@ -2588,12 +2588,6 @@ QAbstractSpinBox::down-button:off {
          </item>
          <item row="1" column="0" rowspan="2" colspan="3">
           <widget class="Dropdown" name="uSerialPort2Dropdown">
-           <property name="font">
-            <font>
-             <family>Source Sans Pro</family>
-             <bold>true</bold>
-            </font>
-           </property>
            <property name="styleSheet">
             <string notr="true"/>
            </property>
@@ -2907,12 +2901,6 @@ QAbstractSpinBox::down-button:off {
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
-           </property>
-           <property name="font">
-            <font>
-             <family>Source Sans Pro</family>
-             <bold>true</bold>
-            </font>
            </property>
            <property name="styleSheet">
             <string notr="true"/>

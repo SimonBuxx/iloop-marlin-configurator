@@ -51,5 +51,7 @@
         <file>search_FILL0_wght100_GRAD0_opsz20.svg</file>
         <file>imc_icon48.ico</file>
         <file>imc_logo.png</file>
+        <file>arrow_left_FILL0_wght400_GRAD0_opsz20.svg</file>
+        <file>arrow_right_FILL0_wght400_GRAD0_opsz20.svg</file>
     </qresource>
 </RCC>

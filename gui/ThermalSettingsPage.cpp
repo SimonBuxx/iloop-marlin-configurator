@@ -53,7 +53,7 @@ void ThermalSettingsPage::ResetValues()
 {
     mIsLoading = true;
 
-
+    mUi->uSensorTabWidget->setCurrentIndex(0);
 
     mIsLoading = false;
 }

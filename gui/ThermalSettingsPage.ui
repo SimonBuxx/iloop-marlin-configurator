@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1700</width>
+    <width>1000</width>
     <height>2000</height>
    </rect>
   </property>
@@ -335,7 +335,7 @@ QAbstractSpinBox::down-button:off {
        </widget>
       </item>
       <item row="1" column="0" colspan="2">
-       <widget class="QTabWidget" name="tabWidget">
+       <widget class="QTabWidget" name="uSensorTabWidget">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
           <horstretch>0</horstretch>
@@ -365,6 +365,36 @@ QTabBar::tab {
 
 QTabBar::tab:!selected {
 	margin-top: 3px;
+}
+
+QTabBar::scroller {
+    width: 40px;
+}
+
+QTabBar QToolButton {
+	background: rgb(249, 154, 0);
+	margin-top: 3px;
+   	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	margin-left: 2px;
+}
+
+QTabBar QToolButton::pressed {
+	margin-top: 4px;
+}
+
+QTabBar QToolButton::disabled {
+	background: rgb(188, 116, 0);
+}
+
+QTabBar QToolButton::right-arrow {
+    image: url(&quot;:/arrow_right_FILL0_wght400_GRAD0_opsz20.svg&quot;);
+}
+
+QTabBar QToolButton::left-arrow {
+	image: url(&quot;:/arrow_left_FILL0_wght400_GRAD0_opsz20.svg&quot;);
 }</string>
         </property>
         <property name="currentIndex">
@@ -406,7 +436,7 @@ QTabBar::tab:!selected {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1669</width>
+               <width>969</width>
                <height>135</height>
               </rect>
              </property>
@@ -802,7 +832,7 @@ QTabBar::tab:!selected {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1669</width>
+               <width>969</width>
                <height>135</height>
               </rect>
              </property>
@@ -1198,7 +1228,7 @@ QTabBar::tab:!selected {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1669</width>
+               <width>969</width>
                <height>135</height>
               </rect>
              </property>
@@ -1594,7 +1624,7 @@ QTabBar::tab:!selected {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1669</width>
+               <width>969</width>
                <height>135</height>
               </rect>
              </property>
@@ -1990,7 +2020,7 @@ QTabBar::tab:!selected {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1669</width>
+               <width>969</width>
                <height>135</height>
               </rect>
              </property>
@@ -2386,7 +2416,7 @@ QTabBar::tab:!selected {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1669</width>
+               <width>969</width>
                <height>135</height>
               </rect>
              </property>
@@ -2782,7 +2812,7 @@ QTabBar::tab:!selected {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1669</width>
+               <width>969</width>
                <height>135</height>
               </rect>
              </property>
@@ -3178,7 +3208,7 @@ QTabBar::tab:!selected {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1669</width>
+               <width>969</width>
                <height>135</height>
               </rect>
              </property>
@@ -3577,7 +3607,7 @@ QTabBar::tab:!selected {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1669</width>
+               <width>969</width>
                <height>135</height>
               </rect>
              </property>
@@ -3970,7 +4000,7 @@ QTabBar::tab:!selected {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1669</width>
+               <width>969</width>
                <height>135</height>
               </rect>
              </property>
@@ -4366,7 +4396,7 @@ QTabBar::tab:!selected {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1669</width>
+               <width>969</width>
                <height>135</height>
               </rect>
              </property>
@@ -4765,7 +4795,7 @@ QTabBar::tab:!selected {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1669</width>
+               <width>969</width>
                <height>135</height>
               </rect>
              </property>
@@ -5164,7 +5194,7 @@ QTabBar::tab:!selected {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1669</width>
+               <width>969</width>
                <height>135</height>
               </rect>
              </property>
@@ -5560,7 +5590,7 @@ QTabBar::tab:!selected {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1669</width>
+               <width>969</width>
                <height>135</height>
               </rect>
              </property>
