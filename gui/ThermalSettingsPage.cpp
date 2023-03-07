@@ -48,17 +48,20 @@ void ThermalSettingsPage::ConnectGuiSignalsAndSlots()
 
     QObject::connect(mUi->uTempSensor0Dropdown, &Dropdown::currentIndexChanged, this, [&](auto pIndex)
     {
-        mUi->uTempSensorIsMaxTc0Box->setEnabled(pIndex <= 2);
+        mUi->uMax31865SensorOhms0Box->setEnabled(pIndex <= 2);
+        mUi->uMax31865CalibrationOhms0Box->setEnabled(pIndex <= 2);
     });
 
     QObject::connect(mUi->uTempSensor1Dropdown, &Dropdown::currentIndexChanged, this, [&](auto pIndex)
     {
-        mUi->uTempSensorIsMaxTc1Box->setEnabled(pIndex <= 2);
+        mUi->uMax31865SensorOhms1Box->setEnabled(pIndex <= 2);
+        mUi->uMax31865CalibrationOhms1Box->setEnabled(pIndex <= 2);
     });
 
     QObject::connect(mUi->uTempSensor2Dropdown, &Dropdown::currentIndexChanged, this, [&](auto pIndex)
     {
-        mUi->uTempSensorIsMaxTc2Box->setEnabled(pIndex <= 2);
+        mUi->uMax31865SensorOhms2Box->setEnabled(pIndex <= 2);
+        mUi->uMax31865CalibrationOhms2Box->setEnabled(pIndex <= 2);
     });
 
     QObject::connect(mUi->uTempSensor0Dropdown, &Dropdown::currentIndexChanged, this, [&]()
@@ -147,6 +150,13 @@ void ThermalSettingsPage::ConnectGuiSignalsAndSlots()
         mUi->uTempChamberHysteresisBox->setEnabled(pIndex != 53);
     });
 
+    QObject::connect(mUi->uTempSensorRedundantDropdown, &Dropdown::currentIndexChanged, this, [&](auto pIndex)
+    {
+        mUi->uTempSensorRedundantSourceBox->setEnabled(pIndex != 53);
+        mUi->uTempSensorRedundantTargetBox->setEnabled(pIndex != 53);
+        mUi->uTempSensorRedundantMaxDiffBox->setEnabled(pIndex != 53);
+    });
+
     AbstractPage::ConnectGuiSignalsAndSlots();
 }
 
@@ -185,8 +195,32 @@ void ThermalSettingsPage::ResetValues()
     mUi->uTempChamberResidencyTimeSpinBox->setValue(defaults::TEMP_CHAMBER_RESIDENCY_TIME);
     mUi->uTempChamberWindowSpinBox->setValue(defaults::TEMP_CHAMBER_WINDOW);
     mUi->uTempChamberHysteresisSpinBox->setValue(defaults::TEMP_CHAMBER_HYSTERESIS);
+    mUi->uTempSensorRedundantSourceDropdown->setCurrentText(defaults::TEMP_SENSOR_REDUNDANT_SOURCE);
+    mUi->uTempSensorRedundantTargetDropdown->setCurrentText(defaults::TEMP_SENSOR_REDUNDANT_TARGET);
+    mUi->uTempSensorRedundantMaxDiffSpinBox->setValue(defaults::TEMP_SENSOR_REDUNDANT_MAX_DIFF);
+    mUi->uHeater0MintempSpinBox->setValue(defaults::HEATER_0_MINTEMP);
+    mUi->uHeater1MintempSpinBox->setValue(defaults::HEATER_1_MINTEMP);
+    mUi->uHeater2MintempSpinBox->setValue(defaults::HEATER_2_MINTEMP);
+    mUi->uHeater3MintempSpinBox->setValue(defaults::HEATER_3_MINTEMP);
+    mUi->uHeater4MintempSpinBox->setValue(defaults::HEATER_4_MINTEMP);
+    mUi->uHeater5MintempSpinBox->setValue(defaults::HEATER_5_MINTEMP);
+    mUi->uHeater6MintempSpinBox->setValue(defaults::HEATER_6_MINTEMP);
+    mUi->uHeater7MintempSpinBox->setValue(defaults::HEATER_7_MINTEMP);
+    mUi->uBedMintempSpinBox->setValue(defaults::BED_MINTEMP);
+    mUi->uChamberMintempSpinBox->setValue(defaults::CHAMBER_MINTEMP);
+    mUi->uHeater0MaxtempSpinBox->setValue(defaults::HEATER_0_MAXTEMP);
+    mUi->uHeater1MaxtempSpinBox->setValue(defaults::HEATER_1_MAXTEMP);
+    mUi->uHeater2MaxtempSpinBox->setValue(defaults::HEATER_2_MAXTEMP);
+    mUi->uHeater3MaxtempSpinBox->setValue(defaults::HEATER_3_MAXTEMP);
+    mUi->uHeater4MaxtempSpinBox->setValue(defaults::HEATER_4_MAXTEMP);
+    mUi->uHeater5MaxtempSpinBox->setValue(defaults::HEATER_5_MAXTEMP);
+    mUi->uHeater6MaxtempSpinBox->setValue(defaults::HEATER_6_MAXTEMP);
+    mUi->uHeater7MaxtempSpinBox->setValue(defaults::HEATER_7_MAXTEMP);
+    mUi->uBedMaxtempSpinBox->setValue(defaults::BED_MAXTEMP);
+    mUi->uChamberMaxtempSpinBox->setValue(defaults::CHAMBER_MAXTEMP);
 
     mUi->uSensorTabWidget->setCurrentIndex(0);
+    mUi->uLimitsTabWidget->setCurrentIndex(0);
 
     mIsLoading = false;
 }
@@ -227,6 +261,29 @@ bool ThermalSettingsPage::LoadFromJson(const QJsonObject &pJson)
     success &= LoadConfig(mUi->uTempChamberResidencyTimeSpinBox, pJson, "TEMP_CHAMBER_RESIDENCY_TIME");
     success &= LoadConfig(mUi->uTempChamberWindowSpinBox, pJson, "TEMP_CHAMBER_WINDOW");
     success &= LoadConfig(mUi->uTempChamberHysteresisSpinBox, pJson, "TEMP_CHAMBER_HYSTERESIS");
+    success &= LoadConfig(mUi->uTempSensorRedundantSourceDropdown, pJson, "TEMP_SENSOR_REDUNDANT_SOURCE");
+    success &= LoadConfig(mUi->uTempSensorRedundantTargetDropdown, pJson, "TEMP_SENSOR_REDUNDANT_TARGET");
+    success &= LoadConfig(mUi->uTempSensorRedundantMaxDiffSpinBox, pJson, "TEMP_SENSOR_REDUNDANT_MAX_DIFF");
+    success &= LoadConfig(mUi->uHeater0MintempSpinBox, pJson, "HEATER_0_MINTEMP");
+    success &= LoadConfig(mUi->uHeater1MintempSpinBox, pJson, "HEATER_1_MINTEMP");
+    success &= LoadConfig(mUi->uHeater2MintempSpinBox, pJson, "HEATER_2_MINTEMP");
+    success &= LoadConfig(mUi->uHeater3MintempSpinBox, pJson, "HEATER_3_MINTEMP");
+    success &= LoadConfig(mUi->uHeater4MintempSpinBox, pJson, "HEATER_4_MINTEMP");
+    success &= LoadConfig(mUi->uHeater5MintempSpinBox, pJson, "HEATER_5_MINTEMP");
+    success &= LoadConfig(mUi->uHeater6MintempSpinBox, pJson, "HEATER_6_MINTEMP");
+    success &= LoadConfig(mUi->uHeater7MintempSpinBox, pJson, "HEATER_7_MINTEMP");
+    success &= LoadConfig(mUi->uBedMintempSpinBox, pJson, "BED_MINTEMP");
+    success &= LoadConfig(mUi->uChamberMintempSpinBox, pJson, "CHAMBER_MINTEMP");
+    success &= LoadConfig(mUi->uHeater0MaxtempSpinBox, pJson, "HEATER_0_MAXTEMP");
+    success &= LoadConfig(mUi->uHeater1MaxtempSpinBox, pJson, "HEATER_1_MAXTEMP");
+    success &= LoadConfig(mUi->uHeater2MaxtempSpinBox, pJson, "HEATER_2_MAXTEMP");
+    success &= LoadConfig(mUi->uHeater3MaxtempSpinBox, pJson, "HEATER_3_MAXTEMP");
+    success &= LoadConfig(mUi->uHeater4MaxtempSpinBox, pJson, "HEATER_4_MAXTEMP");
+    success &= LoadConfig(mUi->uHeater5MaxtempSpinBox, pJson, "HEATER_5_MAXTEMP");
+    success &= LoadConfig(mUi->uHeater6MaxtempSpinBox, pJson, "HEATER_6_MAXTEMP");
+    success &= LoadConfig(mUi->uHeater7MaxtempSpinBox, pJson, "HEATER_7_MAXTEMP");
+    success &= LoadConfig(mUi->uBedMaxtempSpinBox, pJson, "BED_MAXTEMP");
+    success &= LoadConfig(mUi->uChamberMaxtempSpinBox, pJson, "CHAMBER_MAXTEMP");
 
     mIsLoading = false;
     return success;
@@ -265,6 +322,29 @@ void ThermalSettingsPage::FetchConfiguration(Configuration& pConfig)
     SetConfig(pConfig.thermalSettings.TEMP_CHAMBER_RESIDENCY_TIME, mUi->uTempChamberResidencyTimeSpinBox);
     SetConfig(pConfig.thermalSettings.TEMP_CHAMBER_WINDOW, mUi->uTempChamberWindowSpinBox);
     SetConfig(pConfig.thermalSettings.TEMP_CHAMBER_HYSTERESIS, mUi->uTempChamberHysteresisSpinBox);
+    SetConfig(pConfig.thermalSettings.TEMP_SENSOR_REDUNDANT_SOURCE, mUi->uTempSensorRedundantSourceDropdown);
+    SetConfig(pConfig.thermalSettings.TEMP_SENSOR_REDUNDANT_TARGET, mUi->uTempSensorRedundantTargetDropdown);
+    SetConfig(pConfig.thermalSettings.TEMP_SENSOR_REDUNDANT_MAX_DIFF, mUi->uTempSensorRedundantMaxDiffSpinBox);
+    SetConfig(pConfig.thermalSettings.HEATER_0_MINTEMP, mUi->uHeater0MintempSpinBox);
+    SetConfig(pConfig.thermalSettings.HEATER_1_MINTEMP, mUi->uHeater1MintempSpinBox);
+    SetConfig(pConfig.thermalSettings.HEATER_2_MINTEMP, mUi->uHeater2MintempSpinBox);
+    SetConfig(pConfig.thermalSettings.HEATER_3_MINTEMP, mUi->uHeater3MintempSpinBox);
+    SetConfig(pConfig.thermalSettings.HEATER_4_MINTEMP, mUi->uHeater4MintempSpinBox);
+    SetConfig(pConfig.thermalSettings.HEATER_5_MINTEMP, mUi->uHeater5MintempSpinBox);
+    SetConfig(pConfig.thermalSettings.HEATER_6_MINTEMP, mUi->uHeater6MintempSpinBox);
+    SetConfig(pConfig.thermalSettings.HEATER_7_MINTEMP, mUi->uHeater7MintempSpinBox);
+    SetConfig(pConfig.thermalSettings.BED_MINTEMP, mUi->uBedMintempSpinBox);
+    SetConfig(pConfig.thermalSettings.CHAMBER_MINTEMP, mUi->uChamberMintempSpinBox);
+    SetConfig(pConfig.thermalSettings.HEATER_0_MAXTEMP, mUi->uHeater0MaxtempSpinBox);
+    SetConfig(pConfig.thermalSettings.HEATER_1_MAXTEMP, mUi->uHeater1MaxtempSpinBox);
+    SetConfig(pConfig.thermalSettings.HEATER_2_MAXTEMP, mUi->uHeater2MaxtempSpinBox);
+    SetConfig(pConfig.thermalSettings.HEATER_3_MAXTEMP, mUi->uHeater3MaxtempSpinBox);
+    SetConfig(pConfig.thermalSettings.HEATER_4_MAXTEMP, mUi->uHeater4MaxtempSpinBox);
+    SetConfig(pConfig.thermalSettings.HEATER_5_MAXTEMP, mUi->uHeater5MaxtempSpinBox);
+    SetConfig(pConfig.thermalSettings.HEATER_6_MAXTEMP, mUi->uHeater6MaxtempSpinBox);
+    SetConfig(pConfig.thermalSettings.HEATER_7_MAXTEMP, mUi->uHeater7MaxtempSpinBox);
+    SetConfig(pConfig.thermalSettings.BED_MAXTEMP, mUi->uBedMaxtempSpinBox);
+    SetConfig(pConfig.thermalSettings.CHAMBER_MAXTEMP, mUi->uChamberMaxtempSpinBox);
 }
 
 void ThermalSettingsPage::ReplaceTags(QStringList& pOutput)
@@ -303,4 +383,27 @@ void ThermalSettingsPage::ReplaceTags(QStringList& pOutput)
     ReplaceTag(pOutput, "#{TEMP_CHAMBER_RESIDENCY_TIME}", mUi->uTempChamberResidencyTimeSpinBox, mUi->uTempSensorChamberDropdown->currentIndex() == 53, "TEMP_CHAMBER_RESIDENCY_TIME");
     ReplaceTag(pOutput, "#{TEMP_CHAMBER_WINDOW}", mUi->uTempChamberWindowSpinBox, mUi->uTempSensorChamberDropdown->currentIndex() == 53, "TEMP_CHAMBER_WINDOW");
     ReplaceTag(pOutput, "#{TEMP_CHAMBER_HYSTERESIS}", mUi->uTempChamberHysteresisSpinBox, mUi->uTempSensorChamberDropdown->currentIndex() == 53, "TEMP_CHAMBER_HYSTERESIS");
+    ReplaceTag(pOutput, "#{TEMP_SENSOR_REDUNDANT_SOURCE}", mUi->uTempSensorRedundantSourceDropdown, mUi->uTempSensorRedundantDropdown->currentIndex() == 53, "TEMP_SENSOR_REDUNDANT_SOURCE", false);
+    ReplaceTag(pOutput, "#{TEMP_SENSOR_REDUNDANT_TARGET}", mUi->uTempSensorRedundantTargetDropdown, mUi->uTempSensorRedundantDropdown->currentIndex() == 53, "TEMP_SENSOR_REDUNDANT_TARGET", false);
+    ReplaceTag(pOutput, "#{TEMP_SENSOR_REDUNDANT_MAX_DIFF}", mUi->uTempSensorRedundantMaxDiffSpinBox, mUi->uTempSensorRedundantDropdown->currentIndex() == 53, "TEMP_SENSOR_REDUNDANT_MAX_DIFF");
+    ReplaceTag(pOutput, "#{HEATER_0_MINTEMP}", mUi->uHeater0MintempSpinBox, false, "HEATER_0_MINTEMP");
+    ReplaceTag(pOutput, "#{HEATER_1_MINTEMP}", mUi->uHeater1MintempSpinBox, false, "HEATER_1_MINTEMP");
+    ReplaceTag(pOutput, "#{HEATER_2_MINTEMP}", mUi->uHeater2MintempSpinBox, false, "HEATER_2_MINTEMP");
+    ReplaceTag(pOutput, "#{HEATER_3_MINTEMP}", mUi->uHeater3MintempSpinBox, false, "HEATER_3_MINTEMP");
+    ReplaceTag(pOutput, "#{HEATER_4_MINTEMP}", mUi->uHeater4MintempSpinBox, false, "HEATER_4_MINTEMP");
+    ReplaceTag(pOutput, "#{HEATER_5_MINTEMP}", mUi->uHeater5MintempSpinBox, false, "HEATER_5_MINTEMP");
+    ReplaceTag(pOutput, "#{HEATER_6_MINTEMP}", mUi->uHeater6MintempSpinBox, false, "HEATER_6_MINTEMP");
+    ReplaceTag(pOutput, "#{HEATER_7_MINTEMP}", mUi->uHeater7MintempSpinBox, false, "HEATER_7_MINTEMP");
+    ReplaceTag(pOutput, "#{BED_MINTEMP}", mUi->uBedMintempSpinBox, false, "BED_MINTEMP");
+    ReplaceTag(pOutput, "#{CHAMBER_MINTEMP}", mUi->uChamberMintempSpinBox, false, "CHAMBER_MINTEMP");
+    ReplaceTag(pOutput, "#{HEATER_0_MAXTEMP}", mUi->uHeater0MaxtempSpinBox, false, "HEATER_0_MAXTEMP");
+    ReplaceTag(pOutput, "#{HEATER_1_MAXTEMP}", mUi->uHeater1MaxtempSpinBox, false, "HEATER_1_MAXTEMP");
+    ReplaceTag(pOutput, "#{HEATER_2_MAXTEMP}", mUi->uHeater2MaxtempSpinBox, false, "HEATER_2_MAXTEMP");
+    ReplaceTag(pOutput, "#{HEATER_3_MAXTEMP}", mUi->uHeater3MaxtempSpinBox, false, "HEATER_3_MAXTEMP");
+    ReplaceTag(pOutput, "#{HEATER_4_MAXTEMP}", mUi->uHeater4MaxtempSpinBox, false, "HEATER_4_MAXTEMP");
+    ReplaceTag(pOutput, "#{HEATER_5_MAXTEMP}", mUi->uHeater5MaxtempSpinBox, false, "HEATER_5_MAXTEMP");
+    ReplaceTag(pOutput, "#{HEATER_6_MAXTEMP}", mUi->uHeater6MaxtempSpinBox, false, "HEATER_6_MAXTEMP");
+    ReplaceTag(pOutput, "#{HEATER_7_MAXTEMP}", mUi->uHeater7MaxtempSpinBox, false, "HEATER_7_MAXTEMP");
+    ReplaceTag(pOutput, "#{BED_MAXTEMP}", mUi->uBedMaxtempSpinBox, false, "BED_MAXTEMP");
+    ReplaceTag(pOutput, "#{CHAMBER_MAXTEMP}", mUi->uChamberMaxtempSpinBox, false, "CHAMBER_MAXTEMP");
 }

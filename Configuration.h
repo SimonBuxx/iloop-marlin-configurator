@@ -210,6 +210,29 @@ static constexpr auto TEMP_BED_HYSTERESIS{3};
 static constexpr auto TEMP_CHAMBER_RESIDENCY_TIME{10};
 static constexpr auto TEMP_CHAMBER_WINDOW{1};
 static constexpr auto TEMP_CHAMBER_HYSTERESIS{3};
+static constexpr auto TEMP_SENSOR_REDUNDANT_SOURCE{"E1"};
+static constexpr auto TEMP_SENSOR_REDUNDANT_TARGET{"E0"};
+static constexpr auto TEMP_SENSOR_REDUNDANT_MAX_DIFF{10};
+static constexpr auto HEATER_0_MINTEMP{5};
+static constexpr auto HEATER_1_MINTEMP{5};
+static constexpr auto HEATER_2_MINTEMP{5};
+static constexpr auto HEATER_3_MINTEMP{5};
+static constexpr auto HEATER_4_MINTEMP{5};
+static constexpr auto HEATER_5_MINTEMP{5};
+static constexpr auto HEATER_6_MINTEMP{5};
+static constexpr auto HEATER_7_MINTEMP{5};
+static constexpr auto BED_MINTEMP{5};
+static constexpr auto CHAMBER_MINTEMP{5};
+static constexpr auto HEATER_0_MAXTEMP{275};
+static constexpr auto HEATER_1_MAXTEMP{275};
+static constexpr auto HEATER_2_MAXTEMP{275};
+static constexpr auto HEATER_3_MAXTEMP{275};
+static constexpr auto HEATER_4_MAXTEMP{275};
+static constexpr auto HEATER_5_MAXTEMP{275};
+static constexpr auto HEATER_6_MAXTEMP{275};
+static constexpr auto HEATER_7_MAXTEMP{275};
+static constexpr auto BED_MAXTEMP{150};
+static constexpr auto CHAMBER_MAXTEMP{60};
 }
 
 struct PageConfiguration
@@ -583,6 +606,29 @@ struct ThermalSettingsConfiguration : public PageConfiguration
     int32_t TEMP_CHAMBER_RESIDENCY_TIME{defaults::TEMP_CHAMBER_RESIDENCY_TIME};
     int32_t TEMP_CHAMBER_WINDOW{defaults::TEMP_CHAMBER_WINDOW};
     int32_t TEMP_CHAMBER_HYSTERESIS{defaults::TEMP_CHAMBER_HYSTERESIS};
+    QString TEMP_SENSOR_REDUNDANT_SOURCE{defaults::TEMP_SENSOR_REDUNDANT_SOURCE};
+    QString TEMP_SENSOR_REDUNDANT_TARGET{defaults::TEMP_SENSOR_REDUNDANT_TARGET};
+    int32_t TEMP_SENSOR_REDUNDANT_MAX_DIFF{defaults::TEMP_SENSOR_REDUNDANT_MAX_DIFF};
+    int32_t HEATER_0_MINTEMP{defaults::HEATER_0_MINTEMP};
+    int32_t HEATER_1_MINTEMP{defaults::HEATER_1_MINTEMP};
+    int32_t HEATER_2_MINTEMP{defaults::HEATER_2_MINTEMP};
+    int32_t HEATER_3_MINTEMP{defaults::HEATER_3_MINTEMP};
+    int32_t HEATER_4_MINTEMP{defaults::HEATER_4_MINTEMP};
+    int32_t HEATER_5_MINTEMP{defaults::HEATER_5_MINTEMP};
+    int32_t HEATER_6_MINTEMP{defaults::HEATER_6_MINTEMP};
+    int32_t HEATER_7_MINTEMP{defaults::HEATER_7_MINTEMP};
+    int32_t BED_MINTEMP{defaults::BED_MINTEMP};
+    int32_t CHAMBER_MINTEMP{defaults::CHAMBER_MINTEMP};
+    int32_t HEATER_0_MAXTEMP{defaults::HEATER_0_MAXTEMP};
+    int32_t HEATER_1_MAXTEMP{defaults::HEATER_1_MAXTEMP};
+    int32_t HEATER_2_MAXTEMP{defaults::HEATER_2_MAXTEMP};
+    int32_t HEATER_3_MAXTEMP{defaults::HEATER_3_MAXTEMP};
+    int32_t HEATER_4_MAXTEMP{defaults::HEATER_4_MAXTEMP};
+    int32_t HEATER_5_MAXTEMP{defaults::HEATER_5_MAXTEMP};
+    int32_t HEATER_6_MAXTEMP{defaults::HEATER_6_MAXTEMP};
+    int32_t HEATER_7_MAXTEMP{defaults::HEATER_7_MAXTEMP};
+    int32_t BED_MAXTEMP{defaults::BED_MAXTEMP};
+    int32_t CHAMBER_MAXTEMP{defaults::CHAMBER_MAXTEMP};
 
 public:
     /// \brief Converts the configuration into a JSON object
@@ -623,6 +669,29 @@ public:
         json["TEMP_CHAMBER_RESIDENCY_TIME"] = TEMP_CHAMBER_RESIDENCY_TIME;
         json["TEMP_CHAMBER_WINDOW"] = TEMP_CHAMBER_WINDOW;
         json["TEMP_CHAMBER_HYSTERESIS"] = TEMP_CHAMBER_HYSTERESIS;
+        json["TEMP_SENSOR_REDUNDANT_SOURCE"] = TEMP_SENSOR_REDUNDANT_SOURCE;
+        json["TEMP_SENSOR_REDUNDANT_TARGET"] = TEMP_SENSOR_REDUNDANT_TARGET;
+        json["TEMP_SENSOR_REDUNDANT_MAX_DIFF"] = TEMP_SENSOR_REDUNDANT_MAX_DIFF;
+        json["HEATER_0_MINTEMP"] = HEATER_0_MINTEMP;
+        json["HEATER_1_MINTEMP"] = HEATER_1_MINTEMP;
+        json["HEATER_2_MINTEMP"] = HEATER_2_MINTEMP;
+        json["HEATER_3_MINTEMP"] = HEATER_3_MINTEMP;
+        json["HEATER_4_MINTEMP"] = HEATER_4_MINTEMP;
+        json["HEATER_5_MINTEMP"] = HEATER_5_MINTEMP;
+        json["HEATER_6_MINTEMP"] = HEATER_6_MINTEMP;
+        json["HEATER_7_MINTEMP"] = HEATER_7_MINTEMP;
+        json["BED_MINTEMP"] = BED_MINTEMP;
+        json["CHAMBER_MINTEMP"] = CHAMBER_MINTEMP;
+        json["HEATER_0_MAXTEMP"] = HEATER_0_MAXTEMP;
+        json["HEATER_1_MAXTEMP"] = HEATER_1_MAXTEMP;
+        json["HEATER_2_MAXTEMP"] = HEATER_2_MAXTEMP;
+        json["HEATER_3_MAXTEMP"] = HEATER_3_MAXTEMP;
+        json["HEATER_4_MAXTEMP"] = HEATER_4_MAXTEMP;
+        json["HEATER_5_MAXTEMP"] = HEATER_5_MAXTEMP;
+        json["HEATER_6_MAXTEMP"] = HEATER_6_MAXTEMP;
+        json["HEATER_7_MAXTEMP"] = HEATER_7_MAXTEMP;
+        json["BED_MAXTEMP"] = BED_MAXTEMP;
+        json["CHAMBER_MAXTEMP"] = CHAMBER_MAXTEMP;
 
         return json;
     }
