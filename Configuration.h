@@ -266,6 +266,15 @@ static constexpr auto MPC_MIN_AMBIENT_CHANGE{1.0f};
 static constexpr auto MPC_STEADYSTATE{0.5f};
 static constexpr auto MPC_TUNING_POS{"{ X_CENTER, Y_CENTER, 1.0f }"};
 static constexpr auto MPC_TUNING_END_Z{10.0f};
+static constexpr auto PIDTEMPBED{false};
+static constexpr auto BED_LIMIT_SWITCHING{false};
+static constexpr auto MAX_BED_POWER{255};
+static constexpr auto MIN_BED_POWER{0};
+static constexpr auto ENABLE_MIN_BED_POWER{false};
+static constexpr auto PID_BED_DEBUG{false};
+static constexpr auto DEFAULT_bedKp{10.00};
+static constexpr auto DEFAULT_bedKi{0.023};
+static constexpr auto DEFAULT_bedKd{305.4};
 
 static constexpr auto PREVENT_COLD_EXTRUSION{true};
 static constexpr auto EXTRUDE_MINTEMP{170};
@@ -704,6 +713,15 @@ struct ThermalSettingsConfiguration : public PageConfiguration
     double MPC_STEADYSTATE{defaults::MPC_STEADYSTATE};
     QString MPC_TUNING_POS{defaults::MPC_TUNING_POS};
     double MPC_TUNING_END_Z{defaults::MPC_TUNING_END_Z};
+    bool PIDTEMPBED{defaults::PIDTEMPBED};
+    bool BED_LIMIT_SWITCHING{defaults::BED_LIMIT_SWITCHING};
+    int32_t MAX_BED_POWER{defaults::MAX_BED_POWER};
+    int32_t MIN_BED_POWER{defaults::MIN_BED_POWER};
+    bool ENABLE_MIN_BED_POWER{defaults::ENABLE_MIN_BED_POWER};
+    bool PID_BED_DEBUG{defaults::PID_BED_DEBUG};
+    double DEFAULT_bedKp{defaults::DEFAULT_bedKp};
+    double DEFAULT_bedKi{defaults::DEFAULT_bedKi};
+    double DEFAULT_bedKd{defaults::DEFAULT_bedKd};
 
     bool PREVENT_COLD_EXTRUSION{defaults::PREVENT_COLD_EXTRUSION};
     int32_t EXTRUDE_MINTEMP{defaults::EXTRUDE_MINTEMP};
@@ -809,6 +827,15 @@ public:
         json["MPC_STEADYSTATE"] = MPC_STEADYSTATE;
         json["MPC_TUNING_POS"] = MPC_TUNING_POS;
         json["MPC_TUNING_END_Z"] = MPC_TUNING_END_Z;
+        json["PIDTEMPBED"] = PIDTEMPBED;
+        json["BED_LIMIT_SWITCHING"] = BED_LIMIT_SWITCHING;
+        json["MAX_BED_POWER"] = MAX_BED_POWER;
+        json["MIN_BED_POWER"] = MIN_BED_POWER;
+        json["ENABLE_MIN_BED_POWER"] = ENABLE_MIN_BED_POWER;
+        json["PID_BED_DEBUG"] = PID_BED_DEBUG;
+        json["DEFAULT_bedKp"] = DEFAULT_bedKp;
+        json["DEFAULT_bedKi"] = DEFAULT_bedKi;
+        json["DEFAULT_bedKd"] = DEFAULT_bedKd;
 
         json["PREVENT_COLD_EXTRUSION"] = PREVENT_COLD_EXTRUSION;
         json["EXTRUDE_MINTEMP"] = EXTRUDE_MINTEMP;

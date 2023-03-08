@@ -258,6 +258,15 @@ void ThermalSettingsPage::ResetValues()
     mUi->uMpcSteadystateSpinBox->setValue(defaults::MPC_STEADYSTATE);
     mUi->uMpcTuningPosEdit->setText(defaults::MPC_TUNING_POS);
     mUi->uMpcTuningEndZSpinBox->setValue(defaults::MPC_TUNING_END_Z);
+    mUi->uPidtempbedBox->setChecked(defaults::PIDTEMPBED);
+    mUi->uBedLimitSwitchingBox->setChecked(defaults::BED_LIMIT_SWITCHING);
+    mUi->uMaxBedPowerSpinBox->setValue(defaults::MAX_BED_POWER);
+    mUi->uMinBedPowerSpinBox->setValue(defaults::MIN_BED_POWER);
+    mUi->uMinBedPowerBox->setChecked(defaults::ENABLE_MIN_BED_POWER);
+    mUi->uPidBedDebugBox->setChecked(defaults::PID_BED_DEBUG);
+    mUi->uDefaultBedkpSpinBox->setValue(defaults::DEFAULT_bedKp);
+    mUi->uDefaultBedkiSpinBox->setValue(defaults::DEFAULT_bedKi);
+    mUi->uDefaultBedkdSpinBox->setValue(defaults::DEFAULT_bedKd);
 
     mUi->uPreventColdExtrusionBox->setChecked(defaults::PREVENT_COLD_EXTRUSION);
     mUi->uExtrudeMintempSpinBox->setValue(defaults::EXTRUDE_MINTEMP);
@@ -366,6 +375,15 @@ bool ThermalSettingsPage::LoadFromJson(const QJsonObject &pJson)
     success &= LoadConfig(mUi->uMpcSteadystateSpinBox, pJson, "MPC_STEADYSTATE");
     success &= LoadConfig(mUi->uMpcTuningPosEdit, pJson, "MPC_TUNING_POS");
     success &= LoadConfig(mUi->uMpcTuningEndZSpinBox, pJson, "MPC_TUNING_END_Z");
+    success &= LoadConfig(mUi->uPidtempbedBox, pJson, "PIDTEMPBED");
+    success &= LoadConfig(mUi->uBedLimitSwitchingBox, pJson, "BED_LIMIT_SWITCHING");
+    success &= LoadConfig(mUi->uMaxBedPowerSpinBox, pJson, "MAX_BED_POWER");
+    success &= LoadConfig(mUi->uMinBedPowerSpinBox, pJson, "MIN_BED_POWER");
+    success &= LoadConfig(mUi->uMinBedPowerBox, pJson, "ENABLE_MIN_BED_POWER");
+    success &= LoadConfig(mUi->uPidBedDebugBox, pJson, "PID_BED_DEBUG");
+    success &= LoadConfig(mUi->uDefaultBedkpSpinBox, pJson, "DEFAULT_bedKp");
+    success &= LoadConfig(mUi->uDefaultBedkiSpinBox, pJson, "DEFAULT_bedKi");
+    success &= LoadConfig(mUi->uDefaultBedkdSpinBox, pJson, "DEFAULT_bedKd");
 
     success &= LoadConfig(mUi->uPreventColdExtrusionBox, pJson, "PREVENT_COLD_EXTRUSION");
     success &= LoadConfig(mUi->uExtrudeMintempSpinBox, pJson, "EXTRUDE_MINTEMP");
@@ -469,6 +487,15 @@ void ThermalSettingsPage::FetchConfiguration(Configuration& pConfig)
     SetConfig(pConfig.thermalSettings.MPC_STEADYSTATE, mUi->uMpcSteadystateSpinBox);
     SetConfig(pConfig.thermalSettings.MPC_TUNING_POS, mUi->uMpcTuningPosEdit);
     SetConfig(pConfig.thermalSettings.MPC_TUNING_END_Z, mUi->uMpcTuningEndZSpinBox);
+    SetConfig(pConfig.thermalSettings.PIDTEMPBED, mUi->uPidtempbedBox);
+    SetConfig(pConfig.thermalSettings.BED_LIMIT_SWITCHING, mUi->uBedLimitSwitchingBox);
+    SetConfig(pConfig.thermalSettings.MAX_BED_POWER, mUi->uMaxBedPowerSpinBox);
+    SetConfig(pConfig.thermalSettings.MIN_BED_POWER, mUi->uMinBedPowerSpinBox);
+    SetConfig(pConfig.thermalSettings.ENABLE_MIN_BED_POWER, mUi->uMinBedPowerBox);
+    SetConfig(pConfig.thermalSettings.PID_BED_DEBUG, mUi->uPidBedDebugBox);
+    SetConfig(pConfig.thermalSettings.DEFAULT_bedKp, mUi->uDefaultBedkpSpinBox);
+    SetConfig(pConfig.thermalSettings.DEFAULT_bedKi, mUi->uDefaultBedkiSpinBox);
+    SetConfig(pConfig.thermalSettings.DEFAULT_bedKd, mUi->uDefaultBedkdSpinBox);
 
     SetConfig(pConfig.thermalSettings.PREVENT_COLD_EXTRUSION, mUi->uPreventColdExtrusionBox);
     SetConfig(pConfig.thermalSettings.EXTRUDE_MINTEMP, mUi->uExtrudeMintempSpinBox);
@@ -580,4 +607,12 @@ void ThermalSettingsPage::ReplaceTags(QStringList& pOutput)
     ReplaceTag(pOutput, "#{THERMAL_PROTECTION_BED}", mUi->uThermalProtectionBedBox, "THERMAL_PROTECTION_BED");
     ReplaceTag(pOutput, "#{THERMAL_PROTECTION_CHAMBER}", mUi->uThermalProtectionChamberBox, "THERMAL_PROTECTION_CHAMBER");
     ReplaceTag(pOutput, "#{THERMAL_PROTECTION_COOLER}", mUi->uThermalProtectionCoolerBox, "THERMAL_PROTECTION_COOLER");
+    ReplaceTag(pOutput, "#{PIDTEMPBED}", mUi->uPidtempbedBox, "PIDTEMPBED");
+    ReplaceTag(pOutput, "#{BED_LIMIT_SWITCHING}", mUi->uBedLimitSwitchingBox, "BED_LIMIT_SWITCHING");
+    ReplaceTag(pOutput, "#{MAX_BED_POWER}", mUi->uMaxBedPowerSpinBox, false, "MAX_BED_POWER");
+    ReplaceTag(pOutput, "#{MIN_BED_POWER}", mUi->uMinBedPowerSpinBox, !mUi->uMinBedPowerBox->isChecked(), "MIN_BED_POWER");
+    ReplaceTag(pOutput, "#{PID_BED_DEBUG}", mUi->uPidBedDebugBox, "PID_BED_DEBUG");
+    ReplaceTag(pOutput, "#{DEFAULT_bedKp}", mUi->uDefaultBedkpSpinBox, false, "DEFAULT_bedKp", 3);
+    ReplaceTag(pOutput, "#{DEFAULT_bedKi}", mUi->uDefaultBedkiSpinBox, false, "DEFAULT_bedKi", 3);
+    ReplaceTag(pOutput, "#{DEFAULT_bedKd}", mUi->uDefaultBedkdSpinBox, false, "DEFAULT_bedKd", 3);
 }
