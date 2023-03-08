@@ -266,6 +266,15 @@ static constexpr auto MPC_MIN_AMBIENT_CHANGE{1.0f};
 static constexpr auto MPC_STEADYSTATE{0.5f};
 static constexpr auto MPC_TUNING_POS{"{ X_CENTER, Y_CENTER, 1.0f }"};
 static constexpr auto MPC_TUNING_END_Z{10.0f};
+
+static constexpr auto PREVENT_COLD_EXTRUSION{true};
+static constexpr auto EXTRUDE_MINTEMP{170};
+static constexpr auto PREVENT_LENGTHY_EXTRUDE{true};
+static constexpr auto EXTRUDE_MAXLENGTH{200};
+static constexpr auto THERMAL_PROTECTION_HOTENDS{true};
+static constexpr auto THERMAL_PROTECTION_BED{true};
+static constexpr auto THERMAL_PROTECTION_CHAMBER{true};
+static constexpr auto THERMAL_PROTECTION_COOLER{true};
 }
 
 struct PageConfiguration
@@ -696,6 +705,15 @@ struct ThermalSettingsConfiguration : public PageConfiguration
     QString MPC_TUNING_POS{defaults::MPC_TUNING_POS};
     double MPC_TUNING_END_Z{defaults::MPC_TUNING_END_Z};
 
+    bool PREVENT_COLD_EXTRUSION{defaults::PREVENT_COLD_EXTRUSION};
+    int32_t EXTRUDE_MINTEMP{defaults::EXTRUDE_MINTEMP};
+    bool PREVENT_LENGTHY_EXTRUDE{defaults::PREVENT_LENGTHY_EXTRUDE};
+    int32_t EXTRUDE_MAXLENGTH{defaults::EXTRUDE_MAXLENGTH};
+    bool THERMAL_PROTECTION_HOTENDS{defaults::THERMAL_PROTECTION_HOTENDS};
+    bool THERMAL_PROTECTION_BED{defaults::THERMAL_PROTECTION_BED};
+    bool THERMAL_PROTECTION_CHAMBER{defaults::THERMAL_PROTECTION_CHAMBER};
+    bool THERMAL_PROTECTION_COOLER{defaults::THERMAL_PROTECTION_COOLER};
+
 public:
     /// \brief Converts the configuration into a JSON object
     ///
@@ -791,6 +809,15 @@ public:
         json["MPC_STEADYSTATE"] = MPC_STEADYSTATE;
         json["MPC_TUNING_POS"] = MPC_TUNING_POS;
         json["MPC_TUNING_END_Z"] = MPC_TUNING_END_Z;
+
+        json["PREVENT_COLD_EXTRUSION"] = PREVENT_COLD_EXTRUSION;
+        json["EXTRUDE_MINTEMP"] = EXTRUDE_MINTEMP;
+        json["PREVENT_LENGTHY_EXTRUDE"] = PREVENT_LENGTHY_EXTRUDE;
+        json["EXTRUDE_MAXLENGTH"] = EXTRUDE_MAXLENGTH;
+        json["THERMAL_PROTECTION_HOTENDS"] = THERMAL_PROTECTION_HOTENDS;
+        json["THERMAL_PROTECTION_BED"] = THERMAL_PROTECTION_BED;
+        json["THERMAL_PROTECTION_CHAMBER"] = THERMAL_PROTECTION_CHAMBER;
+        json["THERMAL_PROTECTION_COOLER"] = THERMAL_PROTECTION_COOLER;
 
         return json;
     }

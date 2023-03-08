@@ -259,6 +259,15 @@ void ThermalSettingsPage::ResetValues()
     mUi->uMpcTuningPosEdit->setText(defaults::MPC_TUNING_POS);
     mUi->uMpcTuningEndZSpinBox->setValue(defaults::MPC_TUNING_END_Z);
 
+    mUi->uPreventColdExtrusionBox->setChecked(defaults::PREVENT_COLD_EXTRUSION);
+    mUi->uExtrudeMintempSpinBox->setValue(defaults::EXTRUDE_MINTEMP);
+    mUi->uPreventLengthyExtrudeBox->setChecked(defaults::PREVENT_LENGTHY_EXTRUDE);
+    mUi->uExtrudeMaxlengthSpinBox->setValue(defaults::EXTRUDE_MAXLENGTH);
+    mUi->uThermalProtectionHotendsBox->setChecked(defaults::THERMAL_PROTECTION_HOTENDS);
+    mUi->uThermalProtectionBedBox->setChecked(defaults::THERMAL_PROTECTION_BED);
+    mUi->uThermalProtectionChamberBox->setChecked(defaults::THERMAL_PROTECTION_CHAMBER);
+    mUi->uThermalProtectionCoolerBox->setChecked(defaults::THERMAL_PROTECTION_COOLER);
+
     mUi->uSensorTabWidget->setCurrentIndex(0);
     mUi->uLimitsTabWidget->setCurrentIndex(0);
 
@@ -358,6 +367,15 @@ bool ThermalSettingsPage::LoadFromJson(const QJsonObject &pJson)
     success &= LoadConfig(mUi->uMpcTuningPosEdit, pJson, "MPC_TUNING_POS");
     success &= LoadConfig(mUi->uMpcTuningEndZSpinBox, pJson, "MPC_TUNING_END_Z");
 
+    success &= LoadConfig(mUi->uPreventColdExtrusionBox, pJson, "PREVENT_COLD_EXTRUSION");
+    success &= LoadConfig(mUi->uExtrudeMintempSpinBox, pJson, "EXTRUDE_MINTEMP");
+    success &= LoadConfig(mUi->uPreventLengthyExtrudeBox, pJson, "PREVENT_LENGTHY_EXTRUDE");
+    success &= LoadConfig(mUi->uExtrudeMaxlengthSpinBox, pJson, "EXTRUDE_MAXLENGTH");
+    success &= LoadConfig(mUi->uThermalProtectionHotendsBox, pJson, "THERMAL_PROTECTION_HOTENDS");
+    success &= LoadConfig(mUi->uThermalProtectionBedBox, pJson, "THERMAL_PROTECTION_BED");
+    success &= LoadConfig(mUi->uThermalProtectionChamberBox, pJson, "THERMAL_PROTECTION_CHAMBER");
+    success &= LoadConfig(mUi->uThermalProtectionCoolerBox, pJson, "THERMAL_PROTECTION_COOLER");
+
     mIsLoading = false;
     return success;
 }
@@ -451,6 +469,15 @@ void ThermalSettingsPage::FetchConfiguration(Configuration& pConfig)
     SetConfig(pConfig.thermalSettings.MPC_STEADYSTATE, mUi->uMpcSteadystateSpinBox);
     SetConfig(pConfig.thermalSettings.MPC_TUNING_POS, mUi->uMpcTuningPosEdit);
     SetConfig(pConfig.thermalSettings.MPC_TUNING_END_Z, mUi->uMpcTuningEndZSpinBox);
+
+    SetConfig(pConfig.thermalSettings.PREVENT_COLD_EXTRUSION, mUi->uPreventColdExtrusionBox);
+    SetConfig(pConfig.thermalSettings.EXTRUDE_MINTEMP, mUi->uExtrudeMintempSpinBox);
+    SetConfig(pConfig.thermalSettings.PREVENT_LENGTHY_EXTRUDE, mUi->uPreventLengthyExtrudeBox);
+    SetConfig(pConfig.thermalSettings.EXTRUDE_MAXLENGTH, mUi->uExtrudeMaxlengthSpinBox);
+    SetConfig(pConfig.thermalSettings.THERMAL_PROTECTION_HOTENDS, mUi->uThermalProtectionHotendsBox);
+    SetConfig(pConfig.thermalSettings.THERMAL_PROTECTION_BED, mUi->uThermalProtectionBedBox);
+    SetConfig(pConfig.thermalSettings.THERMAL_PROTECTION_CHAMBER, mUi->uThermalProtectionChamberBox);
+    SetConfig(pConfig.thermalSettings.THERMAL_PROTECTION_COOLER, mUi->uThermalProtectionCoolerBox);
 }
 
 void ThermalSettingsPage::ReplaceTags(QStringList& pOutput)
@@ -545,4 +572,12 @@ void ThermalSettingsPage::ReplaceTags(QStringList& pOutput)
     ReplaceTag(pOutput, "#{MPC_STEADYSTATE}", mUi->uMpcSteadystateSpinBox, false, "MPC_STEADYSTATE", 1, true);
     ReplaceTag(pOutput, "#{MPC_TUNING_POS}", mUi->uMpcTuningPosEdit, false, "MPC_TUNING_POS");
     ReplaceTag(pOutput, "#{MPC_TUNING_END_Z}", mUi->uMpcTuningEndZSpinBox, false, "MPC_TUNING_END_Z", 1, true);
+    ReplaceTag(pOutput, "#{PREVENT_COLD_EXTRUSION}", mUi->uPreventColdExtrusionBox, "PREVENT_COLD_EXTRUSION");
+    ReplaceTag(pOutput, "#{EXTRUDE_MINTEMP}", mUi->uExtrudeMintempSpinBox, false, "EXTRUDE_MINTEMP");
+    ReplaceTag(pOutput, "#{PREVENT_LENGTHY_EXTRUDE}", mUi->uPreventLengthyExtrudeBox, "PREVENT_LENGTHY_EXTRUDE");
+    ReplaceTag(pOutput, "#{EXTRUDE_MAXLENGTH}", mUi->uExtrudeMaxlengthSpinBox, false, "EXTRUDE_MAXLENGTH");
+    ReplaceTag(pOutput, "#{THERMAL_PROTECTION_HOTENDS}", mUi->uThermalProtectionHotendsBox, "THERMAL_PROTECTION_HOTENDS");
+    ReplaceTag(pOutput, "#{THERMAL_PROTECTION_BED}", mUi->uThermalProtectionBedBox, "THERMAL_PROTECTION_BED");
+    ReplaceTag(pOutput, "#{THERMAL_PROTECTION_CHAMBER}", mUi->uThermalProtectionChamberBox, "THERMAL_PROTECTION_CHAMBER");
+    ReplaceTag(pOutput, "#{THERMAL_PROTECTION_COOLER}", mUi->uThermalProtectionCoolerBox, "THERMAL_PROTECTION_COOLER");
 }
