@@ -53,7 +53,7 @@ QGroupBox::title {
 
 QGroupBox::title:disabled {
 	background: rgb(34, 35, 40);
-	color: rgb(180, 180, 180);
+        color: rgb(100, 100, 100);
 	border: 1px solid rgb(26, 26, 30);
 }
 
@@ -101,7 +101,7 @@ QCheckBox {
 
 QCheckBox:disabled {
 	background: rgb(34, 35, 40);
-	color: rgb(180, 180, 180);
+        color: rgb(100, 100, 100);
 }
 
 QCheckBox::hover {
@@ -139,7 +139,7 @@ QPushButton {
 
 QPushButton:disabled {
 	background: rgb(34, 35, 40);
-	color: rgb(180, 180, 180);
+        color: rgb(100, 100, 100);
 	border: 1px solid rgb(26, 26, 30);
 }
 
@@ -157,7 +157,7 @@ QComboBox {
 
 QComboBox::disabled {
 	background: rgb(34, 35, 40);
-	color: rgb(180, 180, 180);
+        color: rgb(100, 100, 100);
 	border: 1px solid rgb(26, 26, 30);
 }
 
@@ -190,7 +190,7 @@ QLineEdit {
 
 QLineEdit:disabled {
 	background: rgb(34, 35, 40);
-	color: rgb(180, 180, 180);
+        color: rgb(100, 100, 100);
 	border: 1px solid rgb(26, 26, 30);
 }
 
@@ -206,6 +206,10 @@ QLabel {
 	min-height: 30px;
 }
 
+QLabel:disabled {
+        color: rgb(100, 100, 100);
+}
+
 QAbstractSpinBox {
 	color: white;
     background: rgb(63, 65, 77);
@@ -216,7 +220,7 @@ QAbstractSpinBox {
 
 QAbstractSpinBox:disabled {
 	background: rgb(34, 35, 40);
-	color: rgb(180, 180, 180);
+        color: rgb(100, 100, 100);
 	border: 1px solid rgb(26, 26, 30);
 }
 

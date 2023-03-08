@@ -157,6 +157,13 @@ void ThermalSettingsPage::ConnectGuiSignalsAndSlots()
         mUi->uTempSensorRedundantMaxDiffBox->setEnabled(pIndex != 53);
     });
 
+    QObject::connect(mUi->uPidParamsPerHotendBox, &QGroupBox::toggled, this, [&](auto pChecked)
+    {
+        mUi->uDefaultKpBox->setEnabled(!pChecked);
+        mUi->uDefaultKiBox->setEnabled(!pChecked);
+        mUi->uDefaultKdBox->setEnabled(!pChecked);
+    });
+
     AbstractPage::ConnectGuiSignalsAndSlots();
 }
 
@@ -218,6 +225,39 @@ void ThermalSettingsPage::ResetValues()
     mUi->uHeater7MaxtempSpinBox->setValue(defaults::HEATER_7_MAXTEMP);
     mUi->uBedMaxtempSpinBox->setValue(defaults::BED_MAXTEMP);
     mUi->uChamberMaxtempSpinBox->setValue(defaults::CHAMBER_MAXTEMP);
+    mUi->uHotendOvershootSpinBox->setValue(defaults::HOTEND_OVERSHOOT);
+    mUi->uBedOvershootSpinBox->setValue(defaults::BED_OVERSHOOT);
+    mUi->uCoolerOvershootSpinBox->setValue(defaults::COOLER_OVERSHOOT);
+    mUi->uPidtempBox->setChecked(defaults::PIDTEMP);
+    mUi->uMpctempBox->setChecked(defaults::MPCTEMP);
+    mUi->uBangMaxSpinBox->setValue(defaults::BANG_MAX);
+    mUi->uPidMaxSpinBox->setValue(defaults::PID_MAX);
+    mUi->uPidK1SpinBox->setValue(defaults::PID_K1);
+    mUi->uPidDebugBox->setChecked(defaults::PID_DEBUG);
+    mUi->uPidParamsPerHotendBox->setChecked(defaults::PID_PARAMS_PER_HOTEND);
+    mUi->uDefaultKpListEdit->setText(defaults::DEFAULT_Kp_LIST);
+    mUi->uDefaultKiListEdit->setText(defaults::DEFAULT_Ki_LIST);
+    mUi->uDefaultKdListEdit->setText(defaults::DEFAULT_Kd_LIST);
+    mUi->uDefaultKpSpinBox->setValue(defaults::DEFAULT_Kp);
+    mUi->uDefaultKiSpinBox->setValue(defaults::DEFAULT_Ki);
+    mUi->uDefaultKdSpinBox->setValue(defaults::DEFAULT_Kd);
+    mUi->uMpcEditMenuBox->setChecked(defaults::MPC_EDIT_MENU);
+    mUi->uMpcAutotuneMenuBox->setChecked(defaults::MPC_AUTOTUNE_MENU);
+    mUi->uMpcMaxSpinBox->setValue(defaults::MPC_MAX);
+    mUi->uMpcHeaterPowerEdit->setText(defaults::MPC_HEATER_POWER);
+    mUi->uMpcIncludeFanBox->setChecked(defaults::MPC_INCLUDE_FAN);
+    mUi->uMpcBlockHeatCapacityEdit->setText(defaults::MPC_BLOCK_HEAT_CAPACITY);
+    mUi->uMpcSensorResponsivenessEdit->setText(defaults::MPC_SENSOR_RESPONSIVENESS);
+    mUi->uMpcAmbientXferCoeffEdit->setText(defaults::MPC_AMBIENT_XFER_COEFF);
+    mUi->uMpcAmbientXferCoeffFan255Edit->setText(defaults::MPC_AMBIENT_XFER_COEFF_FAN255);
+    mUi->uMpcFan0AllHotendsBox->setChecked(defaults::MPC_FAN_0_ALL_HOTENDS);
+    mUi->uMpcFan0ActiveHotendBox->setChecked(defaults::MPC_FAN_0_ACTIVE_HOTEND);
+    mUi->uFilamentHeatCapacityPermmEdit->setText(defaults::FILAMENT_HEAT_CAPACITY_PERMM);
+    mUi->uMpcSmoothingFactorSpinBox->setValue(defaults::MPC_SMOOTHING_FACTOR);
+    mUi->uMpcMinAmbientChangeSpinBox->setValue(defaults::MPC_MIN_AMBIENT_CHANGE);
+    mUi->uMpcSteadystateSpinBox->setValue(defaults::MPC_STEADYSTATE);
+    mUi->uMpcTuningPosEdit->setText(defaults::MPC_TUNING_POS);
+    mUi->uMpcTuningEndZSpinBox->setValue(defaults::MPC_TUNING_END_Z);
 
     mUi->uSensorTabWidget->setCurrentIndex(0);
     mUi->uLimitsTabWidget->setCurrentIndex(0);
@@ -284,6 +324,39 @@ bool ThermalSettingsPage::LoadFromJson(const QJsonObject &pJson)
     success &= LoadConfig(mUi->uHeater7MaxtempSpinBox, pJson, "HEATER_7_MAXTEMP");
     success &= LoadConfig(mUi->uBedMaxtempSpinBox, pJson, "BED_MAXTEMP");
     success &= LoadConfig(mUi->uChamberMaxtempSpinBox, pJson, "CHAMBER_MAXTEMP");
+    success &= LoadConfig(mUi->uHotendOvershootSpinBox, pJson, "HOTEND_OVERSHOOT");
+    success &= LoadConfig(mUi->uBedOvershootSpinBox, pJson, "BED_OVERSHOOT");
+    success &= LoadConfig(mUi->uCoolerOvershootSpinBox, pJson, "COOLER_OVERSHOOT");
+    success &= LoadConfig(mUi->uPidtempBox, pJson, "PIDTEMP");
+    success &= LoadConfig(mUi->uMpctempBox, pJson, "MPCTEMP");
+    success &= LoadConfig(mUi->uBangMaxSpinBox, pJson, "BANG_MAX");
+    success &= LoadConfig(mUi->uPidMaxSpinBox, pJson, "PID_MAX");
+    success &= LoadConfig(mUi->uPidK1SpinBox, pJson, "PID_K1");
+    success &= LoadConfig(mUi->uPidDebugBox, pJson, "PID_DEBUG");
+    success &= LoadConfig(mUi->uPidParamsPerHotendBox, pJson, "PID_PARAMS_PER_HOTEND");
+    success &= LoadConfig(mUi->uDefaultKpListEdit, pJson, "DEFAULT_Kp_LIST");
+    success &= LoadConfig(mUi->uDefaultKiListEdit, pJson, "DEFAULT_Ki_LIST");
+    success &= LoadConfig(mUi->uDefaultKdListEdit, pJson, "DEFAULT_Kd_LIST");
+    success &= LoadConfig(mUi->uDefaultKpSpinBox, pJson, "DEFAULT_Kp");
+    success &= LoadConfig(mUi->uDefaultKiSpinBox, pJson, "DEFAULT_Ki");
+    success &= LoadConfig(mUi->uDefaultKdSpinBox, pJson, "DEFAULT_Kd");
+    success &= LoadConfig(mUi->uMpcEditMenuBox, pJson, "MPC_EDIT_MENU");
+    success &= LoadConfig(mUi->uMpcAutotuneMenuBox, pJson, "MPC_AUTOTUNE_MENU");
+    success &= LoadConfig(mUi->uMpcMaxSpinBox, pJson, "MPC_MAX");
+    success &= LoadConfig(mUi->uMpcHeaterPowerEdit, pJson, "MPC_HEATER_POWER");
+    success &= LoadConfig(mUi->uMpcIncludeFanBox, pJson, "MPC_INCLUDE_FAN");
+    success &= LoadConfig(mUi->uMpcBlockHeatCapacityEdit, pJson, "MPC_BLOCK_HEAT_CAPACITY");
+    success &= LoadConfig(mUi->uMpcSensorResponsivenessEdit, pJson, "MPC_SENSOR_RESPONSIVENESS");
+    success &= LoadConfig(mUi->uMpcAmbientXferCoeffEdit, pJson, "MPC_AMBIENT_XFER_COEFF");
+    success &= LoadConfig(mUi->uMpcAmbientXferCoeffFan255Edit, pJson, "MPC_AMBIENT_XFER_COEFF_FAN255");
+    success &= LoadConfig(mUi->uMpcFan0AllHotendsBox, pJson, "MPC_FAN_0_ALL_HOTENDS");
+    success &= LoadConfig(mUi->uMpcFan0ActiveHotendBox, pJson, "MPC_FAN_0_ACTIVE_HOTEND");
+    success &= LoadConfig(mUi->uFilamentHeatCapacityPermmEdit, pJson, "FILAMENT_HEAT_CAPACITY_PERMM");
+    success &= LoadConfig(mUi->uMpcSmoothingFactorSpinBox, pJson, "MPC_SMOOTHING_FACTOR");
+    success &= LoadConfig(mUi->uMpcMinAmbientChangeSpinBox, pJson, "MPC_MIN_AMBIENT_CHANGE");
+    success &= LoadConfig(mUi->uMpcSteadystateSpinBox, pJson, "MPC_STEADYSTATE");
+    success &= LoadConfig(mUi->uMpcTuningPosEdit, pJson, "MPC_TUNING_POS");
+    success &= LoadConfig(mUi->uMpcTuningEndZSpinBox, pJson, "MPC_TUNING_END_Z");
 
     mIsLoading = false;
     return success;
@@ -345,6 +418,39 @@ void ThermalSettingsPage::FetchConfiguration(Configuration& pConfig)
     SetConfig(pConfig.thermalSettings.HEATER_7_MAXTEMP, mUi->uHeater7MaxtempSpinBox);
     SetConfig(pConfig.thermalSettings.BED_MAXTEMP, mUi->uBedMaxtempSpinBox);
     SetConfig(pConfig.thermalSettings.CHAMBER_MAXTEMP, mUi->uChamberMaxtempSpinBox);
+    SetConfig(pConfig.thermalSettings.HOTEND_OVERSHOOT, mUi->uHotendOvershootSpinBox);
+    SetConfig(pConfig.thermalSettings.BED_OVERSHOOT, mUi->uBedOvershootSpinBox);
+    SetConfig(pConfig.thermalSettings.COOLER_OVERSHOOT, mUi->uCoolerOvershootSpinBox);
+    SetConfig(pConfig.thermalSettings.PIDTEMP, mUi->uPidtempBox);
+    SetConfig(pConfig.thermalSettings.MPCTEMP, mUi->uMpctempBox);
+    SetConfig(pConfig.thermalSettings.BANG_MAX, mUi->uBangMaxSpinBox);
+    SetConfig(pConfig.thermalSettings.PID_MAX, mUi->uPidMaxSpinBox);
+    SetConfig(pConfig.thermalSettings.PID_K1, mUi->uPidK1SpinBox);
+    SetConfig(pConfig.thermalSettings.PID_DEBUG, mUi->uPidDebugBox);
+    SetConfig(pConfig.thermalSettings.PID_PARAMS_PER_HOTEND, mUi->uPidParamsPerHotendBox);
+    SetConfig(pConfig.thermalSettings.DEFAULT_Kp_LIST, mUi->uDefaultKpListEdit);
+    SetConfig(pConfig.thermalSettings.DEFAULT_Ki_LIST, mUi->uDefaultKiListEdit);
+    SetConfig(pConfig.thermalSettings.DEFAULT_Kd_LIST, mUi->uDefaultKdListEdit);
+    SetConfig(pConfig.thermalSettings.DEFAULT_Kp, mUi->uDefaultKpSpinBox);
+    SetConfig(pConfig.thermalSettings.DEFAULT_Ki, mUi->uDefaultKiSpinBox);
+    SetConfig(pConfig.thermalSettings.DEFAULT_Kd, mUi->uDefaultKdSpinBox);
+    SetConfig(pConfig.thermalSettings.MPC_EDIT_MENU, mUi->uMpcEditMenuBox);
+    SetConfig(pConfig.thermalSettings.MPC_AUTOTUNE_MENU, mUi->uMpcAutotuneMenuBox);
+    SetConfig(pConfig.thermalSettings.MPC_MAX, mUi->uMpcMaxSpinBox);
+    SetConfig(pConfig.thermalSettings.MPC_HEATER_POWER, mUi->uMpcHeaterPowerEdit);
+    SetConfig(pConfig.thermalSettings.MPC_INCLUDE_FAN, mUi->uMpcIncludeFanBox);
+    SetConfig(pConfig.thermalSettings.MPC_BLOCK_HEAT_CAPACITY, mUi->uMpcBlockHeatCapacityEdit);
+    SetConfig(pConfig.thermalSettings.MPC_SENSOR_RESPONSIVENESS, mUi->uMpcSensorResponsivenessEdit);
+    SetConfig(pConfig.thermalSettings.MPC_AMBIENT_XFER_COEFF, mUi->uMpcAmbientXferCoeffEdit);
+    SetConfig(pConfig.thermalSettings.MPC_AMBIENT_XFER_COEFF_FAN255, mUi->uMpcAmbientXferCoeffFan255Edit);
+    SetConfig(pConfig.thermalSettings.MPC_FAN_0_ALL_HOTENDS, mUi->uMpcFan0AllHotendsBox);
+    SetConfig(pConfig.thermalSettings.MPC_FAN_0_ACTIVE_HOTEND, mUi->uMpcFan0ActiveHotendBox);
+    SetConfig(pConfig.thermalSettings.FILAMENT_HEAT_CAPACITY_PERMM, mUi->uFilamentHeatCapacityPermmEdit);
+    SetConfig(pConfig.thermalSettings.MPC_SMOOTHING_FACTOR, mUi->uMpcSmoothingFactorSpinBox);
+    SetConfig(pConfig.thermalSettings.MPC_MIN_AMBIENT_CHANGE, mUi->uMpcMinAmbientChangeSpinBox);
+    SetConfig(pConfig.thermalSettings.MPC_STEADYSTATE, mUi->uMpcSteadystateSpinBox);
+    SetConfig(pConfig.thermalSettings.MPC_TUNING_POS, mUi->uMpcTuningPosEdit);
+    SetConfig(pConfig.thermalSettings.MPC_TUNING_END_Z, mUi->uMpcTuningEndZSpinBox);
 }
 
 void ThermalSettingsPage::ReplaceTags(QStringList& pOutput)
@@ -406,4 +512,37 @@ void ThermalSettingsPage::ReplaceTags(QStringList& pOutput)
     ReplaceTag(pOutput, "#{HEATER_7_MAXTEMP}", mUi->uHeater7MaxtempSpinBox, false, "HEATER_7_MAXTEMP");
     ReplaceTag(pOutput, "#{BED_MAXTEMP}", mUi->uBedMaxtempSpinBox, false, "BED_MAXTEMP");
     ReplaceTag(pOutput, "#{CHAMBER_MAXTEMP}", mUi->uChamberMaxtempSpinBox, false, "CHAMBER_MAXTEMP");
+    ReplaceTag(pOutput, "#{HOTEND_OVERSHOOT}", mUi->uHotendOvershootSpinBox, false, "HOTEND_OVERSHOOT");
+    ReplaceTag(pOutput, "#{BED_OVERSHOOT}", mUi->uBedOvershootSpinBox, false, "BED_OVERSHOOT");
+    ReplaceTag(pOutput, "#{COOLER_OVERSHOOT}", mUi->uCoolerOvershootSpinBox, false, "COOLER_OVERSHOOT");
+    ReplaceTag(pOutput, "#{PIDTEMP}", mUi->uPidtempBox, "PIDTEMP");
+    ReplaceTag(pOutput, "#{MPCTEMP}", mUi->uMpctempBox, "MPCTEMP");
+    ReplaceTag(pOutput, "#{BANG_MAX}", mUi->uBangMaxSpinBox, false, "BANG_MAX");
+    ReplaceTag(pOutput, "#{PID_MAX}", mUi->uPidMaxSpinBox, false, "PID_MAX");
+    ReplaceTag(pOutput, "#{PID_K1}", mUi->uPidK1SpinBox, false, "PID_K1");
+    ReplaceTag(pOutput, "#{PID_DEBUG}", mUi->uPidDebugBox, "PID_DEBUG");
+    ReplaceTag(pOutput, "#{PID_PARAMS_PER_HOTEND}", mUi->uPidParamsPerHotendBox, "PID_PARAMS_PER_HOTEND");
+    ReplaceTag(pOutput, "#{DEFAULT_Kp_LIST}", mUi->uDefaultKpListEdit, false, "DEFAULT_Kp_LIST");
+    ReplaceTag(pOutput, "#{DEFAULT_Ki_LIST}", mUi->uDefaultKiListEdit, false, "DEFAULT_Ki_LIST");
+    ReplaceTag(pOutput, "#{DEFAULT_Kd_LIST}", mUi->uDefaultKdListEdit, false, "DEFAULT_Kd_LIST");
+    ReplaceTag(pOutput, "#{DEFAULT_Kp}", mUi->uDefaultKpSpinBox, mUi->uPidParamsPerHotendBox->isChecked(), "DEFAULT_Kp");
+    ReplaceTag(pOutput, "#{DEFAULT_Ki}", mUi->uDefaultKiSpinBox, mUi->uPidParamsPerHotendBox->isChecked(), "DEFAULT_Ki");
+    ReplaceTag(pOutput, "#{DEFAULT_Kd}", mUi->uDefaultKdSpinBox, mUi->uPidParamsPerHotendBox->isChecked(), "DEFAULT_Kd");
+    ReplaceTag(pOutput, "#{MPC_EDIT_MENU}", mUi->uMpcEditMenuBox, "MPC_EDIT_MENU");
+    ReplaceTag(pOutput, "#{MPC_AUTOTUNE_MENU}", mUi->uMpcAutotuneMenuBox, "MPC_AUTOTUNE_MENU");
+    ReplaceTag(pOutput, "#{MPC_MAX}", mUi->uMpcMaxSpinBox, false, "MPC_MAX");
+    ReplaceTag(pOutput, "#{MPC_HEATER_POWER}", mUi->uMpcHeaterPowerEdit, false, "MPC_HEATER_POWER");
+    ReplaceTag(pOutput, "#{MPC_INCLUDE_FAN}", mUi->uMpcIncludeFanBox, "MPC_INCLUDE_FAN");
+    ReplaceTag(pOutput, "#{MPC_BLOCK_HEAT_CAPACITY}", mUi->uMpcBlockHeatCapacityEdit, false, "MPC_BLOCK_HEAT_CAPACITY");
+    ReplaceTag(pOutput, "#{MPC_SENSOR_RESPONSIVENESS}", mUi->uMpcSensorResponsivenessEdit, false, "MPC_SENSOR_RESPONSIVENESS");
+    ReplaceTag(pOutput, "#{MPC_AMBIENT_XFER_COEFF}", mUi->uMpcAmbientXferCoeffEdit, false, "MPC_AMBIENT_XFER_COEFF");
+    ReplaceTag(pOutput, "#{MPC_AMBIENT_XFER_COEFF_FAN255}", mUi->uMpcAmbientXferCoeffFan255Edit, false, "MPC_AMBIENT_XFER_COEFF_FAN255");
+    ReplaceTag(pOutput, "#{MPC_FAN_0_ALL_HOTENDS}", mUi->uMpcFan0AllHotendsBox, "MPC_FAN_0_ALL_HOTENDS");
+    ReplaceTag(pOutput, "#{MPC_FAN_0_ACTIVE_HOTEND}", mUi->uMpcFan0ActiveHotendBox, "MPC_FAN_0_ACTIVE_HOTEND");
+    ReplaceTag(pOutput, "#{FILAMENT_HEAT_CAPACITY_PERMM}", mUi->uFilamentHeatCapacityPermmEdit, false, "FILAMENT_HEAT_CAPACITY_PERMM");
+    ReplaceTag(pOutput, "#{MPC_SMOOTHING_FACTOR}", mUi->uMpcSmoothingFactorSpinBox, false, "MPC_SMOOTHING_FACTOR", 1, true);
+    ReplaceTag(pOutput, "#{MPC_MIN_AMBIENT_CHANGE}", mUi->uMpcMinAmbientChangeSpinBox, false, "MPC_MIN_AMBIENT_CHANGE", 1, true);
+    ReplaceTag(pOutput, "#{MPC_STEADYSTATE}", mUi->uMpcSteadystateSpinBox, false, "MPC_STEADYSTATE", 1, true);
+    ReplaceTag(pOutput, "#{MPC_TUNING_POS}", mUi->uMpcTuningPosEdit, false, "MPC_TUNING_POS");
+    ReplaceTag(pOutput, "#{MPC_TUNING_END_Z}", mUi->uMpcTuningEndZSpinBox, false, "MPC_TUNING_END_Z", 1, true);
 }

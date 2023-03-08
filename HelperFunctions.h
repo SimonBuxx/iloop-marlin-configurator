@@ -312,9 +312,11 @@ inline void ReplaceArrayTag(QStringList& pOutput, const QString& pTagName, bool 
     pOutput.replaceInStrings(pTagName, QString("%0#define %1 %2").arg((!pEnabled || pCommentOut) ? "//" : "", pParam, (!pEnabled || pCommentOut) ? "" : array));
 }
 
-inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const QDoubleSpinBox* pWidget, bool pCommentOut, const QString& pParam)
+inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const QDoubleSpinBox* pWidget, bool pCommentOut, const QString& pParam, uint8_t pPrecision = 2, bool pIncludeF = false)
 {
-    pOutput.replaceInStrings(pTagName, QString("%0#define %1 %2").arg((!pWidget->isEnabled() || pCommentOut) ? "//" : "", pParam, (!pWidget->isEnabled() || pCommentOut) ? "" : QString::number(pWidget->value())));
+    const QString suffix = (pIncludeF && pWidget->isEnabled()) ? "f" : "";
+
+    pOutput.replaceInStrings(pTagName, QString("%0#define %1 %2%3").arg((!pWidget->isEnabled() || pCommentOut) ? "//" : "", pParam, (!pWidget->isEnabled() || pCommentOut) ? "" : QString::number(pWidget->value(), 'f', pPrecision), suffix));
 }
 
 inline void OpenMarlinDocumentation(const QString& pChapterName)
