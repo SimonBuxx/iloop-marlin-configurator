@@ -293,12 +293,6 @@ QAbstractSpinBox::down-button:off {
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>1154</height>
-      </size>
-     </property>
      <property name="styleSheet">
       <string notr="true">QTabWidget::pane {
 	border: 1px solid black;
@@ -358,1250 +352,1965 @@ QTabBar QToolButton::left-arrow {
       <number>0</number>
      </property>
      <widget class="QWidget" name="tab_25">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <attribute name="title">
        <string>PID Settings</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_153">
-       <property name="leftMargin">
-        <number>0</number>
-       </property>
-       <property name="topMargin">
-        <number>0</number>
-       </property>
-       <property name="rightMargin">
-        <number>0</number>
-       </property>
-       <property name="bottomMargin">
-        <number>0</number>
-       </property>
        <property name="spacing">
         <number>10</number>
        </property>
        <item row="0" column="0">
-        <widget class="QScrollArea" name="scrollArea_25">
-         <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
+        <widget class="QGroupBox" name="uPidtempBox">
+         <property name="title">
+          <string>PIDTEMP</string>
          </property>
-         <property name="frameShadow">
-          <enum>QFrame::Plain</enum>
-         </property>
-         <property name="widgetResizable">
+         <property name="checkable">
           <bool>true</bool>
          </property>
-         <widget class="QWidget" name="scrollAreaWidgetContents_25">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>1469</width>
-            <height>1130</height>
-           </rect>
+         <layout class="QGridLayout" name="gridLayout_108">
+          <property name="spacing">
+           <number>10</number>
           </property>
-          <property name="styleSheet">
-           <string notr="true">#scrollAreaWidgetContents_25 {
-	background: rgb(34, 35, 40);
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_147">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_148">
+            <property name="text">
+             <string>Enable this for PID temperature control. Disable both PIDTEMP and MPCTEMP for bang-bang heating.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="QGroupBox" name="uPidDebugBox">
+            <property name="title">
+             <string>PID_DEBUG</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_109">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_131">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_132">
+               <property name="text">
+                <string>Enable this to print PID debug data to the serial port. Use 'M303 D' to toggle activation.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="2" column="0" colspan="2">
+           <widget class="QGroupBox" name="uPidParamsPerHotendBox">
+            <property name="title">
+             <string>PID_PARAMS_PER_HOTEND</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_110">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_133">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_134">
+               <property name="text">
+                <string>Specify up to one value per hotend here, according to your setup. If there are fewer values, the last one applies to the remaining hotends.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0" colspan="2">
+              <widget class="QWidget" name="widget_9" native="true">
+               <layout class="QGridLayout" name="gridLayout_111" columnstretch="1,1,1">
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <property name="spacing">
+                 <number>10</number>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QGroupBox" name="groupBox_47">
+                  <property name="focusPolicy">
+                   <enum>Qt::StrongFocus</enum>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
 }</string>
+                  </property>
+                  <property name="title">
+                   <string>DEFAULT_Kp_LIST</string>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_124">
+                   <property name="spacing">
+                    <number>10</number>
+                   </property>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="label_135">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="pixmap">
+                      <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <widget class="QLabel" name="label_136">
+                     <property name="text">
+                      <string>This is the list of Kp values per hotend.</string>
+                     </property>
+                     <property name="wordWrap">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0" colspan="2">
+                    <widget class="QLineEdit" name="uDefaultKpListEdit">
+                     <property name="text">
+                      <string>{  22.20, 22.20 }</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QGroupBox" name="groupBox_48">
+                  <property name="focusPolicy">
+                   <enum>Qt::StrongFocus</enum>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+                  </property>
+                  <property name="title">
+                   <string>DEFAULT_Ki_LIST</string>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_123">
+                   <property name="spacing">
+                    <number>10</number>
+                   </property>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="label_137">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="pixmap">
+                      <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <widget class="QLabel" name="label_138">
+                     <property name="text">
+                      <string>This is the list of Ki values per hotend.</string>
+                     </property>
+                     <property name="wordWrap">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0" colspan="2">
+                    <widget class="QLineEdit" name="uDefaultKiListEdit">
+                     <property name="text">
+                      <string>{  1.08, 1.08 }</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item row="0" column="2">
+                 <widget class="QGroupBox" name="groupBox_49">
+                  <property name="focusPolicy">
+                   <enum>Qt::StrongFocus</enum>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+                  </property>
+                  <property name="title">
+                   <string>DEFAULT_Kd_LIST</string>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_112">
+                   <property name="spacing">
+                    <number>10</number>
+                   </property>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="label_139">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="pixmap">
+                      <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <widget class="QLabel" name="label_140">
+                     <property name="text">
+                      <string>This is the list of Kd values per hotend.</string>
+                     </property>
+                     <property name="wordWrap">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0" colspan="2">
+                    <widget class="QLineEdit" name="uDefaultKdListEdit">
+                     <property name="text">
+                      <string>{  114.00, 114.00 }</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="3" column="0" colspan="2">
+           <widget class="QWidget" name="widget_10" native="true">
+            <layout class="QGridLayout" name="gridLayout_125" columnstretch="1,1,1">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="1">
+              <widget class="QGroupBox" name="uDefaultKiBox">
+               <property name="focusPolicy">
+                <enum>Qt::StrongFocus</enum>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+               </property>
+               <property name="title">
+                <string>DEFAULT_Ki</string>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_127">
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_143">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLabel" name="label_144">
+                  <property name="text">
+                   <string>This is the Ki value to use for all hotends.</string>
+                  </property>
+                  <property name="wordWrap">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0" colspan="2">
+                 <widget class="QDoubleSpinBox" name="uDefaultKiSpinBox">
+                  <property name="maximum">
+                   <double>1000.000000000000000</double>
+                  </property>
+                  <property name="stepType">
+                   <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+                  </property>
+                  <property name="value">
+                   <double>1.080000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QGroupBox" name="uDefaultKpBox">
+               <property name="focusPolicy">
+                <enum>Qt::StrongFocus</enum>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+               </property>
+               <property name="title">
+                <string>DEFAULT_Kp</string>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_128">
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_141">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLabel" name="label_142">
+                  <property name="text">
+                   <string>This is the Kp value to use for all hotends.</string>
+                  </property>
+                  <property name="wordWrap">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0" colspan="2">
+                 <widget class="QDoubleSpinBox" name="uDefaultKpSpinBox">
+                  <property name="maximum">
+                   <double>1000.000000000000000</double>
+                  </property>
+                  <property name="stepType">
+                   <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+                  </property>
+                  <property name="value">
+                   <double>22.199999999999999</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item row="0" column="2">
+              <widget class="QGroupBox" name="uDefaultKdBox">
+               <property name="focusPolicy">
+                <enum>Qt::StrongFocus</enum>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+               </property>
+               <property name="title">
+                <string>DEFAULT_Kd</string>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_126">
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_145">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLabel" name="label_146">
+                  <property name="text">
+                   <string>This is the Kd value to use for all hotends.</string>
+                  </property>
+                  <property name="wordWrap">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0" colspan="2">
+                 <widget class="QDoubleSpinBox" name="uDefaultKdSpinBox">
+                  <property name="maximum">
+                   <double>1000.000000000000000</double>
+                  </property>
+                  <property name="stepType">
+                   <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+                  </property>
+                  <property name="value">
+                   <double>114.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QWidget" name="widget_25" native="true">
+         <layout class="QGridLayout" name="gridLayout_155">
+          <property name="leftMargin">
+           <number>0</number>
           </property>
-          <layout class="QGridLayout" name="gridLayout_155">
-           <property name="spacing">
-            <number>10</number>
-           </property>
-           <item row="1" column="0">
-            <widget class="QWidget" name="widget_8" native="true">
-             <layout class="QGridLayout" name="gridLayout_104">
-              <property name="leftMargin">
-               <number>0</number>
-              </property>
-              <property name="topMargin">
-               <number>0</number>
-              </property>
-              <property name="rightMargin">
-               <number>0</number>
-              </property>
-              <property name="bottomMargin">
-               <number>0</number>
-              </property>
-              <property name="spacing">
-               <number>10</number>
-              </property>
-              <item row="0" column="1">
-               <widget class="QGroupBox" name="groupBox_43">
-                <property name="focusPolicy">
-                 <enum>Qt::StrongFocus</enum>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QGroupBox:!disabled {
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="2">
+           <widget class="QGroupBox" name="groupBox_46">
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QGroupBox:!disabled {
 	background: rgb(50, 52, 59);
 }</string>
-                </property>
-                <property name="title">
-                 <string>PID_MAX</string>
-                </property>
-                <layout class="QGridLayout" name="gridLayout_106">
-                 <property name="spacing">
-                  <number>10</number>
-                 </property>
-                 <item row="0" column="0">
-                  <widget class="QLabel" name="label_127">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="text">
-                    <string/>
-                   </property>
-                   <property name="pixmap">
-                    <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="1">
-                  <widget class="QLabel" name="label_128">
-                   <property name="text">
-                    <string>This factor limits current to nozzle while PID is active. (255=full current)</string>
-                   </property>
-                   <property name="wordWrap">
-                    <bool>true</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="0" colspan="2">
-                  <widget class="QSpinBox" name="uPidMaxSpinBox">
-                   <property name="maximum">
-                    <number>255</number>
-                   </property>
-                   <property name="stepType">
-                    <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
-                   </property>
-                   <property name="value">
-                    <number>255</number>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item row="0" column="2">
-               <widget class="QGroupBox" name="groupBox_44">
-                <property name="focusPolicy">
-                 <enum>Qt::StrongFocus</enum>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QGroupBox:!disabled {
+            </property>
+            <property name="title">
+             <string>PID_FUNCTIONAL_RANGE</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_194">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_247">
+               <property name="text">
+                <string>If the temperature difference between the target temperature and the actual temperature is more than this value then the PID will be shut off and the heater will be set to min/max.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_246">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0" colspan="2">
+              <widget class="QSpinBox" name="uPidFunctionalRangeSpinBox">
+               <property name="suffix">
+                <string> °C</string>
+               </property>
+               <property name="maximum">
+                <number>100</number>
+               </property>
+               <property name="stepType">
+                <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+               </property>
+               <property name="value">
+                <number>10</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QGroupBox" name="uSlowPwmHeatersBox">
+            <property name="title">
+             <string>SLOW_PWM_HEATERS</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_192">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_242">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_243">
+               <property name="text">
+                <string>Enable this to PWM with a very low frequency (roughly 0.125Hz=8s) and minimum state time of approximately 1s (useful for heaters driven by a relay).</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QGroupBox" name="uPidOpenloopBox">
+            <property name="title">
+             <string>PID_OPENLOOP</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_190">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_238">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_239">
+               <property name="text">
+                <string>Enable this to put PID in open loop. M104/M140 sets the output power from 0 to PID_MAX.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QWidget" name="widget_19" native="true">
+         <layout class="QGridLayout" name="gridLayout_167">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QGroupBox" name="uBedLimitSwitchingBox">
+            <property name="title">
+             <string>BED_LIMIT_SWITCHING</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_170">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_205">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_206">
+               <property name="text">
+                <string>This enables hysteresis if PID bed heating is disabled and bang-bang is used.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QGroupBox" name="groupBox_52">
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QGroupBox:!disabled {
 	background: rgb(50, 52, 59);
 }</string>
-                </property>
-                <property name="title">
-                 <string>PID_K1</string>
-                </property>
-                <layout class="QGridLayout" name="gridLayout_105">
-                 <property name="spacing">
-                  <number>10</number>
-                 </property>
-                 <item row="0" column="0">
-                  <widget class="QLabel" name="label_129">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="text">
-                    <string/>
-                   </property>
-                   <property name="pixmap">
-                    <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="1">
-                  <widget class="QLabel" name="label_130">
-                   <property name="text">
-                    <string>This is the smoothing factor within any PID loop.</string>
-                   </property>
-                   <property name="wordWrap">
-                    <bool>true</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="0" colspan="2">
-                  <widget class="QDoubleSpinBox" name="uPidK1SpinBox">
-                   <property name="maximum">
-                    <double>1.000000000000000</double>
-                   </property>
-                   <property name="stepType">
-                    <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
-                   </property>
-                   <property name="value">
-                    <double>0.950000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item row="0" column="0">
-               <widget class="QGroupBox" name="groupBox_25">
-                <property name="focusPolicy">
-                 <enum>Qt::StrongFocus</enum>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QGroupBox:!disabled {
+            </property>
+            <property name="title">
+             <string>MAX_BED_POWER</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_171">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_207">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_208">
+               <property name="text">
+                <string>This is the maximum heatbed power. This value limits the duty cycle to the heatbed. (255=full current)</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0" colspan="2">
+              <widget class="QSpinBox" name="uMaxBedPowerSpinBox">
+               <property name="maximum">
+                <number>255</number>
+               </property>
+               <property name="stepType">
+                <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+               </property>
+               <property name="value">
+                <number>255</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QWidget" name="widget_8" native="true">
+         <layout class="QGridLayout" name="gridLayout_104">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="1">
+           <widget class="QGroupBox" name="groupBox_43">
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QGroupBox:!disabled {
 	background: rgb(50, 52, 59);
 }</string>
-                </property>
-                <property name="title">
-                 <string>BANG_MAX</string>
-                </property>
-                <layout class="QGridLayout" name="gridLayout_107">
-                 <property name="spacing">
-                  <number>10</number>
-                 </property>
-                 <item row="0" column="0">
-                  <widget class="QLabel" name="label_125">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="text">
-                    <string/>
-                   </property>
-                   <property name="pixmap">
-                    <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="1">
-                  <widget class="QLabel" name="label_126">
-                   <property name="text">
-                    <string>This factor limits current to nozzle while in bang-bang mode. (255=full current)</string>
-                   </property>
-                   <property name="wordWrap">
-                    <bool>true</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="0" colspan="2">
-                  <widget class="QSpinBox" name="uBangMaxSpinBox">
-                   <property name="maximum">
-                    <number>255</number>
-                   </property>
-                   <property name="stepType">
-                    <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
-                   </property>
-                   <property name="value">
-                    <number>255</number>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item row="2" column="0">
-            <widget class="QLabel" name="label_204">
-             <property name="styleSheet">
-              <string notr="true">QLabel {
+            </property>
+            <property name="title">
+             <string>PID_MAX</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_106">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_127">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_128">
+               <property name="text">
+                <string>This factor limits current to nozzle while PID is active. (255=full current)</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0" colspan="2">
+              <widget class="QSpinBox" name="uPidMaxSpinBox">
+               <property name="maximum">
+                <number>255</number>
+               </property>
+               <property name="stepType">
+                <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+               </property>
+               <property name="value">
+                <number>255</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QGroupBox" name="groupBox_44">
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+            </property>
+            <property name="title">
+             <string>PID_K1</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_105">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_129">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_130">
+               <property name="text">
+                <string>This is the smoothing factor within any PID loop.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0" colspan="2">
+              <widget class="QDoubleSpinBox" name="uPidK1SpinBox">
+               <property name="maximum">
+                <double>1.000000000000000</double>
+               </property>
+               <property name="stepType">
+                <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+               </property>
+               <property name="value">
+                <double>0.950000000000000</double>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QGroupBox" name="groupBox_25">
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+            </property>
+            <property name="title">
+             <string>BANG_MAX</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_107">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_125">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_126">
+               <property name="text">
+                <string>This factor limits current to nozzle while in bang-bang mode. (255=full current)</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0" colspan="2">
+              <widget class="QSpinBox" name="uBangMaxSpinBox">
+               <property name="maximum">
+                <number>255</number>
+               </property>
+               <property name="stepType">
+                <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+               </property>
+               <property name="value">
+                <number>255</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_204">
+         <property name="styleSheet">
+          <string notr="true">QLabel {
 	color: rgb(100, 103, 122);
 	font-size: 25px;
 	font-family: &quot;Source Sans Pro Light&quot;;
 	font-style: italic;
 }
 </string>
+         </property>
+         <property name="text">
+          <string>PID BEAD HEATING</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="label_221">
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+	color: rgb(100, 103, 122);
+	font-size: 25px;
+	font-family: &quot;Source Sans Pro Light&quot;;
+	font-style: italic;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>PID CHAMBER HEATING</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QWidget" name="widget_22" native="true">
+         <layout class="QGridLayout" name="gridLayout_178">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="1">
+           <widget class="QGroupBox" name="groupBox_50">
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+            </property>
+            <property name="title">
+             <string>MAX_CHAMBER_POWER</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_180">
+             <property name="spacing">
+              <number>10</number>
              </property>
-             <property name="text">
-              <string>PID BEAD HEATING</string>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_225">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0" colspan="2">
+              <widget class="QSpinBox" name="uMaxChamberPowerSpinBox">
+               <property name="maximum">
+                <number>255</number>
+               </property>
+               <property name="stepType">
+                <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+               </property>
+               <property name="value">
+                <number>255</number>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLabel" name="label_224">
+               <property name="text">
+                <string>This is the maximum chamber heater power. This value limits the duty cycle to the chamber heater. (255=full current)</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QGroupBox" name="uChamberLimitSwitchingBox">
+            <property name="title">
+             <string>CHAMBER_LIMIT_SWITCHING</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_179">
+             <property name="spacing">
+              <number>10</number>
              </property>
-            </widget>
-           </item>
-           <item row="5" column="0">
-            <widget class="QGroupBox" name="uPidtempbedBox">
-             <property name="title">
-              <string>PIDTEMPBED</string>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_223">
+               <property name="text">
+                <string>This enables hysteresis if PID chamber heating is disabled and bang-bang is used.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_222">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QGroupBox" name="uPidtempchamberBox">
+         <property name="title">
+          <string>PIDTEMPCHAMBER</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_181">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_227">
+            <property name="text">
+             <string>Enable this for chamber PID temperature control. If disabled, bang-bang will be used.</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_226">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="QWidget" name="widget_23" native="true">
+            <layout class="QGridLayout" name="gridLayout_182">
+             <property name="leftMargin">
+              <number>0</number>
              </property>
-             <property name="checkable">
-              <bool>true</bool>
+             <property name="topMargin">
+              <number>0</number>
              </property>
-             <layout class="QGridLayout" name="gridLayout_168">
-              <property name="spacing">
-               <number>10</number>
-              </property>
-              <item row="3" column="0" colspan="2">
-               <widget class="QWidget" name="widget_20" native="true">
-                <layout class="QGridLayout" name="gridLayout_169">
-                 <property name="leftMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="topMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="rightMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="bottomMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="spacing">
-                  <number>10</number>
-                 </property>
-                 <item row="0" column="1">
-                  <widget class="QGroupBox" name="groupBox_64">
-                   <property name="focusPolicy">
-                    <enum>Qt::StrongFocus</enum>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-                   </property>
-                   <property name="title">
-                    <string>DEFAULT_bedKi</string>
-                   </property>
-                   <layout class="QGridLayout" name="gridLayout_176">
-                    <property name="spacing">
-                     <number>10</number>
-                    </property>
-                    <item row="0" column="0">
-                     <widget class="QLabel" name="label_217">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="pixmap">
-                       <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="1">
-                     <widget class="QLabel" name="label_218">
-                      <property name="text">
-                       <string>This is the Ki value to use for the heatbed.</string>
-                      </property>
-                      <property name="wordWrap">
-                       <bool>true</bool>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="0" colspan="2">
-                     <widget class="QDoubleSpinBox" name="uDefaultBedkiSpinBox">
-                      <property name="decimals">
-                       <number>3</number>
-                      </property>
-                      <property name="maximum">
-                       <double>1000.000000000000000</double>
-                      </property>
-                      <property name="stepType">
-                       <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
-                      </property>
-                      <property name="value">
-                       <double>0.023000000000000</double>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item row="0" column="0">
-                  <widget class="QGroupBox" name="groupBox_63">
-                   <property name="focusPolicy">
-                    <enum>Qt::StrongFocus</enum>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-                   </property>
-                   <property name="title">
-                    <string>DEFAULT_bedKp</string>
-                   </property>
-                   <layout class="QGridLayout" name="gridLayout_175">
-                    <property name="spacing">
-                     <number>10</number>
-                    </property>
-                    <item row="0" column="1">
-                     <widget class="QLabel" name="label_216">
-                      <property name="text">
-                       <string>This is the Kp value to use for the heatbed.</string>
-                      </property>
-                      <property name="wordWrap">
-                       <bool>true</bool>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="0">
-                     <widget class="QLabel" name="label_215">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="pixmap">
-                       <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="0" colspan="2">
-                     <widget class="QDoubleSpinBox" name="uDefaultBedkpSpinBox">
-                      <property name="decimals">
-                       <number>3</number>
-                      </property>
-                      <property name="maximum">
-                       <double>1000.000000000000000</double>
-                      </property>
-                      <property name="stepType">
-                       <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
-                      </property>
-                      <property name="value">
-                       <double>10.000000000000000</double>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item row="0" column="2">
-                  <widget class="QGroupBox" name="groupBox_65">
-                   <property name="focusPolicy">
-                    <enum>Qt::StrongFocus</enum>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-                   </property>
-                   <property name="title">
-                    <string>DEFAULT_bedKd</string>
-                   </property>
-                   <layout class="QGridLayout" name="gridLayout_177">
-                    <property name="spacing">
-                     <number>10</number>
-                    </property>
-                    <item row="0" column="0">
-                     <widget class="QLabel" name="label_219">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="pixmap">
-                       <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="1">
-                     <widget class="QLabel" name="label_220">
-                      <property name="text">
-                       <string>This is the Kd value to use for the heatbed.</string>
-                      </property>
-                      <property name="wordWrap">
-                       <bool>true</bool>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="0" colspan="2">
-                     <widget class="QDoubleSpinBox" name="uDefaultBedkdSpinBox">
-                      <property name="decimals">
-                       <number>3</number>
-                      </property>
-                      <property name="maximum">
-                       <double>1000.000000000000000</double>
-                      </property>
-                      <property name="stepType">
-                       <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
-                      </property>
-                      <property name="value">
-                       <double>305.399999999999977</double>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <widget class="QLabel" name="label_210">
-                <property name="text">
-                 <string>Enable this for heatbed PID temperature control. If disabled, bang-bang will be used.</string>
-                </property>
-                <property name="wordWrap">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="0">
-               <widget class="QLabel" name="label_209">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="pixmap">
-                 <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="0" colspan="2">
-               <widget class="QWidget" name="widget_21" native="true">
-                <layout class="QGridLayout" name="gridLayout_172">
-                 <property name="leftMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="topMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="rightMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="bottomMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="spacing">
-                  <number>10</number>
-                 </property>
-                 <item row="0" column="0">
-                  <widget class="QGroupBox" name="uMinBedPowerBox">
-                   <property name="focusPolicy">
-                    <enum>Qt::StrongFocus</enum>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true"/>
-                   </property>
-                   <property name="title">
-                    <string>MIN_BED_POWER</string>
-                   </property>
-                   <property name="checkable">
-                    <bool>true</bool>
-                   </property>
-                   <layout class="QGridLayout" name="gridLayout_173">
-                    <property name="spacing">
-                     <number>10</number>
-                    </property>
-                    <item row="0" column="1">
-                     <widget class="QLabel" name="label_212">
-                      <property name="text">
-                       <string>This is the minimum heatbed power. (255=full current)</string>
-                      </property>
-                      <property name="wordWrap">
-                       <bool>true</bool>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="0">
-                     <widget class="QLabel" name="label_211">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="pixmap">
-                       <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="0" colspan="2">
-                     <widget class="QSpinBox" name="uMinBedPowerSpinBox">
-                      <property name="maximum">
-                       <number>255</number>
-                      </property>
-                      <property name="stepType">
-                       <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item row="0" column="1">
-                  <widget class="QGroupBox" name="uPidBedDebugBox">
-                   <property name="title">
-                    <string>PID_BED_DEBUG</string>
-                   </property>
-                   <property name="checkable">
-                    <bool>true</bool>
-                   </property>
-                   <layout class="QGridLayout" name="gridLayout_174">
-                    <property name="spacing">
-                     <number>10</number>
-                    </property>
-                    <item row="0" column="0">
-                     <widget class="QLabel" name="label_213">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="pixmap">
-                       <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="1">
-                     <widget class="QLabel" name="label_214">
-                      <property name="text">
-                       <string>Enable this to print Bed PID debug data to the serial port.</string>
-                      </property>
-                      <property name="wordWrap">
-                       <bool>true</bool>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item row="0" column="0">
-            <widget class="QGroupBox" name="uPidtempBox">
-             <property name="title">
-              <string>PIDTEMP</string>
+             <property name="rightMargin">
+              <number>0</number>
              </property>
-             <property name="checkable">
-              <bool>true</bool>
+             <property name="bottomMargin">
+              <number>0</number>
              </property>
-             <layout class="QGridLayout" name="gridLayout_108">
-              <property name="spacing">
-               <number>10</number>
-              </property>
-              <item row="0" column="0">
-               <widget class="QLabel" name="label_147">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QGroupBox" name="uMinChamberPowerBox">
+               <property name="title">
+                <string>MIN_CHAMBER_POWER</string>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_183">
+                <property name="spacing">
+                 <number>10</number>
                 </property>
-                <property name="text">
-                 <string/>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_228">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLabel" name="label_229">
+                  <property name="text">
+                   <string>This is the minimum chamber heater power. (255=full current)</string>
+                  </property>
+                  <property name="wordWrap">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0" colspan="2">
+                 <widget class="QSpinBox" name="uMinChamberPowerSpinBox">
+                  <property name="maximum">
+                   <number>255</number>
+                  </property>
+                  <property name="stepType">
+                   <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QGroupBox" name="uPidChamberDebugBox">
+               <property name="title">
+                <string>PID_CHAMBER_DEBUG</string>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_184">
+                <property name="spacing">
+                 <number>10</number>
                 </property>
-                <property name="pixmap">
-                 <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <widget class="QLabel" name="label_148">
-                <property name="text">
-                 <string>Enable this for PID temperature control. Disable both PIDTEMP and MPCTEMP for bang-bang heating.</string>
-                </property>
-                <property name="wordWrap">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="0" colspan="2">
-               <widget class="QGroupBox" name="uPidDebugBox">
-                <property name="title">
-                 <string>PID_DEBUG</string>
-                </property>
-                <property name="checkable">
-                 <bool>true</bool>
-                </property>
-                <layout class="QGridLayout" name="gridLayout_109">
-                 <property name="spacing">
-                  <number>10</number>
-                 </property>
-                 <item row="0" column="0">
-                  <widget class="QLabel" name="label_131">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="text">
-                    <string/>
-                   </property>
-                   <property name="pixmap">
-                    <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="1">
-                  <widget class="QLabel" name="label_132">
-                   <property name="text">
-                    <string>Enable this to print PID debug data to the serial port. Use 'M303 D' to toggle activation.</string>
-                   </property>
-                   <property name="wordWrap">
-                    <bool>true</bool>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item row="2" column="0" colspan="2">
-               <widget class="QGroupBox" name="uPidParamsPerHotendBox">
-                <property name="title">
-                 <string>PID_PARAMS_PER_HOTEND</string>
-                </property>
-                <property name="checkable">
-                 <bool>true</bool>
-                </property>
-                <layout class="QGridLayout" name="gridLayout_110">
-                 <property name="spacing">
-                  <number>10</number>
-                 </property>
-                 <item row="0" column="0">
-                  <widget class="QLabel" name="label_133">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="text">
-                    <string/>
-                   </property>
-                   <property name="pixmap">
-                    <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="1">
-                  <widget class="QLabel" name="label_134">
-                   <property name="text">
-                    <string>Specify up to one value per hotend here, according to your setup. If there are fewer values, the last one applies to the remaining hotends.</string>
-                   </property>
-                   <property name="wordWrap">
-                    <bool>true</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="0" colspan="2">
-                  <widget class="QWidget" name="widget_9" native="true">
-                   <layout class="QGridLayout" name="gridLayout_111" columnstretch="1,1,1">
-                    <property name="leftMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="topMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="rightMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="bottomMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="spacing">
-                     <number>10</number>
-                    </property>
-                    <item row="0" column="0">
-                     <widget class="QGroupBox" name="groupBox_47">
-                      <property name="focusPolicy">
-                       <enum>Qt::StrongFocus</enum>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QGroupBox:!disabled {
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_230">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLabel" name="label_231">
+                  <property name="text">
+                   <string>Enable this to print chamber PID debug data to the serial port.</string>
+                  </property>
+                  <property name="wordWrap">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="2" column="0" colspan="2">
+           <widget class="QWidget" name="widget_24" native="true">
+            <layout class="QGridLayout" name="gridLayout_185">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QGroupBox" name="groupBox_67">
+               <property name="focusPolicy">
+                <enum>Qt::StrongFocus</enum>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QGroupBox:!disabled {
 	background: rgb(50, 52, 59);
 }</string>
-                      </property>
-                      <property name="title">
-                       <string>DEFAULT_Kp_LIST</string>
-                      </property>
-                      <layout class="QGridLayout" name="gridLayout_124">
-                       <property name="spacing">
-                        <number>10</number>
-                       </property>
-                       <item row="0" column="0">
-                        <widget class="QLabel" name="label_135">
-                         <property name="sizePolicy">
-                          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                           <horstretch>0</horstretch>
-                           <verstretch>0</verstretch>
-                          </sizepolicy>
-                         </property>
-                         <property name="text">
-                          <string/>
-                         </property>
-                         <property name="pixmap">
-                          <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="0" column="1">
-                        <widget class="QLabel" name="label_136">
-                         <property name="text">
-                          <string>This is the list of Kp values per hotend.</string>
-                         </property>
-                         <property name="wordWrap">
-                          <bool>true</bool>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="1" column="0" colspan="2">
-                        <widget class="QLineEdit" name="uDefaultKpListEdit">
-                         <property name="text">
-                          <string>{  22.20, 22.20 }</string>
-                         </property>
-                        </widget>
-                       </item>
-                      </layout>
-                     </widget>
-                    </item>
-                    <item row="0" column="1">
-                     <widget class="QGroupBox" name="groupBox_48">
-                      <property name="focusPolicy">
-                       <enum>Qt::StrongFocus</enum>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-                      </property>
-                      <property name="title">
-                       <string>DEFAULT_Ki_LIST</string>
-                      </property>
-                      <layout class="QGridLayout" name="gridLayout_123">
-                       <property name="spacing">
-                        <number>10</number>
-                       </property>
-                       <item row="0" column="0">
-                        <widget class="QLabel" name="label_137">
-                         <property name="sizePolicy">
-                          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                           <horstretch>0</horstretch>
-                           <verstretch>0</verstretch>
-                          </sizepolicy>
-                         </property>
-                         <property name="text">
-                          <string/>
-                         </property>
-                         <property name="pixmap">
-                          <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="0" column="1">
-                        <widget class="QLabel" name="label_138">
-                         <property name="text">
-                          <string>This is the list of Ki values per hotend.</string>
-                         </property>
-                         <property name="wordWrap">
-                          <bool>true</bool>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="1" column="0" colspan="2">
-                        <widget class="QLineEdit" name="uDefaultKiListEdit">
-                         <property name="text">
-                          <string>{  1.08, 1.08 }</string>
-                         </property>
-                        </widget>
-                       </item>
-                      </layout>
-                     </widget>
-                    </item>
-                    <item row="0" column="2">
-                     <widget class="QGroupBox" name="groupBox_49">
-                      <property name="focusPolicy">
-                       <enum>Qt::StrongFocus</enum>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-                      </property>
-                      <property name="title">
-                       <string>DEFAULT_Kd_LIST</string>
-                      </property>
-                      <layout class="QGridLayout" name="gridLayout_112">
-                       <property name="spacing">
-                        <number>10</number>
-                       </property>
-                       <item row="0" column="0">
-                        <widget class="QLabel" name="label_139">
-                         <property name="sizePolicy">
-                          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                           <horstretch>0</horstretch>
-                           <verstretch>0</verstretch>
-                          </sizepolicy>
-                         </property>
-                         <property name="text">
-                          <string/>
-                         </property>
-                         <property name="pixmap">
-                          <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="0" column="1">
-                        <widget class="QLabel" name="label_140">
-                         <property name="text">
-                          <string>This is the list of Kd values per hotend.</string>
-                         </property>
-                         <property name="wordWrap">
-                          <bool>true</bool>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="1" column="0" colspan="2">
-                        <widget class="QLineEdit" name="uDefaultKdListEdit">
-                         <property name="text">
-                          <string>{  114.00, 114.00 }</string>
-                         </property>
-                        </widget>
-                       </item>
-                      </layout>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item row="3" column="0" colspan="2">
-               <widget class="QWidget" name="widget_10" native="true">
-                <layout class="QGridLayout" name="gridLayout_125" columnstretch="1,1,1">
-                 <property name="leftMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="topMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="rightMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="bottomMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="spacing">
-                  <number>10</number>
-                 </property>
-                 <item row="0" column="1">
-                  <widget class="QGroupBox" name="uDefaultKiBox">
-                   <property name="focusPolicy">
-                    <enum>Qt::StrongFocus</enum>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-                   </property>
-                   <property name="title">
-                    <string>DEFAULT_Ki</string>
-                   </property>
-                   <layout class="QGridLayout" name="gridLayout_127">
-                    <item row="0" column="0">
-                     <widget class="QLabel" name="label_143">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="pixmap">
-                       <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="1">
-                     <widget class="QLabel" name="label_144">
-                      <property name="text">
-                       <string>This is the Ki value to use for all hotends.</string>
-                      </property>
-                      <property name="wordWrap">
-                       <bool>true</bool>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="0" colspan="2">
-                     <widget class="QDoubleSpinBox" name="uDefaultKiSpinBox">
-                      <property name="maximum">
-                       <double>1000.000000000000000</double>
-                      </property>
-                      <property name="stepType">
-                       <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
-                      </property>
-                      <property name="value">
-                       <double>1.080000000000000</double>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item row="0" column="0">
-                  <widget class="QGroupBox" name="uDefaultKpBox">
-                   <property name="focusPolicy">
-                    <enum>Qt::StrongFocus</enum>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-                   </property>
-                   <property name="title">
-                    <string>DEFAULT_Kp</string>
-                   </property>
-                   <layout class="QGridLayout" name="gridLayout_128">
-                    <item row="0" column="0">
-                     <widget class="QLabel" name="label_141">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="pixmap">
-                       <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="1">
-                     <widget class="QLabel" name="label_142">
-                      <property name="text">
-                       <string>This is the Kp value to use for all hotends.</string>
-                      </property>
-                      <property name="wordWrap">
-                       <bool>true</bool>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="0" colspan="2">
-                     <widget class="QDoubleSpinBox" name="uDefaultKpSpinBox">
-                      <property name="maximum">
-                       <double>1000.000000000000000</double>
-                      </property>
-                      <property name="stepType">
-                       <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
-                      </property>
-                      <property name="value">
-                       <double>22.199999999999999</double>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item row="0" column="2">
-                  <widget class="QGroupBox" name="uDefaultKdBox">
-                   <property name="focusPolicy">
-                    <enum>Qt::StrongFocus</enum>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-                   </property>
-                   <property name="title">
-                    <string>DEFAULT_Kd</string>
-                   </property>
-                   <layout class="QGridLayout" name="gridLayout_126">
-                    <item row="0" column="0">
-                     <widget class="QLabel" name="label_145">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="pixmap">
-                       <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="1">
-                     <widget class="QLabel" name="label_146">
-                      <property name="text">
-                       <string>This is the Kd value to use for all hotends.</string>
-                      </property>
-                      <property name="wordWrap">
-                       <bool>true</bool>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="0" colspan="2">
-                     <widget class="QDoubleSpinBox" name="uDefaultKdSpinBox">
-                      <property name="maximum">
-                       <double>1000.000000000000000</double>
-                      </property>
-                      <property name="stepType">
-                       <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
-                      </property>
-                      <property name="value">
-                       <double>114.000000000000000</double>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item row="3" column="0">
-            <widget class="QWidget" name="widget_19" native="true">
-             <layout class="QGridLayout" name="gridLayout_167">
-              <property name="leftMargin">
-               <number>0</number>
-              </property>
-              <property name="topMargin">
-               <number>0</number>
-              </property>
-              <property name="rightMargin">
-               <number>0</number>
-              </property>
-              <property name="bottomMargin">
-               <number>0</number>
-              </property>
-              <property name="spacing">
-               <number>10</number>
-              </property>
-              <item row="0" column="0">
-               <widget class="QGroupBox" name="uBedLimitSwitchingBox">
-                <property name="title">
-                 <string>BED_LIMIT_SWITCHING</string>
+               </property>
+               <property name="title">
+                <string>DEFAULT_chamberKp</string>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_186">
+                <property name="spacing">
+                 <number>10</number>
                 </property>
-                <property name="checkable">
-                 <bool>true</bool>
-                </property>
-                <layout class="QGridLayout" name="gridLayout_170">
-                 <property name="spacing">
-                  <number>10</number>
-                 </property>
-                 <item row="0" column="0">
-                  <widget class="QLabel" name="label_205">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="text">
-                    <string/>
-                   </property>
-                   <property name="pixmap">
-                    <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="1">
-                  <widget class="QLabel" name="label_206">
-                   <property name="text">
-                    <string>This enables hysteresis if PID bed heating is disabled and bang-bang is used.</string>
-                   </property>
-                   <property name="wordWrap">
-                    <bool>true</bool>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <widget class="QGroupBox" name="groupBox_52">
-                <property name="focusPolicy">
-                 <enum>Qt::StrongFocus</enum>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QGroupBox:!disabled {
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_232">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLabel" name="label_233">
+                  <property name="text">
+                   <string>This is the Kp value to use for the chamber heater.</string>
+                  </property>
+                  <property name="wordWrap">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0" colspan="2">
+                 <widget class="QDoubleSpinBox" name="uDefaultChamberkpSpinBox">
+                  <property name="decimals">
+                   <number>3</number>
+                  </property>
+                  <property name="maximum">
+                   <double>1000.000000000000000</double>
+                  </property>
+                  <property name="value">
+                   <double>37.039999999999999</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QGroupBox" name="groupBox_68">
+               <property name="focusPolicy">
+                <enum>Qt::StrongFocus</enum>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QGroupBox:!disabled {
 	background: rgb(50, 52, 59);
 }</string>
+               </property>
+               <property name="title">
+                <string>DEFAULT_chamberKi</string>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_187">
+                <property name="spacing">
+                 <number>10</number>
                 </property>
-                <property name="title">
-                 <string>MAX_BED_POWER</string>
+                <item row="0" column="1">
+                 <widget class="QLabel" name="label_235">
+                  <property name="text">
+                   <string>This is the Ki value to use for the chamber heater.</string>
+                  </property>
+                  <property name="wordWrap">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_234">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0" colspan="2">
+                 <widget class="QDoubleSpinBox" name="uDefaultChamberkiSpinBox">
+                  <property name="decimals">
+                   <number>3</number>
+                  </property>
+                  <property name="maximum">
+                   <double>1000.000000000000000</double>
+                  </property>
+                  <property name="value">
+                   <double>1.400000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item row="0" column="2">
+              <widget class="QGroupBox" name="groupBox_69">
+               <property name="focusPolicy">
+                <enum>Qt::StrongFocus</enum>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+               </property>
+               <property name="title">
+                <string>DEFAULT_chamberKd</string>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_188">
+                <property name="spacing">
+                 <number>10</number>
                 </property>
-                <layout class="QGridLayout" name="gridLayout_171">
-                 <property name="spacing">
-                  <number>10</number>
-                 </property>
-                 <item row="0" column="0">
-                  <widget class="QLabel" name="label_207">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="text">
-                    <string/>
-                   </property>
-                   <property name="pixmap">
-                    <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="1">
-                  <widget class="QLabel" name="label_208">
-                   <property name="text">
-                    <string>This is the maximum heatbed power. This value limits the duty cycle to the heatbed. (255=full current)</string>
-                   </property>
-                   <property name="wordWrap">
-                    <bool>true</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="0" colspan="2">
-                  <widget class="QSpinBox" name="uMaxBedPowerSpinBox">
-                   <property name="maximum">
-                    <number>255</number>
-                   </property>
-                   <property name="stepType">
-                    <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
-                   </property>
-                   <property name="value">
-                    <number>255</number>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-          </layout>
-         </widget>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_236">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLabel" name="label_237">
+                  <property name="text">
+                   <string>This is the Kd value to use for the chamber heater.</string>
+                  </property>
+                  <property name="wordWrap">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0" colspan="2">
+                 <widget class="QDoubleSpinBox" name="uDefaultChamberkdSpinBox">
+                  <property name="decimals">
+                   <number>3</number>
+                  </property>
+                  <property name="maximum">
+                   <double>1000.000000000000000</double>
+                  </property>
+                  <property name="value">
+                   <double>655.169999999999959</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QGroupBox" name="uPidtempbedBox">
+         <property name="title">
+          <string>PIDTEMPBED</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_168">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="3" column="0" colspan="2">
+           <widget class="QWidget" name="widget_20" native="true">
+            <layout class="QGridLayout" name="gridLayout_169">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QGroupBox" name="groupBox_63">
+               <property name="focusPolicy">
+                <enum>Qt::StrongFocus</enum>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+               </property>
+               <property name="title">
+                <string>DEFAULT_bedKp</string>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_175">
+                <property name="spacing">
+                 <number>10</number>
+                </property>
+                <item row="0" column="1">
+                 <widget class="QLabel" name="label_216">
+                  <property name="text">
+                   <string>This is the Kp value to use for the heatbed.</string>
+                  </property>
+                  <property name="wordWrap">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_215">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0" colspan="2">
+                 <widget class="QDoubleSpinBox" name="uDefaultBedkpSpinBox">
+                  <property name="decimals">
+                   <number>3</number>
+                  </property>
+                  <property name="maximum">
+                   <double>1000.000000000000000</double>
+                  </property>
+                  <property name="stepType">
+                   <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+                  </property>
+                  <property name="value">
+                   <double>10.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item row="0" column="2">
+              <widget class="QGroupBox" name="groupBox_65">
+               <property name="focusPolicy">
+                <enum>Qt::StrongFocus</enum>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+               </property>
+               <property name="title">
+                <string>DEFAULT_bedKd</string>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_177">
+                <property name="spacing">
+                 <number>10</number>
+                </property>
+                <item row="0" column="1">
+                 <widget class="QLabel" name="label_220">
+                  <property name="text">
+                   <string>This is the Kd value to use for the heatbed.</string>
+                  </property>
+                  <property name="wordWrap">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_219">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0" colspan="2">
+                 <widget class="QDoubleSpinBox" name="uDefaultBedkdSpinBox">
+                  <property name="decimals">
+                   <number>3</number>
+                  </property>
+                  <property name="maximum">
+                   <double>1000.000000000000000</double>
+                  </property>
+                  <property name="stepType">
+                   <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+                  </property>
+                  <property name="value">
+                   <double>305.399999999999977</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QGroupBox" name="groupBox_64">
+               <property name="focusPolicy">
+                <enum>Qt::StrongFocus</enum>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+               </property>
+               <property name="title">
+                <string>DEFAULT_bedKi</string>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_176">
+                <property name="spacing">
+                 <number>10</number>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_217">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLabel" name="label_218">
+                  <property name="text">
+                   <string>This is the Ki value to use for the heatbed.</string>
+                  </property>
+                  <property name="wordWrap">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0" colspan="2">
+                 <widget class="QDoubleSpinBox" name="uDefaultBedkiSpinBox">
+                  <property name="decimals">
+                   <number>3</number>
+                  </property>
+                  <property name="maximum">
+                   <double>1000.000000000000000</double>
+                  </property>
+                  <property name="stepType">
+                   <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+                  </property>
+                  <property name="value">
+                   <double>0.023000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_210">
+            <property name="text">
+             <string>Enable this for heatbed PID temperature control. If disabled, bang-bang will be used.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_209">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0" colspan="2">
+           <widget class="QWidget" name="widget_21" native="true">
+            <layout class="QGridLayout" name="gridLayout_172">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QGroupBox" name="uMinBedPowerBox">
+               <property name="focusPolicy">
+                <enum>Qt::StrongFocus</enum>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <property name="title">
+                <string>MIN_BED_POWER</string>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_173">
+                <property name="spacing">
+                 <number>10</number>
+                </property>
+                <item row="0" column="1">
+                 <widget class="QLabel" name="label_212">
+                  <property name="text">
+                   <string>This is the minimum heatbed power. (255=full current)</string>
+                  </property>
+                  <property name="wordWrap">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_211">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0" colspan="2">
+                 <widget class="QSpinBox" name="uMinBedPowerSpinBox">
+                  <property name="maximum">
+                   <number>255</number>
+                  </property>
+                  <property name="stepType">
+                   <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QGroupBox" name="uPidBedDebugBox">
+               <property name="title">
+                <string>PID_BED_DEBUG</string>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_174">
+                <property name="spacing">
+                 <number>10</number>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_213">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLabel" name="label_214">
+                  <property name="text">
+                   <string>Enable this to print heatbed PID debug data to the serial port.</string>
+                  </property>
+                  <property name="wordWrap">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="9" column="0">
+        <widget class="QWidget" name="widget_26" native="true">
+         <layout class="QGridLayout" name="gridLayout_189">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QGroupBox" name="uPidEditMenuBox">
+            <property name="title">
+             <string>PID_EDIT_MENU</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_191">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_240">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_241">
+               <property name="text">
+                <string>Enable this to add PID editing to the &quot;Advanced Settings&quot; menu. (~700 bytes of flash)</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QGroupBox" name="uPidAutotuneMenuBox">
+            <property name="title">
+             <string>PID_AUTOTUNE_MENU</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_193">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_244">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_245">
+               <property name="text">
+                <string>Enable this to add PID auto-tuning to the &quot;Advanced Settings&quot; menu. (~250 bytes of flash)</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
         </widget>
        </item>
       </layout>
@@ -1643,7 +2352,7 @@ QTabBar QToolButton::left-arrow {
             <x>0</x>
             <y>0</y>
             <width>1469</width>
-            <height>1130</height>
+            <height>1773</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -5026,7 +5735,7 @@ QTabBar QToolButton::left-arrow {
                <x>0</x>
                <y>0</y>
                <width>1469</width>
-               <height>135</height>
+               <height>127</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -5422,7 +6131,7 @@ QTabBar QToolButton::left-arrow {
                <x>0</x>
                <y>0</y>
                <width>1469</width>
-               <height>135</height>
+               <height>127</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -5818,7 +6527,7 @@ QTabBar QToolButton::left-arrow {
                <x>0</x>
                <y>0</y>
                <width>1469</width>
-               <height>135</height>
+               <height>127</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -6214,7 +6923,7 @@ QTabBar QToolButton::left-arrow {
                <x>0</x>
                <y>0</y>
                <width>1469</width>
-               <height>135</height>
+               <height>127</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -6610,7 +7319,7 @@ QTabBar QToolButton::left-arrow {
                <x>0</x>
                <y>0</y>
                <width>1469</width>
-               <height>135</height>
+               <height>127</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -7006,7 +7715,7 @@ QTabBar QToolButton::left-arrow {
                <x>0</x>
                <y>0</y>
                <width>1469</width>
-               <height>135</height>
+               <height>127</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -7402,7 +8111,7 @@ QTabBar QToolButton::left-arrow {
                <x>0</x>
                <y>0</y>
                <width>1469</width>
-               <height>135</height>
+               <height>127</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -7798,7 +8507,7 @@ QTabBar QToolButton::left-arrow {
                <x>0</x>
                <y>0</y>
                <width>1469</width>
-               <height>135</height>
+               <height>127</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -8197,7 +8906,7 @@ QTabBar QToolButton::left-arrow {
                <x>0</x>
                <y>0</y>
                <width>1469</width>
-               <height>135</height>
+               <height>127</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -8590,7 +9299,7 @@ QTabBar QToolButton::left-arrow {
                <x>0</x>
                <y>0</y>
                <width>1469</width>
-               <height>135</height>
+               <height>127</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -8986,7 +9695,7 @@ QTabBar QToolButton::left-arrow {
                <x>0</x>
                <y>0</y>
                <width>1469</width>
-               <height>135</height>
+               <height>127</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -9385,7 +10094,7 @@ QTabBar QToolButton::left-arrow {
                <x>0</x>
                <y>0</y>
                <width>1469</width>
-               <height>135</height>
+               <height>127</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -9784,7 +10493,7 @@ QTabBar QToolButton::left-arrow {
                <x>0</x>
                <y>0</y>
                <width>1469</width>
-               <height>135</height>
+               <height>127</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -10180,7 +10889,7 @@ QTabBar QToolButton::left-arrow {
                <x>0</x>
                <y>0</y>
                <width>1469</width>
-               <height>135</height>
+               <height>127</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -10682,7 +11391,7 @@ QTabBar QToolButton::left-arrow {
             <x>0</x>
             <y>0</y>
             <width>1469</width>
-            <height>152</height>
+            <height>137</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -10861,7 +11570,7 @@ QTabBar QToolButton::left-arrow {
             <x>0</x>
             <y>0</y>
             <width>1469</width>
-            <height>152</height>
+            <height>137</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -11040,7 +11749,7 @@ QTabBar QToolButton::left-arrow {
             <x>0</x>
             <y>0</y>
             <width>1469</width>
-            <height>152</height>
+            <height>137</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -11219,7 +11928,7 @@ QTabBar QToolButton::left-arrow {
             <x>0</x>
             <y>0</y>
             <width>1469</width>
-            <height>152</height>
+            <height>137</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -11401,7 +12110,7 @@ QTabBar QToolButton::left-arrow {
             <x>0</x>
             <y>0</y>
             <width>1469</width>
-            <height>152</height>
+            <height>137</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -11580,7 +12289,7 @@ QTabBar QToolButton::left-arrow {
             <x>0</x>
             <y>0</y>
             <width>1469</width>
-            <height>152</height>
+            <height>137</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -11759,7 +12468,7 @@ QTabBar QToolButton::left-arrow {
             <x>0</x>
             <y>0</y>
             <width>1469</width>
-            <height>152</height>
+            <height>137</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -11938,7 +12647,7 @@ QTabBar QToolButton::left-arrow {
             <x>0</x>
             <y>0</y>
             <width>1469</width>
-            <height>152</height>
+            <height>137</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -12117,7 +12826,7 @@ QTabBar QToolButton::left-arrow {
             <x>0</x>
             <y>0</y>
             <width>1469</width>
-            <height>152</height>
+            <height>137</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -12296,7 +13005,7 @@ QTabBar QToolButton::left-arrow {
             <x>0</x>
             <y>0</y>
             <width>1469</width>
-            <height>152</height>
+            <height>137</height>
            </rect>
           </property>
           <property name="styleSheet">

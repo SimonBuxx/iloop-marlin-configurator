@@ -45,19 +45,25 @@ MainWindow::MainWindow(QWidget *pParent)
     setWindowTitle(QString("iMC - iLOOP Marlin Configurator v%0").arg(SW_VERSION));
 
     // Initialize dock widgets
+    constexpr auto dockHeight = 200;
+
     tabifyDockWidget(mUi->uConsoleDock, mUi->uCodePreviewDock);
+    tabifyDockWidget(mUi->uCodePreviewDock, mUi->uCompilerOutputsDock);
     resizeDocks(QList{static_cast<QDockWidget*>(mUi->uConsoleDock),
-                      static_cast<QDockWidget*>(mUi->uCodePreviewDock)},
-                QList{150, 150}, Qt::Vertical);
+                      static_cast<QDockWidget*>(mUi->uCodePreviewDock),
+                      static_cast<QDockWidget*>(mUi->uCompilerOutputsDock)},
+                QList{dockHeight, dockHeight, dockHeight}, Qt::Vertical);
 
     // Add dock widget view actions to menu
     mUi->menuView->addAction(mUi->uNavigationDock->toggleViewAction());
     mUi->menuView->addAction(mUi->uConsoleDock->toggleViewAction());
     mUi->menuView->addAction(mUi->uCodePreviewDock->toggleViewAction());
+    mUi->menuView->addAction(mUi->uCompilerOutputsDock->toggleViewAction());
 
     mUi->menuView->actions().at(0)->setShortcut(QKeySequence("Alt+N"));
     mUi->menuView->actions().at(1)->setShortcut(QKeySequence("Alt+O"));
     mUi->menuView->actions().at(2)->setShortcut(QKeySequence("Alt+P"));
+    mUi->menuView->actions().at(3)->setShortcut(QKeySequence("Alt+C"));
 
     for (auto&& page : findChildren<AbstractPage*>())
     {
@@ -151,6 +157,21 @@ void MainWindow::ConnectGuiSignalsAndSlots()
     });
 
     QObject::connect(mUi->uOpenProjectAction, &QAction::triggered, this, &MainWindow::OpenProjectSignal);
+
+    QObject::connect(mUi->uOpenFolderAction, &QAction::triggered, this, &MainWindow::OpenFolderSignal);
+
+#warning disable actions while building/cleaning/uploading
+    QObject::connect(mUi->uActionBuild, &QAction::triggered, this, [&](){
+        mUi->uCompilerOutputsDock->raise();
+
+        emit BuildMarlinSignal();
+    });
+
+    QObject::connect(mUi->uActionClean, &QAction::triggered, this, [&](){
+        mUi->uCompilerOutputsDock->raise();
+
+        emit CleanSignal();
+    });
 
     QObject::connect(mUi->uActionOpenMarlinHomepage, &QAction::triggered, this, [&]()
     {
@@ -350,4 +371,21 @@ void MainWindow::Log(const QString& pText, const QString& pColorString)
     const auto timestamp = QDateTime::currentDateTime().toString(Qt::DateFormat::ISODate).replace('T', ' ');
 
     mUi->uLogConsole->append(QString("<span style=\"color: rgb(100, 100, 100);\">[%0]</span> <span style=\"color: %1;\">%2</span>").arg(timestamp, pColorString, pText));
+}
+
+void MainWindow::CompilerLog(const std::optional<QString>& pPath, const QString& pText, const QString& pColorString)
+{
+    if (pText.contains("exit") || pText.contains("cd ") || pText.contains("Microsoft Windows") || pText.contains("(c) Microsoft Corporation"))
+    {
+        return;
+    }
+
+    if (false == pPath.has_value())
+    {
+        mUi->uCompilerConsole->append(QString("<span style=\"color: %0;\">%1</span>").arg(pColorString, pText));
+    }
+    else
+    {
+        mUi->uCompilerConsole->append(QString("<span style=\"color: rgb(100, 100, 100);\">%0</span> <span style=\"color: %1;\">%2</span>").arg(pPath.value(), pColorString, pText));
+    }
 }

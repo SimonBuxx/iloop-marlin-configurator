@@ -164,6 +164,33 @@ void ThermalSettingsPage::ConnectGuiSignalsAndSlots()
         mUi->uDefaultKdBox->setEnabled(!pChecked);
     });
 
+    QObject::connect(mUi->uPidtempBox, &QGroupBox::toggled, this, [&](auto pChecked)
+    {
+        mUi->uPidOpenloopBox->setEnabled(pChecked || mUi->uPidtempbedBox->isChecked() || mUi->uPidtempchamberBox->isChecked());
+        mUi->uSlowPwmHeatersBox->setEnabled(pChecked || mUi->uPidtempbedBox->isChecked() || mUi->uPidtempchamberBox->isChecked());
+        mUi->uPidFunctionalRangeSpinBox->setEnabled(pChecked || mUi->uPidtempbedBox->isChecked() || mUi->uPidtempchamberBox->isChecked());
+        mUi->uPidEditMenuBox->setEnabled(pChecked || mUi->uPidtempbedBox->isChecked() || mUi->uPidtempchamberBox->isChecked());
+        mUi->uPidAutotuneMenuBox->setEnabled(pChecked || mUi->uPidtempbedBox->isChecked() || mUi->uPidtempchamberBox->isChecked());
+    });
+
+    QObject::connect(mUi->uPidtempbedBox, &QGroupBox::toggled, this, [&](auto pChecked)
+    {
+        mUi->uPidOpenloopBox->setEnabled(pChecked || mUi->uPidtempBox->isChecked() || mUi->uPidtempchamberBox->isChecked());
+        mUi->uSlowPwmHeatersBox->setEnabled(pChecked || mUi->uPidtempBox->isChecked() || mUi->uPidtempchamberBox->isChecked());
+        mUi->uPidFunctionalRangeSpinBox->setEnabled(pChecked || mUi->uPidtempBox->isChecked() || mUi->uPidtempchamberBox->isChecked());
+        mUi->uPidEditMenuBox->setEnabled(pChecked || mUi->uPidtempBox->isChecked() || mUi->uPidtempchamberBox->isChecked());
+        mUi->uPidAutotuneMenuBox->setEnabled(pChecked || mUi->uPidtempBox->isChecked() || mUi->uPidtempchamberBox->isChecked());
+    });
+
+    QObject::connect(mUi->uPidtempchamberBox, &QGroupBox::toggled, this, [&](auto pChecked)
+    {
+        mUi->uPidOpenloopBox->setEnabled(pChecked || mUi->uPidtempbedBox->isChecked() || mUi->uPidtempBox->isChecked());
+        mUi->uSlowPwmHeatersBox->setEnabled(pChecked || mUi->uPidtempbedBox->isChecked() || mUi->uPidtempBox->isChecked());
+        mUi->uPidFunctionalRangeSpinBox->setEnabled(pChecked || mUi->uPidtempbedBox->isChecked() || mUi->uPidtempBox->isChecked());
+        mUi->uPidEditMenuBox->setEnabled(pChecked || mUi->uPidtempbedBox->isChecked() || mUi->uPidtempBox->isChecked());
+        mUi->uPidAutotuneMenuBox->setEnabled(pChecked || mUi->uPidtempbedBox->isChecked() || mUi->uPidtempBox->isChecked());
+    });
+
     AbstractPage::ConnectGuiSignalsAndSlots();
 }
 
@@ -267,7 +294,20 @@ void ThermalSettingsPage::ResetValues()
     mUi->uDefaultBedkpSpinBox->setValue(defaults::DEFAULT_bedKp);
     mUi->uDefaultBedkiSpinBox->setValue(defaults::DEFAULT_bedKi);
     mUi->uDefaultBedkdSpinBox->setValue(defaults::DEFAULT_bedKd);
-
+    mUi->uPidtempchamberBox->setChecked(defaults::PIDTEMPCHAMBER);
+    mUi->uChamberLimitSwitchingBox->setChecked(defaults::CHAMBER_LIMIT_SWITCHING);
+    mUi->uMaxChamberPowerSpinBox->setValue(defaults::MAX_CHAMBER_POWER);
+    mUi->uMinChamberPowerSpinBox->setValue(defaults::MIN_CHAMBER_POWER);
+    mUi->uMinChamberPowerBox->setChecked(defaults::ENABLE_MIN_CHAMBER_POWER);
+    mUi->uPidChamberDebugBox->setChecked(defaults::PID_CHAMBER_DEBUG);
+    mUi->uDefaultChamberkpSpinBox->setValue(defaults::DEFAULT_chamberKp);
+    mUi->uDefaultChamberkiSpinBox->setValue(defaults::DEFAULT_chamberKi);
+    mUi->uDefaultChamberkdSpinBox->setValue(defaults::DEFAULT_chamberKd);
+    mUi->uPidOpenloopBox->setChecked(defaults::PID_OPENLOOP);
+    mUi->uSlowPwmHeatersBox->setChecked(defaults::SLOW_PWM_HEATERS);
+    mUi->uPidFunctionalRangeSpinBox->setValue(defaults::PID_FUNCTIONAL_RANGE);
+    mUi->uPidEditMenuBox->setChecked(defaults::PID_EDIT_MENU);
+    mUi->uPidAutotuneMenuBox->setChecked(defaults::PID_AUTOTUNE_MENU);
     mUi->uPreventColdExtrusionBox->setChecked(defaults::PREVENT_COLD_EXTRUSION);
     mUi->uExtrudeMintempSpinBox->setValue(defaults::EXTRUDE_MINTEMP);
     mUi->uPreventLengthyExtrudeBox->setChecked(defaults::PREVENT_LENGTHY_EXTRUDE);
@@ -384,7 +424,20 @@ bool ThermalSettingsPage::LoadFromJson(const QJsonObject &pJson)
     success &= LoadConfig(mUi->uDefaultBedkpSpinBox, pJson, "DEFAULT_bedKp");
     success &= LoadConfig(mUi->uDefaultBedkiSpinBox, pJson, "DEFAULT_bedKi");
     success &= LoadConfig(mUi->uDefaultBedkdSpinBox, pJson, "DEFAULT_bedKd");
-
+    success &= LoadConfig(mUi->uPidtempchamberBox, pJson, "PIDTEMPCHAMBER");
+    success &= LoadConfig(mUi->uChamberLimitSwitchingBox, pJson, "CHAMBER_LIMIT_SWITCHING");
+    success &= LoadConfig(mUi->uMaxChamberPowerSpinBox, pJson, "MAX_CHAMBER_POWER");
+    success &= LoadConfig(mUi->uMinChamberPowerSpinBox, pJson, "MIN_CHAMBER_POWER");
+    success &= LoadConfig(mUi->uMinChamberPowerBox, pJson, "ENABLE_MIN_CHAMBER_POWER");
+    success &= LoadConfig(mUi->uPidChamberDebugBox, pJson, "PID_CHAMBER_DEBUG");
+    success &= LoadConfig(mUi->uDefaultChamberkpSpinBox, pJson, "DEFAULT_chamberKp");
+    success &= LoadConfig(mUi->uDefaultChamberkiSpinBox, pJson, "DEFAULT_chamberKi");
+    success &= LoadConfig(mUi->uDefaultChamberkdSpinBox, pJson, "DEFAULT_chamberKd");
+    success &= LoadConfig(mUi->uPidOpenloopBox, pJson, "PID_OPENLOOP");
+    success &= LoadConfig(mUi->uSlowPwmHeatersBox, pJson, "SLOW_PWM_HEATERS");
+    success &= LoadConfig(mUi->uPidFunctionalRangeSpinBox, pJson, "PID_FUNCTIONAL_RANGE");
+    success &= LoadConfig(mUi->uPidEditMenuBox, pJson, "PID_EDIT_MENU");
+    success &= LoadConfig(mUi->uPidAutotuneMenuBox, pJson, "PID_AUTOTUNE_MENU");
     success &= LoadConfig(mUi->uPreventColdExtrusionBox, pJson, "PREVENT_COLD_EXTRUSION");
     success &= LoadConfig(mUi->uExtrudeMintempSpinBox, pJson, "EXTRUDE_MINTEMP");
     success &= LoadConfig(mUi->uPreventLengthyExtrudeBox, pJson, "PREVENT_LENGTHY_EXTRUDE");
@@ -496,7 +549,20 @@ void ThermalSettingsPage::FetchConfiguration(Configuration& pConfig)
     SetConfig(pConfig.thermalSettings.DEFAULT_bedKp, mUi->uDefaultBedkpSpinBox);
     SetConfig(pConfig.thermalSettings.DEFAULT_bedKi, mUi->uDefaultBedkiSpinBox);
     SetConfig(pConfig.thermalSettings.DEFAULT_bedKd, mUi->uDefaultBedkdSpinBox);
-
+    SetConfig(pConfig.thermalSettings.PIDTEMPCHAMBER, mUi->uPidtempchamberBox);
+    SetConfig(pConfig.thermalSettings.CHAMBER_LIMIT_SWITCHING, mUi->uChamberLimitSwitchingBox);
+    SetConfig(pConfig.thermalSettings.MAX_CHAMBER_POWER, mUi->uMaxChamberPowerSpinBox);
+    SetConfig(pConfig.thermalSettings.MIN_CHAMBER_POWER, mUi->uMinChamberPowerSpinBox);
+    SetConfig(pConfig.thermalSettings.ENABLE_MIN_CHAMBER_POWER, mUi->uMinChamberPowerBox);
+    SetConfig(pConfig.thermalSettings.PID_CHAMBER_DEBUG, mUi->uPidChamberDebugBox);
+    SetConfig(pConfig.thermalSettings.DEFAULT_chamberKp, mUi->uDefaultChamberkpSpinBox);
+    SetConfig(pConfig.thermalSettings.DEFAULT_chamberKi, mUi->uDefaultChamberkiSpinBox);
+    SetConfig(pConfig.thermalSettings.DEFAULT_chamberKd, mUi->uDefaultChamberkdSpinBox);
+    SetConfig(pConfig.thermalSettings.PID_OPENLOOP, mUi->uPidOpenloopBox);
+    SetConfig(pConfig.thermalSettings.SLOW_PWM_HEATERS, mUi->uSlowPwmHeatersBox);
+    SetConfig(pConfig.thermalSettings.PID_FUNCTIONAL_RANGE, mUi->uPidFunctionalRangeSpinBox);
+    SetConfig(pConfig.thermalSettings.PID_EDIT_MENU, mUi->uPidEditMenuBox);
+    SetConfig(pConfig.thermalSettings.PID_AUTOTUNE_MENU, mUi->uPidAutotuneMenuBox);
     SetConfig(pConfig.thermalSettings.PREVENT_COLD_EXTRUSION, mUi->uPreventColdExtrusionBox);
     SetConfig(pConfig.thermalSettings.EXTRUDE_MINTEMP, mUi->uExtrudeMintempSpinBox);
     SetConfig(pConfig.thermalSettings.PREVENT_LENGTHY_EXTRUDE, mUi->uPreventLengthyExtrudeBox);
@@ -615,4 +681,17 @@ void ThermalSettingsPage::ReplaceTags(QStringList& pOutput)
     ReplaceTag(pOutput, "#{DEFAULT_bedKp}", mUi->uDefaultBedkpSpinBox, false, "DEFAULT_bedKp", 3);
     ReplaceTag(pOutput, "#{DEFAULT_bedKi}", mUi->uDefaultBedkiSpinBox, false, "DEFAULT_bedKi", 3);
     ReplaceTag(pOutput, "#{DEFAULT_bedKd}", mUi->uDefaultBedkdSpinBox, false, "DEFAULT_bedKd", 3);
+    ReplaceTag(pOutput, "#{PIDTEMPCHAMBER}", mUi->uPidtempchamberBox, "PIDTEMPCHAMBER");
+    ReplaceTag(pOutput, "#{CHAMBER_LIMIT_SWITCHING}", mUi->uChamberLimitSwitchingBox, "CHAMBER_LIMIT_SWITCHING");
+    ReplaceTag(pOutput, "#{MAX_CHAMBER_POWER}", mUi->uMaxChamberPowerSpinBox, false, "MAX_CHAMBER_POWER");
+    ReplaceTag(pOutput, "#{MIN_CHAMBER_POWER}", mUi->uMinChamberPowerSpinBox, !mUi->uMinChamberPowerBox->isChecked(), "MIN_CHAMBER_POWER");
+    ReplaceTag(pOutput, "#{PID_CHAMBER_DEBUG}", mUi->uPidChamberDebugBox, "PID_CHAMBER_DEBUG");
+    ReplaceTag(pOutput, "#{DEFAULT_chamberKp}", mUi->uDefaultChamberkpSpinBox, false, "DEFAULT_chamberKp", 3);
+    ReplaceTag(pOutput, "#{DEFAULT_chamberKi}", mUi->uDefaultChamberkiSpinBox, false, "DEFAULT_chamberKi", 3);
+    ReplaceTag(pOutput, "#{DEFAULT_chamberKd}", mUi->uDefaultChamberkdSpinBox, false, "DEFAULT_chamberKd", 3);
+    ReplaceTag(pOutput, "#{PID_OPENLOOP}", mUi->uPidOpenloopBox, "PID_OPENLOOP");
+    ReplaceTag(pOutput, "#{SLOW_PWM_HEATERS}", mUi->uSlowPwmHeatersBox, "SLOW_PWM_HEATERS");
+    ReplaceTag(pOutput, "#{PID_FUNCTIONAL_RANGE}", mUi->uPidFunctionalRangeSpinBox, false, "PID_FUNCTIONAL_RANGE");
+    ReplaceTag(pOutput, "#{PID_EDIT_MENU}", mUi->uPidEditMenuBox, "PID_EDIT_MENU");
+    ReplaceTag(pOutput, "#{PID_AUTOTUNE_MENU}", mUi->uPidAutotuneMenuBox, "PID_AUTOTUNE_MENU");
 }

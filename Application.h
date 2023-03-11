@@ -62,6 +62,12 @@ protected slots:
     /// \brief Opens a project and asks for the file path before
     void OnOpenProject(void);
 
+    void OnOpenFolder(void);
+
+    void OnBuildMarlin(const QString& pEnvironment);
+
+    void OnClean(const QString& pEnvironment);
+
 protected:
     /// \brief Generates the Configuration.h file from the template
     ///
@@ -73,6 +79,11 @@ protected:
 
     std::optional<QStringList> mTemplate;
     std::optional<QFileInfo> mOpenFileInfo;
+    std::optional<QFileInfo> mFolderInfo;
+
+    QString mCurrent;
+
+    bool mBuildSuccess{false};
 };
 
 #endif // APPLICATION_H

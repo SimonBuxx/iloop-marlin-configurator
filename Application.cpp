@@ -31,6 +31,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QFontDatabase>
+#include <QProcess>
 
 Application::Application(QObject *parent)
     : QObject(parent)
@@ -45,6 +46,15 @@ Application::Application(QObject *parent)
     QObject::connect(&mMainWindow, &MainWindow::SaveProjectSignal, this, &Application::OnSaveProject);
     QObject::connect(&mMainWindow, &MainWindow::NewProjectSignal, this, &Application::OnNewProject);
     QObject::connect(&mMainWindow, &MainWindow::OpenProjectSignal, this, &Application::OnOpenProject);
+    QObject::connect(&mMainWindow, &MainWindow::OpenFolderSignal, this, &Application::OnOpenFolder);
+    QObject::connect(&mMainWindow, &MainWindow::BuildMarlinSignal, this, [&](){
+#warning make environment dynamic
+        OnBuildMarlin("mega2560");
+    });
+    QObject::connect(&mMainWindow, &MainWindow::CleanSignal, this, [&](){
+#warning make environment dynamic
+        OnClean("mega2560");
+    });
 
     mMainWindow.Log("Reading Configuration.h template...");
     mTemplate = ReadTemplateFromFile(QFileInfo(TEMPLATE_PATH));
@@ -191,6 +201,24 @@ void Application::OnOpenProject()
     mMainWindow.JumpToFirstConfigTab();
 }
 
+void Application::OnOpenFolder()
+{
+    QFileInfo folderInfo;
+
+    QString folderName = QFileDialog::getExistingDirectory(&mMainWindow, tr("Open Folder..."), QDir::homePath());
+
+    if (folderName.isEmpty())
+    {
+        return;
+    }
+
+    folderInfo = QFileInfo(folderName);
+
+    mMainWindow.Log(QString("Opened folder %0").arg(folderInfo.filePath()));
+
+    mFolderInfo = folderInfo;
+}
+
 std::optional<QStringList> Application::GenerateCode()
 {
     if (mTemplate.has_value())
@@ -202,4 +230,174 @@ std::optional<QStringList> Application::GenerateCode()
     }
 
     return std::nullopt;
+}
+
+void Application::OnBuildMarlin(const QString& pEnvironment)
+{
+    mBuildSuccess = false;
+
+    QProcess process;
+    process.start("C:\\Windows\\system32\\cmd.exe");
+
+    if (false == process.waitForStarted())
+    {
+        return;
+    }
+
+    if (mFolderInfo.has_value())
+    {
+        process.write(QString("cd %0\n").arg(mFolderInfo.value().filePath()).toLocal8Bit());
+    }
+
+    QObject::connect(&process, &QProcess::readyReadStandardOutput, this, [&](){
+        auto stream = QTextStream(process.readAllStandardOutput());
+        while (!stream.atEnd())
+        {
+            const auto& line = stream.readLine();
+
+            if (line.size() <= 2)
+            {
+                continue;
+            }
+
+            if (line.endsWith(">"))
+            {
+                mCurrent = line;
+                continue;
+            }
+
+            if (line.contains(">platformio"))
+            {
+                auto list = line.split(">");
+                mMainWindow.CompilerLog(list[0] + ">", list[1]);
+
+                continue;
+            }
+
+            if  (line.contains("1 succeeded"))
+            {
+                mBuildSuccess = true;
+            }
+
+            mMainWindow.CompilerLog(mCurrent, line);
+            mCurrent.clear();
+        }
+    });
+
+    QObject::connect(&process, &QProcess::readyReadStandardError, this, [&](){
+        auto stream = QTextStream(process.readAllStandardError());
+        while (!stream.atEnd())
+        {
+            mMainWindow.CompilerLog(std::nullopt, stream.readLine(), "red");
+        }
+    });
+
+    mMainWindow.Log(QString("Starting build for environment %0...").arg(pEnvironment));
+
+    process.write(QString("platformio run -e %0\n").arg(pEnvironment).toLocal8Bit());
+
+    process.write("exit\n");
+
+    while(process.state() == QProcess::ProcessState::Running)
+    {
+        QCoreApplication::processEvents();
+    }
+
+    process.waitForFinished();
+    process.close();
+
+    mMainWindow.CompilerLog(std::nullopt, "");
+    if (mBuildSuccess)
+    {
+        mMainWindow.Log("Build successful.", "rgb(249, 154, 0)");
+    }
+    else
+    {
+        mMainWindow.Log("Build failed. See compiler outputs for more details.", "red");
+    }
+}
+
+void Application::OnClean(const QString& pEnvironment)
+{
+    mBuildSuccess = false;
+
+    QProcess process;
+    process.start("C:\\Windows\\system32\\cmd.exe");
+
+    if (false == process.waitForStarted())
+    {
+        return;
+    }
+
+    if (mFolderInfo.has_value())
+    {
+        process.write(QString("cd %0\n").arg(mFolderInfo.value().filePath()).toLocal8Bit());
+    }
+
+    QObject::connect(&process, &QProcess::readyReadStandardOutput, this, [&](){
+        auto stream = QTextStream(process.readAllStandardOutput());
+        while (!stream.atEnd())
+        {
+            const auto& line = stream.readLine();
+
+            if (line.size() <= 2)
+            {
+                continue;
+            }
+
+            if (line.endsWith(">"))
+            {
+                mCurrent = line;
+                continue;
+            }
+
+            if (line.contains(">platformio"))
+            {
+                auto list = line.split(">");
+                mMainWindow.CompilerLog(list[0] + ">", list[1]);
+
+                continue;
+            }
+
+            if  (line.contains("1 succeeded"))
+            {
+                mBuildSuccess = true;
+            }
+
+            mMainWindow.CompilerLog(mCurrent, line);
+            mCurrent.clear();
+        }
+    });
+
+    QObject::connect(&process, &QProcess::readyReadStandardError, this, [&](){
+        auto stream = QTextStream(process.readAllStandardError());
+        while (!stream.atEnd())
+        {
+            mMainWindow.CompilerLog(std::nullopt, stream.readLine(), "red");
+        }
+    });
+
+    mMainWindow.Log(QString("Starting cleaning of environment %0...").arg(pEnvironment));
+
+    process.write(QString("platformio run --target clean -e %0\n").arg(pEnvironment).toLocal8Bit());
+
+    process.write("exit\n");
+
+    while(process.state() == QProcess::ProcessState::Running)
+    {
+        QCoreApplication::processEvents();
+    }
+
+    process.waitForFinished();
+    process.close();
+
+    mMainWindow.CompilerLog(std::nullopt, "");
+    if (mBuildSuccess)
+    {
+        mMainWindow.Log("Cleaning successful.", "rgb(249, 154, 0)");
+    }
+    else
+    {
+        mMainWindow.Log("Cleaning failed. See compiler outputs for more details.", "red");
+    }
 }

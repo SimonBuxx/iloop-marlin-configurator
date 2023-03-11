@@ -63,6 +63,8 @@ public:
     /// \param pColorString: A CSS style color string, e.g. "rgb(100, 100, 100)"
     void Log(const QString& pText, const QString& pColorString = "white");
 
+    void CompilerLog(const std::optional<QString>& pPath, const QString& pText, const QString& pColorString = "white");
+
     /// \brief Fetches the current configuration as configured in the GUI widgets
     ///
     /// \return The current configuration as a Configuration object
@@ -96,6 +98,11 @@ signals:
     void NewProjectSignal(void);
 
     void OpenProjectSignal(void);
+
+    void OpenFolderSignal(void);
+
+    void BuildMarlinSignal(void);
+    void CleanSignal(void);
 
 public slots:
     /// \brief Initializes a new project by resetting the configuration
