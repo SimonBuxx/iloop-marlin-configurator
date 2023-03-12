@@ -79,8 +79,6 @@ public:
 
     void ReplaceTags(QStringList& pOutput);
 
-    void ResetValues(void);
-
     void JumpToFirstConfigTab(void);
 
 signals:
@@ -96,11 +94,16 @@ signals:
     void OpenWorkspaceSignal(void);
 
     void BuildMarlinSignal(void);
+    void RebuildMarlinSignal(void);
     void CleanSignal(void);
 
 public slots:
     /// \brief Closes the current workspace and resets the configuration
     void OnCloseWorkspace(void);
+
+    void OnOpenWorkspace(void);
+
+    void ResetValues(void);
 
 protected:
     void ConnectGuiSignalsAndSlots(void);

@@ -318,6 +318,10 @@ QTabBar::tab:!selected {
 	margin-top: 3px;
 }
 
+QTabBar::tab:disabled {
+	background: rgb(63, 65, 77);
+}
+
 QTabBar::scroller {
     width: 40px;
 }
@@ -336,8 +340,8 @@ QTabBar QToolButton::pressed {
 	margin-top: 4px;
 }
 
-QTabBar QToolButton::disabled {
-	background: rgb(188, 116, 0);
+QTabBar QToolButton:disabled {
+	background: rgb(63, 65, 77);
 }
 
 QTabBar QToolButton::right-arrow {
@@ -2352,7 +2356,7 @@ QTabBar QToolButton::left-arrow {
             <x>0</x>
             <y>0</y>
             <width>1469</width>
-            <height>1773</height>
+            <height>1858</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -5634,6 +5638,9 @@ QTabBar QToolButton::left-arrow {
       </property>
       <item row="0" column="0" colspan="2">
        <widget class="QTabWidget" name="uSensorTabWidget">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
           <horstretch>0</horstretch>
@@ -5665,6 +5672,10 @@ QTabBar::tab:!selected {
 	margin-top: 3px;
 }
 
+QTabBar::tab:disabled {
+	background: rgb(63, 65, 77);
+}
+
 QTabBar::scroller {
     width: 40px;
 }
@@ -5683,8 +5694,8 @@ QTabBar QToolButton::pressed {
 	margin-top: 4px;
 }
 
-QTabBar QToolButton::disabled {
-	background: rgb(188, 116, 0);
+QTabBar QToolButton:disabled {
+	background: rgb(63, 65, 77);
 }
 
 QTabBar QToolButton::right-arrow {
@@ -5734,8 +5745,8 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1469</width>
-               <height>127</height>
+               <width>1455</width>
+               <height>133</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -6130,8 +6141,8 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1469</width>
-               <height>127</height>
+               <width>1455</width>
+               <height>133</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -6526,8 +6537,8 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1469</width>
-               <height>127</height>
+               <width>1455</width>
+               <height>133</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -6922,8 +6933,8 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1469</width>
-               <height>127</height>
+               <width>1455</width>
+               <height>133</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -7318,8 +7329,8 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1469</width>
-               <height>127</height>
+               <width>1455</width>
+               <height>133</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -7714,8 +7725,8 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1469</width>
-               <height>127</height>
+               <width>1455</width>
+               <height>133</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -8110,8 +8121,8 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1469</width>
-               <height>127</height>
+               <width>1455</width>
+               <height>133</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -8506,8 +8517,8 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1469</width>
-               <height>127</height>
+               <width>1455</width>
+               <height>133</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -8905,8 +8916,8 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1469</width>
-               <height>127</height>
+               <width>1455</width>
+               <height>133</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -9298,8 +9309,8 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1469</width>
-               <height>127</height>
+               <width>1455</width>
+               <height>133</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -9694,8 +9705,8 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1469</width>
-               <height>127</height>
+               <width>1455</width>
+               <height>133</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -10093,8 +10104,8 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1469</width>
-               <height>127</height>
+               <width>1455</width>
+               <height>133</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -10492,8 +10503,8 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1469</width>
-               <height>127</height>
+               <width>1455</width>
+               <height>133</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -10888,8 +10899,8 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1469</width>
-               <height>127</height>
+               <width>1455</width>
+               <height>133</height>
               </rect>
              </property>
              <property name="styleSheet">
@@ -11290,6 +11301,9 @@ QTabBar QToolButton::left-arrow {
    </item>
    <item row="17" column="0" colspan="3">
     <widget class="QTabWidget" name="uLimitsTabWidget">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <property name="sizePolicy">
       <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
        <horstretch>0</horstretch>
@@ -11321,6 +11335,10 @@ QTabBar::tab:!selected {
 	margin-top: 3px;
 }
 
+QTabBar::tab:disabled {
+	background: rgb(63, 65, 77);
+}
+
 QTabBar::scroller {
     width: 40px;
 }
@@ -11339,8 +11357,8 @@ QTabBar QToolButton::pressed {
 	margin-top: 4px;
 }
 
-QTabBar QToolButton::disabled {
-	background: rgb(188, 116, 0);
+QTabBar QToolButton:disabled {
+	background: rgb(63, 65, 77);
 }
 
 QTabBar QToolButton::right-arrow {
@@ -11391,7 +11409,7 @@ QTabBar QToolButton::left-arrow {
             <x>0</x>
             <y>0</y>
             <width>1469</width>
-            <height>137</height>
+            <height>152</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -11570,7 +11588,7 @@ QTabBar QToolButton::left-arrow {
             <x>0</x>
             <y>0</y>
             <width>1469</width>
-            <height>137</height>
+            <height>152</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -11749,7 +11767,7 @@ QTabBar QToolButton::left-arrow {
             <x>0</x>
             <y>0</y>
             <width>1469</width>
-            <height>137</height>
+            <height>152</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -11928,7 +11946,7 @@ QTabBar QToolButton::left-arrow {
             <x>0</x>
             <y>0</y>
             <width>1469</width>
-            <height>137</height>
+            <height>152</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -12110,7 +12128,7 @@ QTabBar QToolButton::left-arrow {
             <x>0</x>
             <y>0</y>
             <width>1469</width>
-            <height>137</height>
+            <height>152</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -12289,7 +12307,7 @@ QTabBar QToolButton::left-arrow {
             <x>0</x>
             <y>0</y>
             <width>1469</width>
-            <height>137</height>
+            <height>152</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -12468,7 +12486,7 @@ QTabBar QToolButton::left-arrow {
             <x>0</x>
             <y>0</y>
             <width>1469</width>
-            <height>137</height>
+            <height>152</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -12647,7 +12665,7 @@ QTabBar QToolButton::left-arrow {
             <x>0</x>
             <y>0</y>
             <width>1469</width>
-            <height>137</height>
+            <height>152</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -12826,7 +12844,7 @@ QTabBar QToolButton::left-arrow {
             <x>0</x>
             <y>0</y>
             <width>1469</width>
-            <height>137</height>
+            <height>152</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -13005,7 +13023,7 @@ QTabBar QToolButton::left-arrow {
             <x>0</x>
             <y>0</y>
             <width>1469</width>
-            <height>137</height>
+            <height>152</height>
            </rect>
           </property>
           <property name="styleSheet">

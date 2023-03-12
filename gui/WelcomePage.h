@@ -49,8 +49,6 @@ public:
     ~WelcomePage(void) override;
 
 signals:
-    void NewProjectSignal(void);
-
     void OpenWorkspaceSignal(void);
 
 protected:

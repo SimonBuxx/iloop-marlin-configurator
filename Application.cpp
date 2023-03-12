@@ -55,6 +55,11 @@ Application::Application(QObject *parent)
 #warning make environment dynamic
         OnClean("mega2560");
     });
+    QObject::connect(&mMainWindow, &MainWindow::RebuildMarlinSignal, this, [&](){
+#warning make environment dynamic
+        OnClean("mega2560");
+        OnBuildMarlin("mega2560");
+    });
 
     mMainWindow.Log("Reading Configuration.h template...");
     mTemplate = ReadTemplateFromFile(QFileInfo(TEMPLATE_PATH));
@@ -259,8 +264,6 @@ std::optional<QStringList> Application::GenerateCode()
 
     return std::nullopt;
 }
-
-#warning implement reset values feature
 
 void Application::OnBuildMarlin(const QString& pEnvironment)
 {

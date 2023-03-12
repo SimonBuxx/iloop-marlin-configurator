@@ -1153,6 +1153,10 @@ QTabBar::tab {
 
 QTabBar::tab:!selected {
 	margin-top: 3px;
+}
+
+QTabBar::tab:disabled {
+	background: rgb(63, 65, 77);
 }</string>
      </property>
      <property name="currentIndex">
@@ -1195,7 +1199,7 @@ QTabBar::tab:!selected {
             <x>0</x>
             <y>0</y>
             <width>1259</width>
-            <height>350</height>
+            <height>344</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -1496,7 +1500,7 @@ QTabBar::tab:!selected {
             <x>0</x>
             <y>0</y>
             <width>1259</width>
-            <height>350</height>
+            <height>344</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -2081,6 +2085,9 @@ QTabBar::tab:!selected {
    </item>
    <item row="7" column="0" colspan="2">
     <widget class="QTabWidget" name="uSwitchingTabWidget">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <property name="styleSheet">
       <string notr="true">QTabWidget::pane {
 	border: 1px solid black;
@@ -2104,10 +2111,14 @@ QTabBar::tab {
 
 QTabBar::tab:!selected {
 	margin-top: 3px;
+}
+
+QTabBar::tab:disabled {
+	background: rgb(63, 65, 77);
 }</string>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tab_2">
       <attribute name="title">
@@ -3044,6 +3055,10 @@ QTabBar::tab {
 
 QTabBar::tab:!selected {
 	margin-top: 3px;
+}
+
+QTabBar::tab:disabled {
+	background: rgb(63, 65, 77);
 }</string>
      </property>
      <property name="currentIndex">

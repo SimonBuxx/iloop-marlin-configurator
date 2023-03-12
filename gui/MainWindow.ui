@@ -880,6 +880,8 @@ QScrollBar::sub-line:horizontal
     <addaction name="uSaveWorkspaceAction"/>
     <addaction name="uCloseWorkspaceAction"/>
     <addaction name="separator"/>
+    <addaction name="uResetConfigurationAction"/>
+    <addaction name="separator"/>
     <addaction name="uCloseAction"/>
    </widget>
    <widget class="QMenu" name="menuHilfe">
@@ -924,6 +926,9 @@ QScrollBar::sub-line:horizontal
    <addaction name="menuHilfe"/>
   </widget>
   <widget class="DockWidget" name="uNavigationDock">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="sizePolicy">
     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
      <horstretch>0</horstretch>
@@ -962,7 +967,10 @@ QScrollBar::sub-line:horizontal
    <attribute name="dockWidgetArea">
     <number>1</number>
    </attribute>
-   <widget class="QWidget" name="dockWidgetContents">
+   <widget class="QWidget" name="uNavigationDockWidgetContents">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="focusPolicy">
      <enum>Qt::StrongFocus</enum>
     </property>
@@ -2009,6 +2017,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </property>
   </action>
   <action name="uSaveWorkspaceAction">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="../resources/resources.qrc">
      <normaloff>:/save_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/save_FILL0_wght100_GRAD0_opsz20.svg</iconset>
@@ -2423,6 +2434,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </property>
   </action>
   <action name="uActionConfigure">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="../resources/resources.qrc">
      <normaloff>:/settings_suggest_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/settings_suggest_FILL0_wght100_GRAD0_opsz20.svg</iconset>
@@ -2435,6 +2449,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </property>
   </action>
   <action name="uActionBuild">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="../resources/resources.qrc">
      <normaloff>:/build_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/build_FILL0_wght100_GRAD0_opsz20.svg</iconset>
@@ -2447,6 +2464,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </property>
   </action>
   <action name="uActionRebuild">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="../resources/resources.qrc">
      <normaloff>:/handyman_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/handyman_FILL0_wght100_GRAD0_opsz20.svg</iconset>
@@ -2459,6 +2479,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </property>
   </action>
   <action name="uActionClean">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="../resources/resources.qrc">
      <normaloff>:/mop_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/mop_FILL0_wght100_GRAD0_opsz20.svg</iconset>
@@ -2471,6 +2494,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </property>
   </action>
   <action name="uActionUpload">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="../resources/resources.qrc">
      <normaloff>:/upload_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/upload_FILL0_wght100_GRAD0_opsz20.svg</iconset>
@@ -2483,8 +2509,20 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </property>
   </action>
   <action name="uCloseWorkspaceAction">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>Close Workspace</string>
+   </property>
+  </action>
+  <action name="uResetConfigurationAction">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/restart_alt_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/restart_alt_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Reset Configuration</string>
    </property>
   </action>
  </widget>

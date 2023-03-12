@@ -32,6 +32,7 @@
 #include <QTimer>
 #include <QTabBar>
 #include <QScrollBar>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *pParent)
     : QMainWindow(pParent)
@@ -94,6 +95,11 @@ MainWindow::MainWindow(QWidget *pParent)
     mUi->stackedWidget->setCurrentIndex(0);
     UpdateActiveTabButtonColor();
 
+    for (auto&& page : mConfigPages)
+    {
+        page->setEnabled(false);
+    }
+
     OnUpdatePreview(QStringList("Preview not available."));
 }
 
@@ -134,7 +140,21 @@ void MainWindow::ConnectGuiSignalsAndSlots()
     }
 
     QObject::connect(mUi->uSaveWorkspaceAction, &QAction::triggered, this, &MainWindow::SaveProjectSignal);
-    QObject::connect(mUi->uOpenWorkspaceAction, &QAction::triggered, this, &MainWindow::OpenWorkspaceSignal);
+    QObject::connect(mUi->uOpenWorkspaceAction, &QAction::triggered, this, &MainWindow::OnOpenWorkspace);
+    QObject::connect(mUi->uResetConfigurationAction, &QAction::triggered, this, [&](){
+        QMessageBox msgBox;
+        msgBox.setText("Do you really want to reset the workspace configuration?");
+        msgBox.setInformativeText("Reset only affects the displayed values, the workspace files are not updated until explicitly saved.");
+        msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+        msgBox.setIcon(QMessageBox::Question);
+        if (msgBox.exec() == QMessageBox::No)
+        {
+            return;
+        }
+
+        ResetValues();
+        Log("Workspace configuration resetted.", "rgb(249, 154, 0)");
+    });
 
     QObject::connect(mUi->uActionConfigure, &QAction::triggered, this, [&]()
     {
@@ -146,6 +166,12 @@ void MainWindow::ConnectGuiSignalsAndSlots()
         mUi->uCompilerOutputsDock->raise();
 
         emit BuildMarlinSignal();
+    });
+
+    QObject::connect(mUi->uActionRebuild, &QAction::triggered, this, [&](){
+        mUi->uCompilerOutputsDock->raise();
+
+        emit RebuildMarlinSignal();
     });
 
     QObject::connect(mUi->uActionClean, &QAction::triggered, this, [&](){
@@ -262,7 +288,38 @@ void MainWindow::OnCloseWorkspace()
     mUi->uWelcomeTabButton->click();
     SetWorkspace(std::nullopt);
 
+    mUi->uSaveWorkspaceAction->setEnabled(false);
+    mUi->uActionConfigure->setEnabled(false);
+    mUi->uActionBuild->setEnabled(false);
+    mUi->uActionRebuild->setEnabled(false);
+    mUi->uActionClean->setEnabled(false);
+    mUi->uActionUpload->setEnabled(false);
+    mUi->uCloseWorkspaceAction->setEnabled(false);
+
+    for (auto&& page : mConfigPages)
+    {
+        page->setEnabled(false);
+    }
+
     emit CloseWorkspaceSignal();
+}
+
+void MainWindow::OnOpenWorkspace()
+{
+    mUi->uSaveWorkspaceAction->setEnabled(true);
+    mUi->uActionConfigure->setEnabled(true);
+    mUi->uActionBuild->setEnabled(true);
+    mUi->uActionRebuild->setEnabled(true);
+    mUi->uActionClean->setEnabled(true);
+    mUi->uActionUpload->setEnabled(true);
+    mUi->uCloseWorkspaceAction->setEnabled(true);
+
+    for (auto&& page : mConfigPages)
+    {
+        page->setEnabled(true);
+    }
+
+    emit OpenWorkspaceSignal();
 }
 
 Configuration MainWindow::FetchConfiguration()
