@@ -32,6 +32,7 @@
 #include <QJsonObject>
 #include <QFontDatabase>
 #include <QProcess>
+#include <QMessageBox>
 
 Application::Application(QObject *parent)
     : QObject(parent)
@@ -42,11 +43,10 @@ Application::Application(QObject *parent)
     QFontDatabase::addApplicationFont(":/SourceSansPro-LightItalic.ttf");
     QFontDatabase::addApplicationFont(":/SourceSansPro-Regular.ttf");
 
-    QObject::connect(&mMainWindow, &MainWindow::ExportConfigurationSignal, this, &Application::OnExportConfiguration);
+    QObject::connect(&mMainWindow, &MainWindow::ConfigureSignal, this, &Application::OnConfigure);
     QObject::connect(&mMainWindow, &MainWindow::SaveProjectSignal, this, &Application::OnSaveProject);
-    QObject::connect(&mMainWindow, &MainWindow::NewProjectSignal, this, &Application::OnNewProject);
-    QObject::connect(&mMainWindow, &MainWindow::OpenProjectSignal, this, &Application::OnOpenProject);
-    QObject::connect(&mMainWindow, &MainWindow::OpenFolderSignal, this, &Application::OnOpenFolder);
+    QObject::connect(&mMainWindow, &MainWindow::CloseWorkspaceSignal, this, &Application::OnCloseWorkspace);
+    QObject::connect(&mMainWindow, &MainWindow::OpenWorkspaceSignal, this, &Application::OnOpenFolder);
     QObject::connect(&mMainWindow, &MainWindow::BuildMarlinSignal, this, [&](){
 #warning make environment dynamic
         OnBuildMarlin("mega2560");
@@ -73,20 +73,49 @@ Application::Application(QObject *parent)
 Application::~Application()
 {}
 
-void Application::OnExportConfiguration(const QFileInfo& pFileInfo)
+void Application::OnConfigure()
 {
-    mMainWindow.Log(QString("Export of output file %0 started...").arg(pFileInfo.filePath()));
+#warning [ENHANCEMENT] disable actions when no workspace is open
+    if (!mFolderInfo.has_value())
+    {
+        mMainWindow.Log(QString("Configuration failed: No Marlin workspace opened."), "red");
+        return;
+    }
+
+    if (!QDir(mFolderInfo.value().filePath() + "/Marlin").exists())
+    {
+        mMainWindow.Log(QString("Configuration failed: Subfolder %0 does not exist.").arg(mFolderInfo.value().filePath() + "/Marlin"), "red");
+        return;
+    }
+
+    if (mNewWorkspace)
+    {
+        QMessageBox msgBox;
+        msgBox.setText("Workspace not yet configured for use with iMC");
+        msgBox.setInformativeText("There is no configuration.json file present in this workspace. Please make sure not to loose existing configuration data before continuing.");
+        msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
+        msgBox.setIcon(QMessageBox::Warning);
+        if (msgBox.exec() == QMessageBox::Cancel)
+        {
+            return;
+        }
+        mNewWorkspace = false;
+    }
+
+    const auto filePath = mFolderInfo.value().filePath() + "/Marlin/Configuration.h";
+
+    mMainWindow.Log(QString("Generation of configuration file %0 started...").arg(filePath));
     QCoreApplication::processEvents(); // to ensure that the message is printed before the GUI freezes
 
     const auto&& stringList = GenerateCode();
 
     if (!stringList.has_value())
     {
-        mMainWindow.Log("Could not generate output file: no file template loaded.", "red");
+        mMainWindow.Log(QString("Could not generate file %0: no file template loaded.").arg(filePath), "red");
         return;
     }
 
-    QFile file(pFileInfo.filePath());
+    QFile file(filePath);
 
     if (file.open(QFile::WriteOnly | QFile::Text))
     {
@@ -98,46 +127,33 @@ void Application::OnExportConfiguration(const QFileInfo& pFileInfo)
     }
     else
     {
-        mMainWindow.Log(QString("Could not open output file %0").arg(pFileInfo.filePath()), "red");
+        mMainWindow.Log(QString("Could not open configuration file %0").arg(filePath), "red");
         return;
     }
 
     file.close();
 
-    mMainWindow.Log(QString("Generation of output file %0 successful.").arg(pFileInfo.filePath()));
+    mMainWindow.Log(QString("Generation of configuration file %0 successful.").arg(filePath), "rgb(249, 154, 0)");
 }
 
-void Application::OnSaveProject(bool pForceSaveAs)
+void Application::OnSaveProject()
 {
-    QFileInfo fileInfo;
+    if (!mFolderInfo.has_value())
+    {
+        mMainWindow.Log(QString("Saving workspace configuration failed: No Marlin workspace opened."), "red");
+        return;
+    }
+
+    QFileInfo fileInfo{mFolderInfo.value().filePath() + "/configuration.json"};
 
     const auto& config = mMainWindow.FetchConfiguration();
-
-    if (mOpenFileInfo.has_value() && !pForceSaveAs)
-    {
-        fileInfo = mOpenFileInfo.value();
-    }
-    else
-    {
-        const QString name = QString("\\%0.json").arg(config.hardware.CUSTOM_MACHINE_NAME.isEmpty() ? "unnamed" : config.hardware.CUSTOM_MACHINE_NAME);
-
-        QString fileName = QFileDialog::getSaveFileName(&mMainWindow, tr("Save Project As..."), QDir::homePath() + name, tr("JSON document (*.json)"));
-
-        if (fileName.isEmpty())
-        {
-            return;
-        }
-
-        fileInfo = QFileInfo(fileName);
-    }
-
     const auto& json = config.ToJson();
 
     QFile file(fileInfo.filePath());
 
     if (!file.open(QIODevice::WriteOnly))
     {
-        mMainWindow.Log(QString("Could not open save file %0").arg(fileInfo.filePath()), "red");
+        mMainWindow.Log(QString("Could not open workspace configuration file %0").arg(fileInfo.filePath()), "red");
         return;
     }
 
@@ -145,35 +161,31 @@ void Application::OnSaveProject(bool pForceSaveAs)
 
     file.close();
 
-    mMainWindow.Log(QString("Saved project as %0").arg(fileInfo.filePath()));
+    mMainWindow.Log(QString("Saved workspace configuration as %0").arg(fileInfo.filePath()));
 
     mOpenFileInfo = fileInfo;
-    mMainWindow.SetProjectName(fileInfo.baseName());
+    mNewWorkspace = false;
 }
 
-void Application::OnNewProject()
+void Application::OnCloseWorkspace()
 {
-    mOpenFileInfo = std::nullopt;
-}
-
-void Application::OnOpenProject()
-{
-    QFileInfo fileInfo;
-
-    QString fileName = QFileDialog::getOpenFileName(&mMainWindow, tr("Open Project..."), QDir::homePath(), tr("JSON document (*.json)"));
-
-    if (fileName.isEmpty())
+    if (!mFolderInfo.has_value())
     {
+        mMainWindow.Log("Could not close workspace: No Marlin workspace opened.", "red");
         return;
     }
 
-    fileInfo = QFileInfo(fileName);
+    mMainWindow.Log(QString("Workspace %0 has been closed.").arg(mFolderInfo.value().filePath()));
+    mFolderInfo = std::nullopt;
+}
 
-    QFile file(fileInfo.filePath());
+void Application::OpenConfigurationJson(const QFileInfo& pFilePath)
+{
+    QFile file(pFilePath.filePath());
 
     if (!file.open(QIODevice::ReadOnly))
     {
-        mMainWindow.Log(QString("Could not open file %0").arg(fileInfo.filePath()), "red");
+        mMainWindow.Log(QString("Could not open file %0").arg(pFilePath.filePath()), "red");
         return;
     }
 
@@ -185,19 +197,17 @@ void Application::OnOpenProject()
     QJsonDocument document = QJsonDocument::fromJson(bytes, &jsonError);
     if (jsonError.error != QJsonParseError::NoError || !document.isObject())
     {
-        mMainWindow.Log(QString("Could not open file %0").arg(fileInfo.filePath()), "red");
+        mMainWindow.Log(QString("Could not open file %0").arg(pFilePath.filePath()), "red");
         return;
     }
 
-    if (!mMainWindow.LoadProject(document.object()))
+    if (!mMainWindow.LoadConfigurationFromJson(document.object()))
     {
-        mMainWindow.Log(QString("Content of file %0 incomplete, proceed with caution.").arg(fileInfo.filePath()), "red");
+        mMainWindow.Log(QString("Content of file %0 incomplete, proceed with caution.").arg(pFilePath.filePath()), "red");
     }
 
-    mMainWindow.Log(QString("Opened project %0").arg(fileInfo.filePath()));
+    mMainWindow.Log(QString("Fetched configuration from file %0").arg(pFilePath.filePath()));
 
-    mOpenFileInfo = fileInfo;
-    mMainWindow.SetProjectName(fileInfo.baseName());
     mMainWindow.JumpToFirstConfigTab();
 }
 
@@ -205,7 +215,7 @@ void Application::OnOpenFolder()
 {
     QFileInfo folderInfo;
 
-    QString folderName = QFileDialog::getExistingDirectory(&mMainWindow, tr("Open Folder..."), QDir::homePath());
+    QString folderName = QFileDialog::getExistingDirectory(&mMainWindow, tr("Open Workspace..."), QDir::homePath());
 
     if (folderName.isEmpty())
     {
@@ -214,9 +224,27 @@ void Application::OnOpenFolder()
 
     folderInfo = QFileInfo(folderName);
 
-    mMainWindow.Log(QString("Opened folder %0").arg(folderInfo.filePath()));
+    if (!QFile(folderInfo.filePath() + "/platformio.ini").exists())
+    {
+        mMainWindow.Log("Opening failed: The folder provided is not a Marlin base folder.", "red");
+        return;
+    }
+
+    if (!QFile(folderInfo.filePath() + "/configuration.json").exists())
+    {
+        mMainWindow.Log("Attention: This workspace is not yet configured for use with iMC. The configuration in the software is set to default. Please make sure not to not to loose existing configuration data.", "red");
+        mNewWorkspace = true;
+    }
+    else
+    {
+        OpenConfigurationJson(QFileInfo(folderInfo.filePath() + "/configuration.json"));
+    }
+
+    mMainWindow.Log(QString("Opened Marlin workspace %0").arg(folderInfo.filePath()));
 
     mFolderInfo = folderInfo;
+
+    mMainWindow.SetWorkspace(folderInfo.filePath());
 }
 
 std::optional<QStringList> Application::GenerateCode()
@@ -232,8 +260,16 @@ std::optional<QStringList> Application::GenerateCode()
     return std::nullopt;
 }
 
+#warning implement reset values feature
+
 void Application::OnBuildMarlin(const QString& pEnvironment)
 {
+    if (!mFolderInfo.has_value())
+    {
+        mMainWindow.Log("Could not start build: No Marlin workspace opened.", "red");
+        return;
+    }
+
     mBuildSuccess = false;
 
     QProcess process;
@@ -244,10 +280,7 @@ void Application::OnBuildMarlin(const QString& pEnvironment)
         return;
     }
 
-    if (mFolderInfo.has_value())
-    {
-        process.write(QString("cd %0\n").arg(mFolderInfo.value().filePath()).toLocal8Bit());
-    }
+    process.write(QString("cd %0\n").arg(mFolderInfo.value().filePath()).toLocal8Bit());
 
     QObject::connect(&process, &QProcess::readyReadStandardOutput, this, [&](){
         auto stream = QTextStream(process.readAllStandardOutput());
@@ -319,6 +352,12 @@ void Application::OnBuildMarlin(const QString& pEnvironment)
 
 void Application::OnClean(const QString& pEnvironment)
 {
+    if (!mFolderInfo.has_value())
+    {
+        mMainWindow.Log("Could not start cleaning: No Marlin workspace opened.", "red");
+        return;
+    }
+
     mBuildSuccess = false;
 
     QProcess process;

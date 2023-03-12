@@ -34,7 +34,7 @@ WelcomePage::WelcomePage(QWidget *pParent) :
     mUi->setupUi(this);
 
     QObject::connect(mUi->uNewProjectButton, &QPushButton::clicked, this, &WelcomePage::NewProjectSignal);
-    QObject::connect(mUi->uOpenProjectButton, &QPushButton::clicked, this, &WelcomePage::OpenProjectSignal);
+    QObject::connect(mUi->uOpenWorkspaceButton, &QPushButton::clicked, this, &WelcomePage::OpenWorkspaceSignal);
 
     mUi->uTitleLabel->setText(QString("WELCOME TO iMC v%0").arg(SW_VERSION));
 }

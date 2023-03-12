@@ -71,7 +71,7 @@ QPushButton:hover {
     </spacer>
    </item>
    <item row="6" column="1">
-    <widget class="QPushButton" name="uOpenProjectButton">
+    <widget class="QPushButton" name="uOpenWorkspaceButton">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -84,7 +84,7 @@ QPushButton:hover {
 }</string>
      </property>
      <property name="text">
-      <string>Open Project...</string>
+      <string>Open Workspace...</string>
      </property>
      <property name="icon">
       <iconset resource="../resources/resources.qrc">

@@ -73,9 +73,9 @@ public:
     /// \brief Setter for the project name on the GUI
     ///
     /// \param pName: The new project name to display or std::nullopt to display no name
-    void SetProjectName(const std::optional<QString>& pName);
+    void SetWorkspace(const std::optional<QString>& pName);
 
-    bool LoadProject(const QJsonObject& pJson);
+    bool LoadConfigurationFromJson(const QJsonObject& pJson);
 
     void ReplaceTags(QStringList& pOutput);
 
@@ -85,28 +85,22 @@ public:
 
 signals:
     /// \brief Emitted when the current configuration should be exported as a C++ header file
-    ///
-    /// \param pFileInfo: File info of the target file
-    void ExportConfigurationSignal(const QFileInfo& pFileInfo);
+    void ConfigureSignal(void);
 
-    /// \brief Emitted when the current project should be saved
-    ///
-    /// \param pForceSaveAs: If \b true, the save dialog is always displayed
-    void SaveProjectSignal(bool pForceSaveAs = false);
+    /// \brief Emitted when the current workspace configuration should be saved
+    void SaveProjectSignal(void);
 
-    /// \brief Emitted when a new project is being initialized
-    void NewProjectSignal(void);
+    /// \brief Emitted when the workspace is being closed
+    void CloseWorkspaceSignal(void);
 
-    void OpenProjectSignal(void);
-
-    void OpenFolderSignal(void);
+    void OpenWorkspaceSignal(void);
 
     void BuildMarlinSignal(void);
     void CleanSignal(void);
 
 public slots:
-    /// \brief Initializes a new project by resetting the configuration
-    void OnNewProject(void);
+    /// \brief Closes the current workspace and resets the configuration
+    void OnCloseWorkspace(void);
 
 protected:
     void ConnectGuiSignalsAndSlots(void);

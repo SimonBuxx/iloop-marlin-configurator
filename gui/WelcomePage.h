@@ -51,7 +51,7 @@ public:
 signals:
     void NewProjectSignal(void);
 
-    void OpenProjectSignal(void);
+    void OpenWorkspaceSignal(void);
 
 protected:
     Ui::WelcomePage *mUi;

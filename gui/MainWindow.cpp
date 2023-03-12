@@ -37,7 +37,7 @@ MainWindow::MainWindow(QWidget *pParent)
     : QMainWindow(pParent)
     , mUi(new Ui::MainWindow)
     , mAboutDialog(this)
-    , mStatusLabel("Project: -")
+    , mStatusLabel("Workspace: -")
     , mMarlinVersionLabel(QString("Marlin Version: v%0").arg(MARLIN_VERSION))
 {
     mUi->setupUi(this);
@@ -47,23 +47,23 @@ MainWindow::MainWindow(QWidget *pParent)
     // Initialize dock widgets
     constexpr auto dockHeight = 200;
 
-    tabifyDockWidget(mUi->uConsoleDock, mUi->uCodePreviewDock);
-    tabifyDockWidget(mUi->uCodePreviewDock, mUi->uCompilerOutputsDock);
+    tabifyDockWidget(mUi->uConsoleDock, mUi->uCompilerOutputsDock);
+    tabifyDockWidget(mUi->uCompilerOutputsDock, mUi->uCodePreviewDock);
     resizeDocks(QList{static_cast<QDockWidget*>(mUi->uConsoleDock),
-                      static_cast<QDockWidget*>(mUi->uCodePreviewDock),
-                      static_cast<QDockWidget*>(mUi->uCompilerOutputsDock)},
+                      static_cast<QDockWidget*>(mUi->uCompilerOutputsDock),
+                      static_cast<QDockWidget*>(mUi->uCodePreviewDock)},
                 QList{dockHeight, dockHeight, dockHeight}, Qt::Vertical);
 
     // Add dock widget view actions to menu
     mUi->menuView->addAction(mUi->uNavigationDock->toggleViewAction());
     mUi->menuView->addAction(mUi->uConsoleDock->toggleViewAction());
-    mUi->menuView->addAction(mUi->uCodePreviewDock->toggleViewAction());
     mUi->menuView->addAction(mUi->uCompilerOutputsDock->toggleViewAction());
+    mUi->menuView->addAction(mUi->uCodePreviewDock->toggleViewAction());
 
     mUi->menuView->actions().at(0)->setShortcut(QKeySequence("Alt+N"));
     mUi->menuView->actions().at(1)->setShortcut(QKeySequence("Alt+O"));
-    mUi->menuView->actions().at(2)->setShortcut(QKeySequence("Alt+P"));
-    mUi->menuView->actions().at(3)->setShortcut(QKeySequence("Alt+C"));
+    mUi->menuView->actions().at(2)->setShortcut(QKeySequence("Alt+C"));
+    mUi->menuView->actions().at(3)->setShortcut(QKeySequence("Alt+P"));
 
     for (auto&& page : findChildren<AbstractPage*>())
     {
@@ -123,10 +123,9 @@ void MainWindow::ConnectGuiSignalsAndSlots()
 
     QObject::connect(mUi->uCloseAction, &QAction::triggered, this, &QMainWindow::close);
     QObject::connect(mUi->uAboutAction, &QAction::triggered, &mAboutDialog, &AboutDialog::show);
-    QObject::connect(mUi->uNewProjectAction, &QAction::triggered, this, &MainWindow::OnNewProject);
+    QObject::connect(mUi->uCloseWorkspaceAction, &QAction::triggered, this, &MainWindow::OnCloseWorkspace);
 
-    QObject::connect(mUi->uWelcomePage, &WelcomePage::NewProjectSignal, this, &MainWindow::OnNewProject);
-    QObject::connect(mUi->uWelcomePage, &WelcomePage::OpenProjectSignal, this, &MainWindow::OpenProjectSignal);
+    QObject::connect(mUi->uWelcomePage, &WelcomePage::OpenWorkspaceSignal, this, &MainWindow::OpenWorkspaceSignal);
 
     // Connects for code preview
     for (auto&& page : findChildren<AbstractPage*>())
@@ -134,31 +133,13 @@ void MainWindow::ConnectGuiSignalsAndSlots()
         QObject::connect(page, &AbstractPage::UpdatePreviewSignal, this, &MainWindow::OnUpdatePreview);
     }
 
-    QObject::connect(mUi->uExportAction, &QAction::triggered, this, [&]()
+    QObject::connect(mUi->uSaveWorkspaceAction, &QAction::triggered, this, &MainWindow::SaveProjectSignal);
+    QObject::connect(mUi->uOpenWorkspaceAction, &QAction::triggered, this, &MainWindow::OpenWorkspaceSignal);
+
+    QObject::connect(mUi->uActionConfigure, &QAction::triggered, this, [&]()
     {
-        QString fileName = QFileDialog::getSaveFileName(this, tr("Export as..."), QDir::homePath() + "/Configuration.h", tr("C++ header (*.h)"));
-
-        if (fileName.isEmpty())
-        {
-            return;
-        }
-
-        emit ExportConfigurationSignal(QFileInfo(fileName));
+        emit ConfigureSignal();
     });
-
-    QObject::connect(mUi->uSaveProjectAction, &QAction::triggered, this, [&]()
-    {
-        emit SaveProjectSignal();
-    });
-
-    QObject::connect(mUi->uSaveProjectAsAction, &QAction::triggered, this, [&]()
-    {
-        emit SaveProjectSignal(true);
-    });
-
-    QObject::connect(mUi->uOpenProjectAction, &QAction::triggered, this, &MainWindow::OpenProjectSignal);
-
-    QObject::connect(mUi->uOpenFolderAction, &QAction::triggered, this, &MainWindow::OpenFolderSignal);
 
 #warning disable actions while building/cleaning/uploading
     QObject::connect(mUi->uActionBuild, &QAction::triggered, this, [&](){
@@ -274,15 +255,14 @@ void MainWindow::JumpToFirstConfigTab()
     mUi->uFirmwareTabButton->click();
 }
 
-void MainWindow::OnNewProject()
+void MainWindow::OnCloseWorkspace()
 {
     ResetValues();
 
-    JumpToFirstConfigTab();
-    SetProjectName(std::nullopt);
-    Log("New project initialized.", "rgb(249, 154, 0)");
+    mUi->uWelcomeTabButton->click();
+    SetWorkspace(std::nullopt);
 
-    emit NewProjectSignal();
+    emit CloseWorkspaceSignal();
 }
 
 Configuration MainWindow::FetchConfiguration()
@@ -305,14 +285,13 @@ void MainWindow::ReplaceTags(QStringList& pOutput)
     }
 }
 
-void MainWindow::SetProjectName(const std::optional<QString>& pName)
+void MainWindow::SetWorkspace(const std::optional<QString>& pName)
 {
-
-    mStatusLabel.setText(QString("Project: %0").arg(pName.value_or("-")));
+    mStatusLabel.setText(QString("Workspace: %0").arg(pName.value_or("-")));
     setWindowTitle(QString("%0iMC - iLOOP Marlin Configurator v%1").arg(pName.has_value() ? pName.value() + " - " : "", SW_VERSION));
 }
 
-bool MainWindow::LoadProject(const QJsonObject& pJson)
+bool MainWindow::LoadConfigurationFromJson(const QJsonObject& pJson)
 {
     ResetValues();
 

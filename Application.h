@@ -46,21 +46,14 @@ public:
     ~Application(void) override;
 
 protected slots:
-    /// \brief Exports the current configuration into the given file
-    ///
-    /// \param pFileInfo: The file to export the configuration into
-    void OnExportConfiguration(const QFileInfo& pFileInfo);
+    /// \brief Exports the current configuration
+    void OnConfigure(void);
 
     /// \brief Saves the project either in the open location or asks for the file path
-    ///
-    /// \param pForceSaveAs: If \b true, the software will always ask for the file path
-    void OnSaveProject(bool pForceSaveAs = false);
+    void OnSaveProject(void);
 
-    /// \brief Initializes a new project
-    void OnNewProject(void);
-
-    /// \brief Opens a project and asks for the file path before
-    void OnOpenProject(void);
+    /// \brief Called when the current workspace is being closed
+    void OnCloseWorkspace(void);
 
     void OnOpenFolder(void);
 
@@ -74,6 +67,8 @@ protected:
     /// \return The Configuration.h content as a QStringList, if successful
     std::optional<QStringList> GenerateCode(void);
 
+    void OpenConfigurationJson(const QFileInfo& pFilePath);
+
 protected:
     MainWindow mMainWindow;
 
@@ -84,6 +79,8 @@ protected:
     QString mCurrent;
 
     bool mBuildSuccess{false};
+
+    bool mNewWorkspace{false};
 };
 
 #endif // APPLICATION_H

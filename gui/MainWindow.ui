@@ -876,13 +876,9 @@ QScrollBar::sub-line:horizontal
     <property name="title">
      <string>File</string>
     </property>
-    <addaction name="uNewProjectAction"/>
-    <addaction name="uOpenProjectAction"/>
-    <addaction name="uOpenFolderAction"/>
-    <addaction name="uSaveProjectAction"/>
-    <addaction name="uSaveProjectAsAction"/>
-    <addaction name="separator"/>
-    <addaction name="uExportAction"/>
+    <addaction name="uOpenWorkspaceAction"/>
+    <addaction name="uSaveWorkspaceAction"/>
+    <addaction name="uCloseWorkspaceAction"/>
     <addaction name="separator"/>
     <addaction name="uCloseAction"/>
    </widget>
@@ -913,6 +909,8 @@ QScrollBar::sub-line:horizontal
     <property name="title">
      <string>Build</string>
     </property>
+    <addaction name="uActionConfigure"/>
+    <addaction name="separator"/>
     <addaction name="uActionBuild"/>
     <addaction name="uActionRebuild"/>
     <addaction name="uActionClean"/>
@@ -1989,9 +1987,13 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <bool>false</bool>
    </property>
   </action>
-  <action name="uOpenFolderAction">
+  <action name="uOpenWorkspaceAction">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/file_open_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/file_open_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+   </property>
    <property name="text">
-    <string>Open Folder...</string>
+    <string>Open Workspace...</string>
    </property>
    <property name="iconText">
     <string>Open Folder...</string>
@@ -1999,17 +2001,20 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <property name="toolTip">
     <string>Open Folder...</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
    <property name="autoRepeat">
     <bool>false</bool>
    </property>
   </action>
-  <action name="uSaveProjectAction">
+  <action name="uSaveWorkspaceAction">
    <property name="icon">
     <iconset resource="../resources/resources.qrc">
      <normaloff>:/save_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/save_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
-    <string>Save Project</string>
+    <string>Save Workspace</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+S</string>
@@ -2417,6 +2422,18 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <bool>false</bool>
    </property>
   </action>
+  <action name="uActionConfigure">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/settings_suggest_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/settings_suggest_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Configure</string>
+   </property>
+   <property name="shortcut">
+    <string>F5</string>
+   </property>
+  </action>
   <action name="uActionBuild">
    <property name="icon">
     <iconset resource="../resources/resources.qrc">
@@ -2424,6 +2441,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </property>
    <property name="text">
     <string>Build</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
    </property>
   </action>
   <action name="uActionRebuild">
@@ -2434,6 +2454,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <property name="text">
     <string>Rebuild</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+R</string>
+   </property>
   </action>
   <action name="uActionClean">
    <property name="icon">
@@ -2443,6 +2466,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <property name="text">
     <string>Clean</string>
    </property>
+   <property name="shortcut">
+    <string>F6</string>
+   </property>
   </action>
   <action name="uActionUpload">
    <property name="icon">
@@ -2451,6 +2477,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </property>
    <property name="text">
     <string>Upload</string>
+   </property>
+   <property name="shortcut">
+    <string>F7</string>
+   </property>
+  </action>
+  <action name="uCloseWorkspaceAction">
+   <property name="text">
+    <string>Close Workspace</string>
    </property>
   </action>
  </widget>
