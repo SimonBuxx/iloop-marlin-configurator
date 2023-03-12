@@ -69,6 +69,8 @@ public:
     /// \param pOutput: Reference to the text to replace tags in
     void ReplaceTags(QStringList& pOutput) override;
 
+    QString GetEnvironment(void) const;
+
 protected:
     /// \brief Connects this widget's signals and slots
     void ConnectGuiSignalsAndSlots(void) override;

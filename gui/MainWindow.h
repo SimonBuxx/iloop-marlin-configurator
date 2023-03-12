@@ -81,6 +81,8 @@ public:
 
     void JumpToFirstConfigTab(void);
 
+    QString GetEnvironment(void) const;
+
 signals:
     /// \brief Emitted when the current configuration should be exported as a C++ header file
     void ConfigureSignal(void);

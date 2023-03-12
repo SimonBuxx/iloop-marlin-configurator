@@ -48,17 +48,14 @@ Application::Application(QObject *parent)
     QObject::connect(&mMainWindow, &MainWindow::CloseWorkspaceSignal, this, &Application::OnCloseWorkspace);
     QObject::connect(&mMainWindow, &MainWindow::OpenWorkspaceSignal, this, &Application::OnOpenFolder);
     QObject::connect(&mMainWindow, &MainWindow::BuildMarlinSignal, this, [&](){
-#warning make environment dynamic
-        OnBuildMarlin("mega2560");
+        OnBuildMarlin(mMainWindow.GetEnvironment());
     });
     QObject::connect(&mMainWindow, &MainWindow::CleanSignal, this, [&](){
-#warning make environment dynamic
-        OnClean("mega2560");
+        OnClean(mMainWindow.GetEnvironment());
     });
     QObject::connect(&mMainWindow, &MainWindow::RebuildMarlinSignal, this, [&](){
-#warning make environment dynamic
-        OnClean("mega2560");
-        OnBuildMarlin("mega2560");
+        OnClean(mMainWindow.GetEnvironment());
+        OnBuildMarlin(mMainWindow.GetEnvironment());
     });
 
     mMainWindow.Log("Reading Configuration.h template...");
@@ -96,7 +93,7 @@ void Application::OnConfigure()
     if (mNewWorkspace)
     {
         QMessageBox msgBox;
-        msgBox.setText("Workspace not yet configured for use with iMC");
+        msgBox.setText("This workspace is not yet configured for use with iMC.");
         msgBox.setInformativeText("There is no configuration.json file present in this workspace. Please make sure not to loose existing configuration data before continuing.");
         msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
         msgBox.setIcon(QMessageBox::Warning);
@@ -237,7 +234,7 @@ void Application::OnOpenFolder()
 
     if (!QFile(folderInfo.filePath() + "/configuration.json").exists())
     {
-        mMainWindow.Log("Attention: This workspace is not yet configured for use with iMC. The configuration in the software is set to default. Please make sure not to not to loose existing configuration data.", "red");
+        mMainWindow.Log("This workspace is not yet configured for use with iMC. Workspace configuration is set to default. Please make sure not to loose existing configuration data.", "red");
         mNewWorkspace = true;
     }
     else

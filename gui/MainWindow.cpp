@@ -268,6 +268,11 @@ void MainWindow::OnUpdatePreview(const QStringList& pPreviewCode)
     mUi->uPreviewEdit->verticalScrollBar()->setValue(val);
 }
 
+QString MainWindow::GetEnvironment() const
+{
+    return mUi->uHardwarePage->GetEnvironment();
+}
+
 void MainWindow::ResetValues()
 {
     for (auto&& page : mConfigPages)

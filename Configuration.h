@@ -53,6 +53,7 @@ static constexpr auto ENABLE_STRING_CONFIG_H_AUTHOR{false};
 static constexpr auto ENABLE_CUSTOM_VERSION_FILE{false};
 
 // Hardware Info
+static constexpr auto ENVIRONMENT{"mega2560"};
 static constexpr auto MOTHERBOARD{"RAMPS 1.4 (Power outputs: Hotend, Fan, Bed) [BOARD_RAMPS_14_EFB]"};
 static constexpr auto SERIAL_PORT{"0"};
 static constexpr auto BAUDRATE{"250000"};
@@ -342,6 +343,7 @@ public:
 ///
 struct HardwareConfiguration : public PageConfiguration
 {
+    QString ENVIRONMENT{defaults::ENVIRONMENT};
     QString MOTHERBOARD{defaults::MOTHERBOARD};
     QString SERIAL_PORT{defaults::SERIAL_PORT};
     QString BAUDRATE{defaults::BAUDRATE};
@@ -368,6 +370,7 @@ public:
     {
         QJsonObject json;
 
+        json["ENVIRONMENT"] = ENVIRONMENT;
         json["MOTHERBOARD"] = MOTHERBOARD;
         json["SERIAL_PORT"] = SERIAL_PORT;
         json["BAUDRATE"] = BAUDRATE;

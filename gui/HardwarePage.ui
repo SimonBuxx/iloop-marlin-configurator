@@ -294,295 +294,6 @@ QAbstractSpinBox::down-button:off {
      </property>
     </spacer>
    </item>
-   <item row="3" column="0" colspan="2">
-    <widget class="QWidget" name="widget_2" native="true">
-     <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,1,1">
-      <property name="spacing">
-       <number>10</number>
-      </property>
-      <property name="leftMargin">
-       <number>0</number>
-      </property>
-      <property name="topMargin">
-       <number>0</number>
-      </property>
-      <property name="rightMargin">
-       <number>0</number>
-      </property>
-      <property name="bottomMargin">
-       <number>0</number>
-      </property>
-      <item>
-       <widget class="QGroupBox" name="uSerialPortBox">
-        <property name="focusPolicy">
-         <enum>Qt::StrongFocus</enum>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-        </property>
-        <property name="title">
-         <string>SERIAL_PORT</string>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_4">
-         <property name="spacing">
-          <number>10</number>
-         </property>
-         <item row="1" column="0">
-          <widget class="QLabel" name="label_5">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <widget class="QLabel" name="label_6">
-           <property name="text">
-            <string>This is the serial port on the board to use for communication with the host.</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0" colspan="2">
-          <widget class="Dropdown" name="uSerialPortDropdown">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="currentIndex">
-            <number>1</number>
-           </property>
-           <item>
-            <property name="text">
-             <string>-1</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>0</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>1</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>2</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>3</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>4</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>5</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>6</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>7</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
-      <item>
-       <widget class="QGroupBox" name="uBaudrateBox">
-        <property name="focusPolicy">
-         <enum>Qt::StrongFocus</enum>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-        </property>
-        <property name="title">
-         <string>BAUDRATE</string>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_5">
-         <property name="spacing">
-          <number>10</number>
-         </property>
-         <item row="1" column="1">
-          <widget class="QLabel" name="label_8">
-           <property name="text">
-            <string>This is the default communication speed for all serial ports.</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="label_7">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0" colspan="2">
-          <widget class="Dropdown" name="uBaudrateDropdown">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="styleSheet">
-            <string notr="true"/>
-           </property>
-           <property name="currentIndex">
-            <number>6</number>
-           </property>
-           <item>
-            <property name="text">
-             <string>2400</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>9600</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>19200</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>38400</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>57600</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>115200</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>250000</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>500000</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>1000000</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
-      <item>
-       <widget class="QGroupBox" name="uBaudRateGcodeBox">
-        <property name="title">
-         <string>BAUD_RATE_GCODE</string>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_6">
-         <property name="spacing">
-          <number>10</number>
-         </property>
-         <item row="0" column="0">
-          <widget class="QLabel" name="label_10">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QLabel" name="label_11">
-           <property name="text">
-            <string>Enable this to allow G-code M575 to set the baud rate.</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="13" column="0" colspan="2">
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>0</width>
-       <height>0</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
    <item row="0" column="0" colspan="2">
     <widget class="QWidget" name="widget" native="true">
      <layout class="QGridLayout" name="gridLayout_2">
@@ -668,7 +379,7 @@ QAbstractSpinBox::down-button:off {
      </layout>
     </widget>
    </item>
-   <item row="2" column="0" colspan="2">
+   <item row="3" column="0" colspan="2">
     <widget class="QGroupBox" name="uMotherboardBox">
      <property name="focusPolicy">
       <enum>Qt::StrongFocus</enum>
@@ -2530,7 +2241,478 @@ QAbstractSpinBox::down-button:off {
      </layout>
     </widget>
    </item>
+   <item row="14" column="0" colspan="2">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="7" column="0" rowspan="2" colspan="2">
+    <widget class="QWidget" name="widget_3" native="true">
+     <layout class="QGridLayout" name="gridLayout_14" columnstretch="1,1,1">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QGroupBox" name="uBluetoothBox">
+        <property name="title">
+         <string>BLUETOOTH</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_11">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_19">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_20">
+           <property name="text">
+            <string>Enable the Bluetooth serial interface on AT90USB devices.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QGroupBox" name="uCustomMachineNameBox">
+        <property name="title">
+         <string>CUSTOM_MACHINE_NAME</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_12">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="1" column="1">
+          <widget class="QLabel" name="label_22">
+           <property name="text">
+            <string>This is the name displayed in the LCD &quot;Ready&quot; message and Info menu. (optional)</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_21">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0" colspan="2">
+          <widget class="QLineEdit" name="uCustomMachineNameEdit">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QGroupBox" name="uMachineUuidBox">
+        <property name="title">
+         <string>MACHINE_UUID</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_13">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_9">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0" colspan="2">
+          <widget class="QLineEdit" name="uMachineUuidEdit">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+	font-family: &quot;Source Code Pro&quot;;
+}</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QPushButton" name="uGenerateUuidButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Generate UUID</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1" colspan="2">
+          <widget class="QLabel" name="label_23">
+           <property name="text">
+            <string>This is the printer's unique ID, used by some programs to differentiate between machines. (optional)</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
    <item row="4" column="0" colspan="2">
+    <widget class="QWidget" name="widget_2" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,1,1">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QGroupBox" name="uSerialPortBox">
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+        </property>
+        <property name="title">
+         <string>SERIAL_PORT</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_4">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>This is the serial port on the board to use for communication with the host.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0" colspan="2">
+          <widget class="Dropdown" name="uSerialPortDropdown">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="currentIndex">
+            <number>1</number>
+           </property>
+           <item>
+            <property name="text">
+             <string>-1</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>0</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>1</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>2</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>3</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>4</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>5</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>6</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>7</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="uBaudrateBox">
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+        </property>
+        <property name="title">
+         <string>BAUDRATE</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_5">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="1" column="1">
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string>This is the default communication speed for all serial ports.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_7">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0" colspan="2">
+          <widget class="Dropdown" name="uBaudrateDropdown">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="currentIndex">
+            <number>6</number>
+           </property>
+           <item>
+            <property name="text">
+             <string>2400</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>9600</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>19200</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>38400</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>57600</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>115200</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>250000</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>500000</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>1000000</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="uBaudRateGcodeBox">
+        <property name="title">
+         <string>BAUD_RATE_GCODE</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_6">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_10">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_11">
+           <property name="text">
+            <string>Enable this to allow G-code M575 to set the baud rate.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="5" column="0" colspan="2">
     <widget class="QWidget" name="widget_5" native="true">
      <layout class="QGridLayout" name="gridLayout_16" columnstretch="1,1">
       <property name="leftMargin">
@@ -2991,38 +3173,59 @@ QAbstractSpinBox::down-button:off {
      </layout>
     </widget>
    </item>
-   <item row="6" column="0" rowspan="2" colspan="2">
-    <widget class="QWidget" name="widget_3" native="true">
-     <layout class="QGridLayout" name="gridLayout_14" columnstretch="1,1,1">
-      <property name="leftMargin">
-       <number>0</number>
-      </property>
-      <property name="topMargin">
-       <number>0</number>
-      </property>
-      <property name="rightMargin">
-       <number>0</number>
-      </property>
-      <property name="bottomMargin">
-       <number>0</number>
-      </property>
+   <item row="2" column="0" colspan="2">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="focusPolicy">
+      <enum>Qt::StrongFocus</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+     </property>
+     <property name="title">
+      <string>Build Environment</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_18" columnstretch="1,2,1">
       <property name="spacing">
        <number>10</number>
       </property>
       <item row="0" column="0">
-       <widget class="QGroupBox" name="uBluetoothBox">
-        <property name="title">
-         <string>BLUETOOTH</string>
+       <widget class="QLabel" name="label_26">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
         </property>
-        <property name="checkable">
-         <bool>true</bool>
+        <property name="text">
+         <string/>
         </property>
-        <layout class="QGridLayout" name="gridLayout_11">
+        <property name="pixmap">
+         <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QWidget" name="widget_7" native="true">
+        <layout class="QGridLayout" name="gridLayout_19">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
          <property name="spacing">
           <number>10</number>
          </property>
          <item row="0" column="0">
-          <widget class="QLabel" name="label_19">
+          <widget class="QLabel" name="label_25">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
              <horstretch>0</horstretch>
@@ -3033,16 +3236,19 @@ QAbstractSpinBox::down-button:off {
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            <pixmap resource="../resources/resources.qrc">:/search_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
            </property>
           </widget>
          </item>
          <item row="0" column="1">
-          <widget class="QLabel" name="label_20">
-           <property name="text">
-            <string>Enable the Bluetooth serial interface on AT90USB devices.</string>
+          <widget class="QLineEdit" name="uEnvironmentSearchBox">
+           <property name="maxLength">
+            <number>100</number>
            </property>
-           <property name="wordWrap">
+           <property name="placeholderText">
+            <string>Search an environment...</string>
+           </property>
+           <property name="clearButtonEnabled">
             <bool>true</bool>
            </property>
           </widget>
@@ -3050,124 +3256,963 @@ QAbstractSpinBox::down-button:off {
         </layout>
        </widget>
       </item>
-      <item row="0" column="1">
-       <widget class="QGroupBox" name="uCustomMachineNameBox">
-        <property name="title">
-         <string>CUSTOM_MACHINE_NAME</string>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_12">
-         <property name="spacing">
-          <number>10</number>
+      <item row="1" column="0" colspan="2">
+       <widget class="Dropdown" name="uEnvironmentDropdown">
+        <item>
+         <property name="text">
+          <string>mega2560</string>
          </property>
-         <item row="1" column="1">
-          <widget class="QLabel" name="label_22">
-           <property name="text">
-            <string>This is the name displayed in the LCD &quot;Ready&quot; message and Info menu. (optional)</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="label_21">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0" colspan="2">
-          <widget class="QLineEdit" name="uCustomMachineNameEdit">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-          </widget>
-         </item>
-        </layout>
+        </item>
+        <item>
+         <property name="text">
+          <string>mega2560ext</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mega1280</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>MightyBoard1280</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>MightyBoard2560</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>rambo</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>FYSETC_F6</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>sanguino644p</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>sanguino1284p</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>sanguino1284p_optimized</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>melzi</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>melzi_optimized</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>melzi_optiboot</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>melzi_optiboot_optimized</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>DUE</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>DUE_USB</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>DUE_archim</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>esp32</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>FYSETC_E4</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>PANDA</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_tinybee</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>LPC1768</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>LPC1769</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>linux_native</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>simulator_linux_debug</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>simulator_linux_release</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>simulator_macos_debug</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>simulator_macos_release</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>simulator_windows</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>SAMD21_minitronics20</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>SAMD51_grandcentral_m4</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F070RB_malyan</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F070CB_malyan</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>malyan_M300</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103RC_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103RE_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103RC_meeb_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103RC_fysetc_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103RC_btt_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103RC_btt_USB_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103RE_creality_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103RC_creality_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103RE_creality_smartPro_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103RE_btt_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103RE_btt_USB_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103VE_GTM32_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103VE_longer_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_robin_mini_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_robin_nano_v1v2_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_robin_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_robin_pro_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>trigorilla_pro_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_robin_e3_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_robin_e3p_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_robin_lite_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_robin_lite3_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>jgaurora_a5s_a1_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103CB_malyan_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>chitu_f103_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>chitu_v5_gpio_init_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>FLY_MINI_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103RC_ZM3E2_USB_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103VC_ZM3E4_USB_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103VE_ZM3E4V2_USB_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>ERYONE_ERY32_MINI_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103RE</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103VE</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103ZE</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103RC_btt</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103RC_btt_USB</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>PANDA_PI_V29</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_robin</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_robin_e3</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103RE_creality</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103RE_creality_xfer</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103RE_creality_smartPro</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103RC_creality</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103RC_creality_xfer</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103VE_creality</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103RE_btt</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103RE_btt_USB</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>flsun_hispeedv1</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_robin_nano_v1v2</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_robin_nano_v1v2_usbmod</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mingda_mpx_arm_mini</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103CB_malyan</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>FLY_MINI</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_robin_mini</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_robin_lite</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_robin_lite3</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_robin_pro</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_robin_e3p</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>jgaurora_a5s_a1</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103RC_fysetc</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103VE_longer</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>trigorilla_pro</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>trigorilla_pro_disk</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>chitu_f103</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>chitu_v5_gpio_init</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103RC_ZM3E2_USB</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103VC_ZM3E4_USB</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103VE_ZM3E4V2_USB</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>ARMED</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>FYSETC_CHEETAH_V20</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>FLYF407ZG</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>FYSETC_S6</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>FYSETC_S6_8000</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>FYSETC_SPIDER_KING407</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F407VE_black</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Opulo_Lumen_REV3</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Opulo_Lumen_REV4</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Anet_ET4_no_bootloader</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Anet_ET4_OpenBLT</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>BIGTREE_SKR_PRO</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>BIGTREE_SKR_PRO_usb_flash_drive</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>BIGTREE_E3_RRF</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>BIGTREE_GTR_V1_0</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>BIGTREE_GTR_V1_0_usb_flash_drive</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>BIGTREE_BTT002</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>BIGTREE_BTT002_VET6</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>BIGTREE_SKR_2</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>BIGTREE_SKR_2_USB</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>BIGTREE_SKR_2_USB_debug</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>BIGTREE_SKR_2_F429</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>BIGTREE_SKR_2_F429_USB</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>BIGTREE_SKR_2_F429_USB_debug</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>BIGTREE_OCTOPUS_V1</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>BIGTREE_OCTOPUS_V1_USB</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>BIGTREE_OCTOPUS_PRO_V1_F429</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>BIGTREE_OCTOPUS_PRO_V1_F429_USB</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>BIGTREE_OCTOPUS_V1_F407</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>BIGTREE_OCTOPUS_V1_F407_USB</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>LERDGEX</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>LERDGEX_usb_flash_drive</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>LERDGES</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>LERDGES_usb_flash_drive</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>LERDGEK</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>LERDGEK_usb_flash_drive</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>rumba32</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_robin_pro2</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_robin_nano_v3</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_robin_nano_v3_usb_flash_drive</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_robin_nano_v3_usb_flash_drive_msc</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_robin_nano_v3_1</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_robin_nano_v3_1_usb_flash_drive</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_robin_nano_v3_1_usb_flash_drive_msc</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_eagle</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_eagle_usb_flash_drive</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_eagle_usb_flash_drive_msc</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_monster8</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_monster8_usb_flash_drive</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_monster8_usb_flash_drive_msc</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>TH3D_EZBoard_V2_no_bootloader</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>TH3D_EZBoard_V2_OpenBLT</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_robin_nano_v1_3_f4</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_robin_nano_v1_3_f4_usbmod</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Artillery_Ruby</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F401RC_creality</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F401RC_creality_jlink</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F401RC_creality_stlink</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F401RC_btt</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_skipr_v1</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_skipr_v1_nobootloader</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F446_tronxy</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>NUCLEO_F767ZI</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>REMRAM_V1</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>BTT_SKR_SE_BX</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32H743Vx_btt</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>BTT_EBB42_V1_1_filament_extruder</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32G0B1RE_btt</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32G0B1RE_btt_xfer</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>at90usb1286_cdc</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>at90usb1286_dfu</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>teensy20</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>teensy31</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>teensy35</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>teensy36</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>teensy41</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103RET6_creality_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103RET6_creality</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103RET6_creality_xfer</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103RC_btt_512K</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103RC_btt_512K_USB</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103RC_btt_512K_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103RC_btt_512K_USB_maple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103RC_meeb</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STM32F103VE_GTM32</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_robin_nano35</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mks_robin_nano35_maple</string>
+         </property>
+        </item>
        </widget>
       </item>
-      <item row="0" column="2">
-       <widget class="QGroupBox" name="uMachineUuidBox">
-        <property name="title">
-         <string>MACHINE_UUID</string>
+      <item row="0" column="1" colspan="2">
+       <widget class="QLabel" name="label_27">
+        <property name="text">
+         <string>Choose the environment that corresponds to the motherboard. The environment is not part of the configuration but needed as a parameter for building Marlin.</string>
         </property>
-        <property name="checkable">
+        <property name="wordWrap">
          <bool>true</bool>
         </property>
-        <layout class="QGridLayout" name="gridLayout_13">
-         <property name="spacing">
-          <number>10</number>
-         </property>
-         <item row="1" column="0">
-          <widget class="QLabel" name="label_9">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0" colspan="2">
-          <widget class="QLineEdit" name="uMachineUuidEdit">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QLineEdit {
-	font-family: &quot;Source Code Pro&quot;;
-}</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="2">
-          <widget class="QPushButton" name="uGenerateUuidButton">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string>Generate UUID</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="1" colspan="2">
-          <widget class="QLabel" name="label_23">
-           <property name="text">
-            <string>This is the printer's unique ID, used by some programs to differentiate between machines. (optional)</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
        </widget>
       </item>
      </layout>

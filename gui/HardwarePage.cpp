@@ -35,8 +35,10 @@ HardwarePage::HardwarePage(QWidget *pParent) :
 {
     mUi->setupUi(this);
 
-    // Set the clear button icon of the board search bar
+    // Set the clear button icons of the search boxes
     mUi->uMotherBoardSearchBox->findChild<QToolButton*>()->setIcon(QIcon(":/close_FILL0_wght100_GRAD0_opsz20_white.svg"));
+    mUi->uEnvironmentSearchBox->findChild<QToolButton*>()->setIcon(QIcon(":/close_FILL0_wght100_GRAD0_opsz20_white.svg"));
+
 }
 
 HardwarePage::~HardwarePage()
@@ -60,6 +62,15 @@ void HardwarePage::ConnectGuiSignalsAndSlots()
         }
     });
 
+    QObject::connect(mUi->uEnvironmentSearchBox, &QLineEdit::textChanged, this, [&](const QString& pText)
+    {
+        const auto& index = mUi->uEnvironmentDropdown->findText(pText, Qt::MatchFlag::MatchContains);
+        if (index >= 0 && !pText.isEmpty())
+        {
+            mUi->uEnvironmentDropdown->setCurrentIndex(index);
+        }
+    });
+
     QObject::connect(mUi->uGenerateUuidButton, &QPushButton::clicked, this, [&]()
     {
         mUi->uMachineUuidEdit->setText(QUuid::createUuid().toString(QUuid::WithoutBraces));
@@ -72,6 +83,7 @@ void HardwarePage::ResetValues()
 {
     mIsLoading = true;
 
+    mUi->uEnvironmentDropdown->setCurrentText(defaults::ENVIRONMENT);
     mUi->uMotherboardDropdown->setCurrentText(defaults::MOTHERBOARD);
     mUi->uSerialPortDropdown->setCurrentText(defaults::SERIAL_PORT);
     mUi->uBaudrateDropdown->setCurrentText(defaults::BAUDRATE);
@@ -91,6 +103,7 @@ void HardwarePage::ResetValues()
     mUi->uMachineUuidBox->setChecked(defaults::ENABLE_MACHINE_UUID);
 
     mUi->uMotherBoardSearchBox->clear();
+    mUi->uEnvironmentSearchBox->clear();
 
     mIsLoading = false;
 }
@@ -100,6 +113,7 @@ bool HardwarePage::LoadFromJson(const QJsonObject &pJson)
     bool success = true;
     mIsLoading = true;
 
+    success &= LoadConfig(mUi->uEnvironmentDropdown, pJson, "ENVIRONMENT");
     success &= LoadConfig(mUi->uMotherboardDropdown, pJson, "MOTHERBOARD");
     success &= LoadConfig(mUi->uSerialPortDropdown, pJson, "SERIAL_PORT");
     success &= LoadConfig(mUi->uBaudrateDropdown, pJson, "BAUDRATE");
@@ -124,6 +138,7 @@ bool HardwarePage::LoadFromJson(const QJsonObject &pJson)
 
 void HardwarePage::FetchConfiguration(Configuration& pConfig)
 {
+    SetConfig(pConfig.hardware.ENVIRONMENT, mUi->uEnvironmentDropdown);
     SetConfig(pConfig.hardware.MOTHERBOARD, mUi->uMotherboardDropdown);
     SetConfig(pConfig.hardware.SERIAL_PORT, mUi->uSerialPortDropdown);
     SetConfig(pConfig.hardware.BAUDRATE, mUi->uBaudrateDropdown);
@@ -156,4 +171,9 @@ void HardwarePage::ReplaceTags(QStringList& pOutput)
     ReplaceTag(pOutput, "#{BLUETOOTH}", mUi->uBluetoothBox, "BLUETOOTH");
     ReplaceTag(pOutput, "#{CUSTOM_MACHINE_NAME}", mUi->uCustomMachineNameEdit, !mUi->uCustomMachineNameBox->isChecked(), "CUSTOM_MACHINE_NAME", true);
     ReplaceTag(pOutput, "#{MACHINE_UUID}", mUi->uMachineUuidEdit, !mUi->uMachineUuidBox->isChecked(), "MACHINE_UUID", true);
+}
+
+QString HardwarePage::GetEnvironment(void) const
+{
+    return mUi->uEnvironmentDropdown->currentText();
 }
