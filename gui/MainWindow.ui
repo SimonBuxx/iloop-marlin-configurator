@@ -310,8 +310,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1059</width>
-                   <height>528</height>
+                   <width>100</width>
+                   <height>30</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_9">
@@ -372,8 +372,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1059</width>
-                   <height>528</height>
+                   <width>100</width>
+                   <height>30</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_7">
@@ -667,8 +667,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1059</width>
-                   <height>528</height>
+                   <width>100</width>
+                   <height>30</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_2">
@@ -729,8 +729,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1059</width>
-                   <height>528</height>
+                   <width>100</width>
+                   <height>30</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_10">
@@ -791,8 +791,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1059</width>
-                   <height>528</height>
+                   <width>100</width>
+                   <height>30</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_8">
@@ -860,8 +860,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1059</width>
-                   <height>528</height>
+                   <width>100</width>
+                   <height>30</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_20">
@@ -922,8 +922,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1059</width>
-                   <height>528</height>
+                   <width>100</width>
+                   <height>30</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_50">
@@ -984,8 +984,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1059</width>
-                   <height>528</height>
+                   <width>100</width>
+                   <height>30</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_45">
@@ -1046,8 +1046,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1059</width>
-                   <height>528</height>
+                   <width>100</width>
+                   <height>30</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_53">
@@ -1108,8 +1108,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1059</width>
-                   <height>528</height>
+                   <width>100</width>
+                   <height>30</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_40">
@@ -1170,8 +1170,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1059</width>
-                   <height>528</height>
+                   <width>100</width>
+                   <height>30</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_56">
@@ -1232,8 +1232,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1059</width>
-                   <height>528</height>
+                   <width>100</width>
+                   <height>30</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_48">
@@ -1294,8 +1294,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1059</width>
-                   <height>528</height>
+                   <width>100</width>
+                   <height>30</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_47">
@@ -1356,8 +1356,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1059</width>
-                   <height>528</height>
+                   <width>100</width>
+                   <height>30</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_43">
@@ -1418,8 +1418,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1059</width>
-                   <height>528</height>
+                   <width>100</width>
+                   <height>30</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_49">
@@ -1480,8 +1480,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1059</width>
-                   <height>528</height>
+                   <width>100</width>
+                   <height>30</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_42">
@@ -1542,8 +1542,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1059</width>
-                   <height>528</height>
+                   <width>100</width>
+                   <height>30</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_41">
@@ -1604,8 +1604,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1059</width>
-                   <height>528</height>
+                   <width>100</width>
+                   <height>30</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_54">
@@ -1666,8 +1666,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1059</width>
-                   <height>528</height>
+                   <width>100</width>
+                   <height>30</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_52">
@@ -1728,8 +1728,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1059</width>
-                   <height>528</height>
+                   <width>100</width>
+                   <height>30</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_44">
@@ -1790,8 +1790,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1059</width>
-                   <height>528</height>
+                   <width>100</width>
+                   <height>30</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_55">
@@ -1852,8 +1852,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1059</width>
-                   <height>528</height>
+                   <width>100</width>
+                   <height>30</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_51">
@@ -2132,7 +2132,7 @@ QPushButton::!checked:hover {
         <property name="geometry">
          <rect>
           <x>0</x>
-          <y>-130</y>
+          <y>0</y>
           <width>206</width>
           <height>631</height>
          </rect>
@@ -2330,7 +2330,7 @@ QPushButton::!checked:hover {
          <item>
           <widget class="QPushButton" name="uKinematicsTabButton">
            <property name="text">
-            <string>Kinematics</string>
+            <string>Kinematics (WIP)</string>
            </property>
            <property name="icon">
             <iconset resource="../resources/resources.qrc">
@@ -2358,7 +2358,7 @@ QPushButton::!checked:hover {
 }</string>
            </property>
            <property name="text">
-            <string>Endstops</string>
+            <string>Endstops (WIP)</string>
            </property>
            <property name="icon">
             <iconset resource="../resources/resources.qrc">
@@ -2381,7 +2381,7 @@ QPushButton::!checked:hover {
          <item>
           <widget class="QPushButton" name="uMovementTabButton">
            <property name="text">
-            <string>Movement</string>
+            <string>Movement (WIP)</string>
            </property>
            <property name="icon">
             <iconset resource="../resources/resources.qrc">
@@ -2409,7 +2409,7 @@ QPushButton::!checked:hover {
 }</string>
            </property>
            <property name="text">
-            <string>Z Probe Options</string>
+            <string>Z Probe Options (WIP)</string>
            </property>
            <property name="icon">
             <iconset resource="../resources/resources.qrc">
@@ -2432,7 +2432,7 @@ QPushButton::!checked:hover {
          <item>
           <widget class="QPushButton" name="uStepperDriversTabButton">
            <property name="text">
-            <string>Stepper Drivers</string>
+            <string>Stepper Drivers (WIP)</string>
            </property>
            <property name="icon">
             <iconset resource="../resources/resources.qrc">
@@ -2460,7 +2460,7 @@ QPushButton::!checked:hover {
 }</string>
            </property>
            <property name="text">
-            <string>Homing and Bounds</string>
+            <string>Homing and Bounds (WIP)</string>
            </property>
            <property name="icon">
             <iconset resource="../resources/resources.qrc">
@@ -2483,7 +2483,7 @@ QPushButton::!checked:hover {
          <item>
           <widget class="QPushButton" name="uFilamentRunoutSensorTabButton">
            <property name="text">
-            <string>Filament Runout Sensor</string>
+            <string>Filament Runout Sensor (WIP)</string>
            </property>
            <property name="icon">
             <iconset resource="../resources/resources.qrc">
@@ -2511,7 +2511,7 @@ QPushButton::!checked:hover {
 }</string>
            </property>
            <property name="text">
-            <string>Bed Leveling</string>
+            <string>Bed Leveling (WIP)</string>
            </property>
            <property name="icon">
             <iconset resource="../resources/resources.qrc">
@@ -2534,7 +2534,7 @@ QPushButton::!checked:hover {
          <item>
           <widget class="QPushButton" name="uHomingOptionsTabButton">
            <property name="text">
-            <string>Homing Options</string>
+            <string>Homing Options (WIP)</string>
            </property>
            <property name="icon">
             <iconset resource="../resources/resources.qrc">
@@ -2562,7 +2562,7 @@ QPushButton::!checked:hover {
 }</string>
            </property>
            <property name="text">
-            <string>Additional Features</string>
+            <string>Additional Features (WIP)</string>
            </property>
            <property name="icon">
             <iconset resource="../resources/resources.qrc">
@@ -2585,7 +2585,7 @@ QPushButton::!checked:hover {
          <item>
           <widget class="QPushButton" name="uUserInterfaceLanguageTabButton">
            <property name="text">
-            <string>User Interface Language</string>
+            <string>User Interface Language (WIP)</string>
            </property>
            <property name="icon">
             <iconset resource="../resources/resources.qrc">
@@ -2664,7 +2664,7 @@ QPushButton::!checked:hover {
 }</string>
            </property>
            <property name="text">
-            <string>Encoder</string>
+            <string>Encoder (WIP)</string>
            </property>
            <property name="icon">
             <iconset resource="../resources/resources.qrc">
@@ -2687,7 +2687,7 @@ QPushButton::!checked:hover {
          <item>
           <widget class="QPushButton" name="uSpeakerTabButton">
            <property name="text">
-            <string>Speaker</string>
+            <string>Speaker (WIP)</string>
            </property>
            <property name="icon">
             <iconset resource="../resources/resources.qrc">
@@ -2715,7 +2715,7 @@ QPushButton::!checked:hover {
 }</string>
            </property>
            <property name="text">
-            <string>LCD Controller</string>
+            <string>LCD Controller (WIP)</string>
            </property>
            <property name="icon">
             <iconset resource="../resources/resources.qrc">
@@ -2738,7 +2738,7 @@ QPushButton::!checked:hover {
          <item>
           <widget class="QPushButton" name="uExtraFeaturesTabButton">
            <property name="text">
-            <string>Extra Features</string>
+            <string>Extra Features (WIP)</string>
            </property>
            <property name="icon">
             <iconset resource="../resources/resources.qrc">

@@ -131,7 +131,7 @@ void MainWindow::ConnectGuiSignalsAndSlots()
     QObject::connect(mUi->uAboutAction, &QAction::triggered, &mAboutDialog, &AboutDialog::show);
     QObject::connect(mUi->uCloseWorkspaceAction, &QAction::triggered, this, &MainWindow::OnCloseWorkspace);
 
-    QObject::connect(mUi->uWelcomePage, &WelcomePage::OpenWorkspaceSignal, this, &MainWindow::OpenWorkspaceSignal);
+    QObject::connect(mUi->uWelcomePage, &WelcomePage::OpenWorkspaceSignal, this, &MainWindow::OnOpenWorkspace);
 
     // Connects for code preview
     for (auto&& page : findChildren<AbstractPage*>())
@@ -373,6 +373,11 @@ void MainWindow::OnCloseWorkspace()
 
 void MainWindow::OnOpenWorkspace()
 {
+    emit OpenWorkspaceSignal();
+}
+
+void MainWindow::OnWorkspaceOpened()
+{
     mUi->uSaveWorkspaceAction->setEnabled(true);
     mUi->uActionConfigure->setEnabled(true);
     mUi->uActionBuild->setEnabled(true);
@@ -385,8 +390,6 @@ void MainWindow::OnOpenWorkspace()
     {
         page->setEnabled(true);
     }
-
-    emit OpenWorkspaceSignal();
 }
 
 Configuration MainWindow::FetchConfiguration()

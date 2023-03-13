@@ -105,6 +105,8 @@ public slots:
 
     void OnOpenWorkspace(void);
 
+    void OnWorkspaceOpened(void);
+
     void ResetValues(void);
 
 protected:

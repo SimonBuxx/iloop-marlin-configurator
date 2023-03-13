@@ -55,7 +55,7 @@ protected slots:
     /// \brief Called when the current workspace is being closed
     void OnCloseWorkspace(void);
 
-    void OnOpenFolder(void);
+    void OnOpenWorkspace(void);
 
     void OnBuildMarlin(const QString& pEnvironment);
 

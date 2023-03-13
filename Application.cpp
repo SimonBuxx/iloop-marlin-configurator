@@ -46,7 +46,7 @@ Application::Application(QObject *parent)
     QObject::connect(&mMainWindow, &MainWindow::ConfigureSignal, this, &Application::OnConfigure);
     QObject::connect(&mMainWindow, &MainWindow::SaveProjectSignal, this, &Application::OnSaveProject);
     QObject::connect(&mMainWindow, &MainWindow::CloseWorkspaceSignal, this, &Application::OnCloseWorkspace);
-    QObject::connect(&mMainWindow, &MainWindow::OpenWorkspaceSignal, this, &Application::OnOpenFolder);
+    QObject::connect(&mMainWindow, &MainWindow::OpenWorkspaceSignal, this, &Application::OnOpenWorkspace);
     QObject::connect(&mMainWindow, &MainWindow::BuildMarlinSignal, this, [&](){
         OnBuildMarlin(mMainWindow.GetEnvironment());
     });
@@ -214,7 +214,7 @@ void Application::OpenConfigurationJson(const QFileInfo& pFilePath)
     mMainWindow.JumpToFirstConfigTab();
 }
 
-void Application::OnOpenFolder()
+void Application::OnOpenWorkspace()
 {
     QFileInfo folderInfo;
 
@@ -248,6 +248,7 @@ void Application::OnOpenFolder()
     mFolderInfo = folderInfo;
 
     mMainWindow.SetWorkspace(folderInfo.filePath());
+    mMainWindow.OnWorkspaceOpened();
 }
 
 std::optional<QStringList> Application::GenerateCode()
