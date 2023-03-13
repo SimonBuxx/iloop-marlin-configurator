@@ -275,7 +275,7 @@ QScrollBar::sub-line:horizontal
              </size>
             </property>
             <property name="currentIndex">
-             <number>5</number>
+             <number>22</number>
             </property>
             <widget class="QWidget" name="uWelcomeTab">
              <layout class="QGridLayout" name="gridLayout_3">
@@ -290,6 +290,9 @@ QScrollBar::sub-line:horizontal
               </property>
               <property name="bottomMargin">
                <number>0</number>
+              </property>
+              <property name="spacing">
+               <number>10</number>
               </property>
               <item row="0" column="0">
                <widget class="QScrollArea" name="scrollArea_6">
@@ -307,8 +310,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>100</width>
-                   <height>30</height>
+                   <width>1059</width>
+                   <height>528</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_9">
@@ -323,6 +326,9 @@ QScrollBar::sub-line:horizontal
                   </property>
                   <property name="bottomMargin">
                    <number>0</number>
+                  </property>
+                  <property name="spacing">
+                   <number>10</number>
                   </property>
                   <item row="0" column="0">
                    <widget class="WelcomePage" name="uWelcomePage" native="true"/>
@@ -347,6 +353,9 @@ QScrollBar::sub-line:horizontal
               <property name="bottomMargin">
                <number>0</number>
               </property>
+              <property name="spacing">
+               <number>10</number>
+              </property>
               <item row="0" column="0">
                <widget class="QScrollArea" name="scrollArea_3">
                 <property name="frameShape">
@@ -363,8 +372,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>100</width>
-                   <height>30</height>
+                   <width>1059</width>
+                   <height>528</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_7">
@@ -379,6 +388,9 @@ QScrollBar::sub-line:horizontal
                   </property>
                   <property name="bottomMargin">
                    <number>0</number>
+                  </property>
+                  <property name="spacing">
+                   <number>10</number>
                   </property>
                   <item row="0" column="0">
                    <widget class="FirmwarePage" name="uFirmwarePage" native="true">
@@ -636,6 +648,9 @@ QScrollBar::sub-line:horizontal
               <property name="bottomMargin">
                <number>0</number>
               </property>
+              <property name="spacing">
+               <number>10</number>
+              </property>
               <item row="0" column="0">
                <widget class="QScrollArea" name="scrollArea_4">
                 <property name="frameShape">
@@ -652,8 +667,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>100</width>
-                   <height>30</height>
+                   <width>1059</width>
+                   <height>528</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_2">
@@ -668,6 +683,9 @@ QScrollBar::sub-line:horizontal
                   </property>
                   <property name="bottomMargin">
                    <number>0</number>
+                  </property>
+                  <property name="spacing">
+                   <number>10</number>
                   </property>
                   <item row="0" column="0">
                    <widget class="HardwarePage" name="uHardwarePage" native="true"/>
@@ -692,6 +710,9 @@ QScrollBar::sub-line:horizontal
               <property name="bottomMargin">
                <number>0</number>
               </property>
+              <property name="spacing">
+               <number>10</number>
+              </property>
               <item row="0" column="0">
                <widget class="QScrollArea" name="scrollArea_5">
                 <property name="frameShape">
@@ -708,8 +729,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>100</width>
-                   <height>30</height>
+                   <width>1059</width>
+                   <height>528</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_10">
@@ -724,6 +745,9 @@ QScrollBar::sub-line:horizontal
                   </property>
                   <property name="bottomMargin">
                    <number>0</number>
+                  </property>
+                  <property name="spacing">
+                   <number>10</number>
                   </property>
                   <item row="0" column="0">
                    <widget class="ExtruderPage" name="uExtruderPage" native="true"/>
@@ -748,6 +772,9 @@ QScrollBar::sub-line:horizontal
               <property name="bottomMargin">
                <number>0</number>
               </property>
+              <property name="spacing">
+               <number>10</number>
+              </property>
               <item row="0" column="0">
                <widget class="QScrollArea" name="scrollArea">
                 <property name="frameShape">
@@ -764,8 +791,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>100</width>
-                   <height>30</height>
+                   <width>1059</width>
+                   <height>528</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_8">
@@ -780,6 +807,9 @@ QScrollBar::sub-line:horizontal
                   </property>
                   <property name="bottomMargin">
                    <number>0</number>
+                  </property>
+                  <property name="spacing">
+                   <number>10</number>
                   </property>
                   <item row="0" column="0">
                    <widget class="PowerSupplyPage" name="uPowerSupplyPage" native="true">
@@ -810,6 +840,9 @@ QScrollBar::sub-line:horizontal
               </property>
               <property name="bottomMargin">
                <number>0</number>
+              </property>
+              <property name="spacing">
+               <number>10</number>
               </property>
               <item row="0" column="0">
                <widget class="QScrollArea" name="scrollArea_9">
@@ -844,8 +877,1065 @@ QScrollBar::sub-line:horizontal
                   <property name="bottomMargin">
                    <number>0</number>
                   </property>
+                  <property name="spacing">
+                   <number>10</number>
+                  </property>
                   <item row="0" column="0">
                    <widget class="ThermalSettingsPage" name="uThermalSettingsPage" native="true"/>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="uKinematicsTab">
+             <layout class="QGridLayout" name="gridLayout_23">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <property name="spacing">
+               <number>10</number>
+              </property>
+              <item row="0" column="0">
+               <widget class="QScrollArea" name="scrollArea_11">
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Plain</enum>
+                </property>
+                <property name="widgetResizable">
+                 <bool>true</bool>
+                </property>
+                <widget class="QWidget" name="scrollAreaWidgetContents_11">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>1059</width>
+                   <height>528</height>
+                  </rect>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_50">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="spacing">
+                   <number>10</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="KinematicsPage" name="uKinematicsPage" native="true"/>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="uEndstopsTab">
+             <layout class="QGridLayout" name="gridLayout_24">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <property name="spacing">
+               <number>10</number>
+              </property>
+              <item row="0" column="0">
+               <widget class="QScrollArea" name="scrollArea_12">
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Plain</enum>
+                </property>
+                <property name="widgetResizable">
+                 <bool>true</bool>
+                </property>
+                <widget class="QWidget" name="scrollAreaWidgetContents_12">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>1059</width>
+                   <height>528</height>
+                  </rect>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_45">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="spacing">
+                   <number>10</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="EndstopsPage" name="uEndstopsPage" native="true"/>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="uMovementTab">
+             <layout class="QGridLayout" name="gridLayout_25">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <property name="spacing">
+               <number>10</number>
+              </property>
+              <item row="0" column="0">
+               <widget class="QScrollArea" name="scrollArea_13">
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Plain</enum>
+                </property>
+                <property name="widgetResizable">
+                 <bool>true</bool>
+                </property>
+                <widget class="QWidget" name="scrollAreaWidgetContents_13">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>1059</width>
+                   <height>528</height>
+                  </rect>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_53">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="spacing">
+                   <number>10</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="MovementPage" name="uMovementPage" native="true"/>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="uZProbeOptionsTab">
+             <layout class="QGridLayout" name="gridLayout_26">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <property name="spacing">
+               <number>10</number>
+              </property>
+              <item row="0" column="0">
+               <widget class="QScrollArea" name="scrollArea_14">
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Plain</enum>
+                </property>
+                <property name="widgetResizable">
+                 <bool>true</bool>
+                </property>
+                <widget class="QWidget" name="scrollAreaWidgetContents_14">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>1059</width>
+                   <height>528</height>
+                  </rect>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_40">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="spacing">
+                   <number>10</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="ZProbeOptionsPage" name="uZProbeOptionsPage" native="true"/>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="uStepperDriversTab">
+             <layout class="QGridLayout" name="gridLayout_27">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <property name="spacing">
+               <number>10</number>
+              </property>
+              <item row="0" column="0">
+               <widget class="QScrollArea" name="scrollArea_15">
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Plain</enum>
+                </property>
+                <property name="widgetResizable">
+                 <bool>true</bool>
+                </property>
+                <widget class="QWidget" name="scrollAreaWidgetContents_15">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>1059</width>
+                   <height>528</height>
+                  </rect>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_56">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="spacing">
+                   <number>10</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="StepperDriversPage" name="uStepperDriversPage" native="true"/>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="uHomingAndBoundsTab">
+             <layout class="QGridLayout" name="gridLayout_28">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <property name="spacing">
+               <number>10</number>
+              </property>
+              <item row="0" column="0">
+               <widget class="QScrollArea" name="scrollArea_16">
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Plain</enum>
+                </property>
+                <property name="widgetResizable">
+                 <bool>true</bool>
+                </property>
+                <widget class="QWidget" name="scrollAreaWidgetContents_16">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>1059</width>
+                   <height>528</height>
+                  </rect>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_48">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="spacing">
+                   <number>10</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="HomingAndBoundsPage" name="uHomingAndBoundsPage" native="true"/>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="uFilamentRunoutSensorTab">
+             <layout class="QGridLayout" name="gridLayout_29">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <property name="spacing">
+               <number>10</number>
+              </property>
+              <item row="0" column="0">
+               <widget class="QScrollArea" name="scrollArea_17">
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Plain</enum>
+                </property>
+                <property name="widgetResizable">
+                 <bool>true</bool>
+                </property>
+                <widget class="QWidget" name="scrollAreaWidgetContents_17">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>1059</width>
+                   <height>528</height>
+                  </rect>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_47">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="spacing">
+                   <number>10</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="FilamentRunoutSensorPage" name="uFilamentRunoutSensorPage" native="true"/>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="uBedLevelingTab">
+             <layout class="QGridLayout" name="gridLayout_30">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <property name="spacing">
+               <number>10</number>
+              </property>
+              <item row="0" column="0">
+               <widget class="QScrollArea" name="scrollArea_18">
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Plain</enum>
+                </property>
+                <property name="widgetResizable">
+                 <bool>true</bool>
+                </property>
+                <widget class="QWidget" name="scrollAreaWidgetContents_18">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>1059</width>
+                   <height>528</height>
+                  </rect>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_43">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="spacing">
+                   <number>10</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="BedLevelingPage" name="uBedLevelingPage" native="true"/>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="uHomingOptionsTab">
+             <layout class="QGridLayout" name="gridLayout_31">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <property name="spacing">
+               <number>10</number>
+              </property>
+              <item row="0" column="0">
+               <widget class="QScrollArea" name="scrollArea_19">
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Plain</enum>
+                </property>
+                <property name="widgetResizable">
+                 <bool>true</bool>
+                </property>
+                <widget class="QWidget" name="scrollAreaWidgetContents_19">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>1059</width>
+                   <height>528</height>
+                  </rect>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_49">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="spacing">
+                   <number>10</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="HomingOptionsPage" name="uHomingOptionsPage" native="true"/>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="uAdditionalFeaturesTab">
+             <layout class="QGridLayout" name="gridLayout_32">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <property name="spacing">
+               <number>10</number>
+              </property>
+              <item row="0" column="0">
+               <widget class="QScrollArea" name="scrollArea_20">
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Plain</enum>
+                </property>
+                <property name="widgetResizable">
+                 <bool>true</bool>
+                </property>
+                <widget class="QWidget" name="scrollAreaWidgetContents_20">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>1059</width>
+                   <height>528</height>
+                  </rect>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_42">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="spacing">
+                   <number>10</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="AdditionalFeaturesPage" name="uAdditionalFeaturesPage" native="true"/>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="uUserInterfaceLanguageTab">
+             <layout class="QGridLayout" name="gridLayout_33">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <property name="spacing">
+               <number>10</number>
+              </property>
+              <item row="0" column="0">
+               <widget class="QScrollArea" name="scrollArea_21">
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Plain</enum>
+                </property>
+                <property name="widgetResizable">
+                 <bool>true</bool>
+                </property>
+                <widget class="QWidget" name="scrollAreaWidgetContents_21">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>1059</width>
+                   <height>528</height>
+                  </rect>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_41">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="spacing">
+                   <number>10</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="UserInterfaceLanguagePage" name="uUserInterfaceLanguagePage" native="true"/>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="uSDCardTab">
+             <layout class="QGridLayout" name="gridLayout_34">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <property name="spacing">
+               <number>10</number>
+              </property>
+              <item row="0" column="0">
+               <widget class="QScrollArea" name="scrollArea_22">
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Plain</enum>
+                </property>
+                <property name="widgetResizable">
+                 <bool>true</bool>
+                </property>
+                <widget class="QWidget" name="scrollAreaWidgetContents_22">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>1059</width>
+                   <height>528</height>
+                  </rect>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_54">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="spacing">
+                   <number>10</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="SDCardPage" name="uSDCardPage" native="true"/>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="uLCDMenuItemsTab">
+             <layout class="QGridLayout" name="gridLayout_35">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <property name="spacing">
+               <number>10</number>
+              </property>
+              <item row="0" column="0">
+               <widget class="QScrollArea" name="scrollArea_23">
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Plain</enum>
+                </property>
+                <property name="widgetResizable">
+                 <bool>true</bool>
+                </property>
+                <widget class="QWidget" name="scrollAreaWidgetContents_23">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>1059</width>
+                   <height>528</height>
+                  </rect>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_52">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="spacing">
+                   <number>10</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="LCDMenuItemsPage" name="uLCDMenuItemsPage" native="true"/>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="uEncoderTab">
+             <layout class="QGridLayout" name="gridLayout_36">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <property name="spacing">
+               <number>10</number>
+              </property>
+              <item row="0" column="0">
+               <widget class="QScrollArea" name="scrollArea_24">
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Plain</enum>
+                </property>
+                <property name="widgetResizable">
+                 <bool>true</bool>
+                </property>
+                <widget class="QWidget" name="scrollAreaWidgetContents_24">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>1059</width>
+                   <height>528</height>
+                  </rect>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_44">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="spacing">
+                   <number>10</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="EncoderPage" name="uEncoderPage" native="true"/>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="uSpeakerTab">
+             <layout class="QGridLayout" name="gridLayout_37">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <property name="spacing">
+               <number>10</number>
+              </property>
+              <item row="0" column="0">
+               <widget class="QScrollArea" name="scrollArea_25">
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Plain</enum>
+                </property>
+                <property name="widgetResizable">
+                 <bool>true</bool>
+                </property>
+                <widget class="QWidget" name="scrollAreaWidgetContents_25">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>1059</width>
+                   <height>528</height>
+                  </rect>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_55">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="spacing">
+                   <number>10</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="SpeakerPage" name="uSpeakerPage" native="true"/>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="uLCDControllerTab">
+             <layout class="QGridLayout" name="gridLayout_38">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <property name="spacing">
+               <number>10</number>
+              </property>
+              <item row="0" column="0">
+               <widget class="QScrollArea" name="scrollArea_26">
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Plain</enum>
+                </property>
+                <property name="widgetResizable">
+                 <bool>true</bool>
+                </property>
+                <widget class="QWidget" name="scrollAreaWidgetContents_26">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>1059</width>
+                   <height>528</height>
+                  </rect>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_51">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="spacing">
+                   <number>10</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="LCDControllerPage" name="uLCDControllerPage" native="true"/>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="uExtraFeaturesTab">
+             <layout class="QGridLayout" name="gridLayout_39">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <property name="spacing">
+               <number>10</number>
+              </property>
+              <item row="0" column="0">
+               <widget class="QScrollArea" name="scrollArea_27">
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Plain</enum>
+                </property>
+                <property name="widgetResizable">
+                 <bool>true</bool>
+                </property>
+                <widget class="QWidget" name="scrollAreaWidgetContents_27">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>1059</width>
+                   <height>528</height>
+                  </rect>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_46">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="spacing">
+                   <number>10</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="ExtraFeaturesPage" name="uExtraFeaturesPage" native="true"/>
                   </item>
                  </layout>
                 </widget>
@@ -1042,7 +2132,7 @@ QPushButton::!checked:hover {
         <property name="geometry">
          <rect>
           <x>0</x>
-          <y>0</y>
+          <y>-130</y>
           <width>206</width>
           <height>631</height>
          </rect>
@@ -1238,7 +2328,7 @@ QPushButton::!checked:hover {
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_3">
+          <widget class="QPushButton" name="uKinematicsTabButton">
            <property name="text">
             <string>Kinematics</string>
            </property>
@@ -1255,10 +2345,13 @@ QPushButton::!checked:hover {
            <property name="checkable">
             <bool>true</bool>
            </property>
+           <attribute name="buttonGroup">
+            <string notr="true">buttonGroup</string>
+           </attribute>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_4">
+          <widget class="QPushButton" name="uEndstopsTabButton">
            <property name="styleSheet">
             <string notr="true">QPushButton:!checked:!hover {
 	background: rgb(50, 52, 61);
@@ -1280,10 +2373,13 @@ QPushButton::!checked:hover {
            <property name="checkable">
             <bool>true</bool>
            </property>
+           <attribute name="buttonGroup">
+            <string notr="true">buttonGroup</string>
+           </attribute>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_5">
+          <widget class="QPushButton" name="uMovementTabButton">
            <property name="text">
             <string>Movement</string>
            </property>
@@ -1300,10 +2396,13 @@ QPushButton::!checked:hover {
            <property name="checkable">
             <bool>true</bool>
            </property>
+           <attribute name="buttonGroup">
+            <string notr="true">buttonGroup</string>
+           </attribute>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_6">
+          <widget class="QPushButton" name="uZProbeOptionsTabButton">
            <property name="styleSheet">
             <string notr="true">QPushButton:!checked:!hover {
 	background: rgb(50, 52, 61);
@@ -1325,10 +2424,13 @@ QPushButton::!checked:hover {
            <property name="checkable">
             <bool>true</bool>
            </property>
+           <attribute name="buttonGroup">
+            <string notr="true">buttonGroup</string>
+           </attribute>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_7">
+          <widget class="QPushButton" name="uStepperDriversTabButton">
            <property name="text">
             <string>Stepper Drivers</string>
            </property>
@@ -1345,10 +2447,13 @@ QPushButton::!checked:hover {
            <property name="checkable">
             <bool>true</bool>
            </property>
+           <attribute name="buttonGroup">
+            <string notr="true">buttonGroup</string>
+           </attribute>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_8">
+          <widget class="QPushButton" name="uHomingAndBoundsTabButton">
            <property name="styleSheet">
             <string notr="true">QPushButton:!checked:!hover {
 	background: rgb(50, 52, 61);
@@ -1370,10 +2475,13 @@ QPushButton::!checked:hover {
            <property name="checkable">
             <bool>true</bool>
            </property>
+           <attribute name="buttonGroup">
+            <string notr="true">buttonGroup</string>
+           </attribute>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_10">
+          <widget class="QPushButton" name="uFilamentRunoutSensorTabButton">
            <property name="text">
             <string>Filament Runout Sensor</string>
            </property>
@@ -1390,10 +2498,13 @@ QPushButton::!checked:hover {
            <property name="checkable">
             <bool>true</bool>
            </property>
+           <attribute name="buttonGroup">
+            <string notr="true">buttonGroup</string>
+           </attribute>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_11">
+          <widget class="QPushButton" name="uBedLevelingTabButton">
            <property name="styleSheet">
             <string notr="true">QPushButton:!checked:!hover {
 	background: rgb(50, 52, 61);
@@ -1415,10 +2526,13 @@ QPushButton::!checked:hover {
            <property name="checkable">
             <bool>true</bool>
            </property>
+           <attribute name="buttonGroup">
+            <string notr="true">buttonGroup</string>
+           </attribute>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_12">
+          <widget class="QPushButton" name="uHomingOptionsTabButton">
            <property name="text">
             <string>Homing Options</string>
            </property>
@@ -1435,10 +2549,13 @@ QPushButton::!checked:hover {
            <property name="checkable">
             <bool>true</bool>
            </property>
+           <attribute name="buttonGroup">
+            <string notr="true">buttonGroup</string>
+           </attribute>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_9">
+          <widget class="QPushButton" name="uAdditionalFeaturesTabButton">
            <property name="styleSheet">
             <string notr="true">QPushButton:!checked:!hover {
 	background: rgb(50, 52, 61);
@@ -1460,10 +2577,13 @@ QPushButton::!checked:hover {
            <property name="checkable">
             <bool>true</bool>
            </property>
+           <attribute name="buttonGroup">
+            <string notr="true">buttonGroup</string>
+           </attribute>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_13">
+          <widget class="QPushButton" name="uUserInterfaceLanguageTabButton">
            <property name="text">
             <string>User Interface Language</string>
            </property>
@@ -1480,10 +2600,13 @@ QPushButton::!checked:hover {
            <property name="checkable">
             <bool>true</bool>
            </property>
+           <attribute name="buttonGroup">
+            <string notr="true">buttonGroup</string>
+           </attribute>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_14">
+          <widget class="QPushButton" name="uSDCardTabButton">
            <property name="styleSheet">
             <string notr="true">QPushButton:!checked:!hover {
 	background: rgb(50, 52, 61);
@@ -1505,10 +2628,13 @@ QPushButton::!checked:hover {
            <property name="checkable">
             <bool>true</bool>
            </property>
+           <attribute name="buttonGroup">
+            <string notr="true">buttonGroup</string>
+           </attribute>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_15">
+          <widget class="QPushButton" name="uLCDMenuItemsTabButton">
            <property name="text">
             <string>LCD Menu Items</string>
            </property>
@@ -1525,10 +2651,13 @@ QPushButton::!checked:hover {
            <property name="checkable">
             <bool>true</bool>
            </property>
+           <attribute name="buttonGroup">
+            <string notr="true">buttonGroup</string>
+           </attribute>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_16">
+          <widget class="QPushButton" name="uEncoderTabButton">
            <property name="styleSheet">
             <string notr="true">QPushButton:!checked:!hover {
 	background: rgb(50, 52, 61);
@@ -1550,10 +2679,13 @@ QPushButton::!checked:hover {
            <property name="checkable">
             <bool>true</bool>
            </property>
+           <attribute name="buttonGroup">
+            <string notr="true">buttonGroup</string>
+           </attribute>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_17">
+          <widget class="QPushButton" name="uSpeakerTabButton">
            <property name="text">
             <string>Speaker</string>
            </property>
@@ -1570,10 +2702,13 @@ QPushButton::!checked:hover {
            <property name="checkable">
             <bool>true</bool>
            </property>
+           <attribute name="buttonGroup">
+            <string notr="true">buttonGroup</string>
+           </attribute>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_18">
+          <widget class="QPushButton" name="uLCDControllerTabButton">
            <property name="styleSheet">
             <string notr="true">QPushButton:!checked:!hover {
 	background: rgb(50, 52, 61);
@@ -1595,10 +2730,13 @@ QPushButton::!checked:hover {
            <property name="checkable">
             <bool>true</bool>
            </property>
+           <attribute name="buttonGroup">
+            <string notr="true">buttonGroup</string>
+           </attribute>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_19">
+          <widget class="QPushButton" name="uExtraFeaturesTabButton">
            <property name="text">
             <string>Extra Features</string>
            </property>
@@ -1615,6 +2753,9 @@ QPushButton::!checked:hover {
            <property name="checkable">
             <bool>true</bool>
            </property>
+           <attribute name="buttonGroup">
+            <string notr="true">buttonGroup</string>
+           </attribute>
           </widget>
          </item>
          <item>
@@ -2567,6 +3708,108 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <class>ThermalSettingsPage</class>
    <extends>QWidget</extends>
    <header>ThermalSettingsPage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>AdditionalFeaturesPage</class>
+   <extends>QWidget</extends>
+   <header>AdditionalFeaturesPage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>BedLevelingPage</class>
+   <extends>QWidget</extends>
+   <header>BedLevelingPage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>EncoderPage</class>
+   <extends>QWidget</extends>
+   <header>EncoderPage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>EndstopsPage</class>
+   <extends>QWidget</extends>
+   <header>EndstopsPage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ExtraFeaturesPage</class>
+   <extends>QWidget</extends>
+   <header>ExtraFeaturesPage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>FilamentRunoutSensorPage</class>
+   <extends>QWidget</extends>
+   <header>FilamentRunoutSensorPage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>HomingAndBoundsPage</class>
+   <extends>QWidget</extends>
+   <header>HomingAndBoundsPage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>HomingOptionsPage</class>
+   <extends>QWidget</extends>
+   <header>HomingOptionsPage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>KinematicsPage</class>
+   <extends>QWidget</extends>
+   <header>KinematicsPage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>LCDControllerPage</class>
+   <extends>QWidget</extends>
+   <header>LCDControllerPage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>LCDMenuItemsPage</class>
+   <extends>QWidget</extends>
+   <header>LCDMenuItemsPage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MovementPage</class>
+   <extends>QWidget</extends>
+   <header>MovementPage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SDCardPage</class>
+   <extends>QWidget</extends>
+   <header>SDCardPage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SpeakerPage</class>
+   <extends>QWidget</extends>
+   <header>SpeakerPage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>StepperDriversPage</class>
+   <extends>QWidget</extends>
+   <header>StepperDriversPage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>UserInterfaceLanguagePage</class>
+   <extends>QWidget</extends>
+   <header>UserInterfaceLanguagePage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ZProbeOptionsPage</class>
+   <extends>QWidget</extends>
+   <header>ZProbeOptionsPage.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

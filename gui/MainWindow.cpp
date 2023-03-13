@@ -205,34 +205,96 @@ void MainWindow::ConnectGuiSignalsAndSlots()
         QDesktopServices::openUrl(QUrl("https://er-ig.de/"));
     });
 
-    QObject::connect(mUi->uWelcomeTabButton, &QPushButton::clicked, this, [&]()
-    {
+    QObject::connect(mUi->uWelcomeTabButton, &QPushButton::clicked, this, [&](){
         mUi->stackedWidget->setCurrentIndex(0);
     });
 
-    QObject::connect(mUi->uFirmwareTabButton, &QPushButton::clicked, this, [&]()
-    {
+    QObject::connect(mUi->uFirmwareTabButton, &QPushButton::clicked, this, [&](){
         mUi->stackedWidget->setCurrentIndex(1);
     });
 
-    QObject::connect(mUi->uHardwareTabButton, &QPushButton::clicked, this, [&]()
-    {
+    QObject::connect(mUi->uHardwareTabButton, &QPushButton::clicked, this, [&](){
         mUi->stackedWidget->setCurrentIndex(2);
     });
 
-    QObject::connect(mUi->uExtruderTabButton, &QPushButton::clicked, this, [&]()
-    {
+    QObject::connect(mUi->uExtruderTabButton, &QPushButton::clicked, this, [&](){
         mUi->stackedWidget->setCurrentIndex(3);
     });
 
-    QObject::connect(mUi->uPowerSupplyButton, &QPushButton::clicked, this, [&]()
-    {
+    QObject::connect(mUi->uPowerSupplyButton, &QPushButton::clicked, this, [&](){
         mUi->stackedWidget->setCurrentIndex(4);
     });
 
-    QObject::connect(mUi->uThermalSettingsButton, &QPushButton::clicked, this, [&]()
-    {
+    QObject::connect(mUi->uThermalSettingsButton, &QPushButton::clicked, this, [&](){
         mUi->stackedWidget->setCurrentIndex(5);
+    });
+
+    QObject::connect(mUi->uKinematicsTabButton, &QPushButton::clicked, this, [&](){
+        mUi->stackedWidget->setCurrentIndex(6);
+    });
+
+    QObject::connect(mUi->uEndstopsTabButton, &QPushButton::clicked, this, [&](){
+        mUi->stackedWidget->setCurrentIndex(7);
+    });
+
+    QObject::connect(mUi->uMovementTabButton, &QPushButton::clicked, this, [&](){
+        mUi->stackedWidget->setCurrentIndex(8);
+    });
+
+    QObject::connect(mUi->uZProbeOptionsTabButton, &QPushButton::clicked, this, [&](){
+        mUi->stackedWidget->setCurrentIndex(9);
+    });
+
+    QObject::connect(mUi->uStepperDriversTabButton, &QPushButton::clicked, this, [&](){
+        mUi->stackedWidget->setCurrentIndex(10);
+    });
+
+    QObject::connect(mUi->uHomingAndBoundsTabButton, &QPushButton::clicked, this, [&](){
+        mUi->stackedWidget->setCurrentIndex(11);
+    });
+
+    QObject::connect(mUi->uFilamentRunoutSensorTabButton, &QPushButton::clicked, this, [&](){
+        mUi->stackedWidget->setCurrentIndex(12);
+    });
+
+    QObject::connect(mUi->uBedLevelingTabButton, &QPushButton::clicked, this, [&](){
+        mUi->stackedWidget->setCurrentIndex(13);
+    });
+
+    QObject::connect(mUi->uHomingOptionsTabButton, &QPushButton::clicked, this, [&](){
+        mUi->stackedWidget->setCurrentIndex(14);
+    });
+
+    QObject::connect(mUi->uAdditionalFeaturesTabButton, &QPushButton::clicked, this, [&](){
+        mUi->stackedWidget->setCurrentIndex(15);
+    });
+
+    QObject::connect(mUi->uUserInterfaceLanguageTabButton, &QPushButton::clicked, this, [&](){
+        mUi->stackedWidget->setCurrentIndex(16);
+    });
+
+    QObject::connect(mUi->uSDCardTabButton, &QPushButton::clicked, this, [&](){
+        mUi->stackedWidget->setCurrentIndex(17);
+    });
+
+    QObject::connect(mUi->uLCDMenuItemsTabButton, &QPushButton::clicked, this, [&](){
+        mUi->stackedWidget->setCurrentIndex(18);
+    });
+
+    QObject::connect(mUi->uEncoderTabButton, &QPushButton::clicked, this, [&](){
+        mUi->stackedWidget->setCurrentIndex(19);
+    });
+
+    QObject::connect(mUi->uSpeakerTabButton, &QPushButton::clicked, this, [&](){
+        mUi->stackedWidget->setCurrentIndex(20);
+    });
+
+    QObject::connect(mUi->uLCDControllerTabButton, &QPushButton::clicked, this, [&](){
+        mUi->stackedWidget->setCurrentIndex(21);
+    });
+
+    QObject::connect(mUi->uExtraFeaturesTabButton, &QPushButton::clicked, this, [&](){
+        mUi->stackedWidget->setCurrentIndex(22);
     });
 }
 
@@ -403,6 +465,8 @@ bool MainWindow::LoadConfigurationFromJson(const QJsonObject& pJson)
     {
         success = false;
     }
+
+#warning add remaining pages
 
     return success;
 }

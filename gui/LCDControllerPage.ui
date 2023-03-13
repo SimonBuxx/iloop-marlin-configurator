@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LCDControllerPage</class>
+ <widget class="QWidget" name="LCDControllerPage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1252</width>
+    <height>496</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>348</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#LCDControllerPage {
+	background: rgb(34, 35, 40);
+}
+
+QWidget {
+        font-family: &quot;Source Sans Pro&quot;;
+		background: none;
+}
+
+QMenu {
+    background-color: rgb(34, 35, 40);
+}
+
+QLabel:!disabled {
+	color: white;
+}
+
+QGroupBox {
+	border: 1px solid black;
+	border-radius: 5px;
+	background: rgb(34, 35, 40);
+	padding-top: 25px;
+}
+
+QGroupBox:disabled {
+	border: 1px solid rgb(26, 26, 30);
+}
+
+QGroupBox::title {
+	background: rgb(249, 154, 0);
+	color: rgb(34, 35, 40);
+    padding: 5px;
+	border: 1px solid black;
+	border-top-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+QGroupBox::title:disabled {
+	background: rgb(34, 35, 40);
+        color: rgb(100, 100, 100);
+	border: 1px solid rgb(26, 26, 30);
+}
+
+QGroupBox:checked:!disabled {
+	background: rgb(50, 52, 59);
+}
+
+QGroupBox:focus:!checked {
+	border: 1px solid rgb(249, 154, 0);
+	background: rgb(26, 26, 30);
+}
+
+QGroupBox:focus:checked {
+	border: 1px solid rgb(249, 154, 0);
+}
+
+QGroupBox::title:focus {
+	border: 1px solid rgb(249, 154, 0);
+}
+
+QGroupBox::indicator {
+    width: 15px;
+    height: 15px;
+    background: rgb(34, 35, 40);
+	border-radius: 3px;
+}
+
+QGroupBox::indicator:disabled {
+    width: 15px;
+    height: 15px;
+    background: rgb(26, 26, 30);
+}
+
+QGroupBox::indicator:checked {
+        image: url(&quot;://check_FILL0_wght400_GRAD0_opsz20.svg&quot;);
+}
+
+QCheckBox {
+    padding: 5px;
+	color: white;
+    background: rgb(63, 65, 77);
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+QCheckBox:disabled {
+	background: rgb(34, 35, 40);
+        color: rgb(100, 100, 100);
+}
+
+QCheckBox::hover {
+        border: 1px solid rgb(75, 77, 91);
+}
+
+QCheckBox:focus {
+	border: 1px solid rgb(249, 154, 0);
+}
+
+QCheckBox::indicator {
+    width: 15px;
+    height: 15px;
+    background: rgb(34, 35, 40);
+	border-radius: 3px;
+}
+
+QCheckBox::indicator:disabled {
+    width: 15px;
+    height: 15px;
+    background: rgb(26, 26, 30);
+}
+
+QCheckBox::indicator:checked {
+        image: url(&quot;://check_FILL0_wght400_GRAD0_opsz20.svg&quot;);
+}
+
+QPushButton {
+	background: rgb(63, 65, 77);
+	color: white;
+    border: 1px solid black;
+	border-radius: 5px;
+	padding: 6px;
+}
+
+QPushButton:disabled {
+	background: rgb(34, 35, 40);
+        color: rgb(100, 100, 100);
+	border: 1px solid rgb(26, 26, 30);
+}
+
+QPushButton:hover {
+	  background: rgb(75, 77, 91);
+}
+
+QComboBox {
+	color: white;
+    background: rgb(63, 65, 77);
+    border: 1px solid black;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+QComboBox::disabled {
+	background: rgb(34, 35, 40);
+        color: rgb(100, 100, 100);
+	border: 1px solid rgb(26, 26, 30);
+}
+
+QComboBox:hover {
+    border: 1px solid rgb(75, 77, 91);
+}
+
+QComboBox:focus {
+	border: 1px solid rgb(249, 154, 0);
+}
+
+QComboBox::drop-down {
+	border: none;
+}
+
+QComboBox::down-arrow {
+        image: url(&quot;:/arrow_drop_down_FILL0_wght400_GRAD0_opsz20_white.svg&quot;);
+ 	width: 6px;
+	margin-right: 4px;
+	margin-bottom: 2px;
+}
+
+QLineEdit {
+	color: white;
+    background: rgb(63, 65, 77);
+    border: 1px solid black;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+QLineEdit:disabled {
+	background: rgb(34, 35, 40);
+        color: rgb(100, 100, 100);
+	border: 1px solid rgb(26, 26, 30);
+}
+
+QLineEdit:hover {
+    border: 1px solid rgb(75, 77, 91);
+}
+
+QLineEdit:focus {
+	border: 1px solid rgb(249, 154, 0);
+}
+
+QLabel {
+	min-height: 30px;
+}
+
+QLabel:disabled {
+        color: rgb(100, 100, 100);
+}
+
+QAbstractSpinBox {
+	color: white;
+    background: rgb(63, 65, 77);
+    border: 1px solid black;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+QAbstractSpinBox:disabled {
+	background: rgb(34, 35, 40);
+        color: rgb(100, 100, 100);
+	border: 1px solid rgb(26, 26, 30);
+}
+
+QAbstractSpinBox:hover {
+    border: 1px solid rgb(75, 77, 91);
+}
+
+QAbstractSpinBox:focus {
+	border: 1px solid rgb(249, 154, 0);
+}
+
+QAbstractSpinBox::up-button {
+        image: url(&quot;:/arrow_drop_up_FILL0_wght400_GRAD0_opsz20_white.svg&quot;);
+ 	width: 6px;
+	margin-right: 6px;
+	margin-top: 4px;
+}
+
+QAbstractSpinBox::down-button {
+        image: url(&quot;:/arrow_drop_down_FILL0_wght400_GRAD0_opsz20_white.svg&quot;);
+ 	width: 6px;
+	margin-right: 6px;
+	margin-bottom: 4px;
+}
+
+QAbstractSpinBox::up-button:disabled,
+QAbstractSpinBox::up-button:off {
+                image: url(&quot;:/arrow_drop_up_FILL0_wght400_GRAD0_opsz20.svg&quot;);
+}
+
+QAbstractSpinBox::down-button:disabled,
+QAbstractSpinBox::down-button:off {
+                image: url(&quot;:/arrow_drop_down_FILL0_wght400_GRAD0_opsz20.svg&quot;);
+}</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="leftMargin">
+    <number>12</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>17</number>
+   </property>
+   <property name="spacing">
+    <number>10</number>
+   </property>
+   <item row="3" column="1">
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>10</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="10" column="0" colspan="3">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="2" column="0" colspan="3">
+    <widget class="QWidget" name="widget" native="true">
+     <layout class="QGridLayout" name="gridLayout_5">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <property name="horizontalSpacing">
+       <number>10</number>
+      </property>
+      <property name="verticalSpacing">
+       <number>5</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_5">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Source Sans Pro Light</family>
+          <pointsize>-1</pointsize>
+          <italic>true</italic>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+	color: rgb(100, 103, 122);
+	font-size: 35px;
+	font-family: &quot;Source Sans Pro Light&quot;;
+	font-style: italic;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>LCD CONTROLLER</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QPushButton" name="uDocumentationButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>Open LCD Controller documentation</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	background: none;
+	border: none;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../resources/resources.qrc">
+          <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../resources/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

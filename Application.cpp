@@ -179,6 +179,7 @@ void Application::OnCloseWorkspace()
 
     mMainWindow.Log(QString("Workspace %0 has been closed.").arg(mFolderInfo.value().filePath()));
     mFolderInfo = std::nullopt;
+    mNewWorkspace = false;
 }
 
 void Application::OpenConfigurationJson(const QFileInfo& pFilePath)

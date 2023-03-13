@@ -39,6 +39,23 @@ static constexpr auto HARDWARE_TEMPLATE_PATH{":/hardware_template.txt"};
 static constexpr auto EXTRUDER_TEMPLATE_PATH{":/extruder_template.txt"};
 static constexpr auto POWERSUPPLY_TEMPLATE_PATH{":/powersupply_template.txt"};
 static constexpr auto THERMALSETTINGS_TEMPLATE_PATH{":/thermalsettings_template.txt"};
+static constexpr auto KINEMATICS_TEMPLATE_PATH{":/kinematics_template.txt"};
+static constexpr auto ENDSTOPS_TEMPLATE_PATH{":/endstops_template.txt"};
+static constexpr auto MOVEMENT_TEMPLATE_PATH{":/movement_template.txt"};
+static constexpr auto Z_PROBE_OPTIONS_TEMPLATE_PATH{":/z_probe_options_template.txt"};
+static constexpr auto STEPPER_DRIVERS_TEMPLATE_PATH{":/stepper_drivers_template.txt"};
+static constexpr auto HOMING_AND_BOUNDS_TEMPLATE_PATH{":/homing_and_bounds_template.txt"};
+static constexpr auto FILAMENT_RUNOUT_SENSOR_TEMPLATE_PATH{":/filament_runout_sensor_template.txt"};
+static constexpr auto BED_LEVELING_TEMPLATE_PATH{":/bed_leveling_template.txt"};
+static constexpr auto HOMING_OPTIONS_TEMPLATE_PATH{":/homing_options_template.txt"};
+static constexpr auto ADDITIONAL_FEATURES_TEMPLATE_PATH{":/additional_features_template.txt"};
+static constexpr auto USER_INTERFACE_LANGUAGE_TEMPLATE_PATH{":/user_interface_language_template.txt"};
+static constexpr auto SD_CARD_TEMPLATE_PATH{":/sd_card_template.txt"};
+static constexpr auto LCD_MENU_ITEMS_TEMPLATE_PATH{":/lcd_menu_items_template.txt"};
+static constexpr auto ENCODER_TEMPLATE_PATH{":/encoder_template.txt"};
+static constexpr auto SPEAKER_TEMPLATE_PATH{":/speaker_template.txt"};
+static constexpr auto LCD_CONTROLLER_TEMPLATE_PATH{":/lcd_controller_template.txt"};
+static constexpr auto EXTRA_FEATURES_TEMPLATE_PATH{":/extra_features_template.txt"};
 
 // Contains default values of all configuration parameters
 namespace defaults

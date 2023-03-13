@@ -40,6 +40,57 @@ target_sources(GUI_IMC_GUI
         ThermalSettingsPage.h
         ThermalSettingsPage.cpp
         ThermalSettingsPage.ui
+        KinematicsPage.h
+        KinematicsPage.cpp
+        KinematicsPage.ui
+        EndstopsPage.h
+        EndstopsPage.cpp
+        EndstopsPage.ui
+        MovementPage.h
+        MovementPage.cpp
+        MovementPage.ui
+        ZProbeOptionsPage.h
+        ZProbeOptionsPage.cpp
+        ZProbeOptionsPage.ui
+        StepperDriversPage.h
+        StepperDriversPage.cpp
+        StepperDriversPage.ui
+        HomingAndBoundsPage.h
+        HomingAndBoundsPage.cpp
+        HomingAndBoundsPage.ui
+        FilamentRunoutSensorPage.h
+        FilamentRunoutSensorPage.cpp
+        FilamentRunoutSensorPage.ui
+        BedLevelingPage.h
+        BedLevelingPage.cpp
+        BedLevelingPage.ui
+        HomingOptionsPage.h
+        HomingOptionsPage.cpp
+        HomingOptionsPage.ui
+        AdditionalFeaturesPage.h
+        AdditionalFeaturesPage.cpp
+        AdditionalFeaturesPage.ui
+        UserInterfaceLanguagePage.h
+        UserInterfaceLanguagePage.cpp
+        UserInterfaceLanguagePage.ui
+        SDCardPage.h
+        SDCardPage.cpp
+        SDCardPage.ui
+        LCDMenuItemsPage.h
+        LCDMenuItemsPage.cpp
+        LCDMenuItemsPage.ui
+        EncoderPage.h
+        EncoderPage.cpp
+        EncoderPage.ui
+        SpeakerPage.h
+        SpeakerPage.cpp
+        SpeakerPage.ui
+        LCDControllerPage.h
+        LCDControllerPage.cpp
+        LCDControllerPage.ui
+        ExtraFeaturesPage.h
+        ExtraFeaturesPage.cpp
+        ExtraFeaturesPage.ui
 )
 
 add_subdirectory(widgets)
