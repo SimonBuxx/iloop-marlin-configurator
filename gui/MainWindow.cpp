@@ -466,6 +466,25 @@ bool MainWindow::LoadConfigurationFromJson(const QJsonObject& pJson)
         success = false;
     }
 
+    if (pJson.contains("sdCard") && pJson["sdCard"].isObject())
+    {
+        success &= mUi->uSDCardPage->LoadFromJson(pJson["sdCard"].toObject());
+    }
+    else
+    {
+        success = false;
+    }
+
+    if (pJson.contains("lcdMenuItems") && pJson["lcdMenuItems"].isObject())
+    {
+        success &= mUi->uLCDMenuItemsPage->LoadFromJson(pJson["lcdMenuItems"].toObject());
+    }
+    else
+    {
+        success = false;
+    }
+
+
 #warning add remaining pages
 
     return success;

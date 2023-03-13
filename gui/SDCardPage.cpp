@@ -53,6 +53,9 @@ void SDCardPage::ResetValues()
 {
     mIsLoading = true;
 
+    mUi->uSdsupportBox->setChecked(defaults::SDSUPPORT);
+    mUi->uSdCheckAndRetryBox->setChecked(defaults::SD_CHECK_AND_RETRY);
+
     mIsLoading = false;
 }
 
@@ -61,14 +64,21 @@ bool SDCardPage::LoadFromJson(const QJsonObject &pJson)
     bool success = true;
     mIsLoading = true;
 
+    success &= LoadConfig(mUi->uSdsupportBox, pJson, "SDSUPPORT");
+    success &= LoadConfig(mUi->uSdCheckAndRetryBox, pJson, "SD_CHECK_AND_RETRY");
+
     mIsLoading = false;
     return success;
 }
 
 void SDCardPage::FetchConfiguration(Configuration& pConfig)
 {
+    SetConfig(pConfig.sdCard.SDSUPPORT, mUi->uSdsupportBox);
+    SetConfig(pConfig.sdCard.SD_CHECK_AND_RETRY, mUi->uSdCheckAndRetryBox);
 }
 
 void SDCardPage::ReplaceTags(QStringList& pOutput)
 {
+    ReplaceTag(pOutput, "#{SDSUPPORT}", mUi->uSdsupportBox, "SDSUPPORT");
+    ReplaceTag(pOutput, "#{SD_CHECK_AND_RETRY}", mUi->uSdCheckAndRetryBox, "SD_CHECK_AND_RETRY");
 }

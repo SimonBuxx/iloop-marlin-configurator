@@ -53,6 +53,9 @@ void LCDMenuItemsPage::ResetValues()
 {
     mIsLoading = true;
 
+    mUi->uNoLcdMenusBox->setChecked(defaults::NO_LCD_MENUS);
+    mUi->uSlimLcdMenusBox->setChecked(defaults::SLIM_LCD_MENUS);
+
     mIsLoading = false;
 }
 
@@ -61,14 +64,21 @@ bool LCDMenuItemsPage::LoadFromJson(const QJsonObject &pJson)
     bool success = true;
     mIsLoading = true;
 
+    success &= LoadConfig(mUi->uNoLcdMenusBox, pJson, "NO_LCD_MENUS");
+    success &= LoadConfig(mUi->uSlimLcdMenusBox, pJson, "SLIM_LCD_MENUS");
+
     mIsLoading = false;
     return success;
 }
 
 void LCDMenuItemsPage::FetchConfiguration(Configuration& pConfig)
 {
+    SetConfig(pConfig.lcdMenuItems.NO_LCD_MENUS, mUi->uNoLcdMenusBox);
+    SetConfig(pConfig.lcdMenuItems.SLIM_LCD_MENUS, mUi->uSlimLcdMenusBox);
 }
 
 void LCDMenuItemsPage::ReplaceTags(QStringList& pOutput)
 {
+    ReplaceTag(pOutput, "#{NO_LCD_MENUS}", mUi->uNoLcdMenusBox, "NO_LCD_MENUS");
+    ReplaceTag(pOutput, "#{SLIM_LCD_MENUS}", mUi->uSlimLcdMenusBox, "SLIM_LCD_MENUS");
 }

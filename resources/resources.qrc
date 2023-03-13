@@ -60,5 +60,7 @@
         <file>build_FILL0_wght100_GRAD0_opsz20.svg</file>
         <file>settings_suggest_FILL0_wght100_GRAD0_opsz20.svg</file>
         <file>restart_alt_FILL0_wght100_GRAD0_opsz20.svg</file>
+        <file>sd_card_template.txt</file>
+        <file>lcd_menu_items_template.txt</file>
     </qresource>
 </RCC>

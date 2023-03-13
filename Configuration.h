@@ -315,6 +315,14 @@ static constexpr auto THERMAL_PROTECTION_HOTENDS{true};
 static constexpr auto THERMAL_PROTECTION_BED{true};
 static constexpr auto THERMAL_PROTECTION_CHAMBER{true};
 static constexpr auto THERMAL_PROTECTION_COOLER{true};
+
+// SD Card
+static constexpr auto SDSUPPORT{false};
+static constexpr auto SD_CHECK_AND_RETRY{false};
+
+// LCD Menu Items
+static constexpr auto NO_LCD_MENUS{false};
+static constexpr auto SLIM_LCD_MENUS{false};
 }
 
 struct PageConfiguration
@@ -910,6 +918,52 @@ public:
 };
 
 ///
+/// \brief The SDCardConfiguration struct contains SD card configurations
+///
+struct SDCardConfiguration : public PageConfiguration
+{
+    bool SDSUPPORT{defaults::SDSUPPORT};
+    bool SD_CHECK_AND_RETRY{defaults::SD_CHECK_AND_RETRY};
+
+public:
+    /// \brief Converts the configuration into a JSON object
+    ///
+    /// \return a JSON object containing the configuration data
+    QJsonObject ToJson(void) const override
+    {
+        QJsonObject json;
+
+        json["SDSUPPORT"] = SDSUPPORT;
+        json["SD_CHECK_AND_RETRY"] = SD_CHECK_AND_RETRY;
+
+        return json;
+    }
+};
+
+///
+/// \brief The LCDMenuItemsConfiguration struct contains LCD menu items configurations
+///
+struct LCDMenuItemsConfiguration : public PageConfiguration
+{
+    bool NO_LCD_MENUS{defaults::NO_LCD_MENUS};
+    bool SLIM_LCD_MENUS{defaults::SLIM_LCD_MENUS};
+
+public:
+    /// \brief Converts the configuration into a JSON object
+    ///
+    /// \return a JSON object containing the configuration data
+    QJsonObject ToJson(void) const override
+    {
+        QJsonObject json;
+
+        json["NO_LCD_MENUS"] = NO_LCD_MENUS;
+        json["SLIM_LCD_MENUS"] = SLIM_LCD_MENUS;
+
+        return json;
+    }
+};
+
+///
 /// \brief The Configuration struct contains a complete Marlin configuration
 ///
 struct Configuration
@@ -919,6 +973,8 @@ struct Configuration
     ExtruderConfiguration extruder;
     PowerSupplyConfiguration powerSupply;
     ThermalSettingsConfiguration thermalSettings;
+    SDCardConfiguration sdCard;
+    LCDMenuItemsConfiguration lcdMenuItems;
 
 public:
     /// \brief Converts the configuration into a JSON object
@@ -933,6 +989,8 @@ public:
         json["extruder"] = extruder.ToJson();
         json["powerSupply"] = powerSupply.ToJson();
         json["thermalSettings"] = thermalSettings.ToJson();
+        json["sdCard"] = sdCard.ToJson();
+        json["lcdMenuItems"] = lcdMenuItems.ToJson();
 
         return json;
     }
