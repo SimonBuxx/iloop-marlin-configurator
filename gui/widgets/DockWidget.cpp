@@ -40,5 +40,5 @@ void DockWidget::focusInEvent(QFocusEvent *pEvent)
 
 void DockWidget::focusOutEvent(QFocusEvent *pEvent)
 {
-    setStyleSheet("QScrollArea {border: 1px solid black;}");
+    setStyleSheet("QScrollArea {border: none;}");
 }

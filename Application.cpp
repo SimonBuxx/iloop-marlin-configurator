@@ -54,8 +54,13 @@ Application::Application(QObject *parent)
         OnClean(mMainWindow.GetEnvironment());
     });
     QObject::connect(&mMainWindow, &MainWindow::RebuildMarlinSignal, this, [&](){
-        OnClean(mMainWindow.GetEnvironment());
-        OnBuildMarlin(mMainWindow.GetEnvironment());
+        if (OnClean(mMainWindow.GetEnvironment()))
+        {
+            OnBuildMarlin(mMainWindow.GetEnvironment());
+        }
+    });
+    QObject::connect(&mMainWindow, &MainWindow::UploadSignal, this, [&](){
+        OnUpload(mMainWindow.GetEnvironment());
     });
 
     mMainWindow.Log("Reading Configuration.h template...");
@@ -77,7 +82,6 @@ Application::~Application()
 
 void Application::OnConfigure()
 {
-#warning [ENHANCEMENT] disable actions when no workspace is open
     if (!mFolderInfo.has_value())
     {
         mMainWindow.Log(QString("Configuration failed: No Marlin workspace opened."), "red");
@@ -266,6 +270,7 @@ std::optional<QStringList> Application::GenerateCode()
 
 void Application::OnBuildMarlin(const QString& pEnvironment)
 {
+    mMainWindow.ActivateCancelButton();
     if (!mFolderInfo.has_value())
     {
         mMainWindow.Log("Could not start build: No Marlin workspace opened.", "red");
@@ -336,6 +341,10 @@ void Application::OnBuildMarlin(const QString& pEnvironment)
     while(process.state() == QProcess::ProcessState::Running)
     {
         QCoreApplication::processEvents();
+        if (mMainWindow.IsBuildCanceled())
+        {
+            process.close();
+        }
     }
 
     process.waitForFinished();
@@ -346,17 +355,130 @@ void Application::OnBuildMarlin(const QString& pEnvironment)
     {
         mMainWindow.Log("Build successful.", "rgb(249, 154, 0)");
     }
+    else if (mMainWindow.IsBuildCanceled())
+    {
+        mMainWindow.Log("Build canceled.", "red");
+    }
     else
     {
         mMainWindow.Log("Build failed. See compiler outputs for more details.", "red");
     }
+
+    mMainWindow.DeactivateCancelButton();
 }
 
-void Application::OnClean(const QString& pEnvironment)
+bool Application::OnClean(const QString& pEnvironment)
 {
+    mMainWindow.ActivateCancelButton();
     if (!mFolderInfo.has_value())
     {
         mMainWindow.Log("Could not start cleaning: No Marlin workspace opened.", "red");
+        return false;
+    }
+
+    mBuildSuccess = false;
+
+    QProcess process;
+    process.start("C:\\Windows\\system32\\cmd.exe");
+
+    if (false == process.waitForStarted())
+    {
+        return false;
+    }
+
+    if (mFolderInfo.has_value())
+    {
+        process.write(QString("cd %0\n").arg(mFolderInfo.value().filePath()).toLocal8Bit());
+    }
+
+    QObject::connect(&process, &QProcess::readyReadStandardOutput, this, [&](){
+        auto stream = QTextStream(process.readAllStandardOutput());
+        while (!stream.atEnd())
+        {
+            const auto& line = stream.readLine();
+
+            if (line.size() <= 2)
+            {
+                continue;
+            }
+
+            if (line.endsWith(">"))
+            {
+                mCurrent = line;
+                continue;
+            }
+
+            if (line.contains(">platformio"))
+            {
+                auto list = line.split(">");
+                mMainWindow.CompilerLog(list[0] + ">", list[1]);
+
+                continue;
+            }
+
+            if  (line.contains("1 succeeded"))
+            {
+                mBuildSuccess = true;
+            }
+
+            mMainWindow.CompilerLog(mCurrent, line);
+            mCurrent.clear();
+        }
+    });
+
+    QObject::connect(&process, &QProcess::readyReadStandardError, this, [&](){
+        auto stream = QTextStream(process.readAllStandardError());
+        while (!stream.atEnd())
+        {
+            mMainWindow.CompilerLog(std::nullopt, stream.readLine(), "red");
+        }
+    });
+
+    mMainWindow.Log(QString("Starting clean for environment %0...").arg(pEnvironment));
+
+    process.write(QString("platformio run --target clean -e %0\n").arg(pEnvironment).toLocal8Bit());
+
+    process.write("exit\n");
+
+    while(process.state() == QProcess::ProcessState::Running)
+    {
+        QCoreApplication::processEvents();
+        if (mMainWindow.IsBuildCanceled())
+        {
+            process.close();
+        }
+    }
+
+    process.waitForFinished();
+    process.close();
+
+    mMainWindow.CompilerLog(std::nullopt, "");
+    if (mBuildSuccess)
+    {
+        mMainWindow.Log("Cleaning successful.", "rgb(249, 154, 0)");
+        mMainWindow.DeactivateCancelButton();
+        return true;
+    }
+    else if (mMainWindow.IsBuildCanceled())
+    {
+        mMainWindow.Log("Cleaning canceled.", "red");
+        mMainWindow.DeactivateCancelButton();
+        return false;
+    }
+    else
+    {
+        mMainWindow.Log("Cleaning failed. See compiler outputs for more details.", "red");
+        mMainWindow.DeactivateCancelButton();
+        return false;
+    }
+}
+
+void Application::OnUpload(const QString& pEnvironment)
+{
+    mMainWindow.ActivateCancelButton();
+    if (!mFolderInfo.has_value())
+    {
+        mMainWindow.Log("Could not start upload: No Marlin workspace opened.", "red");
         return;
     }
 
@@ -418,15 +540,19 @@ void Application::OnClean(const QString& pEnvironment)
         }
     });
 
-    mMainWindow.Log(QString("Starting cleaning of environment %0...").arg(pEnvironment));
+    mMainWindow.Log(QString("Starting upload for environment %0...").arg(pEnvironment));
 
-    process.write(QString("platformio run --target clean -e %0\n").arg(pEnvironment).toLocal8Bit());
+    process.write(QString("platformio run --target upload -e %0\n").arg(pEnvironment).toLocal8Bit());
 
     process.write("exit\n");
 
     while(process.state() == QProcess::ProcessState::Running)
     {
         QCoreApplication::processEvents();
+        if (mMainWindow.IsBuildCanceled())
+        {
+            process.close();
+        }
     }
 
     process.waitForFinished();
@@ -435,10 +561,16 @@ void Application::OnClean(const QString& pEnvironment)
     mMainWindow.CompilerLog(std::nullopt, "");
     if (mBuildSuccess)
     {
-        mMainWindow.Log("Cleaning successful.", "rgb(249, 154, 0)");
+        mMainWindow.Log("Upload successful.", "rgb(249, 154, 0)");
+    }
+    else if (mMainWindow.IsBuildCanceled())
+    {
+        mMainWindow.Log("Upload canceled.", "red");
     }
     else
     {
-        mMainWindow.Log("Cleaning failed. See compiler outputs for more details.", "red");
+        mMainWindow.Log("Upload failed. See compiler outputs for more details.", "red");
     }
+
+    mMainWindow.DeactivateCancelButton();
 }

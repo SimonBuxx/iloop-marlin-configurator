@@ -83,6 +83,10 @@ public:
 
     QString GetEnvironment(void) const;
 
+    void ActivateCancelButton(void);
+    void DeactivateCancelButton(void);
+    bool IsBuildCanceled(void) const;
+
 signals:
     /// \brief Emitted when the current configuration should be exported as a C++ header file
     void ConfigureSignal(void);
@@ -98,6 +102,7 @@ signals:
     void BuildMarlinSignal(void);
     void RebuildMarlinSignal(void);
     void CleanSignal(void);
+    void UploadSignal(void);
 
 public slots:
     /// \brief Closes the current workspace and resets the configuration
@@ -106,6 +111,8 @@ public slots:
     void OnOpenWorkspace(void);
 
     void OnWorkspaceOpened(void);
+
+    void OnResetConfiguration(void);
 
     void ResetValues(void);
 
@@ -129,5 +136,7 @@ protected:
     QLabel mMarlinVersionLabel;
 
     int8_t mLastCheckedButton = -1;
+
+    bool mBuildCanceled = false;
 };
 #endif // MAINWINDOW_H

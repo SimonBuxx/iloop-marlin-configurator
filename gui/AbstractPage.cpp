@@ -88,6 +88,6 @@ void AbstractPage::OnUpdatePreview()
     }
     else
     {
-        emit UpdatePreviewSignal(QStringList("Preview not available."));
+        emit UpdatePreviewSignal(QStringList()); // Set to placeholder text
     }
 }

@@ -100,7 +100,9 @@ MainWindow::MainWindow(QWidget *pParent)
         page->setEnabled(false);
     }
 
-    OnUpdatePreview(QStringList("Preview not available."));
+    OnUpdatePreview(QStringList()); // Set to placeholder text
+
+    mUi->uCancelButton->setVisible(false);
 }
 
 MainWindow::~MainWindow()
@@ -123,13 +125,14 @@ void MainWindow::ConnectGuiSignalsAndSlots()
         }
         else
         {
-            OnUpdatePreview(QStringList("Preview not available."));
+            OnUpdatePreview(QStringList()); // Set to placeholder text
         }
     });
 
     QObject::connect(mUi->uCloseAction, &QAction::triggered, this, &QMainWindow::close);
     QObject::connect(mUi->uAboutAction, &QAction::triggered, &mAboutDialog, &AboutDialog::show);
     QObject::connect(mUi->uCloseWorkspaceAction, &QAction::triggered, this, &MainWindow::OnCloseWorkspace);
+    QObject::connect(mUi->uCloseWorkspaceButton, &QPushButton::pressed, this, &MainWindow::OnCloseWorkspace);
 
     QObject::connect(mUi->uWelcomePage, &WelcomePage::OpenWorkspaceSignal, this, &MainWindow::OnOpenWorkspace);
 
@@ -140,28 +143,14 @@ void MainWindow::ConnectGuiSignalsAndSlots()
     }
 
     QObject::connect(mUi->uSaveWorkspaceAction, &QAction::triggered, this, &MainWindow::SaveProjectSignal);
+    QObject::connect(mUi->uSaveWorkspaceButton, &QPushButton::pressed, this, &MainWindow::SaveProjectSignal);
     QObject::connect(mUi->uOpenWorkspaceAction, &QAction::triggered, this, &MainWindow::OnOpenWorkspace);
-    QObject::connect(mUi->uResetConfigurationAction, &QAction::triggered, this, [&](){
-        QMessageBox msgBox;
-        msgBox.setText("Do you really want to reset the workspace configuration?");
-        msgBox.setInformativeText("Reset only affects the displayed values, the workspace files are not updated until explicitly saved.");
-        msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
-        msgBox.setIcon(QMessageBox::Question);
-        if (msgBox.exec() == QMessageBox::No)
-        {
-            return;
-        }
+    QObject::connect(mUi->uOpenWorkspaceButton, &QPushButton::pressed, this, &MainWindow::OnOpenWorkspace);
+    QObject::connect(mUi->uResetConfigurationAction, &QAction::triggered, this, &MainWindow::OnResetConfiguration);
+    QObject::connect(mUi->uResetConfigurationButton, &QPushButton::pressed, this, &MainWindow::OnResetConfiguration);
 
-        ResetValues();
-        Log("Workspace configuration resetted.", "rgb(249, 154, 0)");
-    });
+    QObject::connect(mUi->uActionConfigure, &QAction::triggered, this, &MainWindow::ConfigureSignal);
 
-    QObject::connect(mUi->uActionConfigure, &QAction::triggered, this, [&]()
-    {
-        emit ConfigureSignal();
-    });
-
-#warning disable actions while building/cleaning/uploading
     QObject::connect(mUi->uActionBuild, &QAction::triggered, this, [&](){
         mUi->uCompilerOutputsDock->raise();
 
@@ -179,6 +168,45 @@ void MainWindow::ConnectGuiSignalsAndSlots()
 
         emit CleanSignal();
     });
+
+    QObject::connect(mUi->uActionUpload, &QAction::triggered, this, [&](){
+        mUi->uCompilerOutputsDock->raise();
+
+        emit UploadSignal();
+    });
+
+    QObject::connect(mUi->uConfigureButton, &QPushButton::pressed, this, &MainWindow::ConfigureSignal);
+
+    QObject::connect(mUi->uBuildButton, &QPushButton::pressed, this, [&](){
+        mUi->uCompilerOutputsDock->raise();
+
+        emit BuildMarlinSignal();
+    });
+
+    QObject::connect(mUi->uRebuildButton, &QPushButton::pressed, this, [&](){
+        mUi->uCompilerOutputsDock->raise();
+
+        emit RebuildMarlinSignal();
+    });
+
+    QObject::connect(mUi->uCleanButton, &QPushButton::pressed, this, [&](){
+        mUi->uCompilerOutputsDock->raise();
+
+        emit CleanSignal();
+    });
+
+    QObject::connect(mUi->uUploadButton, &QPushButton::pressed, this, [&](){
+        mUi->uCompilerOutputsDock->raise();
+
+        emit UploadSignal();
+    });
+
+    QObject::connect(mUi->uCancelButton, &QPushButton::pressed, this, [&](){
+        mBuildCanceled = true;
+    });
+
+    QObject::connect(mUi->uClearGeneralOutputsButton, &QPushButton::pressed, mUi->uLogConsole, &QTextBrowser::clear);
+    QObject::connect(mUi->uClearCompilerOutputsButton, &QPushButton::pressed, mUi->uCompilerConsole, &QTextBrowser::clear);
 
     QObject::connect(mUi->uActionOpenMarlinHomepage, &QAction::triggered, this, [&]()
     {
@@ -328,11 +356,82 @@ void MainWindow::OnUpdatePreview(const QStringList& pPreviewCode)
     const auto& val = mUi->uPreviewEdit->verticalScrollBar()->value();
     mUi->uPreviewEdit->setPlainText(pPreviewCode.join('\n'));
     mUi->uPreviewEdit->verticalScrollBar()->setValue(val);
+
+    if (pPreviewCode.empty())
+    {
+        mUi->uPreviewEdit->setStyleSheet("QTextEdit {font-family: \"Source Code Pro\";selection-background-color: rgb(63, 65, 77);color: rgb(100, 100, 100);}");
+    }
+    else
+    {
+        mUi->uPreviewEdit->setStyleSheet("QTextEdit {font-family: \"Source Code Pro\";selection-background-color: rgb(63, 65, 77);color: white;}");
+    }
 }
 
 QString MainWindow::GetEnvironment() const
 {
     return mUi->uHardwarePage->GetEnvironment();
+}
+
+void MainWindow::ActivateCancelButton()
+{
+    mUi->uConfigureButton->setEnabled(false);
+    mUi->uBuildButton->setEnabled(false);
+    mUi->uCleanButton->setEnabled(false);
+    mUi->uUploadButton->setEnabled(false);
+    mUi->uRebuildButton->setEnabled(false);
+
+    mUi->uActionConfigure->setEnabled(false);
+    mUi->uActionBuild->setEnabled(false);
+    mUi->uActionRebuild->setEnabled(false);
+    mUi->uActionClean->setEnabled(false);
+    mUi->uActionUpload->setEnabled(false);
+
+    mUi->uOpenWorkspaceAction->setEnabled(false);
+    mUi->uSaveWorkspaceAction->setEnabled(false);
+    mUi->uCloseWorkspaceAction->setEnabled(false);
+    mUi->uResetConfigurationAction->setEnabled(false);
+
+    mUi->uOpenWorkspaceButton->setEnabled(false);
+    mUi->uSaveWorkspaceButton->setEnabled(false);
+    mUi->uCloseWorkspaceButton->setEnabled(false);
+    mUi->uResetConfigurationButton->setEnabled(false);
+
+    mUi->uCancelButton->setVisible(true);
+    mBuildCanceled = false;
+}
+
+void MainWindow::DeactivateCancelButton()
+{
+    // Note: Re-enabling here is only okay as long as it is ensured that all buttons should be enabled after cancel
+    mUi->uConfigureButton->setEnabled(true);
+    mUi->uBuildButton->setEnabled(true);
+    mUi->uCleanButton->setEnabled(true);
+    mUi->uUploadButton->setEnabled(true);
+    mUi->uRebuildButton->setEnabled(true);
+
+    mUi->uActionConfigure->setEnabled(true);
+    mUi->uActionBuild->setEnabled(true);
+    mUi->uActionRebuild->setEnabled(true);
+    mUi->uActionClean->setEnabled(true);
+    mUi->uActionUpload->setEnabled(true);
+
+    mUi->uOpenWorkspaceAction->setEnabled(true);
+    mUi->uSaveWorkspaceAction->setEnabled(true);
+    mUi->uCloseWorkspaceAction->setEnabled(true);
+    mUi->uResetConfigurationAction->setEnabled(true);
+
+    mUi->uOpenWorkspaceButton->setEnabled(true);
+    mUi->uSaveWorkspaceButton->setEnabled(true);
+    mUi->uCloseWorkspaceButton->setEnabled(true);
+    mUi->uResetConfigurationButton->setEnabled(true);
+
+    mUi->uCancelButton->setVisible(false);
+    mBuildCanceled = false;
+}
+
+bool MainWindow::IsBuildCanceled() const
+{
+    return mBuildCanceled;
 }
 
 void MainWindow::ResetValues()
@@ -363,6 +462,14 @@ void MainWindow::OnCloseWorkspace()
     mUi->uActionUpload->setEnabled(false);
     mUi->uCloseWorkspaceAction->setEnabled(false);
 
+    mUi->uSaveWorkspaceButton->setEnabled(false);
+    mUi->uConfigureButton->setEnabled(false);
+    mUi->uBuildButton->setEnabled(false);
+    mUi->uRebuildButton->setEnabled(false);
+    mUi->uCleanButton->setEnabled(false);
+    mUi->uUploadButton->setEnabled(false);
+    mUi->uCloseWorkspaceButton->setEnabled(false);
+
     for (auto&& page : mConfigPages)
     {
         page->setEnabled(false);
@@ -386,10 +493,34 @@ void MainWindow::OnWorkspaceOpened()
     mUi->uActionUpload->setEnabled(true);
     mUi->uCloseWorkspaceAction->setEnabled(true);
 
+    mUi->uSaveWorkspaceButton->setEnabled(true);
+    mUi->uConfigureButton->setEnabled(true);
+    mUi->uBuildButton->setEnabled(true);
+    mUi->uRebuildButton->setEnabled(true);
+    mUi->uCleanButton->setEnabled(true);
+    mUi->uUploadButton->setEnabled(true);
+    mUi->uCloseWorkspaceButton->setEnabled(true);
+
     for (auto&& page : mConfigPages)
     {
         page->setEnabled(true);
     }
+}
+
+void MainWindow::OnResetConfiguration()
+{
+    QMessageBox msgBox;
+    msgBox.setText("Do you really want to reset the workspace configuration?");
+    msgBox.setInformativeText("Reset only affects the displayed values, the workspace files are not updated until explicitly saved.");
+    msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    msgBox.setIcon(QMessageBox::Question);
+    if (msgBox.exec() == QMessageBox::No)
+    {
+        return;
+    }
+
+    ResetValues();
+    Log("Workspace configuration resetted.", "rgb(249, 154, 0)");
 }
 
 Configuration MainWindow::FetchConfiguration()

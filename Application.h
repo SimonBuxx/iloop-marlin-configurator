@@ -59,7 +59,9 @@ protected slots:
 
     void OnBuildMarlin(const QString& pEnvironment);
 
-    void OnClean(const QString& pEnvironment);
+    bool OnClean(const QString& pEnvironment);
+
+    void OnUpload(const QString& pEnvironment);
 
 protected:
     /// \brief Generates the Configuration.h file from the template
