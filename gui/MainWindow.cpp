@@ -33,12 +33,14 @@
 #include <QTabBar>
 #include <QScrollBar>
 #include <QMessageBox>
+#include <QClipboard>
+#include <QTextDocumentFragment>
 
 MainWindow::MainWindow(QWidget *pParent)
     : QMainWindow(pParent)
     , mUi(new Ui::MainWindow)
     , mAboutDialog(this)
-    , mStatusLabel("Workspace: -")
+    , mStatusLabel("Workspace: none")
     , mMarlinVersionLabel(QString("Marlin Version: v%0").arg(MARLIN_VERSION))
 {
     mUi->setupUi(this);
@@ -207,29 +209,30 @@ void MainWindow::ConnectGuiSignalsAndSlots()
 
     QObject::connect(mUi->uClearGeneralOutputsButton, &QPushButton::pressed, mUi->uLogConsole, &QTextBrowser::clear);
     QObject::connect(mUi->uClearCompilerOutputsButton, &QPushButton::pressed, mUi->uCompilerConsole, &QTextBrowser::clear);
+    QObject::connect(mUi->uCopyAllCodePreviewButton, &QPushButton::pressed, this, [&](){
+        QApplication::clipboard()->setText(mUi->uPreviewEdit->toPlainText());
+    });
+    QObject::connect(mUi->uCopySelectionCodePreviewButton, &QPushButton::pressed, this, [&](){
+        QApplication::clipboard()->setText(mUi->uPreviewEdit->textCursor().selection().toPlainText());
+    });
 
-    QObject::connect(mUi->uActionOpenMarlinHomepage, &QAction::triggered, this, [&]()
-    {
+    QObject::connect(mUi->uActionOpenMarlinHomepage, &QAction::triggered, this, [&](){
         QDesktopServices::openUrl(QUrl("https://marlinfw.org/"));
     });
 
-    QObject::connect(mUi->uActionOpenAutoBuildMarlin, &QAction::triggered, this, [&]()
-    {
+    QObject::connect(mUi->uActionOpenAutoBuildMarlin, &QAction::triggered, this, [&](){
         QDesktopServices::openUrl(QUrl("https://marlinfw.org/docs/basics/auto_build_marlin.html"));
     });
 
-    QObject::connect(mUi->uActionOpenMarlinConfiguration, &QAction::triggered, this, [&]()
-    {
+    QObject::connect(mUi->uActionOpenMarlinConfiguration, &QAction::triggered, this, [&](){
         QDesktopServices::openUrl(QUrl("https://marlinfw.org/docs/configuration/configuration.html"));
     });
 
-    QObject::connect(mUi->uActionOpenGitHub, &QAction::triggered, this, [&]()
-    {
+    QObject::connect(mUi->uActionOpenGitHub, &QAction::triggered, this, [&](){
         QDesktopServices::openUrl(QUrl("https://github.com/SimonBuxx/iloop-marlin-configurator/"));
     });
 
-    QObject::connect(mUi->uActionOpenErigEv, &QAction::triggered, this, [&]()
-    {
+    QObject::connect(mUi->uActionOpenErigEv, &QAction::triggered, this, [&](){
         QDesktopServices::openUrl(QUrl("https://er-ig.de/"));
     });
 
@@ -545,7 +548,7 @@ void MainWindow::ReplaceTags(QStringList& pOutput)
 
 void MainWindow::SetWorkspace(const std::optional<QString>& pName)
 {
-    mStatusLabel.setText(QString("Workspace: %0").arg(pName.value_or("-")));
+    mStatusLabel.setText(QString("Workspace: %0").arg(pName.value_or("none")));
     setWindowTitle(QString("%0iMC - iLOOP Marlin Configurator v%1").arg(pName.has_value() ? pName.value() + " - " : "", SW_VERSION));
 }
 

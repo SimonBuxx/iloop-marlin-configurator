@@ -341,11 +341,11 @@ void ExtruderPage::ReplaceTags(QStringList& pOutput)
         const auto& e3 = mUi->uSwitchingExtruderServoAnglesE3SpinBox->value();
         if (mUi->uSwitchingExtruderServoAnglesE23Box->isChecked())
         {
-            ReplaceArrayTag(pOutput, "#{SWITCHING_EXTRUDER_SERVO_ANGLES}", !mUi->uSwitchingExtruderBox->isChecked(), "SWITCHING_EXTRUDER_SERVO_ANGLES_E0", std::vector<int32_t>{e0, e1, e2, e3}, mUi->uSwitchingExtruderServoAnglesE23Box->isEnabled());
+            ReplaceArrayTag(pOutput, "#{SWITCHING_EXTRUDER_SERVO_ANGLES}", !mUi->uSwitchingExtruderBox->isChecked(), "SWITCHING_EXTRUDER_SERVO_ANGLES", std::vector<int32_t>{e0, e1, e2, e3}, mUi->uSwitchingExtruderServoAnglesE23Box->isEnabled());
         }
         else
         {
-            ReplaceArrayTag(pOutput, "#{SWITCHING_EXTRUDER_SERVO_ANGLES}", !mUi->uSwitchingExtruderBox->isChecked(), "SWITCHING_EXTRUDER_SERVO_ANGLES_E0", std::vector<int32_t>{e0, e1}, mUi->uSwitchingExtruderServoAnglesE23Box->isEnabled());
+            ReplaceArrayTag(pOutput, "#{SWITCHING_EXTRUDER_SERVO_ANGLES}", !mUi->uSwitchingExtruderBox->isChecked(), "SWITCHING_EXTRUDER_SERVO_ANGLES", std::vector<int32_t>{e0, e1}, mUi->uSwitchingExtruderServoAnglesE23Box->isEnabled());
         }
     }
     ReplaceTag(pOutput, "#{SWITCHING_EXTRUDER_SERVO_ANGLES_E1}", mUi->uSwitchingExtruderServoAnglesE1SpinBox, !mUi->uSwitchingExtruderBox->isChecked(), "SWITCHING_EXTRUDER_SERVO_ANGLES_E1");

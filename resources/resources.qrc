@@ -62,6 +62,7 @@
         <file>restart_alt_FILL0_wght100_GRAD0_opsz20.svg</file>
         <file>sd_card_template.txt</file>
         <file>lcd_menu_items_template.txt</file>
-        <file>content_copy_FILL0_wght100_GRAD0_opsz20.svg</file>
+        <file>scan_delete_FILL0_wght100_GRAD0_opsz20.svg</file>
+        <file>copy_all_FILL0_wght100_GRAD0_opsz20.svg</file>
     </qresource>
 </RCC>
