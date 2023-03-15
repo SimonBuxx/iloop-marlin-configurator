@@ -198,20 +198,20 @@ void ThermalSettingsPage::ResetValues()
 {
     mIsLoading = true;
 
-    mUi->uTempSensor0Dropdown->setCurrentText(defaults::TEMP_SENSOR_0);
-    mUi->uTempSensor1Dropdown->setCurrentText(defaults::TEMP_SENSOR_1);
-    mUi->uTempSensor2Dropdown->setCurrentText(defaults::TEMP_SENSOR_2);
-    mUi->uTempSensor3Dropdown->setCurrentText(defaults::TEMP_SENSOR_3);
-    mUi->uTempSensor4Dropdown->setCurrentText(defaults::TEMP_SENSOR_4);
-    mUi->uTempSensor5Dropdown->setCurrentText(defaults::TEMP_SENSOR_5);
-    mUi->uTempSensor6Dropdown->setCurrentText(defaults::TEMP_SENSOR_6);
-    mUi->uTempSensor7Dropdown->setCurrentText(defaults::TEMP_SENSOR_7);
-    mUi->uTempSensorBedDropdown->setCurrentText(defaults::TEMP_SENSOR_BED);
-    mUi->uTempSensorProbeDropdown->setCurrentText(defaults::TEMP_SENSOR_PROBE);
-    mUi->uTempSensorChamberDropdown->setCurrentText(defaults::TEMP_SENSOR_CHAMBER);
-    mUi->uTempSensorCoolerDropdown->setCurrentText(defaults::TEMP_SENSOR_COOLER);
-    mUi->uTempSensorBoardDropdown->setCurrentText(defaults::TEMP_SENSOR_BOARD);
-    mUi->uTempSensorRedundantDropdown->setCurrentText(defaults::TEMP_SENSOR_REDUNDANT);
+    mUi->uTempSensor0Dropdown->Reset(defaults::TEMP_SENSOR_0);
+    mUi->uTempSensor1Dropdown->Reset(defaults::TEMP_SENSOR_1);
+    mUi->uTempSensor2Dropdown->Reset(defaults::TEMP_SENSOR_2);
+    mUi->uTempSensor3Dropdown->Reset(defaults::TEMP_SENSOR_3);
+    mUi->uTempSensor4Dropdown->Reset(defaults::TEMP_SENSOR_4);
+    mUi->uTempSensor5Dropdown->Reset(defaults::TEMP_SENSOR_5);
+    mUi->uTempSensor6Dropdown->Reset(defaults::TEMP_SENSOR_6);
+    mUi->uTempSensor7Dropdown->Reset(defaults::TEMP_SENSOR_7);
+    mUi->uTempSensorBedDropdown->Reset(defaults::TEMP_SENSOR_BED);
+    mUi->uTempSensorProbeDropdown->Reset(defaults::TEMP_SENSOR_PROBE);
+    mUi->uTempSensorChamberDropdown->Reset(defaults::TEMP_SENSOR_CHAMBER);
+    mUi->uTempSensorCoolerDropdown->Reset(defaults::TEMP_SENSOR_COOLER);
+    mUi->uTempSensorBoardDropdown->Reset(defaults::TEMP_SENSOR_BOARD);
+    mUi->uTempSensorRedundantDropdown->Reset(defaults::TEMP_SENSOR_REDUNDANT);
     mUi->uDummyThermistor998ValueSpinBox->setValue(defaults::DUMMY_THERMISTOR_998_VALUE);
     mUi->uDummyThermistor999ValueSpinBox->setValue(defaults::DUMMY_THERMISTOR_999_VALUE);
     mUi->uMax31865SensorOhms0SpinBox->setValue(defaults::MAX31865_SENSOR_OHMS_0);
@@ -229,8 +229,8 @@ void ThermalSettingsPage::ResetValues()
     mUi->uTempChamberResidencyTimeSpinBox->setValue(defaults::TEMP_CHAMBER_RESIDENCY_TIME);
     mUi->uTempChamberWindowSpinBox->setValue(defaults::TEMP_CHAMBER_WINDOW);
     mUi->uTempChamberHysteresisSpinBox->setValue(defaults::TEMP_CHAMBER_HYSTERESIS);
-    mUi->uTempSensorRedundantSourceDropdown->setCurrentText(defaults::TEMP_SENSOR_REDUNDANT_SOURCE);
-    mUi->uTempSensorRedundantTargetDropdown->setCurrentText(defaults::TEMP_SENSOR_REDUNDANT_TARGET);
+    mUi->uTempSensorRedundantSourceDropdown->Reset(defaults::TEMP_SENSOR_REDUNDANT_SOURCE);
+    mUi->uTempSensorRedundantTargetDropdown->Reset(defaults::TEMP_SENSOR_REDUNDANT_TARGET);
     mUi->uTempSensorRedundantMaxDiffSpinBox->setValue(defaults::TEMP_SENSOR_REDUNDANT_MAX_DIFF);
     mUi->uHeater0MintempSpinBox->setValue(defaults::HEATER_0_MINTEMP);
     mUi->uHeater1MintempSpinBox->setValue(defaults::HEATER_1_MINTEMP);

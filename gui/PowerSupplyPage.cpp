@@ -73,7 +73,7 @@ void PowerSupplyPage::ResetValues()
     mUi->uMksPwcBox->setChecked(defaults::MKS_PWC);
     mUi->uPsOffConfirmBox->setChecked(defaults::PS_OFF_CONFIRM);
     mUi->uPsOffSoundBox->setChecked(defaults::PS_OFF_SOUND);
-    mUi->uPsuActiveStateDropdown->setCurrentText(defaults::PSU_ACTIVE_STATE);
+    mUi->uPsuActiveStateDropdown->Reset(defaults::PSU_ACTIVE_STATE);
     mUi->uPsuDefaultOffBox->setChecked(defaults::PSU_DEFAULT_OFF);
     mUi->uPsuPowerupDelaySpinBox->setValue(defaults::PSU_POWERUP_DELAY);
     mUi->uLedPoweroffTimeoutSpinBox->setValue(defaults::LED_POWEROFF_TIMEOUT);

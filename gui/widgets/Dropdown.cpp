@@ -35,3 +35,8 @@ Dropdown::Dropdown(QWidget *pParent) :
 
 Dropdown::~Dropdown()
 {}
+
+void Dropdown::Reset(const QString& pText)
+{
+    setCurrentText(pText);
+}

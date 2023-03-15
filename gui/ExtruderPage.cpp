@@ -100,7 +100,7 @@ void ExtruderPage::ResetValues()
     mUi->uSinglenozzleBox->setChecked(defaults::SINGLENOZZLE);
     mUi->uSinglenozzleStandbyTempBox->setChecked(defaults::SINGLENOZZLE_STANDBY_TEMP);
     mUi->uSinglenozzleStandbyFanBox->setChecked(defaults::SINGLENOZZLE_STANDBY_FAN);
-    mUi->uMmuModelDropdown->setCurrentText(defaults::MMU_MODEL);
+    mUi->uMmuModelDropdown->Reset(defaults::MMU_MODEL);
     mUi->uSwitchingExtruderBox->setChecked(defaults::SWITCHING_EXTRUDER);
     mUi->uSwitchingExtruderServoNrSpinBox->setValue(defaults::SWITCHING_EXTRUDER_SERVO_NR);
     mUi->uSwitchingExtruderServoAnglesE0SpinBox->setValue(defaults::SWITCHING_EXTRUDER_SERVO_ANGLES_E0);
@@ -120,13 +120,13 @@ void ExtruderPage::ResetValues()
     mUi->uParkingExtruderParkingX1SpinBox->setValue(defaults::PARKING_EXTRUDER_PARKING_X_1);
     mUi->uParkingExtruderGrabDistanceSpinBox->setValue(defaults::PARKING_EXTRUDER_GRAB_DISTANCE);
     mUi->uParkingExtruderSolenoidsInvertBox->setChecked(defaults::PARKING_EXTRUDER_SOLENOIDS_INVERT);
-    mUi->uParkingExtruderSolenoidsPinsActiveDropdown->setCurrentText(defaults::PARKING_EXTRUDER_SOLENOIDS_PINS_ACTIVE);
+    mUi->uParkingExtruderSolenoidsPinsActiveDropdown->Reset(defaults::PARKING_EXTRUDER_SOLENOIDS_PINS_ACTIVE);
     mUi->uParkingExtruderSolenoidsDelaySpinBox->setValue(defaults::PARKING_EXTRUDER_SOLENOIDS_DELAY);
     mUi->uManualSolenoidControlBox->setChecked(defaults::MANUAL_SOLENOID_CONTROL);
     mUi->uMpeFastSpeedSpinBox->setValue(defaults::MPE_FAST_SPEED);
     mUi->uMpeSlowSpeedSpinBox->setValue(defaults::MPE_SLOW_SPEED);
     mUi->uMpeTravelDistanceSpinBox->setValue(defaults::MPE_TRAVEL_DISTANCE);
-    mUi->uMpeCompensationDropdown->setCurrentText(defaults::MPE_COMPENSATION);
+    mUi->uMpeCompensationDropdown->Reset(defaults::MPE_COMPENSATION);
     mUi->uSwitchingToolheadBox->setChecked(defaults::SWITCHING_TOOLHEAD);
     mUi->uMagneticSwitchingToolheadBox->setChecked(defaults::MAGNETIC_SWITCHING_TOOLHEAD);
     mUi->uElectromagneticSwitchingToolheadBox->setChecked(defaults::ELECTROMAGNETIC_SWITCHING_TOOLHEAD);

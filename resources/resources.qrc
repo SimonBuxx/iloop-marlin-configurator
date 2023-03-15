@@ -64,5 +64,6 @@
         <file>lcd_menu_items_template.txt</file>
         <file>scan_delete_FILL0_wght100_GRAD0_opsz20.svg</file>
         <file>copy_all_FILL0_wght100_GRAD0_opsz20.svg</file>
+        <file>filament_runout_sensor_template.txt</file>
     </qresource>
 </RCC>

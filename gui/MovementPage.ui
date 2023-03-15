@@ -50,7 +50,7 @@ QGroupBox:disabled {
 
 QGroupBox::title {
 	background: rgb(249, 154, 0);
-	color: rgb(34, 35, 40);
+	color: black;
     padding: 5px;
 	border: 1px solid black;
 	border-top-left-radius: 5px;

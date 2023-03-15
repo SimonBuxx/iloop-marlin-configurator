@@ -316,6 +316,51 @@ static constexpr auto THERMAL_PROTECTION_BED{true};
 static constexpr auto THERMAL_PROTECTION_CHAMBER{true};
 static constexpr auto THERMAL_PROTECTION_COOLER{true};
 
+// Filament Runout Sensor
+static constexpr auto FILAMENT_RUNOUT_SENSOR{false};
+static constexpr auto FIL_RUNOUT_ENABLED_DEFAULT{"true"};
+static constexpr auto NUM_RUNOUT_SENSORS{"1"};
+static constexpr auto FIL_RUNOUT_STATE{"LOW"};
+static constexpr auto FIL_RUNOUT_PULLUP{true};
+static constexpr auto FIL_RUNOUT_PULLDOWN{false};
+static constexpr auto WATCH_ALL_RUNOUT_SENSORS{false};
+static constexpr auto FIL_RUNOUT1_STATE{"LOW"};
+static constexpr auto ENABLE_FIL_RUNOUT1_STATE{false};
+static constexpr auto FIL_RUNOUT1_PULLUP{false};
+static constexpr auto FIL_RUNOUT1_PULLDOWN{false};
+static constexpr auto FIL_RUNOUT2_STATE{"LOW"};
+static constexpr auto ENABLE_FIL_RUNOUT2_STATE{false};
+static constexpr auto FIL_RUNOUT2_PULLUP{false};
+static constexpr auto FIL_RUNOUT2_PULLDOWN{false};
+static constexpr auto FIL_RUNOUT3_STATE{"LOW"};
+static constexpr auto ENABLE_FIL_RUNOUT3_STATE{false};
+static constexpr auto FIL_RUNOUT3_PULLUP{false};
+static constexpr auto FIL_RUNOUT3_PULLDOWN{false};
+static constexpr auto FIL_RUNOUT4_STATE{"LOW"};
+static constexpr auto ENABLE_FIL_RUNOUT4_STATE{false};
+static constexpr auto FIL_RUNOUT4_PULLUP{false};
+static constexpr auto FIL_RUNOUT4_PULLDOWN{false};
+static constexpr auto FIL_RUNOUT5_STATE{"LOW"};
+static constexpr auto ENABLE_FIL_RUNOUT5_STATE{false};
+static constexpr auto FIL_RUNOUT5_PULLUP{false};
+static constexpr auto FIL_RUNOUT5_PULLDOWN{false};
+static constexpr auto FIL_RUNOUT6_STATE{"LOW"};
+static constexpr auto ENABLE_FIL_RUNOUT6_STATE{false};
+static constexpr auto FIL_RUNOUT6_PULLUP{false};
+static constexpr auto FIL_RUNOUT6_PULLDOWN{false};
+static constexpr auto FIL_RUNOUT7_STATE{"LOW"};
+static constexpr auto ENABLE_FIL_RUNOUT7_STATE{false};
+static constexpr auto FIL_RUNOUT7_PULLUP{false};
+static constexpr auto FIL_RUNOUT7_PULLDOWN{false};
+static constexpr auto FIL_RUNOUT8_STATE{"LOW"};
+static constexpr auto ENABLE_FIL_RUNOUT8_STATE{false};
+static constexpr auto FIL_RUNOUT8_PULLUP{false};
+static constexpr auto FIL_RUNOUT8_PULLDOWN{false};
+static constexpr auto FILAMENT_RUNOUT_SCRIPT{"M600"};
+static constexpr auto FILAMENT_RUNOUT_DISTANCE_MM{25};
+static constexpr auto ENABLE_FILAMENT_RUNOUT_DISTANCE_MM{false};
+static constexpr auto FILAMENT_MOTION_SENSOR{false};
+
 // SD Card
 static constexpr auto SDSUPPORT{false};
 static constexpr auto SD_CHECK_AND_RETRY{false};
@@ -918,6 +963,111 @@ public:
 };
 
 ///
+/// \brief The FilamentRunoutSensorConfiguration struct contains filament runout sensor configurations
+///
+struct FilamentRunoutSensorConfiguration : public PageConfiguration
+{
+    bool FILAMENT_RUNOUT_SENSOR{defaults::FILAMENT_RUNOUT_SENSOR};
+    QString FIL_RUNOUT_ENABLED_DEFAULT{defaults::FIL_RUNOUT_ENABLED_DEFAULT};
+    QString NUM_RUNOUT_SENSORS{defaults::NUM_RUNOUT_SENSORS};
+    QString FIL_RUNOUT_STATE{defaults::FIL_RUNOUT_STATE};
+    bool FIL_RUNOUT_PULLUP{defaults::FIL_RUNOUT_PULLUP};
+    bool FIL_RUNOUT_PULLDOWN{defaults::FIL_RUNOUT_PULLDOWN};
+    bool WATCH_ALL_RUNOUT_SENSORS{defaults::WATCH_ALL_RUNOUT_SENSORS};
+    QString FIL_RUNOUT1_STATE{defaults::FIL_RUNOUT1_STATE};
+    bool ENABLE_FIL_RUNOUT1_STATE{defaults::ENABLE_FIL_RUNOUT1_STATE};
+    bool FIL_RUNOUT1_PULLUP{defaults::FIL_RUNOUT1_PULLUP};
+    bool FIL_RUNOUT1_PULLDOWN{defaults::FIL_RUNOUT1_PULLDOWN};
+    QString FIL_RUNOUT2_STATE{defaults::FIL_RUNOUT2_STATE};
+    bool ENABLE_FIL_RUNOUT2_STATE{defaults::ENABLE_FIL_RUNOUT2_STATE};
+    bool FIL_RUNOUT2_PULLUP{defaults::FIL_RUNOUT2_PULLUP};
+    bool FIL_RUNOUT2_PULLDOWN{defaults::FIL_RUNOUT2_PULLDOWN};
+    QString FIL_RUNOUT3_STATE{defaults::FIL_RUNOUT3_STATE};
+    bool ENABLE_FIL_RUNOUT3_STATE{defaults::ENABLE_FIL_RUNOUT3_STATE};
+    bool FIL_RUNOUT3_PULLUP{defaults::FIL_RUNOUT3_PULLUP};
+    bool FIL_RUNOUT3_PULLDOWN{defaults::FIL_RUNOUT3_PULLDOWN};
+    QString FIL_RUNOUT4_STATE{defaults::FIL_RUNOUT4_STATE};
+    bool ENABLE_FIL_RUNOUT4_STATE{defaults::ENABLE_FIL_RUNOUT4_STATE};
+    bool FIL_RUNOUT4_PULLUP{defaults::FIL_RUNOUT4_PULLUP};
+    bool FIL_RUNOUT4_PULLDOWN{defaults::FIL_RUNOUT4_PULLDOWN};
+    QString FIL_RUNOUT5_STATE{defaults::FIL_RUNOUT5_STATE};
+    bool ENABLE_FIL_RUNOUT5_STATE{defaults::ENABLE_FIL_RUNOUT5_STATE};
+    bool FIL_RUNOUT5_PULLUP{defaults::FIL_RUNOUT5_PULLUP};
+    bool FIL_RUNOUT5_PULLDOWN{defaults::FIL_RUNOUT5_PULLDOWN};
+    QString FIL_RUNOUT6_STATE{defaults::FIL_RUNOUT6_STATE};
+    bool ENABLE_FIL_RUNOUT6_STATE{defaults::ENABLE_FIL_RUNOUT6_STATE};
+    bool FIL_RUNOUT6_PULLUP{defaults::FIL_RUNOUT6_PULLUP};
+    bool FIL_RUNOUT6_PULLDOWN{defaults::FIL_RUNOUT6_PULLDOWN};
+    QString FIL_RUNOUT7_STATE{defaults::FIL_RUNOUT7_STATE};
+    bool ENABLE_FIL_RUNOUT7_STATE{defaults::ENABLE_FIL_RUNOUT7_STATE};
+    bool FIL_RUNOUT7_PULLUP{defaults::FIL_RUNOUT7_PULLUP};
+    bool FIL_RUNOUT7_PULLDOWN{defaults::FIL_RUNOUT7_PULLDOWN};
+    QString FIL_RUNOUT8_STATE{defaults::FIL_RUNOUT8_STATE};
+    bool ENABLE_FIL_RUNOUT8_STATE{defaults::ENABLE_FIL_RUNOUT8_STATE};
+    bool FIL_RUNOUT8_PULLUP{defaults::FIL_RUNOUT8_PULLUP};
+    bool FIL_RUNOUT8_PULLDOWN{defaults::FIL_RUNOUT8_PULLDOWN};
+    QString FILAMENT_RUNOUT_SCRIPT{defaults::FILAMENT_RUNOUT_SCRIPT};
+    int32_t FILAMENT_RUNOUT_DISTANCE_MM{defaults::FILAMENT_RUNOUT_DISTANCE_MM};
+    bool ENABLE_FILAMENT_RUNOUT_DISTANCE_MM{defaults::ENABLE_FILAMENT_RUNOUT_DISTANCE_MM};
+    bool FILAMENT_MOTION_SENSOR{defaults::FILAMENT_MOTION_SENSOR};
+
+public:
+    /// \brief Converts the configuration into a JSON object
+    ///
+    /// \return a JSON object containing the configuration data
+    QJsonObject ToJson(void) const override
+    {
+        QJsonObject json;
+
+        json["FILAMENT_RUNOUT_SENSOR"] = FILAMENT_RUNOUT_SENSOR;
+        json["FIL_RUNOUT_ENABLED_DEFAULT"] = FIL_RUNOUT_ENABLED_DEFAULT;
+        json["NUM_RUNOUT_SENSORS"] = NUM_RUNOUT_SENSORS;
+        json["FIL_RUNOUT_STATE"] = FIL_RUNOUT_STATE;
+        json["FIL_RUNOUT_PULLUP"] = FIL_RUNOUT_PULLUP;
+        json["FIL_RUNOUT_PULLDOWN"] = FIL_RUNOUT_PULLDOWN;
+        json["WATCH_ALL_RUNOUT_SENSORS"] = WATCH_ALL_RUNOUT_SENSORS;
+        json["FIL_RUNOUT1_STATE"] = FIL_RUNOUT1_STATE;
+        json["ENABLE_FIL_RUNOUT1_STATE"] = ENABLE_FIL_RUNOUT1_STATE;
+        json["FIL_RUNOUT1_PULLUP"] = FIL_RUNOUT1_PULLUP;
+        json["FIL_RUNOUT1_PULLDOWN"] = FIL_RUNOUT1_PULLDOWN;
+        json["FIL_RUNOUT2_STATE"] = FIL_RUNOUT2_STATE;
+        json["ENABLE_FIL_RUNOUT2_STATE"] = ENABLE_FIL_RUNOUT2_STATE;
+        json["FIL_RUNOUT2_PULLUP"] = FIL_RUNOUT2_PULLUP;
+        json["FIL_RUNOUT2_PULLDOWN"] = FIL_RUNOUT2_PULLDOWN;
+        json["FIL_RUNOUT3_STATE"] = FIL_RUNOUT3_STATE;
+        json["ENABLE_FIL_RUNOUT3_STATE"] = ENABLE_FIL_RUNOUT3_STATE;
+        json["FIL_RUNOUT3_PULLUP"] = FIL_RUNOUT3_PULLUP;
+        json["FIL_RUNOUT3_PULLDOWN"] = FIL_RUNOUT3_PULLDOWN;
+        json["FIL_RUNOUT4_STATE"] = FIL_RUNOUT4_STATE;
+        json["ENABLE_FIL_RUNOUT4_STATE"] = ENABLE_FIL_RUNOUT4_STATE;
+        json["FIL_RUNOUT4_PULLUP"] = FIL_RUNOUT4_PULLUP;
+        json["FIL_RUNOUT4_PULLDOWN"] = FIL_RUNOUT4_PULLDOWN;
+        json["FIL_RUNOUT5_STATE"] = FIL_RUNOUT5_STATE;
+        json["ENABLE_FIL_RUNOUT5_STATE"] = ENABLE_FIL_RUNOUT5_STATE;
+        json["FIL_RUNOUT5_PULLUP"] = FIL_RUNOUT5_PULLUP;
+        json["FIL_RUNOUT5_PULLDOWN"] = FIL_RUNOUT5_PULLDOWN;
+        json["FIL_RUNOUT6_STATE"] = FIL_RUNOUT6_STATE;
+        json["ENABLE_FIL_RUNOUT6_STATE"] = ENABLE_FIL_RUNOUT6_STATE;
+        json["FIL_RUNOUT6_PULLUP"] = FIL_RUNOUT6_PULLUP;
+        json["FIL_RUNOUT6_PULLDOWN"] = FIL_RUNOUT6_PULLDOWN;
+        json["FIL_RUNOUT7_STATE"] = FIL_RUNOUT7_STATE;
+        json["ENABLE_FIL_RUNOUT7_STATE"] = ENABLE_FIL_RUNOUT7_STATE;
+        json["FIL_RUNOUT7_PULLUP"] = FIL_RUNOUT7_PULLUP;
+        json["FIL_RUNOUT7_PULLDOWN"] = FIL_RUNOUT7_PULLDOWN;
+        json["FIL_RUNOUT8_STATE"] = FIL_RUNOUT8_STATE;
+        json["ENABLE_FIL_RUNOUT8_STATE"] = ENABLE_FIL_RUNOUT8_STATE;
+        json["FIL_RUNOUT8_PULLUP"] = FIL_RUNOUT8_PULLUP;
+        json["FIL_RUNOUT8_PULLDOWN"] = FIL_RUNOUT8_PULLDOWN;
+        json["FILAMENT_RUNOUT_SCRIPT"] = FILAMENT_RUNOUT_SCRIPT;
+        json["FILAMENT_RUNOUT_DISTANCE_MM"] = FILAMENT_RUNOUT_DISTANCE_MM;
+        json["ENABLE_FILAMENT_RUNOUT_DISTANCE_MM"] = ENABLE_FILAMENT_RUNOUT_DISTANCE_MM;
+        json["FILAMENT_MOTION_SENSOR"] = FILAMENT_MOTION_SENSOR;
+
+        return json;
+    }
+};
+
+///
 /// \brief The SDCardConfiguration struct contains SD card configurations
 ///
 struct SDCardConfiguration : public PageConfiguration
@@ -973,6 +1123,7 @@ struct Configuration
     ExtruderConfiguration extruder;
     PowerSupplyConfiguration powerSupply;
     ThermalSettingsConfiguration thermalSettings;
+    FilamentRunoutSensorConfiguration filamentRunoutSensor;
     SDCardConfiguration sdCard;
     LCDMenuItemsConfiguration lcdMenuItems;
 
@@ -989,8 +1140,10 @@ public:
         json["extruder"] = extruder.ToJson();
         json["powerSupply"] = powerSupply.ToJson();
         json["thermalSettings"] = thermalSettings.ToJson();
+        json["filamentRunoutSensor"] = filamentRunoutSensor.ToJson();
         json["sdCard"] = sdCard.ToJson();
         json["lcdMenuItems"] = lcdMenuItems.ToJson();
+
 
         return json;
     }

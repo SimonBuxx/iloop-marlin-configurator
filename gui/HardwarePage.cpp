@@ -83,15 +83,15 @@ void HardwarePage::ResetValues()
 {
     mIsLoading = true;
 
-    mUi->uEnvironmentDropdown->setCurrentText(defaults::ENVIRONMENT);
-    mUi->uMotherboardDropdown->setCurrentText(defaults::MOTHERBOARD);
-    mUi->uSerialPortDropdown->setCurrentText(defaults::SERIAL_PORT);
-    mUi->uBaudrateDropdown->setCurrentText(defaults::BAUDRATE);
+    mUi->uEnvironmentDropdown->Reset(defaults::ENVIRONMENT);
+    mUi->uMotherboardDropdown->Reset(defaults::MOTHERBOARD);
+    mUi->uSerialPortDropdown->Reset(defaults::SERIAL_PORT);
+    mUi->uBaudrateDropdown->Reset(defaults::BAUDRATE);
     mUi->uBaudRateGcodeBox->setChecked(defaults::BAUD_RATE_GCODE);
-    mUi->uSerialPort2Dropdown->setCurrentText(defaults::SERIAL_PORT_2);
-    mUi->uBaudrate2Dropdown->setCurrentText(defaults::BAUDRATE_2);
-    mUi->uSerialPort3Dropdown->setCurrentText(defaults::SERIAL_PORT_3);
-    mUi->uBaudrate3Dropdown->setCurrentText(defaults::BAUDRATE_3);
+    mUi->uSerialPort2Dropdown->Reset(defaults::SERIAL_PORT_2);
+    mUi->uBaudrate2Dropdown->Reset(defaults::BAUDRATE_2);
+    mUi->uSerialPort3Dropdown->Reset(defaults::SERIAL_PORT_3);
+    mUi->uBaudrate3Dropdown->Reset(defaults::BAUDRATE_3);
     mUi->uBluetoothBox->setChecked(defaults::BLUETOOTH);
     mUi->uCustomMachineNameEdit->setText(defaults::CUSTOM_MACHINE_NAME);
     mUi->uMachineUuidEdit->setText(defaults::MACHINE_UUID);

@@ -50,7 +50,7 @@ QGroupBox:disabled {
 
 QGroupBox::title {
 	background: rgb(249, 154, 0);
-	color: rgb(34, 35, 40);
+	color: black;
     padding: 5px;
 	border: 1px solid black;
 	border-top-left-radius: 5px;
@@ -403,6 +403,9 @@ QAbstractSpinBox::down-button:off {
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
         </property>
         <item>
          <property name="text">
@@ -2366,6 +2369,9 @@ QAbstractSpinBox::down-button:off {
       </item>
       <item row="0" column="2">
        <widget class="QGroupBox" name="uMachineUuidBox">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
         <property name="title">
          <string>MACHINE_UUID</string>
         </property>

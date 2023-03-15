@@ -603,6 +603,15 @@ bool MainWindow::LoadConfigurationFromJson(const QJsonObject& pJson)
         success = false;
     }
 
+    if (pJson.contains("filamentRunoutSensor") && pJson["filamentRunoutSensor"].isObject())
+    {
+        success &= mUi->uFilamentRunoutSensorPage->LoadFromJson(pJson["filamentRunoutSensor"].toObject());
+    }
+    else
+    {
+        success = false;
+    }
+
     if (pJson.contains("sdCard") && pJson["sdCard"].isObject())
     {
         success &= mUi->uSDCardPage->LoadFromJson(pJson["sdCard"].toObject());

@@ -42,6 +42,8 @@ public:
 
     /// \brief Destructor for the dropdown menu
     ~Dropdown(void) override;
+
+    void Reset(const QString& pText);
 };
 
 #endif // DROPDOWN_H
