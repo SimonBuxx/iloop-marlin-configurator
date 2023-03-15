@@ -275,7 +275,7 @@ QAbstractSpinBox::down-button:off {
    <property name="spacing">
     <number>10</number>
    </property>
-   <item row="3" column="1">
+   <item row="5" column="1">
     <spacer name="verticalSpacer_2">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -287,19 +287,6 @@ QAbstractSpinBox::down-button:off {
       <size>
        <width>20</width>
        <height>10</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="10" column="0" colspan="3">
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>0</width>
-       <height>0</height>
       </size>
      </property>
     </spacer>
@@ -402,8 +389,413 @@ QAbstractSpinBox::down-button:off {
      </layout>
     </widget>
    </item>
+   <item row="12" column="0" colspan="3">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="3" column="0" colspan="3">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="focusPolicy">
+      <enum>Qt::StrongFocus</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+     </property>
+     <property name="title">
+      <string>LCD_LANGUAGE</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_6" columnstretch="1,2,1,1">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_6">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="label_7">
+        <property name="text">
+         <string>This is the language to display on the LCD.</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" colspan="2">
+       <widget class="Dropdown" name="uLcdLanguageDropdown">
+        <item>
+         <property name="text">
+          <string>English [en]</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Aragonese [an]</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Bulgarian [bg]</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Catalan [ca]</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Czech [cz]</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Danish [da]</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>German [de]</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Greek (Greece) [el]</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Greek (Cyprus) [el_CY]</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Spanish [es]</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Basque-Euskera [eu]</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Finnish [fi]</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>French [fr]</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Galician [gl]</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Croatian [hr]</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Hungarian [hu]</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Italian [it]</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Japanese [jp_kana]</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Korean (South Korea) [ko_KR]</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Dutch [nl]</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Polish [pl]</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Portugese [pt]</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Portugese (Brazilian) [pt_br]</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Romanian [ro]</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Russian [ru]</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Slovak [sk]</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Swedish [sv]</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Turkish [tr]</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Ukrainian [uk]</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Vietnamese [vi]</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Chinese (Simplified) [zh_CN]</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Chinese (Traditional) [zh_TW]</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QLabel" name="label_8">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="../resources/resources.qrc">:/search_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QLineEdit" name="uLanguageSearchBox">
+        <property name="maxLength">
+         <number>100</number>
+        </property>
+        <property name="placeholderText">
+         <string>Search a language...</string>
+        </property>
+        <property name="clearButtonEnabled">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="4" column="0" colspan="3">
+    <widget class="QWidget" name="widget_2" native="true">
+     <layout class="QGridLayout" name="gridLayout_2" columnstretch="1,1">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QGroupBox" name="groupBox_2">
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+        </property>
+        <property name="title">
+         <string>DISPLAY_CHARSET_HD44780</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_3">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>All character-based LCDs provide ASCII plus the selected language extension.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="Dropdown" name="uDisplayCharsetHd44780Dropdown">
+           <item>
+            <property name="text">
+             <string>JAPANESE</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>WESTERN</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>CYRILLIC</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QGroupBox" name="groupBox_3">
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+        </property>
+        <property name="title">
+         <string>LCD_INFO_SCREEN_STYLE</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_4">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>This is the info screen style.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="Dropdown" name="uLcdInfoScreenStyleDropdown">
+           <item>
+            <property name="text">
+             <string>Classic [0]</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Průša [1]</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Dropdown</class>
+   <extends>QComboBox</extends>
+   <header>Dropdown.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="../resources/resources.qrc"/>
  </resources>

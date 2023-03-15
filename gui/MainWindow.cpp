@@ -612,6 +612,15 @@ bool MainWindow::LoadConfigurationFromJson(const QJsonObject& pJson)
         success = false;
     }
 
+    if (pJson.contains("userInterfaceLanguage") && pJson["userInterfaceLanguage"].isObject())
+    {
+        success &= mUi->uUserInterfaceLanguagePage->LoadFromJson(pJson["userInterfaceLanguage"].toObject());
+    }
+    else
+    {
+        success = false;
+    }
+
     if (pJson.contains("sdCard") && pJson["sdCard"].isObject())
     {
         success &= mUi->uSDCardPage->LoadFromJson(pJson["sdCard"].toObject());

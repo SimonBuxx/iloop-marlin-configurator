@@ -27,11 +27,16 @@
 #include "./ui_UserInterfaceLanguagePage.h"
 #include "HelperFunctions.h"
 
+#include <QToolButton>
+
 UserInterfaceLanguagePage::UserInterfaceLanguagePage(QWidget *pParent) :
     AbstractPage(USER_INTERFACE_LANGUAGE_TEMPLATE_PATH, pParent),
     mUi(new Ui::UserInterfaceLanguagePage)
 {
     mUi->setupUi(this);
+
+    // Set the clear button icon of the search box
+    mUi->uLanguageSearchBox->findChild<QToolButton*>()->setIcon(QIcon(":/close_FILL0_wght100_GRAD0_opsz20_white.svg"));
 }
 
 UserInterfaceLanguagePage::~UserInterfaceLanguagePage()
@@ -46,12 +51,24 @@ void UserInterfaceLanguagePage::ConnectGuiSignalsAndSlots()
         OpenMarlinDocumentation("user-interface-language");
     });
 
+    QObject::connect(mUi->uLanguageSearchBox, &QLineEdit::textChanged, this, [&](const QString& pText){
+        const auto& index = mUi->uLcdLanguageDropdown->findText(pText, Qt::MatchFlag::MatchContains);
+        if (index >= 0 && !pText.isEmpty())
+        {
+            mUi->uLcdLanguageDropdown->setCurrentIndex(index);
+        }
+    });
+
     AbstractPage::ConnectGuiSignalsAndSlots();
 }
 
 void UserInterfaceLanguagePage::ResetValues()
 {
     mIsLoading = true;
+
+    mUi->uLcdLanguageDropdown->setCurrentText(defaults::LCD_LANGUAGE);
+    mUi->uDisplayCharsetHd44780Dropdown->setCurrentText(defaults::DISPLAY_CHARSET_HD44780);
+    mUi->uLcdInfoScreenStyleDropdown->setCurrentText(defaults::LCD_INFO_SCREEN_STYLE);
 
     mIsLoading = false;
 }
@@ -61,14 +78,24 @@ bool UserInterfaceLanguagePage::LoadFromJson(const QJsonObject &pJson)
     bool success = true;
     mIsLoading = true;
 
+    success &= LoadConfig(mUi->uLcdLanguageDropdown, pJson, "LCD_LANGUAGE");
+    success &= LoadConfig(mUi->uDisplayCharsetHd44780Dropdown, pJson, "DISPLAY_CHARSET_HD44780");
+    success &= LoadConfig(mUi->uLcdInfoScreenStyleDropdown, pJson, "LCD_INFO_SCREEN_STYLE");
+
     mIsLoading = false;
     return success;
 }
 
 void UserInterfaceLanguagePage::FetchConfiguration(Configuration& pConfig)
 {
+    SetConfig(pConfig.userInterfaceLanguage.LCD_LANGUAGE, mUi->uLcdLanguageDropdown);
+    SetConfig(pConfig.userInterfaceLanguage.DISPLAY_CHARSET_HD44780, mUi->uDisplayCharsetHd44780Dropdown);
+    SetConfig(pConfig.userInterfaceLanguage.LCD_INFO_SCREEN_STYLE, mUi->uLcdInfoScreenStyleDropdown);
 }
 
 void UserInterfaceLanguagePage::ReplaceTags(QStringList& pOutput)
 {
+    ReplaceTag(pOutput, "#{LCD_LANGUAGE}", mUi->uLcdLanguageDropdown, false, "LCD_LANGUAGE", true);
+    ReplaceTag(pOutput, "#{DISPLAY_CHARSET_HD44780}", mUi->uDisplayCharsetHd44780Dropdown, false, "DISPLAY_CHARSET_HD44780");
+    ReplaceTag(pOutput, "#{LCD_INFO_SCREEN_STYLE}", mUi->uLcdInfoScreenStyleDropdown, false, "LCD_INFO_SCREEN_STYLE", true);
 }

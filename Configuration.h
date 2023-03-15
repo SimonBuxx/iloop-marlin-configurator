@@ -361,6 +361,11 @@ static constexpr auto FILAMENT_RUNOUT_DISTANCE_MM{25};
 static constexpr auto ENABLE_FILAMENT_RUNOUT_DISTANCE_MM{false};
 static constexpr auto FILAMENT_MOTION_SENSOR{false};
 
+// User Interface Language
+static constexpr auto LCD_LANGUAGE{"en"};
+static constexpr auto DISPLAY_CHARSET_HD44780{"JAPANESE"};
+static constexpr auto LCD_INFO_SCREEN_STYLE{"0"};
+
 // SD Card
 static constexpr auto SDSUPPORT{false};
 static constexpr auto SD_CHECK_AND_RETRY{false};
@@ -1075,6 +1080,31 @@ public:
 };
 
 ///
+/// \brief The UserInterfaceLanguageConfiguration struct contains user interface language configurations
+///
+struct UserInterfaceLanguageConfiguration : public PageConfiguration
+{
+    QString LCD_LANGUAGE{defaults::LCD_LANGUAGE};
+    QString DISPLAY_CHARSET_HD44780{defaults::DISPLAY_CHARSET_HD44780};
+    QString LCD_INFO_SCREEN_STYLE{defaults::LCD_INFO_SCREEN_STYLE};
+
+public:
+    /// \brief Converts the configuration into a JSON object
+    ///
+    /// \return a JSON object containing the configuration data
+    QJsonObject ToJson(void) const override
+    {
+        QJsonObject json;
+
+        json["LCD_LANGUAGE"] = LCD_LANGUAGE;
+        json["DISPLAY_CHARSET_HD44780"] = DISPLAY_CHARSET_HD44780;
+        json["LCD_INFO_SCREEN_STYLE"] = LCD_INFO_SCREEN_STYLE;
+
+        return json;
+    }
+};
+
+///
 /// \brief The SDCardConfiguration struct contains SD card configurations
 ///
 struct SDCardConfiguration : public PageConfiguration
@@ -1149,7 +1179,6 @@ public:
     }
 };
 
-
 ///
 /// \brief The Configuration struct contains a complete Marlin configuration
 ///
@@ -1164,6 +1193,7 @@ struct Configuration
     SDCardConfiguration sdCard;
     LCDMenuItemsConfiguration lcdMenuItems;
     SpeakerConfiguration speaker;
+    UserInterfaceLanguageConfiguration userInterfaceLanguage;
 
 public:
     /// \brief Converts the configuration into a JSON object
@@ -1179,9 +1209,11 @@ public:
         json["powerSupply"] = powerSupply.ToJson();
         json["thermalSettings"] = thermalSettings.ToJson();
         json["filamentRunoutSensor"] = filamentRunoutSensor.ToJson();
+        json["userInterfaceLanguage"] = userInterfaceLanguage.ToJson();
         json["sdCard"] = sdCard.ToJson();
         json["lcdMenuItems"] = lcdMenuItems.ToJson();
         json["speaker"] = speaker.ToJson();
+
 
         return json;
     }

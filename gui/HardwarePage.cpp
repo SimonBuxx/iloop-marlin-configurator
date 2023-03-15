@@ -38,7 +38,6 @@ HardwarePage::HardwarePage(QWidget *pParent) :
     // Set the clear button icons of the search boxes
     mUi->uMotherBoardSearchBox->findChild<QToolButton*>()->setIcon(QIcon(":/close_FILL0_wght100_GRAD0_opsz20_white.svg"));
     mUi->uEnvironmentSearchBox->findChild<QToolButton*>()->setIcon(QIcon(":/close_FILL0_wght100_GRAD0_opsz20_white.svg"));
-
 }
 
 HardwarePage::~HardwarePage()

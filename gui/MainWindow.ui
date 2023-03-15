@@ -2585,7 +2585,7 @@ QPushButton::!checked:hover {
          <item>
           <widget class="QPushButton" name="uUserInterfaceLanguageTabButton">
            <property name="text">
-            <string>User Interface Language (WIP)</string>
+            <string>User Interface Language</string>
            </property>
            <property name="icon">
             <iconset resource="../resources/resources.qrc">
