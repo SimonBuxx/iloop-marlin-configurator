@@ -729,8 +729,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>100</width>
-                   <height>30</height>
+                   <width>1059</width>
+                   <height>506</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_10">
@@ -1934,6 +1934,9 @@ QScrollBar::sub-line:horizontal
                   <property name="spacing">
                    <number>10</number>
                   </property>
+                  <item row="0" column="0">
+                   <widget class="ExtraFeaturesPage" name="uExtraFeaturesPage" native="true"/>
+                  </item>
                  </layout>
                 </widget>
                </widget>
@@ -2129,7 +2132,7 @@ QPushButton::!checked:hover {
         <property name="geometry">
          <rect>
           <x>0</x>
-          <y>0</y>
+          <y>-150</y>
           <width>208</width>
           <height>631</height>
          </rect>
@@ -2684,7 +2687,7 @@ QPushButton::!checked:hover {
          <item>
           <widget class="QPushButton" name="uSpeakerTabButton">
            <property name="text">
-            <string>Speaker (WIP)</string>
+            <string>Speaker</string>
            </property>
            <property name="icon">
             <iconset resource="../resources/resources.qrc">
@@ -2844,7 +2847,7 @@ QPushButton::!checked:hover {
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>483</width>
+          <width>438</width>
           <height>216</height>
          </rect>
         </property>
@@ -3131,7 +3134,7 @@ QPushButton::disabled {
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>302</width>
+          <width>388</width>
           <height>216</height>
          </rect>
         </property>
@@ -3541,7 +3544,7 @@ QPushButton::disabled {
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>493</width>
+          <width>452</width>
           <height>216</height>
          </rect>
         </property>
@@ -4468,6 +4471,12 @@ QPushButton::hover {
    <class>ZProbeOptionsPage</class>
    <extends>QWidget</extends>
    <header>ZProbeOptionsPage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ExtraFeaturesPage</class>
+   <extends>QWidget</extends>
+   <header>ExtraFeaturesPage.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

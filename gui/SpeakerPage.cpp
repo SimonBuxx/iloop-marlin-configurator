@@ -53,6 +53,12 @@ void SpeakerPage::ResetValues()
 {
     mIsLoading = true;
 
+    mUi->uSpeakerBox->setChecked(defaults::SPEAKER);
+    mUi->uLcdFeedbackFrequencyDurationMsSpinBox->setValue(defaults::LCD_FEEDBACK_FREQUENCY_DURATION_MS);
+    mUi->uLcdFeedbackFrequencyDurationMsBox->setChecked(defaults::ENABLE_LCD_FEEDBACK_FREQUENCY_DURATION_MS);
+    mUi->uLcdFeedbackFrequencyHzSpinBox->setValue(defaults::LCD_FEEDBACK_FREQUENCY_HZ);
+    mUi->uLcdFeedbackFrequencyHzBox->setChecked(defaults::ENABLE_LCD_FEEDBACK_FREQUENCY_HZ);
+
     mIsLoading = false;
 }
 
@@ -61,14 +67,28 @@ bool SpeakerPage::LoadFromJson(const QJsonObject &pJson)
     bool success = true;
     mIsLoading = true;
 
+    success &= LoadConfig(mUi->uSpeakerBox, pJson, "SPEAKER");
+    success &= LoadConfig(mUi->uLcdFeedbackFrequencyDurationMsSpinBox, pJson, "LCD_FEEDBACK_FREQUENCY_DURATION_MS");
+    success &= LoadConfig(mUi->uLcdFeedbackFrequencyDurationMsBox, pJson, "ENABLE_LCD_FEEDBACK_FREQUENCY_DURATION_MS");
+    success &= LoadConfig(mUi->uLcdFeedbackFrequencyHzSpinBox, pJson, "LCD_FEEDBACK_FREQUENCY_HZ");
+    success &= LoadConfig(mUi->uLcdFeedbackFrequencyHzBox, pJson, "ENABLE_LCD_FEEDBACK_FREQUENCY_HZ");
+
     mIsLoading = false;
     return success;
 }
 
 void SpeakerPage::FetchConfiguration(Configuration& pConfig)
 {
+    SetConfig(pConfig.speaker.SPEAKER, mUi->uSpeakerBox);
+    SetConfig(pConfig.speaker.LCD_FEEDBACK_FREQUENCY_DURATION_MS, mUi->uLcdFeedbackFrequencyDurationMsSpinBox);
+    SetConfig(pConfig.speaker.ENABLE_LCD_FEEDBACK_FREQUENCY_DURATION_MS, mUi->uLcdFeedbackFrequencyDurationMsBox);
+    SetConfig(pConfig.speaker.LCD_FEEDBACK_FREQUENCY_HZ, mUi->uLcdFeedbackFrequencyHzSpinBox);
+    SetConfig(pConfig.speaker.ENABLE_LCD_FEEDBACK_FREQUENCY_HZ, mUi->uLcdFeedbackFrequencyHzBox);
 }
 
 void SpeakerPage::ReplaceTags(QStringList& pOutput)
 {
+    ReplaceTag(pOutput, "#{SPEAKER}", mUi->uSpeakerBox, "SPEAKER");
+    ReplaceTag(pOutput, "#{LCD_FEEDBACK_FREQUENCY_DURATION_MS}", mUi->uLcdFeedbackFrequencyDurationMsSpinBox, !mUi->uLcdFeedbackFrequencyDurationMsBox->isChecked(), "LCD_FEEDBACK_FREQUENCY_DURATION_MS");
+    ReplaceTag(pOutput, "#{LCD_FEEDBACK_FREQUENCY_HZ}", mUi->uLcdFeedbackFrequencyHzSpinBox, !mUi->uLcdFeedbackFrequencyHzBox->isChecked(), "LCD_FEEDBACK_FREQUENCY_HZ");
 }

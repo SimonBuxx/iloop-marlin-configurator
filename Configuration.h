@@ -368,6 +368,13 @@ static constexpr auto SD_CHECK_AND_RETRY{false};
 // LCD Menu Items
 static constexpr auto NO_LCD_MENUS{false};
 static constexpr auto SLIM_LCD_MENUS{false};
+
+// Speaker
+static constexpr auto SPEAKER{false};
+static constexpr auto LCD_FEEDBACK_FREQUENCY_DURATION_MS{2};
+static constexpr auto ENABLE_LCD_FEEDBACK_FREQUENCY_DURATION_MS{false};
+static constexpr auto LCD_FEEDBACK_FREQUENCY_HZ{5000};
+static constexpr auto ENABLE_LCD_FEEDBACK_FREQUENCY_HZ{false};
 }
 
 struct PageConfiguration
@@ -1114,6 +1121,36 @@ public:
 };
 
 ///
+/// \brief The SpeakerConfiguration struct contains speaker configurations
+///
+struct SpeakerConfiguration : public PageConfiguration
+{
+    bool SPEAKER{defaults::SPEAKER};
+    int32_t LCD_FEEDBACK_FREQUENCY_DURATION_MS{defaults::LCD_FEEDBACK_FREQUENCY_DURATION_MS};
+    bool ENABLE_LCD_FEEDBACK_FREQUENCY_DURATION_MS{defaults::ENABLE_LCD_FEEDBACK_FREQUENCY_DURATION_MS};
+    int32_t LCD_FEEDBACK_FREQUENCY_HZ{defaults::LCD_FEEDBACK_FREQUENCY_HZ};
+    bool ENABLE_LCD_FEEDBACK_FREQUENCY_HZ{defaults::ENABLE_LCD_FEEDBACK_FREQUENCY_HZ};
+
+public:
+    /// \brief Converts the configuration into a JSON object
+    ///
+    /// \return a JSON object containing the configuration data
+    QJsonObject ToJson(void) const override
+    {
+        QJsonObject json;
+
+        json["SPEAKER"] = SPEAKER;
+        json["LCD_FEEDBACK_FREQUENCY_DURATION_MS"] = LCD_FEEDBACK_FREQUENCY_DURATION_MS;
+        json["ENABLE_LCD_FEEDBACK_FREQUENCY_DURATION_MS"] = ENABLE_LCD_FEEDBACK_FREQUENCY_DURATION_MS;
+        json["LCD_FEEDBACK_FREQUENCY_HZ"] = LCD_FEEDBACK_FREQUENCY_HZ;
+        json["ENABLE_LCD_FEEDBACK_FREQUENCY_HZ"] = ENABLE_LCD_FEEDBACK_FREQUENCY_HZ;
+
+        return json;
+    }
+};
+
+
+///
 /// \brief The Configuration struct contains a complete Marlin configuration
 ///
 struct Configuration
@@ -1126,6 +1163,7 @@ struct Configuration
     FilamentRunoutSensorConfiguration filamentRunoutSensor;
     SDCardConfiguration sdCard;
     LCDMenuItemsConfiguration lcdMenuItems;
+    SpeakerConfiguration speaker;
 
 public:
     /// \brief Converts the configuration into a JSON object
@@ -1143,7 +1181,7 @@ public:
         json["filamentRunoutSensor"] = filamentRunoutSensor.ToJson();
         json["sdCard"] = sdCard.ToJson();
         json["lcdMenuItems"] = lcdMenuItems.ToJson();
-
+        json["speaker"] = speaker.ToJson();
 
         return json;
     }

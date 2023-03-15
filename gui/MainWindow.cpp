@@ -630,6 +630,14 @@ bool MainWindow::LoadConfigurationFromJson(const QJsonObject& pJson)
         success = false;
     }
 
+    if (pJson.contains("speaker") && pJson["speaker"].isObject())
+    {
+        success &= mUi->uSpeakerPage->LoadFromJson(pJson["speaker"].toObject());
+    }
+    else
+    {
+        success = false;
+    }
 
 #warning add remaining pages
 

@@ -65,5 +65,19 @@
         <file>scan_delete_FILL0_wght100_GRAD0_opsz20.svg</file>
         <file>copy_all_FILL0_wght100_GRAD0_opsz20.svg</file>
         <file>filament_runout_sensor_template.txt</file>
+        <file>additional_features_template.txt</file>
+        <file>bed_leveling_template.txt</file>
+        <file>encoder_template.txt</file>
+        <file>endstops_template.txt</file>
+        <file>extra_features_template.txt</file>
+        <file>homing_and_bounds_template.txt</file>
+        <file>homing_options_template.txt</file>
+        <file>kinematics_template.txt</file>
+        <file>lcd_controller_template.txt</file>
+        <file>movement_template.txt</file>
+        <file>speaker_template.txt</file>
+        <file>stepper_drivers_template.txt</file>
+        <file>user_interface_language_template.txt</file>
+        <file>z_probe_options_template.txt</file>
     </qresource>
 </RCC>
