@@ -374,6 +374,19 @@ static constexpr auto SD_CHECK_AND_RETRY{false};
 static constexpr auto NO_LCD_MENUS{false};
 static constexpr auto SLIM_LCD_MENUS{false};
 
+// Encoder
+static constexpr auto ENCODER_PULSES_PER_STEP{4};
+static constexpr auto ENABLE_ENCODER_PULSES_PER_STEP{false};
+static constexpr auto ENCODER_STEPS_PER_MENU_ITEM{1};
+static constexpr auto ENABLE_ENCODER_STEPS_PER_MENU_ITEM{false};
+static constexpr auto REVERSE_ENCODER_DIRECTION{false};
+static constexpr auto REVERSE_MENU_DIRECTION{false};
+static constexpr auto REVERSE_SELECT_DIRECTION{false};
+static constexpr auto ENCODER_NOISE_FILTER{false};
+static constexpr auto ENCODER_SAMPLES{10};
+static constexpr auto INDIVIDUAL_AXIS_HOMING_MENU{false};
+static constexpr auto INDIVIDUAL_AXIS_HOMING_SUBMENU{false};
+
 // Speaker
 static constexpr auto SPEAKER{false};
 static constexpr auto LCD_FEEDBACK_FREQUENCY_DURATION_MS{2};
@@ -1151,6 +1164,48 @@ public:
 };
 
 ///
+/// \brief The EncoderConfiguration struct contains encoder configurations
+///
+struct EncoderConfiguration : public PageConfiguration
+{
+    int32_t ENCODER_PULSES_PER_STEP{defaults::ENCODER_PULSES_PER_STEP};
+    bool ENABLE_ENCODER_PULSES_PER_STEP{defaults::ENABLE_ENCODER_PULSES_PER_STEP};
+    int32_t ENCODER_STEPS_PER_MENU_ITEM{defaults::ENCODER_STEPS_PER_MENU_ITEM};
+    bool ENABLE_ENCODER_STEPS_PER_MENU_ITEM{defaults::ENABLE_ENCODER_STEPS_PER_MENU_ITEM};
+    bool REVERSE_ENCODER_DIRECTION{defaults::REVERSE_ENCODER_DIRECTION};
+    bool REVERSE_MENU_DIRECTION{defaults::REVERSE_MENU_DIRECTION};
+    bool REVERSE_SELECT_DIRECTION{defaults::REVERSE_SELECT_DIRECTION};
+    bool ENCODER_NOISE_FILTER{defaults::ENCODER_NOISE_FILTER};
+    int32_t ENCODER_SAMPLES{defaults::ENCODER_SAMPLES};
+    bool INDIVIDUAL_AXIS_HOMING_MENU{defaults::INDIVIDUAL_AXIS_HOMING_MENU};
+    bool INDIVIDUAL_AXIS_HOMING_SUBMENU{defaults::INDIVIDUAL_AXIS_HOMING_SUBMENU};
+
+public:
+    /// \brief Converts the configuration into a JSON object
+    ///
+    /// \return a JSON object containing the configuration data
+    QJsonObject ToJson(void) const override
+    {
+        QJsonObject json;
+
+        json["ENCODER_PULSES_PER_STEP"] = ENCODER_PULSES_PER_STEP;
+        json["ENABLE_ENCODER_PULSES_PER_STEP"] = ENABLE_ENCODER_PULSES_PER_STEP;
+        json["ENCODER_STEPS_PER_MENU_ITEM"] = ENCODER_STEPS_PER_MENU_ITEM;
+        json["ENABLE_ENCODER_STEPS_PER_MENU_ITEM"] = ENABLE_ENCODER_STEPS_PER_MENU_ITEM;
+        json["REVERSE_ENCODER_DIRECTION"] = REVERSE_ENCODER_DIRECTION;
+        json["REVERSE_MENU_DIRECTION"] = REVERSE_MENU_DIRECTION;
+        json["REVERSE_SELECT_DIRECTION"] = REVERSE_SELECT_DIRECTION;
+        json["ENCODER_NOISE_FILTER"] = ENCODER_NOISE_FILTER;
+        json["ENCODER_SAMPLES"] = ENCODER_SAMPLES;
+        json["INDIVIDUAL_AXIS_HOMING_MENU"] = INDIVIDUAL_AXIS_HOMING_MENU;
+        json["INDIVIDUAL_AXIS_HOMING_SUBMENU"] = INDIVIDUAL_AXIS_HOMING_SUBMENU;
+
+        return json;
+    }
+};
+
+
+///
 /// \brief The SpeakerConfiguration struct contains speaker configurations
 ///
 struct SpeakerConfiguration : public PageConfiguration
@@ -1190,10 +1245,11 @@ struct Configuration
     PowerSupplyConfiguration powerSupply;
     ThermalSettingsConfiguration thermalSettings;
     FilamentRunoutSensorConfiguration filamentRunoutSensor;
+    UserInterfaceLanguageConfiguration userInterfaceLanguage;
     SDCardConfiguration sdCard;
     LCDMenuItemsConfiguration lcdMenuItems;
+    EncoderConfiguration encoder;
     SpeakerConfiguration speaker;
-    UserInterfaceLanguageConfiguration userInterfaceLanguage;
 
 public:
     /// \brief Converts the configuration into a JSON object
@@ -1212,6 +1268,7 @@ public:
         json["userInterfaceLanguage"] = userInterfaceLanguage.ToJson();
         json["sdCard"] = sdCard.ToJson();
         json["lcdMenuItems"] = lcdMenuItems.ToJson();
+        json["encoder"] = encoder.ToJson();
         json["speaker"] = speaker.ToJson();
 
 

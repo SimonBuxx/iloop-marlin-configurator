@@ -729,8 +729,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1059</width>
-                   <height>506</height>
+                   <width>100</width>
+                   <height>30</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_10">
@@ -1971,6 +1971,7 @@ QScrollBar::sub-line:horizontal
     <addaction name="uCloseWorkspaceAction"/>
     <addaction name="separator"/>
     <addaction name="uResetConfigurationAction"/>
+    <addaction name="uResetCurrentPageAction"/>
     <addaction name="separator"/>
     <addaction name="uCloseAction"/>
    </widget>
@@ -1985,7 +1986,7 @@ QScrollBar::sub-line:horizontal
    </widget>
    <widget class="QMenu" name="menuDocumentation">
     <property name="title">
-     <string>Documentation</string>
+     <string>Resources</string>
     </property>
     <addaction name="uActionOpenMarlinHomepage"/>
     <addaction name="separator"/>
@@ -2132,7 +2133,7 @@ QPushButton::!checked:hover {
         <property name="geometry">
          <rect>
           <x>0</x>
-          <y>-150</y>
+          <y>0</y>
           <width>208</width>
           <height>631</height>
          </rect>
@@ -2664,7 +2665,7 @@ QPushButton::!checked:hover {
 }</string>
            </property>
            <property name="text">
-            <string>Encoder (WIP)</string>
+            <string>Encoder</string>
            </property>
            <property name="icon">
             <iconset resource="../resources/resources.qrc">
@@ -3005,7 +3006,7 @@ QPushButton::disabled {
                <bool>true</bool>
               </property>
               <property name="toolTip">
-               <string>Reset Configuration</string>
+               <string>Reset Configuration [F10]</string>
               </property>
               <property name="text">
                <string>Reset</string>
@@ -4331,6 +4332,17 @@ QPushButton::hover {
    </property>
    <property name="text">
     <string>Reset Configuration</string>
+   </property>
+   <property name="shortcut">
+    <string>F9</string>
+   </property>
+  </action>
+  <action name="uResetCurrentPageAction">
+   <property name="text">
+    <string>Reset Current Page</string>
+   </property>
+   <property name="shortcut">
+    <string>F10</string>
    </property>
   </action>
  </widget>

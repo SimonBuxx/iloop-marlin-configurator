@@ -114,6 +114,8 @@ public slots:
 
     void OnResetConfiguration(void);
 
+    void OnResetCurrentPage(void);
+
     void ResetValues(void);
 
 protected:

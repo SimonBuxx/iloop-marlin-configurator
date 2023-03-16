@@ -118,6 +118,8 @@ void MainWindow::ConnectGuiSignalsAndSlots()
     {
         UpdateActiveTabButtonColor();
 
+         mUi->uResetCurrentPageAction->setEnabled(mUi->stackedWidget->currentIndex() > 0);
+
         // Update code preview on tab change
         auto&& page = mUi->stackedWidget->currentWidget()->findChild<AbstractPage*>();
         if (nullptr != page)
@@ -150,6 +152,8 @@ void MainWindow::ConnectGuiSignalsAndSlots()
     QObject::connect(mUi->uOpenWorkspaceButton, &QPushButton::pressed, this, &MainWindow::OnOpenWorkspace);
     QObject::connect(mUi->uResetConfigurationAction, &QAction::triggered, this, &MainWindow::OnResetConfiguration);
     QObject::connect(mUi->uResetConfigurationButton, &QPushButton::pressed, this, &MainWindow::OnResetConfiguration);
+    QObject::connect(mUi->uResetCurrentPageAction, &QAction::triggered, this, &MainWindow::OnResetCurrentPage);
+
 
     QObject::connect(mUi->uActionConfigure, &QAction::triggered, this, &MainWindow::ConfigureSignal);
 
@@ -526,6 +530,30 @@ void MainWindow::OnResetConfiguration()
     Log("Workspace configuration resetted.", "rgb(249, 154, 0)");
 }
 
+void MainWindow::OnResetCurrentPage()
+{
+    QMessageBox msgBox;
+    msgBox.setText("Do you really want to reset the current page configuration?");
+    msgBox.setInformativeText("Reset only affects the displayed values, the workspace files are not updated until explicitly saved.");
+    msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    msgBox.setIcon(QMessageBox::Question);
+    if (msgBox.exec() == QMessageBox::No)
+    {
+        return;
+    }
+
+    if (nullptr != dynamic_cast<AbstractPage*>(mUi->stackedWidget->currentWidget()->findChild<AbstractPage*>()))
+    {
+        auto&& page = static_cast<AbstractPage*>(mUi->stackedWidget->currentWidget()->findChild<AbstractPage*>());
+        page->ResetValues();
+        Log("Current page configuration resetted.", "rgb(249, 154, 0)");
+    }
+    else
+    {
+        Log("Could not reset the current page configuration.", "red");
+    }
+}
+
 Configuration MainWindow::FetchConfiguration()
 {
     Configuration config;
@@ -633,6 +661,15 @@ bool MainWindow::LoadConfigurationFromJson(const QJsonObject& pJson)
     if (pJson.contains("lcdMenuItems") && pJson["lcdMenuItems"].isObject())
     {
         success &= mUi->uLCDMenuItemsPage->LoadFromJson(pJson["lcdMenuItems"].toObject());
+    }
+    else
+    {
+        success = false;
+    }
+
+    if (pJson.contains("encoder") && pJson["encoder"].isObject())
+    {
+        success &= mUi->uEncoderPage->LoadFromJson(pJson["encoder"].toObject());
     }
     else
     {
