@@ -71,6 +71,8 @@ protected:
 
     void OpenConfigurationJson(const QFileInfo& pFilePath);
 
+    std::optional<QString> GetPlatformIoVersion(void) const;
+
 protected:
     MainWindow mMainWindow;
 

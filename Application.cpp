@@ -74,6 +74,22 @@ Application::Application(QObject *parent)
         return;
     }
 
+    const auto platformIoVersion = GetPlatformIoVersion();
+    if (!platformIoVersion.has_value())
+    {
+        mMainWindow.Log("PlatformIO could not be detected.", "red");
+        QMessageBox msgBox;
+        msgBox.setText("PlatformIO could not be detected. Building and deploying Marlin will not work.");
+        msgBox.setInformativeText("Please make sure that PlatformIO is installed on your system and correctly configured, including setting the PATH system variable.");
+        msgBox.setStandardButtons(QMessageBox::Ok);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.exec();
+    }
+    else
+    {
+        mMainWindow.Log(QString("%0 detected.").arg(platformIoVersion.value()));
+    }
+
     mMainWindow.Log("Initialization successful.", "rgb(249, 154, 0)");
 }
 
@@ -573,4 +589,40 @@ void Application::OnUpload(const QString& pEnvironment)
     }
 
     mMainWindow.DeactivateCancelButton();
+}
+
+std::optional<QString> Application::GetPlatformIoVersion(void) const
+{
+    std::optional<QString> result = std::nullopt;
+
+    QProcess process;
+    process.start("C:\\Windows\\system32\\cmd.exe");
+
+    if (false == process.waitForStarted())
+    {
+        result = std::nullopt;
+        return result;
+    }
+
+    QObject::connect(&process, &QProcess::readyReadStandardOutput, this, [&](){
+        auto stream = QTextStream(process.readAllStandardOutput());
+        while (!stream.atEnd())
+        {
+            const auto& line = stream.readLine();
+
+            if  (line.contains("version"))
+            {
+                result = line;
+                break;
+            }
+        }
+    });
+
+    process.write("platformio --version\n");
+
+    process.write("exit\n");
+    process.waitForFinished();
+    process.close();
+
+    return result;
 }
