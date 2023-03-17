@@ -699,7 +699,7 @@ void MainWindow::Log(const QString& pText, const QString& pColorString)
 
 void MainWindow::CompilerLog(const std::optional<QString>& pPath, const QString& pText, const QString& pColorString)
 {
-    if (pText.contains("exit") || pText.contains("cd ") || pText.contains("Microsoft Windows") || pText.contains("(c) Microsoft Corporation"))
+    if (pText.contains("exit") || pText.contains("cd ") || pText.contains("Microsoft Windows") || pText.contains("Microsoft Corporation"))
     {
         return;
     }
