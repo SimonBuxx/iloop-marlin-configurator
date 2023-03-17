@@ -6,7 +6,7 @@ iMC simplifies the workflow of configuring Marlin by generating the header file 
 
 ### About iLOOP
 
-The iLOOP project is a student project of ERIG e.V. and the [Institute of Space Systems](http://space-systems.eu/) that aims to develop an infinite-Z belt 3D printer for additive manufacturing under vacuum conditions. This project is a tech demonstration for a future CubeSat mission. The project is funded by the [DLR](https://www.dlr.de/) as part of the small satellite initiative of the [German Federal Ministry for Economic Affairs and Climate Action (BMWK)](https://www.bmwk.de/Navigation/EN/Home/home.html).
+The iLOOP project is a student project of ERIG e.V. and the [Institute of Space Systems](http://space-systems.eu/) of TU Braunschweig that aims to develop an infinite-Z belt 3D printer for additive manufacturing under vacuum conditions. This project is a tech demonstration for a future CubeSat mission. The project is funded by the [DLR](https://www.dlr.de/) as part of the small satellite initiative of the [German Federal Ministry for Economic Affairs and Climate Action (BMWK)](https://www.bmwk.de/Navigation/EN/Home/home.html).
 
 **Please note: Although iMC is developed for iLOOP, it can be used to configure any 3D printer that runs the Marlin firmware.**
 
