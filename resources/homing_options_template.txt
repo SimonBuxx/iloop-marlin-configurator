@@ -1,19 +1,19 @@
 // @section homing
 
 // The center of the bed is at (X=0, Y=0)
-//#define BED_CENTER_AT_0_0
+#{BED_CENTER_AT_0_0}
 
 // Manually set the home position. Leave these undefined for automatic settings.
 // For DELTA this is the top-center of the Cartesian print volume.
-//#define MANUAL_X_HOME_POS 0
-//#define MANUAL_Y_HOME_POS 0
-//#define MANUAL_Z_HOME_POS 0
-//#define MANUAL_I_HOME_POS 0
-//#define MANUAL_J_HOME_POS 0
-//#define MANUAL_K_HOME_POS 0
-//#define MANUAL_U_HOME_POS 0
-//#define MANUAL_V_HOME_POS 0
-//#define MANUAL_W_HOME_POS 0
+#{MANUAL_X_HOME_POS}
+#{MANUAL_Y_HOME_POS}
+#{MANUAL_Z_HOME_POS}
+#{MANUAL_I_HOME_POS}
+#{MANUAL_J_HOME_POS}
+#{MANUAL_K_HOME_POS}
+#{MANUAL_U_HOME_POS}
+#{MANUAL_V_HOME_POS}
+#{MANUAL_W_HOME_POS}
 
 /**
  * Use "Z Safe Homing" to avoid homing with a Z probe outside the bed area.
@@ -22,18 +22,18 @@
  * - Allows Z homing only when XY positions are known and trusted.
  * - If stepper drivers sleep, XY homing may be required again before Z homing.
  */
-//#define Z_SAFE_HOMING
+#{Z_SAFE_HOMING}
 
 #if ENABLED(Z_SAFE_HOMING)
-  #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing
-  #define Z_SAFE_HOMING_Y_POINT Y_CENTER  // Y point for Z homing
+  #{Z_SAFE_HOMING_X_POINT}  // X point for Z homing
+  #{Z_SAFE_HOMING_Y_POINT}  // Y point for Z homing
 #endif
 
 // Homing speeds (linear=mm/min, rotational=°/min)
-#define HOMING_FEEDRATE_MM_M { (50*60), (50*60), (4*60) }
+#{HOMING_FEEDRATE_MM_M}
 
 // Validate that endstops are triggered on homing moves
-#define VALIDATE_HOMING_ENDSTOPS
+#{VALIDATE_HOMING_ENDSTOPS}
 
 // @section calibrate
 
@@ -65,30 +65,30 @@
  *    +-------------->X     +-------------->X     +-------------->Y
  *     XY_SKEW_FACTOR        XZ_SKEW_FACTOR        YZ_SKEW_FACTOR
  */
-//#define SKEW_CORRECTION
+#{SKEW_CORRECTION}
 
 #if ENABLED(SKEW_CORRECTION)
   // Input all length measurements here:
-  #define XY_DIAG_AC 282.8427124746
-  #define XY_DIAG_BD 282.8427124746
-  #define XY_SIDE_AD 200
+  #{XY_DIAG_AC}
+  #{XY_DIAG_BD}
+  #{XY_SIDE_AD}
 
   // Or, set the XY skew factor directly:
-  //#define XY_SKEW_FACTOR 0.0
+  #{XY_SKEW_FACTOR}
 
   //#define SKEW_CORRECTION_FOR_Z
   #if ENABLED(SKEW_CORRECTION_FOR_Z)
-    #define XZ_DIAG_AC 282.8427124746
-    #define XZ_DIAG_BD 282.8427124746
-    #define YZ_DIAG_AC 282.8427124746
-    #define YZ_DIAG_BD 282.8427124746
-    #define YZ_SIDE_AD 200
+    #{XZ_DIAG_AC}
+    #{XZ_DIAG_BD}
+    #{YZ_DIAG_AC}
+    #{YZ_DIAG_BD}
+    #{YZ_SIDE_AD}
 
     // Or, set the Z skew factors directly:
-    //#define XZ_SKEW_FACTOR 0.0
-    //#define YZ_SKEW_FACTOR 0.0
+    #{XZ_SKEW_FACTOR}
+    #{YZ_SKEW_FACTOR}
   #endif
 
   // Enable this option for M852 to set skew at runtime
-  //#define SKEW_CORRECTION_GCODE
+  #{SKEW_CORRECTION_GCODE}
 #endif

@@ -2133,7 +2133,7 @@ QPushButton::!checked:hover {
         <property name="geometry">
          <rect>
           <x>0</x>
-          <y>0</y>
+          <y>-138</y>
           <width>208</width>
           <height>631</height>
          </rect>
@@ -2535,7 +2535,7 @@ QPushButton::!checked:hover {
          <item>
           <widget class="QPushButton" name="uHomingOptionsTabButton">
            <property name="text">
-            <string>Homing Options (WIP)</string>
+            <string>Homing Options</string>
            </property>
            <property name="icon">
             <iconset resource="../resources/resources.qrc">
@@ -2848,7 +2848,7 @@ QPushButton::!checked:hover {
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>438</width>
+          <width>483</width>
           <height>216</height>
          </rect>
         </property>
@@ -2962,7 +2962,7 @@ QPushButton::disabled {
               </property>
               <property name="icon">
                <iconset resource="../resources/resources.qrc">
-                <normaloff>:/file_open_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/file_open_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+                <normaloff>:/folder_open_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/folder_open_FILL0_wght100_GRAD0_opsz20.svg</iconset>
               </property>
              </widget>
             </item>
@@ -3043,7 +3043,7 @@ QPushButton::disabled {
               </property>
               <property name="icon">
                <iconset resource="../resources/resources.qrc">
-                <normaloff>:/scan_delete_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/scan_delete_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+                <normaloff>:/folder_off_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/folder_off_FILL0_wght100_GRAD0_opsz20.svg</iconset>
               </property>
              </widget>
             </item>
@@ -3135,7 +3135,7 @@ QPushButton::disabled {
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>388</width>
+          <width>302</width>
           <height>216</height>
          </rect>
         </property>
@@ -3545,7 +3545,7 @@ QPushButton::disabled {
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>452</width>
+          <width>493</width>
           <height>216</height>
          </rect>
         </property>
@@ -3803,7 +3803,7 @@ QPushButton::hover {
   <action name="uOpenWorkspaceAction">
    <property name="icon">
     <iconset resource="../resources/resources.qrc">
-     <normaloff>:/file_open_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/file_open_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+     <normaloff>:/folder_open_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/folder_open_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
     <string>Open Workspace...</string>
@@ -4319,7 +4319,7 @@ QPushButton::hover {
    </property>
    <property name="icon">
     <iconset resource="../resources/resources.qrc">
-     <normaloff>:/scan_delete_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/scan_delete_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+     <normaloff>:/folder_off_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/folder_off_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
     <string>Close Workspace</string>

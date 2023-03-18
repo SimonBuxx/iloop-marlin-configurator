@@ -640,6 +640,15 @@ bool MainWindow::LoadConfigurationFromJson(const QJsonObject& pJson)
         success = false;
     }
 
+    if (pJson.contains("homingOptions") && pJson["homingOptions"].isObject())
+    {
+        success &= mUi->uHomingOptionsPage->LoadFromJson(pJson["homingOptions"].toObject());
+    }
+    else
+    {
+        success = false;
+    }
+
     if (pJson.contains("userInterfaceLanguage") && pJson["userInterfaceLanguage"].isObject())
     {
         success &= mUi->uUserInterfaceLanguagePage->LoadFromJson(pJson["userInterfaceLanguage"].toObject());

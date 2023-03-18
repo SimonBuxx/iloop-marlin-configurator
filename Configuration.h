@@ -361,6 +361,51 @@ static constexpr auto FILAMENT_RUNOUT_DISTANCE_MM{25};
 static constexpr auto ENABLE_FILAMENT_RUNOUT_DISTANCE_MM{false};
 static constexpr auto FILAMENT_MOTION_SENSOR{false};
 
+// Homing Options
+static constexpr auto BED_CENTER_AT_0_0{false};
+static constexpr auto MANUAL_X_HOME_POS{0};
+static constexpr auto MANUAL_Y_HOME_POS{0};
+static constexpr auto MANUAL_Z_HOME_POS{0};
+static constexpr auto MANUAL_I_HOME_POS{0};
+static constexpr auto MANUAL_J_HOME_POS{0};
+static constexpr auto MANUAL_K_HOME_POS{0};
+static constexpr auto MANUAL_U_HOME_POS{0};
+static constexpr auto MANUAL_V_HOME_POS{0};
+static constexpr auto MANUAL_W_HOME_POS{0};
+static constexpr auto ENABLE_MANUAL_X_HOME_POS{false};
+static constexpr auto ENABLE_MANUAL_Y_HOME_POS{false};
+static constexpr auto ENABLE_MANUAL_Z_HOME_POS{false};
+static constexpr auto ENABLE_MANUAL_I_HOME_POS{false};
+static constexpr auto ENABLE_MANUAL_J_HOME_POS{false};
+static constexpr auto ENABLE_MANUAL_K_HOME_POS{false};
+static constexpr auto ENABLE_MANUAL_U_HOME_POS{false};
+static constexpr auto ENABLE_MANUAL_V_HOME_POS{false};
+static constexpr auto ENABLE_MANUAL_W_HOME_POS{false};
+static constexpr auto Z_SAFE_HOMING{false};
+static constexpr auto Z_SAFE_HOMING_X_POINT{0};
+static constexpr auto Z_SAFE_HOMING_Y_POINT{0};
+static constexpr auto ENABLE_Z_SAFE_HOMING_X_POINT{false};
+static constexpr auto ENABLE_Z_SAFE_HOMING_Y_POINT{false};
+static constexpr auto HOMING_FEEDRATE_MM_M{"{ (50*60), (50*60), (4*60) }"};
+static constexpr auto VALIDATE_HOMING_ENDSTOPS{true};
+static constexpr auto SKEW_CORRECTION{false};
+static constexpr auto XY_DIAG_AC{282.8427124746f};
+static constexpr auto XY_DIAG_BD{282.8427124746f};
+static constexpr auto XY_SIDE_AD{200.0f};
+static constexpr auto XY_SKEW_FACTOR{0.0f};
+static constexpr auto ENABLE_XY_SKEW_FACTOR{false};
+static constexpr auto SKEW_CORRECTION_FOR_Z{false};
+static constexpr auto XZ_DIAG_AC{282.8427124746f};
+static constexpr auto XZ_DIAG_BD{282.8427124746f};
+static constexpr auto YZ_DIAG_AC{282.8427124746f};
+static constexpr auto YZ_DIAG_BD{282.8427124746f};
+static constexpr auto YZ_SIDE_AD{200.0f};
+static constexpr auto XZ_SKEW_FACTOR{0.0f};
+static constexpr auto YZ_SKEW_FACTOR{0.0f};
+static constexpr auto ENABLE_XZ_SKEW_FACTOR{false};
+static constexpr auto ENABLE_YZ_SKEW_FACTOR{false};
+static constexpr auto SKEW_CORRECTION_GCODE{false};
+
 // User Interface Language
 static constexpr auto LCD_LANGUAGE{"en"};
 static constexpr auto DISPLAY_CHARSET_HD44780{"JAPANESE"};
@@ -1093,6 +1138,112 @@ public:
 };
 
 ///
+/// \brief The HomingOptionsConfiguration struct contains homing options configurations
+///
+struct HomingOptionsConfiguration : public PageConfiguration
+{
+    bool BED_CENTER_AT_0_0{defaults::BED_CENTER_AT_0_0};
+    int32_t MANUAL_X_HOME_POS{defaults::MANUAL_X_HOME_POS};
+    int32_t MANUAL_Y_HOME_POS{defaults::MANUAL_Y_HOME_POS};
+    int32_t MANUAL_Z_HOME_POS{defaults::MANUAL_Z_HOME_POS};
+    int32_t MANUAL_I_HOME_POS{defaults::MANUAL_I_HOME_POS};
+    int32_t MANUAL_J_HOME_POS{defaults::MANUAL_J_HOME_POS};
+    int32_t MANUAL_K_HOME_POS{defaults::MANUAL_K_HOME_POS};
+    int32_t MANUAL_U_HOME_POS{defaults::MANUAL_U_HOME_POS};
+    int32_t MANUAL_V_HOME_POS{defaults::MANUAL_V_HOME_POS};
+    int32_t MANUAL_W_HOME_POS{defaults::MANUAL_W_HOME_POS};
+    bool ENABLE_MANUAL_X_HOME_POS{defaults::ENABLE_MANUAL_X_HOME_POS};
+    bool ENABLE_MANUAL_Y_HOME_POS{defaults::ENABLE_MANUAL_Y_HOME_POS};
+    bool ENABLE_MANUAL_Z_HOME_POS{defaults::ENABLE_MANUAL_Z_HOME_POS};
+    bool ENABLE_MANUAL_I_HOME_POS{defaults::ENABLE_MANUAL_I_HOME_POS};
+    bool ENABLE_MANUAL_J_HOME_POS{defaults::ENABLE_MANUAL_J_HOME_POS};
+    bool ENABLE_MANUAL_K_HOME_POS{defaults::ENABLE_MANUAL_K_HOME_POS};
+    bool ENABLE_MANUAL_U_HOME_POS{defaults::ENABLE_MANUAL_U_HOME_POS};
+    bool ENABLE_MANUAL_V_HOME_POS{defaults::ENABLE_MANUAL_V_HOME_POS};
+    bool ENABLE_MANUAL_W_HOME_POS{defaults::ENABLE_MANUAL_W_HOME_POS};
+    bool Z_SAFE_HOMING{defaults::Z_SAFE_HOMING};
+    int32_t Z_SAFE_HOMING_X_POINT{defaults::Z_SAFE_HOMING_X_POINT};
+    int32_t Z_SAFE_HOMING_Y_POINT{defaults::Z_SAFE_HOMING_Y_POINT};
+    bool ENABLE_Z_SAFE_HOMING_X_POINT{defaults::ENABLE_Z_SAFE_HOMING_X_POINT};
+    bool ENABLE_Z_SAFE_HOMING_Y_POINT{defaults::ENABLE_Z_SAFE_HOMING_Y_POINT};
+    QString HOMING_FEEDRATE_MM_M{defaults::HOMING_FEEDRATE_MM_M};
+    bool VALIDATE_HOMING_ENDSTOPS{defaults::VALIDATE_HOMING_ENDSTOPS};
+    bool SKEW_CORRECTION{defaults::SKEW_CORRECTION};
+    double XY_DIAG_AC{defaults::XY_DIAG_AC};
+    double XY_DIAG_BD{defaults::XY_DIAG_BD};
+    double XY_SIDE_AD{defaults::XY_SIDE_AD};
+    double XY_SKEW_FACTOR{defaults::XY_SKEW_FACTOR};
+    bool ENABLE_XY_SKEW_FACTOR{defaults::ENABLE_XY_SKEW_FACTOR};
+    bool SKEW_CORRECTION_FOR_Z{defaults::SKEW_CORRECTION_FOR_Z};
+    double XZ_DIAG_AC{defaults::XZ_DIAG_AC};
+    double XZ_DIAG_BD{defaults::XZ_DIAG_BD};
+    double YZ_DIAG_AC{defaults::YZ_DIAG_AC};
+    double YZ_DIAG_BD{defaults::YZ_DIAG_BD};
+    double YZ_SIDE_AD{defaults::YZ_SIDE_AD};
+    double XZ_SKEW_FACTOR{defaults::XZ_SKEW_FACTOR};
+    double YZ_SKEW_FACTOR{defaults::YZ_SKEW_FACTOR};
+    bool ENABLE_XZ_SKEW_FACTOR{defaults::ENABLE_XZ_SKEW_FACTOR};
+    bool ENABLE_YZ_SKEW_FACTOR{defaults::ENABLE_YZ_SKEW_FACTOR};
+    bool SKEW_CORRECTION_GCODE{defaults::SKEW_CORRECTION_GCODE};
+
+public:
+    /// \brief Converts the configuration into a JSON object
+    ///
+    /// \return a JSON object containing the configuration data
+    QJsonObject ToJson(void) const override
+    {
+        QJsonObject json;
+
+        json["BED_CENTER_AT_0_0"] = BED_CENTER_AT_0_0;
+        json["MANUAL_X_HOME_POS"] = MANUAL_X_HOME_POS;
+        json["MANUAL_Y_HOME_POS"] = MANUAL_Y_HOME_POS;
+        json["MANUAL_Z_HOME_POS"] = MANUAL_Z_HOME_POS;
+        json["MANUAL_I_HOME_POS"] = MANUAL_I_HOME_POS;
+        json["MANUAL_J_HOME_POS"] = MANUAL_J_HOME_POS;
+        json["MANUAL_K_HOME_POS"] = MANUAL_K_HOME_POS;
+        json["MANUAL_U_HOME_POS"] = MANUAL_U_HOME_POS;
+        json["MANUAL_V_HOME_POS"] = MANUAL_V_HOME_POS;
+        json["MANUAL_W_HOME_POS"] = MANUAL_W_HOME_POS;
+        json["ENABLE_MANUAL_X_HOME_POS"] = ENABLE_MANUAL_X_HOME_POS;
+        json["ENABLE_MANUAL_Y_HOME_POS"] = ENABLE_MANUAL_Y_HOME_POS;
+        json["ENABLE_MANUAL_Z_HOME_POS"] = ENABLE_MANUAL_Z_HOME_POS;
+        json["ENABLE_MANUAL_I_HOME_POS"] = ENABLE_MANUAL_I_HOME_POS;
+        json["ENABLE_MANUAL_J_HOME_POS"] = ENABLE_MANUAL_J_HOME_POS;
+        json["ENABLE_MANUAL_K_HOME_POS"] = ENABLE_MANUAL_K_HOME_POS;
+        json["ENABLE_MANUAL_U_HOME_POS"] = ENABLE_MANUAL_U_HOME_POS;
+        json["ENABLE_MANUAL_V_HOME_POS"] = ENABLE_MANUAL_V_HOME_POS;
+        json["ENABLE_MANUAL_W_HOME_POS"] = ENABLE_MANUAL_W_HOME_POS;
+        json["Z_SAFE_HOMING"] = Z_SAFE_HOMING;
+        json["Z_SAFE_HOMING_X_POINT"] = Z_SAFE_HOMING_X_POINT;
+        json["Z_SAFE_HOMING_Y_POINT"] = Z_SAFE_HOMING_Y_POINT;
+        json["ENABLE_Z_SAFE_HOMING_X_POINT"] = ENABLE_Z_SAFE_HOMING_X_POINT;
+        json["ENABLE_Z_SAFE_HOMING_Y_POINT"] = ENABLE_Z_SAFE_HOMING_Y_POINT;
+        json["HOMING_FEEDRATE_MM_M"] = HOMING_FEEDRATE_MM_M;
+        json["VALIDATE_HOMING_ENDSTOPS"] = VALIDATE_HOMING_ENDSTOPS;
+        json["SKEW_CORRECTION"] = SKEW_CORRECTION;
+        json["XY_DIAG_AC"] = XY_DIAG_AC;
+        json["XY_DIAG_BD"] = XY_DIAG_BD;
+        json["XY_SIDE_AD"] = XY_SIDE_AD;
+        json["XY_SKEW_FACTOR"] = XY_SKEW_FACTOR;
+        json["ENABLE_XY_SKEW_FACTOR"] = ENABLE_XY_SKEW_FACTOR;
+        json["SKEW_CORRECTION_FOR_Z"] = SKEW_CORRECTION_FOR_Z;
+        json["XZ_DIAG_AC"] = XZ_DIAG_AC;
+        json["XZ_DIAG_BD"] = XZ_DIAG_BD;
+        json["YZ_DIAG_AC"] = YZ_DIAG_AC;
+        json["YZ_DIAG_BD"] = YZ_DIAG_BD;
+        json["YZ_SIDE_AD"] = YZ_SIDE_AD;
+        json["XZ_SKEW_FACTOR"] = XZ_SKEW_FACTOR;
+        json["YZ_SKEW_FACTOR"] = YZ_SKEW_FACTOR;
+        json["ENABLE_XZ_SKEW_FACTOR"] = ENABLE_XZ_SKEW_FACTOR;
+        json["ENABLE_YZ_SKEW_FACTOR"] = ENABLE_YZ_SKEW_FACTOR;
+        json["SKEW_CORRECTION_GCODE"] = SKEW_CORRECTION_GCODE;
+
+        return json;
+    }
+};
+
+
+///
 /// \brief The UserInterfaceLanguageConfiguration struct contains user interface language configurations
 ///
 struct UserInterfaceLanguageConfiguration : public PageConfiguration
@@ -1245,6 +1396,7 @@ struct Configuration
     PowerSupplyConfiguration powerSupply;
     ThermalSettingsConfiguration thermalSettings;
     FilamentRunoutSensorConfiguration filamentRunoutSensor;
+    HomingOptionsConfiguration homingOptions;
     UserInterfaceLanguageConfiguration userInterfaceLanguage;
     SDCardConfiguration sdCard;
     LCDMenuItemsConfiguration lcdMenuItems;
@@ -1265,12 +1417,12 @@ public:
         json["powerSupply"] = powerSupply.ToJson();
         json["thermalSettings"] = thermalSettings.ToJson();
         json["filamentRunoutSensor"] = filamentRunoutSensor.ToJson();
+        json["homingOptions"] = homingOptions.ToJson();
         json["userInterfaceLanguage"] = userInterfaceLanguage.ToJson();
         json["sdCard"] = sdCard.ToJson();
         json["lcdMenuItems"] = lcdMenuItems.ToJson();
         json["encoder"] = encoder.ToJson();
         json["speaker"] = speaker.ToJson();
-
 
         return json;
     }

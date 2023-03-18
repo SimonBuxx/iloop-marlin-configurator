@@ -404,6 +404,9 @@ QAbstractSpinBox::down-button:off {
    </item>
    <item row="4" column="0" rowspan="5" colspan="3">
     <widget class="QGroupBox" name="uFilamentRunoutSensorBox">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <property name="title">
       <string>FILAMENT_RUNOUT_SENSOR</string>
      </property>
@@ -416,6 +419,9 @@ QAbstractSpinBox::down-button:off {
       </property>
       <item row="3" column="0" colspan="5">
        <widget class="QTabWidget" name="uIndividualSensorsTabWidget">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
           <horstretch>0</horstretch>
@@ -456,8 +462,13 @@ QTabBar::tab:disabled {
         </property>
         <widget class="QWidget" name="tab">
          <property name="styleSheet">
-          <string notr="true">#tab {
+          <string notr="true">#tab::enabled {
 	background: rgb(50, 52, 59);
+}
+
+
+#tab::disabled {
+	background: rgb(34, 35, 40);
 }
 </string>
          </property>
@@ -627,8 +638,13 @@ QTabBar::tab:disabled {
         </widget>
         <widget class="QWidget" name="tab_2">
          <property name="styleSheet">
-          <string notr="true">#tab_2 {
+          <string notr="true">#tab_2::enabled {
 	background: rgb(50, 52, 59);
+}
+
+
+#tab_2::disabled {
+	background: rgb(34, 35, 40);
 }
 </string>
          </property>
@@ -798,8 +814,13 @@ QTabBar::tab:disabled {
         </widget>
         <widget class="QWidget" name="tab_3">
          <property name="styleSheet">
-          <string notr="true">#tab_3 {
+          <string notr="true">#tab_3::enabled {
 	background: rgb(50, 52, 59);
+}
+
+
+#tab_3::disabled {
+	background: rgb(34, 35, 40);
 }
 </string>
          </property>
@@ -969,8 +990,13 @@ QTabBar::tab:disabled {
         </widget>
         <widget class="QWidget" name="tab_4">
          <property name="styleSheet">
-          <string notr="true">#tab_4 {
+          <string notr="true">#tab_4::enabled {
 	background: rgb(50, 52, 59);
+}
+
+
+#tab_4::disabled {
+	background: rgb(34, 35, 40);
 }
 </string>
          </property>
@@ -1140,8 +1166,13 @@ QTabBar::tab:disabled {
         </widget>
         <widget class="QWidget" name="tab_5">
          <property name="styleSheet">
-          <string notr="true">#tab_5 {
+          <string notr="true">#tab_5::enabled {
 	background: rgb(50, 52, 59);
+}
+
+
+#tab_5::disabled {
+	background: rgb(34, 35, 40);
 }
 </string>
          </property>
@@ -1311,8 +1342,13 @@ QTabBar::tab:disabled {
         </widget>
         <widget class="QWidget" name="tab_6">
          <property name="styleSheet">
-          <string notr="true">#tab_6 {
+          <string notr="true">#tab_6::enabled {
 	background: rgb(50, 52, 59);
+}
+
+
+#tab_6::disabled {
+	background: rgb(34, 35, 40);
 }
 </string>
          </property>
@@ -1482,8 +1518,13 @@ QTabBar::tab:disabled {
         </widget>
         <widget class="QWidget" name="tab_7">
          <property name="styleSheet">
-          <string notr="true">#tab_7 {
+          <string notr="true">#tab_7::enabled {
 	background: rgb(50, 52, 59);
+}
+
+
+#tab_7::disabled {
+	background: rgb(34, 35, 40);
 }
 </string>
          </property>
@@ -1653,8 +1694,13 @@ QTabBar::tab:disabled {
         </widget>
         <widget class="QWidget" name="tab_8">
          <property name="styleSheet">
-          <string notr="true">#tab_8 {
+          <string notr="true">#tab_8::enabled {
 	background: rgb(50, 52, 59);
+}
+
+
+#tab_8::disabled {
+	background: rgb(34, 35, 40);
 }
 </string>
          </property>

@@ -224,7 +224,7 @@ QPushButton:hover {
      </property>
      <property name="icon">
       <iconset resource="../resources/resources.qrc">
-       <normaloff>:/file_open_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/file_open_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+       <normaloff>:/folder_open_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/folder_open_FILL0_wght100_GRAD0_opsz20.svg</iconset>
      </property>
      <property name="iconSize">
       <size>

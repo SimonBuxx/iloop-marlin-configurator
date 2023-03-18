@@ -2355,8 +2355,8 @@ QTabBar QToolButton::left-arrow {
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>614</width>
-            <height>1250</height>
+            <width>1469</width>
+            <height>1858</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -5707,7 +5707,7 @@ QTabBar QToolButton::left-arrow {
 }</string>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>12</number>
         </property>
         <widget class="QWidget" name="tab">
          <attribute name="title">
@@ -6141,7 +6141,7 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>765</width>
+               <width>1455</width>
                <height>133</height>
               </rect>
              </property>
@@ -6537,7 +6537,7 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>765</width>
+               <width>1455</width>
                <height>133</height>
               </rect>
              </property>
@@ -6933,7 +6933,7 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>765</width>
+               <width>1455</width>
                <height>133</height>
               </rect>
              </property>
@@ -7329,7 +7329,7 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>765</width>
+               <width>1455</width>
                <height>133</height>
               </rect>
              </property>
@@ -7725,7 +7725,7 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>765</width>
+               <width>1455</width>
                <height>133</height>
               </rect>
              </property>
@@ -8121,7 +8121,7 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>765</width>
+               <width>1455</width>
                <height>133</height>
               </rect>
              </property>
@@ -8517,7 +8517,7 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>765</width>
+               <width>1455</width>
                <height>133</height>
               </rect>
              </property>
@@ -8916,7 +8916,7 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>765</width>
+               <width>1455</width>
                <height>133</height>
               </rect>
              </property>
@@ -9309,7 +9309,7 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>765</width>
+               <width>1455</width>
                <height>133</height>
               </rect>
              </property>
@@ -9705,7 +9705,7 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>765</width>
+               <width>1455</width>
                <height>133</height>
               </rect>
              </property>
@@ -10104,7 +10104,7 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>765</width>
+               <width>1455</width>
                <height>133</height>
               </rect>
              </property>
@@ -10503,7 +10503,7 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>765</width>
+               <width>1455</width>
                <height>133</height>
               </rect>
              </property>
@@ -10899,7 +10899,7 @@ QTabBar QToolButton::left-arrow {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>765</width>
+               <width>1455</width>
                <height>133</height>
               </rect>
              </property>
@@ -11587,8 +11587,8 @@ QTabBar QToolButton::left-arrow {
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>256</width>
-            <height>278</height>
+            <width>1469</width>
+            <height>152</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -11766,8 +11766,8 @@ QTabBar QToolButton::left-arrow {
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>256</width>
-            <height>278</height>
+            <width>1469</width>
+            <height>152</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -11945,8 +11945,8 @@ QTabBar QToolButton::left-arrow {
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>256</width>
-            <height>278</height>
+            <width>1469</width>
+            <height>152</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -12127,8 +12127,8 @@ QTabBar QToolButton::left-arrow {
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>256</width>
-            <height>278</height>
+            <width>1469</width>
+            <height>152</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -12306,8 +12306,8 @@ QTabBar QToolButton::left-arrow {
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>256</width>
-            <height>278</height>
+            <width>1469</width>
+            <height>152</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -12485,8 +12485,8 @@ QTabBar QToolButton::left-arrow {
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>256</width>
-            <height>278</height>
+            <width>1469</width>
+            <height>152</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -12664,8 +12664,8 @@ QTabBar QToolButton::left-arrow {
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>256</width>
-            <height>278</height>
+            <width>1469</width>
+            <height>152</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -12843,8 +12843,8 @@ QTabBar QToolButton::left-arrow {
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>256</width>
-            <height>278</height>
+            <width>1469</width>
+            <height>152</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -13022,8 +13022,8 @@ QTabBar QToolButton::left-arrow {
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>256</width>
-            <height>278</height>
+            <width>1469</width>
+            <height>152</height>
            </rect>
           </property>
           <property name="styleSheet">
