@@ -1997,6 +1997,8 @@ QScrollBar::sub-line:horizontal
     <property name="title">
      <string>View</string>
     </property>
+    <addaction name="uResetViewportAction"/>
+    <addaction name="separator"/>
    </widget>
    <widget class="QMenu" name="menuMarlin">
     <property name="title">
@@ -2848,7 +2850,7 @@ QPushButton::!checked:hover {
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>483</width>
+          <width>438</width>
           <height>216</height>
          </rect>
         </property>
@@ -3135,7 +3137,7 @@ QPushButton::disabled {
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>302</width>
+          <width>388</width>
           <height>216</height>
          </rect>
         </property>
@@ -3545,7 +3547,7 @@ QPushButton::disabled {
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>493</width>
+          <width>452</width>
           <height>216</height>
          </rect>
         </property>
@@ -4216,11 +4218,6 @@ QPushButton::hover {
     <bool>false</bool>
    </property>
   </action>
-  <action name="uResetViewportAction">
-   <property name="text">
-    <string>Reset Viewport</string>
-   </property>
-  </action>
   <action name="uCodePreviewDockAction">
    <property name="checkable">
     <bool>true</bool>
@@ -4343,6 +4340,14 @@ QPushButton::hover {
    </property>
    <property name="shortcut">
     <string>F10</string>
+   </property>
+  </action>
+  <action name="uResetViewportAction">
+   <property name="text">
+    <string>Reset Viewport</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+V</string>
    </property>
   </action>
  </widget>

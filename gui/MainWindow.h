@@ -118,6 +118,9 @@ public slots:
 
     void ResetValues(void);
 
+protected slots:
+    void OnResetViewport(void);
+
 protected:
     void ConnectGuiSignalsAndSlots(void);
 

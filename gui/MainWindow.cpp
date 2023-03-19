@@ -63,10 +63,10 @@ MainWindow::MainWindow(QWidget *pParent)
     mUi->menuView->addAction(mUi->uCompilerOutputsDock->toggleViewAction());
     mUi->menuView->addAction(mUi->uCodePreviewDock->toggleViewAction());
 
-    mUi->menuView->actions().at(0)->setShortcut(QKeySequence("Alt+N"));
-    mUi->menuView->actions().at(1)->setShortcut(QKeySequence("Alt+O"));
-    mUi->menuView->actions().at(2)->setShortcut(QKeySequence("Alt+C"));
-    mUi->menuView->actions().at(3)->setShortcut(QKeySequence("Alt+P"));
+    mUi->menuView->actions().at(2)->setShortcut(QKeySequence("Alt+N"));
+    mUi->menuView->actions().at(3)->setShortcut(QKeySequence("Alt+O"));
+    mUi->menuView->actions().at(4)->setShortcut(QKeySequence("Alt+C"));
+    mUi->menuView->actions().at(5)->setShortcut(QKeySequence("Alt+P"));
 
     for (auto&& page : findChildren<AbstractPage*>())
     {
@@ -154,6 +154,7 @@ void MainWindow::ConnectGuiSignalsAndSlots()
     QObject::connect(mUi->uResetConfigurationButton, &QPushButton::pressed, this, &MainWindow::OnResetConfiguration);
     QObject::connect(mUi->uResetCurrentPageAction, &QAction::triggered, this, &MainWindow::OnResetCurrentPage);
 
+    QObject::connect(mUi->uResetViewportAction, &QAction::triggered, this, &MainWindow::OnResetViewport);
 
     QObject::connect(mUi->uActionConfigure, &QAction::triggered, this, &MainWindow::ConfigureSignal);
 
@@ -552,6 +553,35 @@ void MainWindow::OnResetCurrentPage()
     {
         Log("Could not reset the current page configuration.", "red");
     }
+}
+
+void MainWindow::OnResetViewport()
+{
+    removeDockWidget(mUi->uConsoleDock);
+    removeDockWidget(mUi->uCompilerOutputsDock);
+    removeDockWidget(mUi->uCodePreviewDock);
+    removeDockWidget(mUi->uNavigationDock);
+
+    addDockWidget(Qt::BottomDockWidgetArea, mUi->uConsoleDock);
+    addDockWidget(Qt::BottomDockWidgetArea, mUi->uCompilerOutputsDock);
+    addDockWidget(Qt::BottomDockWidgetArea, mUi->uCodePreviewDock);
+    addDockWidget(Qt::LeftDockWidgetArea, mUi->uNavigationDock);
+
+    constexpr auto dockHeight = 200;
+
+    tabifyDockWidget(mUi->uConsoleDock, mUi->uCompilerOutputsDock);
+    tabifyDockWidget(mUi->uCompilerOutputsDock, mUi->uCodePreviewDock);
+    resizeDocks(QList{static_cast<QDockWidget*>(mUi->uConsoleDock),
+                      static_cast<QDockWidget*>(mUi->uCompilerOutputsDock),
+                      static_cast<QDockWidget*>(mUi->uCodePreviewDock)},
+                QList{dockHeight, dockHeight, dockHeight}, Qt::Vertical);
+
+    mUi->uCodePreviewDock->setVisible(true);
+    mUi->uCompilerOutputsDock->setVisible(true);
+    mUi->uConsoleDock->setVisible(true);
+    mUi->uNavigationDock->setVisible(true);
+
+    mUi->uConsoleDock->raise();
 }
 
 Configuration MainWindow::FetchConfiguration()
