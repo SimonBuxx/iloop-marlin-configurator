@@ -119,7 +119,9 @@ public slots:
     void ResetValues(void);
 
 protected slots:
-    void OnResetViewport(void);
+    void OnSetDefaultViewport(void);
+
+    void OnSetExpandedViewport(void);
 
 protected:
     void ConnectGuiSignalsAndSlots(void);

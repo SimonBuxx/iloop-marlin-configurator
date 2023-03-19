@@ -1997,7 +1997,14 @@ QScrollBar::sub-line:horizontal
     <property name="title">
      <string>View</string>
     </property>
-    <addaction name="uResetViewportAction"/>
+    <widget class="QMenu" name="menuChange_Viewport">
+     <property name="title">
+      <string>Change Viewport</string>
+     </property>
+     <addaction name="uDefaultViewportAction"/>
+     <addaction name="uExpandedViewportAction"/>
+    </widget>
+    <addaction name="menuChange_Viewport"/>
     <addaction name="separator"/>
    </widget>
    <widget class="QMenu" name="menuMarlin">
@@ -2383,6 +2390,9 @@ QPushButton::!checked:hover {
          </item>
          <item>
           <widget class="QPushButton" name="uMovementTabButton">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
            <property name="text">
             <string>Movement (WIP)</string>
            </property>
@@ -4348,6 +4358,22 @@ QPushButton::hover {
    </property>
    <property name="shortcut">
     <string>Alt+V</string>
+   </property>
+  </action>
+  <action name="uDefaultViewportAction">
+   <property name="text">
+    <string>Default</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+D</string>
+   </property>
+  </action>
+  <action name="uExpandedViewportAction">
+   <property name="text">
+    <string>Expanded</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+E</string>
    </property>
   </action>
  </widget>

@@ -154,7 +154,8 @@ void MainWindow::ConnectGuiSignalsAndSlots()
     QObject::connect(mUi->uResetConfigurationButton, &QPushButton::pressed, this, &MainWindow::OnResetConfiguration);
     QObject::connect(mUi->uResetCurrentPageAction, &QAction::triggered, this, &MainWindow::OnResetCurrentPage);
 
-    QObject::connect(mUi->uResetViewportAction, &QAction::triggered, this, &MainWindow::OnResetViewport);
+    QObject::connect(mUi->uDefaultViewportAction, &QAction::triggered, this, &MainWindow::OnSetDefaultViewport);
+    QObject::connect(mUi->uExpandedViewportAction, &QAction::triggered, this, &MainWindow::OnSetExpandedViewport);
 
     QObject::connect(mUi->uActionConfigure, &QAction::triggered, this, &MainWindow::ConfigureSignal);
 
@@ -555,7 +556,7 @@ void MainWindow::OnResetCurrentPage()
     }
 }
 
-void MainWindow::OnResetViewport()
+void MainWindow::OnSetDefaultViewport()
 {
     removeDockWidget(mUi->uConsoleDock);
     removeDockWidget(mUi->uCompilerOutputsDock);
@@ -582,6 +583,39 @@ void MainWindow::OnResetViewport()
     mUi->uNavigationDock->setVisible(true);
 
     mUi->uConsoleDock->raise();
+}
+
+void MainWindow::OnSetExpandedViewport()
+{
+    removeDockWidget(mUi->uConsoleDock);
+    removeDockWidget(mUi->uCompilerOutputsDock);
+    removeDockWidget(mUi->uCodePreviewDock);
+    removeDockWidget(mUi->uNavigationDock);
+
+    addDockWidget(Qt::BottomDockWidgetArea, mUi->uConsoleDock);
+    addDockWidget(Qt::BottomDockWidgetArea, mUi->uCompilerOutputsDock);
+    addDockWidget(Qt::RightDockWidgetArea, mUi->uCodePreviewDock);
+    addDockWidget(Qt::LeftDockWidgetArea, mUi->uNavigationDock);
+
+    constexpr auto dockHeight = 200;
+
+    mUi->uCodePreviewDock->setVisible(true);
+    mUi->uCompilerOutputsDock->setVisible(true);
+    mUi->uConsoleDock->setVisible(true);
+    mUi->uNavigationDock->setVisible(true);
+
+    resizeDocks(QList{static_cast<QDockWidget*>(mUi->uConsoleDock),
+                      static_cast<QDockWidget*>(mUi->uCompilerOutputsDock)},
+                QList{dockHeight, dockHeight}, Qt::Vertical);
+
+    const auto dockWidth = qMin(width() / 3, width() - 1000 - mUi->uNavigationDock->width());
+
+    resizeDocks(QList{static_cast<QDockWidget*>(mUi->uCodePreviewDock)},
+                QList{dockWidth}, Qt::Horizontal);
+
+    resizeDocks(QList{static_cast<QDockWidget*>(mUi->uConsoleDock),
+                      static_cast<QDockWidget*>(mUi->uCompilerOutputsDock)},
+                QList{width() - dockWidth, dockWidth}, Qt::Horizontal);
 }
 
 Configuration MainWindow::FetchConfiguration()
