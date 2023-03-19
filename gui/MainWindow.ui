@@ -2133,7 +2133,7 @@ QPushButton::!checked:hover {
         <property name="geometry">
          <rect>
           <x>0</x>
-          <y>-138</y>
+          <y>0</y>
           <width>208</width>
           <height>631</height>
          </rect>
@@ -2359,7 +2359,7 @@ QPushButton::!checked:hover {
 }</string>
            </property>
            <property name="text">
-            <string>Endstops (WIP)</string>
+            <string>Endstops</string>
            </property>
            <property name="icon">
             <iconset resource="../resources/resources.qrc">

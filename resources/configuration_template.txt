@@ -1032,99 +1032,99 @@
 // Specify here all the endstop connectors that are connected to any endstop or probe.
 // Almost all printers will be using one per axis. Probes will use one or more of the
 // extra connectors. Leave undefined any used for non-endstop and non-probe purposes.
-#define USE_XMIN_PLUG
-#define USE_YMIN_PLUG
-#define USE_ZMIN_PLUG
-//#define USE_IMIN_PLUG
-//#define USE_JMIN_PLUG
-//#define USE_KMIN_PLUG
-//#define USE_UMIN_PLUG
-//#define USE_VMIN_PLUG
-//#define USE_WMIN_PLUG
-//#define USE_XMAX_PLUG
-//#define USE_YMAX_PLUG
-//#define USE_ZMAX_PLUG
-//#define USE_IMAX_PLUG
-//#define USE_JMAX_PLUG
-//#define USE_KMAX_PLUG
-//#define USE_UMAX_PLUG
-//#define USE_VMAX_PLUG
-//#define USE_WMAX_PLUG
+#{USE_XMIN_PLUG}
+#{USE_YMIN_PLUG}
+#{USE_ZMIN_PLUG}
+#{USE_IMIN_PLUG}
+#{USE_JMIN_PLUG}
+#{USE_KMIN_PLUG}
+#{USE_UMIN_PLUG}
+#{USE_VMIN_PLUG}
+#{USE_WMIN_PLUG}
+#{USE_XMAX_PLUG}
+#{USE_YMAX_PLUG}
+#{USE_ZMAX_PLUG}
+#{USE_IMAX_PLUG}
+#{USE_JMAX_PLUG}
+#{USE_KMAX_PLUG}
+#{USE_UMAX_PLUG}
+#{USE_VMAX_PLUG}
+#{USE_WMAX_PLUG}
 
 // Enable pullup for all endstops to prevent a floating state
-#define ENDSTOPPULLUPS
+#{ENDSTOPPULLUPS}
 #if DISABLED(ENDSTOPPULLUPS)
   // Disable ENDSTOPPULLUPS to set pullups individually
-  //#define ENDSTOPPULLUP_XMIN
-  //#define ENDSTOPPULLUP_YMIN
-  //#define ENDSTOPPULLUP_ZMIN
-  //#define ENDSTOPPULLUP_IMIN
-  //#define ENDSTOPPULLUP_JMIN
-  //#define ENDSTOPPULLUP_KMIN
-  //#define ENDSTOPPULLUP_UMIN
-  //#define ENDSTOPPULLUP_VMIN
-  //#define ENDSTOPPULLUP_WMIN
-  //#define ENDSTOPPULLUP_XMAX
-  //#define ENDSTOPPULLUP_YMAX
-  //#define ENDSTOPPULLUP_ZMAX
-  //#define ENDSTOPPULLUP_IMAX
-  //#define ENDSTOPPULLUP_JMAX
-  //#define ENDSTOPPULLUP_KMAX
-  //#define ENDSTOPPULLUP_UMAX
-  //#define ENDSTOPPULLUP_VMAX
-  //#define ENDSTOPPULLUP_WMAX
-  //#define ENDSTOPPULLUP_ZMIN_PROBE
+  #{ENDSTOPPULLUP_XMIN}
+  #{ENDSTOPPULLUP_YMIN}
+  #{ENDSTOPPULLUP_ZMIN}
+  #{ENDSTOPPULLUP_IMIN}
+  #{ENDSTOPPULLUP_JMIN}
+  #{ENDSTOPPULLUP_KMIN}
+  #{ENDSTOPPULLUP_UMIN}
+  #{ENDSTOPPULLUP_VMIN}
+  #{ENDSTOPPULLUP_WMIN}
+  #{ENDSTOPPULLUP_XMAX}
+  #{ENDSTOPPULLUP_YMAX}
+  #{ENDSTOPPULLUP_ZMAX}
+  #{ENDSTOPPULLUP_IMAX}
+  #{ENDSTOPPULLUP_JMAX}
+  #{ENDSTOPPULLUP_KMAX}
+  #{ENDSTOPPULLUP_UMAX}
+  #{ENDSTOPPULLUP_VMAX}
+  #{ENDSTOPPULLUP_WMAX}
+  #{ENDSTOPPULLUP_ZMIN_PROBE}
 #endif
 
 // Enable pulldown for all endstops to prevent a floating state
-//#define ENDSTOPPULLDOWNS
+#{ENDSTOPPULLDOWNS}
 #if DISABLED(ENDSTOPPULLDOWNS)
   // Disable ENDSTOPPULLDOWNS to set pulldowns individually
-  //#define ENDSTOPPULLDOWN_XMIN
-  //#define ENDSTOPPULLDOWN_YMIN
-  //#define ENDSTOPPULLDOWN_ZMIN
-  //#define ENDSTOPPULLDOWN_IMIN
-  //#define ENDSTOPPULLDOWN_JMIN
-  //#define ENDSTOPPULLDOWN_KMIN
-  //#define ENDSTOPPULLDOWN_UMIN
-  //#define ENDSTOPPULLDOWN_VMIN
-  //#define ENDSTOPPULLDOWN_WMIN
-  //#define ENDSTOPPULLDOWN_XMAX
-  //#define ENDSTOPPULLDOWN_YMAX
-  //#define ENDSTOPPULLDOWN_ZMAX
-  //#define ENDSTOPPULLDOWN_IMAX
-  //#define ENDSTOPPULLDOWN_JMAX
-  //#define ENDSTOPPULLDOWN_KMAX
-  //#define ENDSTOPPULLDOWN_UMAX
-  //#define ENDSTOPPULLDOWN_VMAX
-  //#define ENDSTOPPULLDOWN_WMAX
-  //#define ENDSTOPPULLDOWN_ZMIN_PROBE
+  #{ENDSTOPPULLDOWN_XMIN}
+  #{ENDSTOPPULLDOWN_YMIN}
+  #{ENDSTOPPULLDOWN_ZMIN}
+  #{ENDSTOPPULLDOWN_IMIN}
+  #{ENDSTOPPULLDOWN_JMIN}
+  #{ENDSTOPPULLDOWN_KMIN}
+  #{ENDSTOPPULLDOWN_UMIN}
+  #{ENDSTOPPULLDOWN_VMIN}
+  #{ENDSTOPPULLDOWN_WMIN}
+  #{ENDSTOPPULLDOWN_XMAX}
+  #{ENDSTOPPULLDOWN_YMAX}
+  #{ENDSTOPPULLDOWN_ZMAX}
+  #{ENDSTOPPULLDOWN_IMAX}
+  #{ENDSTOPPULLDOWN_JMAX}
+  #{ENDSTOPPULLDOWN_KMAX}
+  #{ENDSTOPPULLDOWN_UMAX}
+  #{ENDSTOPPULLDOWN_VMAX}
+  #{ENDSTOPPULLDOWN_WMAX}
+  #{ENDSTOPPULLDOWN_ZMIN_PROBE}
 #endif
 
 // Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
-#define X_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define Y_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define Z_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define I_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define J_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define K_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define U_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define V_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define W_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define X_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define Y_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define Z_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define I_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define J_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define K_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define U_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define V_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define W_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define Z_MIN_PROBE_ENDSTOP_INVERTING false // Set to true to invert the logic of the probe.
+#{X_MIN_ENDSTOP_INVERTING} // Set to true to invert the logic of the endstop.
+#{Y_MIN_ENDSTOP_INVERTING} // Set to true to invert the logic of the endstop.
+#{Z_MIN_ENDSTOP_INVERTING} // Set to true to invert the logic of the endstop.
+#{I_MIN_ENDSTOP_INVERTING} // Set to true to invert the logic of the endstop.
+#{J_MIN_ENDSTOP_INVERTING} // Set to true to invert the logic of the endstop.
+#{K_MIN_ENDSTOP_INVERTING} // Set to true to invert the logic of the endstop.
+#{U_MIN_ENDSTOP_INVERTING} // Set to true to invert the logic of the endstop.
+#{V_MIN_ENDSTOP_INVERTING} // Set to true to invert the logic of the endstop.
+#{W_MIN_ENDSTOP_INVERTING} // Set to true to invert the logic of the endstop.
+#{X_MAX_ENDSTOP_INVERTING} // Set to true to invert the logic of the endstop.
+#{Y_MAX_ENDSTOP_INVERTING} // Set to true to invert the logic of the endstop.
+#{Z_MAX_ENDSTOP_INVERTING} // Set to true to invert the logic of the endstop.
+#{I_MAX_ENDSTOP_INVERTING} // Set to true to invert the logic of the endstop.
+#{J_MAX_ENDSTOP_INVERTING} // Set to true to invert the logic of the endstop.
+#{K_MAX_ENDSTOP_INVERTING} // Set to true to invert the logic of the endstop.
+#{U_MAX_ENDSTOP_INVERTING} // Set to true to invert the logic of the endstop.
+#{V_MAX_ENDSTOP_INVERTING} // Set to true to invert the logic of the endstop.
+#{W_MAX_ENDSTOP_INVERTING} // Set to true to invert the logic of the endstop.
+#{Z_MIN_PROBE_ENDSTOP_INVERTING} // Set to true to invert the logic of the probe.
 
 // Enable this feature if all enabled endstop pins are interrupt-capable.
 // This will remove the need to poll the interrupt pins, saving many CPU cycles.
-//#define ENDSTOP_INTERRUPTS_FEATURE
+#{ENDSTOP_INTERRUPTS_FEATURE}
 
 /**
  * Endstop Noise Threshold
@@ -1138,10 +1138,10 @@
  *
  * :[2,3,4,5,6,7]
  */
-//#define ENDSTOP_NOISE_THRESHOLD 2
+#{ENDSTOP_NOISE_THRESHOLD}
 
 // Check for stuck or disconnected endstops during homing moves.
-//#define DETECT_BROKEN_ENDSTOP
+#{DETECT_BROKEN_ENDSTOP}
 
 //=============================================================================
 //============================== Movement Settings ============================
@@ -2069,19 +2069,19 @@
 // @section homing
 
 // The center of the bed is at (X=0, Y=0)
-//#define BED_CENTER_AT_0_0
+#{BED_CENTER_AT_0_0}
 
 // Manually set the home position. Leave these undefined for automatic settings.
 // For DELTA this is the top-center of the Cartesian print volume.
-//#define MANUAL_X_HOME_POS 0
-//#define MANUAL_Y_HOME_POS 0
-//#define MANUAL_Z_HOME_POS 0
-//#define MANUAL_I_HOME_POS 0
-//#define MANUAL_J_HOME_POS 0
-//#define MANUAL_K_HOME_POS 0
-//#define MANUAL_U_HOME_POS 0
-//#define MANUAL_V_HOME_POS 0
-//#define MANUAL_W_HOME_POS 0
+#{MANUAL_X_HOME_POS}
+#{MANUAL_Y_HOME_POS}
+#{MANUAL_Z_HOME_POS}
+#{MANUAL_I_HOME_POS}
+#{MANUAL_J_HOME_POS}
+#{MANUAL_K_HOME_POS}
+#{MANUAL_U_HOME_POS}
+#{MANUAL_V_HOME_POS}
+#{MANUAL_W_HOME_POS}
 
 /**
  * Use "Z Safe Homing" to avoid homing with a Z probe outside the bed area.
@@ -2090,18 +2090,18 @@
  * - Allows Z homing only when XY positions are known and trusted.
  * - If stepper drivers sleep, XY homing may be required again before Z homing.
  */
-//#define Z_SAFE_HOMING
+#{Z_SAFE_HOMING}
 
 #if ENABLED(Z_SAFE_HOMING)
-  #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing
-  #define Z_SAFE_HOMING_Y_POINT Y_CENTER  // Y point for Z homing
+  #{Z_SAFE_HOMING_X_POINT}  // X point for Z homing
+  #{Z_SAFE_HOMING_Y_POINT}  // Y point for Z homing
 #endif
 
 // Homing speeds (linear=mm/min, rotational=°/min)
-#define HOMING_FEEDRATE_MM_M { (50*60), (50*60), (4*60) }
+#{HOMING_FEEDRATE_MM_M}
 
 // Validate that endstops are triggered on homing moves
-#define VALIDATE_HOMING_ENDSTOPS
+#{VALIDATE_HOMING_ENDSTOPS}
 
 // @section calibrate
 
@@ -2133,32 +2133,32 @@
  *    +-------------->X     +-------------->X     +-------------->Y
  *     XY_SKEW_FACTOR        XZ_SKEW_FACTOR        YZ_SKEW_FACTOR
  */
-//#define SKEW_CORRECTION
+#{SKEW_CORRECTION}
 
 #if ENABLED(SKEW_CORRECTION)
   // Input all length measurements here:
-  #define XY_DIAG_AC 282.8427124746
-  #define XY_DIAG_BD 282.8427124746
-  #define XY_SIDE_AD 200
+  #{XY_DIAG_AC}
+  #{XY_DIAG_BD}
+  #{XY_SIDE_AD}
 
   // Or, set the XY skew factor directly:
-  //#define XY_SKEW_FACTOR 0.0
+  #{XY_SKEW_FACTOR}
 
   //#define SKEW_CORRECTION_FOR_Z
   #if ENABLED(SKEW_CORRECTION_FOR_Z)
-    #define XZ_DIAG_AC 282.8427124746
-    #define XZ_DIAG_BD 282.8427124746
-    #define YZ_DIAG_AC 282.8427124746
-    #define YZ_DIAG_BD 282.8427124746
-    #define YZ_SIDE_AD 200
+    #{XZ_DIAG_AC}
+    #{XZ_DIAG_BD}
+    #{YZ_DIAG_AC}
+    #{YZ_DIAG_BD}
+    #{YZ_SIDE_AD}
 
     // Or, set the Z skew factors directly:
-    //#define XZ_SKEW_FACTOR 0.0
-    //#define YZ_SKEW_FACTOR 0.0
+    #{XZ_SKEW_FACTOR}
+    #{YZ_SKEW_FACTOR}
   #endif
 
   // Enable this option for M852 to set skew at runtime
-  //#define SKEW_CORRECTION_GCODE
+  #{SKEW_CORRECTION_GCODE}
 #endif
 
 //=============================================================================

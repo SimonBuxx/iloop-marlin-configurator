@@ -631,6 +631,15 @@ bool MainWindow::LoadConfigurationFromJson(const QJsonObject& pJson)
         success = false;
     }
 
+    if (pJson.contains("endstops") && pJson["endstops"].isObject())
+    {
+        success &= mUi->uEndstopsPage->LoadFromJson(pJson["endstops"].toObject());
+    }
+    else
+    {
+        success = false;
+    }
+
     if (pJson.contains("filamentRunoutSensor") && pJson["filamentRunoutSensor"].isObject())
     {
         success &= mUi->uFilamentRunoutSensorPage->LoadFromJson(pJson["filamentRunoutSensor"].toObject());
