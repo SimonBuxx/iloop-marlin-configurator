@@ -10,7 +10,7 @@ The iLOOP project is a student project of ERIG e.V. and the [Institute of Space 
 
 **Please note: Although iMC is developed for iLOOP, it can be used to configure any 3D printer that runs the Marlin firmware.**
 
-![Screenshot of the iLOOP Marlin Configurator](https://github.com/SimonBuxx/iloop-marlin-configurator/blob/97cd8d14a3cd940f4694b89983cbd8b4dc9660bc/resources/imc_screenshot.png)
+![Screenshot of the iLOOP Marlin Configurator](https://github.com/SimonBuxx/iloop-marlin-configurator/blob/7ac159795b71443f371d308e1a3bd2599266e443/resources/imc_screenshot.png)
 _Screenshot of iMC with an open Marlin workspace_
 
 ### Workflow and limitations
