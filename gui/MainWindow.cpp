@@ -695,6 +695,15 @@ bool MainWindow::LoadConfigurationFromJson(const QJsonObject& pJson)
         success = false;
     }
 
+    if (pJson.contains("kinematics") && pJson["kinematics"].isObject())
+    {
+        success &= mUi->uKinematicsPage->LoadFromJson(pJson["kinematics"].toObject());
+    }
+    else
+    {
+        success = false;
+    }
+
     if (pJson.contains("endstops") && pJson["endstops"].isObject())
     {
         success &= mUi->uEndstopsPage->LoadFromJson(pJson["endstops"].toObject());

@@ -30,7 +30,7 @@
 #include <cstdint>
 #include <string>
 
-static constexpr auto SW_VERSION{"0.1.0"};
+static constexpr auto SW_VERSION{"0.2.0"};
 static constexpr auto MARLIN_VERSION{"2.1.2"};
 
 static constexpr auto TEMPLATE_PATH{":/configuration_template.txt"};
@@ -315,6 +315,59 @@ static constexpr auto THERMAL_PROTECTION_HOTENDS{true};
 static constexpr auto THERMAL_PROTECTION_BED{true};
 static constexpr auto THERMAL_PROTECTION_CHAMBER{true};
 static constexpr auto THERMAL_PROTECTION_COOLER{true};
+
+// Kinematics
+static constexpr auto COREXY{false};
+static constexpr auto COREXZ{false};
+static constexpr auto COREYZ{false};
+static constexpr auto COREYX{false};
+static constexpr auto COREZX{false};
+static constexpr auto COREZY{false};
+static constexpr auto MARKFORGED_XY{false};
+static constexpr auto MARKFORGED_YX{false};
+static constexpr auto BELTPRINTER{false};
+static constexpr auto POLARGRAPH{false};
+static constexpr auto POLARGRAPH_MAX_BELT_LEN{1035.0f};
+static constexpr auto DEFAULT_SEGMENTS_PER_SECOND{5};
+static constexpr auto DELTA{false};
+static constexpr auto DELTA_HOME_TO_SAFE_ZONE{false};
+static constexpr auto DELTA_CALIBRATION_MENU{false};
+static constexpr auto DELTA_AUTO_CALIBRATION{false};
+static constexpr auto DELTA_CALIBRATION_DEFAULT_POINTS{4};
+static constexpr auto PROBE_MANUALLY_STEP{0.05f};
+static constexpr auto DELTA_PRINTABLE_RADIUS{140.0f};
+static constexpr auto DELTA_MAX_RADIUS{140.0f};
+static constexpr auto DELTA_DIAGONAL_ROD{250.0f};
+static constexpr auto DELTA_HEIGHT{250.0f};
+static constexpr auto DELTA_ENDSTOP_ADJ{"{ 0.0, 0.0, 0.0 }"};
+static constexpr auto DELTA_RADIUS{124.0f};
+static constexpr auto DELTA_TOWER_ANGLE_TRIM{"{ 0.0, 0.0, 0.0 }"};
+static constexpr auto DELTA_RADIUS_TRIM_TOWER{"{ 0.0, 0.0, 0.0 }"};
+static constexpr auto DELTA_DIAGONAL_ROD_TRIM_TOWER{"{ 0.0, 0.0, 0.0 }"};
+static constexpr auto ENABLE_DELTA_RADIUS_TRIM_TOWER{false};
+static constexpr auto ENABLE_DELTA_DIAGONAL_ROD_TRIM_TOWER{false};
+static constexpr auto MORGAN_SCARA{false};
+static constexpr auto MP_SCARA{false};
+static constexpr auto SCARA_LINKAGE_1{150};
+static constexpr auto SCARA_LINKAGE_2{150};
+static constexpr auto SCARA_OFFSET_X{100};
+static constexpr auto SCARA_OFFSET_Y{-56};
+static constexpr auto DEBUG_SCARA_KINEMATICS{false};
+static constexpr auto SCARA_FEEDRATE_SCALING{true};
+static constexpr auto MIDDLE_DEAD_ZONE_R{0};
+static constexpr auto THETA_HOMING_OFFSET{0};
+static constexpr auto PSI_HOMING_OFFSET{0};
+static constexpr auto SCARA_OFFSET_THETA1{12};
+static constexpr auto SCARA_OFFSET_THETA2{131};
+static constexpr auto AXEL_TPARA{false};
+static constexpr auto DEBUG_TPARA_KINEMATICS{true};
+static constexpr auto TPARA_LINKAGE_1{120};
+static constexpr auto TPARA_LINKAGE_2{120};
+static constexpr auto TPARA_OFFSET_X{0};
+static constexpr auto TPARA_OFFSET_Y{0};
+static constexpr auto TPARA_OFFSET_Z{0};
+static constexpr auto ARTICULATED_ROBOT_ARM{false};
+static constexpr auto FOAMCUTTER_XYUV{false};
 
 // Endstops
 static constexpr auto USE_XMIN_PLUG{true};
@@ -1116,6 +1169,128 @@ public:
 };
 
 ///
+/// \brief The KinematicsConfiguration struct contains kinematics configurations
+///
+struct KinematicsConfiguration : public PageConfiguration
+{
+    bool COREXY{defaults::COREXY};
+    bool COREXZ{defaults::COREXZ};
+    bool COREYZ{defaults::COREYZ};
+    bool COREYX{defaults::COREYX};
+    bool COREZX{defaults::COREZX};
+    bool COREZY{defaults::COREZY};
+    bool MARKFORGED_XY{defaults::MARKFORGED_XY};
+    bool MARKFORGED_YX{defaults::MARKFORGED_YX};
+    bool BELTPRINTER{defaults::BELTPRINTER};
+    bool POLARGRAPH{defaults::POLARGRAPH};
+    double POLARGRAPH_MAX_BELT_LEN{defaults::POLARGRAPH_MAX_BELT_LEN};
+    int32_t DEFAULT_SEGMENTS_PER_SECOND{defaults::DEFAULT_SEGMENTS_PER_SECOND};
+    bool DELTA{defaults::DELTA};
+    bool DELTA_HOME_TO_SAFE_ZONE{defaults::DELTA_HOME_TO_SAFE_ZONE};
+    bool DELTA_CALIBRATION_MENU{defaults::DELTA_CALIBRATION_MENU};
+    bool DELTA_AUTO_CALIBRATION{defaults::DELTA_AUTO_CALIBRATION};
+    int32_t DELTA_CALIBRATION_DEFAULT_POINTS{defaults::DELTA_CALIBRATION_DEFAULT_POINTS};
+    double PROBE_MANUALLY_STEP{defaults::PROBE_MANUALLY_STEP};
+    double DELTA_PRINTABLE_RADIUS{defaults::DELTA_PRINTABLE_RADIUS};
+    double DELTA_MAX_RADIUS{defaults::DELTA_MAX_RADIUS};
+    double DELTA_DIAGONAL_ROD{defaults::DELTA_DIAGONAL_ROD};
+    double DELTA_HEIGHT{defaults::DELTA_HEIGHT};
+    QString DELTA_ENDSTOP_ADJ{defaults::DELTA_ENDSTOP_ADJ};
+    double DELTA_RADIUS{defaults::DELTA_RADIUS};
+    QString DELTA_TOWER_ANGLE_TRIM{defaults::DELTA_TOWER_ANGLE_TRIM};
+    QString DELTA_RADIUS_TRIM_TOWER{defaults::DELTA_RADIUS_TRIM_TOWER};
+    QString DELTA_DIAGONAL_ROD_TRIM_TOWER{defaults::DELTA_DIAGONAL_ROD_TRIM_TOWER};
+    bool ENABLE_DELTA_RADIUS_TRIM_TOWER{defaults::ENABLE_DELTA_RADIUS_TRIM_TOWER};
+    bool ENABLE_DELTA_DIAGONAL_ROD_TRIM_TOWER{defaults::ENABLE_DELTA_DIAGONAL_ROD_TRIM_TOWER};
+    bool MORGAN_SCARA{defaults::MORGAN_SCARA};
+    bool MP_SCARA{defaults::MP_SCARA};
+    int32_t SCARA_LINKAGE_1{defaults::SCARA_LINKAGE_1};
+    int32_t SCARA_LINKAGE_2{defaults::SCARA_LINKAGE_2};
+    int32_t SCARA_OFFSET_X{defaults::SCARA_OFFSET_X};
+    int32_t SCARA_OFFSET_Y{defaults::SCARA_OFFSET_Y};
+    bool DEBUG_SCARA_KINEMATICS{defaults::DEBUG_SCARA_KINEMATICS};
+    bool SCARA_FEEDRATE_SCALING{defaults::SCARA_FEEDRATE_SCALING};
+    int32_t MIDDLE_DEAD_ZONE_R{defaults::MIDDLE_DEAD_ZONE_R};
+    int32_t THETA_HOMING_OFFSET{defaults::THETA_HOMING_OFFSET};
+    int32_t PSI_HOMING_OFFSET{defaults::PSI_HOMING_OFFSET};
+    int32_t SCARA_OFFSET_THETA1{defaults::SCARA_OFFSET_THETA1};
+    int32_t SCARA_OFFSET_THETA2{defaults::SCARA_OFFSET_THETA2};
+    bool AXEL_TPARA{defaults::AXEL_TPARA};
+    bool DEBUG_TPARA_KINEMATICS{defaults::DEBUG_TPARA_KINEMATICS};
+    int32_t TPARA_LINKAGE_1{defaults::TPARA_LINKAGE_1};
+    int32_t TPARA_LINKAGE_2{defaults::TPARA_LINKAGE_2};
+    int32_t TPARA_OFFSET_X{defaults::TPARA_OFFSET_X};
+    int32_t TPARA_OFFSET_Y{defaults::TPARA_OFFSET_Y};
+    int32_t TPARA_OFFSET_Z{defaults::TPARA_OFFSET_Z};
+    bool ARTICULATED_ROBOT_ARM{defaults::ARTICULATED_ROBOT_ARM};
+    bool FOAMCUTTER_XYUV{defaults::FOAMCUTTER_XYUV};
+
+public:
+    /// \brief Converts the configuration into a JSON object
+    ///
+    /// \return a JSON object containing the configuration data
+    QJsonObject ToJson(void) const override
+    {
+        QJsonObject json;
+
+        json["COREXY"] = COREXY;
+        json["COREXZ"] = COREXZ;
+        json["COREYZ"] = COREYZ;
+        json["COREYX"] = COREYX;
+        json["COREZX"] = COREZX;
+        json["COREZY"] = COREZY;
+        json["MARKFORGED_XY"] = MARKFORGED_XY;
+        json["MARKFORGED_YX"] = MARKFORGED_YX;
+        json["BELTPRINTER"] = BELTPRINTER;
+        json["POLARGRAPH"] = POLARGRAPH;
+        json["POLARGRAPH_MAX_BELT_LEN"] = POLARGRAPH_MAX_BELT_LEN;
+        json["DEFAULT_SEGMENTS_PER_SECOND"] = DEFAULT_SEGMENTS_PER_SECOND;
+        json["DELTA"] = DELTA;
+        json["DELTA_HOME_TO_SAFE_ZONE"] = DELTA_HOME_TO_SAFE_ZONE;
+        json["DELTA_CALIBRATION_MENU"] = DELTA_CALIBRATION_MENU;
+        json["DELTA_AUTO_CALIBRATION"] = DELTA_AUTO_CALIBRATION;
+        json["DELTA_CALIBRATION_DEFAULT_POINTS"] = DELTA_CALIBRATION_DEFAULT_POINTS;
+        json["PROBE_MANUALLY_STEP"] = PROBE_MANUALLY_STEP;
+        json["DELTA_PRINTABLE_RADIUS"] = DELTA_PRINTABLE_RADIUS;
+        json["DELTA_MAX_RADIUS"] = DELTA_MAX_RADIUS;
+        json["DELTA_DIAGONAL_ROD"] = DELTA_DIAGONAL_ROD;
+        json["DELTA_HEIGHT"] = DELTA_HEIGHT;
+        json["DELTA_ENDSTOP_ADJ"] = DELTA_ENDSTOP_ADJ;
+        json["DELTA_RADIUS"] = DELTA_RADIUS;
+        json["DELTA_TOWER_ANGLE_TRIM"] = DELTA_TOWER_ANGLE_TRIM;
+        json["DELTA_RADIUS_TRIM_TOWER"] = DELTA_RADIUS_TRIM_TOWER;
+        json["DELTA_DIAGONAL_ROD_TRIM_TOWER"] = DELTA_DIAGONAL_ROD_TRIM_TOWER;
+        json["ENABLE_DELTA_RADIUS_TRIM_TOWER"] = ENABLE_DELTA_RADIUS_TRIM_TOWER;
+        json["ENABLE_DELTA_DIAGONAL_ROD_TRIM_TOWER"] = ENABLE_DELTA_DIAGONAL_ROD_TRIM_TOWER;
+        json["MORGAN_SCARA"] = MORGAN_SCARA;
+        json["MP_SCARA"] = MP_SCARA;
+        json["SCARA_LINKAGE_1"] = SCARA_LINKAGE_1;
+        json["SCARA_LINKAGE_2"] = SCARA_LINKAGE_2;
+        json["SCARA_OFFSET_X"] = SCARA_OFFSET_X;
+        json["SCARA_OFFSET_Y"] = SCARA_OFFSET_Y;
+        json["DEBUG_SCARA_KINEMATICS"] = DEBUG_SCARA_KINEMATICS;
+        json["SCARA_FEEDRATE_SCALING"] = SCARA_FEEDRATE_SCALING;
+        json["MIDDLE_DEAD_ZONE_R"] = MIDDLE_DEAD_ZONE_R;
+        json["THETA_HOMING_OFFSET"] = THETA_HOMING_OFFSET;
+        json["PSI_HOMING_OFFSET"] = PSI_HOMING_OFFSET;
+        json["SCARA_OFFSET_THETA1"] = SCARA_OFFSET_THETA1;
+        json["SCARA_OFFSET_THETA2"] = SCARA_OFFSET_THETA2;
+        json["AXEL_TPARA"] = AXEL_TPARA;
+        json["DEBUG_TPARA_KINEMATICS"] = DEBUG_TPARA_KINEMATICS;
+        json["TPARA_LINKAGE_1"] = TPARA_LINKAGE_1;
+        json["TPARA_LINKAGE_2"] = TPARA_LINKAGE_2;
+        json["TPARA_OFFSET_X"] = TPARA_OFFSET_X;
+        json["TPARA_OFFSET_Y"] = TPARA_OFFSET_Y;
+        json["TPARA_OFFSET_Z"] = TPARA_OFFSET_Z;
+        json["ARTICULATED_ROBOT_ARM"] = ARTICULATED_ROBOT_ARM;
+        json["FOAMCUTTER_XYUV"] = FOAMCUTTER_XYUV;
+
+        return json;
+    }
+};
+
+
+///
 /// \brief The EndstopsConfiguration struct contains endstops configurations
 ///
 struct EndstopsConfiguration : public PageConfiguration
@@ -1659,6 +1834,7 @@ struct Configuration
     ExtruderConfiguration extruder;
     PowerSupplyConfiguration powerSupply;
     ThermalSettingsConfiguration thermalSettings;
+    KinematicsConfiguration kinematics;
     EndstopsConfiguration endstops;
     FilamentRunoutSensorConfiguration filamentRunoutSensor;
     HomingOptionsConfiguration homingOptions;
@@ -1681,6 +1857,7 @@ public:
         json["extruder"] = extruder.ToJson();
         json["powerSupply"] = powerSupply.ToJson();
         json["thermalSettings"] = thermalSettings.ToJson();
+        json["kinematics"] = kinematics.ToJson();
         json["endstops"] = endstops.ToJson();
         json["filamentRunoutSensor"] = filamentRunoutSensor.ToJson();
         json["homingOptions"] = homingOptions.ToJson();

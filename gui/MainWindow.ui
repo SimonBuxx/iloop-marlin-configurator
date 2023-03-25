@@ -2340,7 +2340,7 @@ QPushButton::!checked:hover {
          <item>
           <widget class="QPushButton" name="uKinematicsTabButton">
            <property name="text">
-            <string>Kinematics (WIP)</string>
+            <string>Kinematics</string>
            </property>
            <property name="icon">
             <iconset resource="../resources/resources.qrc">

@@ -863,82 +863,82 @@
 
 // Enable one of the options below for CoreXY, CoreXZ, or CoreYZ kinematics,
 // either in the usual order or reversed
-//#define COREXY
-//#define COREXZ
-//#define COREYZ
-//#define COREYX
-//#define COREZX
-//#define COREZY
-//#define MARKFORGED_XY  // MarkForged. See https://reprap.org/forum/read.php?152,504042
-//#define MARKFORGED_YX
+#{COREXY}
+#{COREXZ}
+#{COREYZ}
+#{COREYX}
+#{COREZX}
+#{COREZY}
+#{MARKFORGED_XY}  // MarkForged. See https://reprap.org/forum/read.php?152,504042
+#{MARKFORGED_YX}
 
 // Enable for a belt style printer with endless "Z" motion
-//#define BELTPRINTER
+#{BELTPRINTER}
 
 // Enable for Polargraph Kinematics
-//#define POLARGRAPH
+#{POLARGRAPH}
 #if ENABLED(POLARGRAPH)
-  #define POLARGRAPH_MAX_BELT_LEN 1035.0
-  #define DEFAULT_SEGMENTS_PER_SECOND 5
+  #{POLARGRAPH_MAX_BELT_LEN}
+  #{DEFAULT_SEGMENTS_PER_SECOND}
 #endif
 
 // @section delta
 
 // Enable for DELTA kinematics and configure below
-//#define DELTA
+#{DELTA}
 #if ENABLED(DELTA)
 
   // Make delta curves from many straight lines (linear interpolation).
   // This is a trade-off between visible corners (not enough segments)
   // and processor overload (too many expensive sqrt calls).
-  #define DEFAULT_SEGMENTS_PER_SECOND 200
+  #{DEFAULT_SEGMENTS_PER_SECOND}
 
   // After homing move down to a height where XY movement is unconstrained
-  //#define DELTA_HOME_TO_SAFE_ZONE
+  #{DELTA_HOME_TO_SAFE_ZONE}
 
   // Delta calibration menu
   // Add three-point calibration to the MarlinUI menu.
   // See http://minow.blogspot.com/index.html#4918805519571907051
-  //#define DELTA_CALIBRATION_MENU
+  #{DELTA_CALIBRATION_MENU}
 
   // G33 Delta Auto-Calibration. Enable EEPROM_SETTINGS to store results.
-  //#define DELTA_AUTO_CALIBRATION
+  #{DELTA_AUTO_CALIBRATION}
 
   #if ENABLED(DELTA_AUTO_CALIBRATION)
     // Default number of probe points : n*n (1 -> 7)
-    #define DELTA_CALIBRATION_DEFAULT_POINTS 4
+    #{DELTA_CALIBRATION_DEFAULT_POINTS}
   #endif
 
   #if EITHER(DELTA_AUTO_CALIBRATION, DELTA_CALIBRATION_MENU)
     // Step size for paper-test probing
-    #define PROBE_MANUALLY_STEP 0.05      // (mm)
+    #{PROBE_MANUALLY_STEP}      // (mm)
   #endif
 
   // Print surface diameter/2 minus unreachable space (avoid collisions with vertical towers).
-  #define DELTA_PRINTABLE_RADIUS 140.0    // (mm)
+  #{DELTA_PRINTABLE_RADIUS}    // (mm)
 
   // Maximum reachable area
-  #define DELTA_MAX_RADIUS       140.0    // (mm)
+  #{DELTA_MAX_RADIUS}          // (mm)
 
   // Center-to-center distance of the holes in the diagonal push rods.
-  #define DELTA_DIAGONAL_ROD 250.0        // (mm)
+  #{DELTA_DIAGONAL_ROD}        // (mm)
 
   // Distance between bed and nozzle Z home position
-  #define DELTA_HEIGHT 250.00             // (mm) Get this value from G33 auto calibrate
+  #{DELTA_HEIGHT}             // (mm) Get this value from G33 auto calibrate
 
-  #define DELTA_ENDSTOP_ADJ { 0.0, 0.0, 0.0 } // Get these values from G33 auto calibrate
+  #{DELTA_ENDSTOP_ADJ} // Get these values from G33 auto calibrate
 
   // Horizontal distance bridged by diagonal push rods when effector is centered.
-  #define DELTA_RADIUS 124.0              // (mm) Get this value from G33 auto calibrate
+  #{DELTA_RADIUS}              // (mm) Get this value from G33 auto calibrate
 
   // Trim adjustments for individual towers
   // tower angle corrections for X and Y tower / rotate XYZ so Z tower angle = 0
   // measured in degrees anticlockwise looking from above the printer
-  #define DELTA_TOWER_ANGLE_TRIM { 0.0, 0.0, 0.0 } // Get these values from G33 auto calibrate
+  #{DELTA_TOWER_ANGLE_TRIM} // Get these values from G33 auto calibrate
 
   // Delta radius and diagonal rod adjustments (mm)
-  //#define DELTA_RADIUS_TRIM_TOWER { 0.0, 0.0, 0.0 }
-  //#define DELTA_DIAGONAL_ROD_TRIM_TOWER { 0.0, 0.0, 0.0 }
+  #{DELTA_RADIUS_TRIM_TOWER}
+  #{DELTA_DIAGONAL_ROD_TRIM_TOWER}
 #endif
 
 // @section scara
@@ -951,36 +951,36 @@
  *   https://www.thingiverse.com/thing:2487048
  *   https://www.thingiverse.com/thing:1241491
  */
-//#define MORGAN_SCARA
-//#define MP_SCARA
+#{MORGAN_SCARA}
+#{MP_SCARA}
 #if EITHER(MORGAN_SCARA, MP_SCARA)
   // If movement is choppy try lowering this value
-  #define DEFAULT_SEGMENTS_PER_SECOND 200
+  #{DEFAULT_SEGMENTS_PER_SECOND}
 
   // Length of inner and outer support arms. Measure arm lengths precisely.
-  #define SCARA_LINKAGE_1 150       // (mm)
-  #define SCARA_LINKAGE_2 150       // (mm)
+  #{SCARA_LINKAGE_1}       // (mm)
+  #{SCARA_LINKAGE_2}       // (mm)
 
   // SCARA tower offset (position of Tower relative to bed zero position)
   // This needs to be reasonably accurate as it defines the printbed position in the SCARA space.
-  #define SCARA_OFFSET_X  100       // (mm)
-  #define SCARA_OFFSET_Y  -56       // (mm)
+  #{SCARA_OFFSET_X}       // (mm)
+  #{SCARA_OFFSET_Y}       // (mm)
 
   #if ENABLED(MORGAN_SCARA)
 
-    //#define DEBUG_SCARA_KINEMATICS
-    #define SCARA_FEEDRATE_SCALING  // Convert XY feedrate from mm/s to degrees/s on the fly
+    #{DEBUG_SCARA_KINEMATICS}
+    #{SCARA_FEEDRATE_SCALING}  // Convert XY feedrate from mm/s to degrees/s on the fly
 
     // Radius around the center where the arm cannot reach
-    #define MIDDLE_DEAD_ZONE_R   0  // (mm)
+    #{MIDDLE_DEAD_ZONE_R}  // (mm)
 
-    #define THETA_HOMING_OFFSET  0  // Calculated from Calibration Guide and M360 / M114. See http://reprap.harleystudio.co.za/?page_id=1073
-    #define PSI_HOMING_OFFSET    0  // Calculated from Calibration Guide and M364 / M114. See http://reprap.harleystudio.co.za/?page_id=1073
+    #{THETA_HOMING_OFFSET}  // Calculated from Calibration Guide and M360 / M114. See http://reprap.harleystudio.co.za/?page_id=1073
+    #{PSI_HOMING_OFFSET}    // Calculated from Calibration Guide and M364 / M114. See http://reprap.harleystudio.co.za/?page_id=1073
 
   #elif ENABLED(MP_SCARA)
 
-    #define SCARA_OFFSET_THETA1  12 // degrees
-    #define SCARA_OFFSET_THETA2 131 // degrees
+    #{SCARA_OFFSET_THETA1} // degrees
+    #{SCARA_OFFSET_THETA2} // degrees
 
   #endif
 
@@ -989,39 +989,39 @@
 // @section tpara
 
 // Enable for TPARA kinematics and configure below
-//#define AXEL_TPARA
+#{AXEL_TPARA}
 #if ENABLED(AXEL_TPARA)
-  #define DEBUG_TPARA_KINEMATICS
-  #define DEFAULT_SEGMENTS_PER_SECOND 200
+  #{DEBUG_TPARA_KINEMATICS}
+  #{DEFAULT_SEGMENTS_PER_SECOND}
 
   // Length of inner and outer support arms. Measure arm lengths precisely.
-  #define TPARA_LINKAGE_1 120       // (mm)
-  #define TPARA_LINKAGE_2 120       // (mm)
+  #{TPARA_LINKAGE_1}       // (mm)
+  #{TPARA_LINKAGE_2}       // (mm)
 
   // SCARA tower offset (position of Tower relative to bed zero position)
   // This needs to be reasonably accurate as it defines the printbed position in the SCARA space.
-  #define TPARA_OFFSET_X    0       // (mm)
-  #define TPARA_OFFSET_Y    0       // (mm)
-  #define TPARA_OFFSET_Z    0       // (mm)
+  #{TPARA_OFFSET_X}       // (mm)
+  #{TPARA_OFFSET_Y}       // (mm)
+  #{TPARA_OFFSET_Z}       // (mm)
 
-  #define SCARA_FEEDRATE_SCALING  // Convert XY feedrate from mm/s to degrees/s on the fly
+  #{SCARA_FEEDRATE_SCALING}  // Convert XY feedrate from mm/s to degrees/s on the fly
 
   // Radius around the center where the arm cannot reach
-  #define MIDDLE_DEAD_ZONE_R   0  // (mm)
+  #{MIDDLE_DEAD_ZONE_R} // (mm)
 
   // Calculated from Calibration Guide and M360 / M114. See http://reprap.harleystudio.co.za/?page_id=1073
-  #define THETA_HOMING_OFFSET  0
-  #define PSI_HOMING_OFFSET    0
+  #{THETA_HOMING_OFFSET}
+  #{PSI_HOMING_OFFSET}
 #endif
 
 // @section machine
 
 // Articulated robot (arm). Joints are directly mapped to axes with no kinematics.
-//#define ARTICULATED_ROBOT_ARM
+#{ARTICULATED_ROBOT_ARM}
 
 // For a hot wire cutter with parallel horizontal axes (X, I) where the heights of the two wire
 // ends are controlled by parallel axes (Y, J). Joints are directly mapped to axes (no kinematics).
-//#define FOAMCUTTER_XYUV
+#{FOAMCUTTER_XYUV}
 
 //===========================================================================
 //============================== Endstop Settings ===========================
