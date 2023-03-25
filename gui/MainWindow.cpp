@@ -65,8 +65,8 @@ MainWindow::MainWindow(QWidget *pParent)
 
     mUi->menuView->actions().at(2)->setShortcut(QKeySequence("Alt+N"));
     mUi->menuView->actions().at(3)->setShortcut(QKeySequence("Alt+O"));
-    mUi->menuView->actions().at(4)->setShortcut(QKeySequence("Alt+C"));
-    mUi->menuView->actions().at(5)->setShortcut(QKeySequence("Alt+P"));
+    mUi->menuView->actions().at(4)->setShortcut(QKeySequence("Alt+P"));
+    mUi->menuView->actions().at(5)->setShortcut(QKeySequence("Alt+C"));
 
     for (auto&& page : findChildren<AbstractPage*>())
     {
