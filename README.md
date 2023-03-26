@@ -21,7 +21,7 @@ The usual workflow is as follows:
 * Get Marlin v2.1.2, either from their [website](https://marlinfw.org/meta/download/) or directly from [GitHub](https://github.com/MarlinFirmware/Marlin/releases/tag/2.1.2). The folder called **Marlin-2.1.2** is the base folder.
 * Open the folder as a workspace in iMC. The software will warn you that no iMC configuration is present. Click on "Save" to generate the configuration.json file containing the default configuration.
 * You can then change the parameters on the different pages according to your needs and click on "Configure" to regenerate the **Configuration.h** file inside the folder **Marlin-2.1.2/Marlin**.
-* To build and deploy Marlin, use the tools provided in the "Build" menu. See the notes below on how to setup [https://platformio.org/](PlatformIO), which is used to build Marlin.
+* To build and deploy Marlin, use the tools provided in the "Build" menu. See the notes below on how to setup [PlatformIO](https://platformio.org/), which is used to build Marlin.
 
 Have a look around to get an overview over the features of iMC. There is a per-page code preview and you can move and resize all sub windows, as shown in the screenshot above.
 
