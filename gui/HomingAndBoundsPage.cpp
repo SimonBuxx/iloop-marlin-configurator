@@ -53,6 +53,9 @@ void HomingAndBoundsPage::ResetValues()
 {
     mIsLoading = true;
 
+    mUi->uHomeDirectionsTabWidget->setCurrentIndex(0);
+    mUi->uTravelLimitsTabWidget->setCurrentIndex(0);
+
     mIsLoading = false;
 }
 
