@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1252</width>
-    <height>1500</height>
+    <height>2000</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -1390,7 +1390,7 @@ QTabBar QToolButton::left-arrow {
 }</string>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
@@ -1439,7 +1439,7 @@ QTabBar QToolButton::left-arrow {
            </widget>
           </item>
           <item row="1" column="0" colspan="2">
-           <widget class="Dropdown" name="uXHomeDirSpinBox">
+           <widget class="Dropdown" name="uXHomeDirDropdown">
             <item>
              <property name="text">
               <string>MIN [-1]</string>
@@ -1494,7 +1494,7 @@ QTabBar QToolButton::left-arrow {
            </widget>
           </item>
           <item row="1" column="0" colspan="2">
-           <widget class="Dropdown" name="uYHomeDirSpinBox">
+           <widget class="Dropdown" name="uYHomeDirDropdown">
             <item>
              <property name="text">
               <string>MIN [-1]</string>
@@ -1549,7 +1549,7 @@ QTabBar QToolButton::left-arrow {
            </widget>
           </item>
           <item row="1" column="0" colspan="2">
-           <widget class="Dropdown" name="uZHomeDirSpinBox">
+           <widget class="Dropdown" name="uZHomeDirDropdown">
             <item>
              <property name="text">
               <string>MIN [-1]</string>
@@ -1614,7 +1614,7 @@ QTabBar QToolButton::left-arrow {
            </widget>
           </item>
           <item row="1" column="0" colspan="2">
-           <widget class="Dropdown" name="uIHomeDirSpinBox">
+           <widget class="Dropdown" name="uIHomeDirDropdown">
             <item>
              <property name="text">
               <string>MIN [-1]</string>
@@ -1669,7 +1669,7 @@ QTabBar QToolButton::left-arrow {
            </widget>
           </item>
           <item row="1" column="0" colspan="2">
-           <widget class="Dropdown" name="uJHomeDirSpinBox">
+           <widget class="Dropdown" name="uJHomeDirDropdown">
             <item>
              <property name="text">
               <string>MIN [-1]</string>
@@ -1724,7 +1724,7 @@ QTabBar QToolButton::left-arrow {
            </widget>
           </item>
           <item row="1" column="0" colspan="2">
-           <widget class="Dropdown" name="uKHomeDirSpinBox">
+           <widget class="Dropdown" name="uKHomeDirDropdown">
             <item>
              <property name="text">
               <string>MIN [-1]</string>
@@ -1789,7 +1789,7 @@ QTabBar QToolButton::left-arrow {
            </widget>
           </item>
           <item row="1" column="0" colspan="2">
-           <widget class="Dropdown" name="uUHomeDirSpinBox">
+           <widget class="Dropdown" name="uUHomeDirDropdown">
             <item>
              <property name="text">
               <string>MIN [-1]</string>
@@ -1844,7 +1844,7 @@ QTabBar QToolButton::left-arrow {
            </widget>
           </item>
           <item row="1" column="0" colspan="2">
-           <widget class="Dropdown" name="uVHomeDirSpinBox">
+           <widget class="Dropdown" name="uVHomeDirDropdown">
             <item>
              <property name="text">
               <string>MIN [-1]</string>
@@ -1899,7 +1899,7 @@ QTabBar QToolButton::left-arrow {
            </widget>
           </item>
           <item row="1" column="0" colspan="2">
-           <widget class="Dropdown" name="uWHomeDirSpinBox">
+           <widget class="Dropdown" name="uWHomeDirDropdown">
             <item>
              <property name="text">
               <string>MIN [-1]</string>
@@ -1919,107 +1919,9 @@ QTabBar QToolButton::left-arrow {
      </widget>
     </widget>
    </item>
-   <item row="2" column="0" colspan="3">
-    <widget class="QWidget" name="widget" native="true">
-     <layout class="QGridLayout" name="gridLayout_5">
-      <property name="leftMargin">
-       <number>0</number>
-      </property>
-      <property name="topMargin">
-       <number>0</number>
-      </property>
-      <property name="rightMargin">
-       <number>0</number>
-      </property>
-      <property name="bottomMargin">
-       <number>0</number>
-      </property>
-      <property name="horizontalSpacing">
-       <number>10</number>
-      </property>
-      <property name="verticalSpacing">
-       <number>5</number>
-      </property>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_5">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font>
-          <family>Source Sans Pro Light</family>
-          <pointsize>-1</pointsize>
-          <italic>true</italic>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLabel {
-	color: rgb(100, 103, 122);
-	font-size: 35px;
-	font-family: &quot;Source Sans Pro Light&quot;;
-	font-style: italic;
-}
-</string>
-        </property>
-        <property name="text">
-         <string>HOMING AND BOUNDS</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QPushButton" name="uDocumentationButton">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="toolTip">
-         <string>Open Homing and Bounds documentation</string>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-	background: none;
-	border: none;
-}</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset resource="../resources/resources.qrc">
-          <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>20</width>
-          <height>20</height>
-         </size>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="2">
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="5" column="0" colspan="3">
-    <widget class="QWidget" name="widget_2" native="true">
-     <layout class="QGridLayout" name="gridLayout_2">
+   <item row="6" column="0" colspan="3">
+    <widget class="QWidget" name="widget_3" native="true">
+     <layout class="QGridLayout" name="gridLayout_3">
       <property name="leftMargin">
        <number>0</number>
       </property>
@@ -2036,19 +1938,29 @@ QTabBar QToolButton::left-arrow {
        <number>10</number>
       </property>
       <item row="0" column="0">
-       <widget class="QGroupBox" name="uNoMotionBeforeHomingBox">
+       <widget class="QGroupBox" name="uZIdleHeightBox">
         <property name="title">
-         <string>NO_MOTION_BEFORE_HOMING</string>
+         <string>Z_IDLE_HEIGHT</string>
         </property>
         <property name="checkable">
          <bool>true</bool>
         </property>
-        <layout class="QGridLayout" name="gridLayout_39">
+        <layout class="QGridLayout" name="gridLayout_41">
          <property name="spacing">
           <number>10</number>
          </property>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_63">
+           <property name="text">
+            <string>Set this if the Z-Axis moves on its own when steppers are disabled. (optional)</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
          <item row="0" column="0">
-          <widget class="QLabel" name="label_58">
+          <widget class="QLabel" name="label_62">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
              <horstretch>0</horstretch>
@@ -2063,13 +1975,19 @@ QTabBar QToolButton::left-arrow {
            </property>
           </widget>
          </item>
-         <item row="0" column="1">
-          <widget class="QLabel" name="label_59">
-           <property name="text">
-            <string>Inhibit movement until all axes have been homed. Also enable HOME_AFTER_DEACTIVATE for extra safety.</string>
+         <item row="1" column="0" colspan="2">
+          <widget class="QSpinBox" name="uZIdleHeightSpinBox">
+           <property name="suffix">
+            <string> mm</string>
            </property>
-           <property name="wordWrap">
-            <bool>true</bool>
+           <property name="minimum">
+            <number>-1000</number>
+           </property>
+           <property name="maximum">
+            <number>1000</number>
+           </property>
+           <property name="stepType">
+            <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
            </property>
           </widget>
          </item>
@@ -2077,19 +1995,22 @@ QTabBar QToolButton::left-arrow {
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QGroupBox" name="uHomeAfterDeactivateBox">
+       <widget class="QGroupBox" name="uZHomingHeightBox">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
         <property name="title">
-         <string>HOME_AFTER_DEACTIVATE</string>
+         <string>Z_HOMING_HEIGHT</string>
         </property>
         <property name="checkable">
          <bool>true</bool>
         </property>
-        <layout class="QGridLayout" name="gridLayout_40">
+        <layout class="QGridLayout" name="gridLayout_42">
          <property name="spacing">
           <number>10</number>
          </property>
          <item row="0" column="0">
-          <widget class="QLabel" name="label_60">
+          <widget class="QLabel" name="label_64">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
              <horstretch>0</horstretch>
@@ -2105,9 +2026,91 @@ QTabBar QToolButton::left-arrow {
           </widget>
          </item>
          <item row="0" column="1">
-          <widget class="QLabel" name="label_61">
+          <widget class="QLabel" name="label_65">
            <property name="text">
-            <string>Require rehoming after steppers are deactivated. Also enable NO_MOTION_BEFORE_HOMING for extra safety.</string>
+            <string>This is the minimal Z height before homing.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QSpinBox" name="uZHomingHeightSpinBox">
+           <property name="suffix">
+            <string> mm</string>
+           </property>
+           <property name="minimum">
+            <number>-1000</number>
+           </property>
+           <property name="maximum">
+            <number>1000</number>
+           </property>
+           <property name="stepType">
+            <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+           </property>
+           <property name="value">
+            <number>4</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QGroupBox" name="uZAfterHomingBox">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="title">
+         <string>Z_AFTER_HOMING</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_43">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="1" column="0" colspan="2">
+          <widget class="QSpinBox" name="uZAfterHomingSpinBox">
+           <property name="suffix">
+            <string> mm</string>
+           </property>
+           <property name="minimum">
+            <number>-1000</number>
+           </property>
+           <property name="maximum">
+            <number>1000</number>
+           </property>
+           <property name="stepType">
+            <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+           </property>
+           <property name="value">
+            <number>10</number>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_66">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_67">
+           <property name="text">
+            <string>This is the height to move to after homing Z.</string>
            </property>
            <property name="wordWrap">
             <bool>true</bool>
@@ -2120,8 +2123,37 @@ QTabBar QToolButton::left-arrow {
      </layout>
     </widget>
    </item>
-   <item row="10" column="0" colspan="3">
-    <widget class="QLabel" name="label">
+   <item row="16" column="0" colspan="3">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="4" column="1">
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>10</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="12" column="0" colspan="3">
+    <widget class="QLabel" name="label_72">
      <property name="styleSheet">
       <string notr="true">QLabel {
 	color: rgb(100, 103, 122);
@@ -2132,7 +2164,7 @@ QTabBar QToolButton::left-arrow {
 </string>
      </property>
      <property name="text">
-      <string>TRAVEL LIMITS</string>
+      <string>SOFTWARE ENDSTOPS</string>
      </property>
     </widget>
    </item>
@@ -2281,38 +2313,9 @@ QTabBar QToolButton::left-arrow {
      </layout>
     </widget>
    </item>
-   <item row="13" column="0" colspan="3">
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>0</width>
-       <height>0</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="4" column="1">
-    <spacer name="verticalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>10</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="6" column="0" colspan="3">
-    <widget class="QWidget" name="widget_3" native="true">
-     <layout class="QGridLayout" name="gridLayout_3">
+   <item row="5" column="0" colspan="3">
+    <widget class="QWidget" name="widget_2" native="true">
+     <layout class="QGridLayout" name="gridLayout_2">
       <property name="leftMargin">
        <number>0</number>
       </property>
@@ -2329,29 +2332,19 @@ QTabBar QToolButton::left-arrow {
        <number>10</number>
       </property>
       <item row="0" column="0">
-       <widget class="QGroupBox" name="uZIdleHeightBox">
+       <widget class="QGroupBox" name="uNoMotionBeforeHomingBox">
         <property name="title">
-         <string>Z_IDLE_HEIGHT</string>
+         <string>NO_MOTION_BEFORE_HOMING</string>
         </property>
         <property name="checkable">
          <bool>true</bool>
         </property>
-        <layout class="QGridLayout" name="gridLayout_41">
+        <layout class="QGridLayout" name="gridLayout_39">
          <property name="spacing">
           <number>10</number>
          </property>
-         <item row="0" column="1">
-          <widget class="QLabel" name="label_63">
-           <property name="text">
-            <string>Set this if the Z-Axis moves on its own when steppers are disabled. (optional)</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
          <item row="0" column="0">
-          <widget class="QLabel" name="label_62">
+          <widget class="QLabel" name="label_58">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
              <horstretch>0</horstretch>
@@ -2366,19 +2359,13 @@ QTabBar QToolButton::left-arrow {
            </property>
           </widget>
          </item>
-         <item row="1" column="0" colspan="2">
-          <widget class="QSpinBox" name="uZIdleHeightSpinBox">
-           <property name="suffix">
-            <string> mm</string>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_59">
+           <property name="text">
+            <string>Inhibit movement until all axes have been homed. Also enable HOME_AFTER_DEACTIVATE for extra safety.</string>
            </property>
-           <property name="minimum">
-            <number>-1000</number>
-           </property>
-           <property name="maximum">
-            <number>1000</number>
-           </property>
-           <property name="stepType">
-            <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+           <property name="wordWrap">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
@@ -2386,24 +2373,19 @@ QTabBar QToolButton::left-arrow {
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QGroupBox" name="groupBox_4">
-        <property name="focusPolicy">
-         <enum>Qt::StrongFocus</enum>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-        </property>
+       <widget class="QGroupBox" name="uHomeAfterDeactivateBox">
         <property name="title">
-         <string>Z_HOMING_HEIGHT</string>
+         <string>HOME_AFTER_DEACTIVATE</string>
         </property>
-        <layout class="QGridLayout" name="gridLayout_42">
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_40">
          <property name="spacing">
           <number>10</number>
          </property>
          <item row="0" column="0">
-          <widget class="QLabel" name="label_64">
+          <widget class="QLabel" name="label_60">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
              <horstretch>0</horstretch>
@@ -2419,100 +2401,1160 @@ QTabBar QToolButton::left-arrow {
           </widget>
          </item>
          <item row="0" column="1">
-          <widget class="QLabel" name="label_65">
+          <widget class="QLabel" name="label_61">
            <property name="text">
-            <string>This is the minimal Z height before homing.</string>
+            <string>Require rehoming after steppers are deactivated. Also enable NO_MOTION_BEFORE_HOMING for extra safety.</string>
            </property>
            <property name="wordWrap">
             <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0" colspan="2">
-          <widget class="QSpinBox" name="uZHomingHeightSpinBox">
-           <property name="suffix">
-            <string> mm</string>
-           </property>
-           <property name="minimum">
-            <number>-1000</number>
-           </property>
-           <property name="maximum">
-            <number>1000</number>
-           </property>
-           <property name="stepType">
-            <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
-           </property>
-           <property name="value">
-            <number>4</number>
            </property>
           </widget>
          </item>
         </layout>
        </widget>
       </item>
-      <item row="0" column="2">
-       <widget class="QGroupBox" name="groupBox_5">
-        <property name="focusPolicy">
-         <enum>Qt::StrongFocus</enum>
+     </layout>
+    </widget>
+   </item>
+   <item row="10" column="0" colspan="3">
+    <widget class="QLabel" name="label">
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+	color: rgb(100, 103, 122);
+	font-size: 25px;
+	font-family: &quot;Source Sans Pro Light&quot;;
+	font-style: italic;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>TRAVEL LIMITS</string>
+     </property>
+    </widget>
+   </item>
+   <item row="13" column="0" colspan="3">
+    <widget class="QGroupBox" name="uMinSoftwareEndstopsBox">
+     <property name="title">
+      <string>MIN_SOFTWARE_ENDSTOPS</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_46">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_73">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="label_74">
+        <property name="text">
+         <string>Enable this for min software endstops. Min software endstops constrain movement within minimum coordinate bounds.</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" colspan="2">
+       <widget class="QTabWidget" name="uMinSoftwareEndstopsTabWidget">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
         </property>
         <property name="styleSheet">
-         <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
+         <string notr="true">QTabWidget::pane {
+	border: 1px solid black;
+}
+
+QScrollBar::vertical {
+	background: rgb(34, 35, 40);
+}
+
+QTabBar::tab {
+	color: black;
+	padding: 2px 5px;
+	margin: 0 1px;
+	background: rgb(249, 154, 0);
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	margin-top: 2px;
+}
+
+QTabBar::tab:!selected {
+	margin-top: 3px;
+}
+
+QTabBar::tab:disabled {
+	background: rgb(63, 65, 77);
+}
+
+QTabBar::scroller {
+    width: 40px;
+}
+
+QTabBar QToolButton {
+	background: rgb(249, 154, 0);
+	margin-top: 3px;
+   	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	margin-left: 2px;
+}
+
+QTabBar QToolButton::pressed {
+	margin-top: 4px;
+}
+
+QTabBar QToolButton:disabled {
+	background: rgb(63, 65, 77);
+}
+
+QTabBar QToolButton::right-arrow {
+    image: url(&quot;:/arrow_right_FILL0_wght400_GRAD0_opsz20.svg&quot;);
+}
+
+QTabBar QToolButton::left-arrow {
+	image: url(&quot;:/arrow_left_FILL0_wght400_GRAD0_opsz20.svg&quot;);
 }</string>
         </property>
-        <property name="title">
-         <string>Z_AFTER_HOMING</string>
+        <property name="currentIndex">
+         <number>0</number>
         </property>
-        <layout class="QGridLayout" name="gridLayout_43">
-         <property name="spacing">
-          <number>10</number>
-         </property>
-         <item row="1" column="0" colspan="2">
-          <widget class="QSpinBox" name="uZAfterHomingSpinBox">
-           <property name="suffix">
-            <string> mm</string>
-           </property>
-           <property name="minimum">
-            <number>-1000</number>
-           </property>
-           <property name="maximum">
-            <number>1000</number>
-           </property>
-           <property name="stepType">
-            <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
-           </property>
-           <property name="value">
-            <number>10</number>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0">
-          <widget class="QLabel" name="label_66">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QLabel" name="label_67">
-           <property name="text">
-            <string>This is the height to move to after homing Z.</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
+        <widget class="QWidget" name="tab_7">
+         <attribute name="title">
+          <string>X / Y / Z Coordinates</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_47">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QGroupBox" name="uMinSoftwareEndstopXBox">
+            <property name="title">
+             <string>MIN_SOFTWARE_ENDSTOP_X</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_57">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_83">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_84">
+               <property name="text">
+                <string>Enable the min software endstop for the X dimension.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QGroupBox" name="uMinSoftwareEndstopYBox">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="title">
+             <string>MIN_SOFTWARE_ENDSTOP_Y</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_58">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_85">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_86">
+               <property name="text">
+                <string>Enable the min software endstop for the Y dimension.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QGroupBox" name="uMinSoftwareEndstopZBox">
+            <property name="title">
+             <string>MIN_SOFTWARE_ENDSTOP_Z</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_59">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_87">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_88">
+               <property name="text">
+                <string>Enable the min software endstop for the Z dimension.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab_8">
+         <attribute name="title">
+          <string>I / J / K Coordinates</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_48">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QGroupBox" name="uMinSoftwareEndstopIBox">
+            <property name="title">
+             <string>MIN_SOFTWARE_ENDSTOP_I</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_60">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_89">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_90">
+               <property name="text">
+                <string>Enable the min software endstop for the I dimension.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QGroupBox" name="uMinSoftwareEndstopJBox">
+            <property name="title">
+             <string>MIN_SOFTWARE_ENDSTOP_J</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_61">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_91">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_92">
+               <property name="text">
+                <string>Enable the min software endstop for the J dimension.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QGroupBox" name="uMinSoftwareEndstopKBox">
+            <property name="title">
+             <string>MIN_SOFTWARE_ENDSTOP_K</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_62">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_93">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_94">
+               <property name="text">
+                <string>Enable the min software endstop for the K dimension.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab_9">
+         <attribute name="title">
+          <string>U / V / W Coordinates</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_49">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QGroupBox" name="uMinSoftwareEndstopUBox">
+            <property name="title">
+             <string>MIN_SOFTWARE_ENDSTOP_U</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_63">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_95">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_96">
+               <property name="text">
+                <string>Enable the min software endstop for the U dimension.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QGroupBox" name="uMinSoftwareEndstopVBox">
+            <property name="title">
+             <string>MIN_SOFTWARE_ENDSTOP_V</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_64">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_97">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_98">
+               <property name="text">
+                <string>Enable the min software endstop for the V dimension.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QGroupBox" name="uMinSoftwareEndstopWBox">
+            <property name="title">
+             <string>MIN_SOFTWARE_ENDSTOP_W</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_65">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_99">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_100">
+               <property name="text">
+                <string>Enable the min software endstop for the W dimension.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="3">
+    <widget class="QWidget" name="widget" native="true">
+     <layout class="QGridLayout" name="gridLayout_5">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <property name="horizontalSpacing">
+       <number>10</number>
+      </property>
+      <property name="verticalSpacing">
+       <number>5</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_5">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Source Sans Pro Light</family>
+          <pointsize>-1</pointsize>
+          <italic>true</italic>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+	color: rgb(100, 103, 122);
+	font-size: 35px;
+	font-family: &quot;Source Sans Pro Light&quot;;
+	font-style: italic;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>HOMING AND BOUNDS</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QPushButton" name="uDocumentationButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>Open Homing and Bounds documentation</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	background: none;
+	border: none;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../resources/resources.qrc">
+          <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="14" column="0" colspan="3">
+    <widget class="QGroupBox" name="uMaxSoftwareEndstopsBox">
+     <property name="title">
+      <string>MAX_SOFTWARE_ENDSTOPS</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_50">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_75">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="label_76">
+        <property name="text">
+         <string>Enable this for max software endstops. Max software endstops constrain movement within maximum coordinate bounds.</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" colspan="2">
+       <widget class="QTabWidget" name="uMaxSoftwareEndstopsTabWidget">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QTabWidget::pane {
+	border: 1px solid black;
+}
+
+QScrollBar::vertical {
+	background: rgb(34, 35, 40);
+}
+
+QTabBar::tab {
+	color: black;
+	padding: 2px 5px;
+	margin: 0 1px;
+	background: rgb(249, 154, 0);
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	margin-top: 2px;
+}
+
+QTabBar::tab:!selected {
+	margin-top: 3px;
+}
+
+QTabBar::tab:disabled {
+	background: rgb(63, 65, 77);
+}
+
+QTabBar::scroller {
+    width: 40px;
+}
+
+QTabBar QToolButton {
+	background: rgb(249, 154, 0);
+	margin-top: 3px;
+   	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	margin-left: 2px;
+}
+
+QTabBar QToolButton::pressed {
+	margin-top: 4px;
+}
+
+QTabBar QToolButton:disabled {
+	background: rgb(63, 65, 77);
+}
+
+QTabBar QToolButton::right-arrow {
+    image: url(&quot;:/arrow_right_FILL0_wght400_GRAD0_opsz20.svg&quot;);
+}
+
+QTabBar QToolButton::left-arrow {
+	image: url(&quot;:/arrow_left_FILL0_wght400_GRAD0_opsz20.svg&quot;);
+}</string>
+        </property>
+        <property name="currentIndex">
+         <number>2</number>
+        </property>
+        <widget class="QWidget" name="tab_10">
+         <attribute name="title">
+          <string>X / Y / Z Coordinates</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_51">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QGroupBox" name="uMaxSoftwareEndstopXBox">
+            <property name="title">
+             <string>MAX_SOFTWARE_ENDSTOP_X</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_54">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_77">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_78">
+               <property name="text">
+                <string>Enable the max software endstop for the X dimension.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QGroupBox" name="uMaxSoftwareEndstopYBox">
+            <property name="title">
+             <string>MAX_SOFTWARE_ENDSTOP_Y</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_55">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_79">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_80">
+               <property name="text">
+                <string>Enable the max software endstop for the Y dimension.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QGroupBox" name="uMaxSoftwareEndstopZBox">
+            <property name="title">
+             <string>MAX_SOFTWARE_ENDSTOP_Z</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_56">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_81">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_82">
+               <property name="text">
+                <string>Enable the max software endstop for the Z dimension.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab_11">
+         <attribute name="title">
+          <string>I / J / K Coordinates</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_52">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QGroupBox" name="uMaxSoftwareEndstopIBox">
+            <property name="title">
+             <string>MAX_SOFTWARE_ENDSTOP_I</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_68">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_101">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_103">
+               <property name="text">
+                <string>Enable the max software endstop for the I dimension.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QGroupBox" name="uMaxSoftwareEndstopJBox">
+            <property name="title">
+             <string>MAX_SOFTWARE_ENDSTOP_J</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_67">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_102">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_104">
+               <property name="text">
+                <string>Enable the max software endstop for the J dimension.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QGroupBox" name="uMaxSoftwareEndstopKBox">
+            <property name="title">
+             <string>MAX_SOFTWARE_ENDSTOP_K</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_66">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_105">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_106">
+               <property name="text">
+                <string>Enable the max software endstop for the K dimension.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab_12">
+         <attribute name="title">
+          <string>U / V / W Coordinates</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_53">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QGroupBox" name="uMaxSoftwareEndstopUBox">
+            <property name="title">
+             <string>MAX_SOFTWARE_ENDSTOP_U</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_69">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_107">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_108">
+               <property name="text">
+                <string>Enable the max software endstop for the U dimension.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QGroupBox" name="uMaxSoftwareEndstopVBox">
+            <property name="title">
+             <string>MAX_SOFTWARE_ENDSTOP_V</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_70">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_109">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_110">
+               <property name="text">
+                <string>Enable the max software endstop for the V dimension.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QGroupBox" name="uMaxSoftwareEndstopWBox">
+            <property name="title">
+             <string>MAX_SOFTWARE_ENDSTOP_W</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_71">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_111">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_112">
+               <property name="text">
+                <string>Enable the max software endstop for the W dimension.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
        </widget>
       </item>
      </layout>
@@ -2532,6 +3574,47 @@ QTabBar QToolButton::left-arrow {
      <property name="text">
       <string>HEATBED SIZE</string>
      </property>
+    </widget>
+   </item>
+   <item row="15" column="0" colspan="3">
+    <widget class="QGroupBox" name="uSoftEndstopsMenuItemBox">
+     <property name="title">
+      <string>SOFT_ENDSTOPS_MENU_ITEM</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_72">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_113">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="label_114">
+        <property name="text">
+         <string>Enable this to enable and disable software endstops from the LCD.</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
   </layout>

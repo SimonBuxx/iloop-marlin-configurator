@@ -2473,7 +2473,7 @@ QPushButton::!checked:hover {
 }</string>
            </property>
            <property name="text">
-            <string>Homing and Bounds (WIP)</string>
+            <string>Homing and Bounds</string>
            </property>
            <property name="icon">
             <iconset resource="../resources/resources.qrc">
@@ -2860,7 +2860,7 @@ QPushButton::!checked:hover {
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>438</width>
+          <width>483</width>
           <height>216</height>
          </rect>
         </property>
@@ -3147,7 +3147,7 @@ QPushButton::disabled {
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>388</width>
+          <width>302</width>
           <height>216</height>
          </rect>
         </property>
@@ -3557,7 +3557,7 @@ QPushButton::disabled {
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>452</width>
+          <width>493</width>
           <height>216</height>
          </rect>
         </property>

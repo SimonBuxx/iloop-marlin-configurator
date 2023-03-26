@@ -713,6 +713,15 @@ bool MainWindow::LoadConfigurationFromJson(const QJsonObject& pJson)
         success = false;
     }
 
+    if (pJson.contains("homingAndBounds") && pJson["homingAndBounds"].isObject())
+    {
+        success &= mUi->uHomingAndBoundsPage->LoadFromJson(pJson["homingAndBounds"].toObject());
+    }
+    else
+    {
+        success = false;
+    }
+
     if (pJson.contains("filamentRunoutSensor") && pJson["filamentRunoutSensor"].isObject())
     {
         success &= mUi->uFilamentRunoutSensorPage->LoadFromJson(pJson["filamentRunoutSensor"].toObject());
