@@ -168,7 +168,7 @@ void ThermalSettingsPage::ConnectGuiSignalsAndSlots()
     {
         mUi->uPidOpenloopBox->setEnabled(pChecked || mUi->uPidtempbedBox->isChecked() || mUi->uPidtempchamberBox->isChecked());
         mUi->uSlowPwmHeatersBox->setEnabled(pChecked || mUi->uPidtempbedBox->isChecked() || mUi->uPidtempchamberBox->isChecked());
-        mUi->uPidFunctionalRangeSpinBox->setEnabled(pChecked || mUi->uPidtempbedBox->isChecked() || mUi->uPidtempchamberBox->isChecked());
+        mUi->uPidFunctionalRangeBox->setEnabled(pChecked || mUi->uPidtempbedBox->isChecked() || mUi->uPidtempchamberBox->isChecked());
         mUi->uPidEditMenuBox->setEnabled(pChecked || mUi->uPidtempbedBox->isChecked() || mUi->uPidtempchamberBox->isChecked());
         mUi->uPidAutotuneMenuBox->setEnabled(pChecked || mUi->uPidtempbedBox->isChecked() || mUi->uPidtempchamberBox->isChecked());
     });
@@ -177,7 +177,7 @@ void ThermalSettingsPage::ConnectGuiSignalsAndSlots()
     {
         mUi->uPidOpenloopBox->setEnabled(pChecked || mUi->uPidtempBox->isChecked() || mUi->uPidtempchamberBox->isChecked());
         mUi->uSlowPwmHeatersBox->setEnabled(pChecked || mUi->uPidtempBox->isChecked() || mUi->uPidtempchamberBox->isChecked());
-        mUi->uPidFunctionalRangeSpinBox->setEnabled(pChecked || mUi->uPidtempBox->isChecked() || mUi->uPidtempchamberBox->isChecked());
+        mUi->uPidFunctionalRangeBox->setEnabled(pChecked || mUi->uPidtempBox->isChecked() || mUi->uPidtempchamberBox->isChecked());
         mUi->uPidEditMenuBox->setEnabled(pChecked || mUi->uPidtempBox->isChecked() || mUi->uPidtempchamberBox->isChecked());
         mUi->uPidAutotuneMenuBox->setEnabled(pChecked || mUi->uPidtempBox->isChecked() || mUi->uPidtempchamberBox->isChecked());
     });
@@ -186,7 +186,7 @@ void ThermalSettingsPage::ConnectGuiSignalsAndSlots()
     {
         mUi->uPidOpenloopBox->setEnabled(pChecked || mUi->uPidtempbedBox->isChecked() || mUi->uPidtempBox->isChecked());
         mUi->uSlowPwmHeatersBox->setEnabled(pChecked || mUi->uPidtempbedBox->isChecked() || mUi->uPidtempBox->isChecked());
-        mUi->uPidFunctionalRangeSpinBox->setEnabled(pChecked || mUi->uPidtempbedBox->isChecked() || mUi->uPidtempBox->isChecked());
+        mUi->uPidFunctionalRangeBox->setEnabled(pChecked || mUi->uPidtempbedBox->isChecked() || mUi->uPidtempBox->isChecked());
         mUi->uPidEditMenuBox->setEnabled(pChecked || mUi->uPidtempbedBox->isChecked() || mUi->uPidtempBox->isChecked());
         mUi->uPidAutotuneMenuBox->setEnabled(pChecked || mUi->uPidtempbedBox->isChecked() || mUi->uPidtempBox->isChecked());
     });
