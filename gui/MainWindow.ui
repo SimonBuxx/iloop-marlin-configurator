@@ -2011,7 +2011,7 @@ QScrollBar::sub-line:horizontal
     <property name="title">
      <string>Build</string>
     </property>
-    <addaction name="uActionConfigure"/>
+    <addaction name="uActionGenerate"/>
     <addaction name="separator"/>
     <addaction name="uActionBuild"/>
     <addaction name="uActionRebuild"/>
@@ -2860,7 +2860,7 @@ QPushButton::!checked:hover {
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>483</width>
+          <width>378</width>
           <height>216</height>
          </rect>
         </property>
@@ -2995,23 +2995,6 @@ QPushButton::disabled {
               </property>
              </widget>
             </item>
-            <item row="0" column="6">
-             <widget class="QPushButton" name="uConfigureButton">
-              <property name="enabled">
-               <bool>false</bool>
-              </property>
-              <property name="toolTip">
-               <string>Configure [F5]</string>
-              </property>
-              <property name="text">
-               <string>Configure</string>
-              </property>
-              <property name="icon">
-               <iconset resource="../resources/resources.qrc">
-                <normaloff>:/settings_suggest_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/settings_suggest_FILL0_wght100_GRAD0_opsz20.svg</iconset>
-              </property>
-             </widget>
-            </item>
             <item row="0" column="5">
              <widget class="QPushButton" name="uResetConfigurationButton">
               <property name="enabled">
@@ -3055,7 +3038,7 @@ QPushButton::disabled {
               </property>
               <property name="icon">
                <iconset resource="../resources/resources.qrc">
-                <normaloff>:/folder_off_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/folder_off_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+                <normaloff>:/folder_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/folder_FILL0_wght100_GRAD0_opsz20.svg</iconset>
               </property>
              </widget>
             </item>
@@ -3147,7 +3130,7 @@ QPushButton::disabled {
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>302</width>
+          <width>378</width>
           <height>216</height>
          </rect>
         </property>
@@ -3557,7 +3540,7 @@ QPushButton::disabled {
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>493</width>
+          <width>522</width>
           <height>216</height>
          </rect>
         </property>
@@ -3653,63 +3636,6 @@ QPushButton::disabled {
             <property name="verticalSpacing">
              <number>0</number>
             </property>
-            <item row="0" column="6">
-             <widget class="QPushButton" name="uUploadButton">
-              <property name="enabled">
-               <bool>false</bool>
-              </property>
-              <property name="toolTip">
-               <string>Upload [F7]</string>
-              </property>
-              <property name="text">
-               <string>Upload</string>
-              </property>
-              <property name="icon">
-               <iconset resource="../resources/resources.qrc">
-                <normaloff>:/upload_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/upload_FILL0_wght100_GRAD0_opsz20.svg</iconset>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="3">
-             <widget class="QPushButton" name="uBuildButton">
-              <property name="enabled">
-               <bool>false</bool>
-              </property>
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="toolTip">
-               <string>Build [Ctrl+R]</string>
-              </property>
-              <property name="text">
-               <string>Build</string>
-              </property>
-              <property name="icon">
-               <iconset resource="../resources/resources.qrc">
-                <normaloff>:/build_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/build_FILL0_wght100_GRAD0_opsz20.svg</iconset>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="5">
-             <widget class="QPushButton" name="uCleanButton">
-              <property name="enabled">
-               <bool>false</bool>
-              </property>
-              <property name="toolTip">
-               <string>Clean [F6]</string>
-              </property>
-              <property name="text">
-               <string>Clean</string>
-              </property>
-              <property name="icon">
-               <iconset resource="../resources/resources.qrc">
-                <normaloff>:/mop_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/mop_FILL0_wght100_GRAD0_opsz20.svg</iconset>
-              </property>
-             </widget>
-            </item>
             <item row="0" column="1">
              <spacer name="horizontalSpacer">
               <property name="orientation">
@@ -3722,23 +3648,6 @@ QPushButton::disabled {
                </size>
               </property>
              </spacer>
-            </item>
-            <item row="0" column="4">
-             <widget class="QPushButton" name="uRebuildButton">
-              <property name="enabled">
-               <bool>false</bool>
-              </property>
-              <property name="toolTip">
-               <string>Rebuild [Ctrl+Shift+R]</string>
-              </property>
-              <property name="text">
-               <string>Rebuild</string>
-              </property>
-              <property name="icon">
-               <iconset resource="../resources/resources.qrc">
-                <normaloff>:/handyman_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/handyman_FILL0_wght100_GRAD0_opsz20.svg</iconset>
-              </property>
-             </widget>
             </item>
             <item row="0" column="2">
              <widget class="QPushButton" name="uCancelButton">
@@ -3778,6 +3687,97 @@ QPushButton::hover {
               <property name="icon">
                <iconset resource="../resources/resources.qrc">
                 <normaloff>:/mop_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/mop_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="7">
+             <widget class="QPushButton" name="uUploadButton">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="toolTip">
+               <string>Builds and uploads Marlin [F7]</string>
+              </property>
+              <property name="text">
+               <string>Upload</string>
+              </property>
+              <property name="icon">
+               <iconset resource="../resources/resources.qrc">
+                <normaloff>:/upload_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/upload_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="4">
+             <widget class="QPushButton" name="uBuildButton">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="toolTip">
+               <string>Builds Marlin using the most recently generated configuration [Ctrl+R]</string>
+              </property>
+              <property name="text">
+               <string>Build</string>
+              </property>
+              <property name="icon">
+               <iconset resource="../resources/resources.qrc">
+                <normaloff>:/build_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/build_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="6">
+             <widget class="QPushButton" name="uCleanButton">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="toolTip">
+               <string>Cleans the build directory [F6]</string>
+              </property>
+              <property name="text">
+               <string>Clean</string>
+              </property>
+              <property name="icon">
+               <iconset resource="../resources/resources.qrc">
+                <normaloff>:/mop_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/mop_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="5">
+             <widget class="QPushButton" name="uRebuildButton">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="toolTip">
+               <string>Cleans the build directory and builds Marlin [Ctrl+Shift+R]</string>
+              </property>
+              <property name="text">
+               <string>Rebuild</string>
+              </property>
+              <property name="icon">
+               <iconset resource="../resources/resources.qrc">
+                <normaloff>:/handyman_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/handyman_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="3">
+             <widget class="QPushButton" name="uGenerateButton">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="toolTip">
+               <string>(Re-)generates the Marlin configuration [F5]</string>
+              </property>
+              <property name="text">
+               <string>Generate</string>
+              </property>
+              <property name="icon">
+               <iconset resource="../resources/resources.qrc">
+                <normaloff>:/settings_suggest_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/settings_suggest_FILL0_wght100_GRAD0_opsz20.svg</iconset>
               </property>
              </widget>
             </item>
@@ -4245,7 +4245,7 @@ QPushButton::hover {
     <bool>false</bool>
    </property>
   </action>
-  <action name="uActionConfigure">
+  <action name="uActionGenerate">
    <property name="enabled">
     <bool>false</bool>
    </property>
@@ -4254,7 +4254,7 @@ QPushButton::hover {
      <normaloff>:/settings_suggest_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/settings_suggest_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
-    <string>Configure</string>
+    <string>Generate</string>
    </property>
    <property name="shortcut">
     <string>F5</string>
@@ -4326,7 +4326,7 @@ QPushButton::hover {
    </property>
    <property name="icon">
     <iconset resource="../resources/resources.qrc">
-     <normaloff>:/folder_off_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/folder_off_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+     <normaloff>:/folder_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/folder_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
     <string>Close Workspace</string>

@@ -157,7 +157,7 @@ void MainWindow::ConnectGuiSignalsAndSlots()
     QObject::connect(mUi->uDefaultViewportAction, &QAction::triggered, this, &MainWindow::OnSetDefaultViewport);
     QObject::connect(mUi->uExpandedViewportAction, &QAction::triggered, this, &MainWindow::OnSetExpandedViewport);
 
-    QObject::connect(mUi->uActionConfigure, &QAction::triggered, this, &MainWindow::ConfigureSignal);
+    QObject::connect(mUi->uActionGenerate, &QAction::triggered, this, &MainWindow::GenerateSignal);
 
     QObject::connect(mUi->uActionBuild, &QAction::triggered, this, [&](){
         mUi->uCompilerOutputsDock->raise();
@@ -183,7 +183,11 @@ void MainWindow::ConnectGuiSignalsAndSlots()
         emit UploadSignal();
     });
 
-    QObject::connect(mUi->uConfigureButton, &QPushButton::pressed, this, &MainWindow::ConfigureSignal);
+    QObject::connect(mUi->uGenerateButton, &QPushButton::pressed, this, [&](){
+        mUi->uConsoleDock->raise();
+
+        emit GenerateSignal();
+    });
 
     QObject::connect(mUi->uBuildButton, &QPushButton::pressed, this, [&](){
         mUi->uCompilerOutputsDock->raise();
@@ -383,13 +387,13 @@ QString MainWindow::GetEnvironment() const
 
 void MainWindow::ActivateCancelButton()
 {
-    mUi->uConfigureButton->setEnabled(false);
+    mUi->uGenerateButton->setEnabled(false);
     mUi->uBuildButton->setEnabled(false);
     mUi->uCleanButton->setEnabled(false);
     mUi->uUploadButton->setEnabled(false);
     mUi->uRebuildButton->setEnabled(false);
 
-    mUi->uActionConfigure->setEnabled(false);
+    mUi->uActionGenerate->setEnabled(false);
     mUi->uActionBuild->setEnabled(false);
     mUi->uActionRebuild->setEnabled(false);
     mUi->uActionClean->setEnabled(false);
@@ -412,13 +416,13 @@ void MainWindow::ActivateCancelButton()
 void MainWindow::DeactivateCancelButton()
 {
     // Note: Re-enabling here is only okay as long as it is ensured that all buttons should be enabled after cancel
-    mUi->uConfigureButton->setEnabled(true);
+    mUi->uGenerateButton->setEnabled(true);
     mUi->uBuildButton->setEnabled(true);
     mUi->uCleanButton->setEnabled(true);
     mUi->uUploadButton->setEnabled(true);
     mUi->uRebuildButton->setEnabled(true);
 
-    mUi->uActionConfigure->setEnabled(true);
+    mUi->uActionGenerate->setEnabled(true);
     mUi->uActionBuild->setEnabled(true);
     mUi->uActionRebuild->setEnabled(true);
     mUi->uActionClean->setEnabled(true);
@@ -464,7 +468,7 @@ void MainWindow::OnCloseWorkspace()
     SetWorkspace(std::nullopt);
 
     mUi->uSaveWorkspaceAction->setEnabled(false);
-    mUi->uActionConfigure->setEnabled(false);
+    mUi->uActionGenerate->setEnabled(false);
     mUi->uActionBuild->setEnabled(false);
     mUi->uActionRebuild->setEnabled(false);
     mUi->uActionClean->setEnabled(false);
@@ -472,7 +476,7 @@ void MainWindow::OnCloseWorkspace()
     mUi->uCloseWorkspaceAction->setEnabled(false);
 
     mUi->uSaveWorkspaceButton->setEnabled(false);
-    mUi->uConfigureButton->setEnabled(false);
+    mUi->uGenerateButton->setEnabled(false);
     mUi->uBuildButton->setEnabled(false);
     mUi->uRebuildButton->setEnabled(false);
     mUi->uCleanButton->setEnabled(false);
@@ -495,7 +499,7 @@ void MainWindow::OnOpenWorkspace()
 void MainWindow::OnWorkspaceOpened()
 {
     mUi->uSaveWorkspaceAction->setEnabled(true);
-    mUi->uActionConfigure->setEnabled(true);
+    mUi->uActionGenerate->setEnabled(true);
     mUi->uActionBuild->setEnabled(true);
     mUi->uActionRebuild->setEnabled(true);
     mUi->uActionClean->setEnabled(true);
@@ -503,7 +507,7 @@ void MainWindow::OnWorkspaceOpened()
     mUi->uCloseWorkspaceAction->setEnabled(true);
 
     mUi->uSaveWorkspaceButton->setEnabled(true);
-    mUi->uConfigureButton->setEnabled(true);
+    mUi->uGenerateButton->setEnabled(true);
     mUi->uBuildButton->setEnabled(true);
     mUi->uRebuildButton->setEnabled(true);
     mUi->uCleanButton->setEnabled(true);

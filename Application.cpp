@@ -43,7 +43,7 @@ Application::Application(QObject *parent)
     QFontDatabase::addApplicationFont(":/SourceSansPro-LightItalic.ttf");
     QFontDatabase::addApplicationFont(":/SourceSansPro-Regular.ttf");
 
-    QObject::connect(&mMainWindow, &MainWindow::ConfigureSignal, this, &Application::OnConfigure);
+    QObject::connect(&mMainWindow, &MainWindow::GenerateSignal, this, &Application::OnGenerate);
     QObject::connect(&mMainWindow, &MainWindow::SaveProjectSignal, this, &Application::OnSaveProject);
     QObject::connect(&mMainWindow, &MainWindow::CloseWorkspaceSignal, this, &Application::OnCloseWorkspace);
     QObject::connect(&mMainWindow, &MainWindow::OpenWorkspaceSignal, this, &Application::OnOpenWorkspace);
@@ -63,7 +63,7 @@ Application::Application(QObject *parent)
         OnUpload(mMainWindow.GetEnvironment());
     });
 
-    mMainWindow.Log("Reading Configuration.h template...");
+    mMainWindow.Log("Reading template data...");
     mTemplate = ReadTemplateFromFile(QFileInfo(TEMPLATE_PATH));
 
     mMainWindow.show();
@@ -96,7 +96,7 @@ Application::Application(QObject *parent)
 Application::~Application()
 {}
 
-void Application::OnConfigure()
+void Application::OnGenerate()
 {
     if (!mFolderInfo.has_value())
     {
@@ -126,7 +126,7 @@ void Application::OnConfigure()
 
     const auto filePath = mFolderInfo.value().filePath() + "/Marlin/Configuration.h";
 
-    mMainWindow.Log(QString("Generation of configuration file %0 started...").arg(filePath));
+    mMainWindow.Log(QString("Generation of %0 started...").arg(filePath));
     QCoreApplication::processEvents(); // to ensure that the message is printed before the GUI freezes
 
     const auto&& stringList = GenerateCode();
@@ -155,7 +155,7 @@ void Application::OnConfigure()
 
     file.close();
 
-    mMainWindow.Log(QString("Generation of configuration file %0 successful.").arg(filePath), "rgb(249, 154, 0)");
+    mMainWindow.Log(QString("Generation of %0 successful.").arg(filePath), "rgb(249, 154, 0)");
 }
 
 void Application::OnSaveProject()
@@ -286,6 +286,28 @@ std::optional<QStringList> Application::GenerateCode()
 
 void Application::OnBuildMarlin(const QString& pEnvironment)
 {
+    QMessageBox msgBox;
+    msgBox.setText("Regenerate the configuration before building?");
+    msgBox.setInformativeText("Marlin is built using the most recently generated configuration. This may not match the configuration currently displayed in the software.");
+    msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel);
+    msgBox.setIcon(QMessageBox::Question);
+    switch (msgBox.exec())
+    {
+        case QMessageBox::Yes:
+        {
+            OnGenerate();
+            break;
+        }
+        case QMessageBox::Cancel:
+        {
+            return;
+        }
+        default:
+        {
+            break;
+        }
+    }
+
     mMainWindow.ActivateCancelButton();
     if (!mFolderInfo.has_value())
     {
@@ -491,6 +513,28 @@ bool Application::OnClean(const QString& pEnvironment)
 
 void Application::OnUpload(const QString& pEnvironment)
 {
+    QMessageBox msgBox;
+    msgBox.setText("Regenerate the configuration before uploading?");
+    msgBox.setInformativeText("Marlin is built using the most recently generated configuration. This may not match the configuration currently displayed in the software.");
+    msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel);
+    msgBox.setIcon(QMessageBox::Question);
+    switch (msgBox.exec())
+    {
+        case QMessageBox::Yes:
+        {
+            OnGenerate();
+            break;
+        }
+        case QMessageBox::Cancel:
+        {
+            return;
+        }
+        default:
+        {
+            break;
+        }
+    }
+
     mMainWindow.ActivateCancelButton();
     if (!mFolderInfo.has_value())
     {

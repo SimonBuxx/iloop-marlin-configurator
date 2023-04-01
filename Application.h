@@ -47,7 +47,7 @@ public:
 
 protected slots:
     /// \brief Exports the current configuration
-    void OnConfigure(void);
+    void OnGenerate(void);
 
     /// \brief Saves the project either in the open location or asks for the file path
     void OnSaveProject(void);

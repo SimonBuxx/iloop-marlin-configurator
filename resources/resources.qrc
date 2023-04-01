@@ -79,7 +79,7 @@
         <file>stepper_drivers_template.txt</file>
         <file>user_interface_language_template.txt</file>
         <file>z_probe_options_template.txt</file>
-        <file>folder_off_FILL0_wght100_GRAD0_opsz20.svg</file>
         <file>folder_open_FILL0_wght100_GRAD0_opsz20.svg</file>
+        <file>folder_FILL0_wght100_GRAD0_opsz20.svg</file>
     </qresource>
 </RCC>

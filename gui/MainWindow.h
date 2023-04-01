@@ -89,7 +89,7 @@ public:
 
 signals:
     /// \brief Emitted when the current configuration should be exported as a C++ header file
-    void ConfigureSignal(void);
+    void GenerateSignal(void);
 
     /// \brief Emitted when the current workspace configuration should be saved
     void SaveProjectSignal(void);
