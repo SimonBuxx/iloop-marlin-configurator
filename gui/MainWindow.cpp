@@ -717,6 +717,15 @@ bool MainWindow::LoadConfigurationFromJson(const QJsonObject& pJson)
         success = false;
     }
 
+    if (pJson.contains("stepperDrivers") && pJson["stepperDrivers"].isObject())
+    {
+        success &= mUi->uStepperDriversPage->LoadFromJson(pJson["stepperDrivers"].toObject());
+    }
+    else
+    {
+        success = false;
+    }
+
     if (pJson.contains("homingAndBounds") && pJson["homingAndBounds"].isObject())
     {
         success &= mUi->uHomingAndBoundsPage->LoadFromJson(pJson["homingAndBounds"].toObject());

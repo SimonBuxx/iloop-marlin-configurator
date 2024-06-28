@@ -20,7 +20,7 @@
    <string>iMC - iLOOP Marlin Configurator vX.X.X</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../resources/resources.qrc">
+   <iconset>
     <normaloff>:/imc_icon48.ico</normaloff>:/imc_icon48.ico</iconset>
   </property>
   <property name="styleSheet">
@@ -275,7 +275,7 @@ QScrollBar::sub-line:horizontal
              </size>
             </property>
             <property name="currentIndex">
-             <number>22</number>
+             <number>2</number>
             </property>
             <widget class="QWidget" name="uWelcomeTab">
              <layout class="QGridLayout" name="gridLayout_3">
@@ -667,8 +667,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>100</width>
-                   <height>30</height>
+                   <width>1059</width>
+                   <height>507</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_2">
@@ -1915,7 +1915,7 @@ QScrollBar::sub-line:horizontal
                    <x>0</x>
                    <y>0</y>
                    <width>1059</width>
-                   <height>506</height>
+                   <height>507</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_46">
@@ -1959,7 +1959,7 @@ QScrollBar::sub-line:horizontal
      <x>0</x>
      <y>0</y>
      <width>1280</width>
-     <height>30</height>
+     <height>29</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuDatei">
@@ -2144,7 +2144,7 @@ QPushButton::!checked:hover {
           <x>0</x>
           <y>0</y>
           <width>208</width>
-          <height>631</height>
+          <height>516</height>
          </rect>
         </property>
         <property name="layoutDirection">
@@ -2184,7 +2184,7 @@ QPushButton::!checked:hover {
             <string>Getting Started</string>
            </property>
            <property name="icon">
-            <iconset resource="../resources/resources.qrc">
+            <iconset>
              <normaloff>:/tips_and_updates_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/tips_and_updates_FILL0_wght100_GRAD0_opsz20.svg</iconset>
            </property>
            <property name="iconSize">
@@ -2215,7 +2215,7 @@ QPushButton::!checked:hover {
             <string>Firmware Info</string>
            </property>
            <property name="icon">
-            <iconset resource="../resources/resources.qrc">
+            <iconset>
              <normaloff>:/wysiwyg_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/wysiwyg_FILL0_wght100_GRAD0_opsz20.svg</iconset>
            </property>
            <property name="iconSize">
@@ -2241,7 +2241,7 @@ QPushButton::!checked:hover {
             <string>Hardware Info</string>
            </property>
            <property name="icon">
-            <iconset resource="../resources/resources.qrc">
+            <iconset>
              <normaloff>:/developer_board_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/developer_board_FILL0_wght100_GRAD0_opsz20.svg</iconset>
            </property>
            <property name="iconSize">
@@ -2269,7 +2269,7 @@ QPushButton::!checked:hover {
             <string>Extruder Info</string>
            </property>
            <property name="icon">
-            <iconset resource="../resources/resources.qrc">
+            <iconset>
              <normaloff>:/tools_phillips_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/tools_phillips_FILL0_wght100_GRAD0_opsz20.svg</iconset>
            </property>
            <property name="iconSize">
@@ -2292,7 +2292,7 @@ QPushButton::!checked:hover {
             <string>Power Supply</string>
            </property>
            <property name="icon">
-            <iconset resource="../resources/resources.qrc">
+            <iconset>
              <normaloff>:/electrical_services_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/electrical_services_FILL0_wght100_GRAD0_opsz20.svg</iconset>
            </property>
            <property name="iconSize">
@@ -2320,7 +2320,7 @@ QPushButton::!checked:hover {
             <string>Thermal Settings</string>
            </property>
            <property name="icon">
-            <iconset resource="../resources/resources.qrc">
+            <iconset>
              <normaloff>:/thermostat_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/thermostat_FILL0_wght100_GRAD0_opsz20.svg</iconset>
            </property>
            <property name="iconSize">
@@ -2343,7 +2343,7 @@ QPushButton::!checked:hover {
             <string>Kinematics</string>
            </property>
            <property name="icon">
-            <iconset resource="../resources/resources.qrc">
+            <iconset>
              <normaloff>:/precision_manufacturing_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/precision_manufacturing_FILL0_wght100_GRAD0_opsz20.svg</iconset>
            </property>
            <property name="iconSize">
@@ -2371,7 +2371,7 @@ QPushButton::!checked:hover {
             <string>Endstops</string>
            </property>
            <property name="icon">
-            <iconset resource="../resources/resources.qrc">
+            <iconset>
              <normaloff>:/multiple_stop_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/multiple_stop_FILL0_wght100_GRAD0_opsz20.svg</iconset>
            </property>
            <property name="iconSize">
@@ -2397,7 +2397,7 @@ QPushButton::!checked:hover {
             <string>Movement (WIP)</string>
            </property>
            <property name="icon">
-            <iconset resource="../resources/resources.qrc">
+            <iconset>
              <normaloff>:/open_with_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_with_FILL0_wght100_GRAD0_opsz20.svg</iconset>
            </property>
            <property name="iconSize">
@@ -2425,7 +2425,7 @@ QPushButton::!checked:hover {
             <string>Z Probe Options (WIP)</string>
            </property>
            <property name="icon">
-            <iconset resource="../resources/resources.qrc">
+            <iconset>
              <normaloff>:/height_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/height_FILL0_wght100_GRAD0_opsz20.svg</iconset>
            </property>
            <property name="iconSize">
@@ -2448,7 +2448,7 @@ QPushButton::!checked:hover {
             <string>Stepper Drivers (WIP)</string>
            </property>
            <property name="icon">
-            <iconset resource="../resources/resources.qrc">
+            <iconset>
              <normaloff>:/memory_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/memory_FILL0_wght100_GRAD0_opsz20.svg</iconset>
            </property>
            <property name="iconSize">
@@ -2476,7 +2476,7 @@ QPushButton::!checked:hover {
             <string>Homing and Bounds</string>
            </property>
            <property name="icon">
-            <iconset resource="../resources/resources.qrc">
+            <iconset>
              <normaloff>:/home_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/home_FILL0_wght100_GRAD0_opsz20.svg</iconset>
            </property>
            <property name="iconSize">
@@ -2499,7 +2499,7 @@ QPushButton::!checked:hover {
             <string>Filament Runout Sensor</string>
            </property>
            <property name="icon">
-            <iconset resource="../resources/resources.qrc">
+            <iconset>
              <normaloff>:/sensors_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/sensors_FILL0_wght100_GRAD0_opsz20.svg</iconset>
            </property>
            <property name="iconSize">
@@ -2527,7 +2527,7 @@ QPushButton::!checked:hover {
             <string>Bed Leveling (WIP)</string>
            </property>
            <property name="icon">
-            <iconset resource="../resources/resources.qrc">
+            <iconset>
              <normaloff>:/tools_level_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/tools_level_FILL0_wght100_GRAD0_opsz20.svg</iconset>
            </property>
            <property name="iconSize">
@@ -2550,7 +2550,7 @@ QPushButton::!checked:hover {
             <string>Homing Options</string>
            </property>
            <property name="icon">
-            <iconset resource="../resources/resources.qrc">
+            <iconset>
              <normaloff>:/home_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/home_FILL0_wght100_GRAD0_opsz20.svg</iconset>
            </property>
            <property name="iconSize">
@@ -2578,7 +2578,7 @@ QPushButton::!checked:hover {
             <string>Additional Features (WIP)</string>
            </property>
            <property name="icon">
-            <iconset resource="../resources/resources.qrc">
+            <iconset>
              <normaloff>:/discover_tune_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/discover_tune_FILL0_wght100_GRAD0_opsz20.svg</iconset>
            </property>
            <property name="iconSize">
@@ -2601,7 +2601,7 @@ QPushButton::!checked:hover {
             <string>User Interface Language</string>
            </property>
            <property name="icon">
-            <iconset resource="../resources/resources.qrc">
+            <iconset>
              <normaloff>:/translate_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/translate_FILL0_wght100_GRAD0_opsz20.svg</iconset>
            </property>
            <property name="iconSize">
@@ -2629,7 +2629,7 @@ QPushButton::!checked:hover {
             <string>SD Card</string>
            </property>
            <property name="icon">
-            <iconset resource="../resources/resources.qrc">
+            <iconset>
              <normaloff>:/sd_card_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/sd_card_FILL0_wght100_GRAD0_opsz20.svg</iconset>
            </property>
            <property name="iconSize">
@@ -2652,7 +2652,7 @@ QPushButton::!checked:hover {
             <string>LCD Menu Items</string>
            </property>
            <property name="icon">
-            <iconset resource="../resources/resources.qrc">
+            <iconset>
              <normaloff>:/screencast_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/screencast_FILL0_wght100_GRAD0_opsz20.svg</iconset>
            </property>
            <property name="iconSize">
@@ -2680,7 +2680,7 @@ QPushButton::!checked:hover {
             <string>Encoder</string>
            </property>
            <property name="icon">
-            <iconset resource="../resources/resources.qrc">
+            <iconset>
              <normaloff>:/settings_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/settings_FILL0_wght100_GRAD0_opsz20.svg</iconset>
            </property>
            <property name="iconSize">
@@ -2703,7 +2703,7 @@ QPushButton::!checked:hover {
             <string>Speaker</string>
            </property>
            <property name="icon">
-            <iconset resource="../resources/resources.qrc">
+            <iconset>
              <normaloff>:/speaker_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/speaker_FILL0_wght100_GRAD0_opsz20.svg</iconset>
            </property>
            <property name="iconSize">
@@ -2731,7 +2731,7 @@ QPushButton::!checked:hover {
             <string>LCD Controller (WIP)</string>
            </property>
            <property name="icon">
-            <iconset resource="../resources/resources.qrc">
+            <iconset>
              <normaloff>:/screencast_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/screencast_FILL0_wght100_GRAD0_opsz20.svg</iconset>
            </property>
            <property name="iconSize">
@@ -2754,7 +2754,7 @@ QPushButton::!checked:hover {
             <string>Extra Features (WIP)</string>
            </property>
            <property name="icon">
-            <iconset resource="../resources/resources.qrc">
+            <iconset>
              <normaloff>:/discover_tune_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/discover_tune_FILL0_wght100_GRAD0_opsz20.svg</iconset>
            </property>
            <property name="iconSize">
@@ -2973,7 +2973,7 @@ QPushButton::disabled {
                <string>Open</string>
               </property>
               <property name="icon">
-               <iconset resource="../resources/resources.qrc">
+               <iconset>
                 <normaloff>:/folder_open_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/folder_open_FILL0_wght100_GRAD0_opsz20.svg</iconset>
               </property>
              </widget>
@@ -2990,7 +2990,7 @@ QPushButton::disabled {
                <string>Save</string>
               </property>
               <property name="icon">
-               <iconset resource="../resources/resources.qrc">
+               <iconset>
                 <normaloff>:/save_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/save_FILL0_wght100_GRAD0_opsz20.svg</iconset>
               </property>
              </widget>
@@ -3007,7 +3007,7 @@ QPushButton::disabled {
                <string>Reset</string>
               </property>
               <property name="icon">
-               <iconset resource="../resources/resources.qrc">
+               <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
                 <normaloff>:/restart_alt_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/restart_alt_FILL0_wght100_GRAD0_opsz20.svg</iconset>
               </property>
              </widget>
@@ -3037,7 +3037,7 @@ QPushButton::disabled {
                <string>Close</string>
               </property>
               <property name="icon">
-               <iconset resource="../resources/resources.qrc">
+               <iconset>
                 <normaloff>:/folder_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/folder_FILL0_wght100_GRAD0_opsz20.svg</iconset>
               </property>
              </widget>
@@ -3051,7 +3051,7 @@ QPushButton::disabled {
                <string>Clear</string>
               </property>
               <property name="icon">
-               <iconset resource="../resources/resources.qrc">
+               <iconset>
                 <normaloff>:/mop_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/mop_FILL0_wght100_GRAD0_opsz20.svg</iconset>
               </property>
              </widget>
@@ -3469,7 +3469,7 @@ QPushButton::disabled {
                <string>Copy All</string>
               </property>
               <property name="icon">
-               <iconset resource="../resources/resources.qrc">
+               <iconset>
                 <normaloff>:/copy_all_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/copy_all_FILL0_wght100_GRAD0_opsz20.svg</iconset>
               </property>
              </widget>
@@ -3483,7 +3483,7 @@ QPushButton::disabled {
                <string>Copy Selection</string>
               </property>
               <property name="icon">
-               <iconset resource="../resources/resources.qrc">
+               <iconset>
                 <normaloff>:/copy_all_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/copy_all_FILL0_wght100_GRAD0_opsz20.svg</iconset>
               </property>
              </widget>
@@ -3671,7 +3671,7 @@ QPushButton::hover {
                <string>Cancel</string>
               </property>
               <property name="icon">
-               <iconset resource="../resources/resources.qrc">
+               <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
                 <normaloff>:/close_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/close_FILL0_wght100_GRAD0_opsz20.svg</iconset>
               </property>
              </widget>
@@ -3685,7 +3685,7 @@ QPushButton::hover {
                <string>Clear</string>
               </property>
               <property name="icon">
-               <iconset resource="../resources/resources.qrc">
+               <iconset>
                 <normaloff>:/mop_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/mop_FILL0_wght100_GRAD0_opsz20.svg</iconset>
               </property>
              </widget>
@@ -3702,7 +3702,7 @@ QPushButton::hover {
                <string>Upload</string>
               </property>
               <property name="icon">
-               <iconset resource="../resources/resources.qrc">
+               <iconset>
                 <normaloff>:/upload_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/upload_FILL0_wght100_GRAD0_opsz20.svg</iconset>
               </property>
              </widget>
@@ -3725,7 +3725,7 @@ QPushButton::hover {
                <string>Build</string>
               </property>
               <property name="icon">
-               <iconset resource="../resources/resources.qrc">
+               <iconset>
                 <normaloff>:/build_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/build_FILL0_wght100_GRAD0_opsz20.svg</iconset>
               </property>
              </widget>
@@ -3742,7 +3742,7 @@ QPushButton::hover {
                <string>Clean</string>
               </property>
               <property name="icon">
-               <iconset resource="../resources/resources.qrc">
+               <iconset>
                 <normaloff>:/mop_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/mop_FILL0_wght100_GRAD0_opsz20.svg</iconset>
               </property>
              </widget>
@@ -3759,7 +3759,7 @@ QPushButton::hover {
                <string>Rebuild</string>
               </property>
               <property name="icon">
-               <iconset resource="../resources/resources.qrc">
+               <iconset>
                 <normaloff>:/handyman_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/handyman_FILL0_wght100_GRAD0_opsz20.svg</iconset>
               </property>
              </widget>
@@ -3776,7 +3776,7 @@ QPushButton::hover {
                <string>Generate</string>
               </property>
               <property name="icon">
-               <iconset resource="../resources/resources.qrc">
+               <iconset>
                 <normaloff>:/settings_suggest_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/settings_suggest_FILL0_wght100_GRAD0_opsz20.svg</iconset>
               </property>
              </widget>
@@ -3793,7 +3793,7 @@ QPushButton::hover {
   </widget>
   <action name="uOpenProjectAction">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/file_open_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/file_open_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -3814,7 +3814,7 @@ QPushButton::hover {
   </action>
   <action name="uOpenWorkspaceAction">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/folder_open_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/folder_open_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -3838,7 +3838,7 @@ QPushButton::hover {
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/save_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/save_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -3881,7 +3881,7 @@ QPushButton::hover {
   </action>
   <action name="uAboutAction">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
      <normaloff>:/info_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/info_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -3896,7 +3896,7 @@ QPushButton::hover {
   </action>
   <action name="uExportAction">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/export_notes_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/export_notes_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -3917,7 +3917,7 @@ QPushButton::hover {
   </action>
   <action name="uNewProjectAction">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/note_add_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/note_add_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -3932,7 +3932,7 @@ QPushButton::hover {
   </action>
   <action name="uActionOpenGitHub">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -3947,7 +3947,7 @@ QPushButton::hover {
   </action>
   <action name="uActionOpenErigEv">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -3962,7 +3962,7 @@ QPushButton::hover {
   </action>
   <action name="actionmarlinfw_org">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -3971,7 +3971,7 @@ QPushButton::hover {
   </action>
   <action name="uActionOpenMarlinHomepage">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -3980,7 +3980,7 @@ QPushButton::hover {
   </action>
   <action name="actionFirmware_Info_Documentation">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -3989,7 +3989,7 @@ QPushButton::hover {
   </action>
   <action name="actionHarwdare_Info">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -3998,7 +3998,7 @@ QPushButton::hover {
   </action>
   <action name="actionExtruder_Info">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4007,7 +4007,7 @@ QPushButton::hover {
   </action>
   <action name="actionPower_Supply">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4016,7 +4016,7 @@ QPushButton::hover {
   </action>
   <action name="actionThermal_Settings">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4025,7 +4025,7 @@ QPushButton::hover {
   </action>
   <action name="actionKinematics">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4034,7 +4034,7 @@ QPushButton::hover {
   </action>
   <action name="actionEndstops">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4043,7 +4043,7 @@ QPushButton::hover {
   </action>
   <action name="actionMovement">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4052,7 +4052,7 @@ QPushButton::hover {
   </action>
   <action name="actionZ_Probe_Options">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4061,7 +4061,7 @@ QPushButton::hover {
   </action>
   <action name="actionStepper_Drivers">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4070,7 +4070,7 @@ QPushButton::hover {
   </action>
   <action name="actionHoming_and_Bounds">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4079,7 +4079,7 @@ QPushButton::hover {
   </action>
   <action name="actionFilament_Runout_Sensor">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4088,7 +4088,7 @@ QPushButton::hover {
   </action>
   <action name="actionBed_Leveling">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4097,7 +4097,7 @@ QPushButton::hover {
   </action>
   <action name="actionHoming_Options">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4106,7 +4106,7 @@ QPushButton::hover {
   </action>
   <action name="actionAdditional_Features">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4115,7 +4115,7 @@ QPushButton::hover {
   </action>
   <action name="actionUser_Interface_Language">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4124,7 +4124,7 @@ QPushButton::hover {
   </action>
   <action name="actionSD_Card">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4133,7 +4133,7 @@ QPushButton::hover {
   </action>
   <action name="actionLCD_Menu_Items">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4142,7 +4142,7 @@ QPushButton::hover {
   </action>
   <action name="actionEncoder">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4151,7 +4151,7 @@ QPushButton::hover {
   </action>
   <action name="actionSpeaker">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4160,7 +4160,7 @@ QPushButton::hover {
   </action>
   <action name="actionLCD_Controller">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4169,7 +4169,7 @@ QPushButton::hover {
   </action>
   <action name="actionExtra_Features">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4178,7 +4178,7 @@ QPushButton::hover {
   </action>
   <action name="uActionOpenAutoBuildMarlin">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4187,7 +4187,7 @@ QPushButton::hover {
   </action>
   <action name="uActionOpenMarlinConfiguration">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4250,7 +4250,7 @@ QPushButton::hover {
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/settings_suggest_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/settings_suggest_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4265,7 +4265,7 @@ QPushButton::hover {
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/build_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/build_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4280,7 +4280,7 @@ QPushButton::hover {
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/handyman_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/handyman_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4295,7 +4295,7 @@ QPushButton::hover {
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/mop_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/mop_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4310,7 +4310,7 @@ QPushButton::hover {
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/upload_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/upload_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4325,7 +4325,7 @@ QPushButton::hover {
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/folder_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/folder_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4334,7 +4334,7 @@ QPushButton::hover {
   </action>
   <action name="uResetConfigurationAction">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
      <normaloff>:/restart_alt_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/restart_alt_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4523,9 +4523,7 @@ QPushButton::hover {
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="../resources/resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
  <buttongroups>
   <buttongroup name="buttonGroup"/>

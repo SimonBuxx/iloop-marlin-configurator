@@ -275,23 +275,7 @@ QAbstractSpinBox::down-button:off {
    <property name="spacing">
     <number>10</number>
    </property>
-   <item row="3" column="1">
-    <spacer name="verticalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>10</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="10" column="0" colspan="3">
+   <item row="10" column="0" rowspan="4" colspan="3">
     <spacer name="verticalSpacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -375,7 +359,7 @@ QAbstractSpinBox::down-button:off {
          <string/>
         </property>
         <property name="icon">
-         <iconset resource="../resources/resources.qrc">
+         <iconset>
           <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
         </property>
         <property name="iconSize">
@@ -402,10 +386,4428 @@ QAbstractSpinBox::down-button:off {
      </layout>
     </widget>
    </item>
+   <item row="4" column="0" colspan="3">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTabWidget::pane {
+	border: 1px solid black;
+}
+
+QScrollBar::vertical {
+	background: rgb(34, 35, 40);
+}
+
+QTabBar::tab {
+	color: black;
+	padding: 2px 5px;
+	margin: 0 1px;
+	background: rgb(249, 154, 0);
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	margin-top: 2px;
+}
+
+QTabBar::tab:!selected {
+	margin-top: 3px;
+}
+
+QTabBar::tab:disabled {
+	background: rgb(63, 65, 77);
+}
+
+QTabBar::scroller {
+    width: 40px;
+}
+
+QTabBar QToolButton {
+	background: rgb(249, 154, 0);
+	margin-top: 3px;
+   	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	margin-left: 2px;
+}
+
+QTabBar QToolButton::pressed {
+	margin-top: 4px;
+}
+
+QTabBar QToolButton:disabled {
+	background: rgb(63, 65, 77);
+}
+
+QTabBar QToolButton::right-arrow {
+    image: url(&quot;:/arrow_right_FILL0_wght400_GRAD0_opsz20.svg&quot;);
+}
+
+QTabBar QToolButton::left-arrow {
+	image: url(&quot;:/arrow_left_FILL0_wght400_GRAD0_opsz20.svg&quot;);
+}</string>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>X / Y / Z Coordinates</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2" columnstretch="0,0,0,0,0,0,0">
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="uXDriverTypeBox">
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="title">
+          <string>X_DRIVER_TYPE</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_7">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_3">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>Select the stepper driver for the X axis.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="Dropdown" name="uXDriverTypeDropdown">
+            <item>
+             <property name="text">
+              <string>A4988</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>A5984</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DRV8825</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LV8729</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6560</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6600</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2100</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160_STANDALONE</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QGroupBox" name="uZDriverTypeBox">
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="title">
+          <string>Z_DRIVER_TYPE</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_8">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_7">
+            <property name="text">
+             <string>Select the stepper driver for the Z axis.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_6">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="Dropdown" name="uZDriverTypeDropdown">
+            <item>
+             <property name="text">
+              <string>A4988</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>A5984</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DRV8825</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LV8729</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6560</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6600</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2100</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160_STANDALONE</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QGroupBox" name="uY2DriverTypeBox">
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="title">
+          <string>Y2_DRIVER_TYPE</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_14">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_18">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_19">
+            <property name="text">
+             <string>Select the stepper driver for the Y2 axis.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="Dropdown" name="uY2DriverTypeDropdown">
+            <item>
+             <property name="text">
+              <string>A4988</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>A5984</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DRV8825</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LV8729</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6560</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6600</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2100</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160_STANDALONE</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QGroupBox" name="uX2DriverTypeBox">
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="title">
+          <string>X2_DRIVER_TYPE</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_15">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_20">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_21">
+            <property name="text">
+             <string>Select the stepper driver for the X2 axis.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="Dropdown" name="uX2DriverTypeDropdown">
+            <item>
+             <property name="text">
+              <string>A4988</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>A5984</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DRV8825</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LV8729</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6560</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6600</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2100</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160_STANDALONE</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QGroupBox" name="uYDriverTypeBox">
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="title">
+          <string>Y_DRIVER_TYPE</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_3">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="1" colspan="2">
+           <widget class="QLabel" name="label_17">
+            <property name="text">
+             <string>Select the stepper driver for the Y axis.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_16">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="3">
+           <widget class="Dropdown" name="uYDriverTypeDropdown">
+            <item>
+             <property name="text">
+              <string>A4988</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>A5984</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DRV8825</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LV8729</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6560</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6600</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2100</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160_STANDALONE</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="QGroupBox" name="uZ4DriverTypeBox">
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="title">
+          <string>Z4_DRIVER_TYPE</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_11">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_13">
+            <property name="text">
+             <string>Select the stepper driver for the Z4 axis.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_12">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="Dropdown" name="uZ4DriverTypeDropdown">
+            <item>
+             <property name="text">
+              <string>A4988</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>A5984</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DRV8825</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LV8729</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6560</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6600</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2100</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160_STANDALONE</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QGroupBox" name="uZ3DriverTypeBox">
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="title">
+          <string>Z3_DRIVER_TYPE</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_9">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="2">
+           <widget class="QLabel" name="label_9">
+            <property name="text">
+             <string>Select the stepper driver for the Z3 axis.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_8">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1" colspan="2">
+           <widget class="Dropdown" name="uZ3DriverTypeDropdown">
+            <item>
+             <property name="text">
+              <string>A4988</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>A5984</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DRV8825</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LV8729</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6560</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6600</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2100</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160_STANDALONE</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QGroupBox" name="uZ2DriverTypeBox">
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="title">
+          <string>Z2_DRIVER_TYPE</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_12">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_14">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_15">
+            <property name="text">
+             <string>Select the stepper driver for the Z2 axis.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="Dropdown" name="uZ2DriverTypeDropdown">
+            <item>
+             <property name="text">
+              <string>A4988</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>A5984</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DRV8825</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LV8729</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6560</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6600</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2100</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160_STANDALONE</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>I / J / K Coordinates</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <item row="0" column="2">
+        <widget class="QGroupBox" name="uKDriverTypeBox">
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="title">
+          <string>K_DRIVER_TYPE</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_13">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_24">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1" colspan="2">
+           <widget class="QLabel" name="label_25">
+            <property name="text">
+             <string>Select the stepper driver for the K axis.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QGroupBox" name="uAxis6RotatesBox">
+            <property name="title">
+             <string>AXIS6_ROTATES</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_34">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_56">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_57">
+               <property name="text">
+                <string>Enable this for all axes that rotate or pivot.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="3">
+           <widget class="Dropdown" name="uKDriverTypeDropdown">
+            <item>
+             <property name="text">
+              <string>A4988</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>A5984</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DRV8825</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LV8729</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6560</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6600</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2100</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160_STANDALONE</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="0" colspan="2">
+           <widget class="QGroupBox" name="uAxis6NameBox">
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+            </property>
+            <property name="title">
+             <string>AXIS6_NAME</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_33">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_54">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_55">
+               <property name="text">
+                <string>The letter used to refer to the axis in (most) G-code commands</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0" colspan="2">
+              <widget class="Dropdown" name="uAxis6NameDropdown">
+               <item>
+                <property name="text">
+                 <string>C</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>U</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>V</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>W</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="uIDriverTypeBox">
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="title">
+          <string>I_DRIVER_TYPE</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_10">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_10">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1" colspan="2">
+           <widget class="QLabel" name="label_11">
+            <property name="text">
+             <string>Select the stepper driver for the I axis.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="3">
+           <widget class="Dropdown" name="uIDriverTypeDropdown">
+            <item>
+             <property name="text">
+              <string>A4988</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>A5984</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DRV8825</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LV8729</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6560</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6600</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2100</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160_STANDALONE</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="0" colspan="2">
+           <widget class="QGroupBox" name="uAxis4NameBox">
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+            </property>
+            <property name="title">
+             <string>AXIS4_NAME</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_42">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_72">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_73">
+               <property name="text">
+                <string>The letter used to refer to the axis in (most) G-code commands</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0" colspan="2">
+              <widget class="Dropdown" name="uAxis4NameDropdown">
+               <item>
+                <property name="text">
+                 <string>A</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>B</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>C</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>U</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>V</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>W</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QGroupBox" name="uAxis4RotatesBox">
+            <property name="title">
+             <string>AXIS4_ROTATES</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_41">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_70">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_71">
+               <property name="text">
+                <string>Enable this for all axes that rotate or pivot.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QGroupBox" name="uJDriverTypeBox">
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="title">
+          <string>J_DRIVER_TYPE</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_16">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_22">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1" colspan="2">
+           <widget class="QLabel" name="label_23">
+            <property name="text">
+             <string>Select the stepper driver for the J axis.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0" colspan="2">
+           <widget class="QGroupBox" name="uAxis5NameBox">
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+            </property>
+            <property name="title">
+             <string>AXIS5_NAME</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_31">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_50">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_51">
+               <property name="text">
+                <string>The letter used to refer to the axis in (most) G-code commands</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0" colspan="2">
+              <widget class="Dropdown" name="uAxis5NameDropdown">
+               <item>
+                <property name="text">
+                 <string>B</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>C</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>U</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>V</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>W</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QGroupBox" name="uAxis5RotatesBox">
+            <property name="title">
+             <string>AXIS5_ROTATES</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_32">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_52">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_53">
+               <property name="text">
+                <string>Enable this for all axes that rotate or pivot.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="3">
+           <widget class="Dropdown" name="uJDriverTypeDropdown">
+            <item>
+             <property name="text">
+              <string>A4988</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>A5984</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DRV8825</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LV8729</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6560</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6600</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2100</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160_STANDALONE</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_3">
+      <attribute name="title">
+       <string>U / V / W Coordinates</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_6">
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <item row="0" column="2">
+        <widget class="QGroupBox" name="uWDriverTypeBox">
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="title">
+          <string>W_DRIVER_TYPE</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_19">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_30">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1" colspan="2">
+           <widget class="QLabel" name="label_31">
+            <property name="text">
+             <string>Select the stepper driver for the W axis.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="3">
+           <widget class="Dropdown" name="uWDriverTypeDropdown">
+            <item>
+             <property name="text">
+              <string>A4988</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>A5984</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DRV8825</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LV8729</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6560</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6600</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2100</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160_STANDALONE</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="0" colspan="2">
+           <widget class="QGroupBox" name="uAxis9NameBox">
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+            </property>
+            <property name="title">
+             <string>AXIS9_NAME</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_40">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_68">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_69">
+               <property name="text">
+                <string>The letter used to refer to the axis in (most) G-code commands</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0" colspan="2">
+              <widget class="Dropdown" name="uAxis9NameDropdown">
+               <item>
+                <property name="text">
+                 <string>W</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QGroupBox" name="uAxis9RotatesBox">
+            <property name="title">
+             <string>AXIS9_ROTATES</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_39">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_66">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_67">
+               <property name="text">
+                <string>Enable this for all axes that rotate or pivot.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="uUDriverTypeBox">
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="title">
+          <string>U_DRIVER_TYPE</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_17">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_26">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1" colspan="2">
+           <widget class="QLabel" name="label_27">
+            <property name="text">
+             <string>Select the stepper driver for the U axis.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="3">
+           <widget class="Dropdown" name="uUDriverTypeDropdown">
+            <item>
+             <property name="text">
+              <string>A4988</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>A5984</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DRV8825</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LV8729</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6560</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6600</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2100</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160_STANDALONE</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="0" colspan="2">
+           <widget class="QGroupBox" name="uAxis7NameBox">
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+            </property>
+            <property name="title">
+             <string>AXIS7_NAME</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_35">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_58">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_59">
+               <property name="text">
+                <string>The letter used to refer to the axis in (most) G-code commands</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0" colspan="2">
+              <widget class="Dropdown" name="uAxis7NameDropdown">
+               <item>
+                <property name="text">
+                 <string>U</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>V</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>W</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QGroupBox" name="uAxis7RotatesBox">
+            <property name="title">
+             <string>AXIS7_ROTATES</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_36">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_60">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_61">
+               <property name="text">
+                <string>Enable this for all axes that rotate or pivot.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QGroupBox" name="uVDriverTypeBox">
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="title">
+          <string>V_DRIVER_TYPE</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_18">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_28">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1" colspan="2">
+           <widget class="QLabel" name="label_29">
+            <property name="text">
+             <string>Select the stepper driver for the V axis.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="3">
+           <widget class="Dropdown" name="uVDriverTypeDropdown">
+            <item>
+             <property name="text">
+              <string>A4988</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>A5984</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DRV8825</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LV8729</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6560</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6600</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2100</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160_STANDALONE</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="0" colspan="2">
+           <widget class="QGroupBox" name="uAxis8NameBox">
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+            </property>
+            <property name="title">
+             <string>AXIS8_NAME</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_38">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_64">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_65">
+               <property name="text">
+                <string>The letter used to refer to the axis in (most) G-code commands</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0" colspan="2">
+              <widget class="Dropdown" name="uAxis8NameDropdown">
+               <item>
+                <property name="text">
+                 <string>V</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>W</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QGroupBox" name="uAxis8RotatesBox">
+            <property name="title">
+             <string>AXIS8_ROTATES</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_37">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_62">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_63">
+               <property name="text">
+                <string>Enable this for all axes that rotate or pivot.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_4">
+      <attribute name="title">
+       <string>Extruders</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_28">
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <item row="1" column="0">
+        <widget class="QGroupBox" name="uE4DriverTypeBox">
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="title">
+          <string>E4_DRIVER_TYPE</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_24">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_40">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_41">
+            <property name="text">
+             <string>Select the stepper driver for the E4 extruder.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="Dropdown" name="uE4DriverTypeDropdown">
+            <item>
+             <property name="text">
+              <string>A4988</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>A5984</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DRV8825</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LV8729</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6560</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6600</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2100</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160_STANDALONE</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QGroupBox" name="uE3DriverTypeBox">
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="title">
+          <string>E3_DRIVER_TYPE</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_23">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_38">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_39">
+            <property name="text">
+             <string>Select the stepper driver for the E3 extruder.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="Dropdown" name="uE3DriverTypeDropdown">
+            <item>
+             <property name="text">
+              <string>A4988</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>A5984</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DRV8825</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LV8729</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6560</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6600</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2100</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160_STANDALONE</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="QGroupBox" name="uE7DriverTypeBox">
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="title">
+          <string>E7_DRIVER_TYPE</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_27">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_46">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_47">
+            <property name="text">
+             <string>Select the stepper driver for the E7 extruder.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="Dropdown" name="uE7DriverTypeDropdown">
+            <item>
+             <property name="text">
+              <string>A4988</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>A5984</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DRV8825</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LV8729</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6560</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6600</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2100</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160_STANDALONE</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QGroupBox" name="uE2DriverTypeBox">
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="title">
+          <string>E2_DRIVER_TYPE</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_22">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_36">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_37">
+            <property name="text">
+             <string>Select the stepper driver for the E2 extruder.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="Dropdown" name="uE2DriverTypeDropdown">
+            <item>
+             <property name="text">
+              <string>A4988</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>A5984</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DRV8825</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LV8729</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6560</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6600</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2100</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160_STANDALONE</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QGroupBox" name="uE6DriverTypeBox">
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="title">
+          <string>E6_DRIVER_TYPE</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_26">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_44">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_45">
+            <property name="text">
+             <string>Select the stepper driver for the E6 extruder.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="Dropdown" name="uE6DriverTypeDropdown">
+            <item>
+             <property name="text">
+              <string>A4988</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>A5984</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DRV8825</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LV8729</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6560</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6600</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2100</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160_STANDALONE</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QGroupBox" name="uE5DriverTypeBox">
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="title">
+          <string>E5_DRIVER_TYPE</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_25">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_43">
+            <property name="text">
+             <string>Select the stepper driver for the E5 extruder.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_42">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="Dropdown" name="uE5DriverTypeDropdown">
+            <item>
+             <property name="text">
+              <string>A4988</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>A5984</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DRV8825</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LV8729</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6560</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6600</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2100</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160_STANDALONE</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QGroupBox" name="uE1DriverTypeBox">
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="title">
+          <string>E1_DRIVER_TYPE</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_21">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_34">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_35">
+            <property name="text">
+             <string>Select the stepper driver for the E1 extruder.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="Dropdown" name="uE1DriverTypeDropdown">
+            <item>
+             <property name="text">
+              <string>A4988</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>A5984</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DRV8825</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LV8729</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6560</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6600</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2100</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160_STANDALONE</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="uE0DriverTypeBox">
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="title">
+          <string>E0_DRIVER_TYPE</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_20">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_32">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_33">
+            <property name="text">
+             <string>Select the stepper driver for the E0 extruder.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="Dropdown" name="uE0DriverTypeDropdown">
+            <item>
+             <property name="text">
+              <string>A4988</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>A5984</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DRV8825</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LV8729</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6560</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TB6600</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2100</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2160_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2208_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2209_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC26X_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC2660_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5130_STANDALONE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TMC5160_STANDALONE</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="3" column="0" colspan="3">
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>10</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
   </layout>
  </widget>
- <resources>
-  <include location="../resources/resources.qrc"/>
- </resources>
+ <customwidgets>
+  <customwidget>
+   <class>Dropdown</class>
+   <extends>QComboBox</extends>
+   <header>Dropdown.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
  <connections/>
 </ui>

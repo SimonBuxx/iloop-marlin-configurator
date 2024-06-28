@@ -452,6 +452,64 @@ static constexpr auto ENDSTOP_NOISE_THRESHOLD{"2"};
 static constexpr auto ENABLE_ENDSTOP_NOISE_THRESHOLD{false};
 static constexpr auto DETECT_BROKEN_ENDSTOP{false};
 
+// Stepper Drivers
+static constexpr auto X_DRIVER_TYPE{"A4988"};
+static constexpr auto Y_DRIVER_TYPE{"A4988"};
+static constexpr auto Z_DRIVER_TYPE{"A4988"};
+static constexpr auto X2_DRIVER_TYPE{"A4988"};
+static constexpr auto Y2_DRIVER_TYPE{"A4988"};
+static constexpr auto Z2_DRIVER_TYPE{"A4988"};
+static constexpr auto Z3_DRIVER_TYPE{"A4988"};
+static constexpr auto Z4_DRIVER_TYPE{"A4988"};
+static constexpr auto ENABLE_X_DRIVER_TYPE{true};
+static constexpr auto ENABLE_Y_DRIVER_TYPE{true};
+static constexpr auto ENABLE_Z_DRIVER_TYPE{true};
+static constexpr auto ENABLE_X2_DRIVER_TYPE{false};
+static constexpr auto ENABLE_Y2_DRIVER_TYPE{false};
+static constexpr auto ENABLE_Z2_DRIVER_TYPE{false};
+static constexpr auto ENABLE_Z3_DRIVER_TYPE{false};
+static constexpr auto ENABLE_Z4_DRIVER_TYPE{false};
+static constexpr auto I_DRIVER_TYPE{"A4988"};
+static constexpr auto J_DRIVER_TYPE{"A4988"};
+static constexpr auto K_DRIVER_TYPE{"A4988"};
+static constexpr auto ENABLE_I_DRIVER_TYPE{false};
+static constexpr auto ENABLE_J_DRIVER_TYPE{false};
+static constexpr auto ENABLE_K_DRIVER_TYPE{false};
+static constexpr auto U_DRIVER_TYPE{"A4988"};
+static constexpr auto V_DRIVER_TYPE{"A4988"};
+static constexpr auto W_DRIVER_TYPE{"A4988"};
+static constexpr auto ENABLE_U_DRIVER_TYPE{false};
+static constexpr auto ENABLE_V_DRIVER_TYPE{false};
+static constexpr auto ENABLE_W_DRIVER_TYPE{false};
+static constexpr auto E0_DRIVER_TYPE{"A4988"};
+static constexpr auto E1_DRIVER_TYPE{"A4988"};
+static constexpr auto E2_DRIVER_TYPE{"A4988"};
+static constexpr auto E3_DRIVER_TYPE{"A4988"};
+static constexpr auto E4_DRIVER_TYPE{"A4988"};
+static constexpr auto E5_DRIVER_TYPE{"A4988"};
+static constexpr auto E6_DRIVER_TYPE{"A4988"};
+static constexpr auto E7_DRIVER_TYPE{"A4988"};
+static constexpr auto ENABLE_E0_DRIVER_TYPE{true};
+static constexpr auto ENABLE_E1_DRIVER_TYPE{false};
+static constexpr auto ENABLE_E2_DRIVER_TYPE{false};
+static constexpr auto ENABLE_E3_DRIVER_TYPE{false};
+static constexpr auto ENABLE_E4_DRIVER_TYPE{false};
+static constexpr auto ENABLE_E5_DRIVER_TYPE{false};
+static constexpr auto ENABLE_E6_DRIVER_TYPE{false};
+static constexpr auto ENABLE_E7_DRIVER_TYPE{false};
+static constexpr auto AXIS4_NAME{"A"};
+static constexpr auto AXIS5_NAME{"B"};
+static constexpr auto AXIS6_NAME{"C"};
+static constexpr auto AXIS4_ROTATES{true};
+static constexpr auto AXIS5_ROTATES{true};
+static constexpr auto AXIS6_ROTATES{true};
+static constexpr auto AXIS7_NAME{"U"};
+static constexpr auto AXIS8_NAME{"V"};
+static constexpr auto AXIS9_NAME{"W"};
+static constexpr auto AXIS7_ROTATES{false};
+static constexpr auto AXIS8_ROTATES{false};
+static constexpr auto AXIS9_ROTATES{false};
+
 // Homing And Bounds
 static constexpr auto NO_MOTION_BEFORE_HOMING{false};
 static constexpr auto HOME_AFTER_DEACTIVATE{false};
@@ -1559,6 +1617,137 @@ public:
 };
 
 ///
+/// \brief The StepperDriversConfiguration struct contains stepper drivers configurations
+///
+struct StepperDriversConfiguration : public PageConfiguration
+{
+    QString X_DRIVER_TYPE{defaults::X_DRIVER_TYPE};
+    QString Y_DRIVER_TYPE{defaults::Y_DRIVER_TYPE};
+    QString Z_DRIVER_TYPE{defaults::Z_DRIVER_TYPE};
+    QString X2_DRIVER_TYPE{defaults::X2_DRIVER_TYPE};
+    QString Y2_DRIVER_TYPE{defaults::Y2_DRIVER_TYPE};
+    QString Z2_DRIVER_TYPE{defaults::Z2_DRIVER_TYPE};
+    QString Z3_DRIVER_TYPE{defaults::Z3_DRIVER_TYPE};
+    QString Z4_DRIVER_TYPE{defaults::Z4_DRIVER_TYPE};
+    bool ENABLE_X_DRIVER_TYPE{defaults::ENABLE_X_DRIVER_TYPE};
+    bool ENABLE_Y_DRIVER_TYPE{defaults::ENABLE_Y_DRIVER_TYPE};
+    bool ENABLE_Z_DRIVER_TYPE{defaults::ENABLE_Z_DRIVER_TYPE};
+    bool ENABLE_X2_DRIVER_TYPE{defaults::ENABLE_X2_DRIVER_TYPE};
+    bool ENABLE_Y2_DRIVER_TYPE{defaults::ENABLE_Y2_DRIVER_TYPE};
+    bool ENABLE_Z2_DRIVER_TYPE{defaults::ENABLE_Z2_DRIVER_TYPE};
+    bool ENABLE_Z3_DRIVER_TYPE{defaults::ENABLE_Z3_DRIVER_TYPE};
+    bool ENABLE_Z4_DRIVER_TYPE{defaults::ENABLE_Z4_DRIVER_TYPE};
+    QString I_DRIVER_TYPE{defaults::I_DRIVER_TYPE};
+    QString J_DRIVER_TYPE{defaults::J_DRIVER_TYPE};
+    QString K_DRIVER_TYPE{defaults::K_DRIVER_TYPE};
+    bool ENABLE_I_DRIVER_TYPE{defaults::ENABLE_I_DRIVER_TYPE};
+    bool ENABLE_J_DRIVER_TYPE{defaults::ENABLE_J_DRIVER_TYPE};
+    bool ENABLE_K_DRIVER_TYPE{defaults::ENABLE_K_DRIVER_TYPE};
+    QString U_DRIVER_TYPE{defaults::U_DRIVER_TYPE};
+    QString V_DRIVER_TYPE{defaults::V_DRIVER_TYPE};
+    QString W_DRIVER_TYPE{defaults::W_DRIVER_TYPE};
+    bool ENABLE_U_DRIVER_TYPE{defaults::ENABLE_U_DRIVER_TYPE};
+    bool ENABLE_V_DRIVER_TYPE{defaults::ENABLE_V_DRIVER_TYPE};
+    bool ENABLE_W_DRIVER_TYPE{defaults::ENABLE_W_DRIVER_TYPE};
+    QString E0_DRIVER_TYPE{defaults::E0_DRIVER_TYPE};
+    QString E1_DRIVER_TYPE{defaults::E1_DRIVER_TYPE};
+    QString E2_DRIVER_TYPE{defaults::E2_DRIVER_TYPE};
+    QString E3_DRIVER_TYPE{defaults::E3_DRIVER_TYPE};
+    QString E4_DRIVER_TYPE{defaults::E4_DRIVER_TYPE};
+    QString E5_DRIVER_TYPE{defaults::E5_DRIVER_TYPE};
+    QString E6_DRIVER_TYPE{defaults::E6_DRIVER_TYPE};
+    QString E7_DRIVER_TYPE{defaults::E7_DRIVER_TYPE};
+    bool ENABLE_E0_DRIVER_TYPE{defaults::ENABLE_E0_DRIVER_TYPE};
+    bool ENABLE_E1_DRIVER_TYPE{defaults::ENABLE_E1_DRIVER_TYPE};
+    bool ENABLE_E2_DRIVER_TYPE{defaults::ENABLE_E2_DRIVER_TYPE};
+    bool ENABLE_E3_DRIVER_TYPE{defaults::ENABLE_E3_DRIVER_TYPE};
+    bool ENABLE_E4_DRIVER_TYPE{defaults::ENABLE_E4_DRIVER_TYPE};
+    bool ENABLE_E5_DRIVER_TYPE{defaults::ENABLE_E5_DRIVER_TYPE};
+    bool ENABLE_E6_DRIVER_TYPE{defaults::ENABLE_E6_DRIVER_TYPE};
+    bool ENABLE_E7_DRIVER_TYPE{defaults::ENABLE_E7_DRIVER_TYPE};
+    QString AXIS4_NAME{defaults::AXIS4_NAME};
+    QString AXIS5_NAME{defaults::AXIS5_NAME};
+    QString AXIS6_NAME{defaults::AXIS6_NAME};
+    bool AXIS4_ROTATES{defaults::AXIS4_ROTATES};
+    bool AXIS5_ROTATES{defaults::AXIS5_ROTATES};
+    bool AXIS6_ROTATES{defaults::AXIS6_ROTATES};
+    QString AXIS7_NAME{defaults::AXIS7_NAME};
+    QString AXIS8_NAME{defaults::AXIS8_NAME};
+    QString AXIS9_NAME{defaults::AXIS9_NAME};
+    bool AXIS7_ROTATES{defaults::AXIS7_ROTATES};
+    bool AXIS8_ROTATES{defaults::AXIS8_ROTATES};
+    bool AXIS9_ROTATES{defaults::AXIS9_ROTATES};
+
+public:
+    /// \brief Converts the configuration into a JSON object
+    ///
+    /// \return a JSON object containing the configuration data
+    QJsonObject ToJson(void) const override
+    {
+        QJsonObject json;
+
+        json["X_DRIVER_TYPE"] = X_DRIVER_TYPE;
+        json["Y_DRIVER_TYPE"] = Y_DRIVER_TYPE;
+        json["Z_DRIVER_TYPE"] = Z_DRIVER_TYPE;
+        json["X2_DRIVER_TYPE"] = X2_DRIVER_TYPE;
+        json["Y2_DRIVER_TYPE"] = Y2_DRIVER_TYPE;
+        json["Z2_DRIVER_TYPE"] = Z2_DRIVER_TYPE;
+        json["Z3_DRIVER_TYPE"] = Z3_DRIVER_TYPE;
+        json["Z4_DRIVER_TYPE"] = Z4_DRIVER_TYPE;
+        json["ENABLE_X_DRIVER_TYPE"] = ENABLE_X_DRIVER_TYPE;
+        json["ENABLE_Y_DRIVER_TYPE"] = ENABLE_Y_DRIVER_TYPE;
+        json["ENABLE_Z_DRIVER_TYPE"] = ENABLE_Z_DRIVER_TYPE;
+        json["ENABLE_X2_DRIVER_TYPE"] = ENABLE_X2_DRIVER_TYPE;
+        json["ENABLE_Y2_DRIVER_TYPE"] = ENABLE_Y2_DRIVER_TYPE;
+        json["ENABLE_Z2_DRIVER_TYPE"] = ENABLE_Z2_DRIVER_TYPE;
+        json["ENABLE_Z3_DRIVER_TYPE"] = ENABLE_Z3_DRIVER_TYPE;
+        json["ENABLE_Z4_DRIVER_TYPE"] = ENABLE_Z4_DRIVER_TYPE;
+        json["I_DRIVER_TYPE"] = I_DRIVER_TYPE;
+        json["J_DRIVER_TYPE"] = J_DRIVER_TYPE;
+        json["K_DRIVER_TYPE"] = K_DRIVER_TYPE;
+        json["ENABLE_I_DRIVER_TYPE"] = ENABLE_I_DRIVER_TYPE;
+        json["ENABLE_J_DRIVER_TYPE"] = ENABLE_J_DRIVER_TYPE;
+        json["ENABLE_K_DRIVER_TYPE"] = ENABLE_K_DRIVER_TYPE;
+        json["U_DRIVER_TYPE"] = U_DRIVER_TYPE;
+        json["V_DRIVER_TYPE"] = V_DRIVER_TYPE;
+        json["W_DRIVER_TYPE"] = W_DRIVER_TYPE;
+        json["ENABLE_U_DRIVER_TYPE"] = ENABLE_U_DRIVER_TYPE;
+        json["ENABLE_V_DRIVER_TYPE"] = ENABLE_V_DRIVER_TYPE;
+        json["ENABLE_W_DRIVER_TYPE"] = ENABLE_W_DRIVER_TYPE;
+        json["E0_DRIVER_TYPE"] = E0_DRIVER_TYPE;
+        json["E1_DRIVER_TYPE"] = E1_DRIVER_TYPE;
+        json["E2_DRIVER_TYPE"] = E2_DRIVER_TYPE;
+        json["E3_DRIVER_TYPE"] = E3_DRIVER_TYPE;
+        json["E4_DRIVER_TYPE"] = E4_DRIVER_TYPE;
+        json["E5_DRIVER_TYPE"] = E5_DRIVER_TYPE;
+        json["E6_DRIVER_TYPE"] = E6_DRIVER_TYPE;
+        json["E7_DRIVER_TYPE"] = E7_DRIVER_TYPE;
+        json["ENABLE_E0_DRIVER_TYPE"] = ENABLE_E0_DRIVER_TYPE;
+        json["ENABLE_E1_DRIVER_TYPE"] = ENABLE_E1_DRIVER_TYPE;
+        json["ENABLE_E2_DRIVER_TYPE"] = ENABLE_E2_DRIVER_TYPE;
+        json["ENABLE_E3_DRIVER_TYPE"] = ENABLE_E3_DRIVER_TYPE;
+        json["ENABLE_E4_DRIVER_TYPE"] = ENABLE_E4_DRIVER_TYPE;
+        json["ENABLE_E5_DRIVER_TYPE"] = ENABLE_E5_DRIVER_TYPE;
+        json["ENABLE_E6_DRIVER_TYPE"] = ENABLE_E6_DRIVER_TYPE;
+        json["ENABLE_E7_DRIVER_TYPE"] = ENABLE_E7_DRIVER_TYPE;
+        json["AXIS4_NAME"] = AXIS4_NAME;
+        json["AXIS5_NAME"] = AXIS5_NAME;
+        json["AXIS6_NAME"] = AXIS6_NAME;
+        json["AXIS4_ROTATES"] = AXIS4_ROTATES;
+        json["AXIS5_ROTATES"] = AXIS5_ROTATES;
+        json["AXIS6_ROTATES"] = AXIS6_ROTATES;
+        json["AXIS7_NAME"] = AXIS7_NAME;
+        json["AXIS8_NAME"] = AXIS8_NAME;
+        json["AXIS9_NAME"] = AXIS9_NAME;
+        json["AXIS7_ROTATES"] = AXIS7_ROTATES;
+        json["AXIS8_ROTATES"] = AXIS8_ROTATES;
+        json["AXIS9_ROTATES"] = AXIS9_ROTATES;
+
+        return json;
+    }
+};
+
+///
 /// \brief The HomingAndBoundsConfiguration struct contains homing and bounds configurations
 ///
 struct HomingAndBoundsConfiguration : public PageConfiguration
@@ -2112,6 +2301,7 @@ struct Configuration
     ThermalSettingsConfiguration thermalSettings;
     KinematicsConfiguration kinematics;
     EndstopsConfiguration endstops;
+    StepperDriversConfiguration stepperDrivers;
     HomingAndBoundsConfiguration homingAndBounds;
     FilamentRunoutSensorConfiguration filamentRunoutSensor;
     HomingOptionsConfiguration homingOptions;
@@ -2136,6 +2326,7 @@ public:
         json["thermalSettings"] = thermalSettings.ToJson();
         json["kinematics"] = kinematics.ToJson();
         json["endstops"] = endstops.ToJson();
+        json["stepperDrivers"] = stepperDrivers.ToJson();
         json["homingAndBounds"] = homingAndBounds.ToJson();
         json["filamentRunoutSensor"] = filamentRunoutSensor.ToJson();
         json["homingOptions"] = homingOptions.ToJson();

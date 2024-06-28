@@ -264,7 +264,7 @@ inline void SetConfig(double& pConfigItem, const T& pWidget)
     pConfigItem = pWidget->value();
 }
 
-inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const Dropdown* pWidget, bool pCommentOut, const QString& pParam, bool pUseItemInBrackets = false)
+inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const Dropdown* pWidget, bool pCommentOut, const QString& pParam, bool pUseItemInBrackets = false, bool pUseSingleBrackets = false)
 {
     if (pUseItemInBrackets)
     {
@@ -272,7 +272,7 @@ inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const Drop
     }
     else
     {
-        pOutput.replaceInStrings(pTagName, QString("%0#define %1 %2").arg((!pWidget->isEnabled() || pCommentOut) ? "//" : "", pParam, (!pWidget->isEnabled() || pCommentOut) ? "" : pWidget->currentText()));
+        pOutput.replaceInStrings(pTagName, QString("%0#define %1 %2").arg((!pWidget->isEnabled() || pCommentOut) ? "//" : "", pParam, (!pWidget->isEnabled() || pCommentOut) ? "" : (pUseSingleBrackets ? "'" + pWidget->currentText() + "'": pWidget->currentText())));
     }
 }
 
