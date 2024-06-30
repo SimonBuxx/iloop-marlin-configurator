@@ -509,6 +509,73 @@ static constexpr auto AXIS9_NAME{"W"};
 static constexpr auto AXIS7_ROTATES{false};
 static constexpr auto AXIS8_ROTATES{false};
 static constexpr auto AXIS9_ROTATES{false};
+static constexpr auto X_ENABLE_ON{"0"};
+static constexpr auto Y_ENABLE_ON{"0"};
+static constexpr auto Z_ENABLE_ON{"0"};
+static constexpr auto E_ENABLE_ON{"0"};
+static constexpr auto I_ENABLE_ON{"0"};
+static constexpr auto J_ENABLE_ON{"0"};
+static constexpr auto K_ENABLE_ON{"0"};
+static constexpr auto U_ENABLE_ON{"0"};
+static constexpr auto V_ENABLE_ON{"0"};
+static constexpr auto W_ENABLE_ON{"0"};
+static constexpr auto ENABLE_X_ENABLE_ON{true};
+static constexpr auto ENABLE_Y_ENABLE_ON{true};
+static constexpr auto ENABLE_Z_ENABLE_ON{true};
+static constexpr auto ENABLE_E_ENABLE_ON{true};
+static constexpr auto ENABLE_I_ENABLE_ON{false};
+static constexpr auto ENABLE_J_ENABLE_ON{false};
+static constexpr auto ENABLE_K_ENABLE_ON{false};
+static constexpr auto ENABLE_U_ENABLE_ON{false};
+static constexpr auto ENABLE_V_ENABLE_ON{false};
+static constexpr auto ENABLE_W_ENABLE_ON{false};
+static constexpr auto DISABLE_X{"false"};
+static constexpr auto DISABLE_Y{"false"};
+static constexpr auto DISABLE_Z{"false"};
+static constexpr auto DISABLE_E{"false"};
+static constexpr auto DISABLE_I{"false"};
+static constexpr auto DISABLE_J{"false"};
+static constexpr auto DISABLE_K{"false"};
+static constexpr auto DISABLE_U{"false"};
+static constexpr auto DISABLE_V{"false"};
+static constexpr auto DISABLE_W{"false"};
+static constexpr auto ENABLE_DISABLE_X{true};
+static constexpr auto ENABLE_DISABLE_Y{true};
+static constexpr auto ENABLE_DISABLE_Z{true};
+static constexpr auto ENABLE_DISABLE_I{false};
+static constexpr auto ENABLE_DISABLE_J{false};
+static constexpr auto ENABLE_DISABLE_K{false};
+static constexpr auto ENABLE_DISABLE_U{false};
+static constexpr auto ENABLE_DISABLE_V{false};
+static constexpr auto ENABLE_DISABLE_W{false};
+static constexpr auto DISABLE_INACTIVE_EXTRUDER{true};
+static constexpr auto INVERT_X_DIR{"false"};
+static constexpr auto INVERT_Y_DIR{"true"};
+static constexpr auto INVERT_Z_DIR{"false"};
+static constexpr auto INVERT_I_DIR{"false"};
+static constexpr auto INVERT_J_DIR{"false"};
+static constexpr auto INVERT_K_DIR{"false"};
+static constexpr auto INVERT_U_DIR{"false"};
+static constexpr auto INVERT_V_DIR{"false"};
+static constexpr auto INVERT_W_DIR{"false"};
+static constexpr auto ENABLE_INVERT_X_DIR{true};
+static constexpr auto ENABLE_INVERT_Y_DIR{true};
+static constexpr auto ENABLE_INVERT_Z_DIR{true};
+static constexpr auto ENABLE_INVERT_I_DIR{false};
+static constexpr auto ENABLE_INVERT_J_DIR{false};
+static constexpr auto ENABLE_INVERT_K_DIR{false};
+static constexpr auto ENABLE_INVERT_U_DIR{false};
+static constexpr auto ENABLE_INVERT_V_DIR{false};
+static constexpr auto ENABLE_INVERT_W_DIR{false};
+static constexpr auto INVERT_E0_DIR{"false"};
+static constexpr auto INVERT_E1_DIR{"false"};
+static constexpr auto INVERT_E2_DIR{"false"};
+static constexpr auto INVERT_E3_DIR{"false"};
+static constexpr auto INVERT_E4_DIR{"false"};
+static constexpr auto INVERT_E5_DIR{"false"};
+static constexpr auto INVERT_E6_DIR{"false"};
+static constexpr auto INVERT_E7_DIR{"false"};
+static constexpr auto DISABLE_REDUCED_ACCURACY_WARNING{false};
 
 // Homing And Bounds
 static constexpr auto NO_MOTION_BEFORE_HOMING{false};
@@ -641,6 +708,34 @@ static constexpr auto FILAMENT_RUNOUT_SCRIPT{"M600"};
 static constexpr auto FILAMENT_RUNOUT_DISTANCE_MM{25};
 static constexpr auto ENABLE_FILAMENT_RUNOUT_DISTANCE_MM{false};
 static constexpr auto FILAMENT_MOTION_SENSOR{false};
+
+// Bed Leveling
+static constexpr auto AUTO_BED_LEVELING_3POINT{false};
+static constexpr auto AUTO_BED_LEVELING_LINEAR{false};
+static constexpr auto AUTO_BED_LEVELING_BILINEAR{false};
+static constexpr auto AUTO_BED_LEVELING_UBL{false};
+static constexpr auto MESH_BED_LEVELING{false};
+static constexpr auto RESTORE_LEVELING_AFTER_G28{false};
+static constexpr auto ENABLE_LEVELING_AFTER_G28{false};
+static constexpr auto LEVELING_NOZZLE_TEMP{120};
+static constexpr auto LEVELING_BED_TEMP{50};
+static constexpr auto BD_SENSOR{false};
+static constexpr auto DEBUG_LEVELING_FEATURE{false};
+static constexpr auto MANUAL_PROBE_START_Z{0.2f};
+static constexpr auto ENABLE_MANUAL_PROBE_START_Z{true};
+static constexpr auto ENABLE_LEVELING_FADE_HEIGHT{true};
+static constexpr auto DEFAULT_LEVELING_FADE_HEIGHT{10.0f};
+static constexpr auto SEGMENT_LEVELED_MOVES{true};
+static constexpr auto LEVELED_SEGMENT_LENGTH{5.0f};
+static constexpr auto G26_MESH_VALIDATION{false};
+static constexpr auto MESH_TEST_NOZZLE_SIZE{0.4f};
+static constexpr auto MESH_TEST_LAYER_HEIGHT{0.2f};
+static constexpr auto MESH_TEST_HOTEND_TEMP{205};
+static constexpr auto MESH_TEST_BED_TEMP{60};
+static constexpr auto G26_XY_FEEDRATE{20};
+static constexpr auto G26_XY_FEEDRATE_TRAVEL{100};
+static constexpr auto G26_RETRACT_MULTIPLIER{1.0f};
+static constexpr auto PREHEAT_BEFORE_LEVELING{false};
 
 // Homing Options
 static constexpr auto BED_CENTER_AT_0_0{false};
@@ -1677,6 +1772,73 @@ struct StepperDriversConfiguration : public PageConfiguration
     bool AXIS7_ROTATES{defaults::AXIS7_ROTATES};
     bool AXIS8_ROTATES{defaults::AXIS8_ROTATES};
     bool AXIS9_ROTATES{defaults::AXIS9_ROTATES};
+    QString X_ENABLE_ON{defaults::X_ENABLE_ON};
+    QString Y_ENABLE_ON{defaults::Y_ENABLE_ON};
+    QString Z_ENABLE_ON{defaults::Z_ENABLE_ON};
+    QString E_ENABLE_ON{defaults::E_ENABLE_ON};
+    QString I_ENABLE_ON{defaults::I_ENABLE_ON};
+    QString J_ENABLE_ON{defaults::J_ENABLE_ON};
+    QString K_ENABLE_ON{defaults::K_ENABLE_ON};
+    QString U_ENABLE_ON{defaults::U_ENABLE_ON};
+    QString V_ENABLE_ON{defaults::V_ENABLE_ON};
+    QString W_ENABLE_ON{defaults::W_ENABLE_ON};
+    bool ENABLE_X_ENABLE_ON{defaults::ENABLE_X_ENABLE_ON};
+    bool ENABLE_Y_ENABLE_ON{defaults::ENABLE_Y_ENABLE_ON};
+    bool ENABLE_Z_ENABLE_ON{defaults::ENABLE_Z_ENABLE_ON};
+    bool ENABLE_E_ENABLE_ON{defaults::ENABLE_E_ENABLE_ON};
+    bool ENABLE_I_ENABLE_ON{defaults::ENABLE_I_ENABLE_ON};
+    bool ENABLE_J_ENABLE_ON{defaults::ENABLE_J_ENABLE_ON};
+    bool ENABLE_K_ENABLE_ON{defaults::ENABLE_K_ENABLE_ON};
+    bool ENABLE_U_ENABLE_ON{defaults::ENABLE_U_ENABLE_ON};
+    bool ENABLE_V_ENABLE_ON{defaults::ENABLE_V_ENABLE_ON};
+    bool ENABLE_W_ENABLE_ON{defaults::ENABLE_W_ENABLE_ON};
+    QString DISABLE_X{defaults::DISABLE_X};
+    QString DISABLE_Y{defaults::DISABLE_Y};
+    QString DISABLE_Z{defaults::DISABLE_Z};
+    QString DISABLE_E{defaults::DISABLE_E};
+    QString DISABLE_I{defaults::DISABLE_I};
+    QString DISABLE_J{defaults::DISABLE_J};
+    QString DISABLE_K{defaults::DISABLE_K};
+    QString DISABLE_U{defaults::DISABLE_U};
+    QString DISABLE_V{defaults::DISABLE_V};
+    QString DISABLE_W{defaults::DISABLE_W};
+    bool ENABLE_DISABLE_X{defaults::ENABLE_DISABLE_X};
+    bool ENABLE_DISABLE_Y{defaults::ENABLE_DISABLE_Y};
+    bool ENABLE_DISABLE_Z{defaults::ENABLE_DISABLE_Z};
+    bool ENABLE_DISABLE_I{defaults::ENABLE_DISABLE_I};
+    bool ENABLE_DISABLE_J{defaults::ENABLE_DISABLE_J};
+    bool ENABLE_DISABLE_K{defaults::ENABLE_DISABLE_K};
+    bool ENABLE_DISABLE_U{defaults::ENABLE_DISABLE_U};
+    bool ENABLE_DISABLE_V{defaults::ENABLE_DISABLE_V};
+    bool ENABLE_DISABLE_W{defaults::ENABLE_DISABLE_W};
+    bool DISABLE_INACTIVE_EXTRUDER{defaults::DISABLE_INACTIVE_EXTRUDER};
+    QString INVERT_X_DIR{defaults::INVERT_X_DIR};
+    QString INVERT_Y_DIR{defaults::INVERT_Y_DIR};
+    QString INVERT_Z_DIR{defaults::INVERT_Z_DIR};
+    QString INVERT_I_DIR{defaults::INVERT_I_DIR};
+    QString INVERT_J_DIR{defaults::INVERT_J_DIR};
+    QString INVERT_K_DIR{defaults::INVERT_K_DIR};
+    QString INVERT_U_DIR{defaults::INVERT_U_DIR};
+    QString INVERT_V_DIR{defaults::INVERT_V_DIR};
+    QString INVERT_W_DIR{defaults::INVERT_W_DIR};
+    bool ENABLE_INVERT_X_DIR{defaults::ENABLE_INVERT_X_DIR};
+    bool ENABLE_INVERT_Y_DIR{defaults::ENABLE_INVERT_Y_DIR};
+    bool ENABLE_INVERT_Z_DIR{defaults::ENABLE_INVERT_Z_DIR};
+    bool ENABLE_INVERT_I_DIR{defaults::ENABLE_INVERT_I_DIR};
+    bool ENABLE_INVERT_J_DIR{defaults::ENABLE_INVERT_J_DIR};
+    bool ENABLE_INVERT_K_DIR{defaults::ENABLE_INVERT_K_DIR};
+    bool ENABLE_INVERT_U_DIR{defaults::ENABLE_INVERT_U_DIR};
+    bool ENABLE_INVERT_V_DIR{defaults::ENABLE_INVERT_V_DIR};
+    bool ENABLE_INVERT_W_DIR{defaults::ENABLE_INVERT_W_DIR};
+    QString INVERT_E0_DIR{defaults::INVERT_E0_DIR};
+    QString INVERT_E1_DIR{defaults::INVERT_E1_DIR};
+    QString INVERT_E2_DIR{defaults::INVERT_E2_DIR};
+    QString INVERT_E3_DIR{defaults::INVERT_E3_DIR};
+    QString INVERT_E4_DIR{defaults::INVERT_E4_DIR};
+    QString INVERT_E5_DIR{defaults::INVERT_E5_DIR};
+    QString INVERT_E6_DIR{defaults::INVERT_E6_DIR};
+    QString INVERT_E7_DIR{defaults::INVERT_E7_DIR};
+    bool DISABLE_REDUCED_ACCURACY_WARNING{defaults::DISABLE_REDUCED_ACCURACY_WARNING};
 
 public:
     /// \brief Converts the configuration into a JSON object
@@ -1742,6 +1904,73 @@ public:
         json["AXIS7_ROTATES"] = AXIS7_ROTATES;
         json["AXIS8_ROTATES"] = AXIS8_ROTATES;
         json["AXIS9_ROTATES"] = AXIS9_ROTATES;
+        json["X_ENABLE_ON"] = X_ENABLE_ON;
+        json["Y_ENABLE_ON"] = Y_ENABLE_ON;
+        json["Z_ENABLE_ON"] = Z_ENABLE_ON;
+        json["E_ENABLE_ON"] = E_ENABLE_ON;
+        json["I_ENABLE_ON"] = I_ENABLE_ON;
+        json["J_ENABLE_ON"] = J_ENABLE_ON;
+        json["K_ENABLE_ON"] = K_ENABLE_ON;
+        json["U_ENABLE_ON"] = U_ENABLE_ON;
+        json["V_ENABLE_ON"] = V_ENABLE_ON;
+        json["W_ENABLE_ON"] = W_ENABLE_ON;
+        json["ENABLE_X_ENABLE_ON"] = ENABLE_X_ENABLE_ON;
+        json["ENABLE_Y_ENABLE_ON"] = ENABLE_Y_ENABLE_ON;
+        json["ENABLE_Z_ENABLE_ON"] = ENABLE_Z_ENABLE_ON;
+        json["ENABLE_E_ENABLE_ON"] = ENABLE_E_ENABLE_ON;
+        json["ENABLE_I_ENABLE_ON"] = ENABLE_I_ENABLE_ON;
+        json["ENABLE_J_ENABLE_ON"] = ENABLE_J_ENABLE_ON;
+        json["ENABLE_K_ENABLE_ON"] = ENABLE_K_ENABLE_ON;
+        json["ENABLE_U_ENABLE_ON"] = ENABLE_U_ENABLE_ON;
+        json["ENABLE_V_ENABLE_ON"] = ENABLE_V_ENABLE_ON;
+        json["ENABLE_W_ENABLE_ON"] = ENABLE_W_ENABLE_ON;
+        json["DISABLE_X"] = DISABLE_X;
+        json["DISABLE_Y"] = DISABLE_Y;
+        json["DISABLE_Z"] = DISABLE_Z;
+        json["DISABLE_E"] = DISABLE_E;
+        json["DISABLE_I"] = DISABLE_I;
+        json["DISABLE_J"] = DISABLE_J;
+        json["DISABLE_K"] = DISABLE_K;
+        json["DISABLE_U"] = DISABLE_U;
+        json["DISABLE_V"] = DISABLE_V;
+        json["DISABLE_W"] = DISABLE_W;
+        json["ENABLE_DISABLE_X"] = ENABLE_DISABLE_X;
+        json["ENABLE_DISABLE_Y"] = ENABLE_DISABLE_Y;
+        json["ENABLE_DISABLE_Z"] = ENABLE_DISABLE_Z;
+        json["ENABLE_DISABLE_I"] = ENABLE_DISABLE_I;
+        json["ENABLE_DISABLE_J"] = ENABLE_DISABLE_J;
+        json["ENABLE_DISABLE_K"] = ENABLE_DISABLE_K;
+        json["ENABLE_DISABLE_U"] = ENABLE_DISABLE_U;
+        json["ENABLE_DISABLE_V"] = ENABLE_DISABLE_V;
+        json["ENABLE_DISABLE_W"] = ENABLE_DISABLE_W;
+        json["DISABLE_INACTIVE_EXTRUDER"] = DISABLE_INACTIVE_EXTRUDER;
+        json["INVERT_X_DIR"] = INVERT_X_DIR;
+        json["INVERT_Y_DIR"] = INVERT_Y_DIR;
+        json["INVERT_Z_DIR"] = INVERT_Z_DIR;
+        json["INVERT_I_DIR"] = INVERT_I_DIR;
+        json["INVERT_J_DIR"] = INVERT_J_DIR;
+        json["INVERT_K_DIR"] = INVERT_K_DIR;
+        json["INVERT_U_DIR"] = INVERT_U_DIR;
+        json["INVERT_V_DIR"] = INVERT_V_DIR;
+        json["INVERT_W_DIR"] = INVERT_W_DIR;
+        json["ENABLE_INVERT_X_DIR"] = ENABLE_INVERT_X_DIR;
+        json["ENABLE_INVERT_Y_DIR"] = ENABLE_INVERT_Y_DIR;
+        json["ENABLE_INVERT_Z_DIR"] = ENABLE_INVERT_Z_DIR;
+        json["ENABLE_INVERT_I_DIR"] = ENABLE_INVERT_I_DIR;
+        json["ENABLE_INVERT_J_DIR"] = ENABLE_INVERT_J_DIR;
+        json["ENABLE_INVERT_K_DIR"] = ENABLE_INVERT_K_DIR;
+        json["ENABLE_INVERT_U_DIR"] = ENABLE_INVERT_U_DIR;
+        json["ENABLE_INVERT_V_DIR"] = ENABLE_INVERT_V_DIR;
+        json["ENABLE_INVERT_W_DIR"] = ENABLE_INVERT_W_DIR;
+        json["INVERT_E0_DIR"] = INVERT_E0_DIR;
+        json["INVERT_E1_DIR"] = INVERT_E1_DIR;
+        json["INVERT_E2_DIR"] = INVERT_E2_DIR;
+        json["INVERT_E3_DIR"] = INVERT_E3_DIR;
+        json["INVERT_E4_DIR"] = INVERT_E4_DIR;
+        json["INVERT_E5_DIR"] = INVERT_E5_DIR;
+        json["INVERT_E6_DIR"] = INVERT_E6_DIR;
+        json["INVERT_E7_DIR"] = INVERT_E7_DIR;
+        json["DISABLE_REDUCED_ACCURACY_WARNING"] = DISABLE_REDUCED_ACCURACY_WARNING;
 
         return json;
     }
@@ -2042,6 +2271,77 @@ public:
 };
 
 ///
+/// \brief The BedLevelingConfiguration struct contains bed leveling configurations
+///
+struct BedLevelingConfiguration : public PageConfiguration
+{
+    bool AUTO_BED_LEVELING_3POINT{defaults::AUTO_BED_LEVELING_3POINT};
+    bool AUTO_BED_LEVELING_LINEAR{defaults::AUTO_BED_LEVELING_LINEAR};
+    bool AUTO_BED_LEVELING_BILINEAR{defaults::AUTO_BED_LEVELING_BILINEAR};
+    bool AUTO_BED_LEVELING_UBL{defaults::AUTO_BED_LEVELING_UBL};
+    bool MESH_BED_LEVELING{defaults::MESH_BED_LEVELING};
+    bool RESTORE_LEVELING_AFTER_G28{defaults::RESTORE_LEVELING_AFTER_G28};
+    bool ENABLE_LEVELING_AFTER_G28{defaults::ENABLE_LEVELING_AFTER_G28};
+    int32_t LEVELING_NOZZLE_TEMP{defaults::LEVELING_NOZZLE_TEMP};
+    int32_t LEVELING_BED_TEMP{defaults::LEVELING_BED_TEMP};
+    bool BD_SENSOR{defaults::BD_SENSOR};
+    bool DEBUG_LEVELING_FEATURE{defaults::DEBUG_LEVELING_FEATURE};
+    double MANUAL_PROBE_START_Z{defaults::MANUAL_PROBE_START_Z};
+    bool ENABLE_MANUAL_PROBE_START_Z{defaults::ENABLE_MANUAL_PROBE_START_Z};
+    bool ENABLE_LEVELING_FADE_HEIGHT{defaults::ENABLE_LEVELING_FADE_HEIGHT};
+    double DEFAULT_LEVELING_FADE_HEIGHT{defaults::DEFAULT_LEVELING_FADE_HEIGHT};
+    bool SEGMENT_LEVELED_MOVES{defaults::SEGMENT_LEVELED_MOVES};
+    double LEVELED_SEGMENT_LENGTH{defaults::LEVELED_SEGMENT_LENGTH};
+    bool G26_MESH_VALIDATION{defaults::G26_MESH_VALIDATION};
+    double MESH_TEST_NOZZLE_SIZE{defaults::MESH_TEST_NOZZLE_SIZE};
+    double MESH_TEST_LAYER_HEIGHT{defaults::MESH_TEST_LAYER_HEIGHT};
+    int32_t MESH_TEST_HOTEND_TEMP{defaults::MESH_TEST_HOTEND_TEMP};
+    int32_t MESH_TEST_BED_TEMP{defaults::MESH_TEST_BED_TEMP};
+    int32_t G26_XY_FEEDRATE{defaults::G26_XY_FEEDRATE};
+    int32_t G26_XY_FEEDRATE_TRAVEL{defaults::G26_XY_FEEDRATE_TRAVEL};
+    double G26_RETRACT_MULTIPLIER{defaults::G26_RETRACT_MULTIPLIER};
+    bool PREHEAT_BEFORE_LEVELING{defaults::PREHEAT_BEFORE_LEVELING};
+
+public:
+    /// \brief Converts the configuration into a JSON object
+    ///
+    /// \return a JSON object containing the configuration data
+    QJsonObject ToJson(void) const override
+    {
+        QJsonObject json;
+
+        json["AUTO_BED_LEVELING_3POINT"] = AUTO_BED_LEVELING_3POINT;
+        json["AUTO_BED_LEVELING_LINEAR"] = AUTO_BED_LEVELING_LINEAR;
+        json["AUTO_BED_LEVELING_BILINEAR"] = AUTO_BED_LEVELING_BILINEAR;
+        json["AUTO_BED_LEVELING_UBL"] = AUTO_BED_LEVELING_UBL;
+        json["MESH_BED_LEVELING"] = MESH_BED_LEVELING;
+        json["RESTORE_LEVELING_AFTER_G28"] = RESTORE_LEVELING_AFTER_G28;
+        json["ENABLE_LEVELING_AFTER_G28"] = ENABLE_LEVELING_AFTER_G28;
+        json["LEVELING_NOZZLE_TEMP"] = LEVELING_NOZZLE_TEMP;
+        json["LEVELING_BED_TEMP"] = LEVELING_BED_TEMP;
+        json["BD_SENSOR"] = BD_SENSOR;
+        json["DEBUG_LEVELING_FEATURE"] = DEBUG_LEVELING_FEATURE;
+        json["MANUAL_PROBE_START_Z"] = MANUAL_PROBE_START_Z;
+        json["ENABLE_MANUAL_PROBE_START_Z"] = ENABLE_MANUAL_PROBE_START_Z;
+        json["ENABLE_LEVELING_FADE_HEIGHT"] = ENABLE_LEVELING_FADE_HEIGHT;
+        json["DEFAULT_LEVELING_FADE_HEIGHT"] = DEFAULT_LEVELING_FADE_HEIGHT;
+        json["SEGMENT_LEVELED_MOVES"] = SEGMENT_LEVELED_MOVES;
+        json["LEVELED_SEGMENT_LENGTH"] = LEVELED_SEGMENT_LENGTH;
+        json["G26_MESH_VALIDATION"] = G26_MESH_VALIDATION;
+        json["MESH_TEST_NOZZLE_SIZE"] = MESH_TEST_NOZZLE_SIZE;
+        json["MESH_TEST_LAYER_HEIGHT"] = MESH_TEST_LAYER_HEIGHT;
+        json["MESH_TEST_HOTEND_TEMP"] = MESH_TEST_HOTEND_TEMP;
+        json["MESH_TEST_BED_TEMP"] = MESH_TEST_BED_TEMP;
+        json["G26_XY_FEEDRATE"] = G26_XY_FEEDRATE;
+        json["G26_XY_FEEDRATE_TRAVEL"] = G26_XY_FEEDRATE_TRAVEL;
+        json["G26_RETRACT_MULTIPLIER"] = G26_RETRACT_MULTIPLIER;
+        json["PREHEAT_BEFORE_LEVELING"] = PREHEAT_BEFORE_LEVELING;
+
+        return json;
+    }
+};
+
+///
 /// \brief The HomingOptionsConfiguration struct contains homing options configurations
 ///
 struct HomingOptionsConfiguration : public PageConfiguration
@@ -2145,7 +2445,6 @@ public:
         return json;
     }
 };
-
 
 ///
 /// \brief The UserInterfaceLanguageConfiguration struct contains user interface language configurations
@@ -2304,6 +2603,7 @@ struct Configuration
     StepperDriversConfiguration stepperDrivers;
     HomingAndBoundsConfiguration homingAndBounds;
     FilamentRunoutSensorConfiguration filamentRunoutSensor;
+    BedLevelingConfiguration bedLeveling;
     HomingOptionsConfiguration homingOptions;
     UserInterfaceLanguageConfiguration userInterfaceLanguage;
     SDCardConfiguration sdCard;
@@ -2329,6 +2629,7 @@ public:
         json["stepperDrivers"] = stepperDrivers.ToJson();
         json["homingAndBounds"] = homingAndBounds.ToJson();
         json["filamentRunoutSensor"] = filamentRunoutSensor.ToJson();
+        json["bedLeveling"] = bedLeveling.ToJson();
         json["homingOptions"] = homingOptions.ToJson();
         json["userInterfaceLanguage"] = userInterfaceLanguage.ToJson();
         json["sdCard"] = sdCard.ToJson();

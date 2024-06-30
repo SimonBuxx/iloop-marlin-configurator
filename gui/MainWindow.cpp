@@ -744,6 +744,15 @@ bool MainWindow::LoadConfigurationFromJson(const QJsonObject& pJson)
         success = false;
     }
 
+    if (pJson.contains("bedLeveling") && pJson["bedLeveling"].isObject())
+    {
+        success &= mUi->uBedLevelingPage->LoadFromJson(pJson["bedLeveling"].toObject());
+    }
+    else
+    {
+        success = false;
+    }
+
     if (pJson.contains("homingOptions") && pJson["homingOptions"].isObject())
     {
         success &= mUi->uHomingOptionsPage->LoadFromJson(pJson["homingOptions"].toObject());

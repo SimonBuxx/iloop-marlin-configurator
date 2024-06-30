@@ -1914,8 +1914,8 @@ QScrollBar::sub-line:horizontal
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1059</width>
-                   <height>507</height>
+                   <width>100</width>
+                   <height>30</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_46">
@@ -2445,7 +2445,7 @@ QPushButton::!checked:hover {
          <item>
           <widget class="QPushButton" name="uStepperDriversTabButton">
            <property name="text">
-            <string>Stepper Drivers (WIP)</string>
+            <string>Stepper Drivers</string>
            </property>
            <property name="icon">
             <iconset>
@@ -3007,7 +3007,7 @@ QPushButton::disabled {
                <string>Reset</string>
               </property>
               <property name="icon">
-               <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
+               <iconset>
                 <normaloff>:/restart_alt_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/restart_alt_FILL0_wght100_GRAD0_opsz20.svg</iconset>
               </property>
              </widget>
@@ -3671,7 +3671,7 @@ QPushButton::hover {
                <string>Cancel</string>
               </property>
               <property name="icon">
-               <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
+               <iconset>
                 <normaloff>:/close_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/close_FILL0_wght100_GRAD0_opsz20.svg</iconset>
               </property>
              </widget>
@@ -3881,7 +3881,7 @@ QPushButton::hover {
   </action>
   <action name="uAboutAction">
    <property name="icon">
-    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
+    <iconset>
      <normaloff>:/info_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/info_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -3932,7 +3932,7 @@ QPushButton::hover {
   </action>
   <action name="uActionOpenGitHub">
    <property name="icon">
-    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
+    <iconset>
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -3947,7 +3947,7 @@ QPushButton::hover {
   </action>
   <action name="uActionOpenErigEv">
    <property name="icon">
-    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
+    <iconset>
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -3962,7 +3962,7 @@ QPushButton::hover {
   </action>
   <action name="actionmarlinfw_org">
    <property name="icon">
-    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
+    <iconset>
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -3971,7 +3971,7 @@ QPushButton::hover {
   </action>
   <action name="uActionOpenMarlinHomepage">
    <property name="icon">
-    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
+    <iconset>
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -3980,7 +3980,7 @@ QPushButton::hover {
   </action>
   <action name="actionFirmware_Info_Documentation">
    <property name="icon">
-    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
+    <iconset>
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -3989,7 +3989,7 @@ QPushButton::hover {
   </action>
   <action name="actionHarwdare_Info">
    <property name="icon">
-    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
+    <iconset>
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -3998,7 +3998,7 @@ QPushButton::hover {
   </action>
   <action name="actionExtruder_Info">
    <property name="icon">
-    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
+    <iconset>
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4007,7 +4007,7 @@ QPushButton::hover {
   </action>
   <action name="actionPower_Supply">
    <property name="icon">
-    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
+    <iconset>
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4016,7 +4016,7 @@ QPushButton::hover {
   </action>
   <action name="actionThermal_Settings">
    <property name="icon">
-    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
+    <iconset>
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4025,7 +4025,7 @@ QPushButton::hover {
   </action>
   <action name="actionKinematics">
    <property name="icon">
-    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
+    <iconset>
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4034,7 +4034,7 @@ QPushButton::hover {
   </action>
   <action name="actionEndstops">
    <property name="icon">
-    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
+    <iconset>
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4043,7 +4043,7 @@ QPushButton::hover {
   </action>
   <action name="actionMovement">
    <property name="icon">
-    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
+    <iconset>
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4052,7 +4052,7 @@ QPushButton::hover {
   </action>
   <action name="actionZ_Probe_Options">
    <property name="icon">
-    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
+    <iconset>
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4061,7 +4061,7 @@ QPushButton::hover {
   </action>
   <action name="actionStepper_Drivers">
    <property name="icon">
-    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
+    <iconset>
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4070,7 +4070,7 @@ QPushButton::hover {
   </action>
   <action name="actionHoming_and_Bounds">
    <property name="icon">
-    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
+    <iconset>
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4079,7 +4079,7 @@ QPushButton::hover {
   </action>
   <action name="actionFilament_Runout_Sensor">
    <property name="icon">
-    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
+    <iconset>
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4088,7 +4088,7 @@ QPushButton::hover {
   </action>
   <action name="actionBed_Leveling">
    <property name="icon">
-    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
+    <iconset>
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4097,7 +4097,7 @@ QPushButton::hover {
   </action>
   <action name="actionHoming_Options">
    <property name="icon">
-    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
+    <iconset>
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4106,7 +4106,7 @@ QPushButton::hover {
   </action>
   <action name="actionAdditional_Features">
    <property name="icon">
-    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
+    <iconset>
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4115,7 +4115,7 @@ QPushButton::hover {
   </action>
   <action name="actionUser_Interface_Language">
    <property name="icon">
-    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
+    <iconset>
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4124,7 +4124,7 @@ QPushButton::hover {
   </action>
   <action name="actionSD_Card">
    <property name="icon">
-    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
+    <iconset>
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4133,7 +4133,7 @@ QPushButton::hover {
   </action>
   <action name="actionLCD_Menu_Items">
    <property name="icon">
-    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
+    <iconset>
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4142,7 +4142,7 @@ QPushButton::hover {
   </action>
   <action name="actionEncoder">
    <property name="icon">
-    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
+    <iconset>
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4151,7 +4151,7 @@ QPushButton::hover {
   </action>
   <action name="actionSpeaker">
    <property name="icon">
-    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
+    <iconset>
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4160,7 +4160,7 @@ QPushButton::hover {
   </action>
   <action name="actionLCD_Controller">
    <property name="icon">
-    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
+    <iconset>
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4169,7 +4169,7 @@ QPushButton::hover {
   </action>
   <action name="actionExtra_Features">
    <property name="icon">
-    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
+    <iconset>
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4178,7 +4178,7 @@ QPushButton::hover {
   </action>
   <action name="uActionOpenAutoBuildMarlin">
    <property name="icon">
-    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
+    <iconset>
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4187,7 +4187,7 @@ QPushButton::hover {
   </action>
   <action name="uActionOpenMarlinConfiguration">
    <property name="icon">
-    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
+    <iconset>
      <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
@@ -4334,7 +4334,7 @@ QPushButton::hover {
   </action>
   <action name="uResetConfigurationAction">
    <property name="icon">
-    <iconset resource="../../../../../../../../ERIG_iLOOP/Software/ThermalCamera/Thermal_Camera/resources/resources.qrc">
+    <iconset>
      <normaloff>:/restart_alt_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/restart_alt_FILL0_wght100_GRAD0_opsz20.svg</iconset>
    </property>
    <property name="text">
