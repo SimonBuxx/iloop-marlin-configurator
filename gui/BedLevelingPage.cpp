@@ -51,6 +51,8 @@ void BedLevelingPage::ConnectGuiSignalsAndSlots()
         mUi->uSegmentLeveledMovesBox->setEnabled(pChecked || mUi->uAutoBedLevelingBilinearBox->isChecked() || mUi->uAutoBedLevelingUblBox->isChecked());
         mUi->uLeveledSegmentLengthBox->setEnabled(pChecked || mUi->uAutoBedLevelingBilinearBox->isChecked() || mUi->uAutoBedLevelingUblBox->isChecked());
         mUi->uG26MeshValidationBox->setEnabled(pChecked || mUi->uAutoBedLevelingBilinearBox->isChecked() || mUi->uAutoBedLevelingUblBox->isChecked());
+
+        mUi->uMeshBedLevelingTab->setEnabled(pChecked);
     });
 
     QObject::connect(mUi->uAutoBedLevelingBilinearBox, &QGroupBox::toggled, this, [&](auto pChecked){
@@ -58,6 +60,14 @@ void BedLevelingPage::ConnectGuiSignalsAndSlots()
         mUi->uSegmentLeveledMovesBox->setEnabled(pChecked || mUi->uMeshBedLevelingBox->isChecked() || mUi->uAutoBedLevelingUblBox->isChecked());
         mUi->uLeveledSegmentLengthBox->setEnabled(pChecked || mUi->uMeshBedLevelingBox->isChecked() || mUi->uAutoBedLevelingUblBox->isChecked());
         mUi->uG26MeshValidationBox->setEnabled(pChecked || mUi->uMeshBedLevelingBox->isChecked() || mUi->uAutoBedLevelingUblBox->isChecked());
+
+        mUi->uLinearBilinearBedLevelingTab->setEnabled(pChecked || mUi->uAutoBedLevelingLinearBox->isChecked());
+        mUi->uExtrapolateBeyondGridBox->setEnabled(pChecked);
+        mUi->uAblBilinearSubdivisionBox->setEnabled(pChecked);
+    });
+
+    QObject::connect(mUi->uAutoBedLevelingLinearBox, &QGroupBox::toggled, this, [&](auto pChecked){
+        mUi->uLinearBilinearBedLevelingTab->setEnabled(pChecked || mUi->uAutoBedLevelingBilinearBox->isChecked());
     });
 
     QObject::connect(mUi->uAutoBedLevelingUblBox, &QGroupBox::toggled, this, [&](auto pChecked){
@@ -65,6 +75,8 @@ void BedLevelingPage::ConnectGuiSignalsAndSlots()
         mUi->uSegmentLeveledMovesBox->setEnabled(pChecked || mUi->uAutoBedLevelingBilinearBox->isChecked() || mUi->uMeshBedLevelingBox->isChecked());
         mUi->uLeveledSegmentLengthBox->setEnabled(pChecked || mUi->uAutoBedLevelingBilinearBox->isChecked() || mUi->uMeshBedLevelingBox->isChecked());
         mUi->uG26MeshValidationBox->setEnabled(pChecked || mUi->uAutoBedLevelingBilinearBox->isChecked() || mUi->uMeshBedLevelingBox->isChecked());
+
+        mUi->uUnifiedBedLevelingTab->setEnabled(pChecked);
     });
 
     AbstractPage::ConnectGuiSignalsAndSlots();
@@ -100,6 +112,26 @@ void BedLevelingPage::ResetValues()
     mUi->uG26XyFeedrateTravelSpinBox->setValue(defaults::G26_XY_FEEDRATE_TRAVEL);
     mUi->uG26RetractMultiplierSpinBox->setValue(defaults::G26_RETRACT_MULTIPLIER);
     mUi->uPreheatBeforeLevelingBox->setChecked(defaults::PREHEAT_BEFORE_LEVELING);
+    mUi->uGridMaxPointsXSpinBox->setValue(defaults::GRID_MAX_POINTS_X);
+    mUi->uGridMaxPointsYSpinBox->setValue(defaults::GRID_MAX_POINTS_Y);
+    mUi->uProbeYFirstBox->setChecked(defaults::PROBE_Y_FIRST);
+    mUi->uExtrapolateBeyondGridBox->setChecked(defaults::EXTRAPOLATE_BEYOND_GRID);
+    mUi->uAblBilinearSubdivisionBox->setChecked(defaults::ABL_BILINEAR_SUBDIVISION);
+    mUi->uBilinearSubdivisionsSpinBox->setValue(defaults::BILINEAR_SUBDIVISIONS);
+    mUi->uMeshEditGfxOverlayBox->setChecked(defaults::MESH_EDIT_GFX_OVERLAY);
+    mUi->uMeshInsetSpinBox->setValue(defaults::MESH_INSET);
+    mUi->uGridMaxPointsXSpinBox_2->setValue(defaults::GRID_MAX_POINTS_X_2);
+    mUi->uGridMaxPointsYSpinBox_2->setValue(defaults::GRID_MAX_POINTS_Y_2);
+    mUi->uUblHilbertCurveBox->setChecked(defaults::UBL_HILBERT_CURVE);
+    mUi->uUblMeshEditMovesZBox->setChecked(defaults::UBL_MESH_EDIT_MOVES_Z);
+    mUi->uUblSaveActiveOnM500Box->setChecked(defaults::UBL_SAVE_ACTIVE_ON_M500);
+    mUi->uUblZRaiseWhenOffMeshSpinBox->setValue(defaults::UBL_Z_RAISE_WHEN_OFF_MESH);
+    mUi->uUblZRaiseWhenOffMeshBox->setChecked(defaults::ENABLE_UBL_Z_RAISE_WHEN_OFF_MESH);
+    mUi->uUblMeshWizardBox->setChecked(defaults::UBL_MESH_WIZARD);
+    mUi->uMeshInsetSpinBox_2->setValue(defaults::MESH_INSET_2);
+    mUi->uGridMaxPointsXSpinBox_3->setValue(defaults::GRID_MAX_POINTS_X_3);
+    mUi->uGridMaxPointsYSpinBox_3->setValue(defaults::GRID_MAX_POINTS_Y_3);
+    mUi->uMeshG28RestOriginBox->setChecked(defaults::MESH_G28_REST_ORIGIN);
 
     mIsLoading = false;
 }
@@ -135,6 +167,26 @@ bool BedLevelingPage::LoadFromJson(const QJsonObject &pJson)
     success &= LoadConfig(mUi->uG26XyFeedrateTravelSpinBox, pJson, "G26_XY_FEEDRATE_TRAVEL");
     success &= LoadConfig(mUi->uG26RetractMultiplierSpinBox, pJson, "G26_RETRACT_MULTIPLIER");
     success &= LoadConfig(mUi->uPreheatBeforeLevelingBox, pJson, "PREHEAT_BEFORE_LEVELING");
+    success &= LoadConfig(mUi->uGridMaxPointsXSpinBox, pJson, "GRID_MAX_POINTS_X");
+    success &= LoadConfig(mUi->uGridMaxPointsYSpinBox, pJson, "GRID_MAX_POINTS_Y");
+    success &= LoadConfig(mUi->uProbeYFirstBox, pJson, "PROBE_Y_FIRST");
+    success &= LoadConfig(mUi->uExtrapolateBeyondGridBox, pJson, "EXTRAPOLATE_BEYOND_GRID");
+    success &= LoadConfig(mUi->uAblBilinearSubdivisionBox, pJson, "ABL_BILINEAR_SUBDIVISION");
+    success &= LoadConfig(mUi->uBilinearSubdivisionsSpinBox, pJson, "BILINEAR_SUBDIVISIONS");
+    success &= LoadConfig(mUi->uMeshEditGfxOverlayBox, pJson, "MESH_EDIT_GFX_OVERLAY");
+    success &= LoadConfig(mUi->uMeshInsetSpinBox, pJson, "MESH_INSET");
+    success &= LoadConfig(mUi->uGridMaxPointsXSpinBox_2, pJson, "GRID_MAX_POINTS_X_2");
+    success &= LoadConfig(mUi->uGridMaxPointsYSpinBox_2, pJson, "GRID_MAX_POINTS_Y_2");
+    success &= LoadConfig(mUi->uUblHilbertCurveBox, pJson, "UBL_HILBERT_CURVE");
+    success &= LoadConfig(mUi->uUblMeshEditMovesZBox, pJson, "UBL_MESH_EDIT_MOVES_Z");
+    success &= LoadConfig(mUi->uUblSaveActiveOnM500Box, pJson, "UBL_SAVE_ACTIVE_ON_M500");
+    success &= LoadConfig(mUi->uUblZRaiseWhenOffMeshSpinBox, pJson, "UBL_Z_RAISE_WHEN_OFF_MESH");
+    success &= LoadConfig(mUi->uUblZRaiseWhenOffMeshBox, pJson, "ENABLE_UBL_Z_RAISE_WHEN_OFF_MESH");
+    success &= LoadConfig(mUi->uUblMeshWizardBox, pJson, "UBL_MESH_WIZARD");
+    success &= LoadConfig(mUi->uMeshInsetSpinBox_2, pJson, "MESH_INSET_2");
+    success &= LoadConfig(mUi->uGridMaxPointsXSpinBox_3, pJson, "GRID_MAX_POINTS_X_3");
+    success &= LoadConfig(mUi->uGridMaxPointsYSpinBox_3, pJson, "GRID_MAX_POINTS_Y_3");
+    success &= LoadConfig(mUi->uMeshG28RestOriginBox, pJson, "MESH_G28_REST_ORIGIN");
 
     mIsLoading = false;
     return success;
@@ -168,6 +220,26 @@ void BedLevelingPage::FetchConfiguration(Configuration& pConfig)
     SetConfig(pConfig.bedLeveling.G26_XY_FEEDRATE_TRAVEL, mUi->uG26XyFeedrateTravelSpinBox);
     SetConfig(pConfig.bedLeveling.G26_RETRACT_MULTIPLIER, mUi->uG26RetractMultiplierSpinBox);
     SetConfig(pConfig.bedLeveling.PREHEAT_BEFORE_LEVELING, mUi->uPreheatBeforeLevelingBox);
+    SetConfig(pConfig.bedLeveling.GRID_MAX_POINTS_X, mUi->uGridMaxPointsXSpinBox);
+    SetConfig(pConfig.bedLeveling.GRID_MAX_POINTS_Y, mUi->uGridMaxPointsYSpinBox);
+    SetConfig(pConfig.bedLeveling.PROBE_Y_FIRST, mUi->uProbeYFirstBox);
+    SetConfig(pConfig.bedLeveling.EXTRAPOLATE_BEYOND_GRID, mUi->uExtrapolateBeyondGridBox);
+    SetConfig(pConfig.bedLeveling.ABL_BILINEAR_SUBDIVISION, mUi->uAblBilinearSubdivisionBox);
+    SetConfig(pConfig.bedLeveling.BILINEAR_SUBDIVISIONS, mUi->uBilinearSubdivisionsSpinBox);
+    SetConfig(pConfig.bedLeveling.MESH_EDIT_GFX_OVERLAY, mUi->uMeshEditGfxOverlayBox);
+    SetConfig(pConfig.bedLeveling.MESH_INSET, mUi->uMeshInsetSpinBox);
+    SetConfig(pConfig.bedLeveling.GRID_MAX_POINTS_X_2, mUi->uGridMaxPointsXSpinBox_2);
+    SetConfig(pConfig.bedLeveling.GRID_MAX_POINTS_Y_2, mUi->uGridMaxPointsYSpinBox_2);
+    SetConfig(pConfig.bedLeveling.UBL_HILBERT_CURVE, mUi->uUblHilbertCurveBox);
+    SetConfig(pConfig.bedLeveling.UBL_MESH_EDIT_MOVES_Z, mUi->uUblMeshEditMovesZBox);
+    SetConfig(pConfig.bedLeveling.UBL_SAVE_ACTIVE_ON_M500, mUi->uUblSaveActiveOnM500Box);
+    SetConfig(pConfig.bedLeveling.UBL_Z_RAISE_WHEN_OFF_MESH, mUi->uUblZRaiseWhenOffMeshSpinBox);
+    SetConfig(pConfig.bedLeveling.ENABLE_UBL_Z_RAISE_WHEN_OFF_MESH, mUi->uUblZRaiseWhenOffMeshBox);
+    SetConfig(pConfig.bedLeveling.UBL_MESH_WIZARD, mUi->uUblMeshWizardBox);
+    SetConfig(pConfig.bedLeveling.MESH_INSET_2, mUi->uMeshInsetSpinBox_2);
+    SetConfig(pConfig.bedLeveling.GRID_MAX_POINTS_X_3, mUi->uGridMaxPointsXSpinBox_3);
+    SetConfig(pConfig.bedLeveling.GRID_MAX_POINTS_Y_3, mUi->uGridMaxPointsYSpinBox_3);
+    SetConfig(pConfig.bedLeveling.MESH_G28_REST_ORIGIN, mUi->uMeshG28RestOriginBox);
 }
 
 void BedLevelingPage::ReplaceTags(QStringList& pOutput)
@@ -197,4 +269,24 @@ void BedLevelingPage::ReplaceTags(QStringList& pOutput)
     ReplaceTag(pOutput, "#{G26_XY_FEEDRATE_TRAVEL}", mUi->uG26XyFeedrateTravelSpinBox, false, "G26_XY_FEEDRATE_TRAVEL");
     ReplaceTag(pOutput, "#{G26_RETRACT_MULTIPLIER}", mUi->uG26RetractMultiplierSpinBox, false, "G26_RETRACT_MULTIPLIER", 1);
     ReplaceTag(pOutput, "#{PREHEAT_BEFORE_LEVELING}", mUi->uPreheatBeforeLevelingBox, "PREHEAT_BEFORE_LEVELING");
+    ReplaceTag(pOutput, "#{GRID_MAX_POINTS_X}", mUi->uGridMaxPointsXSpinBox, false, "GRID_MAX_POINTS_X");
+    ReplaceTag(pOutput, "#{GRID_MAX_POINTS_Y}", mUi->uGridMaxPointsYSpinBox, false, "GRID_MAX_POINTS_Y");
+    ReplaceTag(pOutput, "#{PROBE_Y_FIRST}", mUi->uProbeYFirstBox, "PROBE_Y_FIRST");
+    ReplaceTag(pOutput, "#{EXTRAPOLATE_BEYOND_GRID}", mUi->uExtrapolateBeyondGridBox, "EXTRAPOLATE_BEYOND_GRID");
+    ReplaceTag(pOutput, "#{ABL_BILINEAR_SUBDIVISION}", mUi->uAblBilinearSubdivisionBox, "ABL_BILINEAR_SUBDIVISION");
+    ReplaceTag(pOutput, "#{BILINEAR_SUBDIVISIONS}", mUi->uBilinearSubdivisionsSpinBox, false, "BILINEAR_SUBDIVISIONS");
+    ReplaceTag(pOutput, "#{MESH_EDIT_GFX_OVERLAY}", mUi->uMeshEditGfxOverlayBox, "MESH_EDIT_GFX_OVERLAY");
+    ReplaceTag(pOutput, "#{MESH_INSET}", mUi->uMeshInsetSpinBox, false, "MESH_INSET");
+    ReplaceTag(pOutput, "#{GRID_MAX_POINTS_X_2}", mUi->uGridMaxPointsXSpinBox_2, false, "GRID_MAX_POINTS_X");
+    ReplaceTag(pOutput, "#{GRID_MAX_POINTS_Y_2}", mUi->uGridMaxPointsYSpinBox_2, false, "GRID_MAX_POINTS_Y");
+    ReplaceTag(pOutput, "#{UBL_HILBERT_CURVE}", mUi->uUblHilbertCurveBox, "UBL_HILBERT_CURVE");
+    ReplaceTag(pOutput, "#{UBL_MESH_EDIT_MOVES_Z}", mUi->uUblMeshEditMovesZBox, "UBL_MESH_EDIT_MOVES_Z");
+    ReplaceTag(pOutput, "#{UBL_SAVE_ACTIVE_ON_M500}", mUi->uUblSaveActiveOnM500Box, "UBL_SAVE_ACTIVE_ON_M500");
+    ReplaceTag(pOutput, "#{UBL_Z_RAISE_WHEN_OFF_MESH}", mUi->uUblZRaiseWhenOffMeshSpinBox, !mUi->uUblZRaiseWhenOffMeshBox->isChecked(), "UBL_Z_RAISE_WHEN_OFF_MESH", 1);
+    ReplaceTag(pOutput, "#{ENABLE_UBL_Z_RAISE_WHEN_OFF_MESH}", mUi->uUblZRaiseWhenOffMeshBox, "ENABLE_UBL_Z_RAISE_WHEN_OFF_MESH");
+    ReplaceTag(pOutput, "#{UBL_MESH_WIZARD}", mUi->uUblMeshWizardBox, "UBL_MESH_WIZARD");
+    ReplaceTag(pOutput, "#{MESH_INSET_2}", mUi->uMeshInsetSpinBox_2, false, "MESH_INSET");
+    ReplaceTag(pOutput, "#{GRID_MAX_POINTS_X_3}", mUi->uGridMaxPointsXSpinBox_3, false, "GRID_MAX_POINTS_X");
+    ReplaceTag(pOutput, "#{GRID_MAX_POINTS_Y_3}", mUi->uGridMaxPointsYSpinBox_3, false, "GRID_MAX_POINTS_Y");
+    ReplaceTag(pOutput, "#{MESH_G28_REST_ORIGIN}", mUi->uMeshG28RestOriginBox, "MESH_G28_REST_ORIGIN");
 }

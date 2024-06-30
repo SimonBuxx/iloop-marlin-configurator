@@ -115,26 +115,26 @@
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 3
-  #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
+  #{GRID_MAX_POINTS_X}
+  #{GRID_MAX_POINTS_Y}
 
   // Probe along the Y axis, advancing X after each column
-  //#define PROBE_Y_FIRST
+  #{PROBE_Y_FIRST}
 
   #if ENABLED(AUTO_BED_LEVELING_BILINEAR)
 
     // Beyond the probed grid, continue the implied tilt?
     // Default is to maintain the height of the nearest edge.
-    //#define EXTRAPOLATE_BEYOND_GRID
+    #{EXTRAPOLATE_BEYOND_GRID}
 
     //
     // Experimental Subdivision of the grid by Catmull-Rom method.
     // Synthesizes intermediate points to produce a more detailed mesh.
     //
-    //#define ABL_BILINEAR_SUBDIVISION
+    #{ABL_BILINEAR_SUBDIVISION}
     #if ENABLED(ABL_BILINEAR_SUBDIVISION)
       // Number of subdivisions between probe points
-      #define BILINEAR_SUBDIVISIONS 3
+      #{BILINEAR_SUBDIVISIONS}
     #endif
 
   #endif
@@ -145,21 +145,21 @@
   //========================= Unified Bed Leveling ============================
   //===========================================================================
 
-  //#define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
+  #{MESH_EDIT_GFX_OVERLAY}   // Display a graphics overlay while editing the mesh
 
-  #define MESH_INSET 1              // Set Mesh bounds as an inset region of the bed
-  #define GRID_MAX_POINTS_X 10      // Don't use more than 15 points per axis, implementation limited.
-  #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
+  #{MESH_INSET}              // Set Mesh bounds as an inset region of the bed
+  #{GRID_MAX_POINTS_X_2}      // Don't use more than 15 points per axis, implementation limited.
+  #{GRID_MAX_POINTS_Y_2}
 
-  //#define UBL_HILBERT_CURVE       // Use Hilbert distribution for less travel when probing multiple points
+  #{UBL_HILBERT_CURVE}       // Use Hilbert distribution for less travel when probing multiple points
 
-  #define UBL_MESH_EDIT_MOVES_Z     // Sophisticated users prefer no movement of nozzle
-  #define UBL_SAVE_ACTIVE_ON_M500   // Save the currently active mesh in the current slot on M500
+  #{UBL_MESH_EDIT_MOVES_Z}     // Sophisticated users prefer no movement of nozzle
+  #{UBL_SAVE_ACTIVE_ON_M500}   // Save the currently active mesh in the current slot on M500
 
-  //#define UBL_Z_RAISE_WHEN_OFF_MESH 2.5 // When the nozzle is off the mesh, this value is used
+  #{UBL_Z_RAISE_WHEN_OFF_MESH} // When the nozzle is off the mesh, this value is used
                                           // as the Z-Height correction value.
 
-  //#define UBL_MESH_WIZARD         // Run several commands in a row to get a complete mesh
+  #{UBL_MESH_WIZARD}         // Run several commands in a row to get a complete mesh
 
 #elif ENABLED(MESH_BED_LEVELING)
 
@@ -167,11 +167,11 @@
   //=================================== Mesh ==================================
   //===========================================================================
 
-  #define MESH_INSET 10          // Set Mesh bounds as an inset region of the bed
-  #define GRID_MAX_POINTS_X 3    // Don't use more than 7 points per axis, implementation limited.
-  #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
+  #{MESH_INSET_2}          // Set Mesh bounds as an inset region of the bed
+  #{GRID_MAX_POINTS_X_3}    // Don't use more than 7 points per axis, implementation limited.
+  #{GRID_MAX_POINTS_Y_3}
 
-  //#define MESH_G28_REST_ORIGIN // After homing all axes ('G28' or 'G28 XYZ') rest Z at Z_MIN_POS
+  #{MESH_G28_REST_ORIGIN} // After homing all axes ('G28' or 'G28 XYZ') rest Z at Z_MIN_POS
 
 #endif // BED_LEVELING
 

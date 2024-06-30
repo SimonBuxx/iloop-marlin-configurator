@@ -736,6 +736,26 @@ static constexpr auto G26_XY_FEEDRATE{20};
 static constexpr auto G26_XY_FEEDRATE_TRAVEL{100};
 static constexpr auto G26_RETRACT_MULTIPLIER{1.0f};
 static constexpr auto PREHEAT_BEFORE_LEVELING{false};
+static constexpr auto GRID_MAX_POINTS_X{3};
+static constexpr auto GRID_MAX_POINTS_Y{3};
+static constexpr auto PROBE_Y_FIRST{false};
+static constexpr auto EXTRAPOLATE_BEYOND_GRID{false};
+static constexpr auto ABL_BILINEAR_SUBDIVISION{false};
+static constexpr auto BILINEAR_SUBDIVISIONS{3};
+static constexpr auto MESH_EDIT_GFX_OVERLAY{false};
+static constexpr auto MESH_INSET{1};
+static constexpr auto GRID_MAX_POINTS_X_2{10};
+static constexpr auto GRID_MAX_POINTS_Y_2{10};
+static constexpr auto UBL_HILBERT_CURVE{false};
+static constexpr auto UBL_MESH_EDIT_MOVES_Z{true};
+static constexpr auto UBL_SAVE_ACTIVE_ON_M500{true};
+static constexpr auto UBL_Z_RAISE_WHEN_OFF_MESH{2.5f};
+static constexpr auto ENABLE_UBL_Z_RAISE_WHEN_OFF_MESH{false};
+static constexpr auto UBL_MESH_WIZARD{false};
+static constexpr auto MESH_INSET_2{10};
+static constexpr auto GRID_MAX_POINTS_X_3{3};
+static constexpr auto GRID_MAX_POINTS_Y_3{3};
+static constexpr auto MESH_G28_REST_ORIGIN{false};
 
 // Homing Options
 static constexpr auto BED_CENTER_AT_0_0{false};
@@ -2301,6 +2321,26 @@ struct BedLevelingConfiguration : public PageConfiguration
     int32_t G26_XY_FEEDRATE_TRAVEL{defaults::G26_XY_FEEDRATE_TRAVEL};
     double G26_RETRACT_MULTIPLIER{defaults::G26_RETRACT_MULTIPLIER};
     bool PREHEAT_BEFORE_LEVELING{defaults::PREHEAT_BEFORE_LEVELING};
+    int32_t GRID_MAX_POINTS_X{defaults::GRID_MAX_POINTS_X};
+    int32_t GRID_MAX_POINTS_Y{defaults::GRID_MAX_POINTS_Y};
+    bool PROBE_Y_FIRST{defaults::PROBE_Y_FIRST};
+    bool EXTRAPOLATE_BEYOND_GRID{defaults::EXTRAPOLATE_BEYOND_GRID};
+    bool ABL_BILINEAR_SUBDIVISION{defaults::ABL_BILINEAR_SUBDIVISION};
+    int32_t BILINEAR_SUBDIVISIONS{defaults::BILINEAR_SUBDIVISIONS};
+    bool MESH_EDIT_GFX_OVERLAY{defaults::MESH_EDIT_GFX_OVERLAY};
+    int32_t MESH_INSET{defaults::MESH_INSET};
+    int32_t GRID_MAX_POINTS_X_2{defaults::GRID_MAX_POINTS_X_2};
+    int32_t GRID_MAX_POINTS_Y_2{defaults::GRID_MAX_POINTS_Y_2};
+    bool UBL_HILBERT_CURVE{defaults::UBL_HILBERT_CURVE};
+    bool UBL_MESH_EDIT_MOVES_Z{defaults::UBL_MESH_EDIT_MOVES_Z};
+    bool UBL_SAVE_ACTIVE_ON_M500{defaults::UBL_SAVE_ACTIVE_ON_M500};
+    double UBL_Z_RAISE_WHEN_OFF_MESH{defaults::UBL_Z_RAISE_WHEN_OFF_MESH};
+    bool ENABLE_UBL_Z_RAISE_WHEN_OFF_MESH{defaults::ENABLE_UBL_Z_RAISE_WHEN_OFF_MESH};
+    bool UBL_MESH_WIZARD{defaults::UBL_MESH_WIZARD};
+    int32_t MESH_INSET_2{defaults::MESH_INSET_2};
+    int32_t GRID_MAX_POINTS_X_3{defaults::GRID_MAX_POINTS_X_3};
+    int32_t GRID_MAX_POINTS_Y_3{defaults::GRID_MAX_POINTS_Y_3};
+    bool MESH_G28_REST_ORIGIN{defaults::MESH_G28_REST_ORIGIN};
 
 public:
     /// \brief Converts the configuration into a JSON object
@@ -2336,6 +2376,26 @@ public:
         json["G26_XY_FEEDRATE_TRAVEL"] = G26_XY_FEEDRATE_TRAVEL;
         json["G26_RETRACT_MULTIPLIER"] = G26_RETRACT_MULTIPLIER;
         json["PREHEAT_BEFORE_LEVELING"] = PREHEAT_BEFORE_LEVELING;
+        json["GRID_MAX_POINTS_X"] = GRID_MAX_POINTS_X;
+        json["GRID_MAX_POINTS_Y"] = GRID_MAX_POINTS_Y;
+        json["PROBE_Y_FIRST"] = PROBE_Y_FIRST;
+        json["EXTRAPOLATE_BEYOND_GRID"] = EXTRAPOLATE_BEYOND_GRID;
+        json["ABL_BILINEAR_SUBDIVISION"] = ABL_BILINEAR_SUBDIVISION;
+        json["BILINEAR_SUBDIVISIONS"] = BILINEAR_SUBDIVISIONS;
+        json["MESH_EDIT_GFX_OVERLAY"] = MESH_EDIT_GFX_OVERLAY;
+        json["MESH_INSET"] = MESH_INSET;
+        json["GRID_MAX_POINTS_X_2"] = GRID_MAX_POINTS_X_2;
+        json["GRID_MAX_POINTS_Y_2"] = GRID_MAX_POINTS_Y_2;
+        json["UBL_HILBERT_CURVE"] = UBL_HILBERT_CURVE;
+        json["UBL_MESH_EDIT_MOVES_Z"] = UBL_MESH_EDIT_MOVES_Z;
+        json["UBL_SAVE_ACTIVE_ON_M500"] = UBL_SAVE_ACTIVE_ON_M500;
+        json["UBL_Z_RAISE_WHEN_OFF_MESH"] = UBL_Z_RAISE_WHEN_OFF_MESH;
+        json["ENABLE_UBL_Z_RAISE_WHEN_OFF_MESH"] = ENABLE_UBL_Z_RAISE_WHEN_OFF_MESH;
+        json["UBL_MESH_WIZARD"] = UBL_MESH_WIZARD;
+        json["MESH_INSET_2"] = MESH_INSET_2;
+        json["GRID_MAX_POINTS_X_3"] = GRID_MAX_POINTS_X_3;
+        json["GRID_MAX_POINTS_Y_3"] = GRID_MAX_POINTS_Y_3;
+        json["MESH_G28_REST_ORIGIN"] = MESH_G28_REST_ORIGIN;
 
         return json;
     }
