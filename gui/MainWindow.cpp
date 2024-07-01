@@ -533,6 +533,13 @@ void MainWindow::OnResetConfiguration()
     }
 
     ResetValues();
+
+    if (nullptr != dynamic_cast<AbstractPage*>(mUi->stackedWidget->currentWidget()->findChild<AbstractPage*>()))
+    {
+        auto&& page = static_cast<AbstractPage*>(mUi->stackedWidget->currentWidget()->findChild<AbstractPage*>());
+        page->OnUpdatePreview();
+    }
+
     Log("Workspace configuration resetted.", "rgb(249, 154, 0)");
 }
 
@@ -552,6 +559,7 @@ void MainWindow::OnResetCurrentPage()
     {
         auto&& page = static_cast<AbstractPage*>(mUi->stackedWidget->currentWidget()->findChild<AbstractPage*>());
         page->ResetValues();
+        page->OnUpdatePreview();
         Log("Current page configuration resetted.", "rgb(249, 154, 0)");
     }
     else

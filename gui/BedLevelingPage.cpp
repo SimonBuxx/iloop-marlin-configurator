@@ -132,6 +132,22 @@ void BedLevelingPage::ResetValues()
     mUi->uGridMaxPointsXSpinBox_3->setValue(defaults::GRID_MAX_POINTS_X_3);
     mUi->uGridMaxPointsYSpinBox_3->setValue(defaults::GRID_MAX_POINTS_Y_3);
     mUi->uMeshG28RestOriginBox->setChecked(defaults::MESH_G28_REST_ORIGIN);
+    mUi->uLcdBedLevelingBox->setChecked(defaults::LCD_BED_LEVELING);
+    mUi->uMeshEditZStepSpinBox->setValue(defaults::MESH_EDIT_Z_STEP);
+    mUi->uLcdProbeZRangeSpinBox->setValue(defaults::LCD_PROBE_Z_RANGE);
+    mUi->uMeshEditMenuBox->setChecked(defaults::MESH_EDIT_MENU);
+    mUi->uLcdBedTrammingBox->setChecked(defaults::LCD_BED_TRAMMING);
+    mUi->uBedTrammingInsetLfrbEdit->setText(defaults::BED_TRAMMING_INSET_LFRB);
+    mUi->uBedTrammingHeightSpinBox->setValue(defaults::BED_TRAMMING_HEIGHT);
+    mUi->uBedTrammingZHopSpinBox->setValue(defaults::BED_TRAMMING_Z_HOP);
+    mUi->uBedTrammingIncludeCenterBox->setChecked(defaults::BED_TRAMMING_INCLUDE_CENTER);
+    mUi->uBedTrammingUseProbeBox->setChecked(defaults::BED_TRAMMING_USE_PROBE);
+    mUi->uBedTrammingProbeToleranceSpinBox->setValue(defaults::BED_TRAMMING_PROBE_TOLERANCE);
+    mUi->uBedTrammingVerifyRaisedBox->setChecked(defaults::BED_TRAMMING_VERIFY_RAISED);
+    mUi->uBedTrammingAudioFeedbackBox->setChecked(defaults::BED_TRAMMING_AUDIO_FEEDBACK);
+    mUi->uBedTrammingLevelingOrderEdit->setText(defaults::BED_TRAMMING_LEVELING_ORDER);
+    mUi->uZProbeEndScriptEdit->setText(defaults::Z_PROBE_END_SCRIPT);
+    mUi->uZProbeEndScriptBox->setChecked(defaults::ENABLE_Z_PROBE_END_SCRIPT);
 
     mIsLoading = false;
 }
@@ -187,6 +203,22 @@ bool BedLevelingPage::LoadFromJson(const QJsonObject &pJson)
     success &= LoadConfig(mUi->uGridMaxPointsXSpinBox_3, pJson, "GRID_MAX_POINTS_X_3");
     success &= LoadConfig(mUi->uGridMaxPointsYSpinBox_3, pJson, "GRID_MAX_POINTS_Y_3");
     success &= LoadConfig(mUi->uMeshG28RestOriginBox, pJson, "MESH_G28_REST_ORIGIN");
+    success &= LoadConfig(mUi->uLcdBedLevelingBox, pJson, "LCD_BED_LEVELING");
+    success &= LoadConfig(mUi->uMeshEditZStepSpinBox, pJson, "MESH_EDIT_Z_STEP");
+    success &= LoadConfig(mUi->uLcdProbeZRangeSpinBox, pJson, "LCD_PROBE_Z_RANGE");
+    success &= LoadConfig(mUi->uMeshEditMenuBox, pJson, "MESH_EDIT_MENU");
+    success &= LoadConfig(mUi->uLcdBedTrammingBox, pJson, "LCD_BED_TRAMMING");
+    success &= LoadConfig(mUi->uBedTrammingInsetLfrbEdit, pJson, "BED_TRAMMING_INSET_LFRB");
+    success &= LoadConfig(mUi->uBedTrammingHeightSpinBox, pJson, "BED_TRAMMING_HEIGHT");
+    success &= LoadConfig(mUi->uBedTrammingZHopSpinBox, pJson, "BED_TRAMMING_Z_HOP");
+    success &= LoadConfig(mUi->uBedTrammingIncludeCenterBox, pJson, "BED_TRAMMING_INCLUDE_CENTER");
+    success &= LoadConfig(mUi->uBedTrammingUseProbeBox, pJson, "BED_TRAMMING_USE_PROBE");
+    success &= LoadConfig(mUi->uBedTrammingProbeToleranceSpinBox, pJson, "BED_TRAMMING_PROBE_TOLERANCE");
+    success &= LoadConfig(mUi->uBedTrammingVerifyRaisedBox, pJson, "BED_TRAMMING_VERIFY_RAISED");
+    success &= LoadConfig(mUi->uBedTrammingAudioFeedbackBox, pJson, "BED_TRAMMING_AUDIO_FEEDBACK");
+    success &= LoadConfig(mUi->uBedTrammingLevelingOrderEdit, pJson, "BED_TRAMMING_LEVELING_ORDER");
+    success &= LoadConfig(mUi->uZProbeEndScriptEdit, pJson, "Z_PROBE_END_SCRIPT");
+    success &= LoadConfig(mUi->uZProbeEndScriptBox, pJson, "ENABLE_Z_PROBE_END_SCRIPT");
 
     mIsLoading = false;
     return success;
@@ -240,6 +272,22 @@ void BedLevelingPage::FetchConfiguration(Configuration& pConfig)
     SetConfig(pConfig.bedLeveling.GRID_MAX_POINTS_X_3, mUi->uGridMaxPointsXSpinBox_3);
     SetConfig(pConfig.bedLeveling.GRID_MAX_POINTS_Y_3, mUi->uGridMaxPointsYSpinBox_3);
     SetConfig(pConfig.bedLeveling.MESH_G28_REST_ORIGIN, mUi->uMeshG28RestOriginBox);
+    SetConfig(pConfig.bedLeveling.LCD_BED_LEVELING, mUi->uLcdBedLevelingBox);
+    SetConfig(pConfig.bedLeveling.MESH_EDIT_Z_STEP, mUi->uMeshEditZStepSpinBox);
+    SetConfig(pConfig.bedLeveling.LCD_PROBE_Z_RANGE, mUi->uLcdProbeZRangeSpinBox);
+    SetConfig(pConfig.bedLeveling.MESH_EDIT_MENU, mUi->uMeshEditMenuBox);
+    SetConfig(pConfig.bedLeveling.LCD_BED_TRAMMING, mUi->uLcdBedTrammingBox);
+    SetConfig(pConfig.bedLeveling.BED_TRAMMING_INSET_LFRB, mUi->uBedTrammingInsetLfrbEdit);
+    SetConfig(pConfig.bedLeveling.BED_TRAMMING_HEIGHT, mUi->uBedTrammingHeightSpinBox);
+    SetConfig(pConfig.bedLeveling.BED_TRAMMING_Z_HOP, mUi->uBedTrammingZHopSpinBox);
+    SetConfig(pConfig.bedLeveling.BED_TRAMMING_INCLUDE_CENTER, mUi->uBedTrammingIncludeCenterBox);
+    SetConfig(pConfig.bedLeveling.BED_TRAMMING_USE_PROBE, mUi->uBedTrammingUseProbeBox);
+    SetConfig(pConfig.bedLeveling.BED_TRAMMING_PROBE_TOLERANCE, mUi->uBedTrammingProbeToleranceSpinBox);
+    SetConfig(pConfig.bedLeveling.BED_TRAMMING_VERIFY_RAISED, mUi->uBedTrammingVerifyRaisedBox);
+    SetConfig(pConfig.bedLeveling.BED_TRAMMING_AUDIO_FEEDBACK, mUi->uBedTrammingAudioFeedbackBox);
+    SetConfig(pConfig.bedLeveling.BED_TRAMMING_LEVELING_ORDER, mUi->uBedTrammingLevelingOrderEdit);
+    SetConfig(pConfig.bedLeveling.Z_PROBE_END_SCRIPT, mUi->uZProbeEndScriptEdit);
+    SetConfig(pConfig.bedLeveling.ENABLE_Z_PROBE_END_SCRIPT, mUi->uZProbeEndScriptBox);
 }
 
 void BedLevelingPage::ReplaceTags(QStringList& pOutput)
@@ -289,4 +337,19 @@ void BedLevelingPage::ReplaceTags(QStringList& pOutput)
     ReplaceTag(pOutput, "#{GRID_MAX_POINTS_X_3}", mUi->uGridMaxPointsXSpinBox_3, false, "GRID_MAX_POINTS_X");
     ReplaceTag(pOutput, "#{GRID_MAX_POINTS_Y_3}", mUi->uGridMaxPointsYSpinBox_3, false, "GRID_MAX_POINTS_Y");
     ReplaceTag(pOutput, "#{MESH_G28_REST_ORIGIN}", mUi->uMeshG28RestOriginBox, "MESH_G28_REST_ORIGIN");
+    ReplaceTag(pOutput, "#{LCD_BED_LEVELING}", mUi->uLcdBedLevelingBox, "LCD_BED_LEVELING");
+    ReplaceTag(pOutput, "#{MESH_EDIT_Z_STEP}", mUi->uMeshEditZStepSpinBox, false, "MESH_EDIT_Z_STEP", 3);
+    ReplaceTag(pOutput, "#{LCD_PROBE_Z_RANGE}", mUi->uLcdProbeZRangeSpinBox, false, "LCD_PROBE_Z_RANGE");
+    ReplaceTag(pOutput, "#{MESH_EDIT_MENU}", mUi->uMeshEditMenuBox, "MESH_EDIT_MENU");
+    ReplaceTag(pOutput, "#{LCD_BED_TRAMMING}", mUi->uLcdBedTrammingBox, "LCD_BED_TRAMMING");
+    ReplaceTag(pOutput, "#{BED_TRAMMING_INSET_LFRB}", mUi->uBedTrammingInsetLfrbEdit, false, "BED_TRAMMING_INSET_LFRB");
+    ReplaceTag(pOutput, "#{BED_TRAMMING_HEIGHT}", mUi->uBedTrammingHeightSpinBox, false, "BED_TRAMMING_HEIGHT", 1);
+    ReplaceTag(pOutput, "#{BED_TRAMMING_Z_HOP}", mUi->uBedTrammingZHopSpinBox, false, "BED_TRAMMING_Z_HOP", 1);
+    ReplaceTag(pOutput, "#{BED_TRAMMING_INCLUDE_CENTER}", mUi->uBedTrammingIncludeCenterBox, "BED_TRAMMING_INCLUDE_CENTER");
+    ReplaceTag(pOutput, "#{BED_TRAMMING_USE_PROBE}", mUi->uBedTrammingUseProbeBox, "BED_TRAMMING_USE_PROBE");
+    ReplaceTag(pOutput, "#{BED_TRAMMING_PROBE_TOLERANCE}", mUi->uBedTrammingProbeToleranceSpinBox, false, "BED_TRAMMING_PROBE_TOLERANCE", 1);
+    ReplaceTag(pOutput, "#{BED_TRAMMING_VERIFY_RAISED}", mUi->uBedTrammingVerifyRaisedBox, "BED_TRAMMING_VERIFY_RAISED");
+    ReplaceTag(pOutput, "#{BED_TRAMMING_AUDIO_FEEDBACK}", mUi->uBedTrammingAudioFeedbackBox, "BED_TRAMMING_AUDIO_FEEDBACK");
+    ReplaceTag(pOutput, "#{BED_TRAMMING_LEVELING_ORDER}", mUi->uBedTrammingLevelingOrderEdit, false, "BED_TRAMMING_LEVELING_ORDER");
+    ReplaceTag(pOutput, "#{Z_PROBE_END_SCRIPT}", mUi->uZProbeEndScriptEdit, !mUi->uZProbeEndScriptBox->isChecked(), "Z_PROBE_END_SCRIPT", true);
 }

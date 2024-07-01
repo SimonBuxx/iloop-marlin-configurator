@@ -289,7 +289,7 @@ inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const QGro
 
 inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const QLineEdit* pWidget, bool pCommentOut, const QString& pParam, bool pUseParentheses = false)
 {
-    pOutput.replaceInStrings(pTagName, QString(pUseParentheses ? "%0#define %1 \"%2\"" : "%0#define %1 %2").arg((!pWidget->isEnabled() || pCommentOut) ? "//" : "", pParam, (!pWidget->isEnabled() || pCommentOut) ? "" : pWidget->text()));
+    pOutput.replaceInStrings(pTagName, QString(pUseParentheses ? "%0#define %1 \"%2\"" : "%0#define %1 %2").arg((!pWidget->isEnabled() || pCommentOut) ? "//" : "", pParam, (!pWidget->isEnabled() || pCommentOut) ? "" : pWidget->text().replace("\n", "\\n")));
 }
 
 inline void ReplaceTag(QStringList& pOutput, const QString& pTagName, const QSpinBox* pWidget, bool pCommentOut, const QString& pParam)

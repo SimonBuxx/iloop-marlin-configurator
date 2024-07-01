@@ -2524,7 +2524,7 @@ QPushButton::!checked:hover {
 }</string>
            </property>
            <property name="text">
-            <string>Bed Leveling (WIP)</string>
+            <string>Bed Leveling</string>
            </property>
            <property name="icon">
             <iconset>

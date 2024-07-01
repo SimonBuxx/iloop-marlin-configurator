@@ -756,6 +756,22 @@ static constexpr auto MESH_INSET_2{10};
 static constexpr auto GRID_MAX_POINTS_X_3{3};
 static constexpr auto GRID_MAX_POINTS_Y_3{3};
 static constexpr auto MESH_G28_REST_ORIGIN{false};
+static constexpr auto LCD_BED_LEVELING{false};
+static constexpr auto MESH_EDIT_Z_STEP{0.025f};
+static constexpr auto LCD_PROBE_Z_RANGE{4};
+static constexpr auto MESH_EDIT_MENU{false};
+static constexpr auto LCD_BED_TRAMMING{false};
+static constexpr auto BED_TRAMMING_INSET_LFRB{"{ 30, 30, 30, 30 }"};
+static constexpr auto BED_TRAMMING_HEIGHT{0.0f};
+static constexpr auto BED_TRAMMING_Z_HOP{4.0f};
+static constexpr auto BED_TRAMMING_INCLUDE_CENTER{false};
+static constexpr auto BED_TRAMMING_USE_PROBE{false};
+static constexpr auto BED_TRAMMING_PROBE_TOLERANCE{0.1f};
+static constexpr auto BED_TRAMMING_VERIFY_RAISED{true};
+static constexpr auto BED_TRAMMING_AUDIO_FEEDBACK{false};
+static constexpr auto BED_TRAMMING_LEVELING_ORDER{"{ LF, RF, RB, LB }"};
+static constexpr auto Z_PROBE_END_SCRIPT{"G1 Z10 F12000\nG1 X15 Y330\nG1 Z0.5\nG1 Z10"};
+static constexpr auto ENABLE_Z_PROBE_END_SCRIPT{false};
 
 // Homing Options
 static constexpr auto BED_CENTER_AT_0_0{false};
@@ -2341,6 +2357,22 @@ struct BedLevelingConfiguration : public PageConfiguration
     int32_t GRID_MAX_POINTS_X_3{defaults::GRID_MAX_POINTS_X_3};
     int32_t GRID_MAX_POINTS_Y_3{defaults::GRID_MAX_POINTS_Y_3};
     bool MESH_G28_REST_ORIGIN{defaults::MESH_G28_REST_ORIGIN};
+    bool LCD_BED_LEVELING{defaults::LCD_BED_LEVELING};
+    double MESH_EDIT_Z_STEP{defaults::MESH_EDIT_Z_STEP};
+    int32_t LCD_PROBE_Z_RANGE{defaults::LCD_PROBE_Z_RANGE};
+    bool MESH_EDIT_MENU{defaults::MESH_EDIT_MENU};
+    bool LCD_BED_TRAMMING{defaults::LCD_BED_TRAMMING};
+    QString BED_TRAMMING_INSET_LFRB{defaults::BED_TRAMMING_INSET_LFRB};
+    double BED_TRAMMING_HEIGHT{defaults::BED_TRAMMING_HEIGHT};
+    double BED_TRAMMING_Z_HOP{defaults::BED_TRAMMING_Z_HOP};
+    bool BED_TRAMMING_INCLUDE_CENTER{defaults::BED_TRAMMING_INCLUDE_CENTER};
+    bool BED_TRAMMING_USE_PROBE{defaults::BED_TRAMMING_USE_PROBE};
+    double BED_TRAMMING_PROBE_TOLERANCE{defaults::BED_TRAMMING_PROBE_TOLERANCE};
+    bool BED_TRAMMING_VERIFY_RAISED{defaults::BED_TRAMMING_VERIFY_RAISED};
+    bool BED_TRAMMING_AUDIO_FEEDBACK{defaults::BED_TRAMMING_AUDIO_FEEDBACK};
+    QString BED_TRAMMING_LEVELING_ORDER{defaults::BED_TRAMMING_LEVELING_ORDER};
+    QString Z_PROBE_END_SCRIPT{defaults::Z_PROBE_END_SCRIPT};
+    bool ENABLE_Z_PROBE_END_SCRIPT{defaults::ENABLE_Z_PROBE_END_SCRIPT};
 
 public:
     /// \brief Converts the configuration into a JSON object
@@ -2396,6 +2428,22 @@ public:
         json["GRID_MAX_POINTS_X_3"] = GRID_MAX_POINTS_X_3;
         json["GRID_MAX_POINTS_Y_3"] = GRID_MAX_POINTS_Y_3;
         json["MESH_G28_REST_ORIGIN"] = MESH_G28_REST_ORIGIN;
+        json["LCD_BED_LEVELING"] = LCD_BED_LEVELING;
+        json["MESH_EDIT_Z_STEP"] = MESH_EDIT_Z_STEP;
+        json["LCD_PROBE_Z_RANGE"] = LCD_PROBE_Z_RANGE;
+        json["MESH_EDIT_MENU"] = MESH_EDIT_MENU;
+        json["LCD_BED_TRAMMING"] = LCD_BED_TRAMMING;
+        json["BED_TRAMMING_INSET_LFRB"] = BED_TRAMMING_INSET_LFRB;
+        json["BED_TRAMMING_HEIGHT"] = BED_TRAMMING_HEIGHT;
+        json["BED_TRAMMING_Z_HOP"] = BED_TRAMMING_Z_HOP;
+        json["BED_TRAMMING_INCLUDE_CENTER"] = BED_TRAMMING_INCLUDE_CENTER;
+        json["BED_TRAMMING_USE_PROBE"] = BED_TRAMMING_USE_PROBE;
+        json["BED_TRAMMING_PROBE_TOLERANCE"] = BED_TRAMMING_PROBE_TOLERANCE;
+        json["BED_TRAMMING_VERIFY_RAISED"] = BED_TRAMMING_VERIFY_RAISED;
+        json["BED_TRAMMING_AUDIO_FEEDBACK"] = BED_TRAMMING_AUDIO_FEEDBACK;
+        json["BED_TRAMMING_LEVELING_ORDER"] = BED_TRAMMING_LEVELING_ORDER;
+        json["Z_PROBE_END_SCRIPT"] = Z_PROBE_END_SCRIPT;
+        json["ENABLE_Z_PROBE_END_SCRIPT"] = ENABLE_Z_PROBE_END_SCRIPT;
 
         return json;
     }

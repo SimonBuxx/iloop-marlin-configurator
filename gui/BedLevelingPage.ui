@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1252</width>
-    <height>3000</height>
+    <height>4000</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -275,8 +275,2239 @@ QAbstractSpinBox::down-button:off {
    <property name="spacing">
     <number>10</number>
    </property>
+   <item row="11" column="0" colspan="3">
+    <widget class="QWidget" name="widget_5" native="true">
+     <layout class="QGridLayout" name="gridLayout_16">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QGroupBox" name="uBdSensorBox">
+        <property name="title">
+         <string>BD_SENSOR</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_19">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_27">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_28">
+           <property name="text">
+            <string>Enable this if a bed distance sensor is present that measures the distance between nozzle and bed.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QGroupBox" name="uDebugLevelingFeatureBox">
+        <property name="title">
+         <string>DEBUG_LEVELING_FEATURE</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_18">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_25">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_26">
+           <property name="text">
+            <string>Enable this to enable detailed logging of G28, G29, M48, etc. Turn on with the command 'M111 S32'. (Requires a lot of PROGMEM!)</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QGroupBox" name="uManualProbeStartZBox">
+        <property name="title">
+         <string>MANUAL_PROBE_START_Z</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_17">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_23">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_24">
+           <property name="text">
+            <string>Set a height for the start of manual adjustment. If disabled, the last-measured height is used.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QDoubleSpinBox" name="uManualProbeStartZSpinBox">
+           <property name="suffix">
+            <string> mm</string>
+           </property>
+           <property name="decimals">
+            <number>1</number>
+           </property>
+           <property name="stepType">
+            <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+           </property>
+           <property name="value">
+            <double>0.200000000000000</double>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="17" column="0" colspan="3">
+    <widget class="QFrame" name="frame">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_50">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <property name="spacing">
+       <number>10</number>
+      </property>
+     </layout>
+    </widget>
+   </item>
+   <item row="25" column="0" colspan="3">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="10" column="0" colspan="3">
+    <widget class="QWidget" name="widget_3" native="true">
+     <layout class="QGridLayout" name="gridLayout_3" columnstretch="1,1,2">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <item row="0" column="0" colspan="2">
+       <widget class="QLabel" name="label_53">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+	color: rgb(100, 103, 122);
+	font-size: 25px;
+	font-family: &quot;Source Sans Pro Light&quot;;
+	font-style: italic;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>G28 BED LEVELING</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" colspan="2">
+       <widget class="QGroupBox" name="uRestoreLevelingAfterG28Box">
+        <property name="title">
+         <string>RESTORE_LEVELING_AFTER_G28</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_10">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_11">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_12">
+           <property name="text">
+            <string>Restore the prior bed leveling state on completion of G28.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="2" column="0" colspan="2">
+       <widget class="QGroupBox" name="uEnableLevelingAfterG28Box">
+        <property name="title">
+         <string>ENABLE_LEVELING_AFTER_G28</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_9">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_9">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_10">
+           <property name="text">
+            <string>Enable bed leveling immediately on completion of G28.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="0" column="2" rowspan="3">
+       <widget class="QGroupBox" name="uPreheatBeforeLevelingBox">
+        <property name="title">
+         <string>PREHEAT_BEFORE_LEVELING</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_4">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_7">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string>Enable this to preheat before bed leveling.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QWidget" name="widget_4" native="true">
+           <layout class="QGridLayout" name="gridLayout_8">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <property name="spacing">
+             <number>10</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="QGroupBox" name="groupBox_9">
+              <property name="focusPolicy">
+               <enum>Qt::StrongFocus</enum>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+              </property>
+              <property name="title">
+               <string>LEVELING_NOZZLE_TEMP</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_7">
+               <property name="spacing">
+                <number>10</number>
+               </property>
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_2">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="pixmap">
+                  <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLabel" name="label_3">
+                 <property name="text">
+                  <string>The nozzle temperature to preheat to before leveling (only applies to E0).</string>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0" colspan="2">
+                <widget class="QSpinBox" name="uLevelingNozzleTempSpinBox">
+                 <property name="suffix">
+                  <string> °C</string>
+                 </property>
+                 <property name="maximum">
+                  <number>1000</number>
+                 </property>
+                 <property name="stepType">
+                  <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+                 </property>
+                 <property name="value">
+                  <number>120</number>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QGroupBox" name="groupBox_10">
+              <property name="focusPolicy">
+               <enum>Qt::StrongFocus</enum>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+              </property>
+              <property name="title">
+               <string>LEVELING_BED_TEMP</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_6">
+               <property name="spacing">
+                <number>10</number>
+               </property>
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_4">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="pixmap">
+                  <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLabel" name="label_6">
+                 <property name="text">
+                  <string>The bed temperature to preheat to before leveling.</string>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0" colspan="2">
+                <widget class="QSpinBox" name="uLevelingBedTempSpinBox">
+                 <property name="suffix">
+                  <string> °C</string>
+                 </property>
+                 <property name="maximum">
+                  <number>1000</number>
+                 </property>
+                 <property name="stepType">
+                  <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+                 </property>
+                 <property name="value">
+                  <number>50</number>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="13" column="0" colspan="3">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTabWidget::pane {
+	border: 1px solid black;
+}
+
+QScrollBar::vertical {
+	background: rgb(34, 35, 40);
+}
+
+QTabBar::tab {
+	color: black;
+	padding: 2px 5px;
+	margin: 0 1px;
+	background: rgb(249, 154, 0);
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	margin-top: 2px;
+}
+
+QTabBar::tab:!selected {
+	margin-top: 3px;
+}
+
+QTabBar::tab:disabled {
+	background: rgb(63, 65, 77);
+}
+
+QTabBar::scroller {
+    width: 40px;
+}
+
+QTabBar QToolButton {
+	background: rgb(249, 154, 0);
+	margin-top: 3px;
+   	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	margin-left: 2px;
+}
+
+QTabBar QToolButton::pressed {
+	margin-top: 4px;
+}
+
+QTabBar QToolButton:disabled {
+	background: rgb(63, 65, 77);
+}
+
+QTabBar QToolButton::right-arrow {
+    image: url(&quot;:/arrow_right_FILL0_wght400_GRAD0_opsz20.svg&quot;);
+}
+
+QTabBar QToolButton::left-arrow {
+	image: url(&quot;:/arrow_left_FILL0_wght400_GRAD0_opsz20.svg&quot;);
+}</string>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="uLinearBilinearBedLevelingTab">
+      <attribute name="title">
+       <string>Linear/Bilinear Bed Leveling</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_51">
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <item row="0" column="1">
+        <widget class="QGroupBox" name="groupBox_2">
+         <property name="focusPolicy">
+          <enum>Qt::WheelFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+         </property>
+         <property name="title">
+          <string>GRID_MAX_POINTS_Y</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_37">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_58">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_59">
+            <property name="text">
+             <string>Set the number of grid points for the Y dimension.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="QSpinBox" name="uGridMaxPointsYSpinBox">
+            <property name="suffix">
+             <string/>
+            </property>
+            <property name="maximum">
+             <number>15</number>
+            </property>
+            <property name="value">
+             <number>3</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QGroupBox" name="uExtrapolateBeyondGridBox">
+         <property name="title">
+          <string>EXTRAPOLATE_BEYOND_GRID</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_39">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_65">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_64">
+            <property name="text">
+             <string>Beyond the probed grid, continue the implied tilt? Default is to maintain the height of the nearest edge.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="1" rowspan="2">
+        <widget class="QGroupBox" name="uAblBilinearSubdivisionBox">
+         <property name="title">
+          <string>ABL_BILINEAR_SUBDIVISION</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_35">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="1" column="0" colspan="2">
+           <widget class="QGroupBox" name="groupBox_6">
+            <property name="styleSheet">
+             <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+            </property>
+            <property name="title">
+             <string>BILINEAR_SUBDIVISIONS</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_40">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_68">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_69">
+               <property name="text">
+                <string>This is the number of subdivisions between probe points.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0" colspan="2">
+              <widget class="QSpinBox" name="uBilinearSubdivisionsSpinBox">
+               <property name="suffix">
+                <string/>
+               </property>
+               <property name="maximum">
+                <number>100</number>
+               </property>
+               <property name="value">
+                <number>3</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_66">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_67">
+            <property name="text">
+             <string>Experimental Subdivision of the grid by Catmull-Rom method. Synthesizes intermediate points to produce a more detailed mesh.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="groupBox">
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+         </property>
+         <property name="title">
+          <string>GRID_MAX_POINTS_X</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_36">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_56">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_57">
+            <property name="text">
+             <string>Set the number of grid points for the X dimension.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="QSpinBox" name="uGridMaxPointsXSpinBox">
+            <property name="suffix">
+             <string/>
+            </property>
+            <property name="maximum">
+             <number>15</number>
+            </property>
+            <property name="value">
+             <number>3</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QGroupBox" name="uProbeYFirstBox">
+         <property name="title">
+          <string>PROBE_Y_FIRST</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_38">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_61">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_60">
+            <property name="text">
+             <string>Enable this to probe along the Y axis, advancing X after each column.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="uUnifiedBedLevelingTab">
+      <attribute name="title">
+       <string>Unified Bed Leveling</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_52">
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <item row="0" column="2">
+        <widget class="QGroupBox" name="groupBox_11">
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+         </property>
+         <property name="title">
+          <string>GRID_MAX_POINTS_X</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_43">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_74">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_75">
+            <property name="text">
+             <string>Don't use more than 15 points per axis, implementation limited.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="QSpinBox" name="uGridMaxPointsXSpinBox_2">
+            <property name="suffix">
+             <string/>
+            </property>
+            <property name="maximum">
+             <number>15</number>
+            </property>
+            <property name="value">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QGroupBox" name="groupBox_8">
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+         </property>
+         <property name="title">
+          <string>MESH_INSET</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_42">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_72">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_73">
+            <property name="text">
+             <string>Set Mesh bounds as an inset region of the bed.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="QSpinBox" name="uMeshInsetSpinBox">
+            <property name="suffix">
+             <string/>
+            </property>
+            <property name="maximum">
+             <number>100</number>
+            </property>
+            <property name="value">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QGroupBox" name="uUblHilbertCurveBox">
+         <property name="title">
+          <string>UBL_HILBERT_CURVE</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_45">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_78">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_79">
+            <property name="text">
+             <string>Use Hilbert distribution for less travel when probing multiple points.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="uMeshEditGfxOverlayBox">
+         <property name="title">
+          <string>MESH_EDIT_GFX_OVERLAY</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_41">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_70">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_71">
+            <property name="text">
+             <string>Enable this to display a graphics overlay while editing the mesh.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QGroupBox" name="groupBox_12">
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+         </property>
+         <property name="title">
+          <string>GRID_MAX_POINTS_Y</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_44">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_76">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_77">
+            <property name="text">
+             <string>Enable this to display a graphics overlay while editing the mesh.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="QSpinBox" name="uGridMaxPointsYSpinBox_2">
+            <property name="suffix">
+             <string/>
+            </property>
+            <property name="maximum">
+             <number>15</number>
+            </property>
+            <property name="value">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QGroupBox" name="uUblMeshEditMovesZBox">
+         <property name="title">
+          <string>UBL_MESH_EDIT_MOVES_Z</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_46">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_81">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_80">
+            <property name="text">
+             <string>Sophisticated users prefer no movement of the nozzle.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QGroupBox" name="uUblSaveActiveOnM500Box">
+         <property name="title">
+          <string>UBL_SAVE_ACTIVE_ON_M500</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_47">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_83">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_82">
+            <property name="text">
+             <string>Enable this to save the currently active mesh in the current slot on M500.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QGroupBox" name="uUblZRaiseWhenOffMeshBox">
+         <property name="title">
+          <string>UBL_Z_RAISE_WHEN_OFF_MESH</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_49">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_85">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_84">
+            <property name="text">
+             <string>Use Hilbert distribution for less travel when probing multiple points.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="QDoubleSpinBox" name="uUblZRaiseWhenOffMeshSpinBox">
+            <property name="suffix">
+             <string> mm</string>
+            </property>
+            <property name="decimals">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <double>100.000000000000000</double>
+            </property>
+            <property name="stepType">
+             <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+            </property>
+            <property name="value">
+             <double>2.500000000000000</double>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QGroupBox" name="uUblMeshWizardBox">
+         <property name="title">
+          <string>UBL_MESH_WIZARD</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_48">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_87">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_86">
+            <property name="text">
+             <string>Run several commands in a row to get a complete mesh.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="uMeshBedLevelingTab">
+      <attribute name="title">
+       <string>Mesh Bed Leveling</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_56">
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="groupBox_14">
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+         </property>
+         <property name="title">
+          <string>GRID_MAX_POINTS_X</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_54">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_90">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_91">
+            <property name="text">
+             <string>Don't use more than 15 points per axis, implementation limited.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="QSpinBox" name="uGridMaxPointsXSpinBox_3">
+            <property name="suffix">
+             <string/>
+            </property>
+            <property name="maximum">
+             <number>15</number>
+            </property>
+            <property name="value">
+             <number>3</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QGroupBox" name="uMeshG28RestOriginBox">
+         <property name="title">
+          <string>MESH_G28_REST_ORIGIN</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_57">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_94">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_95">
+            <property name="text">
+             <string>Enable this to display a graphics overlay while editing the mesh.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QGroupBox" name="groupBox_16">
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+         </property>
+         <property name="title">
+          <string>GRID_MAX_POINTS_Y</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_55">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="1" column="0" colspan="2">
+           <widget class="QSpinBox" name="uGridMaxPointsYSpinBox_3">
+            <property name="suffix">
+             <string/>
+            </property>
+            <property name="maximum">
+             <number>15</number>
+            </property>
+            <property name="value">
+             <number>3</number>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_93">
+            <property name="text">
+             <string>Enable this to display a graphics overlay while editing the mesh.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_92">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QGroupBox" name="groupBox_13">
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+         </property>
+         <property name="title">
+          <string>MESH_INSET</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_53">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_88">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_89">
+            <property name="text">
+             <string>Set Mesh bounds as an inset region of the bed.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="QSpinBox" name="uMeshInsetSpinBox_2">
+            <property name="suffix">
+             <string/>
+            </property>
+            <property name="maximum">
+             <number>100</number>
+            </property>
+            <property name="value">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="2">
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Expanding</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>10</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="2" column="0" colspan="3">
+    <widget class="QWidget" name="widget" native="true">
+     <layout class="QGridLayout" name="gridLayout_5">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <property name="horizontalSpacing">
+       <number>10</number>
+      </property>
+      <property name="verticalSpacing">
+       <number>5</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_5">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Source Sans Pro Light</family>
+          <pointsize>-1</pointsize>
+          <italic>true</italic>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+	color: rgb(100, 103, 122);
+	font-size: 35px;
+	font-family: &quot;Source Sans Pro Light&quot;;
+	font-style: italic;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>BED LEVELING</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QPushButton" name="uDocumentationButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>Open Bed Leveling documentation</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	background: none;
+	border: none;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="4" column="0" colspan="3">
+    <widget class="QLabel" name="label">
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+	color: rgb(100, 103, 122);
+	font-size: 25px;
+	font-family: &quot;Source Sans Pro Light&quot;;
+	font-style: italic;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>G29 BED LEVELING</string>
+     </property>
+    </widget>
+   </item>
+   <item row="15" column="0" colspan="3">
+    <widget class="QGroupBox" name="uLcdBedTrammingBox">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="title">
+      <string>LCD_BED_TRAMMING</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_59">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <item row="1" column="0" colspan="2">
+       <widget class="QGroupBox" name="groupBox_18">
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+        </property>
+        <property name="title">
+         <string>BED_TRAMMING_INSET_LFRB</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_64">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_102">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_103">
+           <property name="text">
+            <string>These are the left, front, right and back insets.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QLineEdit" name="uBedTrammingInsetLfrbEdit">
+           <property name="text">
+            <string>{ 30, 30, 30, 30 }</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QGroupBox" name="groupBox_26">
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+        </property>
+        <property name="title">
+         <string>BED_TRAMMING_HEIGHT</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_65">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_104">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_105">
+           <property name="text">
+            <string>This is the Z height of the nozzle at leveling points.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QDoubleSpinBox" name="uBedTrammingHeightSpinBox">
+           <property name="suffix">
+            <string> mm</string>
+           </property>
+           <property name="decimals">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <double>10.000000000000000</double>
+           </property>
+           <property name="stepType">
+            <enum>QAbstractSpinBox::DefaultStepType</enum>
+           </property>
+           <property name="value">
+            <double>0.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_119">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0" colspan="3">
+       <widget class="QGroupBox" name="groupBox_3">
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+        </property>
+        <property name="title">
+         <string>BED_TRAMMING_LEVELING_ORDER</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_71">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_122">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_123">
+           <property name="text">
+            <string>Set 2 or 4 points. When 2 points are given, the 3rd is the center of the opposite edge.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QLineEdit" name="uBedTrammingLevelingOrderEdit">
+           <property name="text">
+            <string>{ LF, RF, RB, LB }</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="2" column="0" colspan="2">
+       <widget class="QGroupBox" name="groupBox_27">
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+        </property>
+        <property name="title">
+         <string>BED_TRAMMING_Z_HOP</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_67">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_108">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_109">
+           <property name="text">
+            <string>This is the Z height of the nozzle between leveling points.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QDoubleSpinBox" name="uBedTrammingZHopSpinBox">
+           <property name="suffix">
+            <string> mm</string>
+           </property>
+           <property name="decimals">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <double>10.000000000000000</double>
+           </property>
+           <property name="stepType">
+            <enum>QAbstractSpinBox::DefaultStepType</enum>
+           </property>
+           <property name="value">
+            <double>4.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="0" column="1" colspan="2">
+       <widget class="QLabel" name="label_118">
+        <property name="text">
+         <string>Enable this to add a menu item to move between bed corners for manual bed adjustment.</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" colspan="3">
+       <widget class="QGroupBox" name="uBedTrammingUseProbeBox">
+        <property name="title">
+         <string>BED_TRAMMING_USE_PROBE</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_60">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_117">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" colspan="2">
+          <widget class="QLabel" name="label_116">
+           <property name="text">
+            <string>Enable this if a probe is used for bed tramming.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QGroupBox" name="groupBox_30">
+           <property name="focusPolicy">
+            <enum>Qt::StrongFocus</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QGroupBox:!disabled {
+	background: rgb(50, 52, 59);
+}</string>
+           </property>
+           <property name="title">
+            <string>BED_TRAMMING_PROBE_TOLERANCE</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_68">
+            <property name="spacing">
+             <number>10</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_110">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="label_111">
+              <property name="text">
+               <string>This is the probe tolerance for bed tramming.</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" colspan="2">
+             <widget class="QDoubleSpinBox" name="uBedTrammingProbeToleranceSpinBox">
+              <property name="suffix">
+               <string> mm</string>
+              </property>
+              <property name="decimals">
+               <number>1</number>
+              </property>
+              <property name="maximum">
+               <double>10.000000000000000</double>
+              </property>
+              <property name="stepType">
+               <enum>QAbstractSpinBox::DefaultStepType</enum>
+              </property>
+              <property name="value">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QGroupBox" name="uBedTrammingVerifyRaisedBox">
+           <property name="title">
+            <string>BED_TRAMMING_VERIFY_RAISED</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_69">
+            <property name="spacing">
+             <number>10</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_112">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="label_113">
+              <property name="text">
+               <string>After adjustment triggers the probe, re-probe to verify.</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="2" column="0" colspan="3">
+          <widget class="QGroupBox" name="uBedTrammingAudioFeedbackBox">
+           <property name="title">
+            <string>BED_TRAMMING_AUDIO_FEEDBACK</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_70">
+            <property name="spacing">
+             <number>10</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_114">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="label_115">
+              <property name="text">
+               <string>Enable audio feedback for bed tramming.</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QGroupBox" name="uBedTrammingIncludeCenterBox">
+        <property name="title">
+         <string>BED_TRAMMING_INCLUDE_CENTER</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_66">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_106">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_107">
+           <property name="text">
+            <string>Enable this to move to the center after the last corner.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
    <item row="14" column="0" colspan="3">
-    <widget class="QGroupBox" name="groupBox_3">
+    <widget class="QGroupBox" name="uLcdBedLevelingBox">
      <property name="title">
       <string>LCD_BED_LEVELING</string>
      </property>
@@ -284,8 +2515,11 @@ QAbstractSpinBox::down-button:off {
       <bool>true</bool>
      </property>
      <layout class="QGridLayout" name="gridLayout_58">
+      <property name="spacing">
+       <number>10</number>
+      </property>
       <item row="2" column="0" colspan="3">
-       <widget class="QGroupBox" name="groupBox_7">
+       <widget class="QGroupBox" name="uMeshEditMenuBox">
         <property name="title">
          <string>MESH_EDIT_MENU</string>
         </property>
@@ -293,6 +2527,9 @@ QAbstractSpinBox::down-button:off {
          <bool>true</bool>
         </property>
         <layout class="QGridLayout" name="gridLayout_63">
+         <property name="spacing">
+          <number>10</number>
+         </property>
          <item row="0" column="0">
           <widget class="QLabel" name="label_100">
            <property name="sizePolicy">
@@ -336,6 +2573,9 @@ QAbstractSpinBox::down-button:off {
          <string>MESH_EDIT_Z_STEP</string>
         </property>
         <layout class="QGridLayout" name="gridLayout_61">
+         <property name="spacing">
+          <number>10</number>
+         </property>
          <item row="0" column="0">
           <widget class="QLabel" name="label_96">
            <property name="sizePolicy">
@@ -363,7 +2603,7 @@ QAbstractSpinBox::down-button:off {
           </widget>
          </item>
          <item row="1" column="0" colspan="2">
-          <widget class="QDoubleSpinBox" name="uG26RetractMultiplierSpinBox_2">
+          <widget class="QDoubleSpinBox" name="uMeshEditZStepSpinBox">
            <property name="suffix">
             <string> mm</string>
            </property>
@@ -398,6 +2638,9 @@ QAbstractSpinBox::down-button:off {
          <string>LCD_PROBE_Z_RANGE</string>
         </property>
         <layout class="QGridLayout" name="gridLayout_62">
+         <property name="spacing">
+          <number>10</number>
+         </property>
          <item row="0" column="0">
           <widget class="QLabel" name="label_98">
            <property name="sizePolicy">
@@ -425,7 +2668,7 @@ QAbstractSpinBox::down-button:off {
           </widget>
          </item>
          <item row="1" column="0" colspan="2">
-          <widget class="QSpinBox" name="uMeshInsetSpinBox_3">
+          <widget class="QSpinBox" name="uLcdProbeZRangeSpinBox">
            <property name="suffix">
             <string> mm</string>
            </property>
@@ -692,33 +2935,6 @@ QAbstractSpinBox::down-button:off {
         </layout>
        </widget>
       </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="16" column="0" colspan="3">
-    <widget class="QFrame" name="frame">
-     <property name="frameShape">
-      <enum>QFrame::NoFrame</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Plain</enum>
-     </property>
-     <layout class="QGridLayout" name="gridLayout_50">
-      <property name="leftMargin">
-       <number>0</number>
-      </property>
-      <property name="topMargin">
-       <number>0</number>
-      </property>
-      <property name="rightMargin">
-       <number>0</number>
-      </property>
-      <property name="bottomMargin">
-       <number>0</number>
-      </property>
-      <property name="spacing">
-       <number>10</number>
-      </property>
      </layout>
     </widget>
    </item>
@@ -1491,1669 +3707,30 @@ QAbstractSpinBox::down-button:off {
      </layout>
     </widget>
    </item>
-   <item row="2" column="0" colspan="3">
-    <widget class="QWidget" name="widget" native="true">
-     <layout class="QGridLayout" name="gridLayout_5">
-      <property name="leftMargin">
-       <number>0</number>
-      </property>
-      <property name="topMargin">
-       <number>0</number>
-      </property>
-      <property name="rightMargin">
-       <number>0</number>
-      </property>
-      <property name="bottomMargin">
-       <number>0</number>
-      </property>
-      <property name="horizontalSpacing">
-       <number>10</number>
-      </property>
-      <property name="verticalSpacing">
-       <number>5</number>
-      </property>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_5">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font>
-          <family>Source Sans Pro Light</family>
-          <pointsize>-1</pointsize>
-          <italic>true</italic>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLabel {
-	color: rgb(100, 103, 122);
-	font-size: 35px;
-	font-family: &quot;Source Sans Pro Light&quot;;
-	font-style: italic;
-}
-</string>
-        </property>
-        <property name="text">
-         <string>BED LEVELING</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QPushButton" name="uDocumentationButton">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="toolTip">
-         <string>Open Bed Leveling documentation</string>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-	background: none;
-	border: none;
-}</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>20</width>
-          <height>20</height>
-         </size>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="2">
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="11" column="0" colspan="3">
-    <widget class="QWidget" name="widget_5" native="true">
-     <layout class="QGridLayout" name="gridLayout_16">
-      <property name="leftMargin">
-       <number>0</number>
-      </property>
-      <property name="topMargin">
-       <number>0</number>
-      </property>
-      <property name="rightMargin">
-       <number>0</number>
-      </property>
-      <property name="bottomMargin">
-       <number>0</number>
-      </property>
-      <property name="spacing">
-       <number>10</number>
-      </property>
-      <item row="0" column="0">
-       <widget class="QGroupBox" name="uBdSensorBox">
-        <property name="title">
-         <string>BD_SENSOR</string>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_19">
-         <property name="spacing">
-          <number>10</number>
-         </property>
-         <item row="0" column="0">
-          <widget class="QLabel" name="label_27">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QLabel" name="label_28">
-           <property name="text">
-            <string>Enable this if a bed distance sensor is present that measures the distance between nozzle and bed.</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QGroupBox" name="uDebugLevelingFeatureBox">
-        <property name="title">
-         <string>DEBUG_LEVELING_FEATURE</string>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_18">
-         <property name="spacing">
-          <number>10</number>
-         </property>
-         <item row="0" column="0">
-          <widget class="QLabel" name="label_25">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QLabel" name="label_26">
-           <property name="text">
-            <string>Enable this to enable detailed logging of G28, G29, M48, etc. Turn on with the command 'M111 S32'. (Requires a lot of PROGMEM!)</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
-      <item row="0" column="2">
-       <widget class="QGroupBox" name="uManualProbeStartZBox">
-        <property name="title">
-         <string>MANUAL_PROBE_START_Z</string>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_17">
-         <property name="spacing">
-          <number>10</number>
-         </property>
-         <item row="0" column="0">
-          <widget class="QLabel" name="label_23">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QLabel" name="label_24">
-           <property name="text">
-            <string>Set a height for the start of manual adjustment. If disabled, the last-measured height is used.</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0" colspan="2">
-          <widget class="QDoubleSpinBox" name="uManualProbeStartZSpinBox">
-           <property name="suffix">
-            <string> mm</string>
-           </property>
-           <property name="decimals">
-            <number>1</number>
-           </property>
-           <property name="stepType">
-            <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
-           </property>
-           <property name="value">
-            <double>0.200000000000000</double>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="3" column="1">
-    <spacer name="verticalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>10</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="13" column="0" colspan="3">
-    <widget class="QTabWidget" name="tabWidget">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QTabWidget::pane {
-	border: 1px solid black;
-}
-
-QScrollBar::vertical {
-	background: rgb(34, 35, 40);
-}
-
-QTabBar::tab {
-	color: black;
-	padding: 2px 5px;
-	margin: 0 1px;
-	background: rgb(249, 154, 0);
-	border-bottom-left-radius: 0;
-	border-bottom-right-radius: 0;
-	border-top-left-radius: 3px;
-	border-top-right-radius: 3px;
-	margin-top: 2px;
-}
-
-QTabBar::tab:!selected {
-	margin-top: 3px;
-}
-
-QTabBar::tab:disabled {
-	background: rgb(63, 65, 77);
-}
-
-QTabBar::scroller {
-    width: 40px;
-}
-
-QTabBar QToolButton {
-	background: rgb(249, 154, 0);
-	margin-top: 3px;
-   	border-bottom-left-radius: 0;
-	border-bottom-right-radius: 0;
-	border-top-left-radius: 3px;
-	border-top-right-radius: 3px;
-	margin-left: 2px;
-}
-
-QTabBar QToolButton::pressed {
-	margin-top: 4px;
-}
-
-QTabBar QToolButton:disabled {
-	background: rgb(63, 65, 77);
-}
-
-QTabBar QToolButton::right-arrow {
-    image: url(&quot;:/arrow_right_FILL0_wght400_GRAD0_opsz20.svg&quot;);
-}
-
-QTabBar QToolButton::left-arrow {
-	image: url(&quot;:/arrow_left_FILL0_wght400_GRAD0_opsz20.svg&quot;);
-}</string>
-     </property>
-     <property name="currentIndex">
-      <number>2</number>
-     </property>
-     <widget class="QWidget" name="uLinearBilinearBedLevelingTab">
-      <attribute name="title">
-       <string>Linear/Bilinear Bed Leveling</string>
-      </attribute>
-      <layout class="QGridLayout" name="gridLayout_51">
-       <property name="spacing">
-        <number>10</number>
-       </property>
-       <item row="0" column="1">
-        <widget class="QGroupBox" name="groupBox_2">
-         <property name="focusPolicy">
-          <enum>Qt::WheelFocus</enum>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-         </property>
-         <property name="title">
-          <string>GRID_MAX_POINTS_Y</string>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_37">
-          <property name="spacing">
-           <number>10</number>
-          </property>
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_58">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QLabel" name="label_59">
-            <property name="text">
-             <string>Set the number of grid points for the Y dimension.</string>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0" colspan="2">
-           <widget class="QSpinBox" name="uGridMaxPointsYSpinBox">
-            <property name="suffix">
-             <string/>
-            </property>
-            <property name="maximum">
-             <number>15</number>
-            </property>
-            <property name="value">
-             <number>3</number>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QGroupBox" name="uExtrapolateBeyondGridBox">
-         <property name="title">
-          <string>EXTRAPOLATE_BEYOND_GRID</string>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_39">
-          <property name="spacing">
-           <number>10</number>
-          </property>
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_65">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QLabel" name="label_64">
-            <property name="text">
-             <string>Beyond the probed grid, continue the implied tilt? Default is to maintain the height of the nearest edge.</string>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="1" column="1" rowspan="2">
-        <widget class="QGroupBox" name="uAblBilinearSubdivisionBox">
-         <property name="title">
-          <string>ABL_BILINEAR_SUBDIVISION</string>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_35">
-          <property name="spacing">
-           <number>10</number>
-          </property>
-          <item row="1" column="0" colspan="2">
-           <widget class="QGroupBox" name="groupBox_6">
-            <property name="styleSheet">
-             <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-            </property>
-            <property name="title">
-             <string>BILINEAR_SUBDIVISIONS</string>
-            </property>
-            <layout class="QGridLayout" name="gridLayout_40">
-             <property name="horizontalSpacing">
-              <number>10</number>
-             </property>
-             <item row="0" column="0">
-              <widget class="QLabel" name="label_68">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="pixmap">
-                <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="1">
-              <widget class="QLabel" name="label_69">
-               <property name="text">
-                <string>This is the number of subdivisions between probe points.</string>
-               </property>
-               <property name="wordWrap">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="0" colspan="2">
-              <widget class="QSpinBox" name="uBilinearSubdivisionsSpinBox">
-               <property name="suffix">
-                <string/>
-               </property>
-               <property name="maximum">
-                <number>100</number>
-               </property>
-               <property name="value">
-                <number>3</number>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_66">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QLabel" name="label_67">
-            <property name="text">
-             <string>Experimental Subdivision of the grid by Catmull-Rom method. Synthesizes intermediate points to produce a more detailed mesh.</string>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QGroupBox" name="groupBox">
-         <property name="focusPolicy">
-          <enum>Qt::StrongFocus</enum>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-         </property>
-         <property name="title">
-          <string>GRID_MAX_POINTS_X</string>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_36">
-          <property name="spacing">
-           <number>10</number>
-          </property>
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_56">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QLabel" name="label_57">
-            <property name="text">
-             <string>Set the number of grid points for the X dimension.</string>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0" colspan="2">
-           <widget class="QSpinBox" name="uGridMaxPointsXSpinBox">
-            <property name="suffix">
-             <string/>
-            </property>
-            <property name="maximum">
-             <number>15</number>
-            </property>
-            <property name="value">
-             <number>3</number>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QGroupBox" name="uProbeYFirstBox">
-         <property name="title">
-          <string>PROBE_Y_FIRST</string>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_38">
-          <property name="spacing">
-           <number>10</number>
-          </property>
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_61">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QLabel" name="label_60">
-            <property name="text">
-             <string>Enable this to probe along the Y axis, advancing X after each column.</string>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="uUnifiedBedLevelingTab">
-      <attribute name="title">
-       <string>Unified Bed Leveling</string>
-      </attribute>
-      <layout class="QGridLayout" name="gridLayout_52">
-       <property name="spacing">
-        <number>10</number>
-       </property>
-       <item row="0" column="2">
-        <widget class="QGroupBox" name="groupBox_11">
-         <property name="focusPolicy">
-          <enum>Qt::StrongFocus</enum>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-         </property>
-         <property name="title">
-          <string>GRID_MAX_POINTS_X</string>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_43">
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_74">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QLabel" name="label_75">
-            <property name="text">
-             <string>Don't use more than 15 points per axis, implementation limited.</string>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0" colspan="2">
-           <widget class="QSpinBox" name="uGridMaxPointsXSpinBox_2">
-            <property name="suffix">
-             <string/>
-            </property>
-            <property name="maximum">
-             <number>15</number>
-            </property>
-            <property name="value">
-             <number>10</number>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QGroupBox" name="groupBox_8">
-         <property name="focusPolicy">
-          <enum>Qt::StrongFocus</enum>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-         </property>
-         <property name="title">
-          <string>MESH_INSET</string>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_42">
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_72">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QLabel" name="label_73">
-            <property name="text">
-             <string>Set Mesh bounds as an inset region of the bed.</string>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0" colspan="2">
-           <widget class="QSpinBox" name="uMeshInsetSpinBox">
-            <property name="suffix">
-             <string/>
-            </property>
-            <property name="maximum">
-             <number>100</number>
-            </property>
-            <property name="value">
-             <number>1</number>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QGroupBox" name="uUblHilbertCurveBox">
-         <property name="title">
-          <string>UBL_HILBERT_CURVE</string>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_45">
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_78">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QLabel" name="label_79">
-            <property name="text">
-             <string>Use Hilbert distribution for less travel when probing multiple points.</string>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QGroupBox" name="uMeshEditGfxOverlayBox">
-         <property name="title">
-          <string>MESH_EDIT_GFX_OVERLAY</string>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_41">
-          <property name="spacing">
-           <number>10</number>
-          </property>
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_70">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QLabel" name="label_71">
-            <property name="text">
-             <string>Enable this to display a graphics overlay while editing the mesh.</string>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QGroupBox" name="groupBox_12">
-         <property name="focusPolicy">
-          <enum>Qt::StrongFocus</enum>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-         </property>
-         <property name="title">
-          <string>GRID_MAX_POINTS_Y</string>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_44">
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_76">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QLabel" name="label_77">
-            <property name="text">
-             <string>Enable this to display a graphics overlay while editing the mesh.</string>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0" colspan="2">
-           <widget class="QSpinBox" name="uGridMaxPointsYSpinBox_2">
-            <property name="suffix">
-             <string/>
-            </property>
-            <property name="maximum">
-             <number>15</number>
-            </property>
-            <property name="value">
-             <number>10</number>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="1" column="2">
-        <widget class="QGroupBox" name="uUblMeshEditMovesZBox">
-         <property name="title">
-          <string>UBL_MESH_EDIT_MOVES_Z</string>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_46">
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_81">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QLabel" name="label_80">
-            <property name="text">
-             <string>Sophisticated users prefer no movement of the nozzle.</string>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QGroupBox" name="uUblSaveActiveOnM500Box">
-         <property name="title">
-          <string>UBL_SAVE_ACTIVE_ON_M500</string>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_47">
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_83">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QLabel" name="label_82">
-            <property name="text">
-             <string>Enable this to save the currently active mesh in the current slot on M500.</string>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QGroupBox" name="uUblZRaiseWhenOffMeshBox">
-         <property name="title">
-          <string>UBL_Z_RAISE_WHEN_OFF_MESH</string>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_49">
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_85">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QLabel" name="label_84">
-            <property name="text">
-             <string>Use Hilbert distribution for less travel when probing multiple points.</string>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0" colspan="2">
-           <widget class="QDoubleSpinBox" name="uUblZRaiseWhenOffMeshSpinBox">
-            <property name="suffix">
-             <string> mm</string>
-            </property>
-            <property name="decimals">
-             <number>1</number>
-            </property>
-            <property name="maximum">
-             <double>100.000000000000000</double>
-            </property>
-            <property name="stepType">
-             <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
-            </property>
-            <property name="value">
-             <double>2.500000000000000</double>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="2" column="2">
-        <widget class="QGroupBox" name="uUblMeshWizardBox">
-         <property name="title">
-          <string>UBL_MESH_WIZARD</string>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_48">
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_87">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QLabel" name="label_86">
-            <property name="text">
-             <string>Run several commands in a row to get a complete mesh.</string>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="uMeshBedLevelingTab">
-      <attribute name="title">
-       <string>Mesh Bed Leveling</string>
-      </attribute>
-      <layout class="QGridLayout" name="gridLayout_56">
-       <property name="spacing">
-        <number>10</number>
-       </property>
-       <item row="0" column="0">
-        <widget class="QGroupBox" name="groupBox_14">
-         <property name="focusPolicy">
-          <enum>Qt::StrongFocus</enum>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-         </property>
-         <property name="title">
-          <string>GRID_MAX_POINTS_X</string>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_54">
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_90">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QLabel" name="label_91">
-            <property name="text">
-             <string>Don't use more than 15 points per axis, implementation limited.</string>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0" colspan="2">
-           <widget class="QSpinBox" name="uGridMaxPointsXSpinBox_3">
-            <property name="suffix">
-             <string/>
-            </property>
-            <property name="maximum">
-             <number>15</number>
-            </property>
-            <property name="value">
-             <number>3</number>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QGroupBox" name="uMeshG28RestOriginBox">
-         <property name="title">
-          <string>MESH_G28_REST_ORIGIN</string>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_57">
-          <property name="spacing">
-           <number>10</number>
-          </property>
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_94">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QLabel" name="label_95">
-            <property name="text">
-             <string>Enable this to display a graphics overlay while editing the mesh.</string>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QGroupBox" name="groupBox_16">
-         <property name="focusPolicy">
-          <enum>Qt::StrongFocus</enum>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-         </property>
-         <property name="title">
-          <string>GRID_MAX_POINTS_Y</string>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_55">
-          <item row="1" column="0" colspan="2">
-           <widget class="QSpinBox" name="uGridMaxPointsYSpinBox_3">
-            <property name="suffix">
-             <string/>
-            </property>
-            <property name="maximum">
-             <number>15</number>
-            </property>
-            <property name="value">
-             <number>3</number>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QLabel" name="label_93">
-            <property name="text">
-             <string>Enable this to display a graphics overlay while editing the mesh.</string>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_92">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QGroupBox" name="groupBox_13">
-         <property name="focusPolicy">
-          <enum>Qt::StrongFocus</enum>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-         </property>
-         <property name="title">
-          <string>MESH_INSET</string>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_53">
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_88">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QLabel" name="label_89">
-            <property name="text">
-             <string>Set Mesh bounds as an inset region of the bed.</string>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0" colspan="2">
-           <widget class="QSpinBox" name="uMeshInsetSpinBox_2">
-            <property name="suffix">
-             <string/>
-            </property>
-            <property name="maximum">
-             <number>100</number>
-            </property>
-            <property name="value">
-             <number>1</number>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="2" column="0" colspan="2">
-        <spacer name="verticalSpacer_3">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Preferred</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
-     </widget>
-    </widget>
-   </item>
-   <item row="4" column="0" colspan="3">
-    <widget class="QLabel" name="label">
-     <property name="styleSheet">
-      <string notr="true">QLabel {
-	color: rgb(100, 103, 122);
-	font-size: 25px;
-	font-family: &quot;Source Sans Pro Light&quot;;
-	font-style: italic;
-}
-</string>
-     </property>
-     <property name="text">
-      <string>G29 BED LEVELING</string>
-     </property>
-    </widget>
-   </item>
-   <item row="10" column="0" colspan="3">
-    <widget class="QWidget" name="widget_3" native="true">
-     <layout class="QGridLayout" name="gridLayout_3" columnstretch="1,1,2">
-      <property name="leftMargin">
-       <number>0</number>
-      </property>
-      <property name="topMargin">
-       <number>0</number>
-      </property>
-      <property name="rightMargin">
-       <number>0</number>
-      </property>
-      <property name="bottomMargin">
-       <number>0</number>
-      </property>
-      <property name="spacing">
-       <number>10</number>
-      </property>
-      <item row="0" column="0" colspan="2">
-       <widget class="QLabel" name="label_53">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLabel {
-	color: rgb(100, 103, 122);
-	font-size: 25px;
-	font-family: &quot;Source Sans Pro Light&quot;;
-	font-style: italic;
-}
-</string>
-        </property>
-        <property name="text">
-         <string>G28 BED LEVELING</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0" colspan="2">
-       <widget class="QGroupBox" name="uRestoreLevelingAfterG28Box">
-        <property name="title">
-         <string>RESTORE_LEVELING_AFTER_G28</string>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_10">
-         <property name="spacing">
-          <number>10</number>
-         </property>
-         <item row="0" column="0">
-          <widget class="QLabel" name="label_11">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QLabel" name="label_12">
-           <property name="text">
-            <string>Restore the prior bed leveling state on completion of G28.</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
-      <item row="2" column="0" colspan="2">
-       <widget class="QGroupBox" name="uEnableLevelingAfterG28Box">
-        <property name="title">
-         <string>ENABLE_LEVELING_AFTER_G28</string>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_9">
-         <property name="spacing">
-          <number>10</number>
-         </property>
-         <item row="0" column="0">
-          <widget class="QLabel" name="label_9">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QLabel" name="label_10">
-           <property name="text">
-            <string>Enable bed leveling immediately on completion of G28.</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
-      <item row="0" column="2" rowspan="3">
-       <widget class="QGroupBox" name="uPreheatBeforeLevelingBox">
-        <property name="title">
-         <string>PREHEAT_BEFORE_LEVELING</string>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_4">
-         <property name="spacing">
-          <number>10</number>
-         </property>
-         <item row="0" column="0">
-          <widget class="QLabel" name="label_7">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QLabel" name="label_8">
-           <property name="text">
-            <string>Enable this to preheat before bed leveling.</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0" colspan="2">
-          <widget class="QWidget" name="widget_4" native="true">
-           <layout class="QGridLayout" name="gridLayout_8">
-            <property name="leftMargin">
-             <number>0</number>
-            </property>
-            <property name="topMargin">
-             <number>0</number>
-            </property>
-            <property name="rightMargin">
-             <number>0</number>
-            </property>
-            <property name="bottomMargin">
-             <number>0</number>
-            </property>
-            <property name="spacing">
-             <number>10</number>
-            </property>
-            <item row="0" column="0">
-             <widget class="QGroupBox" name="groupBox_9">
-              <property name="focusPolicy">
-               <enum>Qt::StrongFocus</enum>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-              </property>
-              <property name="title">
-               <string>LEVELING_NOZZLE_TEMP</string>
-              </property>
-              <layout class="QGridLayout" name="gridLayout_7">
-               <property name="spacing">
-                <number>10</number>
-               </property>
-               <item row="0" column="0">
-                <widget class="QLabel" name="label_2">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="pixmap">
-                  <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="1">
-                <widget class="QLabel" name="label_3">
-                 <property name="text">
-                  <string>The nozzle temperature to preheat to before leveling (only applies to E0).</string>
-                 </property>
-                 <property name="wordWrap">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0" colspan="2">
-                <widget class="QSpinBox" name="uLevelingNozzleTempSpinBox">
-                 <property name="suffix">
-                  <string> °C</string>
-                 </property>
-                 <property name="maximum">
-                  <number>1000</number>
-                 </property>
-                 <property name="stepType">
-                  <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
-                 </property>
-                 <property name="value">
-                  <number>120</number>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-            <item row="0" column="1">
-             <widget class="QGroupBox" name="groupBox_10">
-              <property name="focusPolicy">
-               <enum>Qt::StrongFocus</enum>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-              </property>
-              <property name="title">
-               <string>LEVELING_BED_TEMP</string>
-              </property>
-              <layout class="QGridLayout" name="gridLayout_6">
-               <property name="spacing">
-                <number>10</number>
-               </property>
-               <item row="0" column="0">
-                <widget class="QLabel" name="label_4">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="pixmap">
-                  <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="1">
-                <widget class="QLabel" name="label_6">
-                 <property name="text">
-                  <string>The bed temperature to preheat to before leveling.</string>
-                 </property>
-                 <property name="wordWrap">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0" colspan="2">
-                <widget class="QSpinBox" name="uLevelingBedTempSpinBox">
-                 <property name="suffix">
-                  <string> °C</string>
-                 </property>
-                 <property name="maximum">
-                  <number>1000</number>
-                 </property>
-                 <property name="stepType">
-                  <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
-                 </property>
-                 <property name="value">
-                  <number>50</number>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="15" column="0" colspan="3">
-    <widget class="QGroupBox" name="groupBox_17">
-     <property name="enabled">
-      <bool>true</bool>
-     </property>
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
+   <item row="16" column="0" colspan="3">
+    <widget class="QGroupBox" name="uZProbeEndScriptBox">
      <property name="title">
-      <string>LCD_BED_TRAMMING</string>
+      <string>Z_PROBE_END_SCRIPT</string>
      </property>
      <property name="checkable">
       <bool>true</bool>
      </property>
-     <layout class="QGridLayout" name="gridLayout_59">
+     <layout class="QGridLayout" name="gridLayout_72">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <item row="0" column="1">
+       <widget class="QLabel" name="label_124">
+        <property name="text">
+         <string>These are commands to execute at the end of G29 probing. Useful to retract or move the Z probe out of the way.</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
       <item row="0" column="0">
-       <widget class="QLabel" name="label_119">
+       <widget class="QLabel" name="label_125">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -3168,419 +3745,15 @@ QTabBar QToolButton::left-arrow {
         </property>
        </widget>
       </item>
-      <item row="0" column="1" colspan="2">
-       <widget class="QLabel" name="label_118">
-        <property name="text">
-         <string>Enable this to add a menu item to move between bed corners for manual bed adjustment.</string>
-        </property>
-        <property name="wordWrap">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
       <item row="1" column="0" colspan="2">
-       <widget class="QGroupBox" name="groupBox_18">
-        <property name="focusPolicy">
-         <enum>Qt::StrongFocus</enum>
+       <widget class="QLineEdit" name="uZProbeEndScriptEdit">
+        <property name="text">
+         <string>G1 Z10 F12000\nG1 X15 Y330\nG1 Z0.5\nG1 Z10</string>
         </property>
-        <property name="styleSheet">
-         <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-        </property>
-        <property name="title">
-         <string>BED_TRAMMING_INSET_LFRB</string>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_64">
-         <item row="0" column="0">
-          <widget class="QLabel" name="label_102">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QLabel" name="label_103">
-           <property name="text">
-            <string>These are the left, front, right and back insets.</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0" colspan="2">
-          <widget class="QLineEdit" name="uDeltaTowerAngleTrimEdit">
-           <property name="text">
-            <string>{ 30, 30, 30, 30 }</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
-      <item row="1" column="2">
-       <widget class="QGroupBox" name="groupBox_26">
-        <property name="focusPolicy">
-         <enum>Qt::StrongFocus</enum>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-        </property>
-        <property name="title">
-         <string>BED_TRAMMING_HEIGHT</string>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_65">
-         <item row="0" column="0">
-          <widget class="QLabel" name="label_104">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QLabel" name="label_105">
-           <property name="text">
-            <string>This is the Z height of the nozzle at leveling points.</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0" colspan="2">
-          <widget class="QDoubleSpinBox" name="uG26RetractMultiplierSpinBox_3">
-           <property name="suffix">
-            <string> mm</string>
-           </property>
-           <property name="decimals">
-            <number>1</number>
-           </property>
-           <property name="maximum">
-            <double>10.000000000000000</double>
-           </property>
-           <property name="stepType">
-            <enum>QAbstractSpinBox::DefaultStepType</enum>
-           </property>
-           <property name="value">
-            <double>0.000000000000000</double>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
-      <item row="2" column="0" colspan="2">
-       <widget class="QGroupBox" name="groupBox_27">
-        <property name="focusPolicy">
-         <enum>Qt::StrongFocus</enum>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-        </property>
-        <property name="title">
-         <string>BED_TRAMMING_Z_HOP</string>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_67">
-         <item row="0" column="0">
-          <widget class="QLabel" name="label_108">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QLabel" name="label_109">
-           <property name="text">
-            <string>This is the Z height of the nozzle between leveling points.</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0" colspan="2">
-          <widget class="QDoubleSpinBox" name="uG26RetractMultiplierSpinBox_4">
-           <property name="suffix">
-            <string> mm</string>
-           </property>
-           <property name="decimals">
-            <number>1</number>
-           </property>
-           <property name="maximum">
-            <double>10.000000000000000</double>
-           </property>
-           <property name="stepType">
-            <enum>QAbstractSpinBox::DefaultStepType</enum>
-           </property>
-           <property name="value">
-            <double>4.000000000000000</double>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
-      <item row="2" column="2">
-       <widget class="QGroupBox" name="groupBox_28">
-        <property name="title">
-         <string>BED_TRAMMING_INCLUDE_CENTER</string>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_66">
-         <item row="0" column="0">
-          <widget class="QLabel" name="label_106">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QLabel" name="label_107">
-           <property name="text">
-            <string>Enable this to move to the center after the last corner.</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
-      <item row="3" column="0" colspan="3">
-       <widget class="QGroupBox" name="groupBox_29">
-        <property name="title">
-         <string>BED_TRAMMING_USE_PROBE</string>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_60">
-         <item row="0" column="0">
-          <widget class="QLabel" name="label_117">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1" colspan="2">
-          <widget class="QLabel" name="label_116">
-           <property name="text">
-            <string>Enable this if a probe is used for bed tramming.</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0" colspan="2">
-          <widget class="QGroupBox" name="groupBox_30">
-           <property name="focusPolicy">
-            <enum>Qt::StrongFocus</enum>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QGroupBox:!disabled {
-	background: rgb(50, 52, 59);
-}</string>
-           </property>
-           <property name="title">
-            <string>BED_TRAMMING_PROBE_TOLERANCE</string>
-           </property>
-           <layout class="QGridLayout" name="gridLayout_68">
-            <item row="0" column="0">
-             <widget class="QLabel" name="label_110">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="pixmap">
-               <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="1">
-             <widget class="QLabel" name="label_111">
-              <property name="text">
-               <string>This is the probe tolerance for bed tramming.</string>
-              </property>
-              <property name="wordWrap">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="0" colspan="2">
-             <widget class="QDoubleSpinBox" name="uG26RetractMultiplierSpinBox_5">
-              <property name="suffix">
-               <string> mm</string>
-              </property>
-              <property name="decimals">
-               <number>1</number>
-              </property>
-              <property name="maximum">
-               <double>10.000000000000000</double>
-              </property>
-              <property name="stepType">
-               <enum>QAbstractSpinBox::DefaultStepType</enum>
-              </property>
-              <property name="value">
-               <double>0.100000000000000</double>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item row="1" column="2">
-          <widget class="QGroupBox" name="groupBox_31">
-           <property name="title">
-            <string>BED_TRAMMING_VERIFY_RAISED</string>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <layout class="QGridLayout" name="gridLayout_69">
-            <item row="0" column="0">
-             <widget class="QLabel" name="label_112">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="pixmap">
-               <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="1">
-             <widget class="QLabel" name="label_113">
-              <property name="text">
-               <string>After adjustment triggers the probe, re-probe to verify.</string>
-              </property>
-              <property name="wordWrap">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item row="2" column="0" colspan="3">
-          <widget class="QGroupBox" name="groupBox_32">
-           <property name="title">
-            <string>BED_TRAMMING_AUDIO_FEEDBACK</string>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <layout class="QGridLayout" name="gridLayout_70">
-            <item row="0" column="0">
-             <widget class="QLabel" name="label_114">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="pixmap">
-               <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="1">
-             <widget class="QLabel" name="label_115">
-              <property name="text">
-               <string>Enable audio feedback for bed tramming.</string>
-              </property>
-              <property name="wordWrap">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-        </layout>
        </widget>
       </item>
      </layout>
     </widget>
-   </item>
-   <item row="22" column="0" colspan="3">
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>0</width>
-       <height>0</height>
-      </size>
-     </property>
-    </spacer>
    </item>
   </layout>
  </widget>
