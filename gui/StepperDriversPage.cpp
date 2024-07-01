@@ -506,13 +506,13 @@ void StepperDriversPage::ReplaceTags(QStringList& pOutput)
     ReplaceTag(pOutput, "#{INVERT_U_DIR}", mUi->uInvertUDirDropdown, !mUi->uInvertUDirBox->isChecked(), "INVERT_U_DIR");
     ReplaceTag(pOutput, "#{INVERT_V_DIR}", mUi->uInvertVDirDropdown, !mUi->uInvertVDirBox->isChecked(), "INVERT_V_DIR");
     ReplaceTag(pOutput, "#{INVERT_W_DIR}", mUi->uInvertWDirDropdown, !mUi->uInvertWDirBox->isChecked(), "INVERT_W_DIR");
-    ReplaceTag(pOutput, "#{INVERT_E0_DIR}", mUi->uInvertE0DirDropdown, !mUi->uInvertE0DirBox->isChecked(), "INVERT_E0_DIR");
-    ReplaceTag(pOutput, "#{INVERT_E1_DIR}", mUi->uInvertE1DirDropdown, !mUi->uInvertE1DirBox->isChecked(), "INVERT_E1_DIR");
-    ReplaceTag(pOutput, "#{INVERT_E2_DIR}", mUi->uInvertE2DirDropdown, !mUi->uInvertE2DirBox->isChecked(), "INVERT_E2_DIR");
-    ReplaceTag(pOutput, "#{INVERT_E3_DIR}", mUi->uInvertE3DirDropdown, !mUi->uInvertE3DirBox->isChecked(), "INVERT_E3_DIR");
-    ReplaceTag(pOutput, "#{INVERT_E4_DIR}", mUi->uInvertE4DirDropdown, !mUi->uInvertE4DirBox->isChecked(), "INVERT_E4_DIR");
-    ReplaceTag(pOutput, "#{INVERT_E5_DIR}", mUi->uInvertE5DirDropdown, !mUi->uInvertE5DirBox->isChecked(), "INVERT_E5_DIR");
-    ReplaceTag(pOutput, "#{INVERT_E6_DIR}", mUi->uInvertE6DirDropdown, !mUi->uInvertE6DirBox->isChecked(), "INVERT_E6_DIR");
-    ReplaceTag(pOutput, "#{INVERT_E7_DIR}", mUi->uInvertE7DirDropdown, !mUi->uInvertE7DirBox->isChecked(), "INVERT_E7_DIR");
+    ReplaceTag(pOutput, "#{INVERT_E0_DIR}", mUi->uInvertE0DirDropdown, false, "INVERT_E0_DIR");
+    ReplaceTag(pOutput, "#{INVERT_E1_DIR}", mUi->uInvertE1DirDropdown, false, "INVERT_E1_DIR");
+    ReplaceTag(pOutput, "#{INVERT_E2_DIR}", mUi->uInvertE2DirDropdown, false, "INVERT_E2_DIR");
+    ReplaceTag(pOutput, "#{INVERT_E3_DIR}", mUi->uInvertE3DirDropdown, false, "INVERT_E3_DIR");
+    ReplaceTag(pOutput, "#{INVERT_E4_DIR}", mUi->uInvertE4DirDropdown, false, "INVERT_E4_DIR");
+    ReplaceTag(pOutput, "#{INVERT_E5_DIR}", mUi->uInvertE5DirDropdown, false, "INVERT_E5_DIR");
+    ReplaceTag(pOutput, "#{INVERT_E6_DIR}", mUi->uInvertE6DirDropdown, false, "INVERT_E6_DIR");
+    ReplaceTag(pOutput, "#{INVERT_E7_DIR}", mUi->uInvertE7DirDropdown, false, "INVERT_E7_DIR");
     ReplaceTag(pOutput, "#{DISABLE_REDUCED_ACCURACY_WARNING}", mUi->uDisableReducedAccuracyWarningBox, "DISABLE_REDUCED_ACCURACY_WARNING");
 }
