@@ -377,7 +377,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -418,7 +418,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -459,7 +459,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -500,7 +500,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -541,7 +541,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -582,7 +582,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -633,7 +633,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -674,7 +674,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -715,7 +715,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -756,7 +756,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -797,7 +797,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -838,7 +838,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -889,7 +889,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -930,7 +930,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -971,7 +971,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -1012,7 +1012,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -1053,7 +1053,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -1094,7 +1094,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -1201,7 +1201,7 @@ QTabBar QToolButton::left-arrow {
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
            </property>
           </widget>
          </item>
@@ -1232,7 +1232,7 @@ QTabBar QToolButton::left-arrow {
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
            </property>
           </widget>
          </item>
@@ -1276,7 +1276,7 @@ QTabBar QToolButton::left-arrow {
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+         <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
         </property>
        </widget>
       </item>
@@ -1362,7 +1362,7 @@ QTabBar QToolButton::left-arrow {
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+         <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
         </property>
        </widget>
       </item>
@@ -1527,7 +1527,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -1590,7 +1590,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -1653,7 +1653,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -1716,7 +1716,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -1789,7 +1789,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -1842,7 +1842,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -1925,7 +1925,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -1988,7 +1988,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -2041,7 +2041,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -2114,7 +2114,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -2167,7 +2167,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -2230,7 +2230,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -2303,7 +2303,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -2376,7 +2376,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -2439,7 +2439,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -2492,7 +2492,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -2565,7 +2565,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -2618,7 +2618,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -2677,7 +2677,7 @@ QTabBar QToolButton::left-arrow {
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+         <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
         </property>
        </widget>
       </item>
@@ -2812,7 +2812,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -2853,7 +2853,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -2894,7 +2894,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -2935,7 +2935,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -2976,7 +2976,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -3017,7 +3017,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -3068,7 +3068,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -3109,7 +3109,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -3150,7 +3150,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -3191,7 +3191,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -3232,7 +3232,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -3273,7 +3273,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -3324,7 +3324,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -3365,7 +3365,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -3406,7 +3406,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -3447,7 +3447,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -3488,7 +3488,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -3529,7 +3529,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -3652,7 +3652,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -3693,7 +3693,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -3734,7 +3734,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -3775,7 +3775,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -3816,7 +3816,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -3857,7 +3857,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -3908,7 +3908,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -3949,7 +3949,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -3990,7 +3990,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -4031,7 +4031,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -4072,7 +4072,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -4113,7 +4113,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -4164,7 +4164,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -4205,7 +4205,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -4246,7 +4246,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -4287,7 +4287,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -4328,7 +4328,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -4369,7 +4369,7 @@ QTabBar QToolButton::left-arrow {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+             <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -4432,7 +4432,7 @@ QTabBar QToolButton::left-arrow {
          <string/>
         </property>
         <property name="icon">
-         <iconset resource="../resources/resources.qrc">
+         <iconset>
           <normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</normaloff>:/open_in_new_FILL0_wght100_GRAD0_opsz20.svg</iconset>
         </property>
         <property name="iconSize">
@@ -4512,7 +4512,7 @@ QTabBar QToolButton::left-arrow {
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+         <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
         </property>
        </widget>
       </item>
@@ -4579,7 +4579,7 @@ QTabBar QToolButton::left-arrow {
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
            </property>
           </widget>
          </item>
@@ -4634,7 +4634,7 @@ QTabBar QToolButton::left-arrow {
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="../resources/resources.qrc">:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
+            <pixmap>:/info_FILL0_wght100_GRAD0_opsz20.svg</pixmap>
            </property>
           </widget>
          </item>
@@ -4663,8 +4663,6 @@ QTabBar QToolButton::left-arrow {
    <header>Dropdown.h</header>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="../resources/resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

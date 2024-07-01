@@ -452,6 +452,46 @@ static constexpr auto ENDSTOP_NOISE_THRESHOLD{"2"};
 static constexpr auto ENABLE_ENDSTOP_NOISE_THRESHOLD{false};
 static constexpr auto DETECT_BROKEN_ENDSTOP{false};
 
+// Movement
+static constexpr auto DISTINCT_E_FACTORS{false};
+static constexpr auto DEFAULT_AXIS_STEPS_PER_UNIT{"{ 80, 80, 400, 500 }"};
+static constexpr auto DEFAULT_MAX_FEEDRATE{"{ 300, 300, 5, 25 }"};
+static constexpr auto LIMITED_MAX_FR_EDITING{false};
+static constexpr auto MAX_FEEDRATE_EDIT_VALUES{"{ 600, 600, 10, 50 }"};
+static constexpr auto DEFAULT_MAX_ACCELERATION{"{ 3000, 3000, 100, 10000 }"};
+static constexpr auto LIMITED_MAX_ACCEL_EDITING{false};
+static constexpr auto MAX_ACCEL_EDIT_VALUES{"{ 6000, 6000, 200, 20000 }"};
+static constexpr auto DEFAULT_ACCELERATION{3000};
+static constexpr auto DEFAULT_RETRACT_ACCELERATION{3000};
+static constexpr auto DEFAULT_TRAVEL_ACCELERATION{3000};
+static constexpr auto CLASSIC_JERK{false};
+static constexpr auto DEFAULT_XJERK{10.0f};
+static constexpr auto DEFAULT_YJERK{10.0f};
+static constexpr auto DEFAULT_ZJERK{0.3f};
+static constexpr auto DEFAULT_IJERK{0.3f};
+static constexpr auto DEFAULT_JJERK{0.3f};
+static constexpr auto DEFAULT_KJERK{0.3f};
+static constexpr auto DEFAULT_UJERK{0.3f};
+static constexpr auto DEFAULT_VJERK{0.3f};
+static constexpr auto DEFAULT_WJERK{0.3f};
+static constexpr auto ENABLE_DEFAULT_XJERK{true};
+static constexpr auto ENABLE_DEFAULT_YJERK{true};
+static constexpr auto ENABLE_DEFAULT_ZJERK{true};
+static constexpr auto ENABLE_DEFAULT_IJERK{false};
+static constexpr auto ENABLE_DEFAULT_JJERK{false};
+static constexpr auto ENABLE_DEFAULT_KJERK{false};
+static constexpr auto ENABLE_DEFAULT_UJERK{false};
+static constexpr auto ENABLE_DEFAULT_VJERK{false};
+static constexpr auto ENABLE_DEFAULT_WJERK{false};
+static constexpr auto TRAVEL_EXTRA_XYJERK{0.0f};
+static constexpr auto ENABLE_TRAVEL_EXTRA_XYJERK{false};
+static constexpr auto LIMITED_JERK_EDITING{false};
+static constexpr auto MAX_JERK_EDIT_VALUES{"{ 20, 20, 0.6, 10 }"};
+static constexpr auto DEFAULT_EJERK{5.0f};
+static constexpr auto JUNCTION_DEVIATION_MM{0.013f};
+static constexpr auto JD_HANDLE_SMALL_SEGMENTS{true};
+static constexpr auto S_CURVE_ACCELERATION{false};
+
 // Stepper Drivers
 static constexpr auto X_DRIVER_TYPE{"A4988"};
 static constexpr auto Y_DRIVER_TYPE{"A4988"};
@@ -2202,6 +2242,101 @@ public:
 };
 
 ///
+/// \brief The MovementConfiguration struct contains movement configurations
+///
+struct MovementConfiguration : public PageConfiguration
+{
+    bool DISTINCT_E_FACTORS{defaults::DISTINCT_E_FACTORS};
+    QString DEFAULT_AXIS_STEPS_PER_UNIT{defaults::DEFAULT_AXIS_STEPS_PER_UNIT};
+    QString DEFAULT_MAX_FEEDRATE{defaults::DEFAULT_MAX_FEEDRATE};
+    bool LIMITED_MAX_FR_EDITING{defaults::LIMITED_MAX_FR_EDITING};
+    QString MAX_FEEDRATE_EDIT_VALUES{defaults::MAX_FEEDRATE_EDIT_VALUES};
+    QString DEFAULT_MAX_ACCELERATION{defaults::DEFAULT_MAX_ACCELERATION};
+    bool LIMITED_MAX_ACCEL_EDITING{defaults::LIMITED_MAX_ACCEL_EDITING};
+    QString MAX_ACCEL_EDIT_VALUES{defaults::MAX_ACCEL_EDIT_VALUES};
+    int32_t DEFAULT_ACCELERATION{defaults::DEFAULT_ACCELERATION};
+    int32_t DEFAULT_RETRACT_ACCELERATION{defaults::DEFAULT_RETRACT_ACCELERATION};
+    int32_t DEFAULT_TRAVEL_ACCELERATION{defaults::DEFAULT_TRAVEL_ACCELERATION};
+    bool CLASSIC_JERK{defaults::CLASSIC_JERK};
+    double DEFAULT_XJERK{defaults::DEFAULT_XJERK};
+    double DEFAULT_YJERK{defaults::DEFAULT_YJERK};
+    double DEFAULT_ZJERK{defaults::DEFAULT_ZJERK};
+    double DEFAULT_IJERK{defaults::DEFAULT_IJERK};
+    double DEFAULT_JJERK{defaults::DEFAULT_JJERK};
+    double DEFAULT_KJERK{defaults::DEFAULT_KJERK};
+    double DEFAULT_UJERK{defaults::DEFAULT_UJERK};
+    double DEFAULT_VJERK{defaults::DEFAULT_VJERK};
+    double DEFAULT_WJERK{defaults::DEFAULT_WJERK};
+    bool ENABLE_DEFAULT_XJERK{defaults::ENABLE_DEFAULT_XJERK};
+    bool ENABLE_DEFAULT_YJERK{defaults::ENABLE_DEFAULT_YJERK};
+    bool ENABLE_DEFAULT_ZJERK{defaults::ENABLE_DEFAULT_ZJERK};
+    bool ENABLE_DEFAULT_IJERK{defaults::ENABLE_DEFAULT_IJERK};
+    bool ENABLE_DEFAULT_JJERK{defaults::ENABLE_DEFAULT_JJERK};
+    bool ENABLE_DEFAULT_KJERK{defaults::ENABLE_DEFAULT_KJERK};
+    bool ENABLE_DEFAULT_UJERK{defaults::ENABLE_DEFAULT_UJERK};
+    bool ENABLE_DEFAULT_VJERK{defaults::ENABLE_DEFAULT_VJERK};
+    bool ENABLE_DEFAULT_WJERK{defaults::ENABLE_DEFAULT_WJERK};
+    double TRAVEL_EXTRA_XYJERK{defaults::TRAVEL_EXTRA_XYJERK};
+    bool ENABLE_TRAVEL_EXTRA_XYJERK{defaults::ENABLE_TRAVEL_EXTRA_XYJERK};
+    bool LIMITED_JERK_EDITING{defaults::LIMITED_JERK_EDITING};
+    QString MAX_JERK_EDIT_VALUES{defaults::MAX_JERK_EDIT_VALUES};
+    double DEFAULT_EJERK{defaults::DEFAULT_EJERK};
+    double JUNCTION_DEVIATION_MM{defaults::JUNCTION_DEVIATION_MM};
+    bool JD_HANDLE_SMALL_SEGMENTS{defaults::JD_HANDLE_SMALL_SEGMENTS};
+    bool S_CURVE_ACCELERATION{defaults::S_CURVE_ACCELERATION};
+
+public:
+    /// \brief Converts the configuration into a JSON object
+    ///
+    /// \return a JSON object containing the configuration data
+    QJsonObject ToJson(void) const override
+    {
+        QJsonObject json;
+
+        json["DISTINCT_E_FACTORS"] = DISTINCT_E_FACTORS;
+        json["DEFAULT_AXIS_STEPS_PER_UNIT"] = DEFAULT_AXIS_STEPS_PER_UNIT;
+        json["DEFAULT_MAX_FEEDRATE"] = DEFAULT_MAX_FEEDRATE;
+        json["LIMITED_MAX_FR_EDITING"] = LIMITED_MAX_FR_EDITING;
+        json["MAX_FEEDRATE_EDIT_VALUES"] = MAX_FEEDRATE_EDIT_VALUES;
+        json["DEFAULT_MAX_ACCELERATION"] = DEFAULT_MAX_ACCELERATION;
+        json["LIMITED_MAX_ACCEL_EDITING"] = LIMITED_MAX_ACCEL_EDITING;
+        json["MAX_ACCEL_EDIT_VALUES"] = MAX_ACCEL_EDIT_VALUES;
+        json["DEFAULT_ACCELERATION"] = DEFAULT_ACCELERATION;
+        json["DEFAULT_RETRACT_ACCELERATION"] = DEFAULT_RETRACT_ACCELERATION;
+        json["DEFAULT_TRAVEL_ACCELERATION"] = DEFAULT_TRAVEL_ACCELERATION;
+        json["CLASSIC_JERK"] = CLASSIC_JERK;
+        json["DEFAULT_XJERK"] = DEFAULT_XJERK;
+        json["DEFAULT_YJERK"] = DEFAULT_YJERK;
+        json["DEFAULT_ZJERK"] = DEFAULT_ZJERK;
+        json["DEFAULT_IJERK"] = DEFAULT_IJERK;
+        json["DEFAULT_JJERK"] = DEFAULT_JJERK;
+        json["DEFAULT_KJERK"] = DEFAULT_KJERK;
+        json["DEFAULT_UJERK"] = DEFAULT_UJERK;
+        json["DEFAULT_VJERK"] = DEFAULT_VJERK;
+        json["DEFAULT_WJERK"] = DEFAULT_WJERK;
+        json["ENABLE_DEFAULT_XJERK"] = ENABLE_DEFAULT_XJERK;
+        json["ENABLE_DEFAULT_YJERK"] = ENABLE_DEFAULT_YJERK;
+        json["ENABLE_DEFAULT_ZJERK"] = ENABLE_DEFAULT_ZJERK;
+        json["ENABLE_DEFAULT_IJERK"] = ENABLE_DEFAULT_IJERK;
+        json["ENABLE_DEFAULT_JJERK"] = ENABLE_DEFAULT_JJERK;
+        json["ENABLE_DEFAULT_KJERK"] = ENABLE_DEFAULT_KJERK;
+        json["ENABLE_DEFAULT_UJERK"] = ENABLE_DEFAULT_UJERK;
+        json["ENABLE_DEFAULT_VJERK"] = ENABLE_DEFAULT_VJERK;
+        json["ENABLE_DEFAULT_WJERK"] = ENABLE_DEFAULT_WJERK;
+        json["TRAVEL_EXTRA_XYJERK"] = TRAVEL_EXTRA_XYJERK;
+        json["ENABLE_TRAVEL_EXTRA_XYJERK"] = ENABLE_TRAVEL_EXTRA_XYJERK;
+        json["LIMITED_JERK_EDITING"] = LIMITED_JERK_EDITING;
+        json["MAX_JERK_EDIT_VALUES"] = MAX_JERK_EDIT_VALUES;
+        json["DEFAULT_EJERK"] = DEFAULT_EJERK;
+        json["JUNCTION_DEVIATION_MM"] = JUNCTION_DEVIATION_MM;
+        json["JD_HANDLE_SMALL_SEGMENTS"] = JD_HANDLE_SMALL_SEGMENTS;
+        json["S_CURVE_ACCELERATION"] = S_CURVE_ACCELERATION;
+
+        return json;
+    }
+};
+
+///
 /// \brief The FilamentRunoutSensorConfiguration struct contains filament runout sensor configurations
 ///
 struct FilamentRunoutSensorConfiguration : public PageConfiguration
@@ -2708,6 +2843,7 @@ struct Configuration
     ThermalSettingsConfiguration thermalSettings;
     KinematicsConfiguration kinematics;
     EndstopsConfiguration endstops;
+    MovementConfiguration movement;
     StepperDriversConfiguration stepperDrivers;
     HomingAndBoundsConfiguration homingAndBounds;
     FilamentRunoutSensorConfiguration filamentRunoutSensor;
@@ -2734,6 +2870,7 @@ public:
         json["thermalSettings"] = thermalSettings.ToJson();
         json["kinematics"] = kinematics.ToJson();
         json["endstops"] = endstops.ToJson();
+        json["movement"] = movement.ToJson();
         json["stepperDrivers"] = stepperDrivers.ToJson();
         json["homingAndBounds"] = homingAndBounds.ToJson();
         json["filamentRunoutSensor"] = filamentRunoutSensor.ToJson();

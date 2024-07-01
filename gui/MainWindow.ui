@@ -2394,7 +2394,7 @@ QPushButton::!checked:hover {
             <bool>true</bool>
            </property>
            <property name="text">
-            <string>Movement (WIP)</string>
+            <string>Movement</string>
            </property>
            <property name="icon">
             <iconset>

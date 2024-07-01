@@ -66,8 +66,8 @@ void ThermalSettingsPage::ConnectGuiSignalsAndSlots()
 
     QObject::connect(mUi->uTempSensor0Dropdown, &Dropdown::currentIndexChanged, this, [&]()
     {
-        const bool hasETempSensor = (mUi->uTempSensor0Dropdown->currentIndex() != 53 || mUi->uTempSensor1Dropdown->currentIndex() != 53 || mUi->uTempSensor2Dropdown->currentIndex() != 53 || mUi->uTempSensor3Dropdown->currentIndex() != 53 &&
-                                     mUi->uTempSensor4Dropdown->currentIndex() != 53 || mUi->uTempSensor5Dropdown->currentIndex() != 53 || mUi->uTempSensor6Dropdown->currentIndex() != 53 || mUi->uTempSensor7Dropdown->currentIndex() != 53);
+        const bool hasETempSensor = (mUi->uTempSensor0Dropdown->currentIndex() != 54 || mUi->uTempSensor1Dropdown->currentIndex() != 54 || mUi->uTempSensor2Dropdown->currentIndex() != 54 || mUi->uTempSensor3Dropdown->currentIndex() != 54 &&
+                                     mUi->uTempSensor4Dropdown->currentIndex() != 54 || mUi->uTempSensor5Dropdown->currentIndex() != 54 || mUi->uTempSensor6Dropdown->currentIndex() != 54 || mUi->uTempSensor7Dropdown->currentIndex() != 54);
         mUi->uTempResidencyTimeBox->setEnabled(hasETempSensor);
         mUi->uTempWindowBox->setEnabled(hasETempSensor);
         mUi->uTempHysteresisBox->setEnabled(hasETempSensor);
@@ -75,8 +75,8 @@ void ThermalSettingsPage::ConnectGuiSignalsAndSlots()
 
     QObject::connect(mUi->uTempSensor1Dropdown, &Dropdown::currentIndexChanged, this, [&]()
     {
-        const bool hasETempSensor = (mUi->uTempSensor0Dropdown->currentIndex() != 53 || mUi->uTempSensor1Dropdown->currentIndex() != 53 || mUi->uTempSensor2Dropdown->currentIndex() != 53 || mUi->uTempSensor3Dropdown->currentIndex() != 53 &&
-                                     mUi->uTempSensor4Dropdown->currentIndex() != 53 || mUi->uTempSensor5Dropdown->currentIndex() != 53 || mUi->uTempSensor6Dropdown->currentIndex() != 53 || mUi->uTempSensor7Dropdown->currentIndex() != 53);
+        const bool hasETempSensor = (mUi->uTempSensor0Dropdown->currentIndex() != 54 || mUi->uTempSensor1Dropdown->currentIndex() != 54 || mUi->uTempSensor2Dropdown->currentIndex() != 54 || mUi->uTempSensor3Dropdown->currentIndex() != 54 &&
+                                     mUi->uTempSensor4Dropdown->currentIndex() != 54 || mUi->uTempSensor5Dropdown->currentIndex() != 54 || mUi->uTempSensor6Dropdown->currentIndex() != 54 || mUi->uTempSensor7Dropdown->currentIndex() != 54);
         mUi->uTempResidencyTimeBox->setEnabled(hasETempSensor);
         mUi->uTempWindowBox->setEnabled(hasETempSensor);
         mUi->uTempHysteresisBox->setEnabled(hasETempSensor);
@@ -84,8 +84,8 @@ void ThermalSettingsPage::ConnectGuiSignalsAndSlots()
 
     QObject::connect(mUi->uTempSensor2Dropdown, &Dropdown::currentIndexChanged, this, [&]()
     {
-        const bool hasETempSensor = (mUi->uTempSensor0Dropdown->currentIndex() != 53 || mUi->uTempSensor1Dropdown->currentIndex() != 53 || mUi->uTempSensor2Dropdown->currentIndex() != 53 || mUi->uTempSensor3Dropdown->currentIndex() != 53 &&
-                                     mUi->uTempSensor4Dropdown->currentIndex() != 53 || mUi->uTempSensor5Dropdown->currentIndex() != 53 || mUi->uTempSensor6Dropdown->currentIndex() != 53 || mUi->uTempSensor7Dropdown->currentIndex() != 53);
+        const bool hasETempSensor = (mUi->uTempSensor0Dropdown->currentIndex() != 54 || mUi->uTempSensor1Dropdown->currentIndex() != 54 || mUi->uTempSensor2Dropdown->currentIndex() != 54 || mUi->uTempSensor3Dropdown->currentIndex() != 54 &&
+                                     mUi->uTempSensor4Dropdown->currentIndex() != 54 || mUi->uTempSensor5Dropdown->currentIndex() != 54 || mUi->uTempSensor6Dropdown->currentIndex() != 54 || mUi->uTempSensor7Dropdown->currentIndex() != 54);
         mUi->uTempResidencyTimeBox->setEnabled(hasETempSensor);
         mUi->uTempWindowBox->setEnabled(hasETempSensor);
         mUi->uTempHysteresisBox->setEnabled(hasETempSensor);
@@ -93,8 +93,8 @@ void ThermalSettingsPage::ConnectGuiSignalsAndSlots()
 
     QObject::connect(mUi->uTempSensor3Dropdown, &Dropdown::currentIndexChanged, this, [&]()
     {
-        const bool hasETempSensor = (mUi->uTempSensor0Dropdown->currentIndex() != 53 || mUi->uTempSensor1Dropdown->currentIndex() != 53 || mUi->uTempSensor2Dropdown->currentIndex() != 53 || mUi->uTempSensor3Dropdown->currentIndex() != 53 &&
-                                     mUi->uTempSensor4Dropdown->currentIndex() != 53 || mUi->uTempSensor5Dropdown->currentIndex() != 53 || mUi->uTempSensor6Dropdown->currentIndex() != 53 || mUi->uTempSensor7Dropdown->currentIndex() != 53);
+        const bool hasETempSensor = (mUi->uTempSensor0Dropdown->currentIndex() != 54 || mUi->uTempSensor1Dropdown->currentIndex() != 54 || mUi->uTempSensor2Dropdown->currentIndex() != 54 || mUi->uTempSensor3Dropdown->currentIndex() != 54 &&
+                                     mUi->uTempSensor4Dropdown->currentIndex() != 54 || mUi->uTempSensor5Dropdown->currentIndex() != 54 || mUi->uTempSensor6Dropdown->currentIndex() != 54 || mUi->uTempSensor7Dropdown->currentIndex() != 54);
         mUi->uTempResidencyTimeBox->setEnabled(hasETempSensor);
         mUi->uTempWindowBox->setEnabled(hasETempSensor);
         mUi->uTempHysteresisBox->setEnabled(hasETempSensor);
@@ -102,8 +102,8 @@ void ThermalSettingsPage::ConnectGuiSignalsAndSlots()
 
     QObject::connect(mUi->uTempSensor4Dropdown, &Dropdown::currentIndexChanged, this, [&]()
     {
-        const bool hasETempSensor = (mUi->uTempSensor0Dropdown->currentIndex() != 53 || mUi->uTempSensor1Dropdown->currentIndex() != 53 || mUi->uTempSensor2Dropdown->currentIndex() != 53 || mUi->uTempSensor3Dropdown->currentIndex() != 53 &&
-                                     mUi->uTempSensor4Dropdown->currentIndex() != 53 || mUi->uTempSensor5Dropdown->currentIndex() != 53 || mUi->uTempSensor6Dropdown->currentIndex() != 53 || mUi->uTempSensor7Dropdown->currentIndex() != 53);
+        const bool hasETempSensor = (mUi->uTempSensor0Dropdown->currentIndex() != 54 || mUi->uTempSensor1Dropdown->currentIndex() != 54 || mUi->uTempSensor2Dropdown->currentIndex() != 54 || mUi->uTempSensor3Dropdown->currentIndex() != 54 &&
+                                     mUi->uTempSensor4Dropdown->currentIndex() != 54 || mUi->uTempSensor5Dropdown->currentIndex() != 54 || mUi->uTempSensor6Dropdown->currentIndex() != 54 || mUi->uTempSensor7Dropdown->currentIndex() != 54);
             mUi->uTempResidencyTimeBox->setEnabled(hasETempSensor);
             mUi->uTempWindowBox->setEnabled(hasETempSensor);
             mUi->uTempHysteresisBox->setEnabled(hasETempSensor);
@@ -111,8 +111,8 @@ void ThermalSettingsPage::ConnectGuiSignalsAndSlots()
 
     QObject::connect(mUi->uTempSensor5Dropdown, &Dropdown::currentIndexChanged, this, [&]()
     {
-        const bool hasETempSensor = (mUi->uTempSensor0Dropdown->currentIndex() != 53 || mUi->uTempSensor1Dropdown->currentIndex() != 53 || mUi->uTempSensor2Dropdown->currentIndex() != 53 || mUi->uTempSensor3Dropdown->currentIndex() != 53 &&
-                                     mUi->uTempSensor4Dropdown->currentIndex() != 53 || mUi->uTempSensor5Dropdown->currentIndex() != 53 || mUi->uTempSensor6Dropdown->currentIndex() != 53 || mUi->uTempSensor7Dropdown->currentIndex() != 53);
+        const bool hasETempSensor = (mUi->uTempSensor0Dropdown->currentIndex() != 54 || mUi->uTempSensor1Dropdown->currentIndex() != 54 || mUi->uTempSensor2Dropdown->currentIndex() != 54 || mUi->uTempSensor3Dropdown->currentIndex() != 54 &&
+                                     mUi->uTempSensor4Dropdown->currentIndex() != 54 || mUi->uTempSensor5Dropdown->currentIndex() != 54 || mUi->uTempSensor6Dropdown->currentIndex() != 54 || mUi->uTempSensor7Dropdown->currentIndex() != 54);
         mUi->uTempResidencyTimeBox->setEnabled(hasETempSensor);
         mUi->uTempWindowBox->setEnabled(hasETempSensor);
         mUi->uTempHysteresisBox->setEnabled(hasETempSensor);
@@ -120,8 +120,8 @@ void ThermalSettingsPage::ConnectGuiSignalsAndSlots()
 
     QObject::connect(mUi->uTempSensor6Dropdown, &Dropdown::currentIndexChanged, this, [&]()
     {
-        const bool hasETempSensor = (mUi->uTempSensor0Dropdown->currentIndex() != 53 || mUi->uTempSensor1Dropdown->currentIndex() != 53 || mUi->uTempSensor2Dropdown->currentIndex() != 53 || mUi->uTempSensor3Dropdown->currentIndex() != 53 &&
-                                     mUi->uTempSensor4Dropdown->currentIndex() != 53 || mUi->uTempSensor5Dropdown->currentIndex() != 53 || mUi->uTempSensor6Dropdown->currentIndex() != 53 || mUi->uTempSensor7Dropdown->currentIndex() != 53);
+        const bool hasETempSensor = (mUi->uTempSensor0Dropdown->currentIndex() != 54 || mUi->uTempSensor1Dropdown->currentIndex() != 54 || mUi->uTempSensor2Dropdown->currentIndex() != 54 || mUi->uTempSensor3Dropdown->currentIndex() != 54 &&
+                                     mUi->uTempSensor4Dropdown->currentIndex() != 54 || mUi->uTempSensor5Dropdown->currentIndex() != 54 || mUi->uTempSensor6Dropdown->currentIndex() != 54 || mUi->uTempSensor7Dropdown->currentIndex() != 54);
         mUi->uTempResidencyTimeBox->setEnabled(hasETempSensor);
         mUi->uTempWindowBox->setEnabled(hasETempSensor);
         mUi->uTempHysteresisBox->setEnabled(hasETempSensor);
@@ -129,8 +129,8 @@ void ThermalSettingsPage::ConnectGuiSignalsAndSlots()
 
     QObject::connect(mUi->uTempSensor7Dropdown, &Dropdown::currentIndexChanged, this, [&]()
     {
-        const bool hasETempSensor = (mUi->uTempSensor0Dropdown->currentIndex() != 53 || mUi->uTempSensor1Dropdown->currentIndex() != 53 || mUi->uTempSensor2Dropdown->currentIndex() != 53 || mUi->uTempSensor3Dropdown->currentIndex() != 53 &&
-                                     mUi->uTempSensor4Dropdown->currentIndex() != 53 || mUi->uTempSensor5Dropdown->currentIndex() != 53 || mUi->uTempSensor6Dropdown->currentIndex() != 53 || mUi->uTempSensor7Dropdown->currentIndex() != 53);
+        const bool hasETempSensor = (mUi->uTempSensor0Dropdown->currentIndex() != 54 || mUi->uTempSensor1Dropdown->currentIndex() != 54 || mUi->uTempSensor2Dropdown->currentIndex() != 54 || mUi->uTempSensor3Dropdown->currentIndex() != 54 &&
+                                     mUi->uTempSensor4Dropdown->currentIndex() != 54 || mUi->uTempSensor5Dropdown->currentIndex() != 54 || mUi->uTempSensor6Dropdown->currentIndex() != 54 || mUi->uTempSensor7Dropdown->currentIndex() != 54);
         mUi->uTempResidencyTimeBox->setEnabled(hasETempSensor);
         mUi->uTempWindowBox->setEnabled(hasETempSensor);
         mUi->uTempHysteresisBox->setEnabled(hasETempSensor);
@@ -138,23 +138,23 @@ void ThermalSettingsPage::ConnectGuiSignalsAndSlots()
 
     QObject::connect(mUi->uTempSensorBedDropdown, &Dropdown::currentIndexChanged, this, [&](auto pIndex)
     {
-        mUi->uTempBedResidencyTimeBox->setEnabled(pIndex != 53);
-        mUi->uTempBedWindowBox->setEnabled(pIndex != 53);
-        mUi->uTempBedHysteresisBox->setEnabled(pIndex != 53);
+        mUi->uTempBedResidencyTimeBox->setEnabled(pIndex != 54);
+        mUi->uTempBedWindowBox->setEnabled(pIndex != 54);
+        mUi->uTempBedHysteresisBox->setEnabled(pIndex != 54);
     });
 
     QObject::connect(mUi->uTempSensorChamberDropdown, &Dropdown::currentIndexChanged, this, [&](auto pIndex)
     {
-        mUi->uTempChamberResidencyTimeBox->setEnabled(pIndex != 53);
-        mUi->uTempChamberWindowBox->setEnabled(pIndex != 53);
-        mUi->uTempChamberHysteresisBox->setEnabled(pIndex != 53);
+        mUi->uTempChamberResidencyTimeBox->setEnabled(pIndex != 54);
+        mUi->uTempChamberWindowBox->setEnabled(pIndex != 54);
+        mUi->uTempChamberHysteresisBox->setEnabled(pIndex != 54);
     });
 
     QObject::connect(mUi->uTempSensorRedundantDropdown, &Dropdown::currentIndexChanged, this, [&](auto pIndex)
     {
-        mUi->uTempSensorRedundantSourceBox->setEnabled(pIndex != 53);
-        mUi->uTempSensorRedundantTargetBox->setEnabled(pIndex != 53);
-        mUi->uTempSensorRedundantMaxDiffBox->setEnabled(pIndex != 53);
+        mUi->uTempSensorRedundantSourceBox->setEnabled(pIndex != 54);
+        mUi->uTempSensorRedundantTargetBox->setEnabled(pIndex != 54);
+        mUi->uTempSensorRedundantMaxDiffBox->setEnabled(pIndex != 54);
     });
 
     QObject::connect(mUi->uPidParamsPerHotendBox, &QGroupBox::toggled, this, [&](auto pChecked)
@@ -575,8 +575,8 @@ void ThermalSettingsPage::FetchConfiguration(Configuration& pConfig)
 
 void ThermalSettingsPage::ReplaceTags(QStringList& pOutput)
 {
-    const bool hasETempSensor = (mUi->uTempSensor0Dropdown->currentIndex() != 53 || mUi->uTempSensor1Dropdown->currentIndex() != 53 || mUi->uTempSensor2Dropdown->currentIndex() != 53 || mUi->uTempSensor3Dropdown->currentIndex() != 53 &&
-                                 mUi->uTempSensor4Dropdown->currentIndex() != 53 || mUi->uTempSensor5Dropdown->currentIndex() != 53 || mUi->uTempSensor6Dropdown->currentIndex() != 53 || mUi->uTempSensor7Dropdown->currentIndex() != 53);
+    const bool hasETempSensor = (mUi->uTempSensor0Dropdown->currentIndex() != 54 || mUi->uTempSensor1Dropdown->currentIndex() != 54 || mUi->uTempSensor2Dropdown->currentIndex() != 54 || mUi->uTempSensor3Dropdown->currentIndex() != 54 &&
+                                 mUi->uTempSensor4Dropdown->currentIndex() != 54 || mUi->uTempSensor5Dropdown->currentIndex() != 54 || mUi->uTempSensor6Dropdown->currentIndex() != 54 || mUi->uTempSensor7Dropdown->currentIndex() != 54);
 
     ReplaceTag(pOutput, "#{TEMP_SENSOR_0}", mUi->uTempSensor0Dropdown, false, "TEMP_SENSOR_0", true);
     ReplaceTag(pOutput, "#{TEMP_SENSOR_1}", mUi->uTempSensor1Dropdown, false, "TEMP_SENSOR_1", true);
@@ -603,15 +603,15 @@ void ThermalSettingsPage::ReplaceTags(QStringList& pOutput)
     ReplaceTag(pOutput, "#{TEMP_RESIDENCY_TIME}", mUi->uTempResidencyTimeSpinBox, !hasETempSensor, "TEMP_RESIDENCY_TIME");
     ReplaceTag(pOutput, "#{TEMP_WINDOW}", mUi->uTempWindowSpinBox, !hasETempSensor, "TEMP_WINDOW");
     ReplaceTag(pOutput, "#{TEMP_HYSTERESIS}", mUi->uTempHysteresisSpinBox, !hasETempSensor, "TEMP_HYSTERESIS");
-    ReplaceTag(pOutput, "#{TEMP_BED_RESIDENCY_TIME}", mUi->uTempBedResidencyTimeSpinBox, mUi->uTempSensorBedDropdown->currentIndex() == 53, "TEMP_BED_RESIDENCY_TIME");
-    ReplaceTag(pOutput, "#{TEMP_BED_WINDOW}", mUi->uTempBedWindowSpinBox, mUi->uTempSensorBedDropdown->currentIndex() == 53, "TEMP_BED_WINDOW");
-    ReplaceTag(pOutput, "#{TEMP_BED_HYSTERESIS}", mUi->uTempBedHysteresisSpinBox, mUi->uTempSensorBedDropdown->currentIndex() == 53, "TEMP_BED_HYSTERESIS");
-    ReplaceTag(pOutput, "#{TEMP_CHAMBER_RESIDENCY_TIME}", mUi->uTempChamberResidencyTimeSpinBox, mUi->uTempSensorChamberDropdown->currentIndex() == 53, "TEMP_CHAMBER_RESIDENCY_TIME");
-    ReplaceTag(pOutput, "#{TEMP_CHAMBER_WINDOW}", mUi->uTempChamberWindowSpinBox, mUi->uTempSensorChamberDropdown->currentIndex() == 53, "TEMP_CHAMBER_WINDOW");
-    ReplaceTag(pOutput, "#{TEMP_CHAMBER_HYSTERESIS}", mUi->uTempChamberHysteresisSpinBox, mUi->uTempSensorChamberDropdown->currentIndex() == 53, "TEMP_CHAMBER_HYSTERESIS");
-    ReplaceTag(pOutput, "#{TEMP_SENSOR_REDUNDANT_SOURCE}", mUi->uTempSensorRedundantSourceDropdown, mUi->uTempSensorRedundantDropdown->currentIndex() == 53, "TEMP_SENSOR_REDUNDANT_SOURCE", false);
-    ReplaceTag(pOutput, "#{TEMP_SENSOR_REDUNDANT_TARGET}", mUi->uTempSensorRedundantTargetDropdown, mUi->uTempSensorRedundantDropdown->currentIndex() == 53, "TEMP_SENSOR_REDUNDANT_TARGET", false);
-    ReplaceTag(pOutput, "#{TEMP_SENSOR_REDUNDANT_MAX_DIFF}", mUi->uTempSensorRedundantMaxDiffSpinBox, mUi->uTempSensorRedundantDropdown->currentIndex() == 53, "TEMP_SENSOR_REDUNDANT_MAX_DIFF");
+    ReplaceTag(pOutput, "#{TEMP_BED_RESIDENCY_TIME}", mUi->uTempBedResidencyTimeSpinBox, mUi->uTempSensorBedDropdown->currentIndex() == 54, "TEMP_BED_RESIDENCY_TIME");
+    ReplaceTag(pOutput, "#{TEMP_BED_WINDOW}", mUi->uTempBedWindowSpinBox, mUi->uTempSensorBedDropdown->currentIndex() == 54, "TEMP_BED_WINDOW");
+    ReplaceTag(pOutput, "#{TEMP_BED_HYSTERESIS}", mUi->uTempBedHysteresisSpinBox, mUi->uTempSensorBedDropdown->currentIndex() == 54, "TEMP_BED_HYSTERESIS");
+    ReplaceTag(pOutput, "#{TEMP_CHAMBER_RESIDENCY_TIME}", mUi->uTempChamberResidencyTimeSpinBox, mUi->uTempSensorChamberDropdown->currentIndex() == 54, "TEMP_CHAMBER_RESIDENCY_TIME");
+    ReplaceTag(pOutput, "#{TEMP_CHAMBER_WINDOW}", mUi->uTempChamberWindowSpinBox, mUi->uTempSensorChamberDropdown->currentIndex() == 54, "TEMP_CHAMBER_WINDOW");
+    ReplaceTag(pOutput, "#{TEMP_CHAMBER_HYSTERESIS}", mUi->uTempChamberHysteresisSpinBox, mUi->uTempSensorChamberDropdown->currentIndex() == 54, "TEMP_CHAMBER_HYSTERESIS");
+    ReplaceTag(pOutput, "#{TEMP_SENSOR_REDUNDANT_SOURCE}", mUi->uTempSensorRedundantSourceDropdown, mUi->uTempSensorRedundantDropdown->currentIndex() == 54, "TEMP_SENSOR_REDUNDANT_SOURCE", false);
+    ReplaceTag(pOutput, "#{TEMP_SENSOR_REDUNDANT_TARGET}", mUi->uTempSensorRedundantTargetDropdown, mUi->uTempSensorRedundantDropdown->currentIndex() == 54, "TEMP_SENSOR_REDUNDANT_TARGET", false);
+    ReplaceTag(pOutput, "#{TEMP_SENSOR_REDUNDANT_MAX_DIFF}", mUi->uTempSensorRedundantMaxDiffSpinBox, mUi->uTempSensorRedundantDropdown->currentIndex() == 54, "TEMP_SENSOR_REDUNDANT_MAX_DIFF");
     ReplaceTag(pOutput, "#{HEATER_0_MINTEMP}", mUi->uHeater0MintempSpinBox, false, "HEATER_0_MINTEMP");
     ReplaceTag(pOutput, "#{HEATER_1_MINTEMP}", mUi->uHeater1MintempSpinBox, false, "HEATER_1_MINTEMP");
     ReplaceTag(pOutput, "#{HEATER_2_MINTEMP}", mUi->uHeater2MintempSpinBox, false, "HEATER_2_MINTEMP");

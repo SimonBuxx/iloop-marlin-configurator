@@ -263,6 +263,18 @@ QAbstractSpinBox::down-button:off {
 }</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <property name="leftMargin">
+    <number>12</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>17</number>
+   </property>
+   <property name="spacing">
+    <number>10</number>
+   </property>
    <item row="5" column="0">
     <spacer name="verticalSpacer">
      <property name="orientation">

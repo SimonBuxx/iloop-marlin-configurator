@@ -725,6 +725,15 @@ bool MainWindow::LoadConfigurationFromJson(const QJsonObject& pJson)
         success = false;
     }
 
+    if (pJson.contains("movement") && pJson["movement"].isObject())
+    {
+        success &= mUi->uMovementPage->LoadFromJson(pJson["movement"].toObject());
+    }
+    else
+    {
+        success = false;
+    }
+
     if (pJson.contains("stepperDrivers") && pJson["stepperDrivers"].isObject())
     {
         success &= mUi->uStepperDriversPage->LoadFromJson(pJson["stepperDrivers"].toObject());
